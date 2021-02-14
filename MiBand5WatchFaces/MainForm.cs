@@ -19,6 +19,7 @@ namespace MiBand5WatchFaces
     {
         WatchFaceLibrary watchFace = new WatchFaceLibrary();
         StateWatchface state = new StateWatchface();
+        bool stateStatic = true;
 
         public MainForm()
         {
@@ -57,7 +58,7 @@ namespace MiBand5WatchFaces
         {
             try
             {
-                state = new StateWatchface();
+                state = stateStatic ? state : new StateWatchface();
                 VisualRender render = new VisualRender(watchFace,state);
                 watchfacePreviewImage.Image = render.GenWatchface();
             }
@@ -108,7 +109,7 @@ namespace MiBand5WatchFaces
             if (type == typeof(Background))
             {
                 VisualRender render = new VisualRender(watchFace);
-                BackgroundForm backgroundForm = new BackgroundForm(DeepCopy<Background>((Background)item.SelectedItems[0].Tag), watchFace.imagesBuff, render.genPreview());
+                BackgroundForm backgroundForm = new BackgroundForm(DeepCopy<Background>((Background)item.SelectedItems[0].Tag), watchFace.imagesBuff.DeepCopy(), render.genPreview());
                 backgroundForm.ShowDialog();
                 if (backgroundForm.Save)
                 {
@@ -120,7 +121,7 @@ namespace MiBand5WatchFaces
             }
             else if (type == typeof(Time))
             {
-                TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), new DefaultDictionary<int, Image>(() => new Bitmap(1, 1), watchFace.imagesBuff),state);
+                TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
                 timeForm.ShowDialog();
 
                 if (timeForm.Save)
@@ -132,7 +133,7 @@ namespace MiBand5WatchFaces
             }
             else if (type == typeof(Activity))
             {
-                ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), new DefaultDictionary<int, Image>(() => new Bitmap(1, 1), watchFace.imagesBuff),state);
+                ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
                 activityForm.ShowDialog();
 
                 if (activityForm.Save)
@@ -144,8 +145,15 @@ namespace MiBand5WatchFaces
             }
             else if (type == typeof(Date))
             {
-                DateForm dateForm = new DateForm();
+                DateForm dateForm = new DateForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
                 dateForm.ShowDialog();
+
+                if (dateForm.Save)
+                {
+                    watchFace = dateForm.watch;
+                    RenderButton_Click(null, null);
+                }
+                dateForm.Dispose();
             }
 
             updateListElements();
@@ -155,7 +163,7 @@ namespace MiBand5WatchFaces
 
         private void OpenFormImages_Click(object sender, EventArgs e)
         {
-            ImagesForm imagesForm = new ImagesForm(new DefaultDictionary<int, Image>(() => new Bitmap(1, 1), watchFace.imagesBuff));
+            ImagesForm imagesForm = new ImagesForm(watchFace.imagesBuff.DeepCopy());
             imagesForm.ShowDialog();
 
             if (imagesForm.saveImages)
@@ -180,7 +188,7 @@ namespace MiBand5WatchFaces
 
         private void activityToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), new DefaultDictionary<int, Image>(() => new Bitmap(1, 1), watchFace.imagesBuff),state);
+            ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace),watchFace.imagesBuff.DeepCopy(), state);
             activityForm.ShowDialog();
 
             if (activityForm.Save)
@@ -193,15 +201,20 @@ namespace MiBand5WatchFaces
 
         private void dateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DateForm dateForm = new DateForm();
+            DateForm dateForm = new DateForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
             dateForm.ShowDialog();
 
-            //if (dateForm.Save)
-            //{
-            //    watchFace = dateForm.watch;
-            //    RenderButton_Click(null, null);
-            //}
+            if (dateForm.Save)
+            {
+                watchFace = dateForm.watch;
+                RenderButton_Click(null, null);
+            }
             dateForm.Dispose();
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

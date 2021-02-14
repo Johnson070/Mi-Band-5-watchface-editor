@@ -17,6 +17,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         bool startForm = true;
         bool moving;
+        int countImages = -1;
         public bool saved = false;
 
         private void Render()
@@ -26,13 +27,14 @@ namespace MiBand5WatchFaces.Forms
         }
 
 
-        public ImageSetForm(WatchFaceLibrary watch, ImageSet imageSet, DefaultDictionary<int, Image> images, StateWatchface state = null)
+        public ImageSetForm(WatchFaceLibrary watch, ImageSet imageSet, DefaultDictionary<int, Image> images, StateWatchface state = null, int countImages = -1)
         {
             InitializeComponent();
             this.watch = watch;
             this.imageSet = imageSet;
             this.watch.imagesBuff = images;
             this.state = state;
+            this.countImages = countImages;
 
             if (imageSet.ImageIndex != -10000)
             {
@@ -57,7 +59,7 @@ namespace MiBand5WatchFaces.Forms
                     selImg.Add(i);
             }
 
-            ImagesForm imgForm = new ImagesForm(watch.imagesBuff, selImg, true, true,true);
+            ImagesForm imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, true, true, countImages);
             imgForm.ShowDialog();
 
             if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -79,6 +81,7 @@ namespace MiBand5WatchFaces.Forms
                 PropertiesGroupBox.Enabled = false;
 
                 saveBtn.Text = "Delete";
+                saved = true;
                 this.Close();
             }
         }
@@ -141,6 +144,26 @@ namespace MiBand5WatchFaces.Forms
                 imageSet.Y = e.Y;
                 posXNum.Value = imageSet.X;
                 posYNum.Value = imageSet.Y;
+
+                Render();
+            }
+        }
+
+        private void posXNum_ValueChanged(object sender, EventArgs e)
+        {
+            if (startForm == false)
+            {
+                imageSet.X = (int)posXNum.Value;
+
+                Render();
+            }
+        }
+
+        private void posYNum_ValueChanged(object sender, EventArgs e)
+        {
+            if (startForm == false)
+            {
+                imageSet.Y = (int)posYNum.Value;
 
                 Render();
             }

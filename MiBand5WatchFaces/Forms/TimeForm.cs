@@ -332,7 +332,7 @@ namespace MiBand5WatchFaces.Forms
         {
             WatchFaceLibrary watchface = DeepCopy<WatchFaceLibrary>(watch);
             watchface.Time.TimeZone1 = watchface.Time?.TimeZone1?.ImageIndex >= 0 ? watchface.Time.TimeZone1 : new Number() { notDraw = true };
-            NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Time.TimeZone1, watch.imagesBuff,state,10);
+            NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Time.TimeZone1, watch.imagesBuff.DeepCopy(), state,10);
             numForm.ShowDialog();
 
             if (numForm.saved && numForm.number.ImageIndex != -10000)
@@ -363,7 +363,7 @@ namespace MiBand5WatchFaces.Forms
         {
             WatchFaceLibrary watchface = DeepCopy<WatchFaceLibrary>(watch);
             watchface.Time.TimeZone2 = watchface.Time?.TimeZone2?.ImageIndex >= 0 ? watchface.Time.TimeZone2 : new Number() { notDraw = true };
-            NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Time.TimeZone2, watch.imagesBuff,state,10);
+            NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Time.TimeZone2, watch.imagesBuff.DeepCopy(), state,10);
             numForm.ShowDialog();
 
             if (numForm.saved && numForm.number.ImageIndex != -10000)

@@ -38,6 +38,8 @@ namespace MiBand5WatchFaces
             this.multiSelect = multiSelect;
             this.selectAndAdd = selectAndAdd;
             this.countImagesSelect = countImagesSelect;
+            saveImagesButton.Enabled = !selectAndAdd;
+
             fillListBox();
             SelectIndex(indexSelect);
             setTextToElement();
@@ -61,6 +63,7 @@ namespace MiBand5WatchFaces
             this.selectAndAdd = selectAndAdd;
             this.countImagesSelect = countImagesSelect;
             this.selectedImages = selectedImages;
+            saveImagesButton.Enabled = !selectAndAdd;
             fillListBox();
 
             if (selectedImages != null)
@@ -95,7 +98,18 @@ namespace MiBand5WatchFaces
                     else MessageBox.Show("Image DPI is not 96!", $"File: {Path.GetFileName(ImageFiles.FileName)}");
                 };
                 editImages = true;
+
+                List<string> selItems = new List<string>();
+                for (int i = 0; i < ImagesListBox.Items.Count; i++)
+                    if (ImagesListBox.GetItemChecked(i))
+                        selItems.Add(ImagesListBox.GetItemText(ImagesListBox.Items[i]));
+
                 fillListBox();
+
+                for (int i = 0; i < ImagesListBox.Items.Count; i++)
+                    foreach (string name in selItems)
+                        if (ImagesListBox.GetItemText(ImagesListBox.Items[i]) == name)
+                            ImagesListBox.SetItemChecked(i, true);
             }
         }
 
@@ -180,6 +194,17 @@ namespace MiBand5WatchFaces
 
         private void saveImages_Click(object sender, EventArgs e)
         {
+            int countItems = 0;
+            for (int i = 0; i < ImagesListBox.Items.Count; i++)
+                if (ImagesListBox.GetItemChecked(i))
+                    countItems++;
+
+            selectedImages = countItems == 0 ? null : new List<int>();
+
+            for (int i = 0; i < ImagesListBox.Items.Count; i++)
+                if (ImagesListBox.GetItemChecked(i))
+                    selectedImages.Add(i);
+
             saveImages = true;
             editImages = false;
             this.Close();
@@ -326,7 +351,7 @@ namespace MiBand5WatchFaces
 
                 if (countImagesSelect != -1)
                 {
-                    int countSel = 0;
+                    int countSel = e.NewValue == CheckState.Checked ? 1 : 0;
                     for (int i = 0; i < ImagesListBox.Items.Count; i++)
                         if (ImagesListBox.GetItemChecked(i))
                             countSel++;

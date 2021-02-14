@@ -24,12 +24,12 @@ namespace MiBand5WatchFaces
         public AnalogDialFace AnalogDialFace;
         public Other Other;
         public HeartProgress HeartProgress;
-        public UnknownTest Unknown13;
+        //public UnknownTest Unknown13;
         public WeekDaysIcons WeekDaysIcons;
         public StepsProgress CaloriesProgress;
         public Alarm Alarm;
         public StatusSimple StatusSimplified;
-        public LunarDate LunarDateCN;
+        //public LunarDate LunarDateCN;
 
         [JsonIgnore]
         public string FilePath;
@@ -55,7 +55,7 @@ namespace MiBand5WatchFaces
         public DefaultDictionary(Func<TValue> init)
         {
             _init = init;
-        }//864605046824091 //864605046824109 //864605046824117
+        }
 
         public DefaultDictionary(Func<TValue> init, DefaultDictionary<TKey, TValue> dict)
         {
@@ -73,6 +73,8 @@ namespace MiBand5WatchFaces
             }
             set => base[k] = value;
         }
+
+        public DefaultDictionary<TKey, TValue> DeepCopy() => new DefaultDictionary<TKey, TValue>(_init, this);
     }
 
     //===========================ACTIVITY=============================

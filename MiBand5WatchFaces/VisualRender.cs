@@ -44,6 +44,7 @@ namespace MiBand5WatchFaces
         public int Humidity = rnd.Next(0, 101);
         public DateTime TimeZone = DateTime.Now;
         public bool NoTimeZone = false;
+        public int animation = 0;
 
         public void updateTime()
         {
@@ -337,7 +338,8 @@ namespace MiBand5WatchFaces
                     else images.Add(watchface.imagesBuff[dateNumber.ImageIndex + watchFaceState.Time.Day]);
                     drawNumber(date.MonthAndDayAndYear.OneLine == null ? date.MonthAndDayAndYear.OneLineWithYear.Number : date.MonthAndDayAndYear.OneLine.Number, images);
                 }
-                else if (date.MonthAndDayAndYear.Separate != null)
+                
+                if (date.MonthAndDayAndYear.Separate != null)
                 {
                     if (date.MonthAndDayAndYear.Separate.MonthsEN != null)
                         drawImage(watchface.imagesBuff[date.MonthAndDayAndYear.Separate.MonthsEN.ImageIndex + watchFaceState.Time.Month - 1], date.MonthAndDayAndYear.Separate.MonthsEN.getPoint());
@@ -369,7 +371,7 @@ namespace MiBand5WatchFaces
                         }
                         else
                         {
-                            images.Add(watchface.imagesBuff[date.MonthAndDayAndYear.Separate.Month.ImageIndex + watchFaceState.Time.Month - 1]);
+                            images.Add(watchface.imagesBuff[date.MonthAndDayAndYear.Separate.Month.ImageIndex + watchFaceState.Time.Month]);
                         }
 
                         drawNumber(date.MonthAndDayAndYear.Separate.Month, images);
@@ -606,16 +608,16 @@ namespace MiBand5WatchFaces
             Status status = _Status != null ? _Status : watchface.Status;
 
             if (status.DoNotDisturb != null)
-                if (watchFaceState.DoNotDisturb && status.DoNotDisturb.ImageIndexOn != -10000) drawImage(watchface.imagesBuff[status.DoNotDisturb.ImageIndexOn], status.DoNotDisturb.Coordinates.getPoint());
-                else if (status.DoNotDisturb.ImageIndexOff != -10000 && !(watchFaceState.DoNotDisturb)) drawImage(watchface.imagesBuff[status.DoNotDisturb.ImageIndexOff], status.DoNotDisturb.Coordinates.getPoint());
+                if (watchFaceState.DoNotDisturb && status.DoNotDisturb.ImageIndexOn > 0) drawImage(watchface.imagesBuff[status.DoNotDisturb.ImageIndexOn], status.DoNotDisturb.Coordinates.getPoint());
+                else if (status.DoNotDisturb.ImageIndexOff > 0 && !(watchFaceState.DoNotDisturb)) drawImage(watchface.imagesBuff[status.DoNotDisturb.ImageIndexOff], status.DoNotDisturb.Coordinates.getPoint());
 
             if (status.Lock != null)
-                if (watchFaceState.Unlocked && status.Lock.ImageIndexOn != -10000) drawImage(watchface.imagesBuff[status.Lock.ImageIndexOn], status.Lock.Coordinates.getPoint());
-                else if (status.Lock.ImageIndexOff != -10000 && !(watchFaceState.Unlocked)) drawImage(watchface.imagesBuff[status.Lock.ImageIndexOff], status.Lock.Coordinates.getPoint());
+                if (watchFaceState.Unlocked && status.Lock.ImageIndexOn > 0) drawImage(watchface.imagesBuff[status.Lock.ImageIndexOn], status.Lock.Coordinates.getPoint());
+                else if (status.Lock.ImageIndexOff > 0 && !(watchFaceState.Unlocked)) drawImage(watchface.imagesBuff[status.Lock.ImageIndexOff], status.Lock.Coordinates.getPoint());
 
             if (status.Bluetooth != null)
-                if (watchFaceState.Bluetooth && status.Bluetooth.ImageIndexOn != -10000) drawImage(watchface.imagesBuff[status.Bluetooth.ImageIndexOn], status.Bluetooth.Coordinates.getPoint());
-                else if (status.Bluetooth.ImageIndexOff != -10000 && !(watchFaceState.Bluetooth)) drawImage(watchface.imagesBuff[status.Bluetooth.ImageIndexOff], status.Bluetooth.Coordinates.getPoint());
+                if (watchFaceState.Bluetooth && status.Bluetooth.ImageIndexOn > 0) drawImage(watchface.imagesBuff[status.Bluetooth.ImageIndexOn], status.Bluetooth.Coordinates.getPoint());
+                else if (status.Bluetooth.ImageIndexOff > 0 && !(watchFaceState.Bluetooth)) drawImage(watchface.imagesBuff[status.Bluetooth.ImageIndexOff], status.Bluetooth.Coordinates.getPoint());
         }
 
         private void drawBattery(Battery _battery = null)
@@ -686,7 +688,7 @@ namespace MiBand5WatchFaces
             if (other.Animation != null)
             {
                 foreach (Animation animation in other.Animation)
-                    drawImage(watchface.imagesBuff[animation.AnimationImages.ImageIndex], animation.AnimationImages.getPoint());
+                    drawImage(watchface.imagesBuff[animation.AnimationImages.ImageIndex + watchFaceState.animation], animation.AnimationImages.getPoint());
             }
         }
 

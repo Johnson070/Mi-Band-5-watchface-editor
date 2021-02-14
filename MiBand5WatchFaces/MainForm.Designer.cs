@@ -31,13 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.RenderButton = new System.Windows.Forms.Button();
-            this.listViewElements = new System.Windows.Forms.ListView();
-            this.listMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.watchfacePreviewImage = new System.Windows.Forms.PictureBox();
             this.AddElement = new System.Windows.Forms.ToolStripDropDownButton();
             this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -58,7 +51,14 @@
             this.openFileButton = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenFormImages = new System.Windows.Forms.ToolStripButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.RenderButton = new System.Windows.Forms.Button();
+            this.listViewElements = new System.Windows.Forms.ListView();
+            this.listMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.watchfacePreviewImage = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.listMenuStrip.SuspendLayout();
@@ -77,6 +77,162 @@
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // AddElement
+            // 
+            this.AddElement.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.AddElement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.backgroundToolStripMenuItem,
+            this.timeToolStripMenuItem,
+            this.activityToolStripMenuItem,
+            this.dateToolStripMenuItem,
+            this.weatherToolStripMenuItem,
+            this.stepsProgressToolStripMenuItem,
+            this.statusToolStripMenuItem,
+            this.batteryToolStripMenuItem,
+            this.analogDialFaceToolStripMenuItem,
+            this.animationToolStripMenuItem,
+            this.heartProgressToolStripMenuItem,
+            this.weekDaysIconsToolStripMenuItem,
+            this.stepsProgressToolStripMenuItem1,
+            this.alarmToolStripMenuItem,
+            this.statusSimplifiedToolStripMenuItem});
+            this.AddElement.Image = ((System.Drawing.Image)(resources.GetObject("AddElement.Image")));
+            this.AddElement.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.AddElement.Name = "AddElement";
+            this.AddElement.Size = new System.Drawing.Size(88, 22);
+            this.AddElement.Text = "Add Element";
+            // 
+            // backgroundToolStripMenuItem
+            // 
+            this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
+            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.backgroundToolStripMenuItem.Text = "Background";
+            this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.backgroundToolStripMenuItem_Click);
+            // 
+            // timeToolStripMenuItem
+            // 
+            this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.timeToolStripMenuItem.Text = "Time";
+            this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
+            // 
+            // activityToolStripMenuItem
+            // 
+            this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
+            this.activityToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.activityToolStripMenuItem.Text = "Activity";
+            this.activityToolStripMenuItem.Click += new System.EventHandler(this.activityToolStripMenuItem_Click);
+            // 
+            // dateToolStripMenuItem
+            // 
+            this.dateToolStripMenuItem.Name = "dateToolStripMenuItem";
+            this.dateToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.dateToolStripMenuItem.Text = "Date";
+            this.dateToolStripMenuItem.Click += new System.EventHandler(this.dateToolStripMenuItem_Click);
+            // 
+            // weatherToolStripMenuItem
+            // 
+            this.weatherToolStripMenuItem.Name = "weatherToolStripMenuItem";
+            this.weatherToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.weatherToolStripMenuItem.Text = "Weather";
+            // 
+            // stepsProgressToolStripMenuItem
+            // 
+            this.stepsProgressToolStripMenuItem.Name = "stepsProgressToolStripMenuItem";
+            this.stepsProgressToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.stepsProgressToolStripMenuItem.Text = "StepsProgress";
+            // 
+            // statusToolStripMenuItem
+            // 
+            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
+            this.statusToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.statusToolStripMenuItem.Text = "Status";
+            // 
+            // batteryToolStripMenuItem
+            // 
+            this.batteryToolStripMenuItem.Name = "batteryToolStripMenuItem";
+            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.batteryToolStripMenuItem.Text = "Battery";
+            // 
+            // analogDialFaceToolStripMenuItem
+            // 
+            this.analogDialFaceToolStripMenuItem.Name = "analogDialFaceToolStripMenuItem";
+            this.analogDialFaceToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.analogDialFaceToolStripMenuItem.Text = "AnalogDialFace";
+            // 
+            // animationToolStripMenuItem
+            // 
+            this.animationToolStripMenuItem.Name = "animationToolStripMenuItem";
+            this.animationToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.animationToolStripMenuItem.Text = "Animation";
+            // 
+            // heartProgressToolStripMenuItem
+            // 
+            this.heartProgressToolStripMenuItem.Name = "heartProgressToolStripMenuItem";
+            this.heartProgressToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.heartProgressToolStripMenuItem.Text = "HeartProgress";
+            // 
+            // weekDaysIconsToolStripMenuItem
+            // 
+            this.weekDaysIconsToolStripMenuItem.Name = "weekDaysIconsToolStripMenuItem";
+            this.weekDaysIconsToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.weekDaysIconsToolStripMenuItem.Text = "WeekDaysIcons";
+            // 
+            // stepsProgressToolStripMenuItem1
+            // 
+            this.stepsProgressToolStripMenuItem1.Name = "stepsProgressToolStripMenuItem1";
+            this.stepsProgressToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
+            this.stepsProgressToolStripMenuItem1.Text = "StepsProgress";
+            // 
+            // alarmToolStripMenuItem
+            // 
+            this.alarmToolStripMenuItem.Name = "alarmToolStripMenuItem";
+            this.alarmToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.alarmToolStripMenuItem.Text = "Alarm";
+            // 
+            // statusSimplifiedToolStripMenuItem
+            // 
+            this.statusSimplifiedToolStripMenuItem.Name = "statusSimplifiedToolStripMenuItem";
+            this.statusSimplifiedToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.statusSimplifiedToolStripMenuItem.Text = "StatusSimplified";
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openFileButton,
+            this.saveToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(38, 22);
+            this.toolStripDropDownButton1.Text = "File";
+            // 
+            // openFileButton
+            // 
+            this.openFileButton.Name = "openFileButton";
+            this.openFileButton.Size = new System.Drawing.Size(180, 22);
+            this.openFileButton.Text = "Open";
+            this.openFileButton.Click += new System.EventHandler(this.OpenFileJson);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
+            // 
+            // OpenFormImages
+            // 
+            this.OpenFormImages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.OpenFormImages.Image = ((System.Drawing.Image)(resources.GetObject("OpenFormImages.Image")));
+            this.OpenFormImages.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.OpenFormImages.Name = "OpenFormImages";
+            this.OpenFormImages.Size = new System.Drawing.Size(49, 22);
+            this.OpenFormImages.Text = "Images";
+            this.OpenFormImages.Click += new System.EventHandler(this.OpenFormImages_Click);
+            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -87,6 +243,15 @@
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contorols";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(6, 19);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(162, 23);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "Set watchface state";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // RenderButton
             // 
@@ -139,170 +304,6 @@
             this.watchfacePreviewImage.Size = new System.Drawing.Size(126, 294);
             this.watchfacePreviewImage.TabIndex = 7;
             this.watchfacePreviewImage.TabStop = false;
-            // 
-            // AddElement
-            // 
-            this.AddElement.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.AddElement.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backgroundToolStripMenuItem,
-            this.timeToolStripMenuItem,
-            this.activityToolStripMenuItem,
-            this.dateToolStripMenuItem,
-            this.weatherToolStripMenuItem,
-            this.stepsProgressToolStripMenuItem,
-            this.statusToolStripMenuItem,
-            this.batteryToolStripMenuItem,
-            this.analogDialFaceToolStripMenuItem,
-            this.animationToolStripMenuItem,
-            this.heartProgressToolStripMenuItem,
-            this.weekDaysIconsToolStripMenuItem,
-            this.stepsProgressToolStripMenuItem1,
-            this.alarmToolStripMenuItem,
-            this.statusSimplifiedToolStripMenuItem});
-            this.AddElement.Image = ((System.Drawing.Image)(resources.GetObject("AddElement.Image")));
-            this.AddElement.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.AddElement.Name = "AddElement";
-            this.AddElement.Size = new System.Drawing.Size(88, 22);
-            this.AddElement.Text = "Add Element";
-            // 
-            // backgroundToolStripMenuItem
-            // 
-            this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
-            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.backgroundToolStripMenuItem.Text = "Background";
-            this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.backgroundToolStripMenuItem_Click);
-            // 
-            // timeToolStripMenuItem
-            // 
-            this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.timeToolStripMenuItem.Text = "Time";
-            this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
-            // 
-            // activityToolStripMenuItem
-            // 
-            this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
-            this.activityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.activityToolStripMenuItem.Text = "Activity";
-            this.activityToolStripMenuItem.Click += new System.EventHandler(this.activityToolStripMenuItem_Click);
-            // 
-            // dateToolStripMenuItem
-            // 
-            this.dateToolStripMenuItem.Name = "dateToolStripMenuItem";
-            this.dateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dateToolStripMenuItem.Text = "Date";
-            this.dateToolStripMenuItem.Click += new System.EventHandler(this.dateToolStripMenuItem_Click);
-            // 
-            // weatherToolStripMenuItem
-            // 
-            this.weatherToolStripMenuItem.Name = "weatherToolStripMenuItem";
-            this.weatherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.weatherToolStripMenuItem.Text = "Weather";
-            // 
-            // stepsProgressToolStripMenuItem
-            // 
-            this.stepsProgressToolStripMenuItem.Name = "stepsProgressToolStripMenuItem";
-            this.stepsProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.stepsProgressToolStripMenuItem.Text = "StepsProgress";
-            // 
-            // statusToolStripMenuItem
-            // 
-            this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
-            this.statusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.statusToolStripMenuItem.Text = "Status";
-            // 
-            // batteryToolStripMenuItem
-            // 
-            this.batteryToolStripMenuItem.Name = "batteryToolStripMenuItem";
-            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.batteryToolStripMenuItem.Text = "Battery";
-            // 
-            // analogDialFaceToolStripMenuItem
-            // 
-            this.analogDialFaceToolStripMenuItem.Name = "analogDialFaceToolStripMenuItem";
-            this.analogDialFaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.analogDialFaceToolStripMenuItem.Text = "AnalogDialFace";
-            // 
-            // animationToolStripMenuItem
-            // 
-            this.animationToolStripMenuItem.Name = "animationToolStripMenuItem";
-            this.animationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.animationToolStripMenuItem.Text = "Animation";
-            // 
-            // heartProgressToolStripMenuItem
-            // 
-            this.heartProgressToolStripMenuItem.Name = "heartProgressToolStripMenuItem";
-            this.heartProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.heartProgressToolStripMenuItem.Text = "HeartProgress";
-            // 
-            // weekDaysIconsToolStripMenuItem
-            // 
-            this.weekDaysIconsToolStripMenuItem.Name = "weekDaysIconsToolStripMenuItem";
-            this.weekDaysIconsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.weekDaysIconsToolStripMenuItem.Text = "WeekDaysIcons";
-            // 
-            // stepsProgressToolStripMenuItem1
-            // 
-            this.stepsProgressToolStripMenuItem1.Name = "stepsProgressToolStripMenuItem1";
-            this.stepsProgressToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.stepsProgressToolStripMenuItem1.Text = "StepsProgress";
-            // 
-            // alarmToolStripMenuItem
-            // 
-            this.alarmToolStripMenuItem.Name = "alarmToolStripMenuItem";
-            this.alarmToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.alarmToolStripMenuItem.Text = "Alarm";
-            // 
-            // statusSimplifiedToolStripMenuItem
-            // 
-            this.statusSimplifiedToolStripMenuItem.Name = "statusSimplifiedToolStripMenuItem";
-            this.statusSimplifiedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.statusSimplifiedToolStripMenuItem.Text = "StatusSimplified";
-            // 
-            // toolStripDropDownButton1
-            // 
-            this.toolStripDropDownButton1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openFileButton,
-            this.saveToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(38, 22);
-            this.toolStripDropDownButton1.Text = "File";
-            // 
-            // openFileButton
-            // 
-            this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(103, 22);
-            this.openFileButton.Text = "Open";
-            this.openFileButton.Click += new System.EventHandler(this.OpenFileJson);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.saveToolStripMenuItem.Text = "Save";
-            // 
-            // OpenFormImages
-            // 
-            this.OpenFormImages.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.OpenFormImages.Image = ((System.Drawing.Image)(resources.GetObject("OpenFormImages.Image")));
-            this.OpenFormImages.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.OpenFormImages.Name = "OpenFormImages";
-            this.OpenFormImages.Size = new System.Drawing.Size(49, 22);
-            this.OpenFormImages.Text = "Images";
-            this.OpenFormImages.Click += new System.EventHandler(this.OpenFormImages_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Set watchface state";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // MainForm
             // 

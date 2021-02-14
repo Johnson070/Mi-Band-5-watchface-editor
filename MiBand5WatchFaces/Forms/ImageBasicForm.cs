@@ -49,7 +49,7 @@ namespace MiBand5WatchFaces.Forms
                 selImg.Add(imageBasic.ImageIndex);
             }
 
-            ImagesForm imgForm = new ImagesForm(watch.imagesBuff,selImg, true, false);
+            ImagesForm imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
             imgForm.ShowDialog();
 
             if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -68,6 +68,7 @@ namespace MiBand5WatchFaces.Forms
 
                 PropertiesGroupBox.Enabled = false;
                 saveBtn.Text = "Delete";
+                saved = true;
                 this.Close();
             }
         }

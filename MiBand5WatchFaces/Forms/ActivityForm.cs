@@ -116,7 +116,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Activity.Steps = watchface.Activity?.Steps == null ? new Steps() : watchface.Activity.Steps;
                 watchface.Activity.Steps.Number = watchface.Activity?.Steps?.Number?.ImageIndex >= 0 ? watchface.Activity.Steps.Number : new Number() { notDraw = true };
-                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.Steps.Number, watch.imagesBuff,state);
+                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.Steps.Number, watch.imagesBuff.DeepCopy(), state,10);
                 numForm.ShowDialog();
 
                 if (numForm.saved && numForm.number.ImageIndex != -10000)
@@ -143,7 +143,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Activity.Calories = watchface.Activity?.Calories == null ? new Calories() : watchface.Activity.Calories;
                 watchface.Activity.Calories.Text = watchface.Activity?.Calories?.Text?.ImageIndex >= 0 ? watchface.Activity.Calories.Text: new Number() { notDraw = true };
-                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.Calories.Text, watch.imagesBuff,state);
+                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.Calories.Text, watch.imagesBuff,state,10);
                 numForm.ShowDialog();
 
                 if (numForm.saved && numForm.number.ImageIndex != -10000)
@@ -170,7 +170,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Activity.Pulse = watchface.Activity?.Pulse == null ? new Pulse() : watchface.Activity.Pulse;
                 watchface.Activity.Pulse.Number = watchface.Activity?.Pulse?.Number?.ImageIndex >= 0 ? watchface.Activity.Pulse.Number : new Number() { notDraw = true };
-                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.Pulse.Number, watch.imagesBuff,state);
+                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.Pulse.Number, watch.imagesBuff.DeepCopy(), state,10);
                 numForm.ShowDialog();
 
                 if (numForm.saved && numForm.number.ImageIndex != -10000)
@@ -199,7 +199,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Activity.PAI = watchface.Activity?.PAI == null ? new PAI() : watchface.Activity.PAI;
                 watchface.Activity.PAI.Number = watchface.Activity?.PAI?.Number?.ImageIndex >= 0 ? watchface.Activity.PAI.Number : new Number() { notDraw = true };
-                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.PAI.Number, watch.imagesBuff,state);
+                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.PAI.Number, watch.imagesBuff.DeepCopy(), state,10);
                 numForm.ShowDialog();
 
                 if (numForm.saved && numForm.number.ImageIndex != -10000)
@@ -220,7 +220,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Activity.Distance = watchface.Activity?.Distance == null ? new Distance() : watchface.Activity.Distance;
                 watchface.Activity.Distance.Number = watchface.Activity?.Distance?.Number?.ImageIndex >= 0 ? watchface.Activity.Distance.Number : new Number() { notDraw = true };
-                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.Distance.Number, watch.imagesBuff,state);
+                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Activity.Distance.Number, watch.imagesBuff.DeepCopy(), state,10);
                 numForm.ShowDialog();
 
                 if (numForm.saved && numForm.number.ImageIndex != -10000)
@@ -485,7 +485,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.Activity.Distance.KmImageIndex = watch.Activity.Distance.KmImageIndex == null ? new ImageBasic() : watch.Activity.Distance.KmImageIndex;
                 StateWatchface stateDist = state;
                 stateDist.MiKm = true;
-                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Activity.Distance.KmImageIndex, watch.imagesBuff, stateDist);
+                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Activity.Distance.KmImageIndex, watch.imagesBuff.DeepCopy(), stateDist);
                 ibForm.ShowDialog();
 
                 if (ibForm.saved)
@@ -506,7 +506,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.Activity.Distance.MilesImageIndex = watch.Activity.Distance.MilesImageIndex == null ? new ImageBasic() : watch.Activity.Distance.MilesImageIndex;
                 StateWatchface stateDist = state;
                 stateDist.MiKm = false;
-                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Activity.Distance.MilesImageIndex, watch.imagesBuff, stateDist);
+                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Activity.Distance.MilesImageIndex, watch.imagesBuff.DeepCopy(), stateDist);
                 ibForm.ShowDialog();
 
                 if (ibForm.saved)
@@ -529,7 +529,7 @@ namespace MiBand5WatchFaces.Forms
         private void saveButton_Click(object sender, EventArgs e)
         {
             Save = true;
-            if (stepsCheckBox.Checked == false) watch.Activity.Steps = null;
+            if (stepsCheckBox.Checked == false || (watch.Activity.Steps == null)) watch.Activity.Steps = null;
             if (caloriesCheckBox.Checked == false) watch.Activity.Calories = null;
             if (pulseCheckBox.Checked == false) watch.Activity.Pulse = null;
             if (distanceCheckBox.Checked == false) watch.Activity.Distance = null;

@@ -47,6 +47,8 @@ namespace MiBand5WatchFaces
                 sizeYNum.Value = Math.Abs(number.BottomRightY - number.TopLeftY);
                 posXNum.Value = number.TopLeftX;
                 posYNum.Value = number.TopLeftY;
+                number.BottomRightX = number.TopLeftX + (int)sizeXNum.Value;
+                number.BottomRightY = number.TopLeftY + (int)sizeYNum.Value;
                 this.number.drawBorder = true;
 
                 Render();
@@ -65,7 +67,7 @@ namespace MiBand5WatchFaces
                 for (int i = number.ImageIndex; i < number.ImageIndex + number.ImagesCount; i++)
                     selImg.Add(i);
             }
-            ImagesForm imgForm = new ImagesForm(watch.imagesBuff, selImg, true, true, true, countImages);
+            ImagesForm imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, true, true, countImages);
             imgForm.ShowDialog();
 
             if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -78,8 +80,8 @@ namespace MiBand5WatchFaces
                 //number.BottomRightX = number.getSize(watch.imagesBuff).Width;
                 //number.BottomRightY = number.getSize(watch.imagesBuff).Height;
 
-                sizeXNum.Value = number.BottomRightX;
-                sizeYNum.Value = number.BottomRightY;
+                sizeXNum.Value = Math.Abs(number.BottomRightX-number.TopLeftX);
+                sizeYNum.Value = Math.Abs(number.BottomRightY - number.TopLeftY);
 
                 PropertiesGroupBox.Enabled = true;
                 this.number.drawBorder = true;

@@ -74,6 +74,7 @@
             this.posYNum.Name = "posYNum";
             this.posYNum.Size = new System.Drawing.Size(49, 24);
             this.posYNum.TabIndex = 14;
+            this.posYNum.ValueChanged += new System.EventHandler(this.posYNum_ValueChanged);
             // 
             // posXNum
             // 
@@ -91,6 +92,7 @@
             this.posXNum.Name = "posXNum";
             this.posXNum.Size = new System.Drawing.Size(49, 24);
             this.posXNum.TabIndex = 13;
+            this.posXNum.ValueChanged += new System.EventHandler(this.posXNum_ValueChanged);
             // 
             // label6
             // 
@@ -154,6 +156,7 @@
             this.Controls.Add(this.selectImages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "ImageSetForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Properties";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImageSetForm_FormClosing);
             this.PropertiesGroupBox.ResumeLayout(false);
