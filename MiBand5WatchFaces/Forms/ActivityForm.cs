@@ -18,7 +18,6 @@ namespace MiBand5WatchFaces.Forms
 
         StateWatchface state;
         VisualRender render;
-        bool checkArrows;
         public bool Save;
 
         public static T DeepCopy<T>(T other)

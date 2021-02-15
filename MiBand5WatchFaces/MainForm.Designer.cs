@@ -52,7 +52,7 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenFormImages = new System.Windows.Forms.ToolStripButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.SetWatchfaceState = new System.Windows.Forms.Button();
             this.RenderButton = new System.Windows.Forms.Button();
             this.listViewElements = new System.Windows.Forms.ListView();
             this.listMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -212,14 +212,14 @@
             // openFileButton
             // 
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(180, 22);
+            this.openFileButton.Size = new System.Drawing.Size(103, 22);
             this.openFileButton.Text = "Open";
             this.openFileButton.Click += new System.EventHandler(this.OpenFileJson);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -236,7 +236,7 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.SetWatchfaceState);
             this.groupBox1.Location = new System.Drawing.Point(470, 28);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(174, 559);
@@ -244,14 +244,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contorols";
             // 
-            // button1
+            // SetWatchfaceState
             // 
-            this.button1.Location = new System.Drawing.Point(6, 19);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Set watchface state";
-            this.button1.UseVisualStyleBackColor = true;
+            this.SetWatchfaceState.Location = new System.Drawing.Point(6, 19);
+            this.SetWatchfaceState.Name = "SetWatchfaceState";
+            this.SetWatchfaceState.Size = new System.Drawing.Size(162, 23);
+            this.SetWatchfaceState.TabIndex = 0;
+            this.SetWatchfaceState.Text = "Set watchface state";
+            this.SetWatchfaceState.UseVisualStyleBackColor = true;
+            this.SetWatchfaceState.Click += new System.EventHandler(this.SetWatchfaceState_Click);
             // 
             // RenderButton
             // 
@@ -266,7 +267,7 @@
             // listViewElements
             // 
             this.listViewElements.ContextMenuStrip = this.listMenuStrip;
-            this.listViewElements.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.listViewElements.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.listViewElements.HideSelection = false;
             this.listViewElements.Location = new System.Drawing.Point(12, 28);
             this.listViewElements.Name = "listViewElements";
@@ -359,7 +360,7 @@
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton OpenFormImages;
         private System.Windows.Forms.PictureBox watchfacePreviewImage;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button SetWatchfaceState;
     }
 }
 

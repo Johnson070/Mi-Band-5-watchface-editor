@@ -1,6 +1,6 @@
-﻿namespace MiBand5WatchFaces
+﻿namespace MiBand5WatchFaces.Forms
 {
-    partial class WatchfaceState
+    partial class WeatherForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // WeatherForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "WatchfaceState";
+            this.Name = "WeatherForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "WeatherForm";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiBand5WatchFaces
+namespace MiBand5WatchFaces.Forms
 {
-    public partial class WatchfaceState : Form
+    public partial class WeatherForm : Form
     {
-        public WatchfaceState()
+        public WeatherForm()
         {
             InitializeComponent();
         }

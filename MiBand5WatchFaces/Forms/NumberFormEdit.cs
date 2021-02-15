@@ -19,10 +19,6 @@ namespace MiBand5WatchFaces
 
         int countImages = -1;
         bool startForm = true;
-        int XMouseClick = 0;
-        int YMouseClick = 0;
-        int XPic = 0;
-        int YPic = 0;
         bool moving;
 
         public bool saved = false;

@@ -21,9 +21,10 @@ namespace MiBand5WatchFaces
         public DateTime alarm = DateTime.Now;
         public int Steps = rnd.Next(0, 11) * 1000;
         public int Goal = 10000;
-        public int PulseGoal = 140;
+        public int PulseGoal = 150;
+        public int CaloriesGoal = 9000;
         public int Calories = rnd.Next(0, 10) * 1000;
-        public int Distance = rnd.Next(0, 100) * 10;
+        public int Distance = rnd.Next(0, 101) * 10;
         public int Pulse = rnd.Next(0, 151);
         public int PAIIndex = rnd.Next(0, 101);
         public int CurrentWeather = rnd.Next(0, 26);
@@ -45,6 +46,8 @@ namespace MiBand5WatchFaces
         public DateTime TimeZone = DateTime.Now;
         public bool NoTimeZone = false;
         public int animation = 0;
+
+        public bool notGen = false;
 
         public void updateTime()
         {
@@ -188,11 +191,11 @@ namespace MiBand5WatchFaces
                 if (time.TimeZone1 != null)
                 {
                     List<Image> timezone = new List<Image>();
-                    timezone.Add(watchface.imagesBuff[time.TimeZone1.ImageIndex + (int)watchFaceState.Time.Hour / 10]);
-                    timezone.Add(watchface.imagesBuff[time.TimeZone1.ImageIndex + (int)watchFaceState.Time.Hour % 10]);
+                    timezone.Add(watchface.imagesBuff[time.TimeZone1.ImageIndex + (int)watchFaceState.TimeZone.Hour / 10]);
+                    timezone.Add(watchface.imagesBuff[time.TimeZone1.ImageIndex + (int)watchFaceState.TimeZone.Hour % 10]);
                     timezone.Add(watchface.imagesBuff[time.TimeZone1DelimiterImage]);
-                    timezone.Add(watchface.imagesBuff[time.TimeZone1.ImageIndex + (int)watchFaceState.Time.Minute / 10]);
-                    timezone.Add(watchface.imagesBuff[time.TimeZone1.ImageIndex + (int)watchFaceState.Time.Minute % 10]);
+                    timezone.Add(watchface.imagesBuff[time.TimeZone1.ImageIndex + (int)watchFaceState.TimeZone.Minute / 10]);
+                    timezone.Add(watchface.imagesBuff[time.TimeZone1.ImageIndex + (int)watchFaceState.TimeZone.Minute % 10]);
 
                     drawNumber(time.TimeZone1, timezone);
                 }
@@ -201,11 +204,11 @@ namespace MiBand5WatchFaces
                 if (time.TimeZone2 != null)
                 {
                     List<Image> timezone = new List<Image>();
-                    timezone.Add(watchface.imagesBuff[time.TimeZone2.ImageIndex + (int)watchFaceState.Time.Hour / 10]);
-                    timezone.Add(watchface.imagesBuff[time.TimeZone2.ImageIndex + (int)watchFaceState.Time.Hour % 10]);
+                    timezone.Add(watchface.imagesBuff[time.TimeZone2.ImageIndex + (int)watchFaceState.TimeZone.Hour / 10]);
+                    timezone.Add(watchface.imagesBuff[time.TimeZone2.ImageIndex + (int)watchFaceState.TimeZone.Hour % 10]);
                     timezone.Add(watchface.imagesBuff[time.TimeZone2DelimiterImage]);
-                    timezone.Add(watchface.imagesBuff[time.TimeZone2.ImageIndex + (int)watchFaceState.Time.Minute / 10]);
-                    timezone.Add(watchface.imagesBuff[time.TimeZone2.ImageIndex + (int)watchFaceState.Time.Minute % 10]);
+                    timezone.Add(watchface.imagesBuff[time.TimeZone2.ImageIndex + (int)watchFaceState.TimeZone.Minute / 10]);
+                    timezone.Add(watchface.imagesBuff[time.TimeZone2.ImageIndex + (int)watchFaceState.TimeZone.Minute % 10]);
 
                     drawNumber(time.TimeZone2, timezone);
                 }
@@ -264,10 +267,10 @@ namespace MiBand5WatchFaces
             {
                 List<Image> images = new List<Image>();
 
-                for (int i = 0; i < watchFaceState.Distance.ToString().Length; i++)
-                    images.Add(watchface.imagesBuff[activity.Distance.Number.ImageIndex + Convert.ToInt16(watchFaceState.Distance.ToString()[i].ToString())]);
+                for (int i = 0; i < watchFaceState.Distance.ToString("000").Length; i++)
+                    images.Add(watchface.imagesBuff[activity.Distance.Number.ImageIndex + Convert.ToInt16(watchFaceState.Distance.ToString("000")[i].ToString())]);
 
-                images.Insert(1, watchface.imagesBuff[activity.Distance.DecimalPointImageIndex]);
+                images.Insert(watchFaceState.Distance.ToString("000").Length == 3 ? 1 : 2, watchface.imagesBuff[activity.Distance.DecimalPointImageIndex]);
 
                 if (watchFaceState.MiKm)
                 {
@@ -583,10 +586,10 @@ namespace MiBand5WatchFaces
 
             if (progress.LineScale != null)
                 if (watchFaceState.Steps > 0)
-                    drawImage(watchface.imagesBuff[progress.LineScale.ImageIndex + map(watchFaceState.Steps, 0, 10000, 0, progress.LineScale.ImagesCount - 1)], progress.LineScale.getPoint());
+                    drawImage(watchface.imagesBuff[progress.LineScale.ImageIndex + map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.LineScale.ImagesCount - 1)], progress.LineScale.getPoint());
 
             if (progress.Linear != null)
-                for (int i = 0; i < map(watchFaceState.Steps, 0, 10000, 0, progress.Linear.Segments.Count - 1); i++)
+                for (int i = 0; i < map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.Linear.Segments.Count); i++)
                     drawImage(watchface.imagesBuff[progress.Linear.StartImageIndex + i], progress.Linear.Segments[i].getPoint());
 
             if (progress.CircleScale != null)
@@ -599,7 +602,7 @@ namespace MiBand5WatchFaces
                     progress.CircleScale.RadiusX * 2,
                     progress.CircleScale.RadiusY * 2,
                     progress.CircleScale.StartAngle - 90,
-                    map(watchFaceState.Steps, 0, 10000, 0, progress.CircleScale.EndAngle));
+                    map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.CircleScale.EndAngle));
             }
         }
 
@@ -697,13 +700,13 @@ namespace MiBand5WatchFaces
             HeartProgress heartProgress = _heartprog != null ? _heartprog : watchface.HeartProgress;
 
             if (heartProgress.Scale != null)
-                drawImage(watchface.imagesBuff[heartProgress.Scale.StartImageIndex + map(watchFaceState.Pulse, 0, 140, 0, heartProgress.Scale.Segments.Count - 1)], heartProgress.Scale.Segments[map(watchFaceState.Pulse, 0, 140, 0, heartProgress.Scale.Segments.Count - 1)].getPoint());
+                drawImage(watchface.imagesBuff[heartProgress.Scale.StartImageIndex + map(watchFaceState.Pulse, 0, watchFaceState.PulseGoal, 0, heartProgress.Scale.Segments.Count - 1)], heartProgress.Scale.Segments[map(watchFaceState.Pulse, 0, 140, 0, heartProgress.Scale.Segments.Count - 1)].getPoint());
 
             if (heartProgress.LineScale != null)
-                drawImage(watchface.imagesBuff[heartProgress.LineScale.ImageIndex + map(watchFaceState.Pulse, 0, 140, 0, heartProgress.LineScale.ImagesCount - 1)], heartProgress.LineScale.getPoint());
+                drawImage(watchface.imagesBuff[heartProgress.LineScale.ImageIndex + map(watchFaceState.Pulse, 0, watchFaceState.PulseGoal, 0, heartProgress.LineScale.ImagesCount - 1)], heartProgress.LineScale.getPoint());
 
             if (heartProgress.Linear != null)
-                for (int i = 0; i < map(watchFaceState.Pulse, 0, 140, 0, heartProgress.Linear.Segments.Count - 1); i++)
+                for (int i = 0; i < map(watchFaceState.Pulse, 0, watchFaceState.PulseGoal, 0, heartProgress.Linear.Segments.Count); i++)
                     drawImage(watchface.imagesBuff[heartProgress.Linear.StartImageIndex + i], heartProgress.Linear.Segments[i].getPoint());
         }
 
@@ -730,10 +733,10 @@ namespace MiBand5WatchFaces
 
             if (calories.LineScale != null)
                 if (watchFaceState.Calories > 0)
-                    drawImage(watchface.imagesBuff[calories.LineScale.ImageIndex + map(watchFaceState.Calories, 0, 9000, 0, calories.LineScale.ImagesCount - 1)], calories.LineScale.getPoint());
+                    drawImage(watchface.imagesBuff[calories.LineScale.ImageIndex + map(watchFaceState.Calories, 0, watchFaceState.CaloriesGoal, 0, calories.LineScale.ImagesCount - 1)], calories.LineScale.getPoint());
 
             if (calories.Linear != null)
-                for (int i = 0; i < map(watchFaceState.Calories, 0, 9000, 0, calories.Linear.Segments.Count - 1); i++)
+                for (int i = 0; i < map(watchFaceState.Calories, 0, watchFaceState.CaloriesGoal, 0, calories.Linear.Segments.Count); i++)
                     drawImage(watchface.imagesBuff[calories.Linear.StartImageIndex + i], calories.Linear.Segments[i].getPoint());
 
             if (calories.CircleScale != null)

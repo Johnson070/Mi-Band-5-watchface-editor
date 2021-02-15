@@ -19,7 +19,6 @@ namespace MiBand5WatchFaces
     {
         WatchFaceLibrary watchFace = new WatchFaceLibrary();
         StateWatchface state = new StateWatchface();
-        bool stateStatic = true;
 
         public MainForm()
         {
@@ -58,7 +57,7 @@ namespace MiBand5WatchFaces
         {
             try
             {
-                state = stateStatic ? state : new StateWatchface();
+                state = state.notGen == false ? state : new StateWatchface() { notGen = true};
                 VisualRender render = new VisualRender(watchFace,state);
                 watchfacePreviewImage.Image = render.GenWatchface();
             }
@@ -214,7 +213,20 @@ namespace MiBand5WatchFaces
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Clipboard.SetText(JsonConvert.SerializeObject(watchFace,Formatting.Indented,new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+            MessageBox.Show("Json saved to clipboard!", "Succeful!");
+        }
 
+        private void SetWatchfaceState_Click(object sender, EventArgs e)
+        {
+            WatchfaceStateEditor watchfaceStateEditor = new WatchfaceStateEditor(state, watchFace);
+            watchfaceStateEditor.ShowDialog();
+
+            if (watchfaceStateEditor.save)
+            {
+                state = watchfaceStateEditor.state;
+                RenderButton_Click(null, null);
+            }
         }
     }
 }
