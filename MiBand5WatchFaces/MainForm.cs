@@ -154,6 +154,18 @@ namespace MiBand5WatchFaces
                 }
                 dateForm.Dispose();
             }
+            else if (type == typeof(Weather))
+            {
+                WeatherForm weatherForm = new WeatherForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                weatherForm.ShowDialog();
+
+                if (weatherForm.Save)
+                {
+                    watchFace = weatherForm.watch;
+                    RenderButton_Click(null, null);
+                }
+                weatherForm.Dispose();
+            }
 
             updateListElements();
             //}
@@ -227,6 +239,19 @@ namespace MiBand5WatchFaces
                 state = watchfaceStateEditor.state;
                 RenderButton_Click(null, null);
             }
+        }
+
+        private void weatherToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WeatherForm weatherForm = new WeatherForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            weatherForm.ShowDialog();
+
+            if (weatherForm.Save)
+            {
+                watchFace = weatherForm.watch;
+                RenderButton_Click(null, null);
+            }
+            weatherForm.Dispose();
         }
     }
 }

@@ -120,6 +120,8 @@ namespace MiBand5WatchFaces
     public class Pulse
     {
         public Number Number;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int PrefixImageIndex = -10000;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
@@ -132,6 +134,8 @@ namespace MiBand5WatchFaces
     public class Distance
     {
         public Number Number;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int KmSuffixImageIndex = -10000;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
@@ -162,6 +166,8 @@ namespace MiBand5WatchFaces
     public class Alarm
     {
         public Number Text;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
         [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
         public ImageBasic ImageOn;
@@ -235,7 +241,7 @@ namespace MiBand5WatchFaces
     public class Background
     {
         public ImageBasic Image;
-        public string BackgroundColor;
+        public string BackgroundColor = null;
         public ImageBasic Preview1;
         public ImageBasic Preview2;
         public ImageBasic Preview3;
@@ -335,12 +341,16 @@ namespace MiBand5WatchFaces
     public class OneLineMonthAndDay
     {
         public Number Number;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
     }
 
     public class OneLineWithYear
     {
         public Number Number;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
     }
 
@@ -438,16 +448,26 @@ namespace MiBand5WatchFaces
     public class TemperatureNumber
     {
         public Number Number;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int MinusImageIndex = -10000;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int DegreesImageIndex = -10000;
     }
 
     public class OneLineTemperature
     {
         public Number Number;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int MinusSignImageIndex = -10000;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
-        public bool AppendDegreesForBoth;
+        public bool AppendDegreesForBoth = true;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int DegreesImageIndex = -10000;
     }
 
@@ -519,8 +539,14 @@ namespace MiBand5WatchFaces
     public class Wind
     {
         public Number Text;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int ImageSuffixEN = -10000;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int ImageSuffixCN1 = -10000;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int ImageSufficCN2 = -10000;
         public ImageBasic ImagePosSuffixEN;
         public ImageBasic ImagePosSuffixCN1;
@@ -530,7 +556,7 @@ namespace MiBand5WatchFaces
     public class WeatherIcon
     {
         public Coordinates Coordinates;
-        public CustomWeatherIcon CustomIcon;
+        public ImageSet CustomIcon;
         public XY Unknown3;
         public XY Unknown4;
     }
@@ -556,7 +582,11 @@ namespace MiBand5WatchFaces
     public class StatusSimpleSpecial
     {
         public StatusNumber StatusImage;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int ImageIndexOn = -10000;
+        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(-10000)]
         public int ImageIndexOff = -10000;
     }
 

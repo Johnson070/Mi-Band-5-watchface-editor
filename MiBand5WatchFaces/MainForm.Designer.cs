@@ -44,7 +44,7 @@
             this.animationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.heartProgressToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weekDaysIconsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stepsProgressToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.caloriesProgressToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.alarmToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusSimplifiedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
@@ -93,7 +93,7 @@
             this.animationToolStripMenuItem,
             this.heartProgressToolStripMenuItem,
             this.weekDaysIconsToolStripMenuItem,
-            this.stepsProgressToolStripMenuItem1,
+            this.caloriesProgressToolStripMenuItem1,
             this.alarmToolStripMenuItem,
             this.statusSimplifiedToolStripMenuItem});
             this.AddElement.Image = ((System.Drawing.Image)(resources.GetObject("AddElement.Image")));
@@ -105,95 +105,96 @@
             // backgroundToolStripMenuItem
             // 
             this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
-            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.backgroundToolStripMenuItem.Text = "Background";
             this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.backgroundToolStripMenuItem_Click);
             // 
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.timeToolStripMenuItem.Text = "Time";
             this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
             // activityToolStripMenuItem
             // 
             this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
-            this.activityToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.activityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.activityToolStripMenuItem.Text = "Activity";
             this.activityToolStripMenuItem.Click += new System.EventHandler(this.activityToolStripMenuItem_Click);
             // 
             // dateToolStripMenuItem
             // 
             this.dateToolStripMenuItem.Name = "dateToolStripMenuItem";
-            this.dateToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.dateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.dateToolStripMenuItem.Text = "Date";
             this.dateToolStripMenuItem.Click += new System.EventHandler(this.dateToolStripMenuItem_Click);
             // 
             // weatherToolStripMenuItem
             // 
             this.weatherToolStripMenuItem.Name = "weatherToolStripMenuItem";
-            this.weatherToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.weatherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.weatherToolStripMenuItem.Text = "Weather";
+            this.weatherToolStripMenuItem.Click += new System.EventHandler(this.weatherToolStripMenuItem_Click);
             // 
             // stepsProgressToolStripMenuItem
             // 
             this.stepsProgressToolStripMenuItem.Name = "stepsProgressToolStripMenuItem";
-            this.stepsProgressToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.stepsProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stepsProgressToolStripMenuItem.Text = "StepsProgress";
             // 
             // statusToolStripMenuItem
             // 
             this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
-            this.statusToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.statusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.statusToolStripMenuItem.Text = "Status";
             // 
             // batteryToolStripMenuItem
             // 
             this.batteryToolStripMenuItem.Name = "batteryToolStripMenuItem";
-            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.batteryToolStripMenuItem.Text = "Battery";
             // 
             // analogDialFaceToolStripMenuItem
             // 
             this.analogDialFaceToolStripMenuItem.Name = "analogDialFaceToolStripMenuItem";
-            this.analogDialFaceToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.analogDialFaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.analogDialFaceToolStripMenuItem.Text = "AnalogDialFace";
             // 
             // animationToolStripMenuItem
             // 
             this.animationToolStripMenuItem.Name = "animationToolStripMenuItem";
-            this.animationToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.animationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.animationToolStripMenuItem.Text = "Animation";
             // 
             // heartProgressToolStripMenuItem
             // 
             this.heartProgressToolStripMenuItem.Name = "heartProgressToolStripMenuItem";
-            this.heartProgressToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.heartProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.heartProgressToolStripMenuItem.Text = "HeartProgress";
             // 
             // weekDaysIconsToolStripMenuItem
             // 
             this.weekDaysIconsToolStripMenuItem.Name = "weekDaysIconsToolStripMenuItem";
-            this.weekDaysIconsToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.weekDaysIconsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.weekDaysIconsToolStripMenuItem.Text = "WeekDaysIcons";
             // 
-            // stepsProgressToolStripMenuItem1
+            // caloriesProgressToolStripMenuItem1
             // 
-            this.stepsProgressToolStripMenuItem1.Name = "stepsProgressToolStripMenuItem1";
-            this.stepsProgressToolStripMenuItem1.Size = new System.Drawing.Size(159, 22);
-            this.stepsProgressToolStripMenuItem1.Text = "StepsProgress";
+            this.caloriesProgressToolStripMenuItem1.Name = "caloriesProgressToolStripMenuItem1";
+            this.caloriesProgressToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.caloriesProgressToolStripMenuItem1.Text = "CaloriesProgress";
             // 
             // alarmToolStripMenuItem
             // 
             this.alarmToolStripMenuItem.Name = "alarmToolStripMenuItem";
-            this.alarmToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.alarmToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alarmToolStripMenuItem.Text = "Alarm";
             // 
             // statusSimplifiedToolStripMenuItem
             // 
             this.statusSimplifiedToolStripMenuItem.Name = "statusSimplifiedToolStripMenuItem";
-            this.statusSimplifiedToolStripMenuItem.Size = new System.Drawing.Size(159, 22);
+            this.statusSimplifiedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.statusSimplifiedToolStripMenuItem.Text = "StatusSimplified";
             // 
             // toolStripDropDownButton1
@@ -346,7 +347,7 @@
         private System.Windows.Forms.ToolStripMenuItem animationToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem heartProgressToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem weekDaysIconsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stepsProgressToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem caloriesProgressToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem alarmToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem statusSimplifiedToolStripMenuItem;
         private System.Windows.Forms.GroupBox groupBox1;

@@ -110,7 +110,7 @@ namespace MiBand5WatchFaces.Forms
                 watchface.Date.MonthAndDayAndYear = watchface.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watchface.Date.MonthAndDayAndYear;
                 watchface.Date.MonthAndDayAndYear.Separate = watchface.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watchface.Date.MonthAndDayAndYear.Separate;
                 watchface.Date.MonthAndDayAndYear.Separate.Month = watchface.Date.MonthAndDayAndYear.Separate.Month == null ? new Number() { notDraw = true } : watchface.Date.MonthAndDayAndYear.Separate.Month;
-                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Date.MonthAndDayAndYear.Separate.Month, watch.imagesBuff.DeepCopy(), state,10);
+                NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Date.MonthAndDayAndYear.Separate.Month, watch.imagesBuff.DeepCopy(), state, 10);
                 numForm.ShowDialog();
 
                 if (numForm.saved && numForm.number.ImageIndex != -10000)
@@ -122,7 +122,8 @@ namespace MiBand5WatchFaces.Forms
                 }
                 else if (numForm.saved)
                 {
-                    watch.Date.MonthAndDayAndYear.Separate.Month = null;
+                    if (watch.Date?.MonthAndDayAndYear?.Separate?.Month != null)
+                        watch.Date.MonthAndDayAndYear.Separate.Month = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
                     AddMonthSeparateButton.Text = "Add month";
                 }
@@ -132,7 +133,7 @@ namespace MiBand5WatchFaces.Forms
                 watchface.Date.MonthAndDayAndYear = watchface.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watchface.Date.MonthAndDayAndYear;
                 watchface.Date.MonthAndDayAndYear.Separate = watchface.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watchface.Date.MonthAndDayAndYear.Separate;
                 watchface.Date.MonthAndDayAndYear.Separate.MonthsEN = watchface.Date.MonthAndDayAndYear.Separate.MonthsEN == null ? new ImageSet() : watchface.Date.MonthAndDayAndYear.Separate.MonthsEN;
-                ImageSetForm imageSetForm = new ImageSetForm(watchface, watchface.Date.MonthAndDayAndYear.Separate.MonthsEN, watch.imagesBuff.DeepCopy(), state,12);
+                ImageSetForm imageSetForm = new ImageSetForm(watchface, watchface.Date.MonthAndDayAndYear.Separate.MonthsEN, watch.imagesBuff.DeepCopy(), state, 12);
                 imageSetForm.ShowDialog();
 
                 if (imageSetForm.saved && imageSetForm.imageSet.ImageIndex != -10000)
@@ -144,7 +145,8 @@ namespace MiBand5WatchFaces.Forms
                 }
                 else if (imageSetForm.saved)
                 {
-                    watch.Date.MonthAndDayAndYear.Separate.MonthsEN = null ;
+                    if (watch.Date?.MonthAndDayAndYear?.Separate?.MonthsEN != null)
+                        watch.Date.MonthAndDayAndYear.Separate.MonthsEN = null;
                     watch.imagesBuff = imageSetForm.watch.imagesBuff;
                     AddMonthImagesSeparateButton.Text = "Add month images";
                 }
@@ -166,7 +168,8 @@ namespace MiBand5WatchFaces.Forms
                 }
                 else if (numForm.saved)
                 {
-                    watch.Date.MonthAndDayAndYear.Separate.Day = null;
+                    if (watch.Date?.MonthAndDayAndYear?.Separate?.Day != null)
+                        watch.Date.MonthAndDayAndYear.Separate.Day = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
                     AddDaySeparateButton.Text = "Add day";
                 }
@@ -189,7 +192,8 @@ namespace MiBand5WatchFaces.Forms
                 }
                 else if (numForm.saved)
                 {
-                    watch.Date.MonthAndDayAndYear.OneLine = null;
+                    if (watch.Date?.MonthAndDayAndYear?.OneLine != null)
+                        watch.Date.MonthAndDayAndYear.OneLine = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
                     AddMonthAndDayOnelineButton.Text = "Add month and day";
                     AddOnelineDelimeterImageButton.Text = "Add delimeter image";
@@ -214,7 +218,8 @@ namespace MiBand5WatchFaces.Forms
                 }
                 else if (numForm.saved)
                 {
-                    watch.Date.MonthAndDayAndYear.OneLineWithYear = null;
+                    if (watch.Date?.MonthAndDayAndYear?.OneLineWithYear != null)
+                        watch.Date.MonthAndDayAndYear.OneLineWithYear = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
                     addOnelineWithYearMonthDayYearButton.Text = "Add month and day and year";
                     addOnelineWithYearDelimeterImageButton.Text = "Add delimeter image";
@@ -408,6 +413,8 @@ namespace MiBand5WatchFaces.Forms
                 }
                 if (AmPmCheckbox.Checked == false) watch.Date.DayAmPm = null;
                 if (weekdaysCheckbox.Checked == false) watch.Date.ENWeekDays = null;
+                if (watch.Date.DayAmPm == null && watch.Date.ENWeekDays == null && watch.Date.MonthAndDayAndYear == null)
+                    watch.Date = null;
             }
         }
 
@@ -429,6 +436,8 @@ namespace MiBand5WatchFaces.Forms
                     watch.Date.DayAmPm = null;
             if (AmPmCheckbox.Checked == false) watch.Date.DayAmPm = null;
             if (weekdaysCheckbox.Checked == false) watch.Date.ENWeekDays = null;
+            if (watch.Date.DayAmPm == null && watch.Date.ENWeekDays == null && watch.Date.MonthAndDayAndYear == null)
+                watch.Date = null;
             this.Close();
         }
     }

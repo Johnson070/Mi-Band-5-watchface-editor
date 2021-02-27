@@ -533,6 +533,8 @@ namespace MiBand5WatchFaces.Forms
             if (pulseCheckBox.Checked == false) watch.Activity.Pulse = null;
             if (distanceCheckBox.Checked == false) watch.Activity.Distance = null;
             if (paiCheckBox.Checked == false) watch.Activity.PAI = null;
+            if (watch.Activity.Steps == null && watch.Activity.Calories == null && watch.Activity.Pulse == null && watch.Activity.Distance == null && watch.Activity.PAI == null)
+                watch.Activity = null;
             this.Close();
         }
 
@@ -546,6 +548,8 @@ namespace MiBand5WatchFaces.Forms
                 if (pulseCheckBox.Checked == false) watch.Activity.Pulse = null;
                 if (distanceCheckBox.Checked == false) watch.Activity.Distance = null;
                 if (paiCheckBox.Checked == false) watch.Activity.PAI = null;
+                if (watch.Activity.Steps == null && watch.Activity.Calories == null && watch.Activity.Pulse == null && watch.Activity.Distance == null && watch.Activity.PAI == null)
+                    watch.Activity = null;
             }
         }
     }
