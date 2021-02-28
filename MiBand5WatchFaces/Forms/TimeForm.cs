@@ -333,7 +333,7 @@ namespace MiBand5WatchFaces.Forms
             NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Time.TimeZone1, watch.imagesBuff.DeepCopy(), state,10);
             numForm.ShowDialog();
 
-            if (numForm.saved && numForm.number.ImageIndex != -10000)
+            if (numForm.saved && numForm.number.ImageIndex >= 0)
             {
                 watch.Time.TimeZone1 = numForm.number;
                 watch.imagesBuff = numForm.watch.imagesBuff;
@@ -364,7 +364,7 @@ namespace MiBand5WatchFaces.Forms
             NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Time.TimeZone2, watch.imagesBuff.DeepCopy(), state,10);
             numForm.ShowDialog();
 
-            if (numForm.saved && numForm.number.ImageIndex != -10000)
+            if (numForm.saved && numForm.number.ImageIndex >= 0)
             {
                 watch.Time.TimeZone2 = numForm.number;
                 watch.imagesBuff = numForm.watch.imagesBuff;
@@ -396,7 +396,7 @@ namespace MiBand5WatchFaces.Forms
 
             if (btn.Name == "TZ1DelimeterBtn")
             {
-                if (watch.Time.TimeZone1DelimiterImage != -10000) selImg = new List<int>() { watch.Time.TimeZone1DelimiterImage };
+                if (watch.Time.TimeZone1DelimiterImage >= 0) selImg = new List<int>() { watch.Time.TimeZone1DelimiterImage };
 
                 imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
@@ -416,7 +416,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (btn.Name == "TZ2DelimeterBtn")
             {
-                if (watch.Time.TimeZone2DelimiterImage != -10000) selImg = new List<int>() { watch.Time.TimeZone2DelimiterImage };
+                if (watch.Time.TimeZone2DelimiterImage >= 0) selImg = new List<int>() { watch.Time.TimeZone2DelimiterImage };
 
                 imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
@@ -454,7 +454,7 @@ namespace MiBand5WatchFaces.Forms
                 }
                 else
                 {
-                    if (watch.Time.TimeZone1NoTime != null && watch.Time?.TimeZone1NoTime?.ImageIndex != -10000) selImg = new List<int>() { watch.Time.TimeZone1NoTime.ImageIndex };
+                    if (watch.Time.TimeZone1NoTime != null && watch.Time?.TimeZone1NoTime?.ImageIndex >= 0) selImg = new List<int>() { watch.Time.TimeZone1NoTime.ImageIndex };
 
                     imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();
@@ -491,7 +491,7 @@ namespace MiBand5WatchFaces.Forms
                 }
                 else
                 {
-                    if (watch.Time.TimeZone2NoTime != null && watch.Time?.TimeZone2NoTime?.ImageIndex != -10000) selImg = new List<int>() { watch.Time.TimeZone2NoTime.ImageIndex };
+                    if (watch.Time.TimeZone2NoTime != null && watch.Time?.TimeZone2NoTime?.ImageIndex >= 0) selImg = new List<int>() { watch.Time.TimeZone2NoTime.ImageIndex };
 
                     imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();

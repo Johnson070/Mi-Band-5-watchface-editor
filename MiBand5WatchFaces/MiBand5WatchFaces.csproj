@@ -115,6 +115,12 @@
     <Compile Include="Forms\BackgroundForm.Designer.cs">
       <DependentUpon>BackgroundForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\BatteryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BatteryForm.Designer.cs">
+      <DependentUpon>BatteryForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -211,6 +217,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BackgroundForm.resx">
       <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BatteryForm.resx">
+      <DependentUpon>BatteryForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DateForm.resx">
       <DependentUpon>DateForm.cs</DependentUpon>

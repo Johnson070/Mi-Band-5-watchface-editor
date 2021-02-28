@@ -46,8 +46,8 @@ namespace MiBand5WatchFaces.Forms
             if (watch.Status.Bluetooth != null)
             {
                 bluetoothCheckbox.Checked = true;
-                if (watch.Status.Bluetooth.ImageIndexOn != -10000) AddImageONBluetooth.Text = "Edit image ON";
-                if (watch.Status.Bluetooth.ImageIndexOff != -10000) AddImageOFFBluetooth.Text = "Edit image OFF";
+                if (watch.Status.Bluetooth.ImageIndexOn >= 0) AddImageONBluetooth.Text = "Edit image ON";
+                if (watch.Status.Bluetooth.ImageIndexOff >= 0) AddImageOFFBluetooth.Text = "Edit image OFF";
                 posXBluetooth.Value = watch.Status.Bluetooth.Coordinates.X;
                 posYBluetooth.Value = watch.Status.Bluetooth.Coordinates.Y;
                 if (watch.Status.Bluetooth.ImageIndexOn >= 0 || watch.Status.Bluetooth.ImageIndexOff >= 0)
@@ -59,8 +59,8 @@ namespace MiBand5WatchFaces.Forms
             if (watch.Status.Lock != null)
             {
                 lockCheckbox.Checked = true;
-                if (watch.Status.Lock.ImageIndexOn != -10000) AddImageONLock.Text = "Edit image ON";
-                if (watch.Status.Lock.ImageIndexOff != -10000) AddImageOFFLock.Text = "Edit image OFF";
+                if (watch.Status.Lock.ImageIndexOn >= 0) AddImageONLock.Text = "Edit image ON";
+                if (watch.Status.Lock.ImageIndexOff >= 0) AddImageOFFLock.Text = "Edit image OFF";
                 posXLock.Value = watch.Status.Lock.Coordinates.X;
                 posYLock.Value = watch.Status.Lock.Coordinates.Y;
                 if (watch.Status.Lock.ImageIndexOn >= 0 || watch.Status.Lock.ImageIndexOff >= 0)
@@ -72,8 +72,8 @@ namespace MiBand5WatchFaces.Forms
             if (watch.Status.DoNotDisturb != null)
             {
                 dndCheclbox.Checked = true;
-                if (watch.Status.DoNotDisturb.ImageIndexOn != -10000) AddImageONDND.Text = "Edit image ON";
-                if (watch.Status.DoNotDisturb.ImageIndexOff != -10000) AddImageOFFDND.Text = "Edit image OFF";
+                if (watch.Status.DoNotDisturb.ImageIndexOn >= 0) AddImageONDND.Text = "Edit image ON";
+                if (watch.Status.DoNotDisturb.ImageIndexOff >= 0) AddImageOFFDND.Text = "Edit image OFF";
                 posXDND.Value = watch.Status.DoNotDisturb.Coordinates.X;
                 posYDND.Value = watch.Status.DoNotDisturb.Coordinates.Y;
                 if (watch.Status.DoNotDisturb.ImageIndexOn >= 0 || watch.Status.DoNotDisturb.ImageIndexOff >= 0)

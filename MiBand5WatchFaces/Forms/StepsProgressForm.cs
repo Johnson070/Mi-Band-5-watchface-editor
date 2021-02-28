@@ -74,7 +74,9 @@ namespace MiBand5WatchFaces.Forms
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
             watchface.StepsProgress.Linear = watchface.StepsProgress.Linear == null ? new Scale() : watchface.StepsProgress.Linear;
-            ScaleForm scaleForm = new ScaleForm(watchface, watchface.StepsProgress.Linear, watch.imagesBuff.DeepCopy(), state);
+            StateWatchface stepsState = DeepCopy(state);
+            stepsState.Steps = 10000;
+            ScaleForm scaleForm = new ScaleForm(watchface, watchface.StepsProgress.Linear, watch.imagesBuff.DeepCopy(), stepsState);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved == true)
@@ -84,7 +86,7 @@ namespace MiBand5WatchFaces.Forms
 
                 AddLinearImages.Text = "Edit images";
             }
-            else if (scaleForm.saved == true && scaleForm.scale.StartImageIndex == -10000)
+            else if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
             {
                 watch.StepsProgress.Linear = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
@@ -121,7 +123,7 @@ namespace MiBand5WatchFaces.Forms
         {
             List<int> selImg = null;
             ImagesForm imgForm;
-            if (watch.StepsProgress.LineScale.ImageIndex != -10000)
+            if (watch.StepsProgress.LineScale.ImageIndex >= 0)
             {
                 selImg = new List<int>();
 
@@ -174,9 +176,7 @@ namespace MiBand5WatchFaces.Forms
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
             watchface.StepsProgress.CircleScale = watchface.StepsProgress.CircleScale == null ? new CircleScale() : watchface.StepsProgress.CircleScale;
-            StateWatchface stepsState = state;
-            stepsState.Steps = 10000;
-            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.StepsProgress.CircleScale, watch.imagesBuff.DeepCopy(), stepsState);
+            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.StepsProgress.CircleScale, watch.imagesBuff.DeepCopy(), state);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved)

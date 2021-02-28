@@ -346,7 +346,7 @@ namespace MiBand5WatchFaces
                 if (ImagesListBox.Items.Count > 1)
                     if (e.Index == 0 && ImagesListBox.GetItemChecked(e.Index + 1) == false) e.NewValue = CheckState.Unchecked;
                     else if (e.Index == ImagesListBox.Items.Count - 1 && ImagesListBox.GetItemChecked(e.Index - 1) == false) e.NewValue = CheckState.Unchecked;
-                    else if ((ImagesListBox.GetItemChecked(e.Index + 1) == false && ImagesListBox.GetItemChecked(e.Index - 1) == false) && count > 0) e.NewValue = CheckState.Unchecked;
+                    else if (ImagesListBox.Items.Count > e.Index + 1 && (ImagesListBox.GetItemChecked(e.Index + 1) == false && ImagesListBox.GetItemChecked(e.Index - 1) == false) && count > 0) e.NewValue = CheckState.Unchecked;
 
 
                 if (countImagesSelect != -1)

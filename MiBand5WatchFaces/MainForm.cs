@@ -191,6 +191,18 @@ namespace MiBand5WatchFaces
 
                 statusForm.Dispose();
             }
+            else if (type == typeof(Battery))
+            {
+                BatteryForm batteryForm = new BatteryForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                batteryForm.ShowDialog();
+
+                if (batteryForm.Save)
+                {
+                    watchFace = batteryForm.watch;
+                    RenderButton_Click(null, null);
+                }
+                batteryForm.Dispose();
+            }
 
             updateListElements();
             //}
@@ -304,6 +316,19 @@ namespace MiBand5WatchFaces
             }
 
             statusForm.Dispose();
+        }
+
+        private void batteryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BatteryForm batteryForm = new BatteryForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            batteryForm.ShowDialog();
+
+            if (batteryForm.Save)
+            {
+                watchFace = batteryForm.watch;
+                RenderButton_Click(null, null);
+            }
+            batteryForm.Dispose();
         }
     }
 }

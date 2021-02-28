@@ -35,7 +35,7 @@ namespace MiBand5WatchFaces.Forms
             this.watch.imagesBuff = images;
             this.state = state;
 
-            if (scale.StartImageIndex != -10000)
+            if (scale.StartImageIndex >= 0)
             {
                 for (int i = 0; i < scale.Segments.Count; i++)
                     ImagesComboBox.Items.Add(i);
@@ -55,7 +55,7 @@ namespace MiBand5WatchFaces.Forms
         private void selectImages_Click(object sender, EventArgs e)
         {
             List<int> selImg = null;
-            if (scale.StartImageIndex != -10000)
+            if (scale.StartImageIndex >= 0)
             {
                 selImg = new List<int>();
 

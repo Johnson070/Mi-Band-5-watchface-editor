@@ -57,7 +57,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     AddMonthAndDayOnelineButton.Text = "Edit month and day";
                     AddOnelineDelimeterImageButton.Enabled = true;
-                    AddOnelineDelimeterImageButton.Text = watch.Date.MonthAndDayAndYear.OneLine.DelimiterImageIndex != -10000 ? "Edit delimeter image" : AddOnelineDelimeterImageButton.Text;
+                    AddOnelineDelimeterImageButton.Text = watch.Date.MonthAndDayAndYear.OneLine.DelimiterImageIndex >= 0 ? "Edit delimeter image" : AddOnelineDelimeterImageButton.Text;
                 }
             }
             if (watch.Date?.MonthAndDayAndYear?.OneLineWithYear != null)
@@ -67,7 +67,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     addOnelineWithYearMonthDayYearButton.Text = "Edit month and day";
                     addOnelineWithYearDelimeterImageButton.Enabled = true;
-                    addOnelineWithYearDelimeterImageButton.Text = watch.Date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex != -10000 ? "Edit delimeter image" : addOnelineWithYearDelimeterImageButton.Text;
+                    addOnelineWithYearDelimeterImageButton.Text = watch.Date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex >= 0 ? "Edit delimeter image" : addOnelineWithYearDelimeterImageButton.Text;
                 }
             }
             if (watch.Date?.MonthAndDayAndYear?.Separate != null || watch.Date?.MonthAndDayAndYear?.OneLine != null || watch.Date?.MonthAndDayAndYear?.OneLineWithYear != null)
@@ -80,8 +80,8 @@ namespace MiBand5WatchFaces.Forms
 
             if (watch.Date?.DayAmPm != null)
             {
-                if (watch.Date.DayAmPm.ImageIndexAMEN != -10000) AddAMImageButton.Text = "Edit AM image";
-                if (watch.Date.DayAmPm.ImageIndexPMEN != -10000) AddPMImageButton.Text = "Edit PM image";
+                if (watch.Date.DayAmPm.ImageIndexAMEN >= 0) AddAMImageButton.Text = "Edit AM image";
+                if (watch.Date.DayAmPm.ImageIndexPMEN >= 0) AddPMImageButton.Text = "Edit PM image";
                 posXNumAMPM.Value = watch.Date.DayAmPm.X;
                 posYNumAMPM.Value = watch.Date.DayAmPm.Y;
                 posXNumAMPM.Enabled = true;
@@ -92,7 +92,7 @@ namespace MiBand5WatchFaces.Forms
             if (watch.Date?.ENWeekDays != null)
             {
                 weekdaysCheckbox.Checked = true;
-                if (watch.Date.ENWeekDays.ImageIndex != -10000) addWeekDays.Text = "Edit week day images";
+                if (watch.Date.ENWeekDays.ImageIndex >= 0) addWeekDays.Text = "Edit week day images";
             }
 
             checkStateChanged(null, null);
@@ -111,7 +111,7 @@ namespace MiBand5WatchFaces.Forms
                 NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Date.MonthAndDayAndYear.Separate.Month, watch.imagesBuff.DeepCopy(), state, 10);
                 numForm.ShowDialog();
 
-                if (numForm.saved && numForm.number.ImageIndex != -10000)
+                if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
                     watch.Date.MonthAndDayAndYear.Separate = watch.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watch.Date.MonthAndDayAndYear.Separate;
                     watch.Date.MonthAndDayAndYear.Separate.Month = numForm.number;
@@ -134,7 +134,7 @@ namespace MiBand5WatchFaces.Forms
                 ImageSetForm imageSetForm = new ImageSetForm(watchface, watchface.Date.MonthAndDayAndYear.Separate.MonthsEN, watch.imagesBuff.DeepCopy(), state, 12);
                 imageSetForm.ShowDialog();
 
-                if (imageSetForm.saved && imageSetForm.imageSet.ImageIndex != -10000)
+                if (imageSetForm.saved && imageSetForm.imageSet.ImageIndex >= 0)
                 {
                     watch.Date.MonthAndDayAndYear.Separate = watch.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watchface.Date.MonthAndDayAndYear.Separate;
                     watch.Date.MonthAndDayAndYear.Separate.MonthsEN = imageSetForm.imageSet;
@@ -157,7 +157,7 @@ namespace MiBand5WatchFaces.Forms
                 NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Date.MonthAndDayAndYear.Separate.Day, watch.imagesBuff.DeepCopy(), state, 10);
                 numForm.ShowDialog();
 
-                if (numForm.saved && numForm.number.ImageIndex != -10000)
+                if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
                     watch.Date.MonthAndDayAndYear.Separate = watch.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watchface.Date.MonthAndDayAndYear.Separate;
                     watch.Date.MonthAndDayAndYear.Separate.Day = numForm.number;
@@ -180,7 +180,7 @@ namespace MiBand5WatchFaces.Forms
                 NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Date.MonthAndDayAndYear.OneLine.Number, watch.imagesBuff.DeepCopy(), state, 10);
                 numForm.ShowDialog();
 
-                if (numForm.saved && numForm.number.ImageIndex != -10000)
+                if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
                     watch.Date.MonthAndDayAndYear.OneLine = watch.Date.MonthAndDayAndYear.OneLine == null ? watchface.Date.MonthAndDayAndYear.OneLine : new OneLineMonthAndDay();
                     watch.Date.MonthAndDayAndYear.OneLine.Number = numForm.number;
@@ -206,7 +206,7 @@ namespace MiBand5WatchFaces.Forms
                 NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Date.MonthAndDayAndYear.OneLineWithYear.Number, watch.imagesBuff.DeepCopy(), state, 10);
                 numForm.ShowDialog();
 
-                if (numForm.saved && numForm.number.ImageIndex != -10000)
+                if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
                     watch.Date.MonthAndDayAndYear.OneLineWithYear = watch.Date.MonthAndDayAndYear.OneLineWithYear == null ? new OneLineWithYear() : watchface.Date.MonthAndDayAndYear.OneLineWithYear;
                     watch.Date.MonthAndDayAndYear.OneLineWithYear.Number = numForm.number;
@@ -242,7 +242,7 @@ namespace MiBand5WatchFaces.Forms
 
             if (btn.Name == "AddOnelineDelimeterImageButton")
             {
-                if (watch.Date.MonthAndDayAndYear?.OneLine?.DelimiterImageIndex != -10000) selImg = new List<int>() { watch.Date.MonthAndDayAndYear.OneLine.DelimiterImageIndex };
+                if (watch.Date.MonthAndDayAndYear?.OneLine?.DelimiterImageIndex >= 0) selImg = new List<int>() { watch.Date.MonthAndDayAndYear.OneLine.DelimiterImageIndex };
 
                 imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
@@ -262,7 +262,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (btn.Name == "addOnelineWithYearDelimeterImageButton")
             {
-                if (watch.Date.MonthAndDayAndYear?.OneLineWithYear?.DelimiterImageIndex != -10000) selImg = new List<int>() { watch.Date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex };
+                if (watch.Date.MonthAndDayAndYear?.OneLineWithYear?.DelimiterImageIndex >= 0) selImg = new List<int>() { watch.Date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex };
 
                 imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
@@ -282,7 +282,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (btn.Name == "AddAMImageButton")
             {
-                if (watch.Date?.DayAmPm?.ImageIndexAMEN != -10000) selImg = new List<int>() { watch.Date.DayAmPm.ImageIndexAMEN };
+                if (watch.Date?.DayAmPm?.ImageIndexAMEN >= 0) selImg = new List<int>() { watch.Date.DayAmPm.ImageIndexAMEN };
 
                 imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
@@ -303,7 +303,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (btn.Name == "AddPMImageButton")
             {
-                if (watch.Date?.DayAmPm?.ImageIndexPMEN != -10000) selImg = new List<int>() { watch.Date.DayAmPm.ImageIndexPMEN };
+                if (watch.Date?.DayAmPm?.ImageIndexPMEN >= 0) selImg = new List<int>() { watch.Date.DayAmPm.ImageIndexPMEN };
 
                 imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
@@ -360,7 +360,7 @@ namespace MiBand5WatchFaces.Forms
             ImageSetForm setForm = new ImageSetForm(watchface, watchface.Date.ENWeekDays, watch.imagesBuff.DeepCopy(), state, 7);
             setForm.ShowDialog();
 
-            if (setForm.saved && setForm.imageSet.ImageIndex != -10000)
+            if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.Date.ENWeekDays = setForm.imageSet;

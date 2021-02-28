@@ -56,7 +56,7 @@ namespace MiBand5WatchFaces
         private void selectImages_Click(object sender, EventArgs e)
         {
             List<int> selImg = null;
-            if (number != null && number.ImageIndex != -10000 && number.ImagesCount != 0)
+            if (number != null && number.ImageIndex >= 0 && number.ImagesCount != 0)
             {
                 selImg = new List<int>();
 
