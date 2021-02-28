@@ -14,7 +14,6 @@ namespace MiBand5WatchFaces.Forms
     public partial class TimeForm : Form
     {
         public WatchFaceLibrary watch;
-        public DefaultDictionary<int, Image> Images;
 
         StateWatchface state;
         VisualRender render;
@@ -27,7 +26,6 @@ namespace MiBand5WatchFaces.Forms
             InitializeComponent();
             this.watch = watch;
             watch.imagesBuff = Images;
-            this.Images = Images;
             this.state = state;
 
             this.watch.Time = watch.Time == null ? new Time() : watch.Time;
@@ -83,7 +81,7 @@ namespace MiBand5WatchFaces.Forms
                     for (int i = watch.Time.Hours.Ones.ImageIndex; i < watch.Time.Hours.Ones.ImageIndex + watch.Time.Hours.Ones.ImagesCount; i++)
                         selImg.Add(i);
                 }
-                imgForm = new ImagesForm(Images, selImg, true, true, true,10);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, true, true,10);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -105,7 +103,7 @@ namespace MiBand5WatchFaces.Forms
                     for (int i = watch.Time.Hours.Tens.ImageIndex; i < watch.Time.Hours.Tens.ImageIndex + watch.Time.Hours.Tens.ImagesCount; i++)
                         selImg.Add(i);
                 }
-                imgForm = new ImagesForm(Images, selImg, true, true, true,10);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, true, true,10);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -127,7 +125,7 @@ namespace MiBand5WatchFaces.Forms
                     for (int i = watch.Time.Minutes.Ones.ImageIndex; i < watch.Time.Minutes.Ones.ImageIndex + watch.Time.Minutes.Ones.ImagesCount; i++)
                         selImg.Add(i);
                 }
-                imgForm = new ImagesForm(Images, selImg, true, true, true,10);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, true, true,10);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -149,7 +147,7 @@ namespace MiBand5WatchFaces.Forms
                     for (int i = watch.Time.Minutes.Tens.ImageIndex; i < watch.Time.Minutes.Tens.ImageIndex + watch.Time.Minutes.Tens.ImagesCount; i++)
                         selImg.Add(i);
                 }
-                imgForm = new ImagesForm(Images, selImg, true, true, true,10);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, true, true,10);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -400,7 +398,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Time.TimeZone1DelimiterImage != -10000) selImg = new List<int>() { watch.Time.TimeZone1DelimiterImage };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -420,7 +418,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Time.TimeZone2DelimiterImage != -10000) selImg = new List<int>() { watch.Time.TimeZone2DelimiterImage };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -458,7 +456,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     if (watch.Time.TimeZone1NoTime != null && watch.Time?.TimeZone1NoTime?.ImageIndex != -10000) selImg = new List<int>() { watch.Time.TimeZone1NoTime.ImageIndex };
 
-                    imgForm = new ImagesForm(Images, selImg, true, false);
+                    imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();
 
                     if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -495,7 +493,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     if (watch.Time.TimeZone2NoTime != null && watch.Time?.TimeZone2NoTime?.ImageIndex != -10000) selImg = new List<int>() { watch.Time.TimeZone2NoTime.ImageIndex };
 
-                    imgForm = new ImagesForm(Images, selImg, true, false);
+                    imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();
 
                     if (imgForm.saveImages == true && imgForm.selectedImages != null)

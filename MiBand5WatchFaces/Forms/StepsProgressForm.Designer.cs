@@ -74,7 +74,7 @@ namespace MiBand5WatchFaces.Forms
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(518, 294);
+            this.tabControl1.Size = new System.Drawing.Size(466, 294);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -84,7 +84,7 @@ namespace MiBand5WatchFaces.Forms
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(510, 263);
+            this.tabPage1.Size = new System.Drawing.Size(458, 263);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Goal image";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -96,7 +96,7 @@ namespace MiBand5WatchFaces.Forms
             this.tabPage2.Location = new System.Drawing.Point(4, 27);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(510, 263);
+            this.tabPage2.Size = new System.Drawing.Size(458, 263);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Linear";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -107,7 +107,7 @@ namespace MiBand5WatchFaces.Forms
             this.tabPage3.Controls.Add(this.groupBox3);
             this.tabPage3.Location = new System.Drawing.Point(4, 27);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(510, 263);
+            this.tabPage3.Size = new System.Drawing.Size(458, 263);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Line scale";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -118,7 +118,7 @@ namespace MiBand5WatchFaces.Forms
             this.tabPage4.Controls.Add(this.groupBox4);
             this.tabPage4.Location = new System.Drawing.Point(4, 27);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(510, 263);
+            this.tabPage4.Size = new System.Drawing.Size(458, 263);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Circle scale";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -126,7 +126,7 @@ namespace MiBand5WatchFaces.Forms
             // ImagePic
             // 
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ImagePic.Location = new System.Drawing.Point(536, 12);
+            this.ImagePic.Location = new System.Drawing.Point(484, 12);
             this.ImagePic.Name = "ImagePic";
             this.ImagePic.Size = new System.Drawing.Size(126, 294);
             this.ImagePic.TabIndex = 13;
@@ -150,7 +150,7 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(504, 251);
+            this.groupBox1.Size = new System.Drawing.Size(452, 251);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "     ";
@@ -161,7 +161,7 @@ namespace MiBand5WatchFaces.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AddGoalImageButton.Location = new System.Drawing.Point(6, 23);
             this.AddGoalImageButton.Name = "AddGoalImageButton";
-            this.AddGoalImageButton.Size = new System.Drawing.Size(488, 54);
+            this.AddGoalImageButton.Size = new System.Drawing.Size(436, 54);
             this.AddGoalImageButton.TabIndex = 0;
             this.AddGoalImageButton.Text = "Add image";
             this.AddGoalImageButton.UseVisualStyleBackColor = true;
@@ -186,7 +186,7 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox2.Enabled = false;
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(504, 251);
+            this.groupBox2.Size = new System.Drawing.Size(452, 251);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "     ";
@@ -197,7 +197,7 @@ namespace MiBand5WatchFaces.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AddLinearImages.Location = new System.Drawing.Point(6, 23);
             this.AddLinearImages.Name = "AddLinearImages";
-            this.AddLinearImages.Size = new System.Drawing.Size(488, 54);
+            this.AddLinearImages.Size = new System.Drawing.Size(436, 54);
             this.AddLinearImages.TabIndex = 0;
             this.AddLinearImages.Text = "Add images";
             this.AddLinearImages.UseVisualStyleBackColor = true;
@@ -225,7 +225,7 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox3.Enabled = false;
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(504, 251);
+            this.groupBox3.Size = new System.Drawing.Size(452, 251);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "     ";
@@ -236,7 +236,7 @@ namespace MiBand5WatchFaces.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AddLineScaleButton.Location = new System.Drawing.Point(6, 23);
             this.AddLineScaleButton.Name = "AddLineScaleButton";
-            this.AddLineScaleButton.Size = new System.Drawing.Size(488, 54);
+            this.AddLineScaleButton.Size = new System.Drawing.Size(436, 54);
             this.AddLineScaleButton.TabIndex = 0;
             this.AddLineScaleButton.Text = "Add images";
             this.AddLineScaleButton.UseVisualStyleBackColor = true;
@@ -308,7 +308,7 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox4.Enabled = false;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(504, 251);
+            this.groupBox4.Size = new System.Drawing.Size(452, 251);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "     ";
@@ -319,7 +319,7 @@ namespace MiBand5WatchFaces.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.AddCircleScale.Location = new System.Drawing.Point(6, 23);
             this.AddCircleScale.Name = "AddCircleScale";
-            this.AddCircleScale.Size = new System.Drawing.Size(488, 54);
+            this.AddCircleScale.Size = new System.Drawing.Size(436, 54);
             this.AddCircleScale.TabIndex = 0;
             this.AddCircleScale.Text = "Add circle scale";
             this.AddCircleScale.UseVisualStyleBackColor = true;
@@ -330,7 +330,7 @@ namespace MiBand5WatchFaces.Forms
             this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveButton.Location = new System.Drawing.Point(12, 312);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(650, 37);
+            this.saveButton.Size = new System.Drawing.Size(598, 37);
             this.saveButton.TabIndex = 14;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
@@ -340,7 +340,7 @@ namespace MiBand5WatchFaces.Forms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 360);
+            this.ClientSize = new System.Drawing.Size(623, 360);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabControl1);

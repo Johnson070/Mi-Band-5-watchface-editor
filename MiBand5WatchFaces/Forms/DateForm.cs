@@ -14,7 +14,6 @@ namespace MiBand5WatchFaces.Forms
     public partial class DateForm : Form
     {
         public WatchFaceLibrary watch;
-        public DefaultDictionary<int, Image> Images;
 
         StateWatchface state;
         VisualRender render;
@@ -39,7 +38,6 @@ namespace MiBand5WatchFaces.Forms
             InitializeComponent();
             this.watch = watch;
             watch.imagesBuff = Images;
-            this.Images = Images;
             this.state = state;
 
             this.watch.Date = watch.Date == null ? new Date() : watch.Date;
@@ -246,7 +244,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Date.MonthAndDayAndYear?.OneLine?.DelimiterImageIndex != -10000) selImg = new List<int>() { watch.Date.MonthAndDayAndYear.OneLine.DelimiterImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -266,7 +264,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Date.MonthAndDayAndYear?.OneLineWithYear?.DelimiterImageIndex != -10000) selImg = new List<int>() { watch.Date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -286,7 +284,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Date?.DayAmPm?.ImageIndexAMEN != -10000) selImg = new List<int>() { watch.Date.DayAmPm.ImageIndexAMEN };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -307,7 +305,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Date?.DayAmPm?.ImageIndexPMEN != -10000) selImg = new List<int>() { watch.Date.DayAmPm.ImageIndexPMEN };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)

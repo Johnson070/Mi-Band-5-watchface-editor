@@ -14,7 +14,6 @@ namespace MiBand5WatchFaces.Forms
     public partial class ActivityForm : Form
     {
         public WatchFaceLibrary watch;
-        public DefaultDictionary<int, Image> Images;
 
         StateWatchface state;
         VisualRender render;
@@ -39,7 +38,6 @@ namespace MiBand5WatchFaces.Forms
             InitializeComponent();
             this.watch = watch;
             watch.imagesBuff = Images;
-            this.Images = Images;
             this.state = state;
 
             this.watch.Activity = watch.Activity == null ? new Activity() : watch.Activity;
@@ -265,7 +263,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Steps.PrefixImageIndex != -10000) selImg = new List<int>() { watch.Activity.Steps.PrefixImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -285,7 +283,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Calories.PrefixImageIndex != -10000) selImg = new List<int>() { watch.Activity.Calories.PrefixImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -305,7 +303,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Pulse.PrefixImageIndex != -10000) selImg = new List<int>() { watch.Activity.Pulse.PrefixImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -335,7 +333,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Steps.SuffixImageIndex != -10000) selImg = new List<int>() { watch.Activity.Steps.SuffixImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -355,7 +353,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Calories.SuffixImageIndex != -10000) selImg = new List<int>() { watch.Activity.Calories.SuffixImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -375,7 +373,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Pulse.SuffixImageIndex != -10000) selImg = new List<int>() { watch.Activity.Pulse.SuffixImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -395,7 +393,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Pulse.NoDataImageIndex != -10000) selImg = new List<int>() { watch.Activity.Pulse.NoDataImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -415,7 +413,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Distance.KmSuffixImageIndex != -10000) selImg = new List<int>() { watch.Activity.Distance.KmSuffixImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -435,7 +433,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Distance.MilesSuffixImageIndex != -10000) selImg = new List<int>() { watch.Activity.Distance.MilesSuffixImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -455,7 +453,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Activity.Distance.DecimalPointImageIndex != -10000) selImg = new List<int>() { watch.Activity.Distance.DecimalPointImageIndex };
 
-                imgForm = new ImagesForm(Images, selImg, true, false);
+                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)

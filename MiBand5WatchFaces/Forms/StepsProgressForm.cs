@@ -14,7 +14,6 @@ namespace MiBand5WatchFaces.Forms
     public partial class StepsProgressForm : Form
     {
         public WatchFaceLibrary watch;
-        public DefaultDictionary<int, Image> Images;
 
         StateWatchface state;
         VisualRender render;
@@ -39,7 +38,6 @@ namespace MiBand5WatchFaces.Forms
             InitializeComponent();
             this.watch = watch;
             this.watch.imagesBuff = Images;
-            this.Images = Images;
             this.state = state;
 
             this.watch.StepsProgress = this.watch.StepsProgress == null ? new StepsProgress() : this.watch.StepsProgress;
@@ -131,7 +129,7 @@ namespace MiBand5WatchFaces.Forms
                     selImg.Add(i);
             }
 
-            imgForm = new ImagesForm(Images, selImg, true, true, true);
+            imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, true, true);
             imgForm.ShowDialog();
 
             if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -176,7 +174,9 @@ namespace MiBand5WatchFaces.Forms
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
             watchface.StepsProgress.CircleScale = watchface.StepsProgress.CircleScale == null ? new CircleScale() : watchface.StepsProgress.CircleScale;
-            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.StepsProgress.CircleScale, watch.imagesBuff.DeepCopy(), state);
+            StateWatchface stepsState = state;
+            stepsState.Steps = 10000;
+            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.StepsProgress.CircleScale, watch.imagesBuff.DeepCopy(), stepsState);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved)
