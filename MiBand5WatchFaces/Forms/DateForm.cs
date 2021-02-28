@@ -42,7 +42,7 @@ namespace MiBand5WatchFaces.Forms
             this.Images = Images;
             this.state = state;
 
-            watch.Date = watch.Date == null ? new Date() : watch.Date;
+            this.watch.Date = watch.Date == null ? new Date() : watch.Date;
             Render(state);
 
             if (watch.Date?.MonthAndDayAndYear?.Separate != null)

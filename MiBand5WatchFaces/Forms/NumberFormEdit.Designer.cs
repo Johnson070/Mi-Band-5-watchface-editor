@@ -269,6 +269,7 @@
             // 
             // AligmentComboBox
             // 
+            this.AligmentComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AligmentComboBox.FormattingEnabled = true;
             this.AligmentComboBox.Items.AddRange(new object[] {
             "LeftTop",
@@ -284,7 +285,6 @@
             this.AligmentComboBox.Name = "AligmentComboBox";
             this.AligmentComboBox.Size = new System.Drawing.Size(106, 26);
             this.AligmentComboBox.TabIndex = 0;
-            this.AligmentComboBox.Text = "LeftTop";
             this.AligmentComboBox.TextChanged += new System.EventHandler(this.alignChanged);
             // 
             // NumberFormEdit

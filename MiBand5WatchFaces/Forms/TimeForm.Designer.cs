@@ -377,7 +377,7 @@
             this.Controls.Add(this.TZ1groupBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.TZ2groupBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "TimeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TimeForm";

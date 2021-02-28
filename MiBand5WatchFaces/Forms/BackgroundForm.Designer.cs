@@ -289,7 +289,7 @@
             this.Controls.Add(this.BackgroundImages);
             this.Controls.Add(this.BackgroundColorGroup);
             this.Controls.Add(this.UseBackgroundColor);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "BackgroundForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Background";

@@ -31,6 +31,14 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SetWatchfaceState = new System.Windows.Forms.Button();
+            this.RenderButton = new System.Windows.Forms.Button();
+            this.listViewElements = new System.Windows.Forms.ListView();
+            this.listMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.watchfacePreviewImage = new System.Windows.Forms.PictureBox();
             this.AddElement = new System.Windows.Forms.ToolStripDropDownButton();
             this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.timeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,14 +59,6 @@
             this.openFileButton = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenFormImages = new System.Windows.Forms.ToolStripButton();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.SetWatchfaceState = new System.Windows.Forms.Button();
-            this.RenderButton = new System.Windows.Forms.Button();
-            this.listViewElements = new System.Windows.Forms.ListView();
-            this.listMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.watchfacePreviewImage = new System.Windows.Forms.PictureBox();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.listMenuStrip.SuspendLayout();
@@ -76,6 +76,79 @@
             this.toolStrip1.Size = new System.Drawing.Size(656, 25);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.SetWatchfaceState);
+            this.groupBox1.Location = new System.Drawing.Point(470, 28);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(174, 559);
+            this.groupBox1.TabIndex = 6;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Contorols";
+            // 
+            // SetWatchfaceState
+            // 
+            this.SetWatchfaceState.Location = new System.Drawing.Point(6, 19);
+            this.SetWatchfaceState.Name = "SetWatchfaceState";
+            this.SetWatchfaceState.Size = new System.Drawing.Size(162, 23);
+            this.SetWatchfaceState.TabIndex = 0;
+            this.SetWatchfaceState.Text = "Set watchface state";
+            this.SetWatchfaceState.UseVisualStyleBackColor = true;
+            this.SetWatchfaceState.Click += new System.EventHandler(this.SetWatchfaceState_Click);
+            // 
+            // RenderButton
+            // 
+            this.RenderButton.Location = new System.Drawing.Point(291, 452);
+            this.RenderButton.Name = "RenderButton";
+            this.RenderButton.Size = new System.Drawing.Size(75, 23);
+            this.RenderButton.TabIndex = 8;
+            this.RenderButton.Text = "Rerender";
+            this.RenderButton.UseVisualStyleBackColor = true;
+            this.RenderButton.Click += new System.EventHandler(this.RenderButton_Click);
+            // 
+            // listViewElements
+            // 
+            this.listViewElements.ContextMenuStrip = this.listMenuStrip;
+            this.listViewElements.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.listViewElements.HideSelection = false;
+            this.listViewElements.Location = new System.Drawing.Point(12, 28);
+            this.listViewElements.Name = "listViewElements";
+            this.listViewElements.Size = new System.Drawing.Size(174, 559);
+            this.listViewElements.TabIndex = 9;
+            this.listViewElements.UseCompatibleStateImageBehavior = false;
+            this.listViewElements.View = System.Windows.Forms.View.List;
+            this.listViewElements.DoubleClick += new System.EventHandler(this.listViewElements_DoubleClick);
+            // 
+            // listMenuStrip
+            // 
+            this.listMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.editToolStripMenuItem,
+            this.removeToolStripMenuItem});
+            this.listMenuStrip.Name = "listMenuStrip";
+            this.listMenuStrip.Size = new System.Drawing.Size(118, 48);
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // removeToolStripMenuItem
+            // 
+            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Text = "Remove";
+            // 
+            // watchfacePreviewImage
+            // 
+            this.watchfacePreviewImage.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.watchfacePreviewImage.Location = new System.Drawing.Point(265, 152);
+            this.watchfacePreviewImage.Name = "watchfacePreviewImage";
+            this.watchfacePreviewImage.Size = new System.Drawing.Size(126, 294);
+            this.watchfacePreviewImage.TabIndex = 7;
+            this.watchfacePreviewImage.TabStop = false;
             // 
             // AddElement
             // 
@@ -142,6 +215,7 @@
             this.stepsProgressToolStripMenuItem.Name = "stepsProgressToolStripMenuItem";
             this.stepsProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.stepsProgressToolStripMenuItem.Text = "StepsProgress";
+            this.stepsProgressToolStripMenuItem.Click += new System.EventHandler(this.stepsProgressToolStripMenuItem_Click);
             // 
             // statusToolStripMenuItem
             // 
@@ -233,79 +307,6 @@
             this.OpenFormImages.Size = new System.Drawing.Size(49, 22);
             this.OpenFormImages.Text = "Images";
             this.OpenFormImages.Click += new System.EventHandler(this.OpenFormImages_Click);
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.SetWatchfaceState);
-            this.groupBox1.Location = new System.Drawing.Point(470, 28);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(174, 559);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Contorols";
-            // 
-            // SetWatchfaceState
-            // 
-            this.SetWatchfaceState.Location = new System.Drawing.Point(6, 19);
-            this.SetWatchfaceState.Name = "SetWatchfaceState";
-            this.SetWatchfaceState.Size = new System.Drawing.Size(162, 23);
-            this.SetWatchfaceState.TabIndex = 0;
-            this.SetWatchfaceState.Text = "Set watchface state";
-            this.SetWatchfaceState.UseVisualStyleBackColor = true;
-            this.SetWatchfaceState.Click += new System.EventHandler(this.SetWatchfaceState_Click);
-            // 
-            // RenderButton
-            // 
-            this.RenderButton.Location = new System.Drawing.Point(291, 452);
-            this.RenderButton.Name = "RenderButton";
-            this.RenderButton.Size = new System.Drawing.Size(75, 23);
-            this.RenderButton.TabIndex = 8;
-            this.RenderButton.Text = "Rerender";
-            this.RenderButton.UseVisualStyleBackColor = true;
-            this.RenderButton.Click += new System.EventHandler(this.RenderButton_Click);
-            // 
-            // listViewElements
-            // 
-            this.listViewElements.ContextMenuStrip = this.listMenuStrip;
-            this.listViewElements.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.listViewElements.HideSelection = false;
-            this.listViewElements.Location = new System.Drawing.Point(12, 28);
-            this.listViewElements.Name = "listViewElements";
-            this.listViewElements.Size = new System.Drawing.Size(174, 559);
-            this.listViewElements.TabIndex = 9;
-            this.listViewElements.UseCompatibleStateImageBehavior = false;
-            this.listViewElements.View = System.Windows.Forms.View.List;
-            this.listViewElements.DoubleClick += new System.EventHandler(this.listViewElements_DoubleClick);
-            // 
-            // listMenuStrip
-            // 
-            this.listMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.editToolStripMenuItem,
-            this.removeToolStripMenuItem});
-            this.listMenuStrip.Name = "listMenuStrip";
-            this.listMenuStrip.Size = new System.Drawing.Size(118, 48);
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // removeToolStripMenuItem
-            // 
-            this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
-            this.removeToolStripMenuItem.Text = "Remove";
-            // 
-            // watchfacePreviewImage
-            // 
-            this.watchfacePreviewImage.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.watchfacePreviewImage.Location = new System.Drawing.Point(265, 152);
-            this.watchfacePreviewImage.Name = "watchfacePreviewImage";
-            this.watchfacePreviewImage.Size = new System.Drawing.Size(126, 294);
-            this.watchfacePreviewImage.TabIndex = 7;
-            this.watchfacePreviewImage.TabStop = false;
             // 
             // MainForm
             // 

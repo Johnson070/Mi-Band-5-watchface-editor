@@ -38,7 +38,7 @@ namespace MiBand5WatchFaces
 
                 spacingXNum.Value = number.SpacingX;
                 spaсingYNum.Value = number.SpacingY;
-                AligmentComboBox.Text = number.Alignment;
+                AligmentComboBox.Text = number.parseAligment();
                 sizeXNum.Value = Math.Abs(number.BottomRightX - number.TopLeftX);
                 sizeYNum.Value = Math.Abs(number.BottomRightY - number.TopLeftY);
                 posXNum.Value = number.TopLeftX;

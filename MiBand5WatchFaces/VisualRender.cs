@@ -128,7 +128,7 @@ namespace MiBand5WatchFaces
             if (element.GetType() == typeof(Other)) drawAnimation((Other)element);
             if (element.GetType() == typeof(HeartProgress)) drawHeartProgress((HeartProgress)element);
             if (element.GetType() == typeof(WeekDaysIcons)) drawWeekDaysIcons((WeekDaysIcons)element);
-            if (element.GetType() == typeof(StepsProgress)) drawCaloriesProgress((StepsProgress)element);
+            if (element.GetType() == typeof(CaloriesProgress)) drawCaloriesProgress((CaloriesProgress)element);
             if (element.GetType() == typeof(Alarm)) drawAlarm((Alarm)element);
             if (element.GetType() == typeof(StatusSimple)) drawStatusSimplified((StatusSimple)element);
             watchfacePreview.Dispose();
@@ -594,15 +594,15 @@ namespace MiBand5WatchFaces
 
             if (progress.CircleScale != null)
             {
-                Color circleColor = convertColorFromString(progress.CircleScale.Color);
-                watchfacePreview.DrawArc(
-                    new Pen(circleColor, progress.CircleScale.Width + 1),
-                    progress.CircleScale.CenterX - progress.CircleScale.RadiusX,
-                    progress.CircleScale.CenterY - progress.CircleScale.RadiusY,
-                    progress.CircleScale.RadiusX * 2,
-                    progress.CircleScale.RadiusY * 2,
-                    progress.CircleScale.StartAngle - 90,
-                    map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.CircleScale.EndAngle));
+                    Color circleColor = convertColorFromString(progress.CircleScale.Color);
+                    watchfacePreview.DrawArc(
+                        new Pen(circleColor, progress.CircleScale.Width + 1),
+                        progress.CircleScale.CenterX - progress.CircleScale.RadiusX,
+                        progress.CircleScale.CenterY - progress.CircleScale.RadiusY,
+                        progress.CircleScale.RadiusX * 2,
+                        progress.CircleScale.RadiusY * 2,
+                        progress.CircleScale.StartAngle - 90,
+                        map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.CircleScale.EndAngle));
             }
         }
 
@@ -723,9 +723,9 @@ namespace MiBand5WatchFaces
             if (icons.Sunday != null && watchFaceState.Time.DayOfWeek == DayOfWeek.Sunday) drawImage(watchface.imagesBuff[icons.Sunday.ImageIndex], icons.Sunday.getPoint());
         }
 
-        private void drawCaloriesProgress(StepsProgress _calprog = null)
+        private void drawCaloriesProgress(CaloriesProgress _calprog = null)
         {
-            StepsProgress calories = watchface.CaloriesProgress;
+            CaloriesProgress calories = _calprog == null ? watchface.CaloriesProgress : _calprog;
 
             if (calories.GoalImage != null)
                 drawImage(watchface.imagesBuff[calories.GoalImage.ImageIndex], calories.GoalImage.getPoint());

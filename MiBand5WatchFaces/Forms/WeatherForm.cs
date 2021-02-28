@@ -42,7 +42,7 @@ namespace MiBand5WatchFaces.Forms
             this.Images = Images;
             this.state = state;
 
-            watch.Weather = watch.Weather == null ? new Weather() : watch.Weather;
+            this.watch.Weather = watch.Weather == null ? new Weather() : watch.Weather;
             Render(state);
 
             //form fill data

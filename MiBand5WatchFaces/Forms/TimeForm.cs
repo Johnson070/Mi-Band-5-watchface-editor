@@ -30,7 +30,7 @@ namespace MiBand5WatchFaces.Forms
             this.Images = Images;
             this.state = state;
 
-            watch.Time = watch.Time == null ? new Time() : watch.Time;
+            this.watch.Time = watch.Time == null ? new Time() : watch.Time;
             Render(state);
 
 

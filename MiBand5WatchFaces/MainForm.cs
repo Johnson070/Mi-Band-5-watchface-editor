@@ -166,6 +166,18 @@ namespace MiBand5WatchFaces
                 }
                 weatherForm.Dispose();
             }
+            else if (type == typeof(StepsProgress))
+            {
+                StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                progressForm.ShowDialog();
+
+                if (progressForm.Save)
+                {
+                    watchFace = progressForm.watch;
+                    RenderButton_Click(null, null);
+                }
+                progressForm.Dispose();
+            }
 
             updateListElements();
             //}
@@ -252,6 +264,19 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             weatherForm.Dispose();
+        }
+
+        private void stepsProgressToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            progressForm.ShowDialog();
+
+            if (progressForm.Save)
+            {
+                watchFace = progressForm.watch;
+                RenderButton_Click(null, null);
+            }
+            progressForm.Dispose();
         }
     }
 }

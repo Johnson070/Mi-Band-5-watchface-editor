@@ -71,6 +71,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.WindCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.AddSuffixWindButton = new System.Windows.Forms.Button();
             this.AddNumberWindButton = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.UVIndexCheckbox = new System.Windows.Forms.CheckBox();
@@ -79,7 +80,6 @@
             this.AddNumberUVButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ImagePic = new System.Windows.Forms.Panel();
-            this.AddSuffixWindButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -370,7 +370,7 @@
             this.groupBox5.Enabled = false;
             this.groupBox5.Location = new System.Drawing.Point(3, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(463, 278);
+            this.groupBox5.Size = new System.Drawing.Size(463, 283);
             this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "    ";
@@ -463,7 +463,7 @@
             this.groupBox3.Enabled = false;
             this.groupBox3.Location = new System.Drawing.Point(3, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(483, 321);
+            this.groupBox3.Size = new System.Drawing.Size(483, 326);
             this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "     ";
@@ -605,6 +605,16 @@
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "     ";
             // 
+            // AddSuffixWindButton
+            // 
+            this.AddSuffixWindButton.Location = new System.Drawing.Point(6, 83);
+            this.AddSuffixWindButton.Name = "AddSuffixWindButton";
+            this.AddSuffixWindButton.Size = new System.Drawing.Size(488, 54);
+            this.AddSuffixWindButton.TabIndex = 2;
+            this.AddSuffixWindButton.Text = "Add suffix ";
+            this.AddSuffixWindButton.UseVisualStyleBackColor = true;
+            this.AddSuffixWindButton.Click += new System.EventHandler(this.AddImageClick);
+            // 
             // AddNumberWindButton
             // 
             this.AddNumberWindButton.Location = new System.Drawing.Point(6, 23);
@@ -690,16 +700,6 @@
             this.ImagePic.Size = new System.Drawing.Size(126, 294);
             this.ImagePic.TabIndex = 12;
             // 
-            // AddSuffixWindButton
-            // 
-            this.AddSuffixWindButton.Location = new System.Drawing.Point(6, 83);
-            this.AddSuffixWindButton.Name = "AddSuffixWindButton";
-            this.AddSuffixWindButton.Size = new System.Drawing.Size(488, 54);
-            this.AddSuffixWindButton.TabIndex = 2;
-            this.AddSuffixWindButton.Text = "Add suffix ";
-            this.AddSuffixWindButton.UseVisualStyleBackColor = true;
-            this.AddSuffixWindButton.Click += new System.EventHandler(this.AddImageClick);
-            // 
             // WeatherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -708,9 +708,10 @@
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.tabControl1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "WeatherForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "WeatherForm";
+            this.Text = "Weather";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WeatherForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

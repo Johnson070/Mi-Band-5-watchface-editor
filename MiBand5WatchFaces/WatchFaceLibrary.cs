@@ -26,7 +26,7 @@ namespace MiBand5WatchFaces
         public HeartProgress HeartProgress;
         //public UnknownTest Unknown13;
         public WeekDaysIcons WeekDaysIcons;
-        public StepsProgress CaloriesProgress;
+        public CaloriesProgress CaloriesProgress;
         public Alarm Alarm;
         public StatusSimple StatusSimplified;
         //public LunarDate LunarDateCN;
@@ -278,12 +278,12 @@ namespace MiBand5WatchFaces
     {
         public int CenterX;
         public int CenterY;
-        public int RadiusX;
-        public int RadiusY;
+        public int RadiusX = 1;
+        public int RadiusY = 1;
         public int StartAngle;
         public int EndAngle;
         public int Width;
-        public string Color;
+        public string Color = "0x000000";
     }
 
     //===========================CIRCLESCALE===========================
@@ -564,6 +564,14 @@ namespace MiBand5WatchFaces
     //===========================WEATHER===============================
     //===========================HELP==================================
 
+    public class CaloriesProgress
+    {
+        public ImageBasic GoalImage;
+        public LineScale LineScale;
+        public Scale Linear;
+        public CircleScale CircleScale;
+    }
+
     public class StepsProgress
     {
         public ImageBasic GoalImage;
@@ -671,7 +679,7 @@ namespace MiBand5WatchFaces
     public class Scale
     {
         public int StartImageIndex = -10000;
-        public List<XY> Segments;
+        public List<XY> Segments = new List<XY>();
     }
 
     public class XY
@@ -721,7 +729,7 @@ namespace MiBand5WatchFaces
         public int TopLeftY;
         public int BottomRightX;
         public int BottomRightY;
-        public string Alignment = "TopLeft";
+        public string Alignment = "LeftTop";
         public int SpacingX;
         public int SpacingY;
         public int ImageIndex = -10000;
@@ -731,6 +739,22 @@ namespace MiBand5WatchFaces
         public bool drawBorder;
         [JsonIgnore]
         public bool notDraw = false;
+
+        public string parseAligment()
+        {
+            string fixedAligment = "";
+
+            if (Alignment.IndexOf("Left") != -1) fixedAligment += "Left";
+            else if (Alignment.IndexOf("Right") != -1) fixedAligment += "Right";
+            else if (Alignment.IndexOf("Center") != -1) fixedAligment += "Center";
+
+            if (Alignment.IndexOf("Top") != -1) fixedAligment += "Top";
+            else if (Alignment.IndexOf("Bottom") != -1) fixedAligment += "Bottom";
+            else if (Alignment.IndexOf("Center") != -1 && fixedAligment.IndexOf("Center") == -1) fixedAligment += "Center";
+
+            Alignment = fixedAligment;
+            return Alignment;
+        }
 
         public Size getSize(DefaultDictionary<int,Image> imagesBuff)
         { 
