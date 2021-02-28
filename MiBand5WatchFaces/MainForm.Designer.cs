@@ -222,6 +222,7 @@
             this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
             this.statusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.statusToolStripMenuItem.Text = "Status";
+            this.statusToolStripMenuItem.Click += new System.EventHandler(this.statusToolStripMenuItem_Click);
             // 
             // batteryToolStripMenuItem
             // 

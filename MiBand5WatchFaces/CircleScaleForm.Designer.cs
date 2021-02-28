@@ -216,12 +216,12 @@ namespace MiBand5WatchFaces
             // 
             this.endAngleNum.Location = new System.Drawing.Point(88, 85);
             this.endAngleNum.Maximum = new decimal(new int[] {
-            200,
+            360,
             0,
             0,
             0});
             this.endAngleNum.Minimum = new decimal(new int[] {
-            200,
+            360,
             0,
             0,
             -2147483648});
@@ -234,12 +234,12 @@ namespace MiBand5WatchFaces
             // 
             this.startAngleNum.Location = new System.Drawing.Point(88, 55);
             this.startAngleNum.Maximum = new decimal(new int[] {
-            200,
+            360,
             0,
             0,
             0});
             this.startAngleNum.Minimum = new decimal(new int[] {
-            200,
+            360,
             0,
             0,
             -2147483648});
@@ -270,15 +270,10 @@ namespace MiBand5WatchFaces
             // 
             this.widthNum.Location = new System.Drawing.Point(88, 115);
             this.widthNum.Maximum = new decimal(new int[] {
-            200,
+            50,
             0,
             0,
             0});
-            this.widthNum.Minimum = new decimal(new int[] {
-            200,
-            0,
-            0,
-            -2147483648});
             this.widthNum.Name = "widthNum";
             this.widthNum.Size = new System.Drawing.Size(49, 24);
             this.widthNum.TabIndex = 15;

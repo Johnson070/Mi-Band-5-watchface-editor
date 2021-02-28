@@ -178,6 +178,19 @@ namespace MiBand5WatchFaces
                 }
                 progressForm.Dispose();
             }
+            else if (type == typeof(Status))
+            {
+                StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                statusForm.ShowDialog();
+
+                if (statusForm.Save)
+                {
+                    watchFace = statusForm.watch;
+                    RenderButton_Click(null, null);
+                }
+
+                statusForm.Dispose();
+            }
 
             updateListElements();
             //}
@@ -277,6 +290,20 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             progressForm.Dispose();
+        }
+
+        private void statusToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            statusForm.ShowDialog();
+
+            if (statusForm.Save)
+            {
+                watchFace = statusForm.watch;
+                RenderButton_Click(null, null);
+            }
+
+            statusForm.Dispose();
         }
     }
 }

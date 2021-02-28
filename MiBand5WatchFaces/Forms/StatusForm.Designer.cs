@@ -82,7 +82,6 @@ namespace MiBand5WatchFaces.Forms
             this.tabs.SelectedIndex = 0;
             this.tabs.Size = new System.Drawing.Size(450, 294);
             this.tabs.TabIndex = 0;
-            this.tabs.Click += new System.EventHandler(this.AddImageClick);
             // 
             // tabPage1
             // 
@@ -127,6 +126,7 @@ namespace MiBand5WatchFaces.Forms
             this.bluetoothCheckbox.Size = new System.Drawing.Size(15, 14);
             this.bluetoothCheckbox.TabIndex = 9;
             this.bluetoothCheckbox.UseVisualStyleBackColor = true;
+            this.bluetoothCheckbox.CheckedChanged += new System.EventHandler(this.CheckChangedCheckBox);
             // 
             // groupBox3
             // 
@@ -163,6 +163,7 @@ namespace MiBand5WatchFaces.Forms
             this.posYBluetooth.Name = "posYBluetooth";
             this.posYBluetooth.Size = new System.Drawing.Size(49, 24);
             this.posYBluetooth.TabIndex = 20;
+            this.posYBluetooth.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // posXBluetooth
             // 
@@ -181,6 +182,7 @@ namespace MiBand5WatchFaces.Forms
             this.posXBluetooth.Name = "posXBluetooth";
             this.posXBluetooth.Size = new System.Drawing.Size(49, 24);
             this.posXBluetooth.TabIndex = 19;
+            this.posXBluetooth.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // label6
             // 
@@ -232,6 +234,7 @@ namespace MiBand5WatchFaces.Forms
             this.saveButton.TabIndex = 15;
             this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // lockCheckbox
             // 
@@ -241,6 +244,7 @@ namespace MiBand5WatchFaces.Forms
             this.lockCheckbox.Size = new System.Drawing.Size(15, 14);
             this.lockCheckbox.TabIndex = 11;
             this.lockCheckbox.UseVisualStyleBackColor = true;
+            this.lockCheckbox.CheckedChanged += new System.EventHandler(this.CheckChangedCheckBox);
             // 
             // groupBox1
             // 
@@ -289,6 +293,7 @@ namespace MiBand5WatchFaces.Forms
             this.posYLock.Name = "posYLock";
             this.posYLock.Size = new System.Drawing.Size(49, 24);
             this.posYLock.TabIndex = 20;
+            this.posYLock.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // posXLock
             // 
@@ -307,6 +312,7 @@ namespace MiBand5WatchFaces.Forms
             this.posXLock.Name = "posXLock";
             this.posXLock.Size = new System.Drawing.Size(49, 24);
             this.posXLock.TabIndex = 19;
+            this.posXLock.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // label1
             // 
@@ -337,6 +343,7 @@ namespace MiBand5WatchFaces.Forms
             this.dndCheclbox.Size = new System.Drawing.Size(15, 14);
             this.dndCheclbox.TabIndex = 11;
             this.dndCheclbox.UseVisualStyleBackColor = true;
+            this.dndCheclbox.CheckedChanged += new System.EventHandler(this.CheckChangedCheckBox);
             // 
             // groupBox2
             // 
@@ -385,6 +392,7 @@ namespace MiBand5WatchFaces.Forms
             this.posYDND.Name = "posYDND";
             this.posYDND.Size = new System.Drawing.Size(49, 24);
             this.posYDND.TabIndex = 20;
+            this.posYDND.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // posXDND
             // 
@@ -403,6 +411,7 @@ namespace MiBand5WatchFaces.Forms
             this.posXDND.Name = "posXDND";
             this.posXDND.Size = new System.Drawing.Size(49, 24);
             this.posXDND.TabIndex = 19;
+            this.posXDND.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // label2
             // 
@@ -436,6 +445,7 @@ namespace MiBand5WatchFaces.Forms
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "StatusForm";
             this.Text = "StatusForm";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NumberFormEdit_FormClosing);
             this.tabs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
