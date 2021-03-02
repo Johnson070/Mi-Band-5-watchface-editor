@@ -163,6 +163,7 @@
             this.analogDialFaceToolStripMenuItem.Name = "analogDialFaceToolStripMenuItem";
             this.analogDialFaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.analogDialFaceToolStripMenuItem.Text = "AnalogDialFace";
+            this.analogDialFaceToolStripMenuItem.Click += new System.EventHandler(this.analogDialFaceToolStripMenuItem_Click);
             // 
             // animationToolStripMenuItem
             // 

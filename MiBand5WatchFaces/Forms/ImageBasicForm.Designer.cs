@@ -85,6 +85,7 @@
             this.posYNum.Name = "posYNum";
             this.posYNum.Size = new System.Drawing.Size(49, 24);
             this.posYNum.TabIndex = 14;
+            this.posYNum.ValueChanged += new System.EventHandler(this.posChanged);
             // 
             // posXNum
             // 

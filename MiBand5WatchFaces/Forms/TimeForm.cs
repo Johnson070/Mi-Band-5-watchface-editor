@@ -29,6 +29,7 @@ namespace MiBand5WatchFaces.Forms
             this.state = state;
 
             this.watch.Time = watch.Time == null ? new Time() : watch.Time;
+            this.watch.Time.UnknownV11 = 0;
             Render(state);
 
 

@@ -191,9 +191,9 @@ namespace MiBand5WatchFaces
 
     public class ClockHand
     {
-        public bool OnlyBorder;
-        public string Color;
-        public XY Center;
+        public bool OnlyBorder = true;
+        public string Color = "0x000000";
+        public XY Center = new XY() { X = 0, Y = 0 };
         public List<XY> Shape;
         public ImageBasic CenterImage;
 
@@ -220,7 +220,14 @@ namespace MiBand5WatchFaces
             double x = Math.Cos((angle * Math.PI) / 180f + angle0) * R;
             double y = Math.Sin((angle * Math.PI) / 180f + angle0) * R;
 
-            return new Point(Convert.ToInt32(Math.Round(x+Center.X)), Convert.ToInt32(Math.Round(y+Center.Y)));
+            try
+            {
+                return new Point(Convert.ToInt32(Math.Round(x + Center.X)), Convert.ToInt32(Math.Round(y + Center.Y)));
+            }
+            catch
+            {
+                return new Point(Center.X,Center.Y);
+            }
         }
     }
 

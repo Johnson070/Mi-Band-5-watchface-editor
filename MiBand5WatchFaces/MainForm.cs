@@ -203,6 +203,19 @@ namespace MiBand5WatchFaces
                 }
                 batteryForm.Dispose();
             }
+            else if (type == typeof(AnalogDialFace))
+            {
+                AnalogDialFaceForm analogDial = new AnalogDialFaceForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                analogDial.ShowDialog();
+
+                if (analogDial.Save)
+                {
+                    watchFace = analogDial.watch;
+                    RenderButton_Click(null, null);
+                }
+
+                analogDial.Dispose();
+            }
 
             updateListElements();
             //}
@@ -329,6 +342,20 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             batteryForm.Dispose();
+        }
+
+        private void analogDialFaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnalogDialFaceForm analogDial = new AnalogDialFaceForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            analogDial.ShowDialog();
+
+            if (analogDial.Save)
+            {
+                watchFace = analogDial.watch;
+                RenderButton_Click(null, null);
+            }
+
+            analogDial.Dispose();
         }
     }
 }

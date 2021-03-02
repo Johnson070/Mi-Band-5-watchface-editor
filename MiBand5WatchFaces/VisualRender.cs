@@ -657,11 +657,11 @@ namespace MiBand5WatchFaces
                     watchfacePreview.DrawPolygon(
                         new Pen(convertColorFromString(analogDialFace.Hours.Color), 1),
                         analogDialFace.Hours.RotateArrowAtCenter(
-                            (360f * (DateTime.Now.Hour * 60f + DateTime.Now.Minute)) / (60f * 12f)));
+                            (360f * (watchFaceState.Time.Hour * 60f + watchFaceState.Time.Minute)) / (60f * 12f)));
                 else watchfacePreview.FillPolygon(
                         new SolidBrush(convertColorFromString(analogDialFace.Hours.Color)),
                         analogDialFace.Hours.RotateArrowAtCenter(
-                            (360f * (DateTime.Now.Hour * 60f + DateTime.Now.Minute)) / (60f * 12f)));
+                            (360f * (watchFaceState.Time.Hour * 60f + watchFaceState.Time.Minute)) / (60f * 12f)));
 
                 if (analogDialFace.Hours.CenterImage != null)
                     drawImage(watchface.imagesBuff[analogDialFace.Hours.CenterImage.ImageIndex], analogDialFace.Hours.CenterImage.getPoint());
@@ -673,11 +673,11 @@ namespace MiBand5WatchFaces
                     watchfacePreview.DrawPolygon(
                         new Pen(convertColorFromString(analogDialFace.Minutes.Color), 1),
                         analogDialFace.Minutes.RotateArrowAtCenter(
-                            (360f * DateTime.Now.Minute) / 60f));
+                            (360f * watchFaceState.Time.Minute) / 60f));
                 else watchfacePreview.FillPolygon(
                         new SolidBrush(convertColorFromString(analogDialFace.Minutes.Color)),
                         analogDialFace.Minutes.RotateArrowAtCenter(
-                            (360f * DateTime.Now.Minute) / 60f));
+                            (360f * watchFaceState.Time.Minute) / 60f));
 
                 if (analogDialFace.Minutes.CenterImage != null)
                     drawImage(watchface.imagesBuff[analogDialFace.Minutes.CenterImage.ImageIndex], analogDialFace.Minutes.CenterImage.getPoint());
