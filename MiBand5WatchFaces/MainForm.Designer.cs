@@ -59,10 +59,14 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.watchfacePreviewImage = new System.Windows.Forms.PictureBox();
+            this.WatchFaceEXE = new System.Diagnostics.Process();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.SaveFileStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.listMenuStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.watchfacePreviewImage)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -223,14 +227,14 @@
             // openFileButton
             // 
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(103, 22);
+            this.openFileButton.Size = new System.Drawing.Size(180, 22);
             this.openFileButton.Text = "Open";
             this.openFileButton.Click += new System.EventHandler(this.OpenFileJson);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -250,7 +254,7 @@
             this.groupBox1.Controls.Add(this.SetWatchfaceState);
             this.groupBox1.Location = new System.Drawing.Point(470, 28);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(174, 559);
+            this.groupBox1.Size = new System.Drawing.Size(174, 546);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Contorols";
@@ -282,7 +286,7 @@
             this.listViewElements.HideSelection = false;
             this.listViewElements.Location = new System.Drawing.Point(12, 28);
             this.listViewElements.Name = "listViewElements";
-            this.listViewElements.Size = new System.Drawing.Size(174, 559);
+            this.listViewElements.Size = new System.Drawing.Size(174, 546);
             this.listViewElements.TabIndex = 9;
             this.listViewElements.UseCompatibleStateImageBehavior = false;
             this.listViewElements.View = System.Windows.Forms.View.List;
@@ -294,19 +298,19 @@
             this.editToolStripMenuItem,
             this.removeToolStripMenuItem});
             this.listMenuStrip.Name = "listMenuStrip";
-            this.listMenuStrip.Size = new System.Drawing.Size(181, 70);
+            this.listMenuStrip.Size = new System.Drawing.Size(118, 48);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
@@ -319,12 +323,40 @@
             this.watchfacePreviewImage.TabIndex = 7;
             this.watchfacePreviewImage.TabStop = false;
             // 
+            // WatchFaceEXE
+            // 
+            this.WatchFaceEXE.StartInfo.Domain = "";
+            this.WatchFaceEXE.StartInfo.LoadUserProfile = false;
+            this.WatchFaceEXE.StartInfo.Password = null;
+            this.WatchFaceEXE.StartInfo.StandardErrorEncoding = null;
+            this.WatchFaceEXE.StartInfo.StandardOutputEncoding = null;
+            this.WatchFaceEXE.StartInfo.UserName = "";
+            this.WatchFaceEXE.SynchronizingObject = this;
+            this.WatchFaceEXE.OutputDataReceived += new System.Diagnostics.DataReceivedEventHandler(this.WatchFaceEXE_OutputDataReceived);
+            this.WatchFaceEXE.Exited += new System.EventHandler(this.WatchFaceEXE_Exited);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.SaveFileStatus});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 577);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(656, 22);
+            this.statusStrip1.TabIndex = 10;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // SaveFileStatus
+            // 
+            this.SaveFileStatus.Name = "SaveFileStatus";
+            this.SaveFileStatus.Size = new System.Drawing.Size(0, 17);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(656, 599);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.listViewElements);
             this.Controls.Add(this.RenderButton);
             this.Controls.Add(this.watchfacePreviewImage);
@@ -341,6 +373,8 @@
             this.groupBox1.ResumeLayout(false);
             this.listMenuStrip.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.watchfacePreviewImage)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -376,6 +410,9 @@
         private System.Windows.Forms.ToolStripButton OpenFormImages;
         private System.Windows.Forms.PictureBox watchfacePreviewImage;
         private System.Windows.Forms.Button SetWatchfaceState;
+        private System.Diagnostics.Process WatchFaceEXE;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel SaveFileStatus;
     }
 }
 

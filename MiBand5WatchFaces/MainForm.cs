@@ -335,6 +335,7 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             activityForm.Dispose();
+            updateListElements();
         }
 
         private void dateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -348,12 +349,59 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             dateForm.Dispose();
+            updateListElements();
         }
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(JsonConvert.SerializeObject(watchFace, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
-            MessageBox.Show("Json saved to clipboard!", "Succeful!");
+            //Clipboard.SetText();
+            //MessageBox.Show("Json saved to clipboard!", "Succeful!");
+
+            try
+            {
+                SaveFileDialog saveFile = new SaveFileDialog() { Filter = "json file (*.json)|*.json|bin file (*.bin)|*.bin", RestoreDirectory = true };
+                if (saveFile.ShowDialog() == DialogResult.OK)
+                {
+                    string path = Path.GetDirectoryName(saveFile.FileName);
+                    foreach (KeyValuePair<int, Image> img in watchFace.imagesBuff)
+                        img.Value.Save(Path.Combine(path, $"{img.Key:0000}.png"));
+
+                    File.WriteAllText(Path.Combine(path, $"{Path.GetFileNameWithoutExtension(saveFile.FileName)}.json"), JsonConvert.SerializeObject(watchFace, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+
+                    if (Path.GetExtension(saveFile.FileName) == ".bin")
+                    {
+                        this.Enabled = false ;
+                        WatchFaceEXE.StartInfo.FileName = @"WatchFace/WatchFace.exe";
+                        //avrdude.StartInfo.Arguments = "-v";
+                        WatchFaceEXE.StartInfo.Arguments = $"WatchFace/WatchFace.exe \"{Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName))}.json\"";
+                        WatchFaceEXE.StartInfo.UseShellExecute = false;
+                        WatchFaceEXE.StartInfo.RedirectStandardOutput = true;
+                        WatchFaceEXE.StartInfo.RedirectStandardInput = true;
+                        WatchFaceEXE.StartInfo.RedirectStandardError = true;
+                        WatchFaceEXE.StartInfo.CreateNoWindow = true;
+                        WatchFaceEXE.StartInfo.StandardOutputEncoding = Encoding.UTF8;
+                        WatchFaceEXE.StartInfo.ErrorDialog = false;
+
+                        WatchFaceEXE.Start();
+                        //WatchFaceEXE.WaitForExit();
+                        //WatchFaceEXE.BeginErrorReadLine();
+                        WatchFaceEXE.BeginOutputReadLine();
+                        SaveFileStatus.Text = "";
+                    }
+                    //if (File.Exists(Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.bin")) {
+                    //    File.Move(Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.bin"), Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName) + ".bin"));
+                    //    File.Delete(Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.log"); 
+                    //}
+                }
+                else return;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Error save!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Enabled = true;
+                SaveFileStatus.Text = "";
+            }
         }
 
         private void SetWatchfaceState_Click(object sender, EventArgs e)
@@ -379,6 +427,7 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             weatherForm.Dispose();
+            updateListElements();
         }
 
         private void stepsProgressToolStripMenuItem_Click(object sender, EventArgs e)
@@ -392,6 +441,7 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             progressForm.Dispose();
+            updateListElements();
         }
 
         private void statusToolStripMenuItem_Click(object sender, EventArgs e)
@@ -406,6 +456,7 @@ namespace MiBand5WatchFaces
             }
 
             statusForm.Dispose();
+            updateListElements();
         }
 
         private void batteryToolStripMenuItem_Click(object sender, EventArgs e)
@@ -419,6 +470,7 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             batteryForm.Dispose();
+            updateListElements();
         }
 
         private void analogDialFaceToolStripMenuItem_Click(object sender, EventArgs e)
@@ -433,6 +485,7 @@ namespace MiBand5WatchFaces
             }
 
             analogDial.Dispose();
+            updateListElements();
         }
 
         private void animationToolStripMenuItem_Click(object sender, EventArgs e)
@@ -446,6 +499,7 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             animationForm.Dispose();
+            updateListElements();
         }
 
         private void heartProgressToolStripMenuItem_Click(object sender, EventArgs e)
@@ -459,6 +513,7 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             heartProgress.Dispose();
+            updateListElements();
         }
 
         private void caloriesProgressToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -472,6 +527,7 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             progressForm.Dispose();
+            updateListElements();
         }
 
         private void weekDaysIconsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -485,6 +541,7 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             weekDays.Dispose();
+            updateListElements();
         }
 
         private void alarmToolStripMenuItem_Click(object sender, EventArgs e)
@@ -498,6 +555,7 @@ namespace MiBand5WatchFaces
                 RenderButton_Click(null, null);
             }
             alarmForm.Dispose();
+            updateListElements();
         }
 
         private void statusSimplifiedToolStripMenuItem_Click(object sender, EventArgs e)
@@ -512,6 +570,7 @@ namespace MiBand5WatchFaces
             }
 
             statusForm.Dispose();
+            updateListElements();
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
@@ -547,6 +606,24 @@ namespace MiBand5WatchFaces
                 updateListElements();
                 RenderButton_Click(null, null);
             }
+        }
+
+        private void WatchFaceEXE_OutputDataReceived(object sender, System.Diagnostics.DataReceivedEventArgs e)
+        {
+            if (e.Data != null)
+                SaveFileStatus.Text = e.Data.ToString();
+            if (e.Data != null && e.Data.ToString() == "Writing resources")
+            {
+                this.Enabled = true;
+                SaveFileStatus.Text = "";
+                WatchFaceEXE.Close();
+                MessageBox.Show("Succeful!", "Complete!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void WatchFaceEXE_Exited(object sender, EventArgs e)
+        {
+            this.Enabled = true;
         }
     }
 }

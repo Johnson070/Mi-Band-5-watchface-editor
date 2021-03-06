@@ -26,7 +26,9 @@ namespace MiBand5WatchFaces
 
             if (image.ShowDialog() == DialogResult.OK)
             {
-                Image openpng = Image.FromFile(image.FileName);
+                FileStream stream = new FileStream(image.FileName, FileMode.Open, FileAccess.Read);
+                Image openpng = Image.FromStream(stream);
+                stream.Close();
                 float dpi = openpng.HorizontalResolution;
 
                 if (Math.Round(dpi) == 96)

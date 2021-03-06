@@ -45,9 +45,17 @@ namespace MiBand5WatchFaces
         {
             for (int pos = 0; pos < 10000; pos++)
                 if (File.Exists(Path.Combine(FilePath, $"{pos:0000}.png")))
-                    imagesBuff.Add(pos,Image.FromFile(Path.Combine(FilePath, $"{pos:0000}.png")));
+                {
+                    FileStream stream = new FileStream(Path.Combine(FilePath, $"{pos:0000}.png"), FileMode.Open, FileAccess.Read);
+                    imagesBuff.Add(pos, Image.FromStream(stream));
+                    stream.Close();
+                }
                 else if (File.Exists(Path.Combine(FilePath, $"{pos}.png")))
-                    imagesBuff.Add(pos, Image.FromFile(Path.Combine(FilePath, $"{pos}.png")));
+                {
+                    FileStream stream = new FileStream(Path.Combine(FilePath, $"{pos}.png"), FileMode.Open, FileAccess.Read);
+                    imagesBuff.Add(pos, Image.FromStream(stream));
+                    stream.Close();
+                }
         }
 
         public List<object> getElements() => new List<object>() { Background, Time, Activity, Date, Weather, StepsProgress, Status, Battery, AnalogDialFace, Other, HeartProgress, WeekDaysIcons, CaloriesProgress, Alarm, StatusSimplified};
