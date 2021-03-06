@@ -13,7 +13,6 @@ namespace MiBand5WatchFaces.Forms
     public partial class ArrowPaintForm : Form
     {
         Graphics arrow;
-        Graphics g;
         Bitmap Preview;
         private bool Dragging;
         private int xPos;

@@ -29,19 +29,17 @@ namespace MiBand5WatchFaces.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StatusForm));
             this.tabs = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.bluetoothCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.AddImageOFFBluetooth = new System.Windows.Forms.Button();
             this.posYBluetooth = new System.Windows.Forms.NumericUpDown();
             this.posXBluetooth = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.AddImageONBluetooth = new System.Windows.Forms.Button();
-            this.AddImageOFFBluetooth = new System.Windows.Forms.Button();
-            this.ImagePic = new System.Windows.Forms.Panel();
-            this.saveButton = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.lockCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AddImageOFFLock = new System.Windows.Forms.Button();
@@ -49,6 +47,7 @@ namespace MiBand5WatchFaces.Forms
             this.posXLock = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.AddImageONLock = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.dndCheclbox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.AddImageOFFDND = new System.Windows.Forms.Button();
@@ -56,16 +55,18 @@ namespace MiBand5WatchFaces.Forms
             this.posXDND = new System.Windows.Forms.NumericUpDown();
             this.label2 = new System.Windows.Forms.Label();
             this.AddImageONDND = new System.Windows.Forms.Button();
+            this.ImagePic = new System.Windows.Forms.Panel();
+            this.saveButton = new System.Windows.Forms.Button();
             this.tabs.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posYBluetooth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posXBluetooth)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posYLock)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posXLock)).BeginInit();
+            this.tabPage3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posYDND)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posXDND)).BeginInit();
@@ -95,29 +96,6 @@ namespace MiBand5WatchFaces.Forms
             this.tabPage1.Text = "Bluetooth";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.lockCheckbox);
-            this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(442, 263);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Lock";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.dndCheclbox);
-            this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 27);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(442, 263);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Do not disturb";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
             // bluetoothCheckbox
             // 
             this.bluetoothCheckbox.AutoSize = true;
@@ -145,6 +123,18 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "     ";
+            // 
+            // AddImageOFFBluetooth
+            // 
+            this.AddImageOFFBluetooth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.AddImageOFFBluetooth.Location = new System.Drawing.Point(6, 73);
+            this.AddImageOFFBluetooth.Name = "AddImageOFFBluetooth";
+            this.AddImageOFFBluetooth.Size = new System.Drawing.Size(414, 44);
+            this.AddImageOFFBluetooth.TabIndex = 21;
+            this.AddImageOFFBluetooth.Text = "Add image OFF";
+            this.AddImageOFFBluetooth.UseVisualStyleBackColor = true;
+            this.AddImageOFFBluetooth.Click += new System.EventHandler(this.AddImageClick);
             // 
             // posYBluetooth
             // 
@@ -205,36 +195,17 @@ namespace MiBand5WatchFaces.Forms
             this.AddImageONBluetooth.UseVisualStyleBackColor = true;
             this.AddImageONBluetooth.Click += new System.EventHandler(this.AddImageClick);
             // 
-            // AddImageOFFBluetooth
+            // tabPage2
             // 
-            this.AddImageOFFBluetooth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddImageOFFBluetooth.Location = new System.Drawing.Point(6, 73);
-            this.AddImageOFFBluetooth.Name = "AddImageOFFBluetooth";
-            this.AddImageOFFBluetooth.Size = new System.Drawing.Size(414, 44);
-            this.AddImageOFFBluetooth.TabIndex = 21;
-            this.AddImageOFFBluetooth.Text = "Add image OFF";
-            this.AddImageOFFBluetooth.UseVisualStyleBackColor = true;
-            this.AddImageOFFBluetooth.Click += new System.EventHandler(this.AddImageClick);
-            // 
-            // ImagePic
-            // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ImagePic.Location = new System.Drawing.Point(468, 12);
-            this.ImagePic.Name = "ImagePic";
-            this.ImagePic.Size = new System.Drawing.Size(126, 294);
-            this.ImagePic.TabIndex = 14;
-            // 
-            // saveButton
-            // 
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveButton.Location = new System.Drawing.Point(16, 312);
-            this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(577, 37);
-            this.saveButton.TabIndex = 15;
-            this.saveButton.Text = "Save";
-            this.saveButton.UseVisualStyleBackColor = true;
-            this.saveButton.Click += new System.EventHandler(this.saveBtn_Click);
+            this.tabPage2.Controls.Add(this.lockCheckbox);
+            this.tabPage2.Controls.Add(this.groupBox1);
+            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(442, 263);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Lock";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // lockCheckbox
             // 
@@ -335,6 +306,17 @@ namespace MiBand5WatchFaces.Forms
             this.AddImageONLock.UseVisualStyleBackColor = true;
             this.AddImageONLock.Click += new System.EventHandler(this.AddImageClick);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.dndCheclbox);
+            this.tabPage3.Controls.Add(this.groupBox2);
+            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(442, 263);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Do not disturb";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
             // dndCheclbox
             // 
             this.dndCheclbox.AutoSize = true;
@@ -434,6 +416,25 @@ namespace MiBand5WatchFaces.Forms
             this.AddImageONDND.UseVisualStyleBackColor = true;
             this.AddImageONDND.Click += new System.EventHandler(this.AddImageClick);
             // 
+            // ImagePic
+            // 
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ImagePic.Location = new System.Drawing.Point(468, 12);
+            this.ImagePic.Name = "ImagePic";
+            this.ImagePic.Size = new System.Drawing.Size(126, 294);
+            this.ImagePic.TabIndex = 14;
+            // 
+            // saveButton
+            // 
+            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveButton.Location = new System.Drawing.Point(16, 312);
+            this.saveButton.Name = "saveButton";
+            this.saveButton.Size = new System.Drawing.Size(577, 37);
+            this.saveButton.TabIndex = 15;
+            this.saveButton.Text = "Save";
+            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveBtn_Click);
+            // 
             // StatusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,25 +444,26 @@ namespace MiBand5WatchFaces.Forms
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StatusForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "StatusForm";
+            this.Text = "Status";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NumberFormEdit_FormClosing);
             this.tabs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posYBluetooth)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posXBluetooth)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posYLock)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.posXLock)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posYDND)).EndInit();

@@ -31,6 +31,9 @@ namespace MiBand5WatchFaces
         public StatusSimple StatusSimplified;
         //public LunarDate LunarDateCN;
 
+        //[JsonIgnore]
+        public StepsProgress formEdit;
+
         [JsonIgnore]
         public string FilePath;
         [JsonIgnore]
@@ -43,6 +46,8 @@ namespace MiBand5WatchFaces
             for (int pos = 0; pos < 10000; pos++)
                 if (File.Exists(Path.Combine(FilePath, $"{pos:0000}.png")))
                     imagesBuff.Add(pos,Image.FromFile(Path.Combine(FilePath, $"{pos:0000}.png")));
+                else if (File.Exists(Path.Combine(FilePath, $"{pos}.png")))
+                    imagesBuff.Add(pos, Image.FromFile(Path.Combine(FilePath, $"{pos}.png")));
         }
 
         public List<object> getElements() => new List<object>() { Background, Time, Activity, Date, Weather, StepsProgress, Status, Battery, AnalogDialFace, Other, HeartProgress, WeekDaysIcons, CaloriesProgress, Alarm, StatusSimplified};
@@ -378,7 +383,7 @@ namespace MiBand5WatchFaces
     public class HeartProgress
     {
         public Scale Scale;
-        public LineScale LineScale;
+        public ImageSet LineScale;
         public Scale Linear;
     }
 
@@ -425,6 +430,40 @@ namespace MiBand5WatchFaces
         public Switch Lock;
         public Switch Bluetooth;
         //public Battery Battery;
+
+        public StatusSimple ConvertToStatusSimple()
+        {
+            StatusSimple status = new StatusSimple();
+
+            if (DoNotDisturb != null)
+            {
+                status.DoNotDisturb = new StatusSimpleSpecial();
+                status.DoNotDisturb.ImageIndexOff = DoNotDisturb.ImageIndexOff;
+                status.DoNotDisturb.ImageIndexOn = DoNotDisturb.ImageIndexOn;
+                status.DoNotDisturb.StatusImage = new StatusNumber() { X = DoNotDisturb.Coordinates != null ? DoNotDisturb.Coordinates.X : 0, Y = DoNotDisturb.Coordinates != null ? DoNotDisturb.Coordinates.Y : 0 };
+            }
+
+            if (Lock != null)
+            {
+                status.Lock = new StatusSimpleSpecial();
+                status.Lock.ImageIndexOff = Lock.ImageIndexOff;
+                status.Lock.ImageIndexOn = Lock.ImageIndexOn;
+                status.Lock.StatusImage = new StatusNumber() { X = Lock.Coordinates != null ? Lock.Coordinates.X : 0, Y = Lock.Coordinates != null ? Lock.Coordinates.Y : 0 };
+            }
+
+            if (Bluetooth != null)
+            {
+                status.Bluetooth = new StatusSimpleSpecial();
+                status.Bluetooth.ImageIndexOff = Bluetooth.ImageIndexOff;
+                status.Bluetooth.ImageIndexOn = Bluetooth.ImageIndexOn;
+                status.Bluetooth.StatusImage = new StatusNumber() { X = Bluetooth.Coordinates != null ? Bluetooth.Coordinates.X : 0, Y = Bluetooth.Coordinates != null ? Bluetooth.Coordinates.Y : 0 };
+            }
+
+            if (status.Bluetooth == null && status.DoNotDisturb == null && status.Lock == null)
+                return null;
+
+            return status;
+        }
     }
 
     //===========================STATUS================================
@@ -574,17 +613,21 @@ namespace MiBand5WatchFaces
     public class CaloriesProgress
     {
         public ImageBasic GoalImage;
-        public LineScale LineScale;
+        public ImageSet LineScale;
         public Scale Linear;
         public CircleScale CircleScale;
+
+        public StepsProgress ConvertToSP() => new StepsProgress() { GoalImage = GoalImage, CircleScale = CircleScale, Linear = Linear, LineScale = LineScale };
     }
 
     public class StepsProgress
     {
         public ImageBasic GoalImage;
-        public LineScale LineScale;
+        public ImageSet LineScale;
         public Scale Linear;
         public CircleScale CircleScale;
+
+        public CaloriesProgress ConvertToSP() => new CaloriesProgress() { GoalImage = GoalImage, CircleScale = CircleScale, Linear = Linear, LineScale = LineScale };
     }
 
     public class StatusSimple
@@ -592,6 +635,35 @@ namespace MiBand5WatchFaces
         public StatusSimpleSpecial DoNotDisturb;
         public StatusSimpleSpecial Lock;
         public StatusSimpleSpecial Bluetooth;
+
+        public Status ConvertToStatus()
+        {
+            Status status = (DoNotDisturb != null || Lock != null || Bluetooth != null) ? new Status() : null;
+            
+            if (DoNotDisturb != null)
+            {
+                status.DoNotDisturb = new Switch();
+                status.DoNotDisturb.Coordinates = new Coordinates() { X = DoNotDisturb.StatusImage != null ? DoNotDisturb.StatusImage.X : 0, Y = DoNotDisturb.StatusImage != null ? DoNotDisturb.StatusImage.Y : 0 };
+                status.DoNotDisturb.ImageIndexOff = DoNotDisturb.ImageIndexOff;
+                status.DoNotDisturb.ImageIndexOn = DoNotDisturb.ImageIndexOn;
+            }
+            if (Lock != null)
+            {
+                status.Lock = new Switch();
+                status.Lock.Coordinates = new Coordinates() { X = Lock.StatusImage != null ? Lock.StatusImage.X : 0, Y = Lock.StatusImage != null ? Lock.StatusImage.Y : 0 };
+                status.Lock.ImageIndexOff = Lock.ImageIndexOff;
+                status.Lock.ImageIndexOn = Lock.ImageIndexOn;
+            }
+            if (Bluetooth != null)
+            {
+                status.Bluetooth = new Switch();
+                status.Bluetooth.Coordinates = new Coordinates() { X = Bluetooth.StatusImage != null ? Bluetooth.StatusImage.X : 0, Y = Bluetooth.StatusImage != null ? Bluetooth.StatusImage.Y : 0 };
+                status.Bluetooth.ImageIndexOff = Bluetooth.ImageIndexOff;
+                status.Bluetooth.ImageIndexOn = Bluetooth.ImageIndexOn;
+            }
+
+            return status;
+        }
     }
 
     public class StatusSimpleSpecial

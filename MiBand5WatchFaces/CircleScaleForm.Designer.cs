@@ -29,7 +29,11 @@ namespace MiBand5WatchFaces
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CircleScaleForm));
             this.PropertiesGroupBox = new System.Windows.Forms.GroupBox();
+            this.colorButton = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.widthNum = new System.Windows.Forms.NumericUpDown();
             this.centerYNum = new System.Windows.Forms.NumericUpDown();
             this.centerXNum = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -44,17 +48,14 @@ namespace MiBand5WatchFaces
             this.endAngleNum = new System.Windows.Forms.NumericUpDown();
             this.startAngleNum = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.widthNum = new System.Windows.Forms.NumericUpDown();
-            this.colorButton = new System.Windows.Forms.Button();
             this.PropertiesGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.widthNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.centerYNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.centerXNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radiusYNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radiusXNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.endAngleNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.startAngleNum)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.widthNum)).BeginInit();
             this.SuspendLayout();
             // 
             // PropertiesGroupBox
@@ -83,6 +84,38 @@ namespace MiBand5WatchFaces
             this.PropertiesGroupBox.TabIndex = 3;
             this.PropertiesGroupBox.TabStop = false;
             this.PropertiesGroupBox.Text = "Properties";
+            // 
+            // colorButton
+            // 
+            this.colorButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.colorButton.Location = new System.Drawing.Point(88, 26);
+            this.colorButton.Name = "colorButton";
+            this.colorButton.Size = new System.Drawing.Size(49, 23);
+            this.colorButton.TabIndex = 17;
+            this.colorButton.UseVisualStyleBackColor = false;
+            this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 117);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(50, 18);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Width:";
+            // 
+            // widthNum
+            // 
+            this.widthNum.Location = new System.Drawing.Point(88, 115);
+            this.widthNum.Maximum = new decimal(new int[] {
+            50,
+            0,
+            0,
+            0});
+            this.widthNum.Name = "widthNum";
+            this.widthNum.Size = new System.Drawing.Size(49, 24);
+            this.widthNum.TabIndex = 15;
+            this.widthNum.ValueChanged += new System.EventHandler(this.changeNumericValue);
             // 
             // centerYNum
             // 
@@ -257,38 +290,6 @@ namespace MiBand5WatchFaces
             this.label1.TabIndex = 1;
             this.label1.Text = "Color:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 117);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 18);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Width:";
-            // 
-            // widthNum
-            // 
-            this.widthNum.Location = new System.Drawing.Point(88, 115);
-            this.widthNum.Maximum = new decimal(new int[] {
-            50,
-            0,
-            0,
-            0});
-            this.widthNum.Name = "widthNum";
-            this.widthNum.Size = new System.Drawing.Size(49, 24);
-            this.widthNum.TabIndex = 15;
-            this.widthNum.ValueChanged += new System.EventHandler(this.changeNumericValue);
-            // 
-            // colorButton
-            // 
-            this.colorButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.colorButton.Location = new System.Drawing.Point(88, 26);
-            this.colorButton.Name = "colorButton";
-            this.colorButton.Size = new System.Drawing.Size(49, 23);
-            this.colorButton.TabIndex = 17;
-            this.colorButton.UseVisualStyleBackColor = false;
-            this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
-            // 
             // CircleScaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -296,19 +297,20 @@ namespace MiBand5WatchFaces
             this.ClientSize = new System.Drawing.Size(230, 588);
             this.Controls.Add(this.PropertiesGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CircleScaleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Circle scale";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NumberFormEdit_FormClosing);
             this.PropertiesGroupBox.ResumeLayout(false);
             this.PropertiesGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.widthNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.centerYNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.centerXNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radiusYNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radiusXNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.endAngleNum)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.startAngleNum)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.widthNum)).EndInit();
             this.ResumeLayout(false);
 
         }

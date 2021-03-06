@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WatchfaceStateEditor));
             this.notGenState = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -74,6 +75,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ImagePic = new System.Windows.Forms.Panel();
             this.SaveButton = new System.Windows.Forms.Button();
+            this.alarmNoTimeCheck = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CaloriesState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WindState)).BeginInit();
@@ -105,6 +107,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
+            this.groupBox1.Controls.Add(this.alarmNoTimeCheck);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.CaloriesState);
             this.groupBox1.Controls.Add(this.RandomFillButton);
@@ -187,7 +190,7 @@
             // NoTimeZoneState
             // 
             this.NoTimeZoneState.AutoSize = true;
-            this.NoTimeZoneState.Location = new System.Drawing.Point(170, 343);
+            this.NoTimeZoneState.Location = new System.Drawing.Point(170, 371);
             this.NoTimeZoneState.Name = "NoTimeZoneState";
             this.NoTimeZoneState.Size = new System.Drawing.Size(116, 22);
             this.NoTimeZoneState.TabIndex = 40;
@@ -242,7 +245,7 @@
             // KilometersState
             // 
             this.KilometersState.AutoSize = true;
-            this.KilometersState.Location = new System.Drawing.Point(218, 371);
+            this.KilometersState.Location = new System.Drawing.Point(218, 399);
             this.KilometersState.Name = "KilometersState";
             this.KilometersState.Size = new System.Drawing.Size(49, 22);
             this.KilometersState.TabIndex = 35;
@@ -254,7 +257,7 @@
             // MilesState
             // 
             this.MilesState.AutoSize = true;
-            this.MilesState.Location = new System.Drawing.Point(170, 371);
+            this.MilesState.Location = new System.Drawing.Point(170, 399);
             this.MilesState.Name = "MilesState";
             this.MilesState.Size = new System.Drawing.Size(42, 22);
             this.MilesState.TabIndex = 34;
@@ -268,9 +271,9 @@
             this.AlarmSetState.AutoSize = true;
             this.AlarmSetState.Location = new System.Drawing.Point(170, 315);
             this.AlarmSetState.Name = "AlarmSetState";
-            this.AlarmSetState.Size = new System.Drawing.Size(89, 22);
+            this.AlarmSetState.Size = new System.Drawing.Size(86, 22);
             this.AlarmSetState.TabIndex = 33;
-            this.AlarmSetState.Text = "Alarm set";
+            this.AlarmSetState.Text = "Alarm on";
             this.AlarmSetState.UseVisualStyleBackColor = true;
             this.AlarmSetState.CheckedChanged += new System.EventHandler(this.ChangeValue);
             // 
@@ -618,7 +621,7 @@
             // 
             // TimeState
             // 
-            this.TimeState.CustomFormat = "HH:m";
+            this.TimeState.CustomFormat = "HH:mm";
             this.TimeState.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.TimeState.Location = new System.Drawing.Point(94, 22);
             this.TimeState.Name = "TimeState";
@@ -654,6 +657,17 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // alarmNoTimeCheck
+            // 
+            this.alarmNoTimeCheck.AutoSize = true;
+            this.alarmNoTimeCheck.Location = new System.Drawing.Point(170, 343);
+            this.alarmNoTimeCheck.Name = "alarmNoTimeCheck";
+            this.alarmNoTimeCheck.Size = new System.Drawing.Size(118, 22);
+            this.alarmNoTimeCheck.TabIndex = 44;
+            this.alarmNoTimeCheck.Text = "Alarm no time";
+            this.alarmNoTimeCheck.UseVisualStyleBackColor = true;
+            this.alarmNoTimeCheck.CheckedChanged += new System.EventHandler(this.ChangeValue);
+            // 
             // WatchfaceStateEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -665,6 +679,7 @@
             this.Controls.Add(this.notGenState);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WatchfaceStateEditor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -738,5 +753,6 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.TrackBar CaloriesState;
+        private System.Windows.Forms.CheckBox alarmNoTimeCheck;
     }
 }

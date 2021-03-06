@@ -84,7 +84,7 @@ namespace MiBand5WatchFaces
             OpenFileDialog ImageFiles = new OpenFileDialog();
             ImageFiles.RestoreDirectory = true;
             ImageFiles.Multiselect = true;
-            ImageFiles.Filter = "png images (0000.png)|*.png";
+            ImageFiles.Filter = "png images (*.png)|*.png";
 
             if (ImageFiles.ShowDialog() == DialogResult.OK)
             {

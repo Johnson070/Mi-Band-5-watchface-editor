@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,29 +18,53 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        statusForm status;
+        Status buffer;
+
+        public enum statusForm
+        {
+            Status,
+            StatusSpecial
+        }
 
         public void Render(StateWatchface state = null)
         {
+            if (status == statusForm.StatusSpecial)
+            {
+                watch.StatusSimplified = DeepCopy(watch.Status.ConvertToStatusSimple());
+                watch.Status = DeepCopy(buffer);
+            }
             render = new VisualRender(watch, state);
             ImagePic.BackgroundImage = render.GenWatchface();
+
+            if (status == statusForm.StatusSpecial)
+                watch.Status = DeepCopy(watch.StatusSimplified.ConvertToStatus());
         }
 
-        //public static T DeepCopy<T>(T other)
-        //{
-        //    if (other == null) return default(T);
+        public static T DeepCopy<T>(T other)
+        {
+            if (other == null) return default(T);
 
-        //    string clone = JsonConvert.SerializeObject(other);
-        //    return JsonConvert.DeserializeObject<T>(clone);
-        //}
+            string clone = JsonConvert.SerializeObject(other);
+            return JsonConvert.DeserializeObject<T>(clone);
+        }
 
-        public StatusForm(WatchFaceLibrary watch, DefaultDictionary<int, Image> Images, StateWatchface state)
+        public StatusForm(WatchFaceLibrary watch, DefaultDictionary<int, Image> Images, StateWatchface state, statusForm status)
         {
             InitializeComponent();
             this.watch = watch;
             this.state = state;
             this.watch.imagesBuff = Images;
-
-            this.watch.Status = this.watch.Status == null ? new Status() : this.watch.Status;
+            this.status = status;
+            if (status == statusForm.StatusSpecial)
+            {
+                this.buffer = DeepCopy(watch.Status);
+                this.watch.Status = this.watch.Status == null ? new Status() : this.watch.StatusSimplified.ConvertToStatus();
+                this.Text = "Status Simplified";
+            }
+            else
+                this.watch.Status = this.watch.Status == null ? new Status() : this.watch.Status;
+            
 
             Render(state);
 
@@ -92,7 +117,7 @@ namespace MiBand5WatchFaces.Forms
 
             if (btn.Name.IndexOf("Bluetooth") != -1)
             {
-                if (btn.Name == "AddImageONBluetooth")
+                if (btn.Name == AddImageONBluetooth.Name)
                 {
                     if (watch.Status?.Bluetooth?.ImageIndexOn >= 0) selImg = new List<int>() { watch.Status.Bluetooth.ImageIndexOn };
 
@@ -116,7 +141,7 @@ namespace MiBand5WatchFaces.Forms
                         AddImageONBluetooth.Text = "Add image ON";
                     }
                 }
-                else if (btn.Name == "AddImageOFFBluetooth")
+                else if (btn.Name == AddImageOFFBluetooth.Name)
                 {
                     if (watch.Status?.Bluetooth?.ImageIndexOff >= 0) selImg = new List<int>() { watch.Status.Bluetooth.ImageIndexOff };
 
@@ -152,7 +177,7 @@ namespace MiBand5WatchFaces.Forms
             }
             if (btn.Name.IndexOf("Lock") != -1)
             {
-                if (btn.Name == "AddImageONLock")
+                if (btn.Name == AddImageONLock.Name)
                 {
                     if (watch.Status?.Lock?.ImageIndexOn >= 0) selImg = new List<int>() { watch.Status.Lock.ImageIndexOn };
 
@@ -176,7 +201,7 @@ namespace MiBand5WatchFaces.Forms
                         AddImageONLock.Text = "Add image ON";
                     }
                 }
-                else if (btn.Name == "AddImageOFFLock")
+                else if (btn.Name == AddImageOFFLock.Name)
                 {
                     if (watch.Status?.Lock?.ImageIndexOff >= 0) selImg = new List<int>() { watch.Status.Lock.ImageIndexOff };
 
@@ -212,7 +237,7 @@ namespace MiBand5WatchFaces.Forms
             }
             if (btn.Name.IndexOf("DND") != -1)
             {
-                if (btn.Name == "AddImageONDND")
+                if (btn.Name == AddImageONDND.Name)
                 {
                     if (watch.Status?.DoNotDisturb?.ImageIndexOn >= 0) selImg = new List<int>() { watch.Status.DoNotDisturb.ImageIndexOn };
 
@@ -236,7 +261,7 @@ namespace MiBand5WatchFaces.Forms
                         AddImageONDND.Text = "Add image ON";
                     }
                 }
-                else if (btn.Name == "AddImageOFFDND")
+                else if (btn.Name == AddImageOFFDND.Name)
                 {
                     if (watch.Status?.DoNotDisturb?.ImageIndexOff >= 0) selImg = new List<int>() { watch.Status.DoNotDisturb.ImageIndexOff };
 
@@ -278,14 +303,14 @@ namespace MiBand5WatchFaces.Forms
         {
             string name = ((NumericUpDown)sender).Name;
 
-            if (name == "posXBluetooth" && watch.Status.Bluetooth != null) watch.Status.Bluetooth.Coordinates.X = (int)posXBluetooth.Value;
-            if (name == "posYBluetooth" && watch.Status.Bluetooth != null) watch.Status.Bluetooth.Coordinates.Y = (int)posYBluetooth.Value;
+            if (name == posXBluetooth.Name && watch.Status.Bluetooth != null) watch.Status.Bluetooth.Coordinates.X = (int)posXBluetooth.Value;
+            if (name == posYBluetooth.Name && watch.Status.Bluetooth != null) watch.Status.Bluetooth.Coordinates.Y = (int)posYBluetooth.Value;
 
-            if (name == "posXLock" && watch.Status.Lock != null) watch.Status.Lock.Coordinates.X = (int)posXLock.Value;
-            if (name == "posYLock" && watch.Status.Lock != null) watch.Status.Lock.Coordinates.Y = (int)posYLock.Value;
+            if (name == posXLock.Name && watch.Status.Lock != null) watch.Status.Lock.Coordinates.X = (int)posXLock.Value;
+            if (name == posYLock.Name && watch.Status.Lock != null) watch.Status.Lock.Coordinates.Y = (int)posYLock.Value;
 
-            if (name == "posXDND" && watch.Status.DoNotDisturb != null) watch.Status.DoNotDisturb.Coordinates.X = (int)posXDND.Value;
-            if (name == "posYDND" && watch.Status.DoNotDisturb != null) watch.Status.DoNotDisturb.Coordinates.Y = (int)posYDND.Value;
+            if (name == posXDND.Name && watch.Status.DoNotDisturb != null) watch.Status.DoNotDisturb.Coordinates.X = (int)posXDND.Value;
+            if (name == posYDND.Name && watch.Status.DoNotDisturb != null) watch.Status.DoNotDisturb.Coordinates.Y = (int)posYDND.Value;
 
             Render(state);
         }
@@ -307,6 +332,9 @@ namespace MiBand5WatchFaces.Forms
 
                 if (watch.Status.Lock == null && watch.Status.DoNotDisturb == null && watch.Status.Bluetooth == null)
                     watch.Status = null;
+
+                watch.StatusSimplified = watch.Status.ConvertToStatusSimple();
+                watch.Status = buffer;
             }
         }
 
@@ -325,6 +353,9 @@ namespace MiBand5WatchFaces.Forms
 
             if (watch.Status.Lock == null && watch.Status.DoNotDisturb == null && watch.Status.Bluetooth == null)
                 watch.Status = null;
+
+            watch.StatusSimplified = watch.Status.ConvertToStatusSimple();
+            watch.Status = buffer;
             this.Close();
         }
 

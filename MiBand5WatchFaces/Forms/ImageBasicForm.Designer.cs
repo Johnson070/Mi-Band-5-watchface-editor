@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageBasicForm));
             this.selectImage = new System.Windows.Forms.Button();
             this.PropertiesGroupBox = new System.Windows.Forms.GroupBox();
             this.posYNum = new System.Windows.Forms.NumericUpDown();
@@ -155,6 +156,7 @@
             this.Controls.Add(this.PropertiesGroupBox);
             this.Controls.Add(this.selectImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImageBasicForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Properties";

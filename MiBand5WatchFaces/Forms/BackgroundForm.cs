@@ -32,7 +32,7 @@ namespace MiBand5WatchFaces.Forms
                 backgroundXPos.Value = background.Image.X;
                 backgroundYPos.Value = background.Image.Y;
 
-                UseBackgroundColor_CheckStateChanged(null,null);
+                UseBackgroundColor_CheckStateChanged(null, null);
             }
 
             if (background != null)
@@ -112,15 +112,15 @@ namespace MiBand5WatchFaces.Forms
             images = img.addImage(files[0]);
             ImageBasic pic = new ImageBasic();
             pic.ImageIndex = images.Keys.Count == 0 ? images.Count : images.Keys.Max() + 1;
-            pic.X = picPanel.Name == "ImagePic" ? 0 : 18;
-            pic.Y = picPanel.Name == "ImagePic" ? 0 : 17;
+            pic.X = picPanel.Name == ImagePic.Name ? 0 : 18;
+            pic.Y = picPanel.Name == ImagePic.Name ? 0 : 17;
 
             if (images.ContainsKey(pic.ImageIndex))
             {
-                if (picPanel.Name == "ImagePic") background.Image = pic;
-                else if (picPanel.Name == "Preview1Pic") background.Preview1 = pic;
-                else if (picPanel.Name == "Preview2Pic") background.Preview2 = pic;
-                else if (picPanel.Name == "Preview3Pic") background.Preview3 = pic;
+                if (picPanel.Name == ImagePic.Name) background.Image = pic;
+                else if (picPanel.Name == Preview1Pic.Name) background.Preview1 = pic;
+                else if (picPanel.Name == Preview2Pic.Name) background.Preview2 = pic;
+                else if (picPanel.Name == Preview3Pic.Name) background.Preview3 = pic;
             }
             else
             {
@@ -136,10 +136,10 @@ namespace MiBand5WatchFaces.Forms
             Panel picPanel = (System.Windows.Forms.Panel)sender;
             int index = 0;
             if (background != null)
-                    if (background.Image != null && picPanel.Name == "ImagePic") index = background.Image.ImageIndex;
-                    else if (background.Preview1 != null && picPanel.Name == "Preview1Pic") index = background.Preview1.ImageIndex;
-                    else if (background.Preview2 != null && picPanel.Name == "Preview2Pic") index = background.Preview2.ImageIndex;
-                    else if (background.Preview3 != null && picPanel.Name == "Preview3Pic") index = background.Preview3.ImageIndex;
+                if (background.Image != null && picPanel.Name == ImagePic.Name) index = background.Image.ImageIndex;
+                else if (background.Preview1 != null && picPanel.Name == Preview1Pic.Name) index = background.Preview1.ImageIndex;
+                else if (background.Preview2 != null && picPanel.Name == Preview2Pic.Name) index = background.Preview2.ImageIndex;
+                else if (background.Preview3 != null && picPanel.Name == Preview3Pic.Name) index = background.Preview3.ImageIndex;
 
 
             ImagesForm imgForm = new ImagesForm(new DefaultDictionary<int, Image>(() => new Bitmap(1, 1), images), false, true, false, index);
@@ -152,15 +152,15 @@ namespace MiBand5WatchFaces.Forms
 
                 ImageBasic pic = new ImageBasic();
                 pic.ImageIndex = imgForm.selectedImages[0];
-                pic.X = picPanel.Name == "ImagePic" ? 0 : 18;
-                pic.Y = picPanel.Name == "ImagePic" ? 0 : 17;
+                pic.X = picPanel.Name == ImagePic.Name ? 0 : 18;
+                pic.Y = picPanel.Name == ImagePic.Name ? 0 : 17;
 
                 if (images.ContainsKey(pic.ImageIndex))
                 {
-                    if (picPanel.Name == "ImagePic") background.Image = pic;
-                    else if (picPanel.Name == "Preview1Pic") background.Preview1 = pic;
-                    else if (picPanel.Name == "Preview2Pic") background.Preview2 = pic;
-                    else if (picPanel.Name == "Preview3Pic") background.Preview3 = pic;
+                    if (picPanel.Name == ImagePic.Name) background.Image = pic;
+                    else if (picPanel.Name == Preview1Pic.Name) background.Preview1 = pic;
+                    else if (picPanel.Name == Preview2Pic.Name) background.Preview2 = pic;
+                    else if (picPanel.Name == Preview3Pic.Name) background.Preview3 = pic;
                 }
                 else
                 {
@@ -192,6 +192,12 @@ namespace MiBand5WatchFaces.Forms
         private void saveButton_Click(object sender, EventArgs e)
         {
             Save = true;
+            if (UseBackgroundColor.Checked) background.Image = null;
+            else background.BackgroundColor = null;
+            if (background.Image == null && background.BackgroundColor == null)
+            {
+                background = null;
+            }
             this.Close();
         }
 
@@ -200,21 +206,24 @@ namespace MiBand5WatchFaces.Forms
             if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Dont't save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
+                if (UseBackgroundColor.Checked) background.Image = null;
+                else background.BackgroundColor = null;
+                if (background.Image == null && background.BackgroundColor == null)
+                {
+                    background = null;
+                }
             }
-
-            if (UseBackgroundColor.Checked) background.Image = null;
-            else background.BackgroundColor = null;
         }
 
         private void posValueChanged(object sender, EventArgs e)
         {
             NumericUpDown pos = (NumericUpDown)sender;
 
-            if (pos.Name == "backgroundXPos")
+            if (pos.Name == backgroundXPos.Name)
                 if (background.Image != null)
                     background.Image.X = (int)pos.Value;
 
-            if (pos.Name == "backgroundYPos")
+            if (pos.Name == backgroundYPos.Name)
                 if (background.Image != null)
                     background.Image.Y = (int)pos.Value;
 

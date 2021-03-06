@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AddTensHourBtn = new System.Windows.Forms.Button();
             this.editPosOnesHourBtn = new System.Windows.Forms.Button();
@@ -378,6 +379,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.TZ2groupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TimeForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TimeForm";

@@ -73,7 +73,7 @@ namespace MiBand5WatchFaces.Forms
             List<int> selImg = null;
             ImagesForm imgForm;
 
-            if (btn.Name == "AddOnesHourBtn")
+            if (btn.Name == AddOnesHourBtn.Name)
             {
                 if (watch.Time.Hours != null && watch.Time.Hours.Ones != null)
                 {
@@ -95,7 +95,7 @@ namespace MiBand5WatchFaces.Forms
                     btn.Text = "Edit Ones";
                 }
             }
-            else if (btn.Name == "AddTensHourBtn")
+            else if (btn.Name == AddTensHourBtn.Name)
             {
                 if (watch.Time.Hours != null && watch.Time.Hours.Tens != null)
                 {
@@ -117,7 +117,7 @@ namespace MiBand5WatchFaces.Forms
                     btn.Text = "Edit Tens";
                 }
             }
-            else if (btn.Name == "AddOnesMinuteBtn")
+            else if (btn.Name == AddOnesMinuteBtn.Name)
             {
                 if (watch.Time.Minutes != null && watch.Time.Minutes.Ones != null)
                 {
@@ -139,7 +139,7 @@ namespace MiBand5WatchFaces.Forms
                     btn.Text = "Edit Ones";
                 }
             }
-            else if (btn.Name == "AddTensMinuteBtn")
+            else if (btn.Name == AddTensMinuteBtn.Name)
             {
                 if (watch.Time.Minutes != null && watch.Time.Minutes.Tens != null)
                 {
@@ -395,7 +395,7 @@ namespace MiBand5WatchFaces.Forms
             List<int> selImg = null;
             ImagesForm imgForm;
 
-            if (btn.Name == "TZ1DelimeterBtn")
+            if (btn.Name == TZ1DelimeterBtn.Name)
             {
                 if (watch.Time.TimeZone1DelimiterImage >= 0) selImg = new List<int>() { watch.Time.TimeZone1DelimiterImage };
 
@@ -415,7 +415,7 @@ namespace MiBand5WatchFaces.Forms
                     TZ1DelimeterBtn.Text = "Add delimeter";
                 }
             }
-            else if (btn.Name == "TZ2DelimeterBtn")
+            else if (btn.Name == TZ2DelimeterBtn.Name)
             {
                 if (watch.Time.TimeZone2DelimiterImage >= 0) selImg = new List<int>() { watch.Time.TimeZone2DelimiterImage };
 
@@ -445,7 +445,7 @@ namespace MiBand5WatchFaces.Forms
             List<int> selImg = null;
             ImagesForm imgForm;
 
-            if (btn.Name == "TZ1NoTime")
+            if (btn.Name == TZ1NoTime.Text)
             {
                 if (btn.Text == "End edit no time")
                 {
@@ -482,7 +482,7 @@ namespace MiBand5WatchFaces.Forms
                     }
                 }
             }
-            else if (btn.Name == "TZ2NoTime")
+            else if (btn.Name == TZ2NoTime.Name)
             {
                 if (btn.Text == "End edit no time")
                 {
@@ -540,8 +540,8 @@ namespace MiBand5WatchFaces.Forms
             btn.Text = checkArrows ? "Edit pos" : "End edit";
             checkArrows = checkArrows ? false : true;
             if (editPosNoTime == false) editPosDisableForm(new List<string>() { btn.Name }, checkArrows ? false : true);
-            if (btn.Name == "editPosTZ1Btn") TZ1NoTime.Enabled = !checkArrows;
-            else if (btn.Name == "editPosTZ2Btn") TZ2NoTime.Enabled = !checkArrows;
+            if (btn.Name == editPosTZ1Btn.Name) TZ1NoTime.Enabled = !checkArrows;
+            else if (btn.Name == editPosTZ2Btn.Name) TZ2NoTime.Enabled = !checkArrows;
 
             if (checkArrows == false) posImageLabel.Text = "";
             else

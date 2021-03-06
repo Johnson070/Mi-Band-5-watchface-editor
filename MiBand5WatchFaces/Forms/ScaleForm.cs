@@ -110,11 +110,11 @@ namespace MiBand5WatchFaces.Forms
             {
                 NumericUpDown num = (NumericUpDown)sender;
 
-                if (num.Name == "posXNum")
+                if (num.Name == posXNum.Name)
                 {
                     scale.Segments[ImagesComboBox.SelectedIndex].X = (int)posXNum.Value;
                 }
-                else if (num.Name == "posYNum")
+                else if (num.Name == posYNum.Name)
                 {
                     scale.Segments[ImagesComboBox.SelectedIndex].Y = (int)posYNum.Value;
                 }

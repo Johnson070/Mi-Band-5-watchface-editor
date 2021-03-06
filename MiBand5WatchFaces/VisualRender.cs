@@ -38,6 +38,7 @@ namespace MiBand5WatchFaces
         public bool Unlocked = rnd.Next(0, 2) == 1 ? true : false;
         public bool DoNotDisturb = rnd.Next(0, 2) == 1 ? true : false;
         public bool AlarmIsSet = rnd.Next(0, 2) == 1 ? true : false;
+        public bool AlarmNoTime = rnd.Next(0, 2) == 1 ? true : false;
         public bool MiKm = rnd.Next(0, 2) == 1 ? true : false;
         public string AlarmTime = rnd.Next(0, 2359).ToString("0000");
         public int UVIndex = rnd.Next(0, 11);
@@ -46,6 +47,8 @@ namespace MiBand5WatchFaces
         public DateTime TimeZone = DateTime.Now;
         public bool NoTimeZone = false;
         public int animation = 0;
+        public List<AnimationState> animationStates;
+        public DayOfWeek DayOfWeek = DateTime.Now.DayOfWeek;
 
         public bool notGen = false;
 
@@ -54,6 +57,12 @@ namespace MiBand5WatchFaces
             Time = DateTime.Now;
             alarm = DateTime.Now;
             TimeZone = DateTime.Now;
+        }
+
+        public class AnimationState
+        {
+            public int animationShot = 0;
+            public int count;
         }
     }
 
@@ -714,13 +723,13 @@ namespace MiBand5WatchFaces
         {
             WeekDaysIcons icons = _weekicons != null ? _weekicons : watchface.WeekDaysIcons;
 
-            if (icons.Monday != null && watchFaceState.Time.DayOfWeek == DayOfWeek.Monday) drawImage(watchface.imagesBuff[icons.Monday.ImageIndex], icons.Monday.getPoint());
-            if (icons.Tuesday != null && watchFaceState.Time.DayOfWeek == DayOfWeek.Tuesday) drawImage(watchface.imagesBuff[icons.Tuesday.ImageIndex], icons.Tuesday.getPoint());
-            if (icons.Wednesday != null && watchFaceState.Time.DayOfWeek == DayOfWeek.Wednesday) drawImage(watchface.imagesBuff[icons.Wednesday.ImageIndex], icons.Wednesday.getPoint());
-            if (icons.Thursday != null && watchFaceState.Time.DayOfWeek == DayOfWeek.Thursday) drawImage(watchface.imagesBuff[icons.Thursday.ImageIndex], icons.Thursday.getPoint());
-            if (icons.Friday != null && watchFaceState.Time.DayOfWeek == DayOfWeek.Friday) drawImage(watchface.imagesBuff[icons.Friday.ImageIndex], icons.Friday.getPoint());
-            if (icons.Saturday != null && watchFaceState.Time.DayOfWeek == DayOfWeek.Saturday) drawImage(watchface.imagesBuff[icons.Saturday.ImageIndex], icons.Saturday.getPoint());
-            if (icons.Sunday != null && watchFaceState.Time.DayOfWeek == DayOfWeek.Sunday) drawImage(watchface.imagesBuff[icons.Sunday.ImageIndex], icons.Sunday.getPoint());
+            if (icons.Monday != null && watchFaceState.DayOfWeek == DayOfWeek.Monday) drawImage(watchface.imagesBuff[icons.Monday.ImageIndex], icons.Monday.getPoint());
+            if (icons.Tuesday != null && watchFaceState.DayOfWeek == DayOfWeek.Tuesday) drawImage(watchface.imagesBuff[icons.Tuesday.ImageIndex], icons.Tuesday.getPoint());
+            if (icons.Wednesday != null && watchFaceState.DayOfWeek == DayOfWeek.Wednesday) drawImage(watchface.imagesBuff[icons.Wednesday.ImageIndex], icons.Wednesday.getPoint());
+            if (icons.Thursday != null && watchFaceState.DayOfWeek == DayOfWeek.Thursday) drawImage(watchface.imagesBuff[icons.Thursday.ImageIndex], icons.Thursday.getPoint());
+            if (icons.Friday != null && watchFaceState.DayOfWeek == DayOfWeek.Friday) drawImage(watchface.imagesBuff[icons.Friday.ImageIndex], icons.Friday.getPoint());
+            if (icons.Saturday != null && watchFaceState.DayOfWeek == DayOfWeek.Saturday) drawImage(watchface.imagesBuff[icons.Saturday.ImageIndex], icons.Saturday.getPoint());
+            if (icons.Sunday != null && watchFaceState.DayOfWeek == DayOfWeek.Sunday) drawImage(watchface.imagesBuff[icons.Sunday.ImageIndex], icons.Sunday.getPoint());
         }
 
         private void drawCaloriesProgress(CaloriesProgress _calprog = null)
@@ -757,31 +766,39 @@ namespace MiBand5WatchFaces
         {
             Alarm alarm = _alarm != null ? _alarm : watchface.Alarm;
 
-            if (alarm.ImageOff != null)
-                if (watchFaceState.AlarmIsSet == false)
-                    drawImage(watchface.imagesBuff[alarm.ImageOff.ImageIndex], alarm.ImageOff.getPoint());
-
-
-            if (alarm.ImageNoAlarm != null && watchFaceState.AlarmIsSet == false)
-                drawImage(watchface.imagesBuff[alarm.ImageNoAlarm.ImageIndex], alarm.ImageNoAlarm.getPoint());
-
-            if (watchFaceState.AlarmIsSet)
+            if (alarm.ImageNoAlarm != null && watchFaceState.AlarmNoTime == true)
             {
-                if (alarm.ImageOn != null)
-                    if (watchFaceState.AlarmIsSet)
-                        drawImage(watchface.imagesBuff[alarm.ImageOn.ImageIndex], alarm.ImageOn.getPoint());
+                drawImage(watchface.imagesBuff[alarm.ImageNoAlarm.ImageIndex], alarm.ImageNoAlarm.getPoint());
+            }
+            else
+            {
 
-                if (alarm.Text != null)
+                if (alarm.ImageOff != null)
+                    if (watchFaceState.AlarmIsSet == false)
+                        drawImage(watchface.imagesBuff[alarm.ImageOff.ImageIndex], alarm.ImageOff.getPoint());
+
+
+                //if (alarm.ImageNoAlarm != null && watchFaceState.AlarmIsSet == false)
+                //    drawImage(watchface.imagesBuff[alarm.ImageNoAlarm.ImageIndex], alarm.ImageNoAlarm.getPoint());
+
+                if (watchFaceState.AlarmIsSet)
                 {
-                    List<Image> images = new List<Image>();
+                    if (alarm.ImageOn != null)
+                        if (watchFaceState.AlarmIsSet)
+                            drawImage(watchface.imagesBuff[alarm.ImageOn.ImageIndex], alarm.ImageOn.getPoint());
 
-                    images.Add(watchface.imagesBuff[alarm.Text.ImageIndex + watchFaceState.alarm.Hour / 10]);
-                    images.Add(watchface.imagesBuff[alarm.Text.ImageIndex + watchFaceState.alarm.Hour % 10]);
-                    images.Add(watchface.imagesBuff[alarm.DelimiterImageIndex]);
-                    images.Add(watchface.imagesBuff[alarm.Text.ImageIndex + watchFaceState.alarm.Minute / 10]);
-                    images.Add(watchface.imagesBuff[alarm.Text.ImageIndex + watchFaceState.alarm.Minute % 10]);
+                    if (alarm.Text != null)
+                    {
+                        List<Image> images = new List<Image>();
 
-                    drawNumber(alarm.Text, images);
+                        images.Add(watchface.imagesBuff[alarm.Text.ImageIndex + watchFaceState.alarm.Hour / 10]);
+                        images.Add(watchface.imagesBuff[alarm.Text.ImageIndex + watchFaceState.alarm.Hour % 10]);
+                        images.Add(watchface.imagesBuff[alarm.DelimiterImageIndex]);
+                        images.Add(watchface.imagesBuff[alarm.Text.ImageIndex + watchFaceState.alarm.Minute / 10]);
+                        images.Add(watchface.imagesBuff[alarm.Text.ImageIndex + watchFaceState.alarm.Minute % 10]);
+
+                        drawNumber(alarm.Text, images);
+                    }
                 }
             }
         }

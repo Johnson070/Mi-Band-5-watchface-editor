@@ -16,8 +16,6 @@ namespace MiBand5WatchFaces
         public CircleScale circleScale;
         StateWatchface state;
 
-        bool startForm = true;
-
         public bool saved = false;
 
         private Color convertColorFromString(string _color) => Color.FromArgb(Convert.ToInt16(_color.Substring(2, 2), 16), Convert.ToInt16(_color.Substring(4, 2), 16), Convert.ToInt16(_color.Substring(6, 2), 16));

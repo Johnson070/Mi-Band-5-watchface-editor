@@ -103,7 +103,7 @@ namespace MiBand5WatchFaces.Forms
             Button btn = (Button)sender;
             WatchFaceLibrary watchface = DeepCopy(watch);
 
-            if (btn.Name == "AddMonthSeparateButton")
+            if (btn.Name == AddMonthSeparateButton.Name)
             {
                 watchface.Date.MonthAndDayAndYear = watchface.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watchface.Date.MonthAndDayAndYear;
                 watchface.Date.MonthAndDayAndYear.Separate = watchface.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watchface.Date.MonthAndDayAndYear.Separate;
@@ -126,7 +126,7 @@ namespace MiBand5WatchFaces.Forms
                     AddMonthSeparateButton.Text = "Add month";
                 }
             }
-            else if (btn.Name == "AddMonthImagesSeparateButton")
+            else if (btn.Name == AddMonthImagesSeparateButton.Name)
             {
                 watchface.Date.MonthAndDayAndYear = watchface.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watchface.Date.MonthAndDayAndYear;
                 watchface.Date.MonthAndDayAndYear.Separate = watchface.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watchface.Date.MonthAndDayAndYear.Separate;
@@ -149,7 +149,7 @@ namespace MiBand5WatchFaces.Forms
                     AddMonthImagesSeparateButton.Text = "Add month images";
                 }
             }
-            else if (btn.Name == "AddDaySeparateButton")
+            else if (btn.Name == AddDaySeparateButton.Name)
             {
                 watchface.Date.MonthAndDayAndYear = watchface.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watchface.Date.MonthAndDayAndYear;
                 watchface.Date.MonthAndDayAndYear.Separate = watchface.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watchface.Date.MonthAndDayAndYear.Separate;
@@ -172,7 +172,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDaySeparateButton.Text = "Add day";
                 }
             }
-            else if (btn.Name == "AddMonthAndDayOnelineButton")
+            else if (btn.Name == AddMonthAndDayOnelineButton.Name)
             {
                 watchface.Date.MonthAndDayAndYear = watchface.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watchface.Date.MonthAndDayAndYear;
                 watchface.Date.MonthAndDayAndYear.OneLine = watchface.Date.MonthAndDayAndYear.OneLine == null ? new OneLineMonthAndDay() : watchface.Date.MonthAndDayAndYear.OneLine;
@@ -198,7 +198,7 @@ namespace MiBand5WatchFaces.Forms
                     AddOnelineDelimeterImageButton.Enabled = false;
                 }
             }
-            else if (btn.Name == "addOnelineWithYearMonthDayYearButton")
+            else if (btn.Name == addOnelineWithYearMonthDayYearButton.Name)
             {
                 watchface.Date.MonthAndDayAndYear = watchface.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watchface.Date.MonthAndDayAndYear;
                 watchface.Date.MonthAndDayAndYear.OneLineWithYear = watchface.Date.MonthAndDayAndYear.OneLineWithYear == null ? new OneLineWithYear() : watchface.Date.MonthAndDayAndYear.OneLineWithYear;
@@ -240,7 +240,7 @@ namespace MiBand5WatchFaces.Forms
             ImagesForm imgForm;
             List<int> selImg = null;
 
-            if (btn.Name == "AddOnelineDelimeterImageButton")
+            if (btn.Name == AddOnelineDelimeterImageButton.Name)
             {
                 if (watch.Date.MonthAndDayAndYear?.OneLine?.DelimiterImageIndex >= 0) selImg = new List<int>() { watch.Date.MonthAndDayAndYear.OneLine.DelimiterImageIndex };
 
@@ -260,7 +260,7 @@ namespace MiBand5WatchFaces.Forms
                     AddOnelineDelimeterImageButton.Text = "Add delimeter image";
                 }
             }
-            else if (btn.Name == "addOnelineWithYearDelimeterImageButton")
+            else if (btn.Name == addOnelineWithYearDelimeterImageButton.Name)
             {
                 if (watch.Date.MonthAndDayAndYear?.OneLineWithYear?.DelimiterImageIndex >= 0) selImg = new List<int>() { watch.Date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex };
 
@@ -280,7 +280,7 @@ namespace MiBand5WatchFaces.Forms
                     addOnelineWithYearDelimeterImageButton.Text = "Add delimeter image";
                 }
             }
-            else if (btn.Name == "AddAMImageButton")
+            else if (btn.Name == AddAMImageButton.Name)
             {
                 if (watch.Date?.DayAmPm?.ImageIndexAMEN >= 0) selImg = new List<int>() { watch.Date.DayAmPm.ImageIndexAMEN };
 
@@ -301,7 +301,7 @@ namespace MiBand5WatchFaces.Forms
                     AddAMImageButton.Text = "Add AM image";
                 }
             }
-            else if (btn.Name == "AddPMImageButton")
+            else if (btn.Name == AddPMImageButton.Name)
             {
                 if (watch.Date?.DayAmPm?.ImageIndexPMEN >= 0) selImg = new List<int>() { watch.Date.DayAmPm.ImageIndexPMEN };
 
@@ -341,11 +341,11 @@ namespace MiBand5WatchFaces.Forms
         {
             NumericUpDown numeric = (NumericUpDown)sender;
 
-            if (numeric.Name == "posXNumAMPM")
+            if (numeric.Name == posXNumAMPM.Name)
             {
                 watch.Date.DayAmPm.X = (int)posXNumAMPM.Value;
             }
-            else if (numeric.Name == "posYNumAMPM")
+            else if (numeric.Name == posYNumAMPM.Name)
             {
                 watch.Date.DayAmPm.Y = (int)posYNumAMPM.Value;
             }

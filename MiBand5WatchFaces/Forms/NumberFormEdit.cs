@@ -43,8 +43,8 @@ namespace MiBand5WatchFaces
                 sizeYNum.Value = Math.Abs(number.BottomRightY - number.TopLeftY);
                 posXNum.Value = number.TopLeftX;
                 posYNum.Value = number.TopLeftY;
-                number.BottomRightX = number.TopLeftX + (int)sizeXNum.Value;
-                number.BottomRightY = number.TopLeftY + (int)sizeYNum.Value;
+                //number.BottomRightX = number.BottomRightX;
+                //number.BottomRightY = number.BottomRightY;
                 this.number.drawBorder = true;
 
                 Render();
@@ -112,7 +112,7 @@ namespace MiBand5WatchFaces
             {
                 NumericUpDown num = (NumericUpDown)sender;
 
-                if (num.Name == "spacingXNum") number.SpacingX = Convert.ToInt16(spacingXNum.Value);
+                if (num.Name == spacingXNum.Name) number.SpacingX = Convert.ToInt16(spacingXNum.Value);
                 else number.SpacingY = Convert.ToInt16(spaсingYNum.Value);
 
                 Render();
@@ -125,8 +125,8 @@ namespace MiBand5WatchFaces
             {
                 NumericUpDown num = (NumericUpDown)sender;
 
-                if (num.Name == "sizeXNum") number.BottomRightX = number.TopLeftX + (int)sizeXNum.Value;
-                else if (num.Name == "sizeYNum") number.BottomRightY = number.TopLeftY + (int)sizeYNum.Value;
+                if (num.Name == sizeXNum.Name) number.BottomRightX = number.TopLeftX + (int)sizeXNum.Value;
+                else if (num.Name == sizeYNum.Name) number.BottomRightY = number.TopLeftY + (int)sizeYNum.Value;
 
                 Render();
             }
@@ -144,12 +144,12 @@ namespace MiBand5WatchFaces
             {
                 NumericUpDown num = (NumericUpDown)sender;
 
-                if (num.Name == "posXNum")
+                if (num.Name == posXNum.Name)
                 {
                     number.TopLeftX = (int)posXNum.Value;
                     number.BottomRightX = number.TopLeftX + (int)sizeXNum.Value;
                 }
-                else if (num.Name == "posYNum")
+                else if (num.Name == posYNum.Name)
                 {
                     number.TopLeftY = (int)posYNum.Value;
                     number.BottomRightY = number.TopLeftY + (int)sizeYNum.Value;

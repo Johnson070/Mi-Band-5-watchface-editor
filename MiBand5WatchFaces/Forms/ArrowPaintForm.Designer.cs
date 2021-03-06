@@ -30,22 +30,23 @@ namespace MiBand5WatchFaces.Forms
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ArrowPaintForm));
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.posPanel = new System.Windows.Forms.ToolStripStatusLabel();
             this.saveButton = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.panelArrow = new System.Windows.Forms.PictureBox();
-            this.clearAllButton = new System.Windows.Forms.Button();
-            this.eraseRadioButton = new System.Windows.Forms.RadioButton();
-            this.dotRadioButton = new System.Windows.Forms.RadioButton();
             this.shapeListBox = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteDotToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.clearAllButton = new System.Windows.Forms.Button();
+            this.eraseRadioButton = new System.Windows.Forms.RadioButton();
+            this.dotRadioButton = new System.Windows.Forms.RadioButton();
             this.HelpTip = new System.Windows.Forms.ToolTip(this.components);
+            this.panelArrow = new System.Windows.Forms.PictureBox();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelArrow)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelArrow)).BeginInit();
             this.SuspendLayout();
             // 
             // statusStrip1
@@ -91,18 +92,30 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
-            // panelArrow
+            // shapeListBox
             // 
-            this.panelArrow.Location = new System.Drawing.Point(129, 19);
-            this.panelArrow.Name = "panelArrow";
-            this.panelArrow.Size = new System.Drawing.Size(500, 500);
-            this.panelArrow.TabIndex = 9;
-            this.panelArrow.TabStop = false;
-            this.panelArrow.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArrow_Paint);
-            this.panelArrow.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelArrow_MouseClick);
-            this.panelArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.panelArrow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.panelArrow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.shapeListBox.ContextMenuStrip = this.contextMenuStrip1;
+            this.shapeListBox.FormattingEnabled = true;
+            this.shapeListBox.Location = new System.Drawing.Point(6, 75);
+            this.shapeListBox.Name = "shapeListBox";
+            this.shapeListBox.Size = new System.Drawing.Size(117, 407);
+            this.shapeListBox.TabIndex = 10;
+            this.HelpTip.SetToolTip(this.shapeListBox, "Right click for show context menu\r\nPlace the points in sequence, because the arro" +
+        "w is a polygon.  \r\n");
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.deleteDotToolStrip});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(129, 26);
+            // 
+            // deleteDotToolStrip
+            // 
+            this.deleteDotToolStrip.Name = "deleteDotToolStrip";
+            this.deleteDotToolStrip.Size = new System.Drawing.Size(128, 22);
+            this.deleteDotToolStrip.Text = "Delete dot";
+            this.deleteDotToolStrip.Click += new System.EventHandler(this.deleteDotToolStrip_Click);
             // 
             // clearAllButton
             // 
@@ -142,30 +155,18 @@ namespace MiBand5WatchFaces.Forms
             this.HelpTip.SetToolTip(this.dotRadioButton, "Double click for place dot");
             this.dotRadioButton.UseVisualStyleBackColor = true;
             // 
-            // shapeListBox
+            // panelArrow
             // 
-            this.shapeListBox.ContextMenuStrip = this.contextMenuStrip1;
-            this.shapeListBox.FormattingEnabled = true;
-            this.shapeListBox.Location = new System.Drawing.Point(6, 75);
-            this.shapeListBox.Name = "shapeListBox";
-            this.shapeListBox.Size = new System.Drawing.Size(117, 407);
-            this.shapeListBox.TabIndex = 10;
-            this.HelpTip.SetToolTip(this.shapeListBox, "Right click for show context menu\r\nPlace the points in sequence, because the arro" +
-        "w is a polygon.  \r\n");
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.deleteDotToolStrip});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(129, 26);
-            // 
-            // deleteDotToolStrip
-            // 
-            this.deleteDotToolStrip.Name = "deleteDotToolStrip";
-            this.deleteDotToolStrip.Size = new System.Drawing.Size(180, 22);
-            this.deleteDotToolStrip.Text = "Delete dot";
-            this.deleteDotToolStrip.Click += new System.EventHandler(this.deleteDotToolStrip_Click);
+            this.panelArrow.Location = new System.Drawing.Point(129, 19);
+            this.panelArrow.Name = "panelArrow";
+            this.panelArrow.Size = new System.Drawing.Size(500, 500);
+            this.panelArrow.TabIndex = 9;
+            this.panelArrow.TabStop = false;
+            this.panelArrow.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArrow_Paint);
+            this.panelArrow.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelArrow_MouseClick);
+            this.panelArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.panelArrow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.panelArrow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
             // ArrowPaintForm
             // 
@@ -176,6 +177,7 @@ namespace MiBand5WatchFaces.Forms
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ArrowPaintForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Arrow";
@@ -184,8 +186,8 @@ namespace MiBand5WatchFaces.Forms
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelArrow)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.panelArrow)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

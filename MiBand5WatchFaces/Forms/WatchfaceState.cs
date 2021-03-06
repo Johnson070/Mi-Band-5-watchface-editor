@@ -67,7 +67,8 @@ namespace MiBand5WatchFaces
             BluetoothState.Checked = !state_new.Bluetooth;
             LockState.Checked = !state_new.Unlocked;
             DoNotSState.Checked = state_new.DoNotDisturb;
-            AlarmSetState.Checked = state_new.DoNotDisturb;
+            AlarmSetState.Checked = state_new.AlarmIsSet;
+            alarmNoTimeCheck.Checked = state_new.AlarmNoTime;
             NoTimeZoneState.Checked = state_new.NoTimeZone;
             if (state_new.MiKm) KilometersState.Checked = true;
             else MilesState.Checked = true;
@@ -96,7 +97,9 @@ namespace MiBand5WatchFaces
             state.Unlocked = !LockState.Checked;
             state.DoNotDisturb = DoNotSState.Checked;
             state.AlarmIsSet = AlarmSetState.Checked;
+            state.AlarmNoTime = alarmNoTimeCheck.Checked;
             state.NoTimeZone = NoTimeZoneState.Checked;
+            state.DayOfWeek = state.Time.DayOfWeek;
             if (KilometersState.Checked) state.MiKm = true;
             else state.MiKm = false;
         }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ImageSetForm));
             this.PropertiesGroupBox = new System.Windows.Forms.GroupBox();
             this.posYNum = new System.Windows.Forms.NumericUpDown();
             this.posXNum = new System.Windows.Forms.NumericUpDown();
@@ -155,6 +156,7 @@
             this.Controls.Add(this.PropertiesGroupBox);
             this.Controls.Add(this.selectImages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImageSetForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Properties";

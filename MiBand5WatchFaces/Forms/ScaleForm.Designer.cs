@@ -29,6 +29,7 @@ namespace MiBand5WatchFaces.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ScaleForm));
             this.PropertiesGroupBox = new System.Windows.Forms.GroupBox();
             this.posYNum = new System.Windows.Forms.NumericUpDown();
             this.posXNum = new System.Windows.Forms.NumericUpDown();
@@ -176,7 +177,8 @@ namespace MiBand5WatchFaces.Forms
             this.ClientSize = new System.Drawing.Size(230, 520);
             this.Controls.Add(this.PropertiesGroupBox);
             this.Controls.Add(this.selectImages);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ScaleForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Scale properties";

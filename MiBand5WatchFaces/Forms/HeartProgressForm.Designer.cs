@@ -1,7 +1,7 @@
 ﻿
 namespace MiBand5WatchFaces.Forms
 {
-    partial class StepsProgressForm
+    partial class HeartProgressForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,12 @@ namespace MiBand5WatchFaces.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StepsProgressForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HeartProgressForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.GoalImageCheckbox = new System.Windows.Forms.CheckBox();
+            this.ScaleImageCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.AddGoalImageButton = new System.Windows.Forms.Button();
+            this.AddScaleButton = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.LineScaleCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -43,10 +43,6 @@ namespace MiBand5WatchFaces.Forms
             this.LinearCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.AddLinearImages = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.CircleScaleCheckbox = new System.Windows.Forms.CheckBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.AddCircleScale = new System.Windows.Forms.Button();
             this.ImagePic = new System.Windows.Forms.Panel();
             this.saveButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
@@ -56,8 +52,6 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -65,7 +59,6 @@ namespace MiBand5WatchFaces.Forms
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
@@ -75,32 +68,32 @@ namespace MiBand5WatchFaces.Forms
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.GoalImageCheckbox);
+            this.tabPage1.Controls.Add(this.ScaleImageCheckbox);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Location = new System.Drawing.Point(4, 27);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(458, 263);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Goal image";
+            this.tabPage1.Text = "Scale";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // GoalImageCheckbox
+            // ScaleImageCheckbox
             // 
-            this.GoalImageCheckbox.AutoSize = true;
-            this.GoalImageCheckbox.Location = new System.Drawing.Point(15, 6);
-            this.GoalImageCheckbox.Name = "GoalImageCheckbox";
-            this.GoalImageCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.GoalImageCheckbox.TabIndex = 5;
-            this.GoalImageCheckbox.UseVisualStyleBackColor = true;
-            this.GoalImageCheckbox.CheckedChanged += new System.EventHandler(this.ChangeCheck);
+            this.ScaleImageCheckbox.AutoSize = true;
+            this.ScaleImageCheckbox.Location = new System.Drawing.Point(15, 6);
+            this.ScaleImageCheckbox.Name = "ScaleImageCheckbox";
+            this.ScaleImageCheckbox.Size = new System.Drawing.Size(15, 14);
+            this.ScaleImageCheckbox.TabIndex = 5;
+            this.ScaleImageCheckbox.UseVisualStyleBackColor = true;
+            this.ScaleImageCheckbox.CheckedChanged += new System.EventHandler(this.ChangeCheck);
             // 
             // groupBox1
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox1.Controls.Add(this.AddGoalImageButton);
+            this.groupBox1.Controls.Add(this.AddScaleButton);
             this.groupBox1.Enabled = false;
             this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
@@ -109,17 +102,17 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "     ";
             // 
-            // AddGoalImageButton
+            // AddScaleButton
             // 
-            this.AddGoalImageButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.AddScaleButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddGoalImageButton.Location = new System.Drawing.Point(6, 23);
-            this.AddGoalImageButton.Name = "AddGoalImageButton";
-            this.AddGoalImageButton.Size = new System.Drawing.Size(436, 54);
-            this.AddGoalImageButton.TabIndex = 0;
-            this.AddGoalImageButton.Text = "Add image";
-            this.AddGoalImageButton.UseVisualStyleBackColor = true;
-            this.AddGoalImageButton.Click += new System.EventHandler(this.AddGoalImageButton_Click);
+            this.AddScaleButton.Location = new System.Drawing.Point(6, 23);
+            this.AddScaleButton.Name = "AddScaleButton";
+            this.AddScaleButton.Size = new System.Drawing.Size(436, 54);
+            this.AddScaleButton.TabIndex = 0;
+            this.AddScaleButton.Text = "Add images";
+            this.AddScaleButton.UseVisualStyleBackColor = true;
+            this.AddScaleButton.Click += new System.EventHandler(this.AddScaleButton_Click);
             // 
             // tabPage3
             // 
@@ -216,53 +209,6 @@ namespace MiBand5WatchFaces.Forms
             this.AddLinearImages.UseVisualStyleBackColor = true;
             this.AddLinearImages.Click += new System.EventHandler(this.AddLineScaleImages_Click);
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.CircleScaleCheckbox);
-            this.tabPage4.Controls.Add(this.groupBox4);
-            this.tabPage4.Location = new System.Drawing.Point(4, 27);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(458, 263);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Circle scale";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // CircleScaleCheckbox
-            // 
-            this.CircleScaleCheckbox.AutoSize = true;
-            this.CircleScaleCheckbox.Location = new System.Drawing.Point(15, 6);
-            this.CircleScaleCheckbox.Name = "CircleScaleCheckbox";
-            this.CircleScaleCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.CircleScaleCheckbox.TabIndex = 9;
-            this.CircleScaleCheckbox.UseVisualStyleBackColor = true;
-            this.CircleScaleCheckbox.CheckedChanged += new System.EventHandler(this.ChangeCheck);
-            // 
-            // groupBox4
-            // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox4.Controls.Add(this.AddCircleScale);
-            this.groupBox4.Enabled = false;
-            this.groupBox4.Location = new System.Drawing.Point(3, 3);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(452, 251);
-            this.groupBox4.TabIndex = 8;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "     ";
-            // 
-            // AddCircleScale
-            // 
-            this.AddCircleScale.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddCircleScale.Location = new System.Drawing.Point(6, 23);
-            this.AddCircleScale.Name = "AddCircleScale";
-            this.AddCircleScale.Size = new System.Drawing.Size(436, 54);
-            this.AddCircleScale.TabIndex = 0;
-            this.AddCircleScale.Text = "Add circle scale";
-            this.AddCircleScale.UseVisualStyleBackColor = true;
-            this.AddCircleScale.Click += new System.EventHandler(this.AddCircleScale_Click);
-            // 
             // ImagePic
             // 
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
@@ -282,7 +228,7 @@ namespace MiBand5WatchFaces.Forms
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveBtn_Click);
             // 
-            // StepsProgressForm
+            // HeartProgressForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -292,9 +238,9 @@ namespace MiBand5WatchFaces.Forms
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "StepsProgressForm";
+            this.Name = "HeartProgressForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Steps Progress";
+            this.Text = "Heart Progress";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NumberFormEdit_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -306,9 +252,6 @@ namespace MiBand5WatchFaces.Forms
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -319,20 +262,16 @@ namespace MiBand5WatchFaces.Forms
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.Panel ImagePic;
-        private System.Windows.Forms.CheckBox GoalImageCheckbox;
+        private System.Windows.Forms.CheckBox ScaleImageCheckbox;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button AddGoalImageButton;
+        private System.Windows.Forms.Button AddScaleButton;
         private System.Windows.Forms.CheckBox LinearCheckBox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button AddLinearImages;
         private System.Windows.Forms.CheckBox LineScaleCheckbox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button AddLineScaleButton;
-        private System.Windows.Forms.CheckBox CircleScaleCheckbox;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.Button AddCircleScale;
         private System.Windows.Forms.Button saveButton;
     }
 }

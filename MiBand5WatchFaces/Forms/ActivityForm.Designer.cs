@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ActivityForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.stepsTab = new System.Windows.Forms.TabPage();
             this.stepsCheckBox = new System.Windows.Forms.CheckBox();
@@ -44,6 +45,7 @@
             this.pulseTab = new System.Windows.Forms.TabPage();
             this.pulseCheckBox = new System.Windows.Forms.CheckBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.addNoDataPulseButton = new System.Windows.Forms.Button();
             this.addSuffixPulseButton = new System.Windows.Forms.Button();
             this.addPreffixPulseButton = new System.Windows.Forms.Button();
             this.addPulseButton = new System.Windows.Forms.Button();
@@ -62,7 +64,6 @@
             this.addPAIButton = new System.Windows.Forms.Button();
             this.ImagePic = new System.Windows.Forms.Panel();
             this.saveButton = new System.Windows.Forms.Button();
-            this.addNoDataPulseButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.stepsTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -259,6 +260,17 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "     Pulse";
             // 
+            // addNoDataPulseButton
+            // 
+            this.addNoDataPulseButton.Enabled = false;
+            this.addNoDataPulseButton.Location = new System.Drawing.Point(6, 149);
+            this.addNoDataPulseButton.Name = "addNoDataPulseButton";
+            this.addNoDataPulseButton.Size = new System.Drawing.Size(331, 36);
+            this.addNoDataPulseButton.TabIndex = 3;
+            this.addNoDataPulseButton.Text = "Add no data";
+            this.addNoDataPulseButton.UseVisualStyleBackColor = true;
+            this.addNoDataPulseButton.Click += new System.EventHandler(this.addSuffixButtonClick);
+            // 
             // addSuffixPulseButton
             // 
             this.addSuffixPulseButton.Enabled = false;
@@ -454,17 +466,6 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
-            // addNoDataPulseButton
-            // 
-            this.addNoDataPulseButton.Enabled = false;
-            this.addNoDataPulseButton.Location = new System.Drawing.Point(6, 149);
-            this.addNoDataPulseButton.Name = "addNoDataPulseButton";
-            this.addNoDataPulseButton.Size = new System.Drawing.Size(331, 36);
-            this.addNoDataPulseButton.TabIndex = 3;
-            this.addNoDataPulseButton.Text = "Add no data";
-            this.addNoDataPulseButton.UseVisualStyleBackColor = true;
-            this.addNoDataPulseButton.Click += new System.EventHandler(this.addSuffixButtonClick);
-            // 
             // ActivityForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,6 +475,7 @@
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ActivityForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Activity";

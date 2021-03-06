@@ -170,36 +170,42 @@
             this.animationToolStripMenuItem.Name = "animationToolStripMenuItem";
             this.animationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.animationToolStripMenuItem.Text = "Animation";
+            this.animationToolStripMenuItem.Click += new System.EventHandler(this.animationToolStripMenuItem_Click);
             // 
             // heartProgressToolStripMenuItem
             // 
             this.heartProgressToolStripMenuItem.Name = "heartProgressToolStripMenuItem";
             this.heartProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.heartProgressToolStripMenuItem.Text = "HeartProgress";
+            this.heartProgressToolStripMenuItem.Click += new System.EventHandler(this.heartProgressToolStripMenuItem_Click);
             // 
             // weekDaysIconsToolStripMenuItem
             // 
             this.weekDaysIconsToolStripMenuItem.Name = "weekDaysIconsToolStripMenuItem";
             this.weekDaysIconsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.weekDaysIconsToolStripMenuItem.Text = "WeekDaysIcons";
+            this.weekDaysIconsToolStripMenuItem.Click += new System.EventHandler(this.weekDaysIconsToolStripMenuItem_Click);
             // 
             // caloriesProgressToolStripMenuItem1
             // 
             this.caloriesProgressToolStripMenuItem1.Name = "caloriesProgressToolStripMenuItem1";
             this.caloriesProgressToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.caloriesProgressToolStripMenuItem1.Text = "CaloriesProgress";
+            this.caloriesProgressToolStripMenuItem1.Click += new System.EventHandler(this.caloriesProgressToolStripMenuItem1_Click);
             // 
             // alarmToolStripMenuItem
             // 
             this.alarmToolStripMenuItem.Name = "alarmToolStripMenuItem";
             this.alarmToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.alarmToolStripMenuItem.Text = "Alarm";
+            this.alarmToolStripMenuItem.Click += new System.EventHandler(this.alarmToolStripMenuItem_Click);
             // 
             // statusSimplifiedToolStripMenuItem
             // 
             this.statusSimplifiedToolStripMenuItem.Name = "statusSimplifiedToolStripMenuItem";
             this.statusSimplifiedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.statusSimplifiedToolStripMenuItem.Text = "StatusSimplified";
+            this.statusSimplifiedToolStripMenuItem.Text = "Status Simplified";
+            this.statusSimplifiedToolStripMenuItem.Click += new System.EventHandler(this.statusSimplifiedToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton1
             // 
@@ -288,19 +294,21 @@
             this.editToolStripMenuItem,
             this.removeToolStripMenuItem});
             this.listMenuStrip.Name = "listMenuStrip";
-            this.listMenuStrip.Size = new System.Drawing.Size(118, 48);
+            this.listMenuStrip.Size = new System.Drawing.Size(181, 70);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.removeToolStripMenuItem.Text = "Remove";
+            this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // watchfacePreviewImage
             // 
@@ -322,6 +330,8 @@
             this.Controls.Add(this.watchfacePreviewImage);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.toolStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Watch Face for MI Band 5 Editor";

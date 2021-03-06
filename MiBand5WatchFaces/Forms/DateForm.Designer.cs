@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DateForm));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.MonthDayYearTab = new System.Windows.Forms.TabPage();
             this.TwoDigitsDayCheckbox = new System.Windows.Forms.CheckBox();
@@ -246,7 +247,7 @@
             this.groupBox2.Controls.Add(this.AddMonthAndDayOnelineButton);
             this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(353, 201);
+            this.groupBox2.Size = new System.Drawing.Size(353, 206);
             this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "     ";
@@ -302,7 +303,7 @@
             this.groupBox3.Controls.Add(this.addOnelineWithYearMonthDayYearButton);
             this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(353, 201);
+            this.groupBox3.Size = new System.Drawing.Size(353, 206);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "     ";
@@ -505,9 +506,10 @@
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DateForm";
+            this.Text = "Date";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DateForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.MonthDayYearTab.ResumeLayout(false);

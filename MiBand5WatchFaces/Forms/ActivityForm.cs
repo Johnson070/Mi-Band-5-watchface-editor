@@ -109,7 +109,7 @@ namespace MiBand5WatchFaces.Forms
             Button btn = (Button)sender;
             WatchFaceLibrary watchface = DeepCopy(watch);
 
-            if (btn.Name == "addStepsButton")
+            if (btn.Name == addStepsButton.Name)
             {
                 watchface.Activity.Steps = watchface.Activity?.Steps == null ? new Steps() : watchface.Activity.Steps;
                 watchface.Activity.Steps.Number = watchface.Activity?.Steps?.Number?.ImageIndex >= 0 ? watchface.Activity.Steps.Number : new Number() { notDraw = true };
@@ -136,7 +136,7 @@ namespace MiBand5WatchFaces.Forms
                     addSuffixStepsButton.Enabled = false;
                 }
             }
-            else if (btn.Name == "addCaloriesButton")
+            else if (btn.Name == addCaloriesButton.Name)
             {
                 watchface.Activity.Calories = watchface.Activity?.Calories == null ? new Calories() : watchface.Activity.Calories;
                 watchface.Activity.Calories.Text = watchface.Activity?.Calories?.Text?.ImageIndex >= 0 ? watchface.Activity.Calories.Text: new Number() { notDraw = true };
@@ -163,7 +163,7 @@ namespace MiBand5WatchFaces.Forms
                     addSuffixCaloriesButton.Enabled = false;
                 }
             }
-            else if (btn.Name == "addPulseButton")
+            else if (btn.Name == addPulseButton.Name)
             {
                 watchface.Activity.Pulse = watchface.Activity?.Pulse == null ? new Pulse() : watchface.Activity.Pulse;
                 watchface.Activity.Pulse.Number = watchface.Activity?.Pulse?.Number?.ImageIndex >= 0 ? watchface.Activity.Pulse.Number : new Number() { notDraw = true };
@@ -192,7 +192,7 @@ namespace MiBand5WatchFaces.Forms
                     addNoDataPulseButton.Enabled = false;
                 }
             }
-            else if (btn.Name == "addPAIButton")
+            else if (btn.Name == addPAIButton.Name)
             {
                 watchface.Activity.PAI = watchface.Activity?.PAI == null ? new PAI() : watchface.Activity.PAI;
                 watchface.Activity.PAI.Number = watchface.Activity?.PAI?.Number?.ImageIndex >= 0 ? watchface.Activity.PAI.Number : new Number() { notDraw = true };
@@ -213,7 +213,7 @@ namespace MiBand5WatchFaces.Forms
                     addPAIButton.Text = "Add PAI";
                 }
             }
-            else if (btn.Name == "addDistanceButton")
+            else if (btn.Name == addDistanceButton.Name)
             {
                 watchface.Activity.Distance = watchface.Activity?.Distance == null ? new Distance() : watchface.Activity.Distance;
                 watchface.Activity.Distance.Number = watchface.Activity?.Distance?.Number?.ImageIndex >= 0 ? watchface.Activity.Distance.Number : new Number() { notDraw = true };
@@ -259,7 +259,7 @@ namespace MiBand5WatchFaces.Forms
             List<int> selImg = null;
             ImagesForm imgForm;
 
-            if (btn.Name == "addPreffixStepsButton")
+            if (btn.Name == addPreffixStepsButton.Name)
             {
                 if (watch.Activity.Steps.PrefixImageIndex >= 0) selImg = new List<int>() { watch.Activity.Steps.PrefixImageIndex };
 
@@ -279,7 +279,7 @@ namespace MiBand5WatchFaces.Forms
                     addPreffixStepsButton.Text = "Add preffix";
                 }
             }
-            else if (btn.Name == "addPreffixCaloriesButton")
+            else if (btn.Name == addPreffixCaloriesButton.Name)
             {
                 if (watch.Activity.Calories.PrefixImageIndex >= 0) selImg = new List<int>() { watch.Activity.Calories.PrefixImageIndex };
 
@@ -299,7 +299,7 @@ namespace MiBand5WatchFaces.Forms
                     addPreffixCaloriesButton.Text = "Add preffix";
                 }
             }
-            else if (btn.Name == "addPreffixPulseButton")
+            else if (btn.Name == addPreffixPulseButton.Name)
             {
                 if (watch.Activity.Pulse.PrefixImageIndex >= 0) selImg = new List<int>() { watch.Activity.Pulse.PrefixImageIndex };
 
@@ -329,7 +329,7 @@ namespace MiBand5WatchFaces.Forms
             List<int> selImg = null;
             ImagesForm imgForm;
 
-            if (btn.Name == "addSuffixStepsButton")
+            if (btn.Name == addSuffixStepsButton.Name)
             {
                 if (watch.Activity.Steps.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Activity.Steps.SuffixImageIndex };
 
@@ -349,7 +349,7 @@ namespace MiBand5WatchFaces.Forms
                     addSuffixCaloriesButton.Text = "Add suffix";
                 }
             }
-            else if (btn.Name == "addSuffixCaloriesButton")
+            else if (btn.Name == addSuffixCaloriesButton.Name)
             {
                 if (watch.Activity.Calories.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Activity.Calories.SuffixImageIndex };
 
@@ -369,7 +369,7 @@ namespace MiBand5WatchFaces.Forms
                     addSuffixCaloriesButton.Text = "Add suffix";
                 }
             }
-            else if (btn.Name == "addSuffixPulseButton")
+            else if (btn.Name == addSuffixPulseButton.Name)
             {
                 if (watch.Activity.Pulse.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Activity.Pulse.SuffixImageIndex };
 
@@ -389,7 +389,7 @@ namespace MiBand5WatchFaces.Forms
                     addSuffixPulseButton.Text = "Add suffix";
                 }
             }
-            else if (btn.Name == "addNoDataPulseButton")
+            else if (btn.Name == addNoDataPulseButton.Name)
             {
                 if (watch.Activity.Pulse.NoDataImageIndex >= 0) selImg = new List<int>() { watch.Activity.Pulse.NoDataImageIndex };
 
@@ -409,7 +409,7 @@ namespace MiBand5WatchFaces.Forms
                     addNoDataPulseButton.Text = "Add no data";
                 }
             }
-            else if (btn.Name == "addKmDistanceSuffixButton")
+            else if (btn.Name == addKmDistanceSuffixButton.Name)
             {
                 if (watch.Activity.Distance.KmSuffixImageIndex >= 0) selImg = new List<int>() { watch.Activity.Distance.KmSuffixImageIndex };
 
@@ -429,7 +429,7 @@ namespace MiBand5WatchFaces.Forms
                     addKmDistanceSuffixButton.Text = "Add KM Suffix";
                 }
             }
-            else if (btn.Name == "addMiDistanceSuffixButton")
+            else if (btn.Name == addMiDistanceSuffixButton.Name)
             {
                 if (watch.Activity.Distance.MilesSuffixImageIndex >= 0) selImg = new List<int>() { watch.Activity.Distance.MilesSuffixImageIndex };
 
@@ -449,7 +449,7 @@ namespace MiBand5WatchFaces.Forms
                     addMiDistanceSuffixButton.Text = "Add MI Suffix";
                 }
             }
-            else if (btn.Name == "addDecimalDistanceButton")
+            else if (btn.Name == addDecimalDistanceButton.Name)
             {
                 if (watch.Activity.Distance.DecimalPointImageIndex >= 0) selImg = new List<int>() { watch.Activity.Distance.DecimalPointImageIndex };
 
@@ -477,7 +477,7 @@ namespace MiBand5WatchFaces.Forms
         {
             Button btn = (Button)sender;
 
-            if (btn.Name == "addKmImageButton")
+            if (btn.Name == addKmImageButton.Name)
             {
                 watch.Activity.Distance.KmImageIndex = watch.Activity.Distance.KmImageIndex == null ? new ImageBasic() : watch.Activity.Distance.KmImageIndex;
                 StateWatchface stateDist = state;
@@ -498,7 +498,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
             }
-            else if (btn.Name == "addMiImageButton")
+            else if (btn.Name == addMiImageButton.Name)
             {
                 watch.Activity.Distance.MilesImageIndex = watch.Activity.Distance.MilesImageIndex == null ? new ImageBasic() : watch.Activity.Distance.MilesImageIndex;
                 StateWatchface stateDist = state;

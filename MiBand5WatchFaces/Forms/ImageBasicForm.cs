@@ -99,11 +99,11 @@ namespace MiBand5WatchFaces.Forms
             {
                 NumericUpDown num = (NumericUpDown)sender;
 
-                if (num.Name == "posXNum")
+                if (num.Name == posXNum.Name)
                 {
                     imageBasic.X = (int)posXNum.Value;
                 }
-                else if (num.Name == "posYNum")
+                else if (num.Name == posYNum.Name)
                 {
                     imageBasic.Y = (int)posYNum.Value;
                 }

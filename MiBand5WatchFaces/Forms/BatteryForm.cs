@@ -87,13 +87,13 @@ namespace MiBand5WatchFaces.Forms
             if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
-                watchface.Battery.BatteryIcon = setForm.imageSet;
+                watch.Battery.BatteryIcon = setForm.imageSet;
                 AddImagesBatteryIconButton.Text = "Edit images";
             }
             else if (setForm.saved)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
-                watchface.Battery.BatteryIcon = null;
+                watch.Battery.BatteryIcon = null;
                 AddImagesBatteryIconButton.Text = "Add images";
             }
 
@@ -135,7 +135,7 @@ namespace MiBand5WatchFaces.Forms
             ImagesForm imgForm;
             string name = ((Button)sender).Name;
 
-            if (name == "AddPreffixButton")
+            if (name == AddPreffixButton.Name)
             {
                 if (watch.Battery.BatteryText.PrefixImageIndex >= 0) selImg = new List<int>() { watch.Battery.BatteryText.PrefixImageIndex };
 
@@ -155,7 +155,7 @@ namespace MiBand5WatchFaces.Forms
                     AddPreffixButton.Text = "Add prefix";
                 }
             }
-            else if (name == "AddSuffixButton")
+            else if (name == AddSuffixButton.Name)
             {
                 if (watch.Battery.BatteryText.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Battery.BatteryText.SuffixImageIndex };
 

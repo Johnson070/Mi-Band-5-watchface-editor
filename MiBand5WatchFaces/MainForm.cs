@@ -42,7 +42,7 @@ namespace MiBand5WatchFaces
 
         private void timeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), new DefaultDictionary<int, Image>(() => new Bitmap(1, 1), watchFace.imagesBuff),state);
+            TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), new DefaultDictionary<int, Image>(() => new Bitmap(1, 1), watchFace.imagesBuff), state);
             timeForm.ShowDialog();
 
             if (timeForm.Save)
@@ -57,8 +57,8 @@ namespace MiBand5WatchFaces
         {
             try
             {
-                state = state.notGen == false ? state : new StateWatchface() { notGen = true};
-                VisualRender render = new VisualRender(watchFace,state);
+                state = state.notGen == false ? state : new StateWatchface() { notGen = true };
+                VisualRender render = new VisualRender(watchFace, state);
                 watchfacePreviewImage.Image = render.GenWatchface();
             }
             catch { MessageBox.Show("Error!", "Error generate preview!"); }
@@ -103,123 +103,200 @@ namespace MiBand5WatchFaces
             //try
             //{
             ListView item = (ListView)sender;
-            Type type = item.SelectedItems[0].Tag.GetType();
 
-            if (type == typeof(Background))
+            if (item.SelectedItems.Count > 0)
             {
-                VisualRender render = new VisualRender(watchFace);
-                BackgroundForm backgroundForm = new BackgroundForm(DeepCopy<Background>((Background)item.SelectedItems[0].Tag), watchFace.imagesBuff.DeepCopy(), render.genPreview());
-                backgroundForm.ShowDialog();
-                if (backgroundForm.Save)
+                Type type = item.SelectedItems[0].Tag.GetType();
+
+                if (type == typeof(Background))
                 {
-                    watchFace.Background = backgroundForm.background;
-                    watchFace.imagesBuff = backgroundForm.images;
-                    RenderButton_Click(null, null);
+                    VisualRender render = new VisualRender(watchFace);
+                    BackgroundForm backgroundForm = new BackgroundForm(DeepCopy<Background>((Background)item.SelectedItems[0].Tag), watchFace.imagesBuff.DeepCopy(), render.genPreview());
+                    backgroundForm.ShowDialog();
+                    if (backgroundForm.Save)
+                    {
+                        watchFace.Background = backgroundForm.background;
+                        watchFace.imagesBuff = backgroundForm.images;
+                        RenderButton_Click(null, null);
+                    }
+                    backgroundForm.Dispose();
                 }
-                backgroundForm.Dispose();
-            }
-            else if (type == typeof(Time))
-            {
-                TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
-                timeForm.ShowDialog();
-
-                if (timeForm.Save)
+                else if (type == typeof(Time))
                 {
-                    watchFace = timeForm.watch;
-                    RenderButton_Click(null, null);
-                }
-                timeForm.Dispose();
-            }
-            else if (type == typeof(Activity))
-            {
-                ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
-                activityForm.ShowDialog();
+                    TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    timeForm.ShowDialog();
 
-                if (activityForm.Save)
+                    if (timeForm.Save)
+                    {
+                        watchFace = timeForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    timeForm.Dispose();
+                }
+                else if (type == typeof(Activity))
                 {
-                    watchFace = activityForm.watch;
-                    RenderButton_Click(null, null);
-                }
-                activityForm.Dispose();
-            }
-            else if (type == typeof(Date))
-            {
-                DateForm dateForm = new DateForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
-                dateForm.ShowDialog();
+                    ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    activityForm.ShowDialog();
 
-                if (dateForm.Save)
+                    if (activityForm.Save)
+                    {
+                        watchFace = activityForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    activityForm.Dispose();
+                }
+                else if (type == typeof(Date))
                 {
-                    watchFace = dateForm.watch;
-                    RenderButton_Click(null, null);
-                }
-                dateForm.Dispose();
-            }
-            else if (type == typeof(Weather))
-            {
-                WeatherForm weatherForm = new WeatherForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
-                weatherForm.ShowDialog();
+                    DateForm dateForm = new DateForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    dateForm.ShowDialog();
 
-                if (weatherForm.Save)
+                    if (dateForm.Save)
+                    {
+                        watchFace = dateForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    dateForm.Dispose();
+                }
+                else if (type == typeof(Weather))
                 {
-                    watchFace = weatherForm.watch;
-                    RenderButton_Click(null, null);
-                }
-                weatherForm.Dispose();
-            }
-            else if (type == typeof(StepsProgress))
-            {
-                StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
-                progressForm.ShowDialog();
+                    WeatherForm weatherForm = new WeatherForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    weatherForm.ShowDialog();
 
-                if (progressForm.Save)
+                    if (weatherForm.Save)
+                    {
+                        watchFace = weatherForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    weatherForm.Dispose();
+                }
+                else if (type == typeof(StepsProgress))
                 {
-                    watchFace = progressForm.watch;
-                    RenderButton_Click(null, null);
-                }
-                progressForm.Dispose();
-            }
-            else if (type == typeof(Status))
-            {
-                StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
-                statusForm.ShowDialog();
+                    StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StepsProgressForm.StateForm.Steps);
+                    progressForm.ShowDialog();
 
-                if (statusForm.Save)
+                    if (progressForm.Save)
+                    {
+                        watchFace = progressForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    progressForm.Dispose();
+                }
+                else if (type == typeof(Status))
                 {
-                    watchFace = statusForm.watch;
-                    RenderButton_Click(null, null);
+                    StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StatusForm.statusForm.Status);
+                    statusForm.ShowDialog();
+
+                    if (statusForm.Save)
+                    {
+                        watchFace = statusForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+
+                    statusForm.Dispose();
                 }
-
-                statusForm.Dispose();
-            }
-            else if (type == typeof(Battery))
-            {
-                BatteryForm batteryForm = new BatteryForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
-                batteryForm.ShowDialog();
-
-                if (batteryForm.Save)
+                else if (type == typeof(Battery))
                 {
-                    watchFace = batteryForm.watch;
-                    RenderButton_Click(null, null);
-                }
-                batteryForm.Dispose();
-            }
-            else if (type == typeof(AnalogDialFace))
-            {
-                AnalogDialFaceForm analogDial = new AnalogDialFaceForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
-                analogDial.ShowDialog();
+                    BatteryForm batteryForm = new BatteryForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    batteryForm.ShowDialog();
 
-                if (analogDial.Save)
+                    if (batteryForm.Save)
+                    {
+                        watchFace = batteryForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    batteryForm.Dispose();
+                }
+                else if (type == typeof(AnalogDialFace))
                 {
-                    watchFace = analogDial.watch;
-                    RenderButton_Click(null, null);
+                    AnalogDialFaceForm analogDial = new AnalogDialFaceForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    analogDial.ShowDialog();
+
+                    if (analogDial.Save)
+                    {
+                        watchFace = analogDial.watch;
+                        RenderButton_Click(null, null);
+                    }
+
+                    analogDial.Dispose();
+                }
+                else if (type == typeof(Other))
+                {
+                    AnimationForm animationForm = new AnimationForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    animationForm.ShowDialog();
+
+                    if (animationForm.Save)
+                    {
+                        watchFace = animationForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    animationForm.Dispose();
+                }
+                else if (type == typeof(CaloriesProgress))
+                {
+                    StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StepsProgressForm.StateForm.Calories);
+                    progressForm.ShowDialog();
+
+                    if (progressForm.Save)
+                    {
+                        watchFace = progressForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    progressForm.Dispose();
+                }
+                else if (type == typeof(HeartProgress))
+                {
+                    HeartProgressForm heartProgress = new HeartProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    heartProgress.ShowDialog();
+
+                    if (heartProgress.Save)
+                    {
+                        watchFace = heartProgress.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    heartProgress.Dispose();
+                }
+                else if (type == typeof(WeekDaysIcons))
+                {
+                    WeekDaysIconsForm weekDays = new WeekDaysIconsForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    weekDays.ShowDialog();
+
+                    if (weekDays.Save)
+                    {
+                        watchFace = weekDays.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    weekDays.Dispose();
+                }
+                else if (type == typeof(Alarm))
+                {
+                    AlarmForm alarmForm = new AlarmForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    alarmForm.ShowDialog();
+
+                    if (alarmForm.Save)
+                    {
+                        watchFace = alarmForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+                    alarmForm.Dispose();
+                }
+                else if (type == typeof(StatusSimple))
+                {
+                    StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StatusForm.statusForm.StatusSpecial);
+                    statusForm.ShowDialog();
+
+                    if (statusForm.Save)
+                    {
+                        watchFace = statusForm.watch;
+                        RenderButton_Click(null, null);
+                    }
+
+                    statusForm.Dispose();
                 }
 
-                analogDial.Dispose();
+                updateListElements();
+                //}
+                //catch { }
             }
-
-            updateListElements();
-            //}
-            //catch { }
         }
 
         private void OpenFormImages_Click(object sender, EventArgs e)
@@ -249,7 +326,7 @@ namespace MiBand5WatchFaces
 
         private void activityToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace),watchFace.imagesBuff.DeepCopy(), state);
+            ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
             activityForm.ShowDialog();
 
             if (activityForm.Save)
@@ -275,7 +352,7 @@ namespace MiBand5WatchFaces
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Clipboard.SetText(JsonConvert.SerializeObject(watchFace,Formatting.Indented,new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+            Clipboard.SetText(JsonConvert.SerializeObject(watchFace, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
             MessageBox.Show("Json saved to clipboard!", "Succeful!");
         }
 
@@ -306,7 +383,7 @@ namespace MiBand5WatchFaces
 
         private void stepsProgressToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StepsProgressForm.StateForm.Steps);
             progressForm.ShowDialog();
 
             if (progressForm.Save)
@@ -319,7 +396,7 @@ namespace MiBand5WatchFaces
 
         private void statusToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StatusForm.statusForm.Status);
             statusForm.ShowDialog();
 
             if (statusForm.Save)
@@ -356,6 +433,120 @@ namespace MiBand5WatchFaces
             }
 
             analogDial.Dispose();
+        }
+
+        private void animationToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AnimationForm animationForm = new AnimationForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            animationForm.ShowDialog();
+
+            if (animationForm.Save)
+            {
+                watchFace = animationForm.watch;
+                RenderButton_Click(null, null);
+            }
+            animationForm.Dispose();
+        }
+
+        private void heartProgressToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HeartProgressForm heartProgress = new HeartProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            heartProgress.ShowDialog();
+
+            if (heartProgress.Save)
+            {
+                watchFace = heartProgress.watch;
+                RenderButton_Click(null, null);
+            }
+            heartProgress.Dispose();
+        }
+
+        private void caloriesProgressToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StepsProgressForm.StateForm.Calories);
+            progressForm.ShowDialog();
+
+            if (progressForm.Save)
+            {
+                watchFace = progressForm.watch;
+                RenderButton_Click(null, null);
+            }
+            progressForm.Dispose();
+        }
+
+        private void weekDaysIconsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            WeekDaysIconsForm weekDays = new WeekDaysIconsForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            weekDays.ShowDialog();
+
+            if (weekDays.Save)
+            {
+                watchFace = weekDays.watch;
+                RenderButton_Click(null, null);
+            }
+            weekDays.Dispose();
+        }
+
+        private void alarmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlarmForm alarmForm = new AlarmForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            alarmForm.ShowDialog();
+
+            if (alarmForm.Save)
+            {
+                watchFace = alarmForm.watch;
+                RenderButton_Click(null, null);
+            }
+            alarmForm.Dispose();
+        }
+
+        private void statusSimplifiedToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StatusForm.statusForm.StatusSpecial);
+            statusForm.ShowDialog();
+
+            if (statusForm.Save)
+            {
+                watchFace = statusForm.watch;
+                RenderButton_Click(null, null);
+            }
+
+            statusForm.Dispose();
+        }
+
+        private void editToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            listViewElements_DoubleClick(listViewElements, null);
+        }
+
+        private void removeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (listViewElements.SelectedItems.Count > 0)
+            {
+                Type type = listViewElements.SelectedItems[0].Tag.GetType();
+
+                if (MessageBox.Show("The selected item will be deleted irretrievably.\nAre you sure?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                    return;
+
+                if (type == typeof(Background)) watchFace.Background = null;
+                else if (type == typeof(Time)) watchFace.Time = null;
+                else if (type == typeof(Activity)) watchFace.Activity = null;
+                else if (type == typeof(Date)) watchFace.Date = null;
+                else if (type == typeof(Weather)) watchFace.Weather = null;
+                else if (type == typeof(StepsProgress)) watchFace.StepsProgress = null;
+                else if (type == typeof(Status)) watchFace.Status = null;
+                else if (type == typeof(Battery)) watchFace.Battery = null;
+                else if (type == typeof(AnalogDialFace)) watchFace.AnalogDialFace = null;
+                else if (type == typeof(Other)) watchFace.Other = null;
+                else if (type == typeof(CaloriesProgress)) watchFace.CaloriesProgress = null;
+                else if (type == typeof(HeartProgress)) watchFace.HeartProgress = null;
+                else if (type == typeof(WeekDaysIcons)) watchFace.WeekDaysIcons = null;
+                else if (type == typeof(Alarm)) watchFace.Alarm = null;
+                else if (type == typeof(StatusSimple)) watchFace.StatusSimplified = null;
+
+                updateListElements();
+                RenderButton_Click(null, null);
+            }
         }
     }
 }

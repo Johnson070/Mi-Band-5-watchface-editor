@@ -29,6 +29,7 @@ namespace MiBand5WatchFaces.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AnalogDialFaceForm));
             this.saveButton = new System.Windows.Forms.Button();
             this.ImagePic = new System.Windows.Forms.Panel();
             this.tabs = new System.Windows.Forms.TabControl();
@@ -407,6 +408,7 @@ namespace MiBand5WatchFaces.Forms
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AnalogDialFaceForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Analog dial face";

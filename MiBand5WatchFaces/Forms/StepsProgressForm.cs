@@ -18,9 +18,17 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        StateForm stateForm;
+
+        public enum StateForm
+        {
+            Steps = 0,Calories=1
+        }
 
         public void Render(StateWatchface state = null)
         {
+            if (stateForm == StateForm.Calories) watch.CaloriesProgress = watch.formEdit.ConvertToSP();
+            else watch.StepsProgress = watch.formEdit;
             render = new VisualRender(watch, state);
             ImagePic.BackgroundImage = render.GenWatchface();
         }
@@ -33,37 +41,42 @@ namespace MiBand5WatchFaces.Forms
             return JsonConvert.DeserializeObject<T>(clone);
         }
 
-        public StepsProgressForm(WatchFaceLibrary watch, DefaultDictionary<int, Image> Images, StateWatchface state)
+        public StepsProgressForm(WatchFaceLibrary watch, DefaultDictionary<int, Image> Images, StateWatchface state, StateForm stateForm)
         {
             InitializeComponent();
             this.watch = watch;
             this.watch.imagesBuff = Images;
             this.state = state;
+            this.stateForm = stateForm;
 
-            this.watch.StepsProgress = this.watch.StepsProgress == null ? new StepsProgress() : this.watch.StepsProgress;
+            if (stateForm == StateForm.Calories)
+            {
+                this.watch.formEdit = this.watch.CaloriesProgress.ConvertToSP();
+                this.Text = "Calories Progress";
+            }
+            else
+                this.watch.formEdit = this.watch.StepsProgress;
+
+            this.watch.formEdit = this.watch.formEdit == null ? new StepsProgress() : this.watch.formEdit;
             Render(state);
 
 
-            if (watch.StepsProgress.GoalImage != null)
+            if (watch.formEdit.GoalImage != null)
             {
                 AddGoalImageButton.Text = "Edit image";
                 GoalImageCheckbox.Checked = true;
             }
-            if (watch.StepsProgress.LineScale != null)
+            if (watch.formEdit.LineScale != null)
             {
                 AddLineScaleButton.Text = "Edit images";
                 LineScaleCheckbox.Checked = true;
-                posXNum.Enabled = true;
-                posYNum.Enabled = true;
-                posXNum.Value = watch.StepsProgress.LineScale.X;
-                posYNum.Value = watch.StepsProgress.LineScale.Y;
             }
-            if (watch.StepsProgress.Linear != null)
+            if (watch.formEdit.Linear != null)
             {
                 AddLinearImages.Text = "Edit images";
                 LinearCheckBox.Checked = true;
             }
-            if (watch.StepsProgress.CircleScale != null)
+            if (watch.formEdit.CircleScale != null)
             {
                 AddCircleScale.Text = "Edit circle scale";
                 CircleScaleCheckbox.Checked = true;
@@ -73,22 +86,22 @@ namespace MiBand5WatchFaces.Forms
         private void AddLineScaleImages_Click(object sender, EventArgs e)
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
-            watchface.StepsProgress.Linear = watchface.StepsProgress.Linear == null ? new Scale() : watchface.StepsProgress.Linear;
+            watchface.formEdit.Linear = watchface.formEdit.Linear == null ? new Scale() : watchface.formEdit.Linear;
             StateWatchface stepsState = DeepCopy(state);
             stepsState.Steps = 10000;
-            ScaleForm scaleForm = new ScaleForm(watchface, watchface.StepsProgress.Linear, watch.imagesBuff.DeepCopy(), stepsState);
+            ScaleForm scaleForm = new ScaleForm(watchface, watchface.formEdit.Linear, watch.imagesBuff.DeepCopy(), stepsState);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved == true)
             {
-                watch.StepsProgress.Linear = scaleForm.scale;
+                watch.formEdit.Linear = scaleForm.scale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
                 AddLinearImages.Text = "Edit images";
             }
             else if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
             {
-                watch.StepsProgress.Linear = null;
+                watch.formEdit.Linear = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
                 AddLinearImages.Text = "Add images";
@@ -99,20 +112,20 @@ namespace MiBand5WatchFaces.Forms
 
         private void AddGoalImageButton_Click(object sender, EventArgs e)
         {
-            watch.StepsProgress.GoalImage = watch.StepsProgress.GoalImage == null ? new ImageBasic() : watch.StepsProgress.GoalImage;
-            ImageBasicForm ibForm = new ImageBasicForm(watch, watch.StepsProgress.GoalImage, watch.imagesBuff.DeepCopy(), state);
+            watch.formEdit.GoalImage = watch.formEdit.GoalImage == null ? new ImageBasic() : watch.formEdit.GoalImage;
+            ImageBasicForm ibForm = new ImageBasicForm(watch, watch.formEdit.GoalImage, watch.imagesBuff.DeepCopy(), state);
             ibForm.ShowDialog();
 
             if (ibForm.saved)
             {
                 AddGoalImageButton.Text = "Edit image";
-                watch.StepsProgress.GoalImage = ibForm.imageBasic;
+                watch.formEdit.GoalImage = ibForm.imageBasic;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
             else
             {
                 AddGoalImageButton.Text = "Add image";
-                watch.StepsProgress.GoalImage = null;
+                watch.formEdit.GoalImage = null;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
 
@@ -121,52 +134,57 @@ namespace MiBand5WatchFaces.Forms
 
         private void AddLineScaleButton_Click(object sender, EventArgs e)
         {
-            List<int> selImg = null;
-            ImagesForm imgForm;
-            if (watch.StepsProgress.LineScale.ImageIndex >= 0)
+            //List<int> selImg = null;
+            //ImagesForm imgForm;
+            //if (watch.formEdit.LineScale.ImageIndex >= 0)
+            //{
+            //    selImg = new List<int>();
+
+            //    for (int i = watch.formEdit.LineScale.ImageIndex; i < watch.formEdit.LineScale.ImageIndex + watch.formEdit.LineScale.ImagesCount; i++)
+            //        selImg.Add(i);
+            //}
+
+            //imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, true, true);
+            //imgForm.ShowDialog();
+
+            //if (imgForm.saveImages == true && imgForm.selectedImages != null)
+            //{
+            //    watch.imagesBuff = imgForm.Images;
+            //    watch.formEdit.LineScale = watch.formEdit.LineScale == null ? new LineScale() : watch.formEdit.LineScale;
+            //    watch.formEdit.LineScale.ImageIndex = imgForm.selectedImages[0];
+            //    watch.formEdit.LineScale.ImagesCount = imgForm.selectedImages.Count;
+            //    AddLineScaleButton.Text = "Edit images";
+            //    posXNum.Enabled = true;
+            //    posYNum.Enabled = true;
+            //}
+            //else if (imgForm.saveImages == true)
+            //{
+            //    watch.imagesBuff = imgForm.Images;
+            //    watch.formEdit.LineScale = null;
+            //    AddLineScaleButton.Text = "Add images";
+            //    posXNum.Enabled = false;
+            //    posYNum.Enabled = false;
+            //}
+            WatchFaceLibrary watchface = DeepCopy(watch);
+            if (stateForm == StateForm.Calories)
+                watchface.CaloriesProgress.LineScale = watchface.CaloriesProgress.LineScale == null ? new ImageSet() : watchface.CaloriesProgress.LineScale;
+            else
+                watchface.StepsProgress.LineScale = watchface.StepsProgress.LineScale == null ? new ImageSet() : watchface.StepsProgress.LineScale;
+            ImageSetForm setForm = new ImageSetForm(watchface, stateForm == StateForm.Calories ? watchface.CaloriesProgress.LineScale : watchface.StepsProgress.LineScale, watch.imagesBuff.DeepCopy(), state);
+            setForm.ShowDialog();
+
+            if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
             {
-                selImg = new List<int>();
-
-                for (int i = watch.StepsProgress.LineScale.ImageIndex; i < watch.StepsProgress.LineScale.ImageIndex + watch.StepsProgress.LineScale.ImagesCount; i++)
-                    selImg.Add(i);
-            }
-
-            imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, true, true);
-            imgForm.ShowDialog();
-
-            if (imgForm.saveImages == true && imgForm.selectedImages != null)
-            {
-                watch.imagesBuff = imgForm.Images;
-                watch.StepsProgress.LineScale = watch.StepsProgress.LineScale == null ? new LineScale() : watch.StepsProgress.LineScale;
-                watch.StepsProgress.LineScale.ImageIndex = imgForm.selectedImages[0];
-                watch.StepsProgress.LineScale.ImagesCount = imgForm.selectedImages.Count;
+                watch.imagesBuff = setForm.watch.imagesBuff;
+                watch.formEdit.LineScale = watch.formEdit.LineScale == null ? new ImageSet() : watch.formEdit.LineScale;
+                watch.formEdit.LineScale = setForm.imageSet;
                 AddLineScaleButton.Text = "Edit images";
-                posXNum.Enabled = true;
-                posYNum.Enabled = true;
             }
-            else if (imgForm.saveImages == true)
+            else if (setForm.saved)
             {
-                watch.imagesBuff = imgForm.Images;
-                watch.StepsProgress.LineScale = null;
+                watch.imagesBuff = setForm.watch.imagesBuff;
+                watch.formEdit.LineScale = null;
                 AddLineScaleButton.Text = "Add images";
-                posXNum.Enabled = false;
-                posYNum.Enabled = false;
-            }
-
-            Render(state);
-        }
-
-        private void posChanged(object sender, EventArgs e)
-        {
-            NumericUpDown numeric = (NumericUpDown)sender;
-
-            if (numeric.Name == "posXNum")
-            {
-                watch.StepsProgress.LineScale.X = (int)posXNum.Value;
-            }
-            else if (numeric.Name == "posYNum")
-            {
-                watch.StepsProgress.LineScale.Y = (int)posYNum.Value;
             }
 
             Render(state);
@@ -175,13 +193,13 @@ namespace MiBand5WatchFaces.Forms
         private void AddCircleScale_Click(object sender, EventArgs e)
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
-            watchface.StepsProgress.CircleScale = watchface.StepsProgress.CircleScale == null ? new CircleScale() : watchface.StepsProgress.CircleScale;
-            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.StepsProgress.CircleScale, watch.imagesBuff.DeepCopy(), state);
+            watchface.formEdit.CircleScale = watchface.formEdit.CircleScale == null ? new CircleScale() : watchface.formEdit.CircleScale;
+            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.formEdit.CircleScale, watch.imagesBuff.DeepCopy(), state);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved)
             {
-                watch.StepsProgress.CircleScale = scaleForm.circleScale;
+                watch.formEdit.CircleScale = scaleForm.circleScale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
                 AddCircleScale.Text = "Edit circle scale";
@@ -204,26 +222,40 @@ namespace MiBand5WatchFaces.Forms
             {
                 Save = true;
 
-                if (CircleScaleCheckbox.Checked == false) watch.StepsProgress.CircleScale = null;
-                if (LinearCheckBox.Checked == false) watch.StepsProgress.Linear = null;
-                if (LineScaleCheckbox.Checked == false) watch.StepsProgress.LineScale = null;
-                if (GoalImageCheckbox.Checked == false) watch.StepsProgress.GoalImage = null;
+                if (CircleScaleCheckbox.Checked == false) watch.formEdit.CircleScale = null;
+                if (LinearCheckBox.Checked == false) watch.formEdit.Linear = null;
+                if (LineScaleCheckbox.Checked == false) watch.formEdit.LineScale = null;
+                if (GoalImageCheckbox.Checked == false) watch.formEdit.GoalImage = null;
 
-                if (watch.StepsProgress.GoalImage == null && watch.StepsProgress.Linear == null && watch.StepsProgress.LineScale == null && watch.StepsProgress.CircleScale == null)
-                    watch.StepsProgress = null;
+                if (watch.formEdit.GoalImage == null && watch.formEdit.Linear == null && watch.formEdit.LineScale == null && watch.formEdit.CircleScale == null)
+                    watch.formEdit = null;
+
+                if (stateForm == StateForm.Calories)
+                    watch.CaloriesProgress = watch.formEdit.ConvertToSP();
+                else
+                    watch.StepsProgress = watch.formEdit;
             }
+
+            watch.formEdit = null;
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             Save = true;
-            if (CircleScaleCheckbox.Checked == false) watch.StepsProgress.CircleScale = null;
-            if (LinearCheckBox.Checked == false) watch.StepsProgress.Linear = null;
-            if (LineScaleCheckbox.Checked == false) watch.StepsProgress.LineScale = null;
-            if (GoalImageCheckbox.Checked == false) watch.StepsProgress.GoalImage = null;
+            if (CircleScaleCheckbox.Checked == false) watch.formEdit.CircleScale = null;
+            if (LinearCheckBox.Checked == false) watch.formEdit.Linear = null;
+            if (LineScaleCheckbox.Checked == false) watch.formEdit.LineScale = null;
+            if (GoalImageCheckbox.Checked == false) watch.formEdit.GoalImage = null;
 
-            if (watch.StepsProgress.GoalImage == null && watch.StepsProgress.Linear == null && watch.StepsProgress.LineScale == null && watch.StepsProgress.CircleScale == null)
-                watch.StepsProgress = null;
+            if (watch.formEdit.GoalImage == null && watch.formEdit.Linear == null && watch.formEdit.LineScale == null && watch.formEdit.CircleScale == null)
+                watch.formEdit = null;
+
+            if (stateForm == StateForm.Calories)
+                watch.CaloriesProgress = watch.formEdit.ConvertToSP();
+            else
+                watch.StepsProgress = watch.formEdit;
+
+            watch.formEdit = null;
             this.Close();
         }
     }

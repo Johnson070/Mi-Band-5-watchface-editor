@@ -176,7 +176,7 @@ namespace MiBand5WatchFaces.Forms
             Button btn = (Button)sender;
             WatchFaceLibrary watchface = DeepCopy(watch);
 
-            if (btn.Name == "AddNumberTemperatureTodaySeparateDayButton")
+            if (btn.Name == AddNumberTemperatureTodaySeparateDayButton.Name)
             {
                 watchface.Weather.Temperature = watchface.Weather.Temperature == null ? new Temperature() : watchface.Weather.Temperature;
                 watchface.Weather.Temperature.Today = watchface.Weather.Temperature.Today == null ? new TodayTemperature() : watchface.Weather.Temperature.Today;
@@ -209,7 +209,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDegreeImageTemperatureTodaySeparateDayButton.Enabled = false;
                 }
             }
-            else if (btn.Name == "AddNumberTemperatureTodaySeparateNightButton")
+            else if (btn.Name == AddNumberTemperatureTodaySeparateNightButton.Name)
             {
                 watchface.Weather.Temperature = watchface.Weather.Temperature == null ? new Temperature() : watchface.Weather.Temperature;
                 watchface.Weather.Temperature.Today = watchface.Weather.Temperature.Today == null ? new TodayTemperature() : watchface.Weather.Temperature.Today;
@@ -242,7 +242,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDegreeImageTemperatureTodaySeparateNightButton.Enabled = false;
                 }
             }
-            else if (btn.Name == "AddNumberTemperatureTodayOnelineButton")
+            else if (btn.Name == AddNumberTemperatureTodayOnelineButton.Name)
             {
                 watchface.Weather.Temperature = watchface.Weather.Temperature == null ? new Temperature() : watchface.Weather.Temperature;
                 watchface.Weather.Temperature.Today = watchface.Weather.Temperature.Today == null ? new TodayTemperature() : watchface.Weather.Temperature.Today;
@@ -277,7 +277,7 @@ namespace MiBand5WatchFaces.Forms
                     AddForBothTemperatureTodayOnelineCheckBox.Enabled = false;
                 }
             }
-            else if (btn.Name == "AddNumberTemperatureCurrentButton")
+            else if (btn.Name == AddNumberTemperatureCurrentButton.Name)
             {
                 watchface.Weather.Temperature = watchface.Weather.Temperature == null ? new Temperature() : watchface.Weather.Temperature;
                 watchface.Weather.Temperature.Current = watchface.Weather.Temperature.Current == null ? new TemperatureNumber() : watchface.Weather.Temperature.Current;
@@ -306,7 +306,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDegreeImageTemperatureCurrentButton.Enabled = true;
                 }
             }
-            else if (btn.Name == "AddNumberHumidityButton")
+            else if (btn.Name == AddNumberHumidityButton.Name)
             {
                 watchface.Weather.Humidity = watchface.Weather.Humidity == null ? new Humidity() : watchface.Weather.Humidity;
                 watchface.Weather.Humidity.Text = watchface.Weather.Humidity.Text == null ? new Number() { notDraw = true } : watchface.Weather.Humidity.Text;
@@ -332,7 +332,7 @@ namespace MiBand5WatchFaces.Forms
                     AddSuffixImageHumidityButton.Enabled = false;
                 }
             }
-            else if (btn.Name == "AddNumberWindButton")
+            else if (btn.Name == AddNumberWindButton.Name)
             {
                 watchface.Weather.Wind = watchface.Weather.Wind == null ? new Wind() : watchface.Weather.Wind;
                 watchface.Weather.Wind.Text = watchface.Weather.Wind.Text == null ? new Number() { notDraw = true } : watchface.Weather.Wind.Text;
@@ -356,7 +356,7 @@ namespace MiBand5WatchFaces.Forms
                     AddSuffixWindButton.Enabled = false;
                 }
             }
-            else if (btn.Name == "AddNumberUVButton")
+            else if (btn.Name == AddNumberUVButton.Name)
             {
                 watchface.Weather.UVIndex = watchface.Weather.UVIndex == null ? new UVWrapper() : watchface.Weather.UVIndex;
                 watchface.Weather.UVIndex.UV = watchface.Weather.UVIndex.UV == null ? new UVIndex() : watchface.Weather.UVIndex.UV;
@@ -392,7 +392,7 @@ namespace MiBand5WatchFaces.Forms
             List<int> selImg = null;
             ImagesForm imgForm;
 
-            if (btn.Name == "AddMinusImageTemperatureTodaySeparateDayButton")
+            if (btn.Name == AddMinusImageTemperatureTodaySeparateDayButton.Name)
             {
                 if (watch.Weather.Temperature.Today.Separate.Day.MinusImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.Separate.Day.MinusImageIndex };
 
@@ -412,7 +412,7 @@ namespace MiBand5WatchFaces.Forms
                     AddMinusImageTemperatureTodaySeparateDayButton.Text = "Add minus image";
                 }
             }
-            else if (btn.Name == "AddMinusImageTemperatureTodaySeparateNightButton")
+            else if (btn.Name == AddMinusImageTemperatureTodaySeparateNightButton.Name)
             {
                 if (watch.Weather.Temperature.Today.Separate.Night.MinusImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.Separate.Night.MinusImageIndex };
 
@@ -432,7 +432,7 @@ namespace MiBand5WatchFaces.Forms
                     AddMinusImageTemperatureTodaySeparateNightButton.Text = "Add minus image";
                 }
             }
-            else if (btn.Name == "AddDegreeImageTemperatureTodaySeparateDayButton")
+            else if (btn.Name == AddDegreeImageTemperatureTodaySeparateDayButton.Name)
             {
                 if (watch.Weather.Temperature.Today.Separate.Day.DegreesImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.Separate.Day.DegreesImageIndex };
 
@@ -452,7 +452,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDegreeImageTemperatureTodaySeparateDayButton.Text = "Add degree image";
                 }
             }
-            else if (btn.Name == "AddDegreeImageTemperatureTodaySeparateNightButton")
+            else if (btn.Name == AddDegreeImageTemperatureTodaySeparateNightButton.Name)
             {
                 if (watch.Weather.Temperature.Today.Separate.Night.DegreesImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.Separate.Night.DegreesImageIndex };
 
@@ -472,7 +472,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDegreeImageTemperatureTodaySeparateNightButton.Text = "Add degree image";
                 }
             }
-            else if (btn.Name == "AddMinusImageTemperatureTodayOnelineButton")
+            else if (btn.Name == AddMinusImageTemperatureTodayOnelineButton.Name)
             {
                 if (watch.Weather.Temperature.Today.OneLine.MinusSignImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.OneLine.MinusSignImageIndex };
 
@@ -492,7 +492,7 @@ namespace MiBand5WatchFaces.Forms
                     AddMinusImageTemperatureTodayOnelineButton.Text = "Add minus image";
                 }
             }
-            else if (btn.Name == "AddDelimeterImageTemperatureTodayOnelineButton")
+            else if (btn.Name == AddDelimeterImageTemperatureTodayOnelineButton.Name)
             {
                 if (watch.Weather.Temperature.Today.OneLine.DelimiterImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.OneLine.DelimiterImageIndex };
 
@@ -512,7 +512,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDelimeterImageTemperatureTodayOnelineButton.Text = "Add delimeter image";
                 }
             }
-            else if (btn.Name == "AddDegreeImageTemperatureTodayOnelineButton")
+            else if (btn.Name == AddDegreeImageTemperatureTodayOnelineButton.Name)
             {
                 if (watch.Weather.Temperature.Today.OneLine.DegreesImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.OneLine.DegreesImageIndex };
 
@@ -532,7 +532,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDegreeImageTemperatureTodayOnelineButton.Text = "Add degree image";
                 }
             }
-            else if (btn.Name == "AddMinusImageTemperatureCurrentButton")
+            else if (btn.Name == AddMinusImageTemperatureCurrentButton.Name)
             {
                 if (watch.Weather.Temperature.Current.MinusImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Current.MinusImageIndex };
 
@@ -552,7 +552,7 @@ namespace MiBand5WatchFaces.Forms
                     AddMinusImageTemperatureCurrentButton.Text = "Add minus image";
                 }
             }
-            else if (btn.Name == "AddDegreeImageTemperatureCurrentButton")
+            else if (btn.Name == AddDegreeImageTemperatureCurrentButton.Name)
             {
                 if (watch.Weather.Temperature.Current.MinusImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Current.MinusImageIndex };
 
@@ -572,7 +572,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDegreeImageTemperatureCurrentButton.Text = "Add degree image";
                 }
             }
-            else if (btn.Name == "AddSuffixHumidityButton")
+            else if (btn.Name == AddSuffixHumidityButton.Name)
             {
                 if (watch.Weather.Humidity.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Weather.Humidity.SuffixImageIndex };
 
@@ -592,7 +592,7 @@ namespace MiBand5WatchFaces.Forms
                     AddSuffixHumidityButton.Text = "Add suffix";
                 }
             }
-            else if (btn.Name == "AddSuffixWindButton")
+            else if (btn.Name == AddSuffixWindButton.Name)
             {
                 if (watch.Weather.Wind.ImageSuffixEN >= 0) selImg = new List<int>() { watch.Weather.Wind.ImageSuffixEN };
 
@@ -612,7 +612,7 @@ namespace MiBand5WatchFaces.Forms
                     AddSuffixWindButton.Text = "Add suffix";
                 }
             }
-            else if (btn.Name == "AddSuffixUVButton")
+            else if (btn.Name == AddSuffixUVButton.Name)
             {
                 if (watch.Weather.UVIndex.UV.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Weather.UVIndex.UV.SuffixImageIndex };
 
