@@ -27,8 +27,8 @@ namespace MiBand5WatchFaces
 
         private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VisualRender render = new VisualRender(watchFace);
-            BackgroundForm bgr = new BackgroundForm(DeepCopy<Background>(watchFace.Background), new DefaultDictionary<int, Image>(() => new Bitmap(1, 1), watchFace.imagesBuff), render.genPreview());
+            VisualRender render = new VisualRender(watchFace,state);
+            BackgroundForm bgr = new BackgroundForm(DeepCopy<Background>(watchFace.Background), watchFace.imagesBuff.DeepCopy(), render.genPreview());
             bgr.ShowDialog();
             if (bgr.Save)
             {
@@ -42,7 +42,7 @@ namespace MiBand5WatchFaces
 
         private void timeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), new DefaultDictionary<int, Image>(() => new Bitmap(1, 1), watchFace.imagesBuff), state);
+            TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
             timeForm.ShowDialog();
 
             if (timeForm.Save)

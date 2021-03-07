@@ -66,7 +66,7 @@ namespace MiBand5WatchFaces.Forms
             WatchFaceLibrary watchface = DeepCopy(watch);
             watchface.HeartProgress.Linear = watchface.HeartProgress.Linear == null ? new Scale() : watchface.HeartProgress.Linear;
             StateWatchface heartState= DeepCopy(state);
-            heartState.Pulse = 10000;
+            heartState.Pulse = 150;
             ScaleForm scaleForm = new ScaleForm(watchface, watchface.HeartProgress.Linear, watch.imagesBuff.DeepCopy(), heartState);
             scaleForm.ShowDialog();
 

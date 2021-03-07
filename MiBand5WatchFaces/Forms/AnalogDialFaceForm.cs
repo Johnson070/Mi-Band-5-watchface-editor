@@ -122,7 +122,7 @@ namespace MiBand5WatchFaces.Forms
 
             if (color.ShowDialog() == DialogResult.OK)
             {
-                AddColorButtonHours.BackColor = color.Color;
+                AddColorMinutesButton.BackColor = color.Color;
                 watch.AnalogDialFace.Minutes.Color = $"0x{color.Color.R.ToString("X2")}{color.Color.G.ToString("X2")}{color.Color.B.ToString("X2")}";
             }
             Render(state);

@@ -37,7 +37,7 @@ namespace MiBand5WatchFaces.Forms
             render = new VisualRender(watch, state);
             ImagePic.BackgroundImage = render.GenWatchface();
 
-            if (status == statusForm.StatusSpecial)
+            if (status == statusForm.StatusSpecial && watch.StatusSimplified != null)
                 watch.Status = DeepCopy(watch.StatusSimplified.ConvertToStatus());
         }
 
@@ -59,7 +59,7 @@ namespace MiBand5WatchFaces.Forms
             if (status == statusForm.StatusSpecial)
             {
                 this.buffer = DeepCopy(watch.Status);
-                this.watch.Status = this.watch.Status == null ? new Status() : this.watch.StatusSimplified.ConvertToStatus();
+                this.watch.Status = this.watch.StatusSimplified == null ? new Status() : this.watch.StatusSimplified.ConvertToStatus();
                 this.Text = "Status Simplified";
             }
             else
@@ -68,40 +68,40 @@ namespace MiBand5WatchFaces.Forms
 
             Render(state);
 
-            if (watch.Status.Bluetooth != null)
+            if (this.watch.Status.Bluetooth != null)
             {
                 bluetoothCheckbox.Checked = true;
-                if (watch.Status.Bluetooth.ImageIndexOn >= 0) AddImageONBluetooth.Text = "Edit image ON";
-                if (watch.Status.Bluetooth.ImageIndexOff >= 0) AddImageOFFBluetooth.Text = "Edit image OFF";
-                posXBluetooth.Value = watch.Status.Bluetooth.Coordinates.X;
-                posYBluetooth.Value = watch.Status.Bluetooth.Coordinates.Y;
-                if (watch.Status.Bluetooth.ImageIndexOn >= 0 || watch.Status.Bluetooth.ImageIndexOff >= 0)
+                if (this.watch.Status.Bluetooth.ImageIndexOn >= 0) AddImageONBluetooth.Text = "Edit image ON";
+                if (this.watch.Status.Bluetooth.ImageIndexOff >= 0) AddImageOFFBluetooth.Text = "Edit image OFF";
+                posXBluetooth.Value = this.watch.Status.Bluetooth.Coordinates.X;
+                posYBluetooth.Value = this.watch.Status.Bluetooth.Coordinates.Y;
+                if (this.watch.Status.Bluetooth.ImageIndexOn >= 0 || this.watch.Status.Bluetooth.ImageIndexOff >= 0)
                 {
                     posXBluetooth.Enabled = true;
                     posYBluetooth.Enabled = true;
                 }
             }
-            if (watch.Status.Lock != null)
+            if (this.watch.Status.Lock != null)
             {
                 lockCheckbox.Checked = true;
-                if (watch.Status.Lock.ImageIndexOn >= 0) AddImageONLock.Text = "Edit image ON";
-                if (watch.Status.Lock.ImageIndexOff >= 0) AddImageOFFLock.Text = "Edit image OFF";
-                posXLock.Value = watch.Status.Lock.Coordinates.X;
-                posYLock.Value = watch.Status.Lock.Coordinates.Y;
-                if (watch.Status.Lock.ImageIndexOn >= 0 || watch.Status.Lock.ImageIndexOff >= 0)
+                if (this.watch.Status.Lock.ImageIndexOn >= 0) AddImageONLock.Text = "Edit image ON";
+                if (this.watch.Status.Lock.ImageIndexOff >= 0) AddImageOFFLock.Text = "Edit image OFF";
+                posXLock.Value = this.watch.Status.Lock.Coordinates.X;
+                posYLock.Value = this.watch.Status.Lock.Coordinates.Y;
+                if (this.watch.Status.Lock.ImageIndexOn >= 0 || this.watch.Status.Lock.ImageIndexOff >= 0)
                 {
                     posXLock.Enabled = true;
                     posYLock.Enabled = true;
                 }
             }
-            if (watch.Status.DoNotDisturb != null)
+            if (this.watch.Status.DoNotDisturb != null)
             {
                 dndCheclbox.Checked = true;
-                if (watch.Status.DoNotDisturb.ImageIndexOn >= 0) AddImageONDND.Text = "Edit image ON";
-                if (watch.Status.DoNotDisturb.ImageIndexOff >= 0) AddImageOFFDND.Text = "Edit image OFF";
-                posXDND.Value = watch.Status.DoNotDisturb.Coordinates.X;
-                posYDND.Value = watch.Status.DoNotDisturb.Coordinates.Y;
-                if (watch.Status.DoNotDisturb.ImageIndexOn >= 0 || watch.Status.DoNotDisturb.ImageIndexOff >= 0)
+                if (this.watch.Status.DoNotDisturb.ImageIndexOn >= 0) AddImageONDND.Text = "Edit image ON";
+                if (this.watch.Status.DoNotDisturb.ImageIndexOff >= 0) AddImageOFFDND.Text = "Edit image OFF";
+                posXDND.Value = this.watch.Status.DoNotDisturb.Coordinates.X;
+                posYDND.Value = this.watch.Status.DoNotDisturb.Coordinates.Y;
+                if (this.watch.Status.DoNotDisturb.ImageIndexOn >= 0 || this.watch.Status.DoNotDisturb.ImageIndexOff >= 0)
                 {
                     posXDND.Enabled = true;
                     posYDND.Enabled = true;
