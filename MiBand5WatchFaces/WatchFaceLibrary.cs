@@ -5,33 +5,78 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Reflection;
 
 namespace MiBand5WatchFaces
 {
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class WatchFaceLibrary
     {
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("Background")]
         public Background Background;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("Time")]
         public Time Time;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("Activity")]
         public Activity Activity;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("Date")]
         public Date Date;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("Weather")]
         public Weather Weather;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("StepsProgress")]
         public StepsProgress StepsProgress;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("Status")]
         public Status Status;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("Battery")]
         public Battery Battery;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("AnalogDialFace")]
         public AnalogDialFace AnalogDialFace;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("Other")]
         public Other Other;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("HeartProgress")]
         public HeartProgress HeartProgress;
         //public UnknownTest Unknown13;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("WeekDaysIcons")]
         public WeekDaysIcons WeekDaysIcons;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("CaloriesProgress")]
         public CaloriesProgress CaloriesProgress;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("Alarm")]
         public Alarm Alarm;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("StatusSimplified")]
         public StatusSimple StatusSimplified;
         //public LunarDate LunarDateCN;
 
         //[JsonIgnore]
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("formEdit")]
         public StepsProgress formEdit;
 
         [JsonIgnore]
@@ -39,7 +84,7 @@ namespace MiBand5WatchFaces
         [JsonIgnore]
         public List<Image> images = new List<Image>();
         [JsonIgnore]
-        public DefaultDictionary<int, Image> imagesBuff = new DefaultDictionary<int, Image>(() => new Bitmap(1,1));
+        public DefaultDictionary<int, Image> imagesBuff = new DefaultDictionary<int, Image>(() => new Bitmap(1, 1));
 
         public void LoadImages()
         {
@@ -58,8 +103,9 @@ namespace MiBand5WatchFaces
                 }
         }
 
-        public List<object> getElements() => new List<object>() { Background, Time, Activity, Date, Weather, StepsProgress, Status, Battery, AnalogDialFace, Other, HeartProgress, WeekDaysIcons, CaloriesProgress, Alarm, StatusSimplified};
-   
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        public List<object> getElements() => new List<object>() { Background, Time, Activity, Date, Weather, StepsProgress, Status, Battery, AnalogDialFace, Other, HeartProgress, WeekDaysIcons, CaloriesProgress, Alarm, StatusSimplified };
+
     }
 
     public class DefaultDictionary<TKey, TValue> : Dictionary<TKey, TValue>
@@ -92,76 +138,107 @@ namespace MiBand5WatchFaces
 
     //===========================ACTIVITY=============================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class Activity
     {
+        [JsonProperty("Steps")]
         public Steps Steps;
         //public StepsGoal StepsGoal;
+        [JsonProperty("Calories")]
         public Calories Calories;
+
+        [JsonProperty("Pulse")]
         public Pulse Pulse;
+
+        [JsonProperty("Distance")]
         public Distance Distance;
+
+        [JsonProperty("PAI")]
         public PAI PAI;
+
+        [JsonProperty("UnknownV7")]
         public int UnknownV7 = 0;
     }
 
     public class Steps
     {
+        [JsonProperty("Number")]
         public Number Number;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("PrefixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int PrefixImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("SuffixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int SuffixImageIndex = -10000;
     }
 
     public class StepsGoal
     {
+        [JsonProperty("Number")]
         public Number Number;
     }
 
     public class Calories
     {
+        [JsonProperty("Text")]
         public Number Text;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("SuffixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int SuffixImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("PrefixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int PrefixImageIndex = -10000;
     }
 
     public class Pulse
     {
+        [JsonProperty("Number")]
         public Number Number;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("PrefixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int PrefixImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("NoDataImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int NoDataImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("SuffixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int SuffixImageIndex = -10000;
     }
 
     public class Distance
     {
+        [JsonProperty("Number")]
         public Number Number;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("KmSuffixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int KmSuffixImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("DecimalPointImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DecimalPointImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("MilesSuffixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int MilesSuffixImageIndex = -10000;
+
+        [JsonProperty("KmImageIndex")]
         public ImageBasic KmImageIndex;
+
+        [JsonProperty("MilesImageIndex")]
         public ImageBasic MilesImageIndex;
     }
 
     public class PAI
     {
+        [JsonProperty("Number")]
         public Number Number;
     }
 
@@ -170,44 +247,72 @@ namespace MiBand5WatchFaces
 
     public class AirPollution
     {
+        [JsonProperty("Index")]
         public Number Index;
+
+        [JsonProperty("Icon")]
         public ImageSet Icon;
     }
 
     //===========================ALARM=================================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class Alarm
     {
+        [JsonProperty("Text")]
         public Number Text;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("DelimiterImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageOn", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public ImageBasic ImageOn;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageOff", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public ImageBasic ImageOff;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageNoAlarm", DefaultValueHandling = DefaultValueHandling.Ignore)]
         public ImageBasic ImageNoAlarm;
+
+        [JsonProperty("UnknownTF6")]
         public int UnknownTF6 = 1;
+
+        [JsonProperty("UnknownTF7")]
         public int UnknownTF7 = 1;
     }
 
     //===========================ALARM=================================
     //===========================ANALOGDIALFACE========================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class AnalogDialFace
     {
+        [JsonProperty("Hours")]
         public ClockHand Hours;
+
+        [JsonProperty("Minutes")]
         public ClockHand Minutes;
+
+        [JsonProperty("Seconds")]
         public ClockHand Seconds;
     }
 
     public class ClockHand
     {
+        [JsonProperty("OnlyBorder")]
         public bool OnlyBorder = true;
+
+        [JsonProperty("Color")]
         public string Color = "0x000000";
+
+        [JsonProperty("Center")]
         public XY Center = new XY() { X = 0, Y = 0 };
+
+        [JsonProperty("Shape")]
         public List<XY> Shape;
+
+        [JsonProperty("CenterImage")]
         public ImageBasic CenterImage;
 
         public Point[] RotateArrowAtCenter(float angle)
@@ -215,7 +320,7 @@ namespace MiBand5WatchFaces
             List<XY> points = Shape;
 
             List<Point> outPoints = new List<Point>();
-            
+
             foreach (XY point in points)
             {
                 outPoints.Add(getRotatePoint(point.X, point.Y, angle - 90f));
@@ -239,7 +344,7 @@ namespace MiBand5WatchFaces
             }
             catch
             {
-                return new Point(Center.X,Center.Y);
+                return new Point(Center.X, Center.Y);
             }
         }
     }
@@ -249,44 +354,76 @@ namespace MiBand5WatchFaces
 
     public class Animation
     {
+        [JsonProperty("AnimationImages")]
         public ImageSet AnimationImages;
+
+        [JsonProperty("Speed")]
         public int Speed;
+
+        [JsonProperty("RepeatCount")]
         public int RepeatCount;
+
+        [JsonProperty("UnknownTF4")]
         public int UnknownTF4 = 1;
     }
 
     //===========================ANIMATION=============================
     //===========================BACKGROUND============================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class Background
     {
+        [JsonProperty("Image")]
         public ImageBasic Image;
+
+        [JsonProperty("BackgroundColor")]
         public string BackgroundColor = null;
+
+        [JsonProperty("Preview1")]
         public ImageBasic Preview1;
+
+        [JsonProperty("Preview2")]
         public ImageBasic Preview2;
+
+        [JsonProperty("Preview3")]
         public ImageBasic Preview3;
     }
 
     //===========================BACKGROUND============================
     //===========================BATTERY===============================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class Battery
     {
+        [JsonProperty("BatteryText")]
         public BatteryText BatteryText;
+
+        [JsonProperty("BatteryIcon")]
         public ImageSet BatteryIcon;
+
+        [JsonProperty("Linear")]
         public Scale Linear;
+
+        [JsonProperty("BUnknown4")]
         public UnknownTest BUnknown4;
+
+        [JsonProperty("BUnknown5")]
         public ImageBasic BUnknown5;
+
+        [JsonProperty("BUnknown6")]
         public UnknownTest BUnknown6;
     }
 
     public class BatteryText
     {
+        [JsonProperty("Coordinates")]
         public Number Coordinates;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("PrefixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int PrefixImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("SuffixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int SuffixImageIndex = -10000;
     }
@@ -296,44 +433,78 @@ namespace MiBand5WatchFaces
 
     public class CircleScale
     {
+        [JsonProperty("CenterX")]
         public int CenterX;
+
+        [JsonProperty("CenterY")]
         public int CenterY;
+
+        [JsonProperty("RadiusX")]
         public int RadiusX = 1;
+
+        [JsonProperty("RadiusY")]
         public int RadiusY = 1;
+
+        [JsonProperty("StartAngle")]
         public int StartAngle;
+
+        [JsonProperty("EndAngle")]
         public int EndAngle;
+
+        [JsonProperty("Width")]
         public int Width;
+
+        [JsonProperty("Color")]
         public string Color = "0x000000";
     }
 
     //===========================CIRCLESCALE===========================
     //===========================DATE==================================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class Date
     {
+        [JsonProperty("MonthAndDayAndYear")]
         public MonthAndDayAndYear MonthAndDayAndYear;
+
+        [JsonProperty("DayAmPm")]
         public DayAmPm DayAmPm;
         //public ImageSet WeekDay;
+
+        [JsonProperty("ENWeekDays")]
         public ImageSet ENWeekDays;
+
+        [JsonProperty("CNWeekDays")]
         public ImageSet CNWeekDays;
+
+        [JsonProperty("CN2WeekDays")]
         public ImageSet CN2WeekDays;
+
+        [JsonProperty("Unknown7")]
         public XY Unknown7;
     }
 
     public class DayAmPm
     {
+        [JsonProperty("X")]
         public int X;
+
+        [JsonProperty("Y")]
         public int Y;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageIndexAMCN", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageIndexAMCN = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageIndexPMCN", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageIndexPMCN = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageIndexAMEN", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageIndexAMEN = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageIndexPMEN", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageIndexPMEN = -10000;
         //public int Unknown7;
@@ -342,56 +513,96 @@ namespace MiBand5WatchFaces
 
     public class MonthAndDayAndYear
     {
+        [JsonProperty("Separate")]
         public SeparateMonthAndDay Separate;
+
+        [JsonProperty("OneLine")]
         public OneLineMonthAndDay OneLine;
+
+        [JsonProperty("OneLineWithYear")]
         public OneLineWithYear OneLineWithYear;
+
+        [JsonProperty("TwoDigitsMonth")]
         public bool TwoDigitsMonth = true;
+
+        [JsonProperty("TwoDigitsDay")]
         public bool TwoDigitsDay = true;
     }
 
     public class SeparateMonthAndDay
     {
+        [JsonProperty("Month")]
         public Number Month;
+
+        [JsonProperty("MonthsEN")]
         public ImageSet MonthsEN;
+
+        [JsonProperty("MonthsCN")]
         public ImageSet MonthsCN;
+
+        [JsonProperty("Day")]
         public Number Day;
         //public Number Year;
     }
 
     public class OneLineMonthAndDay
     {
+        [JsonProperty("Number")]
         public Number Number;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("DelimiterImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
     }
 
     public class OneLineWithYear
     {
+        [JsonProperty("Number")]
         public Number Number;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("DelimiterImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
     }
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class WeekDaysIcons
     {
+        [JsonProperty("Monday")]
         public ImageBasic Monday;
+
+        [JsonProperty("Tuesday")]
         public ImageBasic Tuesday;
+
+        [JsonProperty("Wednesday")]
         public ImageBasic Wednesday;
+
+        [JsonProperty("Thursday")]
         public ImageBasic Thursday;
+
+        [JsonProperty("Friday")]
         public ImageBasic Friday;
+
+        [JsonProperty("Saturday")]
         public ImageBasic Saturday;
+
+        [JsonProperty("Sunday")]
         public ImageBasic Sunday;
     }
 
     //===========================DATA==================================
     //===========================HEARTPROGRESS=========================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class HeartProgress
     {
+        [JsonProperty("Scale")]
         public Scale Scale;
+
+        [JsonProperty("LineScale")]
         public ImageSet LineScale;
+
+        [JsonProperty("Linear")]
         public Scale Linear;
     }
 
@@ -400,42 +611,69 @@ namespace MiBand5WatchFaces
 
     public class Humidity
     {
+        [JsonProperty("Text")]
         public Number Text;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("SuffixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int SuffixImageIndex = -10000;
+
+        [JsonProperty("ImageSuffix")]
         public ImageBasic ImageSuffix;
     }
 
     //===========================HUMIDITY==============================
     //===========================LUNARDATE=============================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class LunarDate
     {
+        [JsonProperty("LunarMonth")]
         public Number LunarMonth;
+
+        [JsonProperty("LunarDay")]
         public Number LunarDay;
+
+        [JsonProperty("LunarDayOf0X")]
         public int LunarDayOf0X;
+
+        [JsonProperty("LunarDayOf2X")]
         public int LunarDayOf2X;
+
+        [JsonProperty("LunarDayOf10")]
         public int LunarDayOf10;
+
+        [JsonProperty("LunarDayOf20")]
         public int LunarDayOf20;
+
+        [JsonProperty("LunarDayOf30")]
         public int LunarDayOf30;
     }
+
 
     //===========================LUNARDATE=============================
     //===========================OTHER=================================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class Other
     {
+        [JsonProperty("Animation")]
         public List<Animation> Animation;
     }
 
     //===========================OTHER=================================
     //===========================STATUS================================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class Status
     {
+        [JsonProperty("DoNotDisturb")]
         public Switch DoNotDisturb;
+
+        [JsonProperty("Lock")]
         public Switch Lock;
+
+        [JsonProperty("Bluetooth")]
         public Switch Bluetooth;
         //public Battery Battery;
 
@@ -479,48 +717,70 @@ namespace MiBand5WatchFaces
 
     public class Temperature
     {
+        [JsonProperty("Current")]
         public TemperatureNumber Current;
+
+        [JsonProperty("Today")]
         public TodayTemperature Today;
     }
 
     public class TodayTemperature
     {
+        [JsonProperty("Separate")]
         public SeparateTemperature Separate;
+
+        [JsonProperty("OneLine")]
         public OneLineTemperature OneLine;
     }
 
     public class SeparateTemperature
     {
+        [JsonProperty("Day")]
         public TemperatureNumber Day;
+
+        [JsonProperty("Night")]
         public TemperatureNumber Night;
         //public Coordinates DayAlt;
         //public Coordinates NightAlt;
+
+        [JsonProperty("Unknown3")]
         public Coordinates Unknown3;
+
+        [JsonProperty("Unknown4")]
         public Coordinates Unknown4;
     }
 
     public class TemperatureNumber
     {
+        [JsonProperty("Number")]
         public Number Number;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("MinusImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int MinusImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("DegreesImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DegreesImageIndex = -10000;
     }
 
     public class OneLineTemperature
     {
+        [JsonProperty("Number")]
         public Number Number;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("MinusSignImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int MinusSignImageIndex = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("DelimiterImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
+
+        [JsonProperty("AppendDegreesForBoth")]
         public bool AppendDegreesForBoth = true;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("DegreesImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DegreesImageIndex = -10000;
     }
@@ -528,31 +788,56 @@ namespace MiBand5WatchFaces
     //===========================TEMPERATURE===========================
     //===========================TIME==================================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class Time
     {
+        [JsonProperty("Hours")]
         public TwoDigits Hours;
+
+        [JsonProperty("Minutes")]
         public TwoDigits Minutes;
+
+        [JsonProperty("Seconds")]
         public TwoDigits Seconds;
         //public DayAmPm AmPm;
+
+        [JsonProperty("DelimiterImage")]
         public ImageBasic DelimiterImage;
         //public ImageBasic TimeDelimiterImage;
+
+        [JsonProperty("TimeZone1")]
         public Number TimeZone1;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("TimeZone1DelimiterImage", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int TimeZone1DelimiterImage = -10000;
+
+        [JsonProperty("TimeZone2")]
         public Number TimeZone2;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("TimeZone2DelimiterImage", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int TimeZone2DelimiterImage = -10000;
+
+        [JsonProperty("UnknownV11")]
         public int UnknownV11 = 0;
+
+        [JsonProperty("TimeZone1NoTime")]
         public ImageBasic TimeZone1NoTime;
+
+        [JsonProperty("TimeZone2NoTime")]
         public ImageBasic TimeZone2NoTime;
+
+        [JsonProperty("TimeDelimiter2Image")]
         public ImageBasic TimeDelimiter2Image;
     }
 
     public class TwoDigits
     {
+        [JsonProperty("Tens")]
         public ImageSet Tens;
+
+        [JsonProperty("Ones")]
         public ImageSet Ones;
     }
 
@@ -561,8 +846,10 @@ namespace MiBand5WatchFaces
 
     public class UVIndex
     {
+        [JsonProperty("Text")]
         public Number Text;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("SuffixImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int SuffixImageIndex = -10000;
     }
@@ -572,82 +859,138 @@ namespace MiBand5WatchFaces
 
     public class UVWrapper
     {
+        [JsonProperty("UV")]
         public UVIndex UV;
+
+        [JsonProperty("UVCN")]
         public ImageSet UVCN;
+
+        [JsonProperty("UVCN2")]
         public ImageSet UVCN2;
     }
 
     //===========================UVWRAPPER=============================
     //===========================WEATHER===============================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class Weather
     {
+        [JsonProperty("Icon")]
         public WeatherIcon Icon;
+
+        [JsonProperty("Temperature")]
         public Temperature Temperature;
+
+        [JsonProperty("AirPollution")]
         public AirPollution AirPollution;
+
+        [JsonProperty("Humidity")]
         public Humidity Humidity;
+
+        [JsonProperty("Wind")]
         public Wind Wind;
+
+        [JsonProperty("UVIndex")]
         public UVWrapper UVIndex;
     }
 
     public class Wind
     {
+        [JsonProperty("Text")]
         public Number Text;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageSuffixEN", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageSuffixEN = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageSuffixCN1", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageSuffixCN1 = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageSufficCN2", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageSufficCN2 = -10000;
+
+        [JsonProperty("ImagePosSuffixEN")]
         public ImageBasic ImagePosSuffixEN;
+
+        [JsonProperty("ImagePosSuffixCN1")]
         public ImageBasic ImagePosSuffixCN1;
+
+        [JsonProperty("ImagePosSuffixCN2")]
         public ImageBasic ImagePosSuffixCN2;
     }
 
     public class WeatherIcon
     {
+        [JsonProperty("Coordinates")]
         public Coordinates Coordinates;
+
+        [JsonProperty("CustomIcon")]
         public ImageSet CustomIcon;
+
+        [JsonProperty("Unknown3")]
         public XY Unknown3;
+
+        [JsonProperty("Unknown4")]
         public XY Unknown4;
     }
 
     //===========================WEATHER===============================
     //===========================HELP==================================
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class CaloriesProgress
     {
+        [JsonProperty("GoalImage")]
         public ImageBasic GoalImage;
+
+        [JsonProperty("LineScale")]
         public ImageSet LineScale;
+
+        [JsonProperty("Linear")]
         public Scale Linear;
+
+        [JsonProperty("CircleScale")]
         public CircleScale CircleScale;
 
         public StepsProgress ConvertToSP() => new StepsProgress() { GoalImage = GoalImage, CircleScale = CircleScale, Linear = Linear, LineScale = LineScale };
     }
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class StepsProgress
     {
+        [JsonProperty("GoalImage")]
         public ImageBasic GoalImage;
+
+        [JsonProperty("LineScale")]
         public ImageSet LineScale;
+
+        [JsonProperty("Linear")]
         public Scale Linear;
+
+        [JsonProperty("CircleScale")]
         public CircleScale CircleScale;
 
         public CaloriesProgress ConvertToSP() => new CaloriesProgress() { GoalImage = GoalImage, CircleScale = CircleScale, Linear = Linear, LineScale = LineScale };
     }
 
+    [Obfuscation(Exclude = false, Feature = "-rename")]
     public class StatusSimple
     {
+        [JsonProperty("DoNotDisturb")]
         public StatusSimpleSpecial DoNotDisturb;
+
+        [JsonProperty("Lock")]
         public StatusSimpleSpecial Lock;
+
+        [JsonProperty("Bluetooth")]
         public StatusSimpleSpecial Bluetooth;
 
         public Status ConvertToStatus()
         {
             Status status = (DoNotDisturb != null || Lock != null || Bluetooth != null) ? new Status() : null;
-            
+
             if (DoNotDisturb != null)
             {
                 status.DoNotDisturb = new Switch();
@@ -676,21 +1019,33 @@ namespace MiBand5WatchFaces
 
     public class StatusSimpleSpecial
     {
+        [JsonProperty("StatusImage")]
         public StatusNumber StatusImage;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageIndexOn", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageIndexOn = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageIndexOff", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageIndexOff = -10000;
     }
 
     public class StatusNumber
     {
+        [JsonProperty("X")]
         public int X;
+
+        [JsonProperty("Y")]
         public int Y;
+
+        [JsonProperty("Alignment")]
         public string Alignment = "TopLeft";
+
+        [JsonProperty("Unknown4")]
         public int Unknown4 = 2;
+
+        [JsonProperty("Unknown5")]
         public int Unknown5 = 6;
 
         public Point getPoint()
@@ -701,20 +1056,30 @@ namespace MiBand5WatchFaces
 
     public class Switch
     {
+        [JsonProperty("Coordinates")]
         public Coordinates Coordinates;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageIndexOn", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageIndexOn = -10000;
-        [JsonProperty(DefaultValueHandling = DefaultValueHandling.Ignore)]
+
+        [JsonProperty("ImageIndexOff", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageIndexOff = -10000;
     }
 
     public class LineScale
     {
+        [JsonProperty("X")]
         public int X;
+
+        [JsonProperty("Y")]
         public int Y;
+
+        [JsonProperty("ImageIndex")]
         public int ImageIndex = -10000;
+
+        [JsonProperty("ImagesCount")]
         public int ImagesCount;
 
         public Point getPoint()
@@ -725,9 +1090,16 @@ namespace MiBand5WatchFaces
 
     public class CustomWeatherIcon
     {
+        [JsonProperty("X")]
         public int X;
+
+        [JsonProperty("Y")]
         public int Y;
+
+        [JsonProperty("ImageIndex")]
         public int ImageIndex = -10000;
+
+        [JsonProperty("ImagesCount")]
         public int ImagesCount;
 
         public Point getPoint()
@@ -738,7 +1110,10 @@ namespace MiBand5WatchFaces
 
     public class Coordinates
     {
+        [JsonProperty("X")]
         public int X;
+
+        [JsonProperty("Y")]
         public int Y;
         //public int BoxWidth;
         //public int Alignment;
@@ -752,26 +1127,49 @@ namespace MiBand5WatchFaces
 
     public class UnknownTest
     {
+        [JsonProperty("Unknown1")]
         public int Unknown1;
+
+        [JsonProperty("Unknown2")]
         public int Unknown2;
+
+        [JsonProperty("Unknown3")]
         public int Unknown3;
+
+        [JsonProperty("Unknown4")]
         public int Unknown4;
+
+        [JsonProperty("Unknown5")]
         public int Unknown5;
+
+        [JsonProperty("Unknown6")]
         public int Unknown6;
+
+        [JsonProperty("Unknown7")]
         public int Unknown7;
+
+        [JsonProperty("Unknown8")]
         public int Unknown8;
+
+        [JsonProperty("Unknown9")]
         public int Unknown9;
     }
 
     public class Scale
     {
+        [JsonProperty("StartImageIndex")]
         public int StartImageIndex = -10000;
+
+        [JsonProperty("Segments")]
         public List<XY> Segments = new List<XY>();
     }
 
     public class XY
     {
+        [JsonProperty("X")]
         public int X;
+
+        [JsonProperty("Y")]
         public int Y;
 
         public Point getPoint()
@@ -782,9 +1180,16 @@ namespace MiBand5WatchFaces
 
     public class ImageSet
     {
+        [JsonProperty("X")]
         public int X;
+
+        [JsonProperty("Y")]
         public int Y;
+
+        [JsonProperty("ImageIndex")]
         public int ImageIndex = -10000;
+
+        [JsonProperty("ImagesCount")]
         public int ImagesCount;
 
         public Point getPoint()
@@ -795,8 +1200,13 @@ namespace MiBand5WatchFaces
 
     public class ImageBasic
     {
+        [JsonProperty("X")]
         public int X;
+
+        [JsonProperty("Y")]
         public int Y;
+
+        [JsonProperty("ImageIndex")]
         public int ImageIndex = -10000;
 
         public Point getPoint()
@@ -807,19 +1217,37 @@ namespace MiBand5WatchFaces
 
     public class Text
     {
+        [JsonProperty("Number")]
         public Number Number;
     }
 
     public class Number
     {
+        [JsonProperty("TopLeftX")]
         public int TopLeftX;
+
+        [JsonProperty("TopLeftY")]
         public int TopLeftY;
+
+        [JsonProperty("BottomRightX")]
         public int BottomRightX;
+
+        [JsonProperty("BottomRightY")]
         public int BottomRightY;
+
+        [JsonProperty("Alignment")]
         public string Alignment = "LeftTop";
+
+        [JsonProperty("SpacingX")]
         public int SpacingX;
+
+        [JsonProperty("SpacingY")]
         public int SpacingY;
+
+        [JsonProperty("ImageIndex")]
         public int ImageIndex = -10000;
+
+        [JsonProperty("ImagesCount")]
         public int ImagesCount;
 
         [JsonIgnore]
@@ -843,8 +1271,8 @@ namespace MiBand5WatchFaces
             return Alignment;
         }
 
-        public Size getSize(DefaultDictionary<int,Image> imagesBuff)
-        { 
+        public Size getSize(DefaultDictionary<int, Image> imagesBuff)
+        {
             List<Image> images = new List<Image>();
             for (int i = ImageIndex; i < ImageIndex + ImagesCount; i++)
                 images.Add(imagesBuff[i]);
@@ -863,7 +1291,7 @@ namespace MiBand5WatchFaces
                 fullHeight += SpacingY;
             fullHeight -= SpacingY;
 
-            Size size = new Size(fullWidth,fullHeight);
+            Size size = new Size(fullWidth, fullHeight);
             return size;
         }
     }

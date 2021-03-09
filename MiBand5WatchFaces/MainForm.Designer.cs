@@ -51,6 +51,9 @@
             this.openFileButton = new System.Windows.Forms.ToolStripMenuItem();
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenFormImages = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SetWatchfaceState = new System.Windows.Forms.Button();
             this.RenderButton = new System.Windows.Forms.Button();
@@ -58,18 +61,17 @@
             this.listMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.watchfacePreviewImage = new System.Windows.Forms.PictureBox();
             this.WatchFaceEXE = new System.Diagnostics.Process();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.SaveFileStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.watchfacePreviewImage = new System.Windows.Forms.PictureBox();
+            this.checkUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.changeLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.listMenuStrip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.watchfacePreviewImage)).BeginInit();
             this.statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.watchfacePreviewImage)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -114,105 +116,105 @@
             // backgroundToolStripMenuItem
             // 
             this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
-            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.backgroundToolStripMenuItem.Text = "Background";
             this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.backgroundToolStripMenuItem_Click);
             // 
             // timeToolStripMenuItem
             // 
             this.timeToolStripMenuItem.Name = "timeToolStripMenuItem";
-            this.timeToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.timeToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.timeToolStripMenuItem.Text = "Time";
             this.timeToolStripMenuItem.Click += new System.EventHandler(this.timeToolStripMenuItem_Click);
             // 
             // activityToolStripMenuItem
             // 
             this.activityToolStripMenuItem.Name = "activityToolStripMenuItem";
-            this.activityToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.activityToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.activityToolStripMenuItem.Text = "Activity";
             this.activityToolStripMenuItem.Click += new System.EventHandler(this.activityToolStripMenuItem_Click);
             // 
             // dateToolStripMenuItem
             // 
             this.dateToolStripMenuItem.Name = "dateToolStripMenuItem";
-            this.dateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.dateToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.dateToolStripMenuItem.Text = "Date";
             this.dateToolStripMenuItem.Click += new System.EventHandler(this.dateToolStripMenuItem_Click);
             // 
             // weatherToolStripMenuItem
             // 
             this.weatherToolStripMenuItem.Name = "weatherToolStripMenuItem";
-            this.weatherToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.weatherToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.weatherToolStripMenuItem.Text = "Weather";
             this.weatherToolStripMenuItem.Click += new System.EventHandler(this.weatherToolStripMenuItem_Click);
             // 
             // stepsProgressToolStripMenuItem
             // 
             this.stepsProgressToolStripMenuItem.Name = "stepsProgressToolStripMenuItem";
-            this.stepsProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.stepsProgressToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.stepsProgressToolStripMenuItem.Text = "StepsProgress";
             this.stepsProgressToolStripMenuItem.Click += new System.EventHandler(this.stepsProgressToolStripMenuItem_Click);
             // 
             // statusToolStripMenuItem
             // 
             this.statusToolStripMenuItem.Name = "statusToolStripMenuItem";
-            this.statusToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.statusToolStripMenuItem.Text = "Status";
             this.statusToolStripMenuItem.Click += new System.EventHandler(this.statusToolStripMenuItem_Click);
             // 
             // batteryToolStripMenuItem
             // 
             this.batteryToolStripMenuItem.Name = "batteryToolStripMenuItem";
-            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.batteryToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.batteryToolStripMenuItem.Text = "Battery";
             this.batteryToolStripMenuItem.Click += new System.EventHandler(this.batteryToolStripMenuItem_Click);
             // 
             // analogDialFaceToolStripMenuItem
             // 
             this.analogDialFaceToolStripMenuItem.Name = "analogDialFaceToolStripMenuItem";
-            this.analogDialFaceToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.analogDialFaceToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.analogDialFaceToolStripMenuItem.Text = "AnalogDialFace";
             this.analogDialFaceToolStripMenuItem.Click += new System.EventHandler(this.analogDialFaceToolStripMenuItem_Click);
             // 
             // animationToolStripMenuItem
             // 
             this.animationToolStripMenuItem.Name = "animationToolStripMenuItem";
-            this.animationToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.animationToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.animationToolStripMenuItem.Text = "Animation";
             this.animationToolStripMenuItem.Click += new System.EventHandler(this.animationToolStripMenuItem_Click);
             // 
             // heartProgressToolStripMenuItem
             // 
             this.heartProgressToolStripMenuItem.Name = "heartProgressToolStripMenuItem";
-            this.heartProgressToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.heartProgressToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.heartProgressToolStripMenuItem.Text = "HeartProgress";
             this.heartProgressToolStripMenuItem.Click += new System.EventHandler(this.heartProgressToolStripMenuItem_Click);
             // 
             // weekDaysIconsToolStripMenuItem
             // 
             this.weekDaysIconsToolStripMenuItem.Name = "weekDaysIconsToolStripMenuItem";
-            this.weekDaysIconsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.weekDaysIconsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.weekDaysIconsToolStripMenuItem.Text = "WeekDaysIcons";
             this.weekDaysIconsToolStripMenuItem.Click += new System.EventHandler(this.weekDaysIconsToolStripMenuItem_Click);
             // 
             // caloriesProgressToolStripMenuItem1
             // 
             this.caloriesProgressToolStripMenuItem1.Name = "caloriesProgressToolStripMenuItem1";
-            this.caloriesProgressToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.caloriesProgressToolStripMenuItem1.Size = new System.Drawing.Size(162, 22);
             this.caloriesProgressToolStripMenuItem1.Text = "CaloriesProgress";
             this.caloriesProgressToolStripMenuItem1.Click += new System.EventHandler(this.caloriesProgressToolStripMenuItem1_Click);
             // 
             // alarmToolStripMenuItem
             // 
             this.alarmToolStripMenuItem.Name = "alarmToolStripMenuItem";
-            this.alarmToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.alarmToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.alarmToolStripMenuItem.Text = "Alarm";
             this.alarmToolStripMenuItem.Click += new System.EventHandler(this.alarmToolStripMenuItem_Click);
             // 
             // statusSimplifiedToolStripMenuItem
             // 
             this.statusSimplifiedToolStripMenuItem.Name = "statusSimplifiedToolStripMenuItem";
-            this.statusSimplifiedToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusSimplifiedToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
             this.statusSimplifiedToolStripMenuItem.Text = "Status Simplified";
             this.statusSimplifiedToolStripMenuItem.Click += new System.EventHandler(this.statusSimplifiedToolStripMenuItem_Click);
             // 
@@ -232,14 +234,14 @@
             // openFileButton
             // 
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(180, 22);
+            this.openFileButton.Size = new System.Drawing.Size(103, 22);
             this.openFileButton.Text = "Open";
             this.openFileButton.Click += new System.EventHandler(this.OpenFileJson);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -252,6 +254,31 @@
             this.OpenFormImages.Size = new System.Drawing.Size(49, 22);
             this.OpenFormImages.Text = "Images";
             this.OpenFormImages.Click += new System.EventHandler(this.OpenFormImages_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripDropDownButton2
+            // 
+            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.changeLogToolStripMenuItem,
+            this.checkUpdateToolStripMenuItem,
+            this.aboutToolStripMenuItem});
+            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
+            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
+            this.toolStripDropDownButton2.Size = new System.Drawing.Size(62, 22);
+            this.toolStripDropDownButton2.Text = "Settings";
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Text = "About";
+            this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -319,15 +346,6 @@
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
-            // watchfacePreviewImage
-            // 
-            this.watchfacePreviewImage.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.watchfacePreviewImage.Location = new System.Drawing.Point(265, 152);
-            this.watchfacePreviewImage.Name = "watchfacePreviewImage";
-            this.watchfacePreviewImage.Size = new System.Drawing.Size(126, 294);
-            this.watchfacePreviewImage.TabIndex = 7;
-            this.watchfacePreviewImage.TabStop = false;
-            // 
             // WatchFaceEXE
             // 
             this.WatchFaceEXE.StartInfo.Domain = "";
@@ -355,27 +373,28 @@
             this.SaveFileStatus.Name = "SaveFileStatus";
             this.SaveFileStatus.Size = new System.Drawing.Size(0, 17);
             // 
-            // toolStripSeparator1
+            // watchfacePreviewImage
             // 
-            this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            this.watchfacePreviewImage.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.watchfacePreviewImage.Location = new System.Drawing.Point(265, 152);
+            this.watchfacePreviewImage.Name = "watchfacePreviewImage";
+            this.watchfacePreviewImage.Size = new System.Drawing.Size(126, 294);
+            this.watchfacePreviewImage.TabIndex = 7;
+            this.watchfacePreviewImage.TabStop = false;
             // 
-            // toolStripDropDownButton2
+            // checkUpdateToolStripMenuItem
             // 
-            this.toolStripDropDownButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.aboutToolStripMenuItem});
-            this.toolStripDropDownButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton2.Image")));
-            this.toolStripDropDownButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton2.Name = "toolStripDropDownButton2";
-            this.toolStripDropDownButton2.Size = new System.Drawing.Size(62, 22);
-            this.toolStripDropDownButton2.Text = "Settings";
+            this.checkUpdateToolStripMenuItem.Name = "checkUpdateToolStripMenuItem";
+            this.checkUpdateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.checkUpdateToolStripMenuItem.Text = "Check update";
+            this.checkUpdateToolStripMenuItem.Click += new System.EventHandler(this.checkUpdateToolStripMenuItem_Click);
             // 
-            // aboutToolStripMenuItem
+            // changeLogToolStripMenuItem
             // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.aboutToolStripMenuItem.Text = "About";
+            this.changeLogToolStripMenuItem.Name = "changeLogToolStripMenuItem";
+            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.changeLogToolStripMenuItem.Text = "Change log";
+            this.changeLogToolStripMenuItem.Click += new System.EventHandler(this.changeLogToolStripMenuItem_Click);
             // 
             // MainForm
             // 
@@ -394,14 +413,16 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Watch Face for MI Band 5 Editor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
+            this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.listMenuStrip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.watchfacePreviewImage)).EndInit();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.watchfacePreviewImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,6 +464,8 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton2;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem checkUpdateToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem changeLogToolStripMenuItem;
     }
 }
 

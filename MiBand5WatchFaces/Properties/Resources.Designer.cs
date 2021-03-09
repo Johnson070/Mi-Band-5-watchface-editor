@@ -63,6 +63,16 @@ namespace MiBand5WatchFaces.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _21305435 {
+            get {
+                object obj = ResourceManager.GetObject("21305435", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap BackImage {
             get {
                 object obj = ResourceManager.GetObject("BackImage", resourceCulture);

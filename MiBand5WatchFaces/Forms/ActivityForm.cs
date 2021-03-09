@@ -37,7 +37,7 @@ namespace MiBand5WatchFaces.Forms
         {
             InitializeComponent();
             this.watch = watch;
-            watch.imagesBuff = Images;
+            this.watch.imagesBuff = Images;
             this.state = state;
 
             this.watch.Activity = watch.Activity == null ? new Activity() : watch.Activity;

@@ -5,9 +5,11 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -19,6 +21,10 @@ namespace MiBand5WatchFaces
     {
         WatchFaceLibrary watchFace = new WatchFaceLibrary();
         StateWatchface state = new StateWatchface();
+        bool Save = true;
+
+        [System.Runtime.InteropServices.DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int description, int reservedValue);
 
         public MainForm()
         {
@@ -27,11 +33,12 @@ namespace MiBand5WatchFaces
 
         private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            VisualRender render = new VisualRender(watchFace,state);
+            VisualRender render = new VisualRender(watchFace, state);
             BackgroundForm bgr = new BackgroundForm(DeepCopy<Background>(watchFace.Background), watchFace.imagesBuff.DeepCopy(), render.genPreview());
             bgr.ShowDialog();
             if (bgr.Save)
             {
+                Save = false;
                 watchFace.Background = bgr.background;
                 watchFace.imagesBuff = bgr.images;
                 RenderButton_Click(null, null);
@@ -47,6 +54,7 @@ namespace MiBand5WatchFaces
 
             if (timeForm.Save)
             {
+                Save = false;
                 watchFace = timeForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -66,22 +74,33 @@ namespace MiBand5WatchFaces
 
         private void OpenFileJson(object sender, EventArgs e)
         {
-            OpenFileDialog file = new OpenFileDialog();
-            file.Filter = "json watchface (*.json)|*.json";
-            if (file.ShowDialog() == DialogResult.OK)
+            try
             {
-                StreamReader readFile = new StreamReader(file.FileName);
+                if (Save == false && MessageBox.Show("Save an open watchface before opening another watchface?", "Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    saveToolStripMenuItem.PerformClick();
 
-                string json = readFile.ReadToEnd();
-                readFile.Close();
+                OpenFileDialog file = new OpenFileDialog();
+                file.Filter = "json watchface (*.json)|*.json";
+                if (file.ShowDialog() == DialogResult.OK)
+                {
+                    Save = true;
+                    StreamReader readFile = new StreamReader(file.FileName);
 
-                watchFace = JsonConvert.DeserializeObject<WatchFaceLibrary>(json);//,new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All,MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead ,PreserveReferencesHandling = PreserveReferencesHandling.Objects });
-                watchFace.FilePath = Path.GetDirectoryName(file.FileName);
-                watchFace.LoadImages();
+                    string json = readFile.ReadToEnd();
+                    readFile.Close();
 
-                RenderButton_Click(null, null);
+                    watchFace = JsonConvert.DeserializeObject<WatchFaceLibrary>(json);//,new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All,MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead ,PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+                    watchFace.FilePath = Path.GetDirectoryName(file.FileName);
+                    watchFace.LoadImages();
 
-                updateListElements();
+                    RenderButton_Click(null, null);
+
+                    updateListElements();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error parse file!\n\n{ex}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -115,6 +134,7 @@ namespace MiBand5WatchFaces
                     backgroundForm.ShowDialog();
                     if (backgroundForm.Save)
                     {
+                        Save = false;
                         watchFace.Background = backgroundForm.background;
                         watchFace.imagesBuff = backgroundForm.images;
                         RenderButton_Click(null, null);
@@ -128,6 +148,7 @@ namespace MiBand5WatchFaces
 
                     if (timeForm.Save)
                     {
+                        Save = false;
                         watchFace = timeForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -140,6 +161,7 @@ namespace MiBand5WatchFaces
 
                     if (activityForm.Save)
                     {
+                        Save = false;
                         watchFace = activityForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -152,6 +174,7 @@ namespace MiBand5WatchFaces
 
                     if (dateForm.Save)
                     {
+                        Save = false;
                         watchFace = dateForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -164,6 +187,7 @@ namespace MiBand5WatchFaces
 
                     if (weatherForm.Save)
                     {
+                        Save = false;
                         watchFace = weatherForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -176,6 +200,7 @@ namespace MiBand5WatchFaces
 
                     if (progressForm.Save)
                     {
+                        Save = false;
                         watchFace = progressForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -188,6 +213,7 @@ namespace MiBand5WatchFaces
 
                     if (statusForm.Save)
                     {
+                        Save = false;
                         watchFace = statusForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -201,6 +227,7 @@ namespace MiBand5WatchFaces
 
                     if (batteryForm.Save)
                     {
+                        Save = false;
                         watchFace = batteryForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -213,6 +240,7 @@ namespace MiBand5WatchFaces
 
                     if (analogDial.Save)
                     {
+                        Save = false;
                         watchFace = analogDial.watch;
                         RenderButton_Click(null, null);
                     }
@@ -226,6 +254,7 @@ namespace MiBand5WatchFaces
 
                     if (animationForm.Save)
                     {
+                        Save = false;
                         watchFace = animationForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -238,6 +267,7 @@ namespace MiBand5WatchFaces
 
                     if (progressForm.Save)
                     {
+                        Save = false;
                         watchFace = progressForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -250,6 +280,7 @@ namespace MiBand5WatchFaces
 
                     if (heartProgress.Save)
                     {
+                        Save = false;
                         watchFace = heartProgress.watch;
                         RenderButton_Click(null, null);
                     }
@@ -262,6 +293,7 @@ namespace MiBand5WatchFaces
 
                     if (weekDays.Save)
                     {
+                        Save = false;
                         watchFace = weekDays.watch;
                         RenderButton_Click(null, null);
                     }
@@ -274,6 +306,7 @@ namespace MiBand5WatchFaces
 
                     if (alarmForm.Save)
                     {
+                        Save = false;
                         watchFace = alarmForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -286,6 +319,7 @@ namespace MiBand5WatchFaces
 
                     if (statusForm.Save)
                     {
+                        Save = false;
                         watchFace = statusForm.watch;
                         RenderButton_Click(null, null);
                     }
@@ -306,6 +340,7 @@ namespace MiBand5WatchFaces
 
             if (imagesForm.saveImages)
             {
+                Save = false;
                 watchFace.imagesBuff = imagesForm.Images;
                 RenderButton_Click(null, null);
             }
@@ -331,6 +366,7 @@ namespace MiBand5WatchFaces
 
             if (activityForm.Save)
             {
+                Save = false;
                 watchFace = activityForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -345,6 +381,7 @@ namespace MiBand5WatchFaces
 
             if (dateForm.Save)
             {
+                Save = false;
                 watchFace = dateForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -359,9 +396,10 @@ namespace MiBand5WatchFaces
 
             try
             {
-                SaveFileDialog saveFile = new SaveFileDialog() { Filter = "json file (*.json)|*.json|bin file (*.bin)|*.bin", RestoreDirectory = true };
+                SaveFileDialog saveFile = new SaveFileDialog() { Filter = "json file (*.json)|*.json|packed bin file (*.bin)|*.bin", RestoreDirectory = true };
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
+                    Save = true;
                     string path = Path.GetDirectoryName(saveFile.FileName);
                     foreach (KeyValuePair<int, Image> img in watchFace.imagesBuff)
                         img.Value.Save(Path.Combine(path, $"{img.Key:0000}.png"));
@@ -370,7 +408,7 @@ namespace MiBand5WatchFaces
 
                     if (Path.GetExtension(saveFile.FileName) == ".bin")
                     {
-                        this.Enabled = false ;
+                        this.Enabled = false;
                         WatchFaceEXE.StartInfo.FileName = @"WatchFace/WatchFace.exe";
                         //avrdude.StartInfo.Arguments = "-v";
                         WatchFaceEXE.StartInfo.Arguments = $"WatchFace/WatchFace.exe \"{Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName))}.json\"";
@@ -423,6 +461,7 @@ namespace MiBand5WatchFaces
 
             if (weatherForm.Save)
             {
+                Save = false;
                 watchFace = weatherForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -437,6 +476,7 @@ namespace MiBand5WatchFaces
 
             if (progressForm.Save)
             {
+                Save = false;
                 watchFace = progressForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -451,6 +491,7 @@ namespace MiBand5WatchFaces
 
             if (statusForm.Save)
             {
+                Save = false;
                 watchFace = statusForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -466,6 +507,7 @@ namespace MiBand5WatchFaces
 
             if (batteryForm.Save)
             {
+                Save = false;
                 watchFace = batteryForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -480,6 +522,7 @@ namespace MiBand5WatchFaces
 
             if (analogDial.Save)
             {
+                Save = false;
                 watchFace = analogDial.watch;
                 RenderButton_Click(null, null);
             }
@@ -495,6 +538,7 @@ namespace MiBand5WatchFaces
 
             if (animationForm.Save)
             {
+                Save = false;
                 watchFace = animationForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -509,6 +553,7 @@ namespace MiBand5WatchFaces
 
             if (heartProgress.Save)
             {
+                Save = false;
                 watchFace = heartProgress.watch;
                 RenderButton_Click(null, null);
             }
@@ -523,6 +568,7 @@ namespace MiBand5WatchFaces
 
             if (progressForm.Save)
             {
+                Save = false;
                 watchFace = progressForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -537,6 +583,7 @@ namespace MiBand5WatchFaces
 
             if (weekDays.Save)
             {
+                Save = false;
                 watchFace = weekDays.watch;
                 RenderButton_Click(null, null);
             }
@@ -551,6 +598,7 @@ namespace MiBand5WatchFaces
 
             if (alarmForm.Save)
             {
+                Save = false;
                 watchFace = alarmForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -565,6 +613,7 @@ namespace MiBand5WatchFaces
 
             if (statusForm.Save)
             {
+                Save = false;
                 watchFace = statusForm.watch;
                 RenderButton_Click(null, null);
             }
@@ -603,6 +652,8 @@ namespace MiBand5WatchFaces
                 else if (type == typeof(Alarm)) watchFace.Alarm = null;
                 else if (type == typeof(StatusSimple)) watchFace.StatusSimplified = null;
 
+                Save = false;
+
                 updateListElements();
                 RenderButton_Click(null, null);
             }
@@ -619,11 +670,116 @@ namespace MiBand5WatchFaces
                 WatchFaceEXE.Close();
                 MessageBox.Show("Succeful!", "Complete!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            else if (e.Data != null && e.Data.ToString().IndexOf("[ERROR]") != -1)
+            {
+                this.Enabled = true;
+                SaveFileStatus.Text = "";
+                WatchFaceEXE.Close();
+                MessageBox.Show("Error!", "Not generated!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void WatchFaceEXE_Exited(object sender, EventArgs e)
         {
             this.Enabled = true;
+            SaveFileStatus.Text = "";
+            WatchFaceEXE.Close();
+        }
+
+        private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.ShowDialog();
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Save == false && MessageBox.Show("Save the file before closing the program?", "Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                saveToolStripMenuItem_Click(null, null);
+        }
+
+        private void MainForm_Shown(object sender, EventArgs e)
+        {
+            bool state = InternetGetConnectedState(out _, 0);
+
+            if (state && Properties.Settings.Default.ShowChangeLog)
+            {
+                Properties.Settings.Default.ShowChangeLog = false;
+                Properties.Settings.Default.Save();
+                MessageBox.Show(GetChangeLog(), "Changelog", MessageBoxButtons.OK);
+            }
+        }
+
+        private string GetVersion()
+        {
+            string version = "";
+
+            using (WebClient Client = new WebClient())
+            {
+                Client.Encoding = Encoding.UTF8;
+                version = Client.DownloadString("https://raw.githubusercontent.com/Johnson070/MiBand-5-watchface-editor/main/version.txt");
+            }
+
+            return version.Replace("\n", string.Empty);
+        }
+
+        private string CheckProgramUpdate()
+        {
+            string version = "";
+
+            using (WebClient Client = new WebClient())
+            {
+                Client.Encoding = Encoding.UTF8;
+                version = Client.DownloadString("https://raw.githubusercontent.com/Johnson070/MiBand-5-watchface-editor/main/version.txt");
+            }
+
+            return "Program version: " + Application.ProductVersion + ".\n\rProgram version on server: " + version;
+        }
+
+        public string GetChangeLog()
+        {
+            string change_log = "";
+
+            using (WebClient Client = new WebClient())
+            {
+                Client.Encoding = Encoding.UTF8;
+                change_log = Client.DownloadString("https://raw.githubusercontent.com/Johnson070/MiBand-5-watchface-editor/main/changelog.txt");
+            }
+
+            return change_log;
+        }
+
+        private void checkUpdateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool state = InternetGetConnectedState(out _, 0);
+
+            if (state)
+            {
+                if (GetVersion() == Application.ProductVersion) MessageBox.Show(CheckProgramUpdate(), "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (MessageBox.Show("Open a link to download the new version of the program?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Process myProcess = new Process();
+
+                    try
+                    {
+                        // true is the default, but it is important not to set it to false
+                        myProcess.StartInfo.UseShellExecute = true;
+                        myProcess.StartInfo.FileName = "https://github.com/Johnson070/MiBand-5-watchface-editor/releases";
+                        myProcess.Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+        }
+
+        private void changeLogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            bool state = InternetGetConnectedState(out _, 0);
+
+            if (state) MessageBox.Show(GetChangeLog(), "Changelog", MessageBoxButtons.OK);
         }
     }
 }

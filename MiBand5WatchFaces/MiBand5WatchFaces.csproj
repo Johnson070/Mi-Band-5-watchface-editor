@@ -43,7 +43,7 @@
     </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -74,8 +74,7 @@
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>proj-_1_.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -107,6 +106,12 @@
     </Compile>
     <Compile Include="CircleScaleForm.Designer.cs">
       <DependentUpon>CircleScaleForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutBox.Designer.cs">
+      <DependentUpon>AboutBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\ActivityForm.cs">
       <SubType>Form</SubType>
@@ -253,6 +258,9 @@
     <EmbeddedResource Include="CircleScaleForm.resx">
       <DependentUpon>CircleScaleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutBox.resx">
+      <DependentUpon>AboutBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActivityForm.resx">
       <DependentUpon>ActivityForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -375,6 +383,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="proj %281%29 %281%29.ico" />
+    <Content Include="proj-_1_.ico" />
+    <None Include="Resources\21305435.png" />
     <Content Include="WatchFace\BumpKit.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

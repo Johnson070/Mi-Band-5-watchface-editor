@@ -39,6 +39,7 @@ namespace MiBand5WatchFaces.Forms
 
             if (status == statusForm.StatusSpecial && watch.StatusSimplified != null)
                 watch.Status = DeepCopy(watch.StatusSimplified.ConvertToStatus());
+            else if (status == statusForm.StatusSpecial) watch.Status = new Status();
         }
 
         public static T DeepCopy<T>(T other)

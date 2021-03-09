@@ -445,7 +445,7 @@ namespace MiBand5WatchFaces.Forms
             List<int> selImg = null;
             ImagesForm imgForm;
 
-            if (btn.Name == TZ1NoTime.Text)
+            if (btn.Name == TZ1NoTime.Name)
             {
                 if (btn.Text == "End edit no time")
                 {
