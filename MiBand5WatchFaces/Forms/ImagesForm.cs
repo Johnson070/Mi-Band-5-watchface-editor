@@ -184,13 +184,26 @@ namespace MiBand5WatchFaces
             try
             {
                 editImages = true;
+                List<int> deleteImg = new List<int>();
                 for (int i = ImagesListBox.Items.Count - 1; i >= 0; i--)
                     if (ImagesListBox.GetItemChecked(i))
-                    {
-                        ImagesListBox.Items.RemoveAt(i);
-                        Images.Remove(i);
-                        ImagesListBox_SelectedIndexChanged(null, null);
-                    }
+                        deleteImg.Add(Convert.ToInt32(ImagesListBox.Items[i].ToString().Replace(".png", string.Empty)));
+                deleteImg.Reverse();
+
+                int count = Images.Count;
+                foreach (int delImg in deleteImg)
+                    Images.Remove(delImg);
+
+                List<Image> buffImg = new List<Image>();
+                for (int i = 0; i < count; i++)
+                    if (Images.ContainsKey(i))
+                        buffImg.Add(Images[i]);
+
+                Images = new DefaultDictionary<int, Image>((() => new Bitmap(1, 1)));
+                for (int i = 0; i < buffImg.Count; i++)
+                    Images.Add(i, buffImg[i]);
+
+                fillListBox();
             }
             catch { }
 
@@ -207,7 +220,7 @@ namespace MiBand5WatchFaces
 
             for (int i = 0; i < ImagesListBox.Items.Count; i++)
                 if (ImagesListBox.GetItemChecked(i))
-                    selectedImages.Add(i);
+                    selectedImages.Add(Convert.ToInt32(ImagesListBox.Items[i].ToString().Replace(".png", string.Empty)));
 
             saveImages = true;
             editImages = false;
@@ -242,7 +255,7 @@ namespace MiBand5WatchFaces
 
             for (int i = 0; i < ImagesListBox.Items.Count; i++)
                 if (ImagesListBox.GetItemChecked(i))
-                    selectedImages.Add(i);
+                    selectedImages.Add(Convert.ToInt32(ImagesListBox.Items[i].ToString().Replace(".png", string.Empty)));
 
             saveImages = true;
             editImages = false;
@@ -292,7 +305,7 @@ namespace MiBand5WatchFaces
                 int lastIndex = toolTipIndex;
                 toolTipIndex = ImagesListBox.IndexFromPoint(pt);
 
-                imageBox.BackgroundImage = Images[toolTipIndex];
+                imageBox.BackgroundImage = Images[Convert.ToInt32(ImagesListBox.Items[toolTipIndex].ToString().Replace(".png", string.Empty))];
             }
             catch { }
         }
@@ -324,8 +337,20 @@ namespace MiBand5WatchFaces
             editImages = true;
             if (ImagesListBox.SelectedIndex != -1)
             {
-                Images.Remove(ImagesListBox.SelectedIndex);
+                int start = Convert.ToInt32(ImagesListBox.SelectedItem.ToString().Replace(".png", string.Empty));
+
+                Images.Remove(start);
                 ImagesListBox.Items.RemoveAt(ImagesListBox.SelectedIndex);
+
+                int count = Images.Count;
+                for (int i = start; i <= count; i++)
+                    if (Images.ContainsKey(i))
+                    {
+                        Images.Add(i - 1, Images[i]);
+                        Images.Remove(i);
+                    }
+                fillListBox();
+
                 ImagesListBox_SelectedIndexChanged(null, null);
             }
 

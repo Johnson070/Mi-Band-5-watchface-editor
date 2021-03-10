@@ -22,6 +22,7 @@ namespace MiBand5WatchFaces
         WatchFaceLibrary watchFace = new WatchFaceLibrary();
         StateWatchface state = new StateWatchface();
         bool Save = true;
+        string file = "";
 
         [System.Runtime.InteropServices.DllImport("wininet.dll")]
         private extern static bool InternetGetConnectedState(out int description, int reservedValue);
@@ -80,22 +81,50 @@ namespace MiBand5WatchFaces
                     saveToolStripMenuItem.PerformClick();
 
                 OpenFileDialog file = new OpenFileDialog();
-                file.Filter = "json watchface (*.json)|*.json";
+                file.Filter = "json watchface (*.json)|*.json|bin file (*.bin)|*.bin";
                 if (file.ShowDialog() == DialogResult.OK)
                 {
-                    Save = true;
-                    StreamReader readFile = new StreamReader(file.FileName);
+                    if (Path.GetExtension(file.FileName) == ".bin")
+                    {
+                        WatchFaceEXE.Close();
+                        this.Enabled = false;
+                        WatchFaceEXE.StartInfo.FileName = @"WatchFace/WatchFace.exe";
+                        //avrdude.StartInfo.Arguments = "-v";
+                        WatchFaceEXE.StartInfo.Arguments = $"WatchFace/WatchFace.exe \"{file.FileName}\"";
+                        WatchFaceEXE.StartInfo.UseShellExecute = false;
+                        WatchFaceEXE.StartInfo.RedirectStandardOutput = true;
+                        WatchFaceEXE.StartInfo.RedirectStandardInput = true;
+                        WatchFaceEXE.StartInfo.RedirectStandardError = true;
+                        WatchFaceEXE.StartInfo.CreateNoWindow = true;
+                        WatchFaceEXE.StartInfo.StandardOutputEncoding = Encoding.UTF8;
+                        WatchFaceEXE.StartInfo.ErrorDialog = false;
 
-                    string json = readFile.ReadToEnd();
-                    readFile.Close();
+                        //WatchFaceEXE.BeginErrorReadLine();
+                        
+                        WatchFaceEXE.Start();
+                        WatchFaceEXE.BeginOutputReadLine();
 
-                    watchFace = JsonConvert.DeserializeObject<WatchFaceLibrary>(json);//,new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All,MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead ,PreserveReferencesHandling = PreserveReferencesHandling.Objects });
-                    watchFace.FilePath = Path.GetDirectoryName(file.FileName);
-                    watchFace.LoadImages();
+                        timerWatchFaceEXE.Start();
+                        SaveFileStatus.Text = "";
 
-                    RenderButton_Click(null, null);
+                        this.file = file.FileName;
+                    }
+                    else
+                    {
+                        Save = true;
+                        StreamReader readFile = new StreamReader(file.FileName);
 
-                    updateListElements();
+                        string json = readFile.ReadToEnd();
+                        readFile.Close();
+
+                        watchFace = JsonConvert.DeserializeObject<WatchFaceLibrary>(json);//,new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All,MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead ,PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+                        watchFace.FilePath = Path.GetDirectoryName(file.FileName);
+                        watchFace.LoadImages();
+
+                        RenderButton_Click(null, null);
+
+                        updateListElements();
+                    }
                 }
             }
             catch (Exception ex)
@@ -354,11 +383,6 @@ namespace MiBand5WatchFaces
             return JsonConvert.DeserializeObject<T>(clone);
         }
 
-        private void MainForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void activityToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
@@ -408,6 +432,7 @@ namespace MiBand5WatchFaces
 
                     if (Path.GetExtension(saveFile.FileName) == ".bin")
                     {
+                        WatchFaceEXE.Close();
                         this.Enabled = false;
                         WatchFaceEXE.StartInfo.FileName = @"WatchFace/WatchFace.exe";
                         //avrdude.StartInfo.Arguments = "-v";
@@ -419,11 +444,10 @@ namespace MiBand5WatchFaces
                         WatchFaceEXE.StartInfo.CreateNoWindow = true;
                         WatchFaceEXE.StartInfo.StandardOutputEncoding = Encoding.UTF8;
                         WatchFaceEXE.StartInfo.ErrorDialog = false;
-
+                        
                         WatchFaceEXE.Start();
-                        //WatchFaceEXE.WaitForExit();
-                        //WatchFaceEXE.BeginErrorReadLine();
                         WatchFaceEXE.BeginOutputReadLine();
+                        //WatchFaceEXE.WaitForExit();
                         SaveFileStatus.Text = "";
                     }
                     //if (File.Exists(Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.bin")) {
@@ -663,19 +687,43 @@ namespace MiBand5WatchFaces
         {
             if (e.Data != null)
                 SaveFileStatus.Text = e.Data.ToString();
-            if (e.Data != null && e.Data.ToString() == "Writing resources")
+
+            if (e.Data != null && e.Data.ToString().IndexOf("[ERROR]") != -1)
             {
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
-                WatchFaceEXE.Close();
+                //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
+                MessageBox.Show("Error!", "Not generated!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (e.Data != null && e.Data.ToString() == "Writing resources")
+            {
+                this.Enabled = true;
+                SaveFileStatus.Text = "";
+                //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
                 MessageBox.Show("Succeful!", "Complete!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            else if (e.Data != null && e.Data.ToString().IndexOf("[ERROR]") != -1)
+            else if (e.Data != null && e.Data.ToString().IndexOf("Exporting config...") != -1)
             {
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
-                WatchFaceEXE.Close();
-                MessageBox.Show("Error!", "Not generated!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
+                MessageBox.Show("Succeful!", "Complete!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                timerWatchFaceEXE.Stop();
+
+                Save = true;
+                StreamReader readFile = new StreamReader(Path.Combine(Path.Combine(Path.GetDirectoryName(file), Path.GetFileNameWithoutExtension(file)), $"{Path.GetFileNameWithoutExtension(file)}.json"));
+
+                string json = readFile.ReadToEnd();
+                readFile.Close();
+
+                watchFace = JsonConvert.DeserializeObject<WatchFaceLibrary>(json);//,new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All,MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead ,PreserveReferencesHandling = PreserveReferencesHandling.Objects });
+                watchFace.FilePath = Path.Combine(Path.GetDirectoryName(file), Path.GetFileNameWithoutExtension(file));
+                watchFace.LoadImages();
+
+                RenderButton_Click(null, null);
+
+                updateListElements();
+
             }
         }
 
@@ -683,7 +731,10 @@ namespace MiBand5WatchFaces
         {
             this.Enabled = true;
             SaveFileStatus.Text = "";
+            WatchFaceEXE.CancelOutputRead();
             WatchFaceEXE.Close();
+            timerWatchFaceEXE.Stop();
+            //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -707,6 +758,26 @@ namespace MiBand5WatchFaces
                 Properties.Settings.Default.ShowChangeLog = false;
                 Properties.Settings.Default.Save();
                 MessageBox.Show(GetChangeLog(), "Changelog", MessageBoxButtons.OK);
+            }
+
+            if (state)
+            {
+                if (GetVersion() != Application.ProductVersion && MessageBox.Show("Open a link to download the new version of the program?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    Process myProcess = new Process();
+
+                    try
+                    {
+                        // true is the default, but it is important not to set it to false
+                        myProcess.StartInfo.UseShellExecute = true;
+                        myProcess.StartInfo.FileName = "https://github.com/Johnson070/MiBand-5-watchface-editor/releases";
+                        myProcess.Start();
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
             }
         }
 
@@ -780,6 +851,15 @@ namespace MiBand5WatchFaces
             bool state = InternetGetConnectedState(out _, 0);
 
             if (state) MessageBox.Show(GetChangeLog(), "Changelog", MessageBoxButtons.OK);
+        }
+
+        private void timerWatchFaceEXE_Tick(object sender, EventArgs e)
+        {
+            WatchFaceEXE.Close();
+            this.Enabled = true;
+            MessageBox.Show("Error!", "Not generated!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            watchFace = new WatchFaceLibrary();
+            timerWatchFaceEXE.Stop();
         }
     }
 }

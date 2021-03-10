@@ -92,7 +92,7 @@ namespace MiBand5WatchFaces.Forms
             if (watch.Date?.ENWeekDays != null)
             {
                 weekdaysCheckbox.Checked = true;
-                if (watch.Date.ENWeekDays.ImageIndex >= 0) addWeekDays.Text = "Edit week day images";
+                if (watch.Date.ENWeekDays.ImageIndex >= 0) addWeekDays.Text = "Edit week days images";
             }
 
             checkStateChanged(null, null);

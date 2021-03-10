@@ -60,7 +60,7 @@ namespace MiBand5WatchFaces.Forms
             if (status == statusForm.StatusSpecial)
             {
                 this.buffer = DeepCopy(watch.Status);
-                this.watch.Status = this.watch.StatusSimplified == null ? new Status() : this.watch.StatusSimplified.ConvertToStatus();
+                this.watch.Status = this.watch.StatusSimplified == null ? new Status() : DeepCopy(this.watch.StatusSimplified.ConvertToStatus());
                 this.Text = "Status Simplified";
             }
             else
@@ -334,8 +334,11 @@ namespace MiBand5WatchFaces.Forms
                 if (watch.Status.Lock == null && watch.Status.DoNotDisturb == null && watch.Status.Bluetooth == null)
                     watch.Status = null;
 
-                watch.StatusSimplified = watch.Status.ConvertToStatusSimple();
-                watch.Status = buffer;
+                if (status == statusForm.StatusSpecial)
+                {
+                    watch.StatusSimplified = DeepCopy(watch.Status.ConvertToStatusSimple());
+                    watch.Status = buffer;
+                }
             }
         }
 
@@ -355,8 +358,11 @@ namespace MiBand5WatchFaces.Forms
             if (watch.Status.Lock == null && watch.Status.DoNotDisturb == null && watch.Status.Bluetooth == null)
                 watch.Status = null;
 
-            watch.StatusSimplified = watch.Status.ConvertToStatusSimple();
-            watch.Status = buffer;
+            if (status == statusForm.StatusSpecial)
+            {
+                watch.StatusSimplified = DeepCopy(watch.Status.ConvertToStatusSimple());
+                watch.Status = buffer;
+            }
             this.Close();
         }
 

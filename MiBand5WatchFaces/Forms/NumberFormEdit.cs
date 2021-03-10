@@ -75,6 +75,7 @@ namespace MiBand5WatchFaces
 
                 //number.BottomRightX = number.getSize(watch.imagesBuff).Width;
                 //number.BottomRightY = number.getSize(watch.imagesBuff).Height;
+                AligmentComboBox.Text = number.parseAligment();
 
                 sizeXNum.Value = Math.Abs(number.BottomRightX-number.TopLeftX);
                 sizeYNum.Value = Math.Abs(number.BottomRightY - number.TopLeftY);

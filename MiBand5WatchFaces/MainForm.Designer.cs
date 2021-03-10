@@ -53,6 +53,8 @@
             this.OpenFormImages = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.changeLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.checkUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.SetWatchfaceState = new System.Windows.Forms.Button();
@@ -65,8 +67,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.SaveFileStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.watchfacePreviewImage = new System.Windows.Forms.PictureBox();
-            this.checkUpdateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.timerWatchFaceEXE = new System.Windows.Forms.Timer(this.components);
             this.toolStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.listMenuStrip.SuspendLayout();
@@ -234,14 +235,14 @@
             // openFileButton
             // 
             this.openFileButton.Name = "openFileButton";
-            this.openFileButton.Size = new System.Drawing.Size(103, 22);
+            this.openFileButton.Size = new System.Drawing.Size(180, 22);
             this.openFileButton.Text = "Open";
             this.openFileButton.Click += new System.EventHandler(this.OpenFileJson);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
@@ -273,10 +274,24 @@
             this.toolStripDropDownButton2.Size = new System.Drawing.Size(62, 22);
             this.toolStripDropDownButton2.Text = "Settings";
             // 
+            // changeLogToolStripMenuItem
+            // 
+            this.changeLogToolStripMenuItem.Name = "changeLogToolStripMenuItem";
+            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.changeLogToolStripMenuItem.Text = "Change log";
+            this.changeLogToolStripMenuItem.Click += new System.EventHandler(this.changeLogToolStripMenuItem_Click);
+            // 
+            // checkUpdateToolStripMenuItem
+            // 
+            this.checkUpdateToolStripMenuItem.Name = "checkUpdateToolStripMenuItem";
+            this.checkUpdateToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
+            this.checkUpdateToolStripMenuItem.Text = "Check update";
+            this.checkUpdateToolStripMenuItem.Click += new System.EventHandler(this.checkUpdateToolStripMenuItem_Click);
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(147, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
@@ -348,6 +363,7 @@
             // 
             // WatchFaceEXE
             // 
+            this.WatchFaceEXE.EnableRaisingEvents = true;
             this.WatchFaceEXE.StartInfo.Domain = "";
             this.WatchFaceEXE.StartInfo.LoadUserProfile = false;
             this.WatchFaceEXE.StartInfo.Password = null;
@@ -382,19 +398,10 @@
             this.watchfacePreviewImage.TabIndex = 7;
             this.watchfacePreviewImage.TabStop = false;
             // 
-            // checkUpdateToolStripMenuItem
+            // timerWatchFaceEXE
             // 
-            this.checkUpdateToolStripMenuItem.Name = "checkUpdateToolStripMenuItem";
-            this.checkUpdateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.checkUpdateToolStripMenuItem.Text = "Check update";
-            this.checkUpdateToolStripMenuItem.Click += new System.EventHandler(this.checkUpdateToolStripMenuItem_Click);
-            // 
-            // changeLogToolStripMenuItem
-            // 
-            this.changeLogToolStripMenuItem.Name = "changeLogToolStripMenuItem";
-            this.changeLogToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.changeLogToolStripMenuItem.Text = "Change log";
-            this.changeLogToolStripMenuItem.Click += new System.EventHandler(this.changeLogToolStripMenuItem_Click);
+            this.timerWatchFaceEXE.Interval = 20000;
+            this.timerWatchFaceEXE.Tick += new System.EventHandler(this.timerWatchFaceEXE_Tick);
             // 
             // MainForm
             // 
@@ -414,7 +421,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Watch Face for MI Band 5 Editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
-            this.Load += new System.EventHandler(this.MainForm_Load);
             this.Shown += new System.EventHandler(this.MainForm_Shown);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -466,6 +472,7 @@
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem checkUpdateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem changeLogToolStripMenuItem;
+        private System.Windows.Forms.Timer timerWatchFaceEXE;
     }
 }
 
