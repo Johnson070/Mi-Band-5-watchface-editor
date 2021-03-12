@@ -341,7 +341,7 @@ namespace MiBand5WatchFaces.Forms
                 editPosTZ1Btn.Enabled = true;
                 timeZone1ButtonEdit.Text = "Edit";
             }
-            else if (numForm.saved)
+            else if (numForm.delete)
             {
                 watch.Time.TimeZone1 = null;
                 watch.Time.TimeZone1DelimiterImage = -10000;
@@ -372,7 +372,7 @@ namespace MiBand5WatchFaces.Forms
                 editPosTZ2Btn.Enabled = true;
                 timeZone2ButtonEdit.Text = "Edit";
             }
-            else if (numForm.saved)
+            else if (numForm.delete)
             {
                 watch.Time.TimeZone2 = null;
                 watch.Time.TimeZone2DelimiterImage = -10000;

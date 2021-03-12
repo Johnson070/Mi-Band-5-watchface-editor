@@ -100,7 +100,7 @@ namespace MiBand5WatchFaces
                         WatchFaceEXE.StartInfo.ErrorDialog = false;
 
                         //WatchFaceEXE.BeginErrorReadLine();
-                        
+
                         WatchFaceEXE.Start();
                         WatchFaceEXE.BeginOutputReadLine();
 
@@ -444,7 +444,7 @@ namespace MiBand5WatchFaces
                         WatchFaceEXE.StartInfo.CreateNoWindow = true;
                         WatchFaceEXE.StartInfo.StandardOutputEncoding = Encoding.UTF8;
                         WatchFaceEXE.StartInfo.ErrorDialog = false;
-                        
+
                         WatchFaceEXE.Start();
                         WatchFaceEXE.BeginOutputReadLine();
                         //WatchFaceEXE.WaitForExit();
@@ -860,6 +860,59 @@ namespace MiBand5WatchFaces
             MessageBox.Show("Error!", "Not generated!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             watchFace = new WatchFaceLibrary();
             timerWatchFaceEXE.Stop();
+        }
+
+        private void supportMeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Process myProcess = new Process();
+
+            try
+            {
+                // true is the default, but it is important not to set it to false
+                myProcess.StartInfo.UseShellExecute = true;
+                myProcess.StartInfo.FileName = "https://www.donationalerts.com/r/johnson070";
+                myProcess.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+
+        }
+
+        private void wkiProgramToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process myProcess = new Process();
+
+            try
+            {
+                // true is the default, but it is important not to set it to false
+                myProcess.StartInfo.UseShellExecute = true;
+                myProcess.StartInfo.FileName = "https://github.com/Johnson070/MiBand-5-watchface-editor/wiki";
+                myProcess.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private void findBugToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Process myProcess = new Process();
+
+            try
+            {
+                // true is the default, but it is important not to set it to false
+                myProcess.StartInfo.UseShellExecute = true;
+                myProcess.StartInfo.FileName = "https://github.com/Johnson070/MiBand-5-watchface-editor/issues";
+                myProcess.Start();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
         }
     }
 }

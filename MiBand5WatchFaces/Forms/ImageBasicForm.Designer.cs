@@ -37,6 +37,7 @@
             this.saveBtn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.previewImage = new System.Windows.Forms.Panel();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.PropertiesGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posYNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posXNum)).BeginInit();
@@ -148,11 +149,23 @@
             this.previewImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.previewImage_MouseMove);
             this.previewImage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.previewImage_MouseUp);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteButton.Location = new System.Drawing.Point(12, 468);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(204, 32);
+            this.deleteButton.TabIndex = 3;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // ImageBasicForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(230, 466);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.PropertiesGroupBox);
             this.Controls.Add(this.selectImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -179,5 +192,6 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel previewImage;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

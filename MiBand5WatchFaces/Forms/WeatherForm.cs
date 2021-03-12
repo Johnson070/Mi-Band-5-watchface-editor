@@ -161,7 +161,7 @@ namespace MiBand5WatchFaces.Forms
 
                 AddWeatherCustomIconButton.Text = "Edit images";
             }
-            else if (imgSetForm.saved)
+            else if (imgSetForm.delete)
             {
                 watch.Weather.Icon = null;
                 watch.imagesBuff = imgSetForm.watch.imagesBuff;
@@ -199,7 +199,7 @@ namespace MiBand5WatchFaces.Forms
                     AddMinusImageTemperatureTodaySeparateDayButton.Enabled = true;
                     AddDegreeImageTemperatureTodaySeparateDayButton.Enabled = true;
                 }
-                else if (numberForm.saved)
+                else if (numberForm.delete)
                 {
                     if (watch.Weather?.Temperature?.Today?.Separate?.Day != null)
                         watch.Weather.Temperature.Today.Separate.Day = null;
@@ -232,7 +232,7 @@ namespace MiBand5WatchFaces.Forms
                     AddMinusImageTemperatureTodaySeparateNightButton.Enabled = true;
                     AddDegreeImageTemperatureTodaySeparateNightButton.Enabled = true;
                 }
-                else if (numberForm.saved)
+                else if (numberForm.delete)
                 {
                     if (watch.Weather?.Temperature?.Today?.Separate?.Night != null)
                         watch.Weather.Temperature.Today.Separate.Night = null;
@@ -265,7 +265,7 @@ namespace MiBand5WatchFaces.Forms
                     AddDelimeterImageTemperatureTodayOnelineButton.Enabled = true;
                     AddForBothTemperatureTodayOnelineCheckBox.Enabled = true;
                 }
-                else if (numberForm.saved)
+                else if (numberForm.delete)
                 {
                     if (watch.Weather?.Temperature?.Today?.OneLine != null)
                         watch.Weather.Temperature.Today.OneLine = null;
@@ -296,7 +296,7 @@ namespace MiBand5WatchFaces.Forms
                     AddMinusImageTemperatureCurrentButton.Enabled = true;
                     AddDegreeImageTemperatureCurrentButton.Enabled = true;
                 }
-                else if (numberForm.saved)
+                else if (numberForm.delete)
                 {
                     if (watch.Weather?.Temperature?.Current != null)
                         watch.Weather.Temperature.Current = null;
@@ -323,7 +323,7 @@ namespace MiBand5WatchFaces.Forms
                     AddSuffixHumidityButton.Enabled = true;
                     AddSuffixImageHumidityButton.Enabled = true;
                 }
-                else if (numberForm.saved)
+                else if (numberForm.delete)
                 {
                     watch.Weather.Humidity = null;
                     watch.imagesBuff = numberForm.watch.imagesBuff;
@@ -348,7 +348,7 @@ namespace MiBand5WatchFaces.Forms
                     AddNumberWindButton.Text = "Edit number";
                     AddSuffixWindButton.Enabled = true;
                 }
-                else if (numberForm.saved)
+                else if (numberForm.delete)
                 {
                     watch.Weather.Wind = null;
                     watch.imagesBuff = numberForm.watch.imagesBuff;
@@ -374,7 +374,7 @@ namespace MiBand5WatchFaces.Forms
                     AddNumberUVButton.Text = "Edit number";
                     AddSuffixUVButton.Enabled = true;
                 }
-                else if (numberForm.saved)
+                else if (numberForm.delete)
                 {
                     watch.Weather.UVIndex = null;
                     watch.imagesBuff = numberForm.watch.imagesBuff;
@@ -654,7 +654,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.Weather.Humidity.ImageSuffix = ibForm.imageBasic;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
-            else
+            else if (ibForm.delete)
             {
                 AddSuffixImageHumidityButton.Text = "Add suffix image";
                 watch.Weather.Humidity.ImageSuffix = null;

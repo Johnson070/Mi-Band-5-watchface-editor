@@ -90,7 +90,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.Battery.BatteryIcon = setForm.imageSet;
                 AddImagesBatteryIconButton.Text = "Edit images";
             }
-            else if (setForm.saved)
+            else if (setForm.delete)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.Battery.BatteryIcon = null;
@@ -117,7 +117,7 @@ namespace MiBand5WatchFaces.Forms
                 AddSuffixButton.Enabled = true;
                 AddNumberBatteryTextButton.Text = "Edit number";
             }
-            else if (numForm.saved)
+            else if (numForm.delete)
             {
                 watch.imagesBuff = numForm.watch.imagesBuff;
                 watch.Battery.BatteryText.Coordinates = null;
@@ -142,13 +142,13 @@ namespace MiBand5WatchFaces.Forms
                 imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
-                if (imgForm.saveImages == true && imgForm.selectedImages != null)
+                if (imgForm.saveImages && imgForm.selectedImages != null)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Battery.BatteryText.PrefixImageIndex = imgForm.selectedImages[0];
                     AddPreffixButton.Text = "Edit prefix";
                 }
-                else if (imgForm.saveImages == true)
+                else if (imgForm.saveImages)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Battery.BatteryText.PrefixImageIndex = -10000;
@@ -162,13 +162,13 @@ namespace MiBand5WatchFaces.Forms
                 imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
-                if (imgForm.saveImages == true && imgForm.selectedImages != null)
+                if (imgForm.saveImages && imgForm.selectedImages != null)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Battery.BatteryText.SuffixImageIndex = imgForm.selectedImages[0];
                     AddSuffixButton.Text = "Edit suffix";
                 }
-                else if (imgForm.saveImages == true)
+                else if (imgForm.saveImages)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Battery.BatteryText.SuffixImageIndex = -10000;
@@ -188,14 +188,14 @@ namespace MiBand5WatchFaces.Forms
             ScaleForm scaleForm = new ScaleForm(watchface, watchface.Battery.Linear, watch.imagesBuff.DeepCopy(), stateNew);
             scaleForm.ShowDialog();
 
-            if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
+            if (scaleForm.saved && scaleForm.scale.StartImageIndex >= 0)
             {
                 watch.Battery.Linear = scaleForm.scale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
                 AddImagesLinearButton.Text = "Edit images";
             }
-            else if (scaleForm.saved == true)
+            else if (scaleForm.delete)
             {
                 watch.Battery.Linear = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;

@@ -22,6 +22,7 @@ namespace MiBand5WatchFaces
         bool moving;
 
         public bool saved = false;
+        public bool delete = false; // height = 635 675 up
 
         public NumberFormEdit(WatchFaceLibrary watch, Number number, DefaultDictionary<int, Image> images, StateWatchface state, int countImages = -1)
         {
@@ -46,6 +47,8 @@ namespace MiBand5WatchFaces
                 //number.BottomRightX = number.BottomRightX;
                 //number.BottomRightY = number.BottomRightY;
                 this.number.drawBorder = true;
+                this.Size = new Size(this.Size.Width, 675);
+
 
                 Render();
             }
@@ -180,7 +183,11 @@ namespace MiBand5WatchFaces
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (PropertiesGroupBox.Enabled)
-                if (saved == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) saved = true;
+                if (saved == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    saved = true;
+                    delete = false;
+                }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
@@ -258,6 +265,13 @@ namespace MiBand5WatchFaces
 
                 Render();
             }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            delete = true;
+            saved = false;
+            this.Close();
         }
     }
 }

@@ -125,7 +125,7 @@ namespace MiBand5WatchFaces.Forms
                     addPreffixStepsButton.Enabled = true;
                     addSuffixStepsButton.Enabled = true;
                 }
-                else if (numForm.saved)
+                else if (numForm.delete)
                 {
                     watch.Activity.Steps = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
@@ -152,7 +152,7 @@ namespace MiBand5WatchFaces.Forms
                     addPreffixCaloriesButton.Enabled = true;
                     addSuffixCaloriesButton.Enabled = true;
                 }
-                else if (numForm.saved)
+                else if (numForm.delete)
                 {
                     watch.Activity.Calories = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
@@ -180,7 +180,7 @@ namespace MiBand5WatchFaces.Forms
                     addSuffixPulseButton.Enabled = true;
                     addNoDataPulseButton.Enabled = true;
                 }
-                else if (numForm.saved)
+                else if (numForm.delete)
                 {
                     watch.Activity.Pulse = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
@@ -206,7 +206,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.imagesBuff = numForm.watch.imagesBuff;
                     addPAIButton.Text = "Edit PAI";
                 }
-                else if (numForm.saved)
+                else if (numForm.delete)
                 {
                     watch.Activity.PAI = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
@@ -232,7 +232,7 @@ namespace MiBand5WatchFaces.Forms
                     addKmImageButton.Enabled = true;
                     addMiImageButton.Enabled = true;
                 }
-                else if (numForm.saved)
+                else if (numForm.delete)
                 {
                     watch.Activity.Distance = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
@@ -491,7 +491,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Activity.Distance.KmImageIndex = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     addKmImageButton.Text = "Add KM image";
                     watch.Activity.Distance.KmImageIndex = null;
@@ -512,7 +512,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Activity.Distance.MilesImageIndex = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     addMiImageButton.Text = "Add MI image";
                     watch.Activity.Distance.MilesImageIndex = null;

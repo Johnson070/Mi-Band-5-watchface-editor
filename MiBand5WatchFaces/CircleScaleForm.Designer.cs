@@ -48,6 +48,7 @@ namespace MiBand5WatchFaces
             this.endAngleNum = new System.Windows.Forms.NumericUpDown();
             this.startAngleNum = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.PropertiesGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.widthNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.centerYNum)).BeginInit();
@@ -290,11 +291,23 @@ namespace MiBand5WatchFaces
             this.label1.TabIndex = 1;
             this.label1.Text = "Color:";
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteButton.Location = new System.Drawing.Point(12, 591);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(206, 33);
+            this.deleteButton.TabIndex = 9;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // CircleScaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 588);
+            this.ClientSize = new System.Drawing.Size(230, 631);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.PropertiesGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -335,5 +348,6 @@ namespace MiBand5WatchFaces
         private System.Windows.Forms.Button colorButton;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.NumericUpDown widthNum;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

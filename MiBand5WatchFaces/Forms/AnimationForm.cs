@@ -71,7 +71,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.Other.Animation[AnimationsListBox.SelectedIndex].AnimationImages = setForm.imageSet;
                 AddImagesAnimationButton.Text = "Edit images";
             }
-            else if (setForm.saved)
+            else if (setForm.delete)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.Other.Animation.RemoveAt(AnimationsListBox.SelectedIndex);

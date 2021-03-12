@@ -38,11 +38,12 @@ namespace MiBand5WatchFaces.Forms
             this.shapeListBox = new System.Windows.Forms.ListBox();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.deleteDotToolStrip = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelArrow = new System.Windows.Forms.PictureBox();
             this.clearAllButton = new System.Windows.Forms.Button();
             this.eraseRadioButton = new System.Windows.Forms.RadioButton();
             this.dotRadioButton = new System.Windows.Forms.RadioButton();
             this.HelpTip = new System.Windows.Forms.ToolTip(this.components);
-            this.panelArrow = new System.Windows.Forms.PictureBox();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.contextMenuStrip1.SuspendLayout();
@@ -53,7 +54,7 @@ namespace MiBand5WatchFaces.Forms
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.posPanel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 576);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 629);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(658, 22);
             this.statusStrip1.TabIndex = 1;
@@ -65,7 +66,7 @@ namespace MiBand5WatchFaces.Forms
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.saveButton.Location = new System.Drawing.Point(7, 543);
@@ -78,8 +79,7 @@ namespace MiBand5WatchFaces.Forms
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.shapeListBox);
             this.groupBox1.Controls.Add(this.panelArrow);
@@ -117,9 +117,23 @@ namespace MiBand5WatchFaces.Forms
             this.deleteDotToolStrip.Text = "Delete dot";
             this.deleteDotToolStrip.Click += new System.EventHandler(this.deleteDotToolStrip_Click);
             // 
+            // panelArrow
+            // 
+            this.panelArrow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelArrow.Location = new System.Drawing.Point(129, 19);
+            this.panelArrow.Name = "panelArrow";
+            this.panelArrow.Size = new System.Drawing.Size(500, 500);
+            this.panelArrow.TabIndex = 9;
+            this.panelArrow.TabStop = false;
+            this.panelArrow.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArrow_Paint);
+            this.panelArrow.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelArrow_MouseClick);
+            this.panelArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
+            this.panelArrow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
+            this.panelArrow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            // 
             // clearAllButton
             // 
-            this.clearAllButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.clearAllButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.clearAllButton.Location = new System.Drawing.Point(6, 486);
             this.clearAllButton.Name = "clearAllButton";
@@ -155,24 +169,25 @@ namespace MiBand5WatchFaces.Forms
             this.HelpTip.SetToolTip(this.dotRadioButton, "Double click for place dot");
             this.dotRadioButton.UseVisualStyleBackColor = true;
             // 
-            // panelArrow
+            // deleteButton
             // 
-            this.panelArrow.Location = new System.Drawing.Point(129, 19);
-            this.panelArrow.Name = "panelArrow";
-            this.panelArrow.Size = new System.Drawing.Size(500, 500);
-            this.panelArrow.TabIndex = 9;
-            this.panelArrow.TabStop = false;
-            this.panelArrow.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArrow_Paint);
-            this.panelArrow.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelArrow_MouseClick);
-            this.panelArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.panelArrow.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.panelArrow.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteButton.Location = new System.Drawing.Point(7, 588);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(639, 30);
+            this.deleteButton.TabIndex = 7;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // ArrowPaintForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 598);
+            this.ClientSize = new System.Drawing.Size(658, 651);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.statusStrip1);
@@ -206,5 +221,6 @@ namespace MiBand5WatchFaces.Forms
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem deleteDotToolStrip;
         private System.Windows.Forms.ToolTip HelpTip;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

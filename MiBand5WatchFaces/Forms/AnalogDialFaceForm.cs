@@ -83,7 +83,7 @@ namespace MiBand5WatchFaces.Forms
                 AddArrowHoursButton.Text = "Edit arrow";
                 propertiesHoursGroup.Enabled = true;
             }
-            else if (arrowPaintForm.Save && arrowPaintForm.shape.Count == 0)
+            else if (arrowPaintForm.delete)
             {
                 watch.AnalogDialFace.Hours = null;
                 AddArrowHoursButton.Text = "Add arrow";
@@ -107,7 +107,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.AnalogDialFace.Minutes.CenterImage = ibForm.imageBasic;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
-            else
+            else if (ibForm.delete)
             {
                 AddCenterImageMinutesButton.Text = "Add image center";
                 watch.AnalogDialFace.Minutes.CenterImage = null;
@@ -163,7 +163,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.AnalogDialFace.Hours.CenterImage = ibForm.imageBasic;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
-            else
+            else if (ibForm.delete)
             {
                 AddCenterImageHoursButton.Text = "Add image center";
                 watch.AnalogDialFace.Hours.CenterImage = null;
@@ -210,7 +210,7 @@ namespace MiBand5WatchFaces.Forms
                 AddArrowMinutesButton.Text = "Edit arrow";
                 PropertiesMinutesGroupBox.Enabled = true;
             }
-            else if (arrowPaintForm.Save && arrowPaintForm.shape.Count == 0)
+            else if (arrowPaintForm.delete)
             {
                 watch.AnalogDialFace.Minutes = null;
                 AddArrowMinutesButton.Text = "Add arrow";

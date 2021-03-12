@@ -16,7 +16,9 @@ namespace MiBand5WatchFaces
         public CircleScale circleScale;
         StateWatchface state;
 
+        bool startForm = false;
         public bool saved = false;
+        public bool delete = false; // height = 630 670
 
         private Color convertColorFromString(string _color) => Color.FromArgb(Convert.ToInt16(_color.Substring(2, 2), 16), Convert.ToInt16(_color.Substring(4, 2), 16), Convert.ToInt16(_color.Substring(6, 2), 16));
 
@@ -43,6 +45,7 @@ namespace MiBand5WatchFaces
             centerYNum.Value = circleScale.CenterY;
             colorButton.BackColor = convertColorFromString(circleScale.Color);
 
+            startForm = true;
             Render();
         }
 
@@ -60,26 +63,40 @@ namespace MiBand5WatchFaces
 
         private void changeNumericValue(object sender, EventArgs e)
         {
-            circleScale.StartAngle = (int)startAngleNum.Value;
-            circleScale.EndAngle = (int)endAngleNum.Value;
-            circleScale.Width = (int)widthNum.Value;
-            circleScale.RadiusX = (int)radiusXNum.Value;
-            circleScale.RadiusY = (int)radiusYNum.Value;
-            circleScale.CenterX = (int)centerXNum.Value;
-            circleScale.CenterY = (int)centerYNum.Value;
+            if (startForm)
+            {
+                circleScale.StartAngle = (int)startAngleNum.Value;
+                circleScale.EndAngle = (int)endAngleNum.Value;
+                circleScale.Width = (int)widthNum.Value;
+                circleScale.RadiusX = (int)radiusXNum.Value;
+                circleScale.RadiusY = (int)radiusYNum.Value;
+                circleScale.CenterX = (int)centerXNum.Value;
+                circleScale.CenterY = (int)centerYNum.Value;
 
-            Render();
+                Render();
+            }
         }
 
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (PropertiesGroupBox.Enabled)
-                if (saved == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No) saved = true;
+                if (saved == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    saved = true;
+                    delete = false;
+                }
         }
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
             saved = true;
+            this.Close();
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            delete = true;
+            saved = false;
             this.Close();
         }
     }

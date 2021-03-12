@@ -70,7 +70,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.WeekDaysIcons.Monday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     mondayButton.Text = "Add monday image";
                     watch.WeekDaysIcons.Monday = null;
@@ -91,7 +91,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.WeekDaysIcons.Tuesday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     tuesdayButton.Text = "Add tuesday image";
                     watch.WeekDaysIcons.Tuesday = null;
@@ -112,7 +112,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.WeekDaysIcons.Wednesday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     wednesdayButton.Text = "Add wednesday image";
                     watch.WeekDaysIcons.Wednesday = null;
@@ -133,7 +133,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.WeekDaysIcons.Thursday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     thursdayButton.Text = "Add thursday image";
                     watch.WeekDaysIcons.Thursday = null;
@@ -154,7 +154,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.WeekDaysIcons.Friday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     fridayButton.Text = "Add friday image";
                     watch.WeekDaysIcons.Friday = null;
@@ -175,7 +175,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.WeekDaysIcons.Saturday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     saturdayButton.Text = "Add saturday image";
                     watch.WeekDaysIcons.Saturday = null;
@@ -196,7 +196,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.WeekDaysIcons.Sunday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     sundayButton.Text = "Add sunday image";
                     watch.WeekDaysIcons.Sunday = null;

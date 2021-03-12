@@ -59,5 +59,32 @@ namespace MiBand5WatchFaces.Resources {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add image no alarm.
+        /// </summary>
+        internal static string AddImageNoAlarm {
+            get {
+                return ResourceManager.GetString("AddImageNoAlarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Do you want to get out without saving?.
+        /// </summary>
+        internal static string ExitMessage {
+            get {
+                return ResourceManager.GetString("ExitMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Don&apos;t Save?.
+        /// </summary>
+        internal static string ExitMessageCaption {
+            get {
+                return ResourceManager.GetString("ExitMessageCaption", resourceCulture);
+            }
+        }
     }
 }

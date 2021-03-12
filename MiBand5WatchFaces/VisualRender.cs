@@ -592,7 +592,7 @@ namespace MiBand5WatchFaces
                 if (watchFaceState.Steps > 0)
                     drawImage(watchface.imagesBuff[progress.LineScale.ImageIndex + map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.LineScale.ImagesCount - 1)], progress.LineScale.getPoint());
 
-            if (progress.Linear != null)
+            if (progress.Linear != null && progress.Linear.Segments.Count > 0)
                 for (int i = 0; i < map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.Linear.Segments.Count); i++)
                     drawImage(watchface.imagesBuff[progress.Linear.StartImageIndex + i], progress.Linear.Segments[i].getPoint());
 
@@ -646,7 +646,7 @@ namespace MiBand5WatchFaces
             if (battery.BatteryIcon != null)
                 drawImage(watchface.imagesBuff[battery.BatteryIcon.ImageIndex + map(watchFaceState.BatteryLevel, 0, 100, 0, battery.BatteryIcon.ImagesCount - 1)], battery.BatteryIcon.getPoint());
 
-            if (battery.Linear != null)
+            if (battery.Linear != null && battery.Linear.Segments.Count > 0)
                 for (int i = 0; i < map(watchFaceState.BatteryLevel, 0, 100, 0, battery.Linear.Segments.Count); i++)
                     drawImage(watchface.imagesBuff[battery.Linear.StartImageIndex + i], battery.Linear.Segments[i].getPoint());
         }
@@ -703,7 +703,7 @@ namespace MiBand5WatchFaces
         {
             HeartProgress heartProgress = _heartprog != null ? _heartprog : watchface.HeartProgress;
 
-            if (heartProgress.Scale != null)
+            if (heartProgress.Scale != null && heartProgress.Scale.Segments.Count > 0)
                 drawImage(watchface.imagesBuff[heartProgress.Scale.StartImageIndex + map(watchFaceState.Pulse, 0, watchFaceState.PulseGoal, 0, heartProgress.Scale.Segments.Count - 1)], heartProgress.Scale.Segments[map(watchFaceState.Pulse, 0, 140, 0, heartProgress.Scale.Segments.Count - 1)].getPoint());
 
             if (heartProgress.LineScale != null)

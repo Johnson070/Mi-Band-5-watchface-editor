@@ -18,6 +18,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources.Resource1));
 
 
         public void Render(StateWatchface state = null)
@@ -71,7 +72,7 @@ namespace MiBand5WatchFaces.Forms
                 AddNumberButton.Text = "Edit number";
                 groupBox1.Enabled = true;
             }
-            else if (numForm.saved)
+            else if (numForm.delete)
             {
                 watch.imagesBuff = numForm.watch.imagesBuff;
                 watch.Alarm.Text = null;
@@ -122,7 +123,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Alarm.ImageOn = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     AddImageOnButton.Text = "Add image ON";
                     watch.Alarm.ImageOn = null;
@@ -144,7 +145,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Alarm.ImageOn = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     AddImageOFFButton.Text = "Add image OFF";
                     watch.Alarm.ImageOn = null;
@@ -165,7 +166,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Alarm.ImageNoAlarm = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
-                else
+                else if (ibForm.delete)
                 {
                     AddImageNoAlarmButton.Text = "Add image no alarm";
                     watch.Alarm.ImageNoAlarm = null;
@@ -186,7 +187,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void AlarmForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (watch.Alarm.Text == null)

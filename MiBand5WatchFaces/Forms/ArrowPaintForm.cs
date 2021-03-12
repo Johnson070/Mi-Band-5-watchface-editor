@@ -22,6 +22,7 @@ namespace MiBand5WatchFaces.Forms
 
         public List<XY> shape = new List<XY>();
         public bool Save;
+        public bool delete; // 690
 
         public ArrowPaintForm(List<XY> shape)
         {
@@ -163,6 +164,13 @@ namespace MiBand5WatchFaces.Forms
                 fillListBox();
                 panelArrow.Refresh();
             }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            Save = false;
+            delete = true;
+            this.Close();
         }
 
         private void panelArrow_Paint(object sender, PaintEventArgs e)

@@ -18,6 +18,7 @@ namespace MiBand5WatchFaces.Forms
         bool startForm = true;
         bool moving;
         public bool saved = false;
+        public bool delete = false; // height = 505 550 up
 
         public ImageBasicForm(WatchFaceLibrary watch, ImageBasic imageBasic, DefaultDictionary<int, Image> images, StateWatchface state = null)
         {
@@ -33,6 +34,8 @@ namespace MiBand5WatchFaces.Forms
 
                 posXNum.Value = imageBasic.X;
                 posYNum.Value = imageBasic.Y;
+
+                this.Size = new Size(this.Size.Width, 550);
 
                 Render();
             }
@@ -90,7 +93,9 @@ namespace MiBand5WatchFaces.Forms
                 if (saved == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     saved = true;
+                    delete = false;
                 }
+            
         }
 
         private void posChanged(object sender, EventArgs e)
@@ -138,6 +143,13 @@ namespace MiBand5WatchFaces.Forms
 
                 Render();
             }
+        }
+
+        private void deleteButton_Click(object sender, EventArgs e)
+        {
+            delete = true;
+            saved = false;
+            this.Close();
         }
     }
 }

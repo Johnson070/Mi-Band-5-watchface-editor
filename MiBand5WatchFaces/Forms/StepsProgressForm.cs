@@ -51,13 +51,14 @@ namespace MiBand5WatchFaces.Forms
 
             if (stateForm == StateForm.Calories)
             {
-                this.watch.formEdit = this.watch.CaloriesProgress.ConvertToSP();
+                this.watch.formEdit = this.watch.CaloriesProgress == null ? new StepsProgress() : this.watch.CaloriesProgress.ConvertToSP();
                 this.Text = "Calories Progress";
             }
             else
                 this.watch.formEdit = this.watch.StepsProgress;
 
             this.watch.formEdit = this.watch.formEdit == null ? new StepsProgress() : this.watch.formEdit;
+
             Render(state);
 
 
@@ -86,20 +87,22 @@ namespace MiBand5WatchFaces.Forms
         private void AddLineScaleImages_Click(object sender, EventArgs e)
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
-            watchface.formEdit.Linear = watchface.formEdit.Linear == null ? new Scale() : watchface.formEdit.Linear;
+            if (stateForm == StateForm.Steps) watchface.StepsProgress.Linear = watchface.formEdit.Linear == null ? new Scale() : watchface.formEdit.Linear;
+            else watchface.CaloriesProgress.Linear = watchface.formEdit.Linear == null ? new Scale() : watchface.formEdit.Linear; 
+
             StateWatchface stepsState = DeepCopy(state);
             stepsState.Steps = 10000;
             ScaleForm scaleForm = new ScaleForm(watchface, watchface.formEdit.Linear, watch.imagesBuff.DeepCopy(), stepsState);
             scaleForm.ShowDialog();
 
-            if (scaleForm.saved == true)
+            if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
             {
                 watch.formEdit.Linear = scaleForm.scale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
                 AddLinearImages.Text = "Edit images";
             }
-            else if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
+            else if (scaleForm.delete)
             {
                 watch.formEdit.Linear = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
@@ -122,7 +125,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.formEdit.GoalImage = ibForm.imageBasic;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
-            else
+            else if(ibForm.delete)
             {
                 AddGoalImageButton.Text = "Add image";
                 watch.formEdit.GoalImage = null;
@@ -180,7 +183,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.formEdit.LineScale = setForm.imageSet;
                 AddLineScaleButton.Text = "Edit images";
             }
-            else if (setForm.saved)
+            else if (setForm.delete)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.formEdit.LineScale = null;
@@ -193,8 +196,10 @@ namespace MiBand5WatchFaces.Forms
         private void AddCircleScale_Click(object sender, EventArgs e)
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
-            watchface.formEdit.CircleScale = watchface.formEdit.CircleScale == null ? new CircleScale() : watchface.formEdit.CircleScale;
-            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.formEdit.CircleScale, watch.imagesBuff.DeepCopy(), state);
+            if (stateForm == StateForm.Steps) watchface.StepsProgress.CircleScale = watchface.formEdit.CircleScale == null ? new CircleScale() : watchface.formEdit.CircleScale;
+            else watchface.CaloriesProgress.CircleScale = watchface.formEdit.CircleScale == null ? new CircleScale() : watchface.formEdit.CircleScale;
+
+            CircleScaleForm scaleForm = new CircleScaleForm(watchface, stateForm == StateForm.Steps ? watchface.StepsProgress.CircleScale : watchface.CaloriesProgress.CircleScale, watch.imagesBuff.DeepCopy(), state);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved)
@@ -203,6 +208,13 @@ namespace MiBand5WatchFaces.Forms
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
                 AddCircleScale.Text = "Edit circle scale";
+            }
+            else if (scaleForm.delete)
+            {
+                watch.formEdit.CircleScale = null;
+                watch.imagesBuff = scaleForm.watch.imagesBuff;
+
+                AddCircleScale.Text = "Add circle scale";
             }
 
             Render(state);

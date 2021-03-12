@@ -70,11 +70,12 @@
   <PropertyGroup>
     <ManifestKeyFile>MiBand5WatchFaces_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
-  </PropertyGroup>
+  <PropertyGroup />
   <PropertyGroup>
     <ApplicationIcon>proj-_1_.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -323,10 +324,16 @@
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>MainForm1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NumberFormEdit.resx">
       <DependentUpon>NumberFormEdit.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.ru.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.en.resx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -340,11 +347,13 @@
     <EmbeddedResource Include="Forms\WatchfaceState.resx">
       <DependentUpon>WatchfaceState.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.ru.resx" />
+    <EmbeddedResource Include="Resources\Resource1.en.resx" />
     <EmbeddedResource Include="Resources\Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="MiBand5WatchFaces_TemporaryKey.pfx" />
+    <EmbeddedResource Include="Resources\Resource1.ru.resx" />
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
@@ -385,6 +394,7 @@
     <Content Include="proj %281%29 %281%29.ico" />
     <Content Include="proj-_1_.ico" />
     <None Include="Resources\21305435.png" />
+    <None Include="Resources\pngtree-black-coin-icon-image_1130356.png" />
     <Content Include="WatchFace\BumpKit.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

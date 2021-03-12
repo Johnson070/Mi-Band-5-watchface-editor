@@ -70,14 +70,14 @@ namespace MiBand5WatchFaces.Forms
             ScaleForm scaleForm = new ScaleForm(watchface, watchface.HeartProgress.Linear, watch.imagesBuff.DeepCopy(), heartState);
             scaleForm.ShowDialog();
 
-            if (scaleForm.saved == true)
+            if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
             {
                 watch.HeartProgress.Linear = scaleForm.scale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
                 AddLinearImages.Text = "Edit images";
             }
-            else if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
+            else if (scaleForm.delete)
             {
                 watch.HeartProgress.Linear = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
@@ -97,14 +97,14 @@ namespace MiBand5WatchFaces.Forms
             ScaleForm scaleForm = new ScaleForm(watchface, watchface.HeartProgress.Scale, watch.imagesBuff.DeepCopy(), heartState);
             scaleForm.ShowDialog();
 
-            if (scaleForm.saved == true)
+            if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
             {
                 watch.HeartProgress.Scale = scaleForm.scale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
                 AddScaleButton.Text = "Edit images";
             }
-            else if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
+            else if (scaleForm.delete)
             {
                 watch.HeartProgress.Scale = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
@@ -129,7 +129,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.HeartProgress.LineScale = setForm.imageSet;
                 AddLineScaleButton.Text = "Edit images";
             }
-            else if (setForm.saved)
+            else if (setForm.delete)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.HeartProgress.LineScale = null;

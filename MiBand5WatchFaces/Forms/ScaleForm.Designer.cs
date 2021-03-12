@@ -40,6 +40,7 @@ namespace MiBand5WatchFaces.Forms
             this.label1 = new System.Windows.Forms.Label();
             this.ImagesComboBox = new System.Windows.Forms.ComboBox();
             this.selectImages = new System.Windows.Forms.Button();
+            this.deleteButton = new System.Windows.Forms.Button();
             this.PropertiesGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.posYNum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.posXNum)).BeginInit();
@@ -57,7 +58,7 @@ namespace MiBand5WatchFaces.Forms
             this.PropertiesGroupBox.Controls.Add(this.ImagesComboBox);
             this.PropertiesGroupBox.Enabled = false;
             this.PropertiesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PropertiesGroupBox.Location = new System.Drawing.Point(12, 62);
+            this.PropertiesGroupBox.Location = new System.Drawing.Point(12, 50);
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
             this.PropertiesGroupBox.Size = new System.Drawing.Size(204, 446);
             this.PropertiesGroupBox.TabIndex = 3;
@@ -170,11 +171,23 @@ namespace MiBand5WatchFaces.Forms
             this.selectImages.UseVisualStyleBackColor = true;
             this.selectImages.Click += new System.EventHandler(this.selectImages_Click);
             // 
+            // deleteButton
+            // 
+            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.deleteButton.Location = new System.Drawing.Point(12, 505);
+            this.deleteButton.Name = "deleteButton";
+            this.deleteButton.Size = new System.Drawing.Size(204, 32);
+            this.deleteButton.TabIndex = 4;
+            this.deleteButton.Text = "Delete";
+            this.deleteButton.UseVisualStyleBackColor = true;
+            this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
+            // 
             // ScaleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 520);
+            this.ClientSize = new System.Drawing.Size(230, 506);
+            this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.PropertiesGroupBox);
             this.Controls.Add(this.selectImages);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -203,5 +216,6 @@ namespace MiBand5WatchFaces.Forms
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox ImagesComboBox;
         private System.Windows.Forms.Button selectImages;
+        private System.Windows.Forms.Button deleteButton;
     }
 }

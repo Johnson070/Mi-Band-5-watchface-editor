@@ -79,5 +79,15 @@ namespace MiBand5WatchFaces.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_black_coin_icon_image_11303561 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-black-coin-icon-image_11303561", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
