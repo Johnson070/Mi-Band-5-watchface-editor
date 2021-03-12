@@ -454,7 +454,7 @@ namespace MiBand5WatchFaces
                     List<Image> images = new List<Image>();
 
                     if (watchFaceState.CurrentTemperature < 0) images.Add(watchface.imagesBuff[weather.Temperature.Current.MinusImageIndex]);
-                    for (int i = 0; i < Math.Abs(watchFaceState.CurrentTemperature).ToString().Length; i++)
+                    for (int i = 0; i < Math.Abs(watchFaceState.CurrentTemperature).ToString().Length.Constrain(0, weather.Temperature.Current.Number.ImagesCount); i++)
                         images.Add(watchface.imagesBuff[weather.Temperature.Current.Number.ImageIndex + Convert.ToInt16(Math.Abs(watchFaceState.CurrentTemperature).ToString()[i].ToString())]);
                     if (weather.Temperature.Current.DegreesImageIndex != -10000) images.Add(watchface.imagesBuff[weather.Temperature.Current.DegreesImageIndex]);
 
@@ -469,13 +469,13 @@ namespace MiBand5WatchFaces
                         List<Image> images = new List<Image>();
 
                         if (watchFaceState.NightTemperature < 0) images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.MinusSignImageIndex]);
-                        for (int i = 0; i < Math.Abs(watchFaceState.NightTemperature).ToString().Length; i++)
+                        for (int i = 0; i < Math.Abs(watchFaceState.NightTemperature).ToString().Length.Constrain(0, weather.Temperature.Today.OneLine.Number.ImagesCount); i++)
                             images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.Number.ImageIndex + Convert.ToInt16(Math.Abs(watchFaceState.NightTemperature).ToString()[i].ToString())]);
 
                         if (weather.Temperature.Today.OneLine.AppendDegreesForBoth) images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.DegreesImageIndex]);
                         images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.DelimiterImageIndex]);
                         if (watchFaceState.DayTemperature < 0) images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.MinusSignImageIndex]);
-                        for (int i = 0; i < Math.Abs(watchFaceState.DayTemperature).ToString().Length; i++)
+                        for (int i = 0; i < Math.Abs(watchFaceState.DayTemperature).ToString().Length.Constrain(0,weather.Temperature.Today.OneLine.Number.ImagesCount); i++)
                             images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.Number.ImageIndex + Convert.ToInt16(Math.Abs(watchFaceState.DayTemperature).ToString()[i].ToString())]);
                         images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.DegreesImageIndex]);
 
@@ -489,7 +489,7 @@ namespace MiBand5WatchFaces
                             List<Image> images = new List<Image>();
 
                             if (watchFaceState.DayTemperature < 0) images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Day.MinusImageIndex]);
-                            for (int i = 0; i < Math.Abs(watchFaceState.DayTemperature).ToString().Length; i++)
+                            for (int i = 0; i < Math.Abs(watchFaceState.DayTemperature).ToString().Length.Constrain(0,weather.Temperature.Today.Separate.Day.Number.ImagesCount); i++)
                                 images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Night.Number.ImageIndex + Convert.ToInt16(Math.Abs(watchFaceState.DayTemperature).ToString()[i].ToString())]);
                             images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Day.DegreesImageIndex]);
 
@@ -501,7 +501,7 @@ namespace MiBand5WatchFaces
                             List<Image> images = new List<Image>();
 
                             if (watchFaceState.NightTemperature < 0) images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Night.MinusImageIndex]);
-                            for (int i = 0; i < Math.Abs(watchFaceState.NightTemperature).ToString().Length; i++)
+                            for (int i = 0; i < Math.Abs(watchFaceState.NightTemperature).ToString().Length.Constrain(0, weather.Temperature.Today.Separate.Night.Number.ImagesCount); i++)
                                 images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Night.Number.ImageIndex + Convert.ToInt16(Math.Abs(watchFaceState.NightTemperature).ToString()[i].ToString())]);
                             images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Night.DegreesImageIndex]);
 
@@ -913,5 +913,10 @@ namespace MiBand5WatchFaces
 
             return destImage;
         }
+    }
+
+    public static class ConstrainExt
+    {
+        public static int Constrain(this int inNum, int outMin, int outMax) => inNum >= outMin && inNum <= outMax ? inNum : (inNum > outMax ? outMax : outMin);
     }
 }

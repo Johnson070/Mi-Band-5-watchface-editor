@@ -12,6 +12,8 @@ namespace MiBand5WatchFaces.Forms
 {
     public partial class ArrowPaintForm : Form
     {
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+
         Graphics arrow;
         Bitmap Preview;
         private bool Dragging;
@@ -147,7 +149,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void ArrowPaintForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
             }

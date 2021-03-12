@@ -45,12 +45,8 @@
             // 
             // selectImage
             // 
-            this.selectImage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.selectImage.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.selectImage, "selectImage");
             this.selectImage.Name = "selectImage";
-            this.selectImage.Size = new System.Drawing.Size(204, 32);
-            this.selectImage.TabIndex = 1;
-            this.selectImage.Text = "Select image";
             this.selectImage.UseVisualStyleBackColor = true;
             this.selectImage.Click += new System.EventHandler(this.selectImage_Click);
             // 
@@ -62,18 +58,13 @@
             this.PropertiesGroupBox.Controls.Add(this.saveBtn);
             this.PropertiesGroupBox.Controls.Add(this.label4);
             this.PropertiesGroupBox.Controls.Add(this.previewImage);
-            this.PropertiesGroupBox.Enabled = false;
-            this.PropertiesGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.PropertiesGroupBox.Location = new System.Drawing.Point(12, 50);
+            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
-            this.PropertiesGroupBox.Size = new System.Drawing.Size(204, 407);
-            this.PropertiesGroupBox.TabIndex = 2;
             this.PropertiesGroupBox.TabStop = false;
-            this.PropertiesGroupBox.Text = "Properties";
             // 
             // posYNum
             // 
-            this.posYNum.Location = new System.Drawing.Point(145, 18);
+            resources.ApplyResources(this.posYNum, "posYNum");
             this.posYNum.Maximum = new decimal(new int[] {
             500,
             0,
@@ -85,13 +76,11 @@
             0,
             -2147483648});
             this.posYNum.Name = "posYNum";
-            this.posYNum.Size = new System.Drawing.Size(49, 24);
-            this.posYNum.TabIndex = 14;
             this.posYNum.ValueChanged += new System.EventHandler(this.posChanged);
             // 
             // posXNum
             // 
-            this.posXNum.Location = new System.Drawing.Point(88, 18);
+            resources.ApplyResources(this.posXNum, "posXNum");
             this.posXNum.Maximum = new decimal(new int[] {
             500,
             0,
@@ -103,76 +92,50 @@
             0,
             -2147483648});
             this.posXNum.Name = "posXNum";
-            this.posXNum.Size = new System.Drawing.Size(49, 24);
-            this.posXNum.TabIndex = 13;
             this.posXNum.ValueChanged += new System.EventHandler(this.posChanged);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 20);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 18);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Position:";
             // 
             // saveBtn
             // 
-            this.saveBtn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveBtn.Location = new System.Drawing.Point(5, 368);
+            resources.ApplyResources(this.saveBtn, "saveBtn");
             this.saveBtn.Name = "saveBtn";
-            this.saveBtn.Size = new System.Drawing.Size(195, 33);
-            this.saveBtn.TabIndex = 8;
-            this.saveBtn.Text = "Save";
             this.saveBtn.UseVisualStyleBackColor = true;
             this.saveBtn.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // label4
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(72, 45);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(60, 18);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Preview";
             // 
             // previewImage
             // 
-            this.previewImage.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.previewImage, "previewImage");
             this.previewImage.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.previewImage.Location = new System.Drawing.Point(39, 66);
             this.previewImage.Name = "previewImage";
-            this.previewImage.Size = new System.Drawing.Size(126, 294);
-            this.previewImage.TabIndex = 6;
             this.previewImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.previewImage_MouseDown);
             this.previewImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.previewImage_MouseMove);
             this.previewImage.MouseUp += new System.Windows.Forms.MouseEventHandler(this.previewImage_MouseUp);
             // 
             // deleteButton
             // 
-            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteButton.Location = new System.Drawing.Point(12, 468);
+            resources.ApplyResources(this.deleteButton, "deleteButton");
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(204, 32);
-            this.deleteButton.TabIndex = 3;
-            this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // ImageBasicForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(230, 466);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.PropertiesGroupBox);
             this.Controls.Add(this.selectImage);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ImageBasicForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Properties";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImageBasicForm_FormClosing);
             this.PropertiesGroupBox.ResumeLayout(false);
             this.PropertiesGroupBox.PerformLayout();

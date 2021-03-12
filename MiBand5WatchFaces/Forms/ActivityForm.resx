@@ -117,7 +117,915 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="stepsCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="stepsCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 9</value>
+  </data>
+  <data name="stepsCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="stepsCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;stepsCheckBox.Name" xml:space="preserve">
+    <value>stepsCheckBox</value>
+  </data>
+  <data name="&gt;&gt;stepsCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stepsCheckBox.Parent" xml:space="preserve">
+    <value>stepsTab</value>
+  </data>
+  <data name="&gt;&gt;stepsCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addSuffixStepsButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addSuffixStepsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 107</value>
+  </data>
+  <data name="addSuffixStepsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addSuffixStepsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="addSuffixStepsButton.Text" xml:space="preserve">
+    <value>Add suffix</value>
+  </data>
+  <data name="&gt;&gt;addSuffixStepsButton.Name" xml:space="preserve">
+    <value>addSuffixStepsButton</value>
+  </data>
+  <data name="&gt;&gt;addSuffixStepsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addSuffixStepsButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;addSuffixStepsButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addPreffixStepsButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addPreffixStepsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="addPreffixStepsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addPreffixStepsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="addPreffixStepsButton.Text" xml:space="preserve">
+    <value>Add preffix</value>
+  </data>
+  <data name="&gt;&gt;addPreffixStepsButton.Name" xml:space="preserve">
+    <value>addPreffixStepsButton</value>
+  </data>
+  <data name="&gt;&gt;addPreffixStepsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addPreffixStepsButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;addPreffixStepsButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="addStepsButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="addStepsButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addStepsButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="addStepsButton.Text" xml:space="preserve">
+    <value>Add steps</value>
+  </data>
+  <data name="&gt;&gt;addStepsButton.Name" xml:space="preserve">
+    <value>addStepsButton</value>
+  </data>
+  <data name="&gt;&gt;addStepsButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addStepsButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;addStepsButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox1.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 281</value>
+  </data>
+  <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>     Steps</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Name" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.Parent" xml:space="preserve">
+    <value>stepsTab</value>
+  </data>
+  <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="stepsTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="stepsTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="stepsTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 293</value>
+  </data>
+  <data name="stepsTab.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="stepsTab.Text" xml:space="preserve">
+    <value>Steps</value>
+  </data>
+  <data name="&gt;&gt;stepsTab.Name" xml:space="preserve">
+    <value>stepsTab</value>
+  </data>
+  <data name="&gt;&gt;stepsTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;stepsTab.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;stepsTab.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="caloriesCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="caloriesCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 9</value>
+  </data>
+  <data name="caloriesCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="caloriesCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;caloriesCheckBox.Name" xml:space="preserve">
+    <value>caloriesCheckBox</value>
+  </data>
+  <data name="&gt;&gt;caloriesCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;caloriesCheckBox.Parent" xml:space="preserve">
+    <value>caloriesTab</value>
+  </data>
+  <data name="&gt;&gt;caloriesCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addSuffixCaloriesButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addSuffixCaloriesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 107</value>
+  </data>
+  <data name="addSuffixCaloriesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addSuffixCaloriesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="addSuffixCaloriesButton.Text" xml:space="preserve">
+    <value>Add suffix</value>
+  </data>
+  <data name="&gt;&gt;addSuffixCaloriesButton.Name" xml:space="preserve">
+    <value>addSuffixCaloriesButton</value>
+  </data>
+  <data name="&gt;&gt;addSuffixCaloriesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addSuffixCaloriesButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;addSuffixCaloriesButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addPreffixCaloriesButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addPreffixCaloriesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="addPreffixCaloriesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addPreffixCaloriesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="addPreffixCaloriesButton.Text" xml:space="preserve">
+    <value>Add preffix</value>
+  </data>
+  <data name="&gt;&gt;addPreffixCaloriesButton.Name" xml:space="preserve">
+    <value>addPreffixCaloriesButton</value>
+  </data>
+  <data name="&gt;&gt;addPreffixCaloriesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addPreffixCaloriesButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;addPreffixCaloriesButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="addCaloriesButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="addCaloriesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addCaloriesButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="addCaloriesButton.Text" xml:space="preserve">
+    <value>Add calories</value>
+  </data>
+  <data name="&gt;&gt;addCaloriesButton.Name" xml:space="preserve">
+    <value>addCaloriesButton</value>
+  </data>
+  <data name="&gt;&gt;addCaloriesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addCaloriesButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;addCaloriesButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="groupBox2.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 284</value>
+  </data>
+  <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>     Calories</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Name" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.Parent" xml:space="preserve">
+    <value>caloriesTab</value>
+  </data>
+  <data name="&gt;&gt;groupBox2.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="caloriesTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="caloriesTab.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="caloriesTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 293</value>
+  </data>
+  <data name="caloriesTab.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="caloriesTab.Text" xml:space="preserve">
+    <value>Calories</value>
+  </data>
+  <data name="&gt;&gt;caloriesTab.Name" xml:space="preserve">
+    <value>caloriesTab</value>
+  </data>
+  <data name="&gt;&gt;caloriesTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;caloriesTab.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;caloriesTab.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pulseCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="pulseCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 9</value>
+  </data>
+  <data name="pulseCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="pulseCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;pulseCheckBox.Name" xml:space="preserve">
+    <value>pulseCheckBox</value>
+  </data>
+  <data name="&gt;&gt;pulseCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pulseCheckBox.Parent" xml:space="preserve">
+    <value>pulseTab</value>
+  </data>
+  <data name="&gt;&gt;pulseCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addNoDataPulseButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addNoDataPulseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 149</value>
+  </data>
+  <data name="addNoDataPulseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addNoDataPulseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="addNoDataPulseButton.Text" xml:space="preserve">
+    <value>Add no data</value>
+  </data>
+  <data name="&gt;&gt;addNoDataPulseButton.Name" xml:space="preserve">
+    <value>addNoDataPulseButton</value>
+  </data>
+  <data name="&gt;&gt;addNoDataPulseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addNoDataPulseButton.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;addNoDataPulseButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addSuffixPulseButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addSuffixPulseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 107</value>
+  </data>
+  <data name="addSuffixPulseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addSuffixPulseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="addSuffixPulseButton.Text" xml:space="preserve">
+    <value>Add suffix</value>
+  </data>
+  <data name="&gt;&gt;addSuffixPulseButton.Name" xml:space="preserve">
+    <value>addSuffixPulseButton</value>
+  </data>
+  <data name="&gt;&gt;addSuffixPulseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addSuffixPulseButton.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;addSuffixPulseButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="addPreffixPulseButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addPreffixPulseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="addPreffixPulseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addPreffixPulseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="addPreffixPulseButton.Text" xml:space="preserve">
+    <value>Add preffix</value>
+  </data>
+  <data name="&gt;&gt;addPreffixPulseButton.Name" xml:space="preserve">
+    <value>addPreffixPulseButton</value>
+  </data>
+  <data name="&gt;&gt;addPreffixPulseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addPreffixPulseButton.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;addPreffixPulseButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="addPulseButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="addPulseButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addPulseButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="addPulseButton.Text" xml:space="preserve">
+    <value>Add pulse</value>
+  </data>
+  <data name="&gt;&gt;addPulseButton.Name" xml:space="preserve">
+    <value>addPulseButton</value>
+  </data>
+  <data name="&gt;&gt;addPulseButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addPulseButton.Parent" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;addPulseButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="groupBox3.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 284</value>
+  </data>
+  <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>     Pulse</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Name" xml:space="preserve">
+    <value>groupBox3</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.Parent" xml:space="preserve">
+    <value>pulseTab</value>
+  </data>
+  <data name="&gt;&gt;groupBox3.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pulseTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="pulseTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 293</value>
+  </data>
+  <data name="pulseTab.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="pulseTab.Text" xml:space="preserve">
+    <value>Pulse</value>
+  </data>
+  <data name="&gt;&gt;pulseTab.Name" xml:space="preserve">
+    <value>pulseTab</value>
+  </data>
+  <data name="&gt;&gt;pulseTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pulseTab.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;pulseTab.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="distanceCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="distanceCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 9</value>
+  </data>
+  <data name="distanceCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="distanceCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;distanceCheckBox.Name" xml:space="preserve">
+    <value>distanceCheckBox</value>
+  </data>
+  <data name="&gt;&gt;distanceCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;distanceCheckBox.Parent" xml:space="preserve">
+    <value>distanceTab</value>
+  </data>
+  <data name="&gt;&gt;distanceCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addMiImageButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addMiImageButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 233</value>
+  </data>
+  <data name="addMiImageButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addMiImageButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="addMiImageButton.Text" xml:space="preserve">
+    <value>Add MI image</value>
+  </data>
+  <data name="&gt;&gt;addMiImageButton.Name" xml:space="preserve">
+    <value>addMiImageButton</value>
+  </data>
+  <data name="&gt;&gt;addMiImageButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addMiImageButton.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;addMiImageButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addKmImageButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addKmImageButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 191</value>
+  </data>
+  <data name="addKmImageButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addKmImageButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="addKmImageButton.Text" xml:space="preserve">
+    <value>Add KM image</value>
+  </data>
+  <data name="&gt;&gt;addKmImageButton.Name" xml:space="preserve">
+    <value>addKmImageButton</value>
+  </data>
+  <data name="&gt;&gt;addKmImageButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addKmImageButton.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;addKmImageButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="addMiDistanceSuffixButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addMiDistanceSuffixButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 149</value>
+  </data>
+  <data name="addMiDistanceSuffixButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addMiDistanceSuffixButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="addMiDistanceSuffixButton.Text" xml:space="preserve">
+    <value>Add MI suffix</value>
+  </data>
+  <data name="&gt;&gt;addMiDistanceSuffixButton.Name" xml:space="preserve">
+    <value>addMiDistanceSuffixButton</value>
+  </data>
+  <data name="&gt;&gt;addMiDistanceSuffixButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addMiDistanceSuffixButton.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;addMiDistanceSuffixButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="addDecimalDistanceButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addDecimalDistanceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 107</value>
+  </data>
+  <data name="addDecimalDistanceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addDecimalDistanceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="addDecimalDistanceButton.Text" xml:space="preserve">
+    <value>Add decimal point</value>
+  </data>
+  <data name="&gt;&gt;addDecimalDistanceButton.Name" xml:space="preserve">
+    <value>addDecimalDistanceButton</value>
+  </data>
+  <data name="&gt;&gt;addDecimalDistanceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addDecimalDistanceButton.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;addDecimalDistanceButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="addKmDistanceSuffixButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="addKmDistanceSuffixButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 65</value>
+  </data>
+  <data name="addKmDistanceSuffixButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addKmDistanceSuffixButton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="addKmDistanceSuffixButton.Text" xml:space="preserve">
+    <value>Add KM suffix</value>
+  </data>
+  <data name="&gt;&gt;addKmDistanceSuffixButton.Name" xml:space="preserve">
+    <value>addKmDistanceSuffixButton</value>
+  </data>
+  <data name="&gt;&gt;addKmDistanceSuffixButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addKmDistanceSuffixButton.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;addKmDistanceSuffixButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="addDistanceButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="addDistanceButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addDistanceButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="addDistanceButton.Text" xml:space="preserve">
+    <value>Add distance</value>
+  </data>
+  <data name="&gt;&gt;addDistanceButton.Name" xml:space="preserve">
+    <value>addDistanceButton</value>
+  </data>
+  <data name="&gt;&gt;addDistanceButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addDistanceButton.Parent" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;addDistanceButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="groupBox5.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 280</value>
+  </data>
+  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>     Distance</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Parent" xml:space="preserve">
+    <value>distanceTab</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="distanceTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="distanceTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 293</value>
+  </data>
+  <data name="distanceTab.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="distanceTab.Text" xml:space="preserve">
+    <value>Distance</value>
+  </data>
+  <data name="&gt;&gt;distanceTab.Name" xml:space="preserve">
+    <value>distanceTab</value>
+  </data>
+  <data name="&gt;&gt;distanceTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;distanceTab.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;distanceTab.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="paiCheckBox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="paiCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>16, 9</value>
+  </data>
+  <data name="paiCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="paiCheckBox.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;paiCheckBox.Name" xml:space="preserve">
+    <value>paiCheckBox</value>
+  </data>
+  <data name="&gt;&gt;paiCheckBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;paiCheckBox.Parent" xml:space="preserve">
+    <value>paiTab</value>
+  </data>
+  <data name="&gt;&gt;paiCheckBox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="addPAIButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="addPAIButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>331, 36</value>
+  </data>
+  <data name="addPAIButton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="addPAIButton.Text" xml:space="preserve">
+    <value>Add PAI</value>
+  </data>
+  <data name="&gt;&gt;addPAIButton.Name" xml:space="preserve">
+    <value>addPAIButton</value>
+  </data>
+  <data name="&gt;&gt;addPAIButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addPAIButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;addPAIButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox4.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 6</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>343, 284</value>
+  </data>
+  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>     PAI</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
+    <value>paiTab</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="paiTab.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="paiTab.Size" type="System.Drawing.Size, System.Drawing">
+    <value>357, 293</value>
+  </data>
+  <data name="paiTab.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="paiTab.Text" xml:space="preserve">
+    <value>PAI</value>
+  </data>
+  <data name="&gt;&gt;paiTab.Name" xml:space="preserve">
+    <value>paiTab</value>
+  </data>
+  <data name="&gt;&gt;paiTab.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;paiTab.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;paiTab.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="tabControl1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="tabControl1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>365, 324</value>
+  </data>
+  <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Name" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;tabControl1.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ImagePic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>383, 35</value>
+  </data>
+  <data name="ImagePic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 294</value>
+  </data>
+  <data name="ImagePic.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;ImagePic.Name" xml:space="preserve">
+    <value>ImagePic</value>
+  </data>
+  <data name="&gt;&gt;ImagePic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ImagePic.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ImagePic.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="saveButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 342</value>
+  </data>
+  <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>498, 37</value>
+  </data>
+  <data name="saveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="saveButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Name" xml:space="preserve">
+    <value>saveButton</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>522, 391</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIAABZQEAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAgABJ
@@ -1645,5 +2553,17 @@
         G0ZY7CrVjXWdeZFbYTsHJYGleJGRZvbJVdKimFQpiohLGSdlR44Mtaispt40XFjggXNz9pMPPcNvbhvn
         qUSLBGBu5bt7pv9c1v8LVfIA1nE0ZGEAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Activity</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ActivityForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

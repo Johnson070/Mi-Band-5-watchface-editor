@@ -59,58 +59,36 @@ namespace MiBand5WatchFaces.Forms
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(466, 294);
-            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.ScaleImageCheckbox);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(458, 263);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Scale";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // ScaleImageCheckbox
             // 
-            this.ScaleImageCheckbox.AutoSize = true;
-            this.ScaleImageCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.ScaleImageCheckbox, "ScaleImageCheckbox");
             this.ScaleImageCheckbox.Name = "ScaleImageCheckbox";
-            this.ScaleImageCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.ScaleImageCheckbox.TabIndex = 5;
             this.ScaleImageCheckbox.UseVisualStyleBackColor = true;
             this.ScaleImageCheckbox.CheckedChanged += new System.EventHandler(this.ChangeCheck);
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.AddScaleButton);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(452, 251);
-            this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "     ";
             // 
             // AddScaleButton
             // 
-            this.AddScaleButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddScaleButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddScaleButton, "AddScaleButton");
             this.AddScaleButton.Name = "AddScaleButton";
-            this.AddScaleButton.Size = new System.Drawing.Size(436, 54);
-            this.AddScaleButton.TabIndex = 0;
-            this.AddScaleButton.Text = "Add images";
             this.AddScaleButton.UseVisualStyleBackColor = true;
             this.AddScaleButton.Click += new System.EventHandler(this.AddScaleButton_Click);
             // 
@@ -118,46 +96,28 @@ namespace MiBand5WatchFaces.Forms
             // 
             this.tabPage3.Controls.Add(this.LineScaleCheckbox);
             this.tabPage3.Controls.Add(this.groupBox3);
-            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(458, 263);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Line scale";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // LineScaleCheckbox
             // 
-            this.LineScaleCheckbox.AutoSize = true;
-            this.LineScaleCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.LineScaleCheckbox, "LineScaleCheckbox");
             this.LineScaleCheckbox.Name = "LineScaleCheckbox";
-            this.LineScaleCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.LineScaleCheckbox.TabIndex = 7;
             this.LineScaleCheckbox.UseVisualStyleBackColor = true;
             this.LineScaleCheckbox.CheckedChanged += new System.EventHandler(this.ChangeCheck);
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.AddLineScaleButton);
-            this.groupBox3.Enabled = false;
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(452, 251);
-            this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "     ";
             // 
             // AddLineScaleButton
             // 
-            this.AddLineScaleButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddLineScaleButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddLineScaleButton, "AddLineScaleButton");
             this.AddLineScaleButton.Name = "AddLineScaleButton";
-            this.AddLineScaleButton.Size = new System.Drawing.Size(436, 54);
-            this.AddLineScaleButton.TabIndex = 0;
-            this.AddLineScaleButton.Text = "Add images";
             this.AddLineScaleButton.UseVisualStyleBackColor = true;
             this.AddLineScaleButton.Click += new System.EventHandler(this.AddLineScaleButton_Click);
             // 
@@ -165,82 +125,53 @@ namespace MiBand5WatchFaces.Forms
             // 
             this.tabPage2.Controls.Add(this.LinearCheckBox);
             this.tabPage2.Controls.Add(this.groupBox2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(458, 263);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Linear";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // LinearCheckBox
             // 
-            this.LinearCheckBox.AutoSize = true;
-            this.LinearCheckBox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.LinearCheckBox, "LinearCheckBox");
             this.LinearCheckBox.Name = "LinearCheckBox";
-            this.LinearCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.LinearCheckBox.TabIndex = 7;
             this.LinearCheckBox.UseVisualStyleBackColor = true;
             this.LinearCheckBox.CheckedChanged += new System.EventHandler(this.ChangeCheck);
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.AddLinearImages);
-            this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(452, 251);
-            this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "     ";
             // 
             // AddLinearImages
             // 
-            this.AddLinearImages.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddLinearImages.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddLinearImages, "AddLinearImages");
             this.AddLinearImages.Name = "AddLinearImages";
-            this.AddLinearImages.Size = new System.Drawing.Size(436, 54);
-            this.AddLinearImages.TabIndex = 0;
-            this.AddLinearImages.Text = "Add images";
             this.AddLinearImages.UseVisualStyleBackColor = true;
             this.AddLinearImages.Click += new System.EventHandler(this.AddLineScaleImages_Click);
             // 
             // ImagePic
             // 
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ImagePic.Location = new System.Drawing.Point(484, 12);
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
-            this.ImagePic.Size = new System.Drawing.Size(126, 294);
-            this.ImagePic.TabIndex = 13;
             // 
             // saveButton
             // 
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveButton.Location = new System.Drawing.Point(12, 312);
+            resources.ApplyResources(this.saveButton, "saveButton");
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(598, 37);
-            this.saveButton.TabIndex = 14;
-            this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // HeartProgressForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 360);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "HeartProgressForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Heart Progress";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NumberFormEdit_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

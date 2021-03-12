@@ -14,6 +14,7 @@ namespace MiBand5WatchFaces.Forms
     public partial class AnalogDialFaceForm : Form
     {
         public WatchFaceLibrary watch;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         StateWatchface state;
         VisualRender render;
@@ -47,9 +48,9 @@ namespace MiBand5WatchFaces.Forms
             {
                 hoursCheckbox.Checked = true;
                 propertiesHoursGroup.Enabled = true;
-                AddArrowHoursButton.Text = "Edit arrow";
+                AddArrowHoursButton.Text = res.GetString("EditArrow");
                 if (watch.AnalogDialFace.Hours.CenterImage != null)
-                    AddCenterImageHoursButton.Text = "Edit center image";
+                    AddCenterImageHoursButton.Text = res.GetString("EditCenterImage");
                 AddColorButtonHours.BackColor = convertColorFromString(watch.AnalogDialFace.Hours.Color);
                 posXHours.Value = watch.AnalogDialFace.Hours.Center.X;
                 posYHours.Value = watch.AnalogDialFace.Hours.Center.Y;
@@ -59,9 +60,9 @@ namespace MiBand5WatchFaces.Forms
             {
                 minutesCheckbox.Checked = true;
                 PropertiesMinutesGroupBox.Enabled = true;
-                AddArrowMinutesButton.Text = "Edit arrow";
+                AddArrowMinutesButton.Text = res.GetString("EditArrow");
                 if (watch.AnalogDialFace.Minutes.CenterImage != null)
-                    AddCenterImageMinutesButton.Text = "Edit center image";
+                    AddCenterImageMinutesButton.Text = res.GetString("EditCenterImage");
                 AddColorMinutesButton.BackColor = convertColorFromString(watch.AnalogDialFace.Minutes.Color);
                 posXMinutes.Value = watch.AnalogDialFace.Minutes.Center.X;
                 posYMinutes.Value = watch.AnalogDialFace.Minutes.Center.Y;
@@ -80,13 +81,13 @@ namespace MiBand5WatchFaces.Forms
             {
                 watch.AnalogDialFace.Hours = watch.AnalogDialFace.Hours == null ? new ClockHand() : watch.AnalogDialFace.Hours;
                 watch.AnalogDialFace.Hours.Shape = arrowPaintForm.shape;
-                AddArrowHoursButton.Text = "Edit arrow";
+                AddArrowHoursButton.Text = res.GetString("EditArrow");
                 propertiesHoursGroup.Enabled = true;
             }
             else if (arrowPaintForm.delete)
             {
                 watch.AnalogDialFace.Hours = null;
-                AddArrowHoursButton.Text = "Add arrow";
+                AddArrowHoursButton.Text = res.GetString("AddArrow");
                 propertiesHoursGroup.Enabled = false;
             }
 
@@ -103,13 +104,13 @@ namespace MiBand5WatchFaces.Forms
 
             if (ibForm.saved)
             {
-                AddCenterImageMinutesButton.Text = "Edit image center";
+                AddCenterImageMinutesButton.Text = res.GetString("EditCenterImage");
                 watch.AnalogDialFace.Minutes.CenterImage = ibForm.imageBasic;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
             else if (ibForm.delete)
             {
-                AddCenterImageMinutesButton.Text = "Add image center";
+                AddCenterImageMinutesButton.Text = res.GetString("AddCenterImage");
                 watch.AnalogDialFace.Minutes.CenterImage = null;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
@@ -159,13 +160,13 @@ namespace MiBand5WatchFaces.Forms
 
             if (ibForm.saved)
             {
-                AddCenterImageHoursButton.Text = "Edit image center";
+                AddCenterImageHoursButton.Text = res.GetString("EditCenterImage");
                 watch.AnalogDialFace.Hours.CenterImage = ibForm.imageBasic;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
             else if (ibForm.delete)
             {
-                AddCenterImageHoursButton.Text = "Add image center";
+                AddCenterImageHoursButton.Text = res.GetString("AddCenterImage");
                 watch.AnalogDialFace.Hours.CenterImage = null;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
@@ -207,13 +208,13 @@ namespace MiBand5WatchFaces.Forms
             {
                 watch.AnalogDialFace.Minutes = watch.AnalogDialFace.Minutes == null ? new ClockHand() : watch.AnalogDialFace.Minutes;
                 watch.AnalogDialFace.Minutes.Shape = arrowPaintForm.shape;
-                AddArrowMinutesButton.Text = "Edit arrow";
+                AddArrowMinutesButton.Text = res.GetString("EditArrow");
                 PropertiesMinutesGroupBox.Enabled = true;
             }
             else if (arrowPaintForm.delete)
             {
                 watch.AnalogDialFace.Minutes = null;
-                AddArrowMinutesButton.Text = "Add arrow";
+                AddArrowMinutesButton.Text = res.GetString("AddArrow");
                 PropertiesMinutesGroupBox.Enabled = false;
             }
 
@@ -241,7 +242,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void AnalogDialFaceForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (hoursCheckbox.Checked == false || watch.AnalogDialFace?.Hours?.Shape == null)

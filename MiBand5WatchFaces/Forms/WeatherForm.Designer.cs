@@ -110,101 +110,68 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(517, 402);
-            this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.WeatherIconCheckbox);
             this.tabPage1.Controls.Add(this.groupBox1);
-            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(509, 371);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Icon";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // WeatherIconCheckbox
             // 
-            this.WeatherIconCheckbox.AutoSize = true;
-            this.WeatherIconCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.WeatherIconCheckbox, "WeatherIconCheckbox");
             this.WeatherIconCheckbox.Name = "WeatherIconCheckbox";
-            this.WeatherIconCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.WeatherIconCheckbox.TabIndex = 3;
             this.WeatherIconCheckbox.UseVisualStyleBackColor = true;
             this.WeatherIconCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.AddWeatherCustomIconButton);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(500, 359);
-            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "     ";
             // 
             // AddWeatherCustomIconButton
             // 
-            this.AddWeatherCustomIconButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddWeatherCustomIconButton, "AddWeatherCustomIconButton");
             this.AddWeatherCustomIconButton.Name = "AddWeatherCustomIconButton";
-            this.AddWeatherCustomIconButton.Size = new System.Drawing.Size(488, 54);
-            this.AddWeatherCustomIconButton.TabIndex = 0;
-            this.AddWeatherCustomIconButton.Text = "Add images";
             this.AddWeatherCustomIconButton.UseVisualStyleBackColor = true;
             this.AddWeatherCustomIconButton.Click += new System.EventHandler(this.AddWeatherCustomIconButton_Click);
             // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.tabControl2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(509, 371);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Temperature";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage7);
             this.tabControl2.Controls.Add(this.tabPage8);
-            this.tabControl2.Location = new System.Drawing.Point(6, 6);
+            resources.ApplyResources(this.tabControl2, "tabControl2");
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(500, 359);
-            this.tabControl2.TabIndex = 0;
             // 
             // tabPage7
             // 
             this.tabPage7.Controls.Add(this.tabControl3);
-            this.tabPage7.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage7, "tabPage7");
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(492, 328);
-            this.tabPage7.TabIndex = 0;
-            this.tabPage7.Text = "Today";
             this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // tabControl3
             // 
             this.tabControl3.Controls.Add(this.tabPage9);
             this.tabControl3.Controls.Add(this.tabPage10);
-            this.tabControl3.Location = new System.Drawing.Point(6, 6);
+            resources.ApplyResources(this.tabControl3, "tabControl3");
             this.tabControl3.Name = "tabControl3";
             this.tabControl3.SelectedIndex = 0;
-            this.tabControl3.Size = new System.Drawing.Size(480, 316);
-            this.tabControl3.TabIndex = 0;
             // 
             // tabPage9
             // 
@@ -212,127 +179,81 @@
             this.tabPage9.Controls.Add(this.TemperatureTodaySeparateDayCheckbox);
             this.tabPage9.Controls.Add(this.groupBox4);
             this.tabPage9.Controls.Add(this.groupBox2);
-            this.tabPage9.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage9, "tabPage9");
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage9.Size = new System.Drawing.Size(472, 285);
-            this.tabPage9.TabIndex = 0;
-            this.tabPage9.Text = "Separate";
             this.tabPage9.UseVisualStyleBackColor = true;
             // 
             // TemperatureTodaySeparateNightCheckbox
             // 
-            this.TemperatureTodaySeparateNightCheckbox.AutoSize = true;
-            this.TemperatureTodaySeparateNightCheckbox.Location = new System.Drawing.Point(251, 9);
+            resources.ApplyResources(this.TemperatureTodaySeparateNightCheckbox, "TemperatureTodaySeparateNightCheckbox");
             this.TemperatureTodaySeparateNightCheckbox.Name = "TemperatureTodaySeparateNightCheckbox";
-            this.TemperatureTodaySeparateNightCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.TemperatureTodaySeparateNightCheckbox.TabIndex = 9;
             this.TemperatureTodaySeparateNightCheckbox.UseVisualStyleBackColor = true;
             this.TemperatureTodaySeparateNightCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
             // 
             // TemperatureTodaySeparateDayCheckbox
             // 
-            this.TemperatureTodaySeparateDayCheckbox.AutoSize = true;
-            this.TemperatureTodaySeparateDayCheckbox.Location = new System.Drawing.Point(15, 9);
+            resources.ApplyResources(this.TemperatureTodaySeparateDayCheckbox, "TemperatureTodaySeparateDayCheckbox");
             this.TemperatureTodaySeparateDayCheckbox.Name = "TemperatureTodaySeparateDayCheckbox";
-            this.TemperatureTodaySeparateDayCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.TemperatureTodaySeparateDayCheckbox.TabIndex = 7;
             this.TemperatureTodaySeparateDayCheckbox.UseVisualStyleBackColor = true;
             this.TemperatureTodaySeparateDayCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.AddDegreeImageTemperatureTodaySeparateNightButton);
             this.groupBox4.Controls.Add(this.AddMinusImageTemperatureTodaySeparateNightButton);
             this.groupBox4.Controls.Add(this.AddNumberTemperatureTodaySeparateNightButton);
-            this.groupBox4.Enabled = false;
-            this.groupBox4.Location = new System.Drawing.Point(239, 6);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(227, 269);
-            this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "     Night";
             // 
             // AddDegreeImageTemperatureTodaySeparateNightButton
             // 
-            this.AddDegreeImageTemperatureTodaySeparateNightButton.Enabled = false;
-            this.AddDegreeImageTemperatureTodaySeparateNightButton.Location = new System.Drawing.Point(6, 143);
+            resources.ApplyResources(this.AddDegreeImageTemperatureTodaySeparateNightButton, "AddDegreeImageTemperatureTodaySeparateNightButton");
             this.AddDegreeImageTemperatureTodaySeparateNightButton.Name = "AddDegreeImageTemperatureTodaySeparateNightButton";
-            this.AddDegreeImageTemperatureTodaySeparateNightButton.Size = new System.Drawing.Size(215, 54);
-            this.AddDegreeImageTemperatureTodaySeparateNightButton.TabIndex = 2;
-            this.AddDegreeImageTemperatureTodaySeparateNightButton.Text = "Add degree image";
             this.AddDegreeImageTemperatureTodaySeparateNightButton.UseVisualStyleBackColor = true;
             this.AddDegreeImageTemperatureTodaySeparateNightButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddMinusImageTemperatureTodaySeparateNightButton
             // 
-            this.AddMinusImageTemperatureTodaySeparateNightButton.Enabled = false;
-            this.AddMinusImageTemperatureTodaySeparateNightButton.Location = new System.Drawing.Point(6, 83);
+            resources.ApplyResources(this.AddMinusImageTemperatureTodaySeparateNightButton, "AddMinusImageTemperatureTodaySeparateNightButton");
             this.AddMinusImageTemperatureTodaySeparateNightButton.Name = "AddMinusImageTemperatureTodaySeparateNightButton";
-            this.AddMinusImageTemperatureTodaySeparateNightButton.Size = new System.Drawing.Size(215, 54);
-            this.AddMinusImageTemperatureTodaySeparateNightButton.TabIndex = 1;
-            this.AddMinusImageTemperatureTodaySeparateNightButton.Text = "Add minus image";
             this.AddMinusImageTemperatureTodaySeparateNightButton.UseVisualStyleBackColor = true;
             this.AddMinusImageTemperatureTodaySeparateNightButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddNumberTemperatureTodaySeparateNightButton
             // 
-            this.AddNumberTemperatureTodaySeparateNightButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddNumberTemperatureTodaySeparateNightButton, "AddNumberTemperatureTodaySeparateNightButton");
             this.AddNumberTemperatureTodaySeparateNightButton.Name = "AddNumberTemperatureTodaySeparateNightButton";
-            this.AddNumberTemperatureTodaySeparateNightButton.Size = new System.Drawing.Size(215, 54);
-            this.AddNumberTemperatureTodaySeparateNightButton.TabIndex = 0;
-            this.AddNumberTemperatureTodaySeparateNightButton.Text = "Add number";
             this.AddNumberTemperatureTodaySeparateNightButton.UseVisualStyleBackColor = true;
             this.AddNumberTemperatureTodaySeparateNightButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.AddDegreeImageTemperatureTodaySeparateDayButton);
             this.groupBox2.Controls.Add(this.AddMinusImageTemperatureTodaySeparateDayButton);
             this.groupBox2.Controls.Add(this.AddNumberTemperatureTodaySeparateDayButton);
-            this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(3, 6);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(230, 269);
-            this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "     Day";
             // 
             // AddDegreeImageTemperatureTodaySeparateDayButton
             // 
-            this.AddDegreeImageTemperatureTodaySeparateDayButton.Enabled = false;
-            this.AddDegreeImageTemperatureTodaySeparateDayButton.Location = new System.Drawing.Point(6, 143);
+            resources.ApplyResources(this.AddDegreeImageTemperatureTodaySeparateDayButton, "AddDegreeImageTemperatureTodaySeparateDayButton");
             this.AddDegreeImageTemperatureTodaySeparateDayButton.Name = "AddDegreeImageTemperatureTodaySeparateDayButton";
-            this.AddDegreeImageTemperatureTodaySeparateDayButton.Size = new System.Drawing.Size(218, 54);
-            this.AddDegreeImageTemperatureTodaySeparateDayButton.TabIndex = 2;
-            this.AddDegreeImageTemperatureTodaySeparateDayButton.Text = "Add degree image";
             this.AddDegreeImageTemperatureTodaySeparateDayButton.UseVisualStyleBackColor = true;
             this.AddDegreeImageTemperatureTodaySeparateDayButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddMinusImageTemperatureTodaySeparateDayButton
             // 
-            this.AddMinusImageTemperatureTodaySeparateDayButton.Enabled = false;
-            this.AddMinusImageTemperatureTodaySeparateDayButton.Location = new System.Drawing.Point(6, 83);
+            resources.ApplyResources(this.AddMinusImageTemperatureTodaySeparateDayButton, "AddMinusImageTemperatureTodaySeparateDayButton");
             this.AddMinusImageTemperatureTodaySeparateDayButton.Name = "AddMinusImageTemperatureTodaySeparateDayButton";
-            this.AddMinusImageTemperatureTodaySeparateDayButton.Size = new System.Drawing.Size(218, 54);
-            this.AddMinusImageTemperatureTodaySeparateDayButton.TabIndex = 1;
-            this.AddMinusImageTemperatureTodaySeparateDayButton.Text = "Add minus image";
             this.AddMinusImageTemperatureTodaySeparateDayButton.UseVisualStyleBackColor = true;
             this.AddMinusImageTemperatureTodaySeparateDayButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddNumberTemperatureTodaySeparateDayButton
             // 
-            this.AddNumberTemperatureTodaySeparateDayButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddNumberTemperatureTodaySeparateDayButton, "AddNumberTemperatureTodaySeparateDayButton");
             this.AddNumberTemperatureTodaySeparateDayButton.Name = "AddNumberTemperatureTodaySeparateDayButton";
-            this.AddNumberTemperatureTodaySeparateDayButton.Size = new System.Drawing.Size(218, 54);
-            this.AddNumberTemperatureTodaySeparateDayButton.TabIndex = 0;
-            this.AddNumberTemperatureTodaySeparateDayButton.Text = "Add number";
             this.AddNumberTemperatureTodaySeparateDayButton.UseVisualStyleBackColor = true;
             this.AddNumberTemperatureTodaySeparateDayButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
@@ -340,94 +261,60 @@
             // 
             this.tabPage10.Controls.Add(this.TemperatureTodayOnelineCheckbox);
             this.tabPage10.Controls.Add(this.groupBox5);
-            this.tabPage10.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage10, "tabPage10");
             this.tabPage10.Name = "tabPage10";
-            this.tabPage10.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage10.Size = new System.Drawing.Size(472, 285);
-            this.tabPage10.TabIndex = 1;
-            this.tabPage10.Text = "One line";
             this.tabPage10.UseVisualStyleBackColor = true;
             // 
             // TemperatureTodayOnelineCheckbox
             // 
-            this.TemperatureTodayOnelineCheckbox.AutoSize = true;
-            this.TemperatureTodayOnelineCheckbox.Location = new System.Drawing.Point(15, 9);
+            resources.ApplyResources(this.TemperatureTodayOnelineCheckbox, "TemperatureTodayOnelineCheckbox");
             this.TemperatureTodayOnelineCheckbox.Name = "TemperatureTodayOnelineCheckbox";
-            this.TemperatureTodayOnelineCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.TemperatureTodayOnelineCheckbox.TabIndex = 9;
             this.TemperatureTodayOnelineCheckbox.UseVisualStyleBackColor = true;
             this.TemperatureTodayOnelineCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.AddForBothTemperatureTodayOnelineCheckBox);
             this.groupBox5.Controls.Add(this.AddDegreeImageTemperatureTodayOnelineButton);
             this.groupBox5.Controls.Add(this.AddNumberTemperatureTodayOnelineButton);
             this.groupBox5.Controls.Add(this.AddMinusImageTemperatureTodayOnelineButton);
             this.groupBox5.Controls.Add(this.AddDelimeterImageTemperatureTodayOnelineButton);
-            this.groupBox5.Enabled = false;
-            this.groupBox5.Location = new System.Drawing.Point(3, 6);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(463, 288);
-            this.groupBox5.TabIndex = 8;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "    ";
             // 
             // AddForBothTemperatureTodayOnelineCheckBox
             // 
-            this.AddForBothTemperatureTodayOnelineCheckBox.AutoSize = true;
-            this.AddForBothTemperatureTodayOnelineCheckBox.Enabled = false;
-            this.AddForBothTemperatureTodayOnelineCheckBox.Location = new System.Drawing.Point(6, 211);
+            resources.ApplyResources(this.AddForBothTemperatureTodayOnelineCheckBox, "AddForBothTemperatureTodayOnelineCheckBox");
             this.AddForBothTemperatureTodayOnelineCheckBox.Name = "AddForBothTemperatureTodayOnelineCheckBox";
-            this.AddForBothTemperatureTodayOnelineCheckBox.Size = new System.Drawing.Size(164, 22);
-            this.AddForBothTemperatureTodayOnelineCheckBox.TabIndex = 4;
-            this.AddForBothTemperatureTodayOnelineCheckBox.Text = "Add degrees for both";
             this.AddForBothTemperatureTodayOnelineCheckBox.UseVisualStyleBackColor = true;
             this.AddForBothTemperatureTodayOnelineCheckBox.CheckedChanged += new System.EventHandler(this.AddForBothTemperatureTodayOnelineCheckBox_CheckedChanged);
             // 
             // AddDegreeImageTemperatureTodayOnelineButton
             // 
-            this.AddDegreeImageTemperatureTodayOnelineButton.Enabled = false;
-            this.AddDegreeImageTemperatureTodayOnelineButton.Location = new System.Drawing.Point(3, 164);
+            resources.ApplyResources(this.AddDegreeImageTemperatureTodayOnelineButton, "AddDegreeImageTemperatureTodayOnelineButton");
             this.AddDegreeImageTemperatureTodayOnelineButton.Name = "AddDegreeImageTemperatureTodayOnelineButton";
-            this.AddDegreeImageTemperatureTodayOnelineButton.Size = new System.Drawing.Size(454, 41);
-            this.AddDegreeImageTemperatureTodayOnelineButton.TabIndex = 3;
-            this.AddDegreeImageTemperatureTodayOnelineButton.Text = "Add degree image";
             this.AddDegreeImageTemperatureTodayOnelineButton.UseVisualStyleBackColor = true;
             this.AddDegreeImageTemperatureTodayOnelineButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddNumberTemperatureTodayOnelineButton
             // 
-            this.AddNumberTemperatureTodayOnelineButton.Location = new System.Drawing.Point(3, 23);
+            resources.ApplyResources(this.AddNumberTemperatureTodayOnelineButton, "AddNumberTemperatureTodayOnelineButton");
             this.AddNumberTemperatureTodayOnelineButton.Name = "AddNumberTemperatureTodayOnelineButton";
-            this.AddNumberTemperatureTodayOnelineButton.Size = new System.Drawing.Size(454, 41);
-            this.AddNumberTemperatureTodayOnelineButton.TabIndex = 0;
-            this.AddNumberTemperatureTodayOnelineButton.Text = "Add number";
             this.AddNumberTemperatureTodayOnelineButton.UseVisualStyleBackColor = true;
             this.AddNumberTemperatureTodayOnelineButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
             // AddMinusImageTemperatureTodayOnelineButton
             // 
-            this.AddMinusImageTemperatureTodayOnelineButton.Enabled = false;
-            this.AddMinusImageTemperatureTodayOnelineButton.Location = new System.Drawing.Point(3, 70);
+            resources.ApplyResources(this.AddMinusImageTemperatureTodayOnelineButton, "AddMinusImageTemperatureTodayOnelineButton");
             this.AddMinusImageTemperatureTodayOnelineButton.Name = "AddMinusImageTemperatureTodayOnelineButton";
-            this.AddMinusImageTemperatureTodayOnelineButton.Size = new System.Drawing.Size(454, 41);
-            this.AddMinusImageTemperatureTodayOnelineButton.TabIndex = 1;
-            this.AddMinusImageTemperatureTodayOnelineButton.Text = "Add minus image";
             this.AddMinusImageTemperatureTodayOnelineButton.UseVisualStyleBackColor = true;
             this.AddMinusImageTemperatureTodayOnelineButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddDelimeterImageTemperatureTodayOnelineButton
             // 
-            this.AddDelimeterImageTemperatureTodayOnelineButton.Enabled = false;
-            this.AddDelimeterImageTemperatureTodayOnelineButton.Location = new System.Drawing.Point(3, 117);
+            resources.ApplyResources(this.AddDelimeterImageTemperatureTodayOnelineButton, "AddDelimeterImageTemperatureTodayOnelineButton");
             this.AddDelimeterImageTemperatureTodayOnelineButton.Name = "AddDelimeterImageTemperatureTodayOnelineButton";
-            this.AddDelimeterImageTemperatureTodayOnelineButton.Size = new System.Drawing.Size(454, 41);
-            this.AddDelimeterImageTemperatureTodayOnelineButton.TabIndex = 2;
-            this.AddDelimeterImageTemperatureTodayOnelineButton.Text = "Add delimeter image";
             this.AddDelimeterImageTemperatureTodayOnelineButton.UseVisualStyleBackColor = true;
             this.AddDelimeterImageTemperatureTodayOnelineButton.Click += new System.EventHandler(this.AddImageClick);
             // 
@@ -435,69 +322,44 @@
             // 
             this.tabPage8.Controls.Add(this.TemperatureCurrentCheckbox);
             this.tabPage8.Controls.Add(this.groupBox3);
-            this.tabPage8.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage8, "tabPage8");
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage8.Size = new System.Drawing.Size(492, 328);
-            this.tabPage8.TabIndex = 1;
-            this.tabPage8.Text = "Current";
             this.tabPage8.UseVisualStyleBackColor = true;
             // 
             // TemperatureCurrentCheckbox
             // 
-            this.TemperatureCurrentCheckbox.AutoSize = true;
-            this.TemperatureCurrentCheckbox.Location = new System.Drawing.Point(15, 9);
+            resources.ApplyResources(this.TemperatureCurrentCheckbox, "TemperatureCurrentCheckbox");
             this.TemperatureCurrentCheckbox.Name = "TemperatureCurrentCheckbox";
-            this.TemperatureCurrentCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.TemperatureCurrentCheckbox.TabIndex = 7;
             this.TemperatureCurrentCheckbox.UseVisualStyleBackColor = true;
             this.TemperatureCurrentCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.AddDegreeImageTemperatureCurrentButton);
             this.groupBox3.Controls.Add(this.AddMinusImageTemperatureCurrentButton);
             this.groupBox3.Controls.Add(this.AddNumberTemperatureCurrentButton);
-            this.groupBox3.Enabled = false;
-            this.groupBox3.Location = new System.Drawing.Point(3, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(483, 331);
-            this.groupBox3.TabIndex = 6;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "     ";
             // 
             // AddDegreeImageTemperatureCurrentButton
             // 
-            this.AddDegreeImageTemperatureCurrentButton.Enabled = false;
-            this.AddDegreeImageTemperatureCurrentButton.Location = new System.Drawing.Point(6, 143);
+            resources.ApplyResources(this.AddDegreeImageTemperatureCurrentButton, "AddDegreeImageTemperatureCurrentButton");
             this.AddDegreeImageTemperatureCurrentButton.Name = "AddDegreeImageTemperatureCurrentButton";
-            this.AddDegreeImageTemperatureCurrentButton.Size = new System.Drawing.Size(471, 54);
-            this.AddDegreeImageTemperatureCurrentButton.TabIndex = 2;
-            this.AddDegreeImageTemperatureCurrentButton.Text = "Add degree image";
             this.AddDegreeImageTemperatureCurrentButton.UseVisualStyleBackColor = true;
             this.AddDegreeImageTemperatureCurrentButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddMinusImageTemperatureCurrentButton
             // 
-            this.AddMinusImageTemperatureCurrentButton.Enabled = false;
-            this.AddMinusImageTemperatureCurrentButton.Location = new System.Drawing.Point(6, 83);
+            resources.ApplyResources(this.AddMinusImageTemperatureCurrentButton, "AddMinusImageTemperatureCurrentButton");
             this.AddMinusImageTemperatureCurrentButton.Name = "AddMinusImageTemperatureCurrentButton";
-            this.AddMinusImageTemperatureCurrentButton.Size = new System.Drawing.Size(471, 54);
-            this.AddMinusImageTemperatureCurrentButton.TabIndex = 1;
-            this.AddMinusImageTemperatureCurrentButton.Text = "Add minus image";
             this.AddMinusImageTemperatureCurrentButton.UseVisualStyleBackColor = true;
             this.AddMinusImageTemperatureCurrentButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddNumberTemperatureCurrentButton
             // 
-            this.AddNumberTemperatureCurrentButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddNumberTemperatureCurrentButton, "AddNumberTemperatureCurrentButton");
             this.AddNumberTemperatureCurrentButton.Name = "AddNumberTemperatureCurrentButton";
-            this.AddNumberTemperatureCurrentButton.Size = new System.Drawing.Size(471, 54);
-            this.AddNumberTemperatureCurrentButton.TabIndex = 0;
-            this.AddNumberTemperatureCurrentButton.Text = "Add number";
             this.AddNumberTemperatureCurrentButton.UseVisualStyleBackColor = true;
             this.AddNumberTemperatureCurrentButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
@@ -505,68 +367,44 @@
             // 
             this.tabPage4.Controls.Add(this.HumidityCheckbox);
             this.tabPage4.Controls.Add(this.groupBox6);
-            this.tabPage4.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(509, 371);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Humidity";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // HumidityCheckbox
             // 
-            this.HumidityCheckbox.AutoSize = true;
-            this.HumidityCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.HumidityCheckbox, "HumidityCheckbox");
             this.HumidityCheckbox.Name = "HumidityCheckbox";
-            this.HumidityCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.HumidityCheckbox.TabIndex = 5;
             this.HumidityCheckbox.UseVisualStyleBackColor = true;
             this.HumidityCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
             // 
             // groupBox6
             // 
-            this.groupBox6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox6, "groupBox6");
             this.groupBox6.Controls.Add(this.AddSuffixImageHumidityButton);
             this.groupBox6.Controls.Add(this.AddSuffixHumidityButton);
             this.groupBox6.Controls.Add(this.AddNumberHumidityButton);
-            this.groupBox6.Enabled = false;
-            this.groupBox6.Location = new System.Drawing.Point(3, 3);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(500, 359);
-            this.groupBox6.TabIndex = 4;
             this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "     ";
             // 
             // AddSuffixImageHumidityButton
             // 
-            this.AddSuffixImageHumidityButton.Enabled = false;
-            this.AddSuffixImageHumidityButton.Location = new System.Drawing.Point(6, 143);
+            resources.ApplyResources(this.AddSuffixImageHumidityButton, "AddSuffixImageHumidityButton");
             this.AddSuffixImageHumidityButton.Name = "AddSuffixImageHumidityButton";
-            this.AddSuffixImageHumidityButton.Size = new System.Drawing.Size(488, 54);
-            this.AddSuffixImageHumidityButton.TabIndex = 2;
-            this.AddSuffixImageHumidityButton.Text = "Add suffix image";
             this.AddSuffixImageHumidityButton.UseVisualStyleBackColor = true;
             this.AddSuffixImageHumidityButton.Click += new System.EventHandler(this.AddSuffixImageHumidityButton_Click);
             // 
             // AddSuffixHumidityButton
             // 
-            this.AddSuffixHumidityButton.Enabled = false;
-            this.AddSuffixHumidityButton.Location = new System.Drawing.Point(6, 83);
+            resources.ApplyResources(this.AddSuffixHumidityButton, "AddSuffixHumidityButton");
             this.AddSuffixHumidityButton.Name = "AddSuffixHumidityButton";
-            this.AddSuffixHumidityButton.Size = new System.Drawing.Size(488, 54);
-            this.AddSuffixHumidityButton.TabIndex = 1;
-            this.AddSuffixHumidityButton.Text = "Add suffix ";
             this.AddSuffixHumidityButton.UseVisualStyleBackColor = true;
             this.AddSuffixHumidityButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddNumberHumidityButton
             // 
-            this.AddNumberHumidityButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddNumberHumidityButton, "AddNumberHumidityButton");
             this.AddNumberHumidityButton.Name = "AddNumberHumidityButton";
-            this.AddNumberHumidityButton.Size = new System.Drawing.Size(488, 54);
-            this.AddNumberHumidityButton.TabIndex = 0;
-            this.AddNumberHumidityButton.Text = "Add number";
             this.AddNumberHumidityButton.UseVisualStyleBackColor = true;
             this.AddNumberHumidityButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
@@ -574,55 +412,36 @@
             // 
             this.tabPage5.Controls.Add(this.WindCheckbox);
             this.tabPage5.Controls.Add(this.groupBox7);
-            this.tabPage5.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage5, "tabPage5");
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(509, 371);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Wind";
             this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // WindCheckbox
             // 
-            this.WindCheckbox.AutoSize = true;
-            this.WindCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.WindCheckbox, "WindCheckbox");
             this.WindCheckbox.Name = "WindCheckbox";
-            this.WindCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.WindCheckbox.TabIndex = 7;
             this.WindCheckbox.UseVisualStyleBackColor = true;
             this.WindCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
             // 
             // groupBox7
             // 
-            this.groupBox7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox7, "groupBox7");
             this.groupBox7.Controls.Add(this.AddSuffixWindButton);
             this.groupBox7.Controls.Add(this.AddNumberWindButton);
-            this.groupBox7.Enabled = false;
-            this.groupBox7.Location = new System.Drawing.Point(3, 3);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(500, 359);
-            this.groupBox7.TabIndex = 6;
             this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "     ";
             // 
             // AddSuffixWindButton
             // 
-            this.AddSuffixWindButton.Location = new System.Drawing.Point(6, 83);
+            resources.ApplyResources(this.AddSuffixWindButton, "AddSuffixWindButton");
             this.AddSuffixWindButton.Name = "AddSuffixWindButton";
-            this.AddSuffixWindButton.Size = new System.Drawing.Size(488, 54);
-            this.AddSuffixWindButton.TabIndex = 2;
-            this.AddSuffixWindButton.Text = "Add suffix ";
             this.AddSuffixWindButton.UseVisualStyleBackColor = true;
             this.AddSuffixWindButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddNumberWindButton
             // 
-            this.AddNumberWindButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddNumberWindButton, "AddNumberWindButton");
             this.AddNumberWindButton.Name = "AddNumberWindButton";
-            this.AddNumberWindButton.Size = new System.Drawing.Size(488, 54);
-            this.AddNumberWindButton.TabIndex = 0;
-            this.AddNumberWindButton.Text = "Add number";
             this.AddNumberWindButton.UseVisualStyleBackColor = true;
             this.AddNumberWindButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
@@ -630,90 +449,61 @@
             // 
             this.tabPage6.Controls.Add(this.UVIndexCheckbox);
             this.tabPage6.Controls.Add(this.groupBox8);
-            this.tabPage6.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage6, "tabPage6");
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(509, 371);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "UV Index";
             this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // UVIndexCheckbox
             // 
-            this.UVIndexCheckbox.AutoSize = true;
-            this.UVIndexCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.UVIndexCheckbox, "UVIndexCheckbox");
             this.UVIndexCheckbox.Name = "UVIndexCheckbox";
-            this.UVIndexCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.UVIndexCheckbox.TabIndex = 9;
             this.UVIndexCheckbox.UseVisualStyleBackColor = true;
             this.UVIndexCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
             // 
             // groupBox8
             // 
-            this.groupBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox8, "groupBox8");
             this.groupBox8.Controls.Add(this.AddSuffixUVButton);
             this.groupBox8.Controls.Add(this.AddNumberUVButton);
-            this.groupBox8.Enabled = false;
-            this.groupBox8.Location = new System.Drawing.Point(3, 3);
             this.groupBox8.Name = "groupBox8";
-            this.groupBox8.Size = new System.Drawing.Size(500, 359);
-            this.groupBox8.TabIndex = 8;
             this.groupBox8.TabStop = false;
-            this.groupBox8.Text = "     ";
             // 
             // AddSuffixUVButton
             // 
-            this.AddSuffixUVButton.Location = new System.Drawing.Point(6, 83);
+            resources.ApplyResources(this.AddSuffixUVButton, "AddSuffixUVButton");
             this.AddSuffixUVButton.Name = "AddSuffixUVButton";
-            this.AddSuffixUVButton.Size = new System.Drawing.Size(488, 54);
-            this.AddSuffixUVButton.TabIndex = 1;
-            this.AddSuffixUVButton.Text = "Add suffix";
             this.AddSuffixUVButton.UseVisualStyleBackColor = true;
             this.AddSuffixUVButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddNumberUVButton
             // 
-            this.AddNumberUVButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddNumberUVButton, "AddNumberUVButton");
             this.AddNumberUVButton.Name = "AddNumberUVButton";
-            this.AddNumberUVButton.Size = new System.Drawing.Size(488, 54);
-            this.AddNumberUVButton.TabIndex = 0;
-            this.AddNumberUVButton.Text = "Add number";
             this.AddNumberUVButton.UseVisualStyleBackColor = true;
             this.AddNumberUVButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
             // SaveButton
             // 
-            this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveButton.Location = new System.Drawing.Point(12, 420);
+            resources.ApplyResources(this.SaveButton, "SaveButton");
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(649, 44);
-            this.SaveButton.TabIndex = 11;
-            this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ImagePic
             // 
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ImagePic.Location = new System.Drawing.Point(531, 12);
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
-            this.ImagePic.Size = new System.Drawing.Size(126, 294);
-            this.ImagePic.TabIndex = 12;
             // 
             // WeatherForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 471);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "WeatherForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "Weather";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WeatherForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

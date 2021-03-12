@@ -174,6 +174,12 @@
     <Compile Include="Forms\ImageSetForm.Designer.cs">
       <DependentUpon>ImageSetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\JSONEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\JSONEditorForm.Designer.cs">
+      <DependentUpon>JSONEditorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ScaleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -256,44 +262,146 @@
     <Compile Include="Forms\WatchfaceState.Designer.cs">
       <DependentUpon>WatchfaceState.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CircleScaleForm.en.resx">
+      <DependentUpon>CircleScaleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CircleScaleForm.resx">
+      <DependentUpon>CircleScaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CircleScaleForm.ru.resx">
       <DependentUpon>CircleScaleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.resx">
       <DependentUpon>AboutBox.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActivityForm.en.resx">
+      <DependentUpon>ActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ActivityForm.resx">
       <DependentUpon>ActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ActivityForm.ru.resx">
+      <DependentUpon>ActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AlarmForm.en.resx">
+      <DependentUpon>AlarmForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AlarmForm.resx">
       <DependentUpon>AlarmForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AlarmForm.ru.resx">
+      <DependentUpon>AlarmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnalogDialFaceForm.en.resx">
+      <DependentUpon>AnalogDialFaceForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AnalogDialFaceForm.resx">
       <DependentUpon>AnalogDialFaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnalogDialFaceForm.ru.resx">
+      <DependentUpon>AnalogDialFaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnimationForm.en.resx">
+      <DependentUpon>AnimationForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AnimationForm.resx">
       <DependentUpon>AnimationForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnimationForm.ru.resx">
+      <DependentUpon>AnimationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArrowPaintForm.en.resx">
+      <DependentUpon>ArrowPaintForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ArrowPaintForm.resx">
       <DependentUpon>ArrowPaintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArrowPaintForm.ru.resx">
+      <DependentUpon>ArrowPaintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BackgroundForm.en.resx">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\BackgroundForm.resx">
       <DependentUpon>BackgroundForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BackgroundForm.ru.resx">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BatteryForm.en.resx">
+      <DependentUpon>BatteryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\BatteryForm.resx">
       <DependentUpon>BatteryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BatteryForm.ru.resx">
+      <DependentUpon>BatteryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DateForm.en.resx">
+      <DependentUpon>DateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DateForm.resx">
       <DependentUpon>DateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DateForm.ru.resx">
+      <DependentUpon>DateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeartProgressForm.en.resx">
+      <DependentUpon>HeartProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeartProgressForm.ru.resx">
+      <DependentUpon>HeartProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageBasicForm.en.resx">
+      <DependentUpon>ImageBasicForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageBasicForm.resx">
       <DependentUpon>ImageBasicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageBasicForm.ru.resx">
+      <DependentUpon>ImageBasicForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSetForm.en.resx">
+      <DependentUpon>ImageSetForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageSetForm.resx">
       <DependentUpon>ImageSetForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSetForm.ru.resx">
+      <DependentUpon>ImageSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImagesForm.en.resx">
+      <DependentUpon>ImagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImagesForm.ru.resx">
+      <DependentUpon>ImagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JSONEditorForm.en.resx">
+      <DependentUpon>JSONEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JSONEditorForm.resx">
+      <DependentUpon>JSONEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JSONEditorForm.ru.resx">
+      <DependentUpon>JSONEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NumberFormEdit.en.resx">
+      <DependentUpon>NumberFormEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NumberFormEdit.ru.resx">
+      <DependentUpon>NumberFormEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScaleForm.en.resx">
+      <DependentUpon>ScaleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScaleForm.resx">
       <DependentUpon>ScaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScaleForm.ru.resx">
+      <DependentUpon>ScaleForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatusForm.en.resx">
+      <DependentUpon>StatusForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StatusForm.resx">
       <DependentUpon>StatusForm.cs</DependentUpon>
@@ -301,22 +409,65 @@
     <EmbeddedResource Include="Forms\HeartProgressForm.resx">
       <DependentUpon>HeartProgressForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatusForm.ru.resx">
+      <DependentUpon>StatusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StepsProgressForm.en.resx">
+      <DependentUpon>StepsProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StepsProgressForm.resx">
       <DependentUpon>StepsProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StepsProgressForm.ru.resx">
+      <DependentUpon>StepsProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeForm.en.resx">
+      <DependentUpon>TimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimeForm.resx">
       <DependentUpon>TimeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImagesForm.resx">
       <DependentUpon>ImagesForm.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ImagesForm1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeForm.ru.resx">
+      <DependentUpon>TimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchfaceState.en.resx">
+      <DependentUpon>WatchfaceState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchfaceState.ru.resx">
+      <DependentUpon>WatchfaceState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeatherForm.en.resx">
+      <DependentUpon>WeatherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WeatherForm.resx">
       <DependentUpon>WeatherForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeatherForm.ru.resx">
+      <DependentUpon>WeatherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeekDaysIconsForm.en.resx">
+      <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\WeekDaysIconsForm.resx">
       <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeekDaysIconsForm.ru.resx">
+      <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputForm.en.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="InputForm.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>InputForm1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InputForm.ru.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.en.resx">
@@ -329,6 +480,8 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NumberFormEdit.resx">
       <DependentUpon>NumberFormEdit.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>NumberFormEdit1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.ru.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

@@ -57,13 +57,8 @@
             // 
             // UseBackgroundColor
             // 
-            this.UseBackgroundColor.AutoSize = true;
-            this.UseBackgroundColor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.UseBackgroundColor.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.UseBackgroundColor, "UseBackgroundColor");
             this.UseBackgroundColor.Name = "UseBackgroundColor";
-            this.UseBackgroundColor.Size = new System.Drawing.Size(174, 22);
-            this.UseBackgroundColor.TabIndex = 0;
-            this.UseBackgroundColor.Text = "Use background color";
             this.UseBackgroundColor.UseVisualStyleBackColor = true;
             this.UseBackgroundColor.CheckStateChanged += new System.EventHandler(this.UseBackgroundColor_CheckStateChanged);
             // 
@@ -71,30 +66,20 @@
             // 
             this.BackgroundColorGroup.Controls.Add(this.panel1);
             this.BackgroundColorGroup.Controls.Add(this.SelectBackgroundColor);
-            this.BackgroundColorGroup.Enabled = false;
-            this.BackgroundColorGroup.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BackgroundColorGroup.Location = new System.Drawing.Point(12, 40);
+            resources.ApplyResources(this.BackgroundColorGroup, "BackgroundColorGroup");
             this.BackgroundColorGroup.Name = "BackgroundColorGroup";
-            this.BackgroundColorGroup.Size = new System.Drawing.Size(202, 57);
-            this.BackgroundColorGroup.TabIndex = 1;
             this.BackgroundColorGroup.TabStop = false;
-            this.BackgroundColorGroup.Text = "Background color";
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Black;
-            this.panel1.Location = new System.Drawing.Point(139, 19);
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(55, 32);
-            this.panel1.TabIndex = 1;
             // 
             // SelectBackgroundColor
             // 
-            this.SelectBackgroundColor.Location = new System.Drawing.Point(6, 19);
+            resources.ApplyResources(this.SelectBackgroundColor, "SelectBackgroundColor");
             this.SelectBackgroundColor.Name = "SelectBackgroundColor";
-            this.SelectBackgroundColor.Size = new System.Drawing.Size(127, 32);
-            this.SelectBackgroundColor.TabIndex = 0;
-            this.SelectBackgroundColor.Text = "Select color";
             this.SelectBackgroundColor.UseVisualStyleBackColor = true;
             this.SelectBackgroundColor.Click += new System.EventHandler(this.SelectBackgroundColor_Click);
             // 
@@ -107,107 +92,75 @@
             this.BackgroundImages.Controls.Add(this.label5);
             this.BackgroundImages.Controls.Add(this.panel2);
             this.BackgroundImages.Controls.Add(this.label1);
-            this.BackgroundImages.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.BackgroundImages.Location = new System.Drawing.Point(12, 103);
+            resources.ApplyResources(this.BackgroundImages, "BackgroundImages");
             this.BackgroundImages.Name = "BackgroundImages";
-            this.BackgroundImages.Size = new System.Drawing.Size(143, 415);
-            this.BackgroundImages.TabIndex = 2;
             this.BackgroundImages.TabStop = false;
-            this.BackgroundImages.Text = "Images";
             // 
             // ImagePic
             // 
             this.ImagePic.AllowDrop = true;
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ImagePic.Location = new System.Drawing.Point(9, 41);
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
-            this.ImagePic.Size = new System.Drawing.Size(126, 294);
-            this.ImagePic.TabIndex = 35;
             this.ImagePic.Click += new System.EventHandler(this.clickPic);
             this.ImagePic.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDropPic);
             this.ImagePic.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnterPic);
             // 
             // backgroundYPos
             // 
-            this.backgroundYPos.Location = new System.Drawing.Point(34, 372);
+            resources.ApplyResources(this.backgroundYPos, "backgroundYPos");
             this.backgroundYPos.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.backgroundYPos.Name = "backgroundYPos";
-            this.backgroundYPos.Size = new System.Drawing.Size(48, 24);
-            this.backgroundYPos.TabIndex = 32;
             this.backgroundYPos.ValueChanged += new System.EventHandler(this.posValueChanged);
             // 
             // backgroundXPos
             // 
-            this.backgroundXPos.Location = new System.Drawing.Point(34, 342);
+            resources.ApplyResources(this.backgroundXPos, "backgroundXPos");
             this.backgroundXPos.Minimum = new decimal(new int[] {
             100,
             0,
             0,
             -2147483648});
             this.backgroundXPos.Name = "backgroundXPos";
-            this.backgroundXPos.Size = new System.Drawing.Size(48, 24);
-            this.backgroundXPos.TabIndex = 31;
             this.backgroundXPos.ValueChanged += new System.EventHandler(this.posValueChanged);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 374);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(21, 18);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "Y:";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 344);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(22, 18);
-            this.label5.TabIndex = 12;
-            this.label5.Text = "X:";
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.panel2.Location = new System.Drawing.Point(9, 41);
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(0, 0);
-            this.panel2.TabIndex = 3;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 20);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Image:";
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveButton.Location = new System.Drawing.Point(12, 524);
+            resources.ApplyResources(this.saveButton, "saveButton");
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(435, 36);
-            this.saveButton.TabIndex = 3;
-            this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // Preview3Pic
             // 
             this.Preview3Pic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Preview3Pic.Location = new System.Drawing.Point(353, 144);
+            resources.ApplyResources(this.Preview3Pic, "Preview3Pic");
             this.Preview3Pic.Name = "Preview3Pic";
-            this.Preview3Pic.Size = new System.Drawing.Size(90, 210);
-            this.Preview3Pic.TabIndex = 42;
             this.Preview3Pic.Click += new System.EventHandler(this.clickPic);
             this.Preview3Pic.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDropPic);
             this.Preview3Pic.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnterPic);
@@ -215,10 +168,8 @@
             // Preview2Pic
             // 
             this.Preview2Pic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Preview2Pic.Location = new System.Drawing.Point(257, 144);
+            resources.ApplyResources(this.Preview2Pic, "Preview2Pic");
             this.Preview2Pic.Name = "Preview2Pic";
-            this.Preview2Pic.Size = new System.Drawing.Size(90, 210);
-            this.Preview2Pic.TabIndex = 43;
             this.Preview2Pic.Click += new System.EventHandler(this.clickPic);
             this.Preview2Pic.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDropPic);
             this.Preview2Pic.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnterPic);
@@ -226,59 +177,38 @@
             // Preview1Pic
             // 
             this.Preview1Pic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Preview1Pic.Location = new System.Drawing.Point(161, 144);
+            resources.ApplyResources(this.Preview1Pic, "Preview1Pic");
             this.Preview1Pic.Name = "Preview1Pic";
-            this.Preview1Pic.Size = new System.Drawing.Size(90, 210);
-            this.Preview1Pic.TabIndex = 41;
             this.Preview1Pic.Click += new System.EventHandler(this.clickPic);
             this.Preview1Pic.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDropPic);
             this.Preview1Pic.DragEnter += new System.Windows.Forms.DragEventHandler(this.dragEnterPic);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(350, 123);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(72, 18);
-            this.label4.TabIndex = 40;
-            this.label4.Text = "Preview3:";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(254, 123);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(72, 18);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Preview2:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(158, 123);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 18);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Preview1:";
             // 
             // genPreviews
             // 
-            this.genPreviews.Location = new System.Drawing.Point(161, 360);
+            resources.ApplyResources(this.genPreviews, "genPreviews");
             this.genPreviews.Name = "genPreviews";
-            this.genPreviews.Size = new System.Drawing.Size(282, 23);
-            this.genPreviews.TabIndex = 44;
-            this.genPreviews.Text = "Generate previews";
             this.genPreviews.UseVisualStyleBackColor = true;
             this.genPreviews.Click += new System.EventHandler(this.genPreviews_Click);
             // 
             // BackgroundForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(454, 569);
             this.Controls.Add(this.genPreviews);
             this.Controls.Add(this.Preview3Pic);
             this.Controls.Add(this.Preview2Pic);
@@ -291,10 +221,7 @@
             this.Controls.Add(this.BackgroundColorGroup);
             this.Controls.Add(this.UseBackgroundColor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "BackgroundForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Background";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BackgroundForm_FormClosing);
             this.BackgroundColorGroup.ResumeLayout(false);
             this.BackgroundImages.ResumeLayout(false);

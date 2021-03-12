@@ -14,6 +14,8 @@ namespace MiBand5WatchFaces.Forms
     {
         public WatchFaceLibrary watch;
         public ImageSet imageSet;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+
         StateWatchface state;
         bool startForm = true;
         bool moving;
@@ -98,7 +100,7 @@ namespace MiBand5WatchFaces.Forms
         private void ImageSetForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (PropertiesGroupBox.Enabled)
-                if (saved == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (saved == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     saved = true;
                     delete = false;

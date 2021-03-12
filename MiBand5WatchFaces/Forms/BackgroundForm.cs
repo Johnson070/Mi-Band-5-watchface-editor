@@ -15,6 +15,8 @@ namespace MiBand5WatchFaces.Forms
         public Background background;
         public DefaultDictionary<int, Image> images;
         public bool Save;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+
         VisualRender visual;
         Image prev;
 
@@ -203,7 +205,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void BackgroundForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Dont't save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (UseBackgroundColor.Checked) background.Image = null;

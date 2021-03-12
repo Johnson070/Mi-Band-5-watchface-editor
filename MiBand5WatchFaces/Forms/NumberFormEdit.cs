@@ -16,6 +16,7 @@ namespace MiBand5WatchFaces
         public WatchFaceLibrary watch;
         public Number number;
         StateWatchface state;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         int countImages = -1;
         bool startForm = true;
@@ -105,7 +106,7 @@ namespace MiBand5WatchFaces
                 this.number.drawBorder = true;
 
                 saveBtn.Text = "Delete";
-                saved = true;
+                delete = true;
                 this.Close();
             }
         }
@@ -183,7 +184,7 @@ namespace MiBand5WatchFaces
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (PropertiesGroupBox.Enabled)
-                if (saved == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (saved == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     saved = true;
                     delete = false;

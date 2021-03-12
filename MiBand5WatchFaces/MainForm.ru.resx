@@ -139,18 +139,6 @@
   <data name="AddElement.Text" xml:space="preserve">
     <value>Добавить элемент</value>
   </data>
-  <data name="openFileButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
-  </data>
-  <data name="openFileButton.Text" xml:space="preserve">
-    <value>Открыть</value>
-  </data>
-  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>133, 22</value>
-  </data>
-  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
-    <value>Сохранить</value>
-  </data>
   <data name="toolStripDropDownButton1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -193,6 +181,39 @@
   <data name="OpenFormImages.Text" xml:space="preserve">
     <value>Изображения</value>
   </data>
+  <data name="toolStripDropDownButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
+        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
+        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
+        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
+        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
+        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
+        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
+        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
+        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
+        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="toolStripDropDownButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 22</value>
+  </data>
+  <data name="toolStripDropDownButton2.Text" xml:space="preserve">
+    <value>Настройки</value>
+  </data>
+  <data name="openFileButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="openFileButton.Text" xml:space="preserve">
+    <value>Открыть</value>
+  </data>
+  <data name="saveToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>133, 22</value>
+  </data>
+  <data name="saveToolStripMenuItem.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
   <data name="findBugToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>204, 22</value>
   </data>
@@ -232,32 +253,11 @@
   <data name="aboutToolStripMenuItem.Text" xml:space="preserve">
     <value>О программе</value>
   </data>
-  <data name="toolStripDropDownButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAIDSURBVDhPpZLrS5NhGMb3j4SWh0oRQVExD4gonkDpg4hG
-        YKxG6WBogkMZKgPNCEVJFBGdGETEvgwyO9DJE5syZw3PIlPEE9pgBCLZ5XvdMB8Ew8gXbl54nuf63dd9
-        0OGSnwCahxbPRNPAPMw9Xpg6ZmF46kZZ0xSKzJPIrhpDWsVnpBhGkKx3nAX8Pv7z1zg8OoY/cITdn4fw
-        bf/C0kYAN3Ma/w3gWfZL5kzTKBxjWyK2DftwI9tyMYCZKXbNHaD91bLYJrDXsYbrWfUKwJrPE9M2M1Oc
-        VzOOpHI7Jr376Hi9ogHqFIANO0/MmmmbmSmm9a8ze+I4MrNWAdjtoJgWcx+PSzg166yZZ8xM8XvXDix9
-        c4jIqFYAjoriBV9AhEPv1mH/sonogha0afbZMMZz+yreTGyhpusHwtNNCsA5U1zS4BLxzJIfg299qO32
-        Ir7UJtZfftyATqeT+8o2D8JSjQrAJblrncYL7ZJ2+bfaFnC/1S1NjL3diRat7qrO7wLRP3HjWsojBeCo
-        mDEo5mNjuweFGvjWg2EBhCbpkW78htSHHwRyNdmgAFzPEee2iFkzayy2OLXzT4gr6UdUnlXrullsxxQ+
-        kx0g8BTA3aZlButjSTyjODq/WcQcW/B/Je4OQhLvKQDnzN1mp0nnkvAhR8VuMzNrpm1mpjgkoVwB/v8D
-        TgDQASA1MVpwzwAAAABJRU5ErkJggg==
-</value>
-  </data>
-  <data name="toolStripDropDownButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>80, 22</value>
-  </data>
-  <data name="toolStripDropDownButton2.Text" xml:space="preserve">
-    <value>Настройки</value>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Дополнительно</value>
   </data>
   <data name="SetWatchfaceState.Text" xml:space="preserve">
     <value>Установить значения watchface</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Дополнительно</value>
   </data>
   <data name="RenderButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>283, 452</value>
@@ -267,6 +267,9 @@
   </data>
   <data name="RenderButton.Text" xml:space="preserve">
     <value>Перерисовать</value>
+  </data>
+  <data name="listMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>129, 48</value>
   </data>
   <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 22</value>
@@ -279,9 +282,6 @@
   </data>
   <data name="removeToolStripMenuItem.Text" xml:space="preserve">
     <value>Удалить</value>
-  </data>
-  <data name="listMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>129, 48</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10373,58 +10373,16 @@
         OAQcAsuGwP8Pb3MSCxhf2YIAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="toolStripDropDownButton3.Text" xml:space="preserve">
+    <value>Язык</value>
+  </data>
+  <data name="russianToolStripMenuItem.Text" xml:space="preserve">
+    <value>Руский</value>
+  </data>
+  <data name="neutralToolStripMenuItem.Text" xml:space="preserve">
+    <value>Neutral</value>
+  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Watch Face for MI Band 5 Editor</value>
-  </data>
-  <data name="activityToolStripMenuItem.Text" xml:space="preserve">
-    <value>Activity</value>
-  </data>
-  <data name="alarmToolStripMenuItem.Text" xml:space="preserve">
-    <value>Alarm</value>
-  </data>
-  <data name="analogDialFaceToolStripMenuItem.Text" xml:space="preserve">
-    <value>Analog Dial Face</value>
-  </data>
-  <data name="animationToolStripMenuItem.Text" xml:space="preserve">
-    <value>Animation</value>
-  </data>
-  <data name="backgroundToolStripMenuItem.Text" xml:space="preserve">
-    <value>Background</value>
-  </data>
-  <data name="batteryToolStripMenuItem.Text" xml:space="preserve">
-    <value>Battery</value>
-  </data>
-  <data name="caloriesProgressToolStripMenuItem1.Text" xml:space="preserve">
-    <value>Calories Progress</value>
-  </data>
-  <data name="dateToolStripMenuItem.Text" xml:space="preserve">
-    <value>Date</value>
-  </data>
-  <data name="heartProgressToolStripMenuItem.Text" xml:space="preserve">
-    <value>Heart Progress</value>
-  </data>
-  <data name="statusSimplifiedToolStripMenuItem.Text" xml:space="preserve">
-    <value>Status Simplified</value>
-  </data>
-  <data name="statusStrip1.Text" xml:space="preserve">
-    <value>statusStrip1</value>
-  </data>
-  <data name="statusToolStripMenuItem.Text" xml:space="preserve">
-    <value>Status</value>
-  </data>
-  <data name="stepsProgressToolStripMenuItem.Text" xml:space="preserve">
-    <value>Steps Progress</value>
-  </data>
-  <data name="timeToolStripMenuItem.Text" xml:space="preserve">
-    <value>Time</value>
-  </data>
-  <data name="toolStrip1.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="weekDaysIconsToolStripMenuItem.Text" xml:space="preserve">
-    <value>Week Days Icons</value>
-  </data>
-  <data name="weatherToolStripMenuItem.Text" xml:space="preserve">
-    <value>Weather</value>
   </data>
 </root>

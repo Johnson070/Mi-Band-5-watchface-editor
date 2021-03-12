@@ -61,11 +61,839 @@ namespace MiBand5WatchFaces.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Add AM image.
+        /// </summary>
+        internal static string AddAMImage {
+            get {
+                return ResourceManager.GetString("AddAMImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add arrow.
+        /// </summary>
+        internal static string AddArrow {
+            get {
+                return ResourceManager.GetString("AddArrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add calories.
+        /// </summary>
+        internal static string AddCalories {
+            get {
+                return ResourceManager.GetString("AddCalories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add center image.
+        /// </summary>
+        internal static string AddCenterImage {
+            get {
+                return ResourceManager.GetString("AddCenterImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add circle scale.
+        /// </summary>
+        internal static string AddCircleScale {
+            get {
+                return ResourceManager.GetString("AddCircleScale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add day.
+        /// </summary>
+        internal static string AddDay {
+            get {
+                return ResourceManager.GetString("AddDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add decimal point.
+        /// </summary>
+        internal static string AddDecimalPoint {
+            get {
+                return ResourceManager.GetString("AddDecimalPoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add degree image.
+        /// </summary>
+        internal static string AddDegreeImage {
+            get {
+                return ResourceManager.GetString("AddDegreeImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add delimeter.
+        /// </summary>
+        internal static string AddDelimeter {
+            get {
+                return ResourceManager.GetString("AddDelimeter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add delimeter image.
+        /// </summary>
+        internal static string AddDelimeterImage {
+            get {
+                return ResourceManager.GetString("AddDelimeterImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add distance.
+        /// </summary>
+        internal static string AddDistance {
+            get {
+                return ResourceManager.GetString("AddDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add friday image.
+        /// </summary>
+        internal static string AddFridayImage {
+            get {
+                return ResourceManager.GetString("AddFridayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add image.
+        /// </summary>
+        internal static string AddImage {
+            get {
+                return ResourceManager.GetString("AddImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Add image no alarm.
         /// </summary>
         internal static string AddImageNoAlarm {
             get {
                 return ResourceManager.GetString("AddImageNoAlarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add image OFF.
+        /// </summary>
+        internal static string AddImageOff {
+            get {
+                return ResourceManager.GetString("AddImageOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add image ON.
+        /// </summary>
+        internal static string AddImageOn {
+            get {
+                return ResourceManager.GetString("AddImageOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add images.
+        /// </summary>
+        internal static string AddImages {
+            get {
+                return ResourceManager.GetString("AddImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add images to element.
+        /// </summary>
+        internal static string AddImagesToElement {
+            get {
+                return ResourceManager.GetString("AddImagesToElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add KM image.
+        /// </summary>
+        internal static string AddKMImage {
+            get {
+                return ResourceManager.GetString("AddKMImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add KM suffix.
+        /// </summary>
+        internal static string AddKMSuffix {
+            get {
+                return ResourceManager.GetString("AddKMSuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add MI image.
+        /// </summary>
+        internal static string AddMIImage {
+            get {
+                return ResourceManager.GetString("AddMIImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add minus image.
+        /// </summary>
+        internal static string AddMinusImage {
+            get {
+                return ResourceManager.GetString("AddMinusImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add MI suffix.
+        /// </summary>
+        internal static string AddMISuffix {
+            get {
+                return ResourceManager.GetString("AddMISuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add monday image.
+        /// </summary>
+        internal static string AddMondayImage {
+            get {
+                return ResourceManager.GetString("AddMondayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add month.
+        /// </summary>
+        internal static string AddMonth {
+            get {
+                return ResourceManager.GetString("AddMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add month and day.
+        /// </summary>
+        internal static string AddMonthAndDay {
+            get {
+                return ResourceManager.GetString("AddMonthAndDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add month and day and year.
+        /// </summary>
+        internal static string AddMonthAndDayAndYear {
+            get {
+                return ResourceManager.GetString("AddMonthAndDayAndYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add month images.
+        /// </summary>
+        internal static string AddMonthImages {
+            get {
+                return ResourceManager.GetString("AddMonthImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add no data.
+        /// </summary>
+        internal static string AddNoData {
+            get {
+                return ResourceManager.GetString("AddNoData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add no time.
+        /// </summary>
+        internal static string AddNoTime {
+            get {
+                return ResourceManager.GetString("AddNoTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add number.
+        /// </summary>
+        internal static string AddNumber {
+            get {
+                return ResourceManager.GetString("AddNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add Ones.
+        /// </summary>
+        internal static string AddOnes {
+            get {
+                return ResourceManager.GetString("AddOnes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add PAI.
+        /// </summary>
+        internal static string AddPAI {
+            get {
+                return ResourceManager.GetString("AddPAI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add PM image.
+        /// </summary>
+        internal static string AddPMImage {
+            get {
+                return ResourceManager.GetString("AddPMImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add prefix.
+        /// </summary>
+        internal static string AddPrefix {
+            get {
+                return ResourceManager.GetString("AddPrefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add pulse.
+        /// </summary>
+        internal static string AddPulse {
+            get {
+                return ResourceManager.GetString("AddPulse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add saturday image.
+        /// </summary>
+        internal static string AddSaturdayImage {
+            get {
+                return ResourceManager.GetString("AddSaturdayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add steps.
+        /// </summary>
+        internal static string AddSteps {
+            get {
+                return ResourceManager.GetString("AddSteps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add suffix.
+        /// </summary>
+        internal static string AddSuffix {
+            get {
+                return ResourceManager.GetString("AddSuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add suffix image.
+        /// </summary>
+        internal static string AddSuffixImage {
+            get {
+                return ResourceManager.GetString("AddSuffixImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add sunday image.
+        /// </summary>
+        internal static string AddSundayImage {
+            get {
+                return ResourceManager.GetString("AddSundayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add Tens.
+        /// </summary>
+        internal static string AddTens {
+            get {
+                return ResourceManager.GetString("AddTens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add thursday image.
+        /// </summary>
+        internal static string AddThursdayImage {
+            get {
+                return ResourceManager.GetString("AddThursdayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add tuesday image.
+        /// </summary>
+        internal static string AddTuesdayImage {
+            get {
+                return ResourceManager.GetString("AddTuesdayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add wednesday image.
+        /// </summary>
+        internal static string AddWednesdayImage {
+            get {
+                return ResourceManager.GetString("AddWednesdayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add week days images.
+        /// </summary>
+        internal static string AddWeekDaysImages {
+            get {
+                return ResourceManager.GetString("AddWeekDaysImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Delete images.
+        /// </summary>
+        internal static string DeleteImages {
+            get {
+                return ResourceManager.GetString("DeleteImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit AM image.
+        /// </summary>
+        internal static string EditAMImage {
+            get {
+                return ResourceManager.GetString("EditAMImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit arrow.
+        /// </summary>
+        internal static string EditArrow {
+            get {
+                return ResourceManager.GetString("EditArrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit calories.
+        /// </summary>
+        internal static string EditCalories {
+            get {
+                return ResourceManager.GetString("EditCalories", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit center image.
+        /// </summary>
+        internal static string EditCenterImage {
+            get {
+                return ResourceManager.GetString("EditCenterImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit circle scale.
+        /// </summary>
+        internal static string EditCircleScale {
+            get {
+                return ResourceManager.GetString("EditCircleScale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit day.
+        /// </summary>
+        internal static string EditDay {
+            get {
+                return ResourceManager.GetString("EditDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit decimal point.
+        /// </summary>
+        internal static string EditDecimalPoint {
+            get {
+                return ResourceManager.GetString("EditDecimalPoint", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit degree image.
+        /// </summary>
+        internal static string EditDegreeImage {
+            get {
+                return ResourceManager.GetString("EditDegreeImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit delimeter.
+        /// </summary>
+        internal static string EditDelimeter {
+            get {
+                return ResourceManager.GetString("EditDelimeter", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit delimeter image.
+        /// </summary>
+        internal static string EditDelimeterImage {
+            get {
+                return ResourceManager.GetString("EditDelimeterImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit distance.
+        /// </summary>
+        internal static string EditDistance {
+            get {
+                return ResourceManager.GetString("EditDistance", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit friday image.
+        /// </summary>
+        internal static string EditFridayImage {
+            get {
+                return ResourceManager.GetString("EditFridayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit image.
+        /// </summary>
+        internal static string EditImage {
+            get {
+                return ResourceManager.GetString("EditImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit image no alarm.
+        /// </summary>
+        internal static string EditImageNoAlarm {
+            get {
+                return ResourceManager.GetString("EditImageNoAlarm", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit image OFF.
+        /// </summary>
+        internal static string EditImageOff {
+            get {
+                return ResourceManager.GetString("EditImageOff", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit Image ON.
+        /// </summary>
+        internal static string EditImageOn {
+            get {
+                return ResourceManager.GetString("EditImageOn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit images.
+        /// </summary>
+        internal static string EditImages {
+            get {
+                return ResourceManager.GetString("EditImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit images to element.
+        /// </summary>
+        internal static string EditImagesToElement {
+            get {
+                return ResourceManager.GetString("EditImagesToElement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit KM image.
+        /// </summary>
+        internal static string EditKMImage {
+            get {
+                return ResourceManager.GetString("EditKMImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit KM suffix.
+        /// </summary>
+        internal static string EditKMSuffix {
+            get {
+                return ResourceManager.GetString("EditKMSuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit MI image.
+        /// </summary>
+        internal static string EditMIImage {
+            get {
+                return ResourceManager.GetString("EditMIImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit minus image.
+        /// </summary>
+        internal static string EditMinusImage {
+            get {
+                return ResourceManager.GetString("EditMinusImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit MI suffix.
+        /// </summary>
+        internal static string EditMISuffix {
+            get {
+                return ResourceManager.GetString("EditMISuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit monday image.
+        /// </summary>
+        internal static string EditMondayImage {
+            get {
+                return ResourceManager.GetString("EditMondayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit month.
+        /// </summary>
+        internal static string EditMonth {
+            get {
+                return ResourceManager.GetString("EditMonth", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit month and day.
+        /// </summary>
+        internal static string EditMonthAndDay {
+            get {
+                return ResourceManager.GetString("EditMonthAndDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit month and day and year.
+        /// </summary>
+        internal static string EditMonthAndDayAndYear {
+            get {
+                return ResourceManager.GetString("EditMonthAndDayAndYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit month images.
+        /// </summary>
+        internal static string EditMonthImages {
+            get {
+                return ResourceManager.GetString("EditMonthImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit no data.
+        /// </summary>
+        internal static string EditNoData {
+            get {
+                return ResourceManager.GetString("EditNoData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit no time.
+        /// </summary>
+        internal static string EditNoTime {
+            get {
+                return ResourceManager.GetString("EditNoTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit number.
+        /// </summary>
+        internal static string EditNumber {
+            get {
+                return ResourceManager.GetString("EditNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit Ones.
+        /// </summary>
+        internal static string EditOnes {
+            get {
+                return ResourceManager.GetString("EditOnes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit PAI.
+        /// </summary>
+        internal static string EditPAI {
+            get {
+                return ResourceManager.GetString("EditPAI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit PM image.
+        /// </summary>
+        internal static string EditPMImage {
+            get {
+                return ResourceManager.GetString("EditPMImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit prefix.
+        /// </summary>
+        internal static string EditPrefix {
+            get {
+                return ResourceManager.GetString("EditPrefix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit pulse.
+        /// </summary>
+        internal static string EditPulse {
+            get {
+                return ResourceManager.GetString("EditPulse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit saturday image.
+        /// </summary>
+        internal static string EditSaturdayImage {
+            get {
+                return ResourceManager.GetString("EditSaturdayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit steps.
+        /// </summary>
+        internal static string EditSteps {
+            get {
+                return ResourceManager.GetString("EditSteps", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit suffix.
+        /// </summary>
+        internal static string EditSuffix {
+            get {
+                return ResourceManager.GetString("EditSuffix", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit suffix image.
+        /// </summary>
+        internal static string EditSuffixImage {
+            get {
+                return ResourceManager.GetString("EditSuffixImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit sunday image.
+        /// </summary>
+        internal static string EditSundayImage {
+            get {
+                return ResourceManager.GetString("EditSundayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit Tens.
+        /// </summary>
+        internal static string EditTens {
+            get {
+                return ResourceManager.GetString("EditTens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit thursday image.
+        /// </summary>
+        internal static string EditThursdayImage {
+            get {
+                return ResourceManager.GetString("EditThursdayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit tuesday image.
+        /// </summary>
+        internal static string EditTuesdayImage {
+            get {
+                return ResourceManager.GetString("EditTuesdayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit wednesday image.
+        /// </summary>
+        internal static string EditWednesdayImage {
+            get {
+                return ResourceManager.GetString("EditWednesdayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit week days images.
+        /// </summary>
+        internal static string EditWeekDaysImages {
+            get {
+                return ResourceManager.GetString("EditWeekDaysImages", resourceCulture);
             }
         }
         
@@ -84,6 +912,24 @@ namespace MiBand5WatchFaces.Resources {
         internal static string ExitMessageCaption {
             get {
                 return ResourceManager.GetString("ExitMessageCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Image DPI is not 96!.
+        /// </summary>
+        internal static string ImageDPI {
+            get {
+                return ResourceManager.GetString("ImageDPI", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Hours tens and hour ones and minute tens and minutes ones should be added!\nExit without save?.
+        /// </summary>
+        internal static string TimeFormError {
+            get {
+                return ResourceManager.GetString("TimeFormError", resourceCulture);
             }
         }
     }

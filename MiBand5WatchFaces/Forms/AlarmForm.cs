@@ -18,7 +18,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
-        System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Resources.Resource1));
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(Resources.Resource1));
 
 
         public void Render(StateWatchface state = null)
@@ -46,12 +46,12 @@ namespace MiBand5WatchFaces.Forms
 
             if (watch.Alarm.Text != null)
             {
-                AddNumberButton.Text = "Edit number";
+                AddNumberButton.Text = resources.GetString("EditNumber");
                 groupBox1.Enabled = true;
-                if (watch.Alarm.DelimiterImageIndex >= 0) AddDelimeterButton.Text = "Edit delimeter";
-                if (watch.Alarm.ImageOn != null) AddImageOnButton.Text = "Edit image ON";
-                if (watch.Alarm.ImageOff != null) AddImageOFFButton.Text = "Edit image OFF";
-                if (watch.Alarm.ImageNoAlarm != null) AddImageNoAlarmButton.Text = "Edit image no alarm";
+                if (watch.Alarm.DelimiterImageIndex >= 0) AddDelimeterButton.Text = resources.GetString("EditDelimeter");
+                if (watch.Alarm.ImageOn != null) AddImageOnButton.Text = resources.GetString("EditImageOn");
+                if (watch.Alarm.ImageOff != null) AddImageOFFButton.Text = resources.GetString("EditImageOff");
+                if (watch.Alarm.ImageNoAlarm != null) AddImageNoAlarmButton.Text = resources.GetString("EditImageNoAlarm");
             }
         }
 
@@ -69,14 +69,14 @@ namespace MiBand5WatchFaces.Forms
             {
                 watch.Alarm.Text = numForm.number;
                 watch.imagesBuff = numForm.watch.imagesBuff;
-                AddNumberButton.Text = "Edit number";
+                AddNumberButton.Text = resources.GetString("EditNumber");
                 groupBox1.Enabled = true;
             }
             else if (numForm.delete)
             {
                 watch.imagesBuff = numForm.watch.imagesBuff;
                 watch.Alarm.Text = null;
-                AddNumberButton.Text = "Add number";
+                AddNumberButton.Text = resources.GetString("AddNumber");
             }
 
             Render(state);
@@ -99,13 +99,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Alarm.DelimiterImageIndex = imgForm.selectedImages[0];
-                    AddDelimeterButton.Text = "Edit delimeter";
+                    AddDelimeterButton.Text = resources.GetString("EditDelimeter");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Alarm.DelimiterImageIndex = -10000;
-                    AddDelimeterButton.Text = "Add delimeter";
+                    AddDelimeterButton.Text = resources.GetString("AddDelimeter");
                 }
             }
             else if (name == AddImageOnButton.Name)
@@ -119,13 +119,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    AddImageOnButton.Text = "Edit image ON";
+                    AddImageOnButton.Text = resources.GetString("EditImageOn");
                     watch.Alarm.ImageOn = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    AddImageOnButton.Text = "Add image ON";
+                    AddImageOnButton.Text = resources.GetString("AddImageOn");
                     watch.Alarm.ImageOn = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -141,13 +141,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    AddImageOFFButton.Text = "Edit image OFF";
+                    AddImageOFFButton.Text = resources.GetString("EditImageOff");
                     watch.Alarm.ImageOn = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    AddImageOFFButton.Text = "Add image OFF";
+                    AddImageOFFButton.Text = resources.GetString("AddImageOff");
                     watch.Alarm.ImageOn = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -162,13 +162,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    AddImageNoAlarmButton.Text = "Edit image no alarm";
+                    AddImageNoAlarmButton.Text = resources.GetString("EditImageNoAlarm");
                     watch.Alarm.ImageNoAlarm = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    AddImageNoAlarmButton.Text = "Add image no alarm";
+                    AddImageNoAlarmButton.Text = resources.GetString("AddImageNoAlarm");
                     watch.Alarm.ImageNoAlarm = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }

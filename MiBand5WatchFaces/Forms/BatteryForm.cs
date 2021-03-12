@@ -14,6 +14,7 @@ namespace MiBand5WatchFaces.Forms
     public partial class BatteryForm : Form
     {
         public WatchFaceLibrary watch;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         StateWatchface state;
         VisualRender render;
@@ -46,27 +47,27 @@ namespace MiBand5WatchFaces.Forms
             if (watch.Battery.BatteryText != null)
             {
                 textBatteryCheckbox.Checked = true;
-                AddNumberBatteryTextButton.Text = "Edit number";
+                AddNumberBatteryTextButton.Text = res.GetString("EditNumber");
                 if (watch.Battery.BatteryText.PrefixImageIndex >= 0)
                 {
                     AddPreffixButton.Enabled = true;
-                    AddPreffixButton.Text = "Edit prefix";
+                    AddPreffixButton.Text = res.GetString("EditPrefix");
                 }
                 if (watch.Battery.BatteryText.SuffixImageIndex >= 0)
                 {
                     AddSuffixButton.Enabled = true;
-                    AddSuffixButton.Text = "Edit suffix";
+                    AddSuffixButton.Text = res.GetString("EditSuffix");
                 }
             }
             if (watch.Battery.BatteryIcon != null)
             {
                 IconBatteryCheckbox.Checked = true;
-                AddImagesBatteryIconButton.Text = "Edit images";
+                AddImagesBatteryIconButton.Text = res.GetString("EditImages");
             }
             if (watch.Battery.Linear != null)
             {
                 LinearCheckbox.Checked = true;
-                AddImagesLinearButton.Text = "Edit images";
+                AddImagesLinearButton.Text = res.GetString("EditImages");
             }
         }
 
@@ -88,13 +89,13 @@ namespace MiBand5WatchFaces.Forms
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.Battery.BatteryIcon = setForm.imageSet;
-                AddImagesBatteryIconButton.Text = "Edit images";
+                AddImagesBatteryIconButton.Text = res.GetString("EditImages");
             }
             else if (setForm.delete)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.Battery.BatteryIcon = null;
-                AddImagesBatteryIconButton.Text = "Add images";
+                AddImagesBatteryIconButton.Text = res.GetString("AddImages");
             }
 
             Render(state);
@@ -115,7 +116,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.imagesBuff = numForm.watch.imagesBuff;
                 AddPreffixButton.Enabled = true;
                 AddSuffixButton.Enabled = true;
-                AddNumberBatteryTextButton.Text = "Edit number";
+                AddNumberBatteryTextButton.Text = res.GetString("EditNumber");
             }
             else if (numForm.delete)
             {
@@ -123,7 +124,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.Battery.BatteryText.Coordinates = null;
                 AddPreffixButton.Enabled = false;
                 AddSuffixButton.Enabled = false;
-                AddNumberBatteryTextButton.Text = "Add number";
+                AddNumberBatteryTextButton.Text = res.GetString("AddNumber");
             }
 
             Render(state);
@@ -146,13 +147,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Battery.BatteryText.PrefixImageIndex = imgForm.selectedImages[0];
-                    AddPreffixButton.Text = "Edit prefix";
+                    AddPreffixButton.Text = res.GetString("EditPrefix");
                 }
                 else if (imgForm.saveImages)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Battery.BatteryText.PrefixImageIndex = -10000;
-                    AddPreffixButton.Text = "Add prefix";
+                    AddPreffixButton.Text = res.GetString("AddPrefix");
                 }
             }
             else if (name == AddSuffixButton.Name)
@@ -166,13 +167,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Battery.BatteryText.SuffixImageIndex = imgForm.selectedImages[0];
-                    AddSuffixButton.Text = "Edit suffix";
+                    AddSuffixButton.Text = res.GetString("EditSuffix");
                 }
                 else if (imgForm.saveImages)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Battery.BatteryText.SuffixImageIndex = -10000;
-                    AddSuffixButton.Text = "Add suffix";
+                    AddSuffixButton.Text = res.GetString("AddSuffix");
                 }
             }
 
@@ -193,14 +194,14 @@ namespace MiBand5WatchFaces.Forms
                 watch.Battery.Linear = scaleForm.scale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddImagesLinearButton.Text = "Edit images";
+                AddImagesLinearButton.Text = res.GetString("EditImages");
             }
             else if (scaleForm.delete)
             {
                 watch.Battery.Linear = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddImagesLinearButton.Text = "Add images";
+                AddImagesLinearButton.Text = res.GetString("AddImages");
             }
 
             Render(state);
@@ -208,7 +209,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if ((watch.Battery?.BatteryText != null && watch.Battery.BatteryText.Coordinates == null) || textBatteryCheckbox.Checked == false)

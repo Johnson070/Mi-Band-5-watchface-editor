@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(WatchfaceStateEditor));
             this.notGenState = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.alarmNoTimeCheck = new System.Windows.Forms.CheckBox();
             this.label17 = new System.Windows.Forms.Label();
             this.CaloriesState = new System.Windows.Forms.TrackBar();
             this.RandomFillButton = new System.Windows.Forms.Button();
@@ -75,7 +76,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.ImagePic = new System.Windows.Forms.Panel();
             this.SaveButton = new System.Windows.Forms.Button();
-            this.alarmNoTimeCheck = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.CaloriesState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.WindState)).BeginInit();
@@ -94,19 +94,14 @@
             // 
             // notGenState
             // 
-            this.notGenState.AutoSize = true;
-            this.notGenState.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.notGenState, "notGenState");
             this.notGenState.Name = "notGenState";
-            this.notGenState.Size = new System.Drawing.Size(252, 22);
-            this.notGenState.TabIndex = 0;
-            this.notGenState.Text = "Random generate watchface state";
             this.notGenState.UseVisualStyleBackColor = true;
             this.notGenState.CheckedChanged += new System.EventHandler(this.notGenState_CheckedChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.alarmNoTimeCheck);
             this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.CaloriesState);
@@ -150,200 +145,143 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.TimeState);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 40);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(380, 501);
-            this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Values";
+            // 
+            // alarmNoTimeCheck
+            // 
+            resources.ApplyResources(this.alarmNoTimeCheck, "alarmNoTimeCheck");
+            this.alarmNoTimeCheck.Name = "alarmNoTimeCheck";
+            this.alarmNoTimeCheck.UseVisualStyleBackColor = true;
+            this.alarmNoTimeCheck.CheckedChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label17
             // 
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 402);
+            resources.ApplyResources(this.label17, "label17");
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(67, 18);
-            this.label17.TabIndex = 43;
-            this.label17.Text = "Calories:";
             // 
             // CaloriesState
             // 
-            this.CaloriesState.Location = new System.Drawing.Point(9, 423);
+            resources.ApplyResources(this.CaloriesState, "CaloriesState");
             this.CaloriesState.Maximum = 9000;
             this.CaloriesState.Name = "CaloriesState";
-            this.CaloriesState.Size = new System.Drawing.Size(150, 45);
-            this.CaloriesState.TabIndex = 42;
             this.CaloriesState.TickStyle = System.Windows.Forms.TickStyle.None;
             this.CaloriesState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // RandomFillButton
             // 
-            this.RandomFillButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.RandomFillButton.Location = new System.Drawing.Point(6, 468);
+            resources.ApplyResources(this.RandomFillButton, "RandomFillButton");
             this.RandomFillButton.Name = "RandomFillButton";
-            this.RandomFillButton.Size = new System.Drawing.Size(368, 27);
-            this.RandomFillButton.TabIndex = 41;
-            this.RandomFillButton.Text = "Random";
             this.RandomFillButton.UseVisualStyleBackColor = true;
             this.RandomFillButton.Click += new System.EventHandler(this.RandomFillButton_Click);
             // 
             // NoTimeZoneState
             // 
-            this.NoTimeZoneState.AutoSize = true;
-            this.NoTimeZoneState.Location = new System.Drawing.Point(170, 371);
+            resources.ApplyResources(this.NoTimeZoneState, "NoTimeZoneState");
             this.NoTimeZoneState.Name = "NoTimeZoneState";
-            this.NoTimeZoneState.Size = new System.Drawing.Size(116, 22);
-            this.NoTimeZoneState.TabIndex = 40;
-            this.NoTimeZoneState.Text = "No time zone";
             this.NoTimeZoneState.UseVisualStyleBackColor = true;
             this.NoTimeZoneState.CheckedChanged += new System.EventHandler(this.ChangeValue);
             // 
             // WindState
             // 
-            this.WindState.Location = new System.Drawing.Point(250, 202);
+            resources.ApplyResources(this.WindState, "WindState");
             this.WindState.Maximum = new decimal(new int[] {
             30,
             0,
             0,
             0});
             this.WindState.Name = "WindState";
-            this.WindState.Size = new System.Drawing.Size(49, 24);
-            this.WindState.TabIndex = 39;
             this.WindState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label16
             // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(167, 204);
+            resources.ApplyResources(this.label16, "label16");
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(46, 18);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "Wind:";
             // 
             // UVIndexState
             // 
-            this.UVIndexState.Location = new System.Drawing.Point(250, 172);
+            resources.ApplyResources(this.UVIndexState, "UVIndexState");
             this.UVIndexState.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.UVIndexState.Name = "UVIndexState";
-            this.UVIndexState.Size = new System.Drawing.Size(49, 24);
-            this.UVIndexState.TabIndex = 37;
             this.UVIndexState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(167, 174);
+            resources.ApplyResources(this.label15, "label15");
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(70, 18);
-            this.label15.TabIndex = 36;
-            this.label15.Text = "UV Index:";
             // 
             // KilometersState
             // 
-            this.KilometersState.AutoSize = true;
-            this.KilometersState.Location = new System.Drawing.Point(218, 399);
+            resources.ApplyResources(this.KilometersState, "KilometersState");
             this.KilometersState.Name = "KilometersState";
-            this.KilometersState.Size = new System.Drawing.Size(49, 22);
-            this.KilometersState.TabIndex = 35;
             this.KilometersState.TabStop = true;
-            this.KilometersState.Text = "Km";
             this.KilometersState.UseVisualStyleBackColor = true;
             this.KilometersState.CheckedChanged += new System.EventHandler(this.ChangeValue);
             // 
             // MilesState
             // 
-            this.MilesState.AutoSize = true;
-            this.MilesState.Location = new System.Drawing.Point(170, 399);
+            resources.ApplyResources(this.MilesState, "MilesState");
             this.MilesState.Name = "MilesState";
-            this.MilesState.Size = new System.Drawing.Size(42, 22);
-            this.MilesState.TabIndex = 34;
             this.MilesState.TabStop = true;
-            this.MilesState.Text = "Mi";
             this.MilesState.UseVisualStyleBackColor = true;
             this.MilesState.CheckedChanged += new System.EventHandler(this.ChangeValue);
             // 
             // AlarmSetState
             // 
-            this.AlarmSetState.AutoSize = true;
-            this.AlarmSetState.Location = new System.Drawing.Point(170, 315);
+            resources.ApplyResources(this.AlarmSetState, "AlarmSetState");
             this.AlarmSetState.Name = "AlarmSetState";
-            this.AlarmSetState.Size = new System.Drawing.Size(86, 22);
-            this.AlarmSetState.TabIndex = 33;
-            this.AlarmSetState.Text = "Alarm on";
             this.AlarmSetState.UseVisualStyleBackColor = true;
             this.AlarmSetState.CheckedChanged += new System.EventHandler(this.ChangeValue);
             // 
             // DoNotSState
             // 
-            this.DoNotSState.AutoSize = true;
-            this.DoNotSState.Location = new System.Drawing.Point(170, 288);
+            resources.ApplyResources(this.DoNotSState, "DoNotSState");
             this.DoNotSState.Name = "DoNotSState";
-            this.DoNotSState.Size = new System.Drawing.Size(120, 22);
-            this.DoNotSState.TabIndex = 32;
-            this.DoNotSState.Text = "Do not disturb";
             this.DoNotSState.UseVisualStyleBackColor = true;
             this.DoNotSState.CheckedChanged += new System.EventHandler(this.ChangeValue);
             // 
             // LockState
             // 
-            this.LockState.AutoSize = true;
-            this.LockState.Location = new System.Drawing.Point(170, 260);
+            resources.ApplyResources(this.LockState, "LockState");
             this.LockState.Name = "LockState";
-            this.LockState.Size = new System.Drawing.Size(60, 22);
-            this.LockState.TabIndex = 31;
-            this.LockState.Text = "Lock";
             this.LockState.UseVisualStyleBackColor = true;
             this.LockState.CheckedChanged += new System.EventHandler(this.ChangeValue);
             // 
             // BluetoothState
             // 
-            this.BluetoothState.AutoSize = true;
-            this.BluetoothState.Location = new System.Drawing.Point(170, 232);
+            resources.ApplyResources(this.BluetoothState, "BluetoothState");
             this.BluetoothState.Name = "BluetoothState";
-            this.BluetoothState.Size = new System.Drawing.Size(90, 22);
-            this.BluetoothState.TabIndex = 30;
-            this.BluetoothState.Text = "Bluetooth";
             this.BluetoothState.UseVisualStyleBackColor = true;
             this.BluetoothState.CheckedChanged += new System.EventHandler(this.ChangeValue);
             // 
             // AirQualState
             // 
-            this.AirQualState.Location = new System.Drawing.Point(250, 142);
+            resources.ApplyResources(this.AirQualState, "AirQualState");
             this.AirQualState.Maximum = new decimal(new int[] {
             10,
             0,
             0,
             0});
             this.AirQualState.Name = "AirQualState";
-            this.AirQualState.Size = new System.Drawing.Size(49, 24);
-            this.AirQualState.TabIndex = 29;
             this.AirQualState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label14
             // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(167, 144);
+            resources.ApplyResources(this.label14, "label14");
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 18);
-            this.label14.TabIndex = 28;
-            this.label14.Text = "Air quality:";
             // 
             // label13
             // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(167, 114);
+            resources.ApplyResources(this.label13, "label13");
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(83, 18);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "Night temp:";
             // 
             // NightTempState
             // 
-            this.NightTempState.Location = new System.Drawing.Point(250, 112);
+            resources.ApplyResources(this.NightTempState, "NightTempState");
             this.NightTempState.Maximum = new decimal(new int[] {
             40,
             0,
@@ -355,22 +293,16 @@
             0,
             -2147483648});
             this.NightTempState.Name = "NightTempState";
-            this.NightTempState.Size = new System.Drawing.Size(49, 24);
-            this.NightTempState.TabIndex = 26;
             this.NightTempState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label12
             // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(167, 84);
+            resources.ApplyResources(this.label12, "label12");
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(75, 18);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Day temp:";
             // 
             // DayTempState
             // 
-            this.DayTempState.Location = new System.Drawing.Point(250, 82);
+            resources.ApplyResources(this.DayTempState, "DayTempState");
             this.DayTempState.Maximum = new decimal(new int[] {
             40,
             0,
@@ -382,22 +314,16 @@
             0,
             -2147483648});
             this.DayTempState.Name = "DayTempState";
-            this.DayTempState.Size = new System.Drawing.Size(49, 24);
-            this.DayTempState.TabIndex = 24;
             this.DayTempState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label11
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(167, 54);
+            resources.ApplyResources(this.label11, "label11");
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(50, 18);
-            this.label11.TabIndex = 23;
-            this.label11.Text = "Temp:";
             // 
             // CurrTempState
             // 
-            this.CurrTempState.Location = new System.Drawing.Point(250, 53);
+            resources.ApplyResources(this.CurrTempState, "CurrTempState");
             this.CurrTempState.Maximum = new decimal(new int[] {
             40,
             0,
@@ -409,281 +335,193 @@
             0,
             -2147483648});
             this.CurrTempState.Name = "CurrTempState";
-            this.CurrTempState.Size = new System.Drawing.Size(49, 24);
-            this.CurrTempState.TabIndex = 22;
             this.CurrTempState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(167, 25);
+            resources.ApplyResources(this.label10, "label10");
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(68, 18);
-            this.label10.TabIndex = 21;
-            this.label10.Text = "Weather:";
             // 
             // WeatherState
             // 
             this.WeatherState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.WeatherState.FormattingEnabled = true;
             this.WeatherState.Items.AddRange(new object[] {
-            "Unknown",
-            "Partly cloudy",
-            "Cloudy and rain",
-            "Cloudy and snow",
-            "Sunny",
-            "Cloudy",
-            "Light rain",
-            "Light snow",
-            "Rain",
-            "Snow",
-            "Heavy snow",
-            "Heavy rain",
-            "Sand storm",
-            "Snow and rain",
-            "Fog",
-            "Haze",
-            "Storm",
-            "Very heavy snow",
-            "Floating dust",
-            "Downpour",
-            "Hail",
-            "Hail storm",
-            "Heavy downpour",
-            "Blowing dust",
-            "Tornado",
-            "Very heavy downpour"});
-            this.WeatherState.Location = new System.Drawing.Point(250, 21);
+            resources.GetString("WeatherState.Items"),
+            resources.GetString("WeatherState.Items1"),
+            resources.GetString("WeatherState.Items2"),
+            resources.GetString("WeatherState.Items3"),
+            resources.GetString("WeatherState.Items4"),
+            resources.GetString("WeatherState.Items5"),
+            resources.GetString("WeatherState.Items6"),
+            resources.GetString("WeatherState.Items7"),
+            resources.GetString("WeatherState.Items8"),
+            resources.GetString("WeatherState.Items9"),
+            resources.GetString("WeatherState.Items10"),
+            resources.GetString("WeatherState.Items11"),
+            resources.GetString("WeatherState.Items12"),
+            resources.GetString("WeatherState.Items13"),
+            resources.GetString("WeatherState.Items14"),
+            resources.GetString("WeatherState.Items15"),
+            resources.GetString("WeatherState.Items16"),
+            resources.GetString("WeatherState.Items17"),
+            resources.GetString("WeatherState.Items18"),
+            resources.GetString("WeatherState.Items19"),
+            resources.GetString("WeatherState.Items20"),
+            resources.GetString("WeatherState.Items21"),
+            resources.GetString("WeatherState.Items22"),
+            resources.GetString("WeatherState.Items23"),
+            resources.GetString("WeatherState.Items24"),
+            resources.GetString("WeatherState.Items25")});
+            resources.ApplyResources(this.WeatherState, "WeatherState");
             this.WeatherState.Name = "WeatherState";
-            this.WeatherState.Size = new System.Drawing.Size(121, 26);
-            this.WeatherState.TabIndex = 20;
             this.WeatherState.SelectedIndexChanged += new System.EventHandler(this.ChangeValue);
             // 
             // TimeZoneState
             // 
-            this.TimeZoneState.CustomFormat = "HH:mm";
+            resources.ApplyResources(this.TimeZoneState, "TimeZoneState");
             this.TimeZoneState.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TimeZoneState.Location = new System.Drawing.Point(94, 84);
             this.TimeZoneState.Name = "TimeZoneState";
-            this.TimeZoneState.Size = new System.Drawing.Size(65, 24);
-            this.TimeZoneState.TabIndex = 19;
             this.TimeZoneState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label9
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 88);
+            resources.ApplyResources(this.label9, "label9");
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(82, 18);
-            this.label9.TabIndex = 18;
-            this.label9.Text = "Time zone:";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 354);
+            resources.ApplyResources(this.label8, "label8");
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(69, 18);
-            this.label8.TabIndex = 17;
-            this.label8.Text = "Humidity:";
             // 
             // HumidityState
             // 
-            this.HumidityState.Location = new System.Drawing.Point(9, 375);
+            resources.ApplyResources(this.HumidityState, "HumidityState");
             this.HumidityState.Maximum = 100;
             this.HumidityState.Name = "HumidityState";
-            this.HumidityState.Size = new System.Drawing.Size(150, 45);
-            this.HumidityState.TabIndex = 16;
             this.HumidityState.TickStyle = System.Windows.Forms.TickStyle.None;
             this.HumidityState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 306);
+            resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 18);
-            this.label7.TabIndex = 15;
-            this.label7.Text = "Battery:";
             // 
             // BatteryState
             // 
-            this.BatteryState.Location = new System.Drawing.Point(9, 327);
+            resources.ApplyResources(this.BatteryState, "BatteryState");
             this.BatteryState.Maximum = 100;
             this.BatteryState.Name = "BatteryState";
-            this.BatteryState.Size = new System.Drawing.Size(150, 45);
-            this.BatteryState.TabIndex = 14;
             this.BatteryState.TickStyle = System.Windows.Forms.TickStyle.None;
             this.BatteryState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 259);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(34, 18);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "PAI:";
             // 
             // PAIState
             // 
-            this.PAIState.Location = new System.Drawing.Point(9, 280);
+            resources.ApplyResources(this.PAIState, "PAIState");
             this.PAIState.Maximum = 100;
             this.PAIState.Name = "PAIState";
-            this.PAIState.Size = new System.Drawing.Size(150, 45);
             this.PAIState.SmallChange = 20;
-            this.PAIState.TabIndex = 12;
             this.PAIState.TickFrequency = 100;
             this.PAIState.TickStyle = System.Windows.Forms.TickStyle.None;
             this.PAIState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 211);
+            resources.ApplyResources(this.label5, "label5");
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 18);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Pulse:";
             // 
             // PulseState
             // 
-            this.PulseState.Location = new System.Drawing.Point(9, 232);
+            resources.ApplyResources(this.PulseState, "PulseState");
             this.PulseState.Maximum = 150;
             this.PulseState.Name = "PulseState";
-            this.PulseState.Size = new System.Drawing.Size(150, 45);
             this.PulseState.SmallChange = 20;
-            this.PulseState.TabIndex = 10;
             this.PulseState.TickFrequency = 100;
             this.PulseState.TickStyle = System.Windows.Forms.TickStyle.None;
             this.PulseState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 163);
+            resources.ApplyResources(this.label4, "label4");
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 18);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Distance:";
             // 
             // DistanceState
             // 
-            this.DistanceState.Location = new System.Drawing.Point(9, 184);
+            resources.ApplyResources(this.DistanceState, "DistanceState");
             this.DistanceState.Maximum = 1000;
             this.DistanceState.Name = "DistanceState";
-            this.DistanceState.Size = new System.Drawing.Size(150, 45);
             this.DistanceState.SmallChange = 20;
-            this.DistanceState.TabIndex = 8;
             this.DistanceState.TickFrequency = 100;
             this.DistanceState.TickStyle = System.Windows.Forms.TickStyle.None;
             this.DistanceState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 115);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 18);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Steps:";
             // 
             // StepsState
             // 
-            this.StepsState.Location = new System.Drawing.Point(9, 136);
+            resources.ApplyResources(this.StepsState, "StepsState");
             this.StepsState.Maximum = 10000;
             this.StepsState.Name = "StepsState";
-            this.StepsState.Size = new System.Drawing.Size(150, 45);
             this.StepsState.SmallChange = 20;
-            this.StepsState.TabIndex = 6;
             this.StepsState.TickFrequency = 100;
             this.StepsState.TickStyle = System.Windows.Forms.TickStyle.None;
             this.StepsState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // AlarmTimeState
             // 
-            this.AlarmTimeState.CustomFormat = "HH:mm";
+            resources.ApplyResources(this.AlarmTimeState, "AlarmTimeState");
             this.AlarmTimeState.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.AlarmTimeState.Location = new System.Drawing.Point(94, 53);
             this.AlarmTimeState.Name = "AlarmTimeState";
-            this.AlarmTimeState.Size = new System.Drawing.Size(65, 24);
-            this.AlarmTimeState.TabIndex = 5;
             this.AlarmTimeState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 58);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 18);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Alarm:";
             // 
             // TimeState
             // 
-            this.TimeState.CustomFormat = "HH:mm";
+            resources.ApplyResources(this.TimeState, "TimeState");
             this.TimeState.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.TimeState.Location = new System.Drawing.Point(94, 22);
             this.TimeState.Name = "TimeState";
-            this.TimeState.Size = new System.Drawing.Size(65, 24);
-            this.TimeState.TabIndex = 3;
             this.TimeState.ValueChanged += new System.EventHandler(this.ChangeValue);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 25);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 18);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Time:";
             // 
             // ImagePic
             // 
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ImagePic.Location = new System.Drawing.Point(398, 40);
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
-            this.ImagePic.Size = new System.Drawing.Size(126, 294);
-            this.ImagePic.TabIndex = 7;
             // 
             // SaveButton
             // 
-            this.SaveButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.SaveButton.Location = new System.Drawing.Point(12, 547);
+            resources.ApplyResources(this.SaveButton, "SaveButton");
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(512, 35);
-            this.SaveButton.TabIndex = 8;
-            this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
-            // alarmNoTimeCheck
-            // 
-            this.alarmNoTimeCheck.AutoSize = true;
-            this.alarmNoTimeCheck.Location = new System.Drawing.Point(170, 343);
-            this.alarmNoTimeCheck.Name = "alarmNoTimeCheck";
-            this.alarmNoTimeCheck.Size = new System.Drawing.Size(118, 22);
-            this.alarmNoTimeCheck.TabIndex = 44;
-            this.alarmNoTimeCheck.Text = "Alarm no time";
-            this.alarmNoTimeCheck.UseVisualStyleBackColor = true;
-            this.alarmNoTimeCheck.CheckedChanged += new System.EventHandler(this.ChangeValue);
-            // 
             // WatchfaceStateEditor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 594);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.notGenState);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "WatchfaceStateEditor";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Watchface state";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WatchfaceStateEditor_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

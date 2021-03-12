@@ -14,6 +14,7 @@ namespace MiBand5WatchFaces.Forms
     public partial class HeartProgressForm : Form
     {
         public WatchFaceLibrary watch;
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(Resources.Resource1));
 
         StateWatchface state;
         VisualRender render;
@@ -46,17 +47,17 @@ namespace MiBand5WatchFaces.Forms
 
             if (watch.HeartProgress.Scale != null)
             {
-                AddScaleButton.Text = "Edit images";
+                AddScaleButton.Text = resources.GetString("EditImages");
                 ScaleImageCheckbox.Checked = true;
             }
             if (watch.HeartProgress.LineScale != null)
             {
-                AddLineScaleButton.Text = "Edit images";
+                AddLineScaleButton.Text = resources.GetString("EditImages");
                 LineScaleCheckbox.Checked = true;
             }
             if (watch.HeartProgress.Linear != null)
             {
-                AddLinearImages.Text = "Edit images";
+                AddLinearImages.Text = resources.GetString("EditImages");
                 LinearCheckBox.Checked = true;
             }
         }
@@ -75,14 +76,14 @@ namespace MiBand5WatchFaces.Forms
                 watch.HeartProgress.Linear = scaleForm.scale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddLinearImages.Text = "Edit images";
+                AddLinearImages.Text = resources.GetString("EditImages");
             }
             else if (scaleForm.delete)
             {
                 watch.HeartProgress.Linear = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddLinearImages.Text = "Add images";
+                AddLinearImages.Text = resources.GetString("AddImages");
             }
 
             Render(state);
@@ -102,14 +103,14 @@ namespace MiBand5WatchFaces.Forms
                 watch.HeartProgress.Scale = scaleForm.scale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddScaleButton.Text = "Edit images";
+                AddScaleButton.Text = resources.GetString("EditImages");
             }
             else if (scaleForm.delete)
             {
                 watch.HeartProgress.Scale = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddScaleButton.Text = "Add images";
+                AddScaleButton.Text = resources.GetString("AddImages");
             }
 
             Render(state);
@@ -127,13 +128,13 @@ namespace MiBand5WatchFaces.Forms
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.HeartProgress.LineScale = watch.HeartProgress.LineScale == null ? new ImageSet() : watch.HeartProgress.LineScale;
                 watch.HeartProgress.LineScale = setForm.imageSet;
-                AddLineScaleButton.Text = "Edit images";
+                AddLineScaleButton.Text = resources.GetString("EditImages");
             }
             else if (setForm.delete)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.HeartProgress.LineScale = null;
-                AddLineScaleButton.Text = "Add images";
+                AddLineScaleButton.Text = resources.GetString("AddImages");
             }
 
             Render(state);
@@ -148,7 +149,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
 

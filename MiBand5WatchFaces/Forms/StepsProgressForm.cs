@@ -14,6 +14,7 @@ namespace MiBand5WatchFaces.Forms
     public partial class StepsProgressForm : Form
     {
         public WatchFaceLibrary watch;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         StateWatchface state;
         VisualRender render;
@@ -64,22 +65,22 @@ namespace MiBand5WatchFaces.Forms
 
             if (watch.formEdit.GoalImage != null)
             {
-                AddGoalImageButton.Text = "Edit image";
+                AddGoalImageButton.Text = res.GetString("EditImage");
                 GoalImageCheckbox.Checked = true;
             }
             if (watch.formEdit.LineScale != null)
             {
-                AddLineScaleButton.Text = "Edit images";
+                AddLineScaleButton.Text = res.GetString("EditImages");
                 LineScaleCheckbox.Checked = true;
             }
             if (watch.formEdit.Linear != null)
             {
-                AddLinearImages.Text = "Edit images";
+                AddLinearImages.Text = res.GetString("EditImages");
                 LinearCheckBox.Checked = true;
             }
             if (watch.formEdit.CircleScale != null)
             {
-                AddCircleScale.Text = "Edit circle scale";
+                AddCircleScale.Text = res.GetString("EditCircleScale");
                 CircleScaleCheckbox.Checked = true;
             }
         }
@@ -100,14 +101,14 @@ namespace MiBand5WatchFaces.Forms
                 watch.formEdit.Linear = scaleForm.scale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddLinearImages.Text = "Edit images";
+                AddLinearImages.Text = res.GetString("EditImages");
             }
             else if (scaleForm.delete)
             {
                 watch.formEdit.Linear = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddLinearImages.Text = "Add images";
+                AddLinearImages.Text = res.GetString("AddImages");
             }
 
             Render(state);
@@ -121,13 +122,13 @@ namespace MiBand5WatchFaces.Forms
 
             if (ibForm.saved)
             {
-                AddGoalImageButton.Text = "Edit image";
+                AddGoalImageButton.Text = res.GetString("EditImage");
                 watch.formEdit.GoalImage = ibForm.imageBasic;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
             else if(ibForm.delete)
             {
-                AddGoalImageButton.Text = "Add image";
+                AddGoalImageButton.Text = res.GetString("AddImage");
                 watch.formEdit.GoalImage = null;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
@@ -181,13 +182,13 @@ namespace MiBand5WatchFaces.Forms
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.formEdit.LineScale = watch.formEdit.LineScale == null ? new ImageSet() : watch.formEdit.LineScale;
                 watch.formEdit.LineScale = setForm.imageSet;
-                AddLineScaleButton.Text = "Edit images";
+                AddLineScaleButton.Text = res.GetString("EditImages");
             }
             else if (setForm.delete)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.formEdit.LineScale = null;
-                AddLineScaleButton.Text = "Add images";
+                AddLineScaleButton.Text = res.GetString("AddImages");
             }
 
             Render(state);
@@ -207,14 +208,14 @@ namespace MiBand5WatchFaces.Forms
                 watch.formEdit.CircleScale = scaleForm.circleScale;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddCircleScale.Text = "Edit circle scale";
+                AddCircleScale.Text = res.GetString("EditCircleScale");
             }
             else if (scaleForm.delete)
             {
                 watch.formEdit.CircleScale = null;
                 watch.imagesBuff = scaleForm.watch.imagesBuff;
 
-                AddCircleScale.Text = "Add circle scale";
+                AddCircleScale.Text = res.GetString("AddCircleScale");
             }
 
             Render(state);
@@ -230,7 +231,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
 

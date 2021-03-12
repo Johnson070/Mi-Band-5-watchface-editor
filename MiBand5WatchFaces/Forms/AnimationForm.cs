@@ -14,6 +14,7 @@ namespace MiBand5WatchFaces.Forms
     public partial class AnimationForm : Form
     {
         public WatchFaceLibrary watch;
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(Resources.Resource1));
 
         StateWatchface state;
         VisualRender render;
@@ -69,13 +70,13 @@ namespace MiBand5WatchFaces.Forms
                 watch.Other.Animation = watch.Other.Animation == null ? new List<Animation>() { new Animation() } : watch.Other.Animation;
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.Other.Animation[AnimationsListBox.SelectedIndex].AnimationImages = setForm.imageSet;
-                AddImagesAnimationButton.Text = "Edit images";
+                AddImagesAnimationButton.Text = resources.GetString("EditImages");
             }
             else if (setForm.delete)
             {
                 watch.imagesBuff = setForm.watch.imagesBuff;
                 watch.Other.Animation.RemoveAt(AnimationsListBox.SelectedIndex);
-                AddImagesAnimationButton.Text = "Add images";
+                AddImagesAnimationButton.Text = resources.GetString("AddImages");
                 FillListBox();
             }
 
@@ -87,7 +88,7 @@ namespace MiBand5WatchFaces.Forms
             if (AnimationsListBox.SelectedIndex != -1)
             {
                 groupBox1.Enabled = true;
-                AddImagesAnimationButton.Text = watch.Other.Animation[AnimationsListBox.SelectedIndex].AnimationImages.ImageIndex >= 0 ? "Edit images" : "Add images";
+                AddImagesAnimationButton.Text = watch.Other.Animation[AnimationsListBox.SelectedIndex].AnimationImages.ImageIndex >= 0 ? resources.GetString("EditImages") : resources.GetString("AddImages");
                 if (watch.Other.Animation[AnimationsListBox.SelectedIndex].AnimationImages.ImageIndex >= 0)
                 {
                     SpeedUpDown.Enabled = true;
@@ -111,7 +112,7 @@ namespace MiBand5WatchFaces.Forms
                 RepeatCountUpDown.Enabled = false;
                 SpeedUpDown.Value = 100;
                 RepeatCountUpDown.Value = 10;
-                AddImagesAnimationButton.Text = "Add images";
+                AddImagesAnimationButton.Text = resources.GetString("AddImages");
             }
         }
 
@@ -170,7 +171,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void AnimationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (watch.Other.Animation != null)

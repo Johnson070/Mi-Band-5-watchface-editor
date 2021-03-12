@@ -54,77 +54,57 @@ namespace MiBand5WatchFaces.Forms
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.posPanel});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 629);
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(658, 22);
-            this.statusStrip1.TabIndex = 1;
             // 
             // posPanel
             // 
             this.posPanel.Name = "posPanel";
-            this.posPanel.Size = new System.Drawing.Size(0, 17);
+            resources.ApplyResources(this.posPanel, "posPanel");
             // 
             // saveButton
             // 
-            this.saveButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveButton.Location = new System.Drawing.Point(7, 543);
+            resources.ApplyResources(this.saveButton, "saveButton");
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(639, 30);
-            this.saveButton.TabIndex = 5;
-            this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.shapeListBox);
             this.groupBox1.Controls.Add(this.panelArrow);
             this.groupBox1.Controls.Add(this.clearAllButton);
             this.groupBox1.Controls.Add(this.eraseRadioButton);
             this.groupBox1.Controls.Add(this.dotRadioButton);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(634, 525);
-            this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             // 
             // shapeListBox
             // 
             this.shapeListBox.ContextMenuStrip = this.contextMenuStrip1;
             this.shapeListBox.FormattingEnabled = true;
-            this.shapeListBox.Location = new System.Drawing.Point(6, 75);
+            resources.ApplyResources(this.shapeListBox, "shapeListBox");
             this.shapeListBox.Name = "shapeListBox";
-            this.shapeListBox.Size = new System.Drawing.Size(117, 407);
-            this.shapeListBox.TabIndex = 10;
-            this.HelpTip.SetToolTip(this.shapeListBox, "Right click for show context menu\r\nPlace the points in sequence, because the arro" +
-        "w is a polygon.  \r\n");
+            this.HelpTip.SetToolTip(this.shapeListBox, resources.GetString("shapeListBox.ToolTip"));
             // 
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteDotToolStrip});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(129, 26);
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // deleteDotToolStrip
             // 
             this.deleteDotToolStrip.Name = "deleteDotToolStrip";
-            this.deleteDotToolStrip.Size = new System.Drawing.Size(128, 22);
-            this.deleteDotToolStrip.Text = "Delete dot";
+            resources.ApplyResources(this.deleteDotToolStrip, "deleteDotToolStrip");
             this.deleteDotToolStrip.Click += new System.EventHandler(this.deleteDotToolStrip_Click);
             // 
             // panelArrow
             // 
-            this.panelArrow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panelArrow.Location = new System.Drawing.Point(129, 19);
+            resources.ApplyResources(this.panelArrow, "panelArrow");
             this.panelArrow.Name = "panelArrow";
-            this.panelArrow.Size = new System.Drawing.Size(500, 500);
-            this.panelArrow.TabIndex = 9;
             this.panelArrow.TabStop = false;
             this.panelArrow.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArrow_Paint);
             this.panelArrow.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelArrow_MouseClick);
@@ -134,68 +114,44 @@ namespace MiBand5WatchFaces.Forms
             // 
             // clearAllButton
             // 
-            this.clearAllButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.clearAllButton.Location = new System.Drawing.Point(6, 486);
+            resources.ApplyResources(this.clearAllButton, "clearAllButton");
             this.clearAllButton.Name = "clearAllButton";
-            this.clearAllButton.Size = new System.Drawing.Size(117, 33);
-            this.clearAllButton.TabIndex = 8;
-            this.clearAllButton.Text = "Clear all";
             this.clearAllButton.UseVisualStyleBackColor = true;
             this.clearAllButton.Click += new System.EventHandler(this.clearAllButton_Click);
             // 
             // eraseRadioButton
             // 
-            this.eraseRadioButton.AutoSize = true;
-            this.eraseRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.eraseRadioButton.Location = new System.Drawing.Point(6, 47);
+            resources.ApplyResources(this.eraseRadioButton, "eraseRadioButton");
             this.eraseRadioButton.Name = "eraseRadioButton";
-            this.eraseRadioButton.Size = new System.Drawing.Size(65, 22);
-            this.eraseRadioButton.TabIndex = 7;
-            this.eraseRadioButton.Text = "Erase";
-            this.HelpTip.SetToolTip(this.eraseRadioButton, "Double click for erase dot");
+            this.HelpTip.SetToolTip(this.eraseRadioButton, resources.GetString("eraseRadioButton.ToolTip"));
             this.eraseRadioButton.UseVisualStyleBackColor = true;
             // 
             // dotRadioButton
             // 
-            this.dotRadioButton.AutoSize = true;
+            resources.ApplyResources(this.dotRadioButton, "dotRadioButton");
             this.dotRadioButton.Checked = true;
-            this.dotRadioButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.dotRadioButton.Location = new System.Drawing.Point(6, 19);
             this.dotRadioButton.Name = "dotRadioButton";
-            this.dotRadioButton.Size = new System.Drawing.Size(50, 22);
-            this.dotRadioButton.TabIndex = 6;
             this.dotRadioButton.TabStop = true;
-            this.dotRadioButton.Text = "Dot";
-            this.HelpTip.SetToolTip(this.dotRadioButton, "Double click for place dot");
+            this.HelpTip.SetToolTip(this.dotRadioButton, resources.GetString("dotRadioButton.ToolTip"));
             this.dotRadioButton.UseVisualStyleBackColor = true;
             // 
             // deleteButton
             // 
-            this.deleteButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.deleteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.deleteButton.Location = new System.Drawing.Point(7, 588);
+            resources.ApplyResources(this.deleteButton, "deleteButton");
             this.deleteButton.Name = "deleteButton";
-            this.deleteButton.Size = new System.Drawing.Size(639, 30);
-            this.deleteButton.TabIndex = 7;
-            this.deleteButton.Text = "Delete";
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // ArrowPaintForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(658, 651);
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ArrowPaintForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Arrow";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ArrowPaintForm_FormClosing);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

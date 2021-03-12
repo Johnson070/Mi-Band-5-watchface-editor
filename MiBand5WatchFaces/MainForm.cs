@@ -7,6 +7,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -428,7 +429,7 @@ namespace MiBand5WatchFaces
                     foreach (KeyValuePair<int, Image> img in watchFace.imagesBuff)
                         img.Value.Save(Path.Combine(path, $"{img.Key:0000}.png"));
 
-                    File.WriteAllText(Path.Combine(path, $"{Path.GetFileNameWithoutExtension(saveFile.FileName)}.json"), JsonConvert.SerializeObject(watchFace, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+                    File.WriteAllText(Path.Combine(path, $"{Path.GetFileNameWithoutExtension(saveFile.FileName)}.json"), JsonConvert.SerializeObject(watchFace, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
 
                     if (Path.GetExtension(saveFile.FileName) == ".bin")
                     {
@@ -913,6 +914,34 @@ namespace MiBand5WatchFaces
             {
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        private void russianToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.lang = "ru-RU";
+            Properties.Settings.Default.Save();
+            Application.Restart();
+        }
+
+        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Properties.Settings.Default.lang = "en-US";
+            Properties.Settings.Default.Save();
+            Application.Restart();
+        }
+
+        private void OpenJsonButton_Click(object sender, EventArgs e)
+        {
+            JSONEditorForm jsonForm = new JSONEditorForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            jsonForm.ShowDialog();
+
+            if (jsonForm.Save)
+            {
+                watchFace = jsonForm.watch;
+                RenderButton.PerformClick();
+            }
+
+            jsonForm.Dispose();
         }
     }
 }

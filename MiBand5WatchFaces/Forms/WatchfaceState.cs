@@ -15,6 +15,7 @@ namespace MiBand5WatchFaces
     {
         public StateWatchface state;
         public bool save;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         bool notChange = true;
         WatchFaceLibrary watch;
@@ -136,7 +137,7 @@ namespace MiBand5WatchFaces
 
         private void WatchfaceStateEditor_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 save = true;
             }

@@ -126,4 +126,7 @@
   <data name="AddImageNoAlarm" xml:space="preserve">
     <value>Добавить изобр. no alarm</value>
   </data>
+  <data name="EditImageNoAlarm" xml:space="preserve">
+    <value>Изменить изобр. no alarm</value>
+  </data>
 </root>

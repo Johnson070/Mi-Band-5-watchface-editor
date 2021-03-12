@@ -14,6 +14,9 @@ namespace MiBand5WatchFaces
     public partial class ImagesForm : Form
     {
         public DefaultDictionary<int, Image> Images;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+        
+        
         bool selectImages = false;
         public bool saveImages = true;
         bool editImages = false;
@@ -97,7 +100,7 @@ namespace MiBand5WatchFaces
 
                     if (Math.Round(dpi) == 96)
                         Images.Add(Images.Keys.Count == 0 ? Images.Count : Images.Keys.Max() + 1, openpng);
-                    else MessageBox.Show("Image DPI is not 96!", $"File: {Path.GetFileName(ImageFiles.FileName)}");
+                    else MessageBox.Show(res.GetString("ImageDPI"), $"File: {Path.GetFileName(ImageFiles.FileName)}");
                 };
                 editImages = true;
 
@@ -167,7 +170,7 @@ namespace MiBand5WatchFaces
                             Images[((KeyValuePair<int, Image>)imageBox.Tag).Key] = openpng;
                             imageBox.BackgroundImage = openpng;
                         }
-                        else MessageBox.Show("Image DPI is not 96!", $"File: {Path.GetFileName(ImageFiles.FileName)}");
+                        else MessageBox.Show(res.GetString("ImageDPI"), $"File: {Path.GetFileName(ImageFiles.FileName)}");
 
                         int sel = ImagesListBox.SelectedIndex;
                         editImages = true;
@@ -231,7 +234,7 @@ namespace MiBand5WatchFaces
         {
             if (editImages)
             {
-                if (MessageBox.Show("You did not save the changes.\nSave?", "Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                     saveImages = true;
                 else
                     saveImages = false;
@@ -279,7 +282,7 @@ namespace MiBand5WatchFaces
                             Images[((KeyValuePair<int, Image>)imageBox.Tag).Key] = openpng;
                             imageBox.BackgroundImage = openpng;
                         }
-                        else MessageBox.Show("Image DPI is not 96!", $"File: {Path.GetFileName(files[0])}");
+                        else MessageBox.Show(res.GetString("ImageDPI"), $"File: {Path.GetFileName(files[0])}");
 
                         int sel = ImagesListBox.SelectedIndex;
                         editImages = true;
@@ -406,10 +409,10 @@ namespace MiBand5WatchFaces
             for (int i = 0; i < ImagesListBox.Items.Count; i++)
                 if (ImagesListBox.GetItemCheckState(i) == CheckState.Checked) countCheckItems++;
 
-            if (countCheckItems > 0 && selectedImages != null) AddImagesToElement.Text = "Edit images to element";
-            else if (countCheckItems == 0 && selectedImages != null) AddImagesToElement.Text = "Delete images";
-            else if (countCheckItems > 0) AddImagesToElement.Text = "Add images to element";
-            else AddImagesToElement.Text = "Add images to element";
+            if (countCheckItems > 0 && selectedImages != null) AddImagesToElement.Text = res.GetString("EditImagesToElement");
+            else if (countCheckItems == 0 && selectedImages != null) AddImagesToElement.Text = res.GetString("DeleteImages");
+            else if (countCheckItems > 0) AddImagesToElement.Text = res.GetString("AddImagesToElement");
+            else AddImagesToElement.Text = res.GetString("AddImagesToElement");
         }
 
         private void uncheckAllToolStripMenuItem_Click(object sender, EventArgs e)
@@ -422,8 +425,8 @@ namespace MiBand5WatchFaces
 
         private void ImagesForm_Shown(object sender, EventArgs e)
         {
-            if (selectedImages != null) AddImagesToElement.Text = "Edit images to element";
-            else AddImagesToElement.Text = "Add images to element";
+            if (selectedImages != null) AddImagesToElement.Text = res.GetString("EditImagesToElement");
+            else AddImagesToElement.Text = res.GetString("AddImagesToElement");
         }
 
         private void ImagesListBox_SelectedValueChanged(object sender, EventArgs e)

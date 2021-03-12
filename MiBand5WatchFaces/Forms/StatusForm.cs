@@ -14,6 +14,7 @@ namespace MiBand5WatchFaces.Forms
     public partial class StatusForm : Form
     {
         public WatchFaceLibrary watch;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         StateWatchface state;
         VisualRender render;
@@ -72,8 +73,8 @@ namespace MiBand5WatchFaces.Forms
             if (this.watch.Status.Bluetooth != null)
             {
                 bluetoothCheckbox.Checked = true;
-                if (this.watch.Status.Bluetooth.ImageIndexOn >= 0) AddImageONBluetooth.Text = "Edit image ON";
-                if (this.watch.Status.Bluetooth.ImageIndexOff >= 0) AddImageOFFBluetooth.Text = "Edit image OFF";
+                if (this.watch.Status.Bluetooth.ImageIndexOn >= 0) AddImageONBluetooth.Text = res.GetString("EditImageOn");
+                if (this.watch.Status.Bluetooth.ImageIndexOff >= 0) AddImageOFFBluetooth.Text = res.GetString("EditImageOff");
                 posXBluetooth.Value = this.watch.Status.Bluetooth.Coordinates.X;
                 posYBluetooth.Value = this.watch.Status.Bluetooth.Coordinates.Y;
                 if (this.watch.Status.Bluetooth.ImageIndexOn >= 0 || this.watch.Status.Bluetooth.ImageIndexOff >= 0)
@@ -85,8 +86,8 @@ namespace MiBand5WatchFaces.Forms
             if (this.watch.Status.Lock != null)
             {
                 lockCheckbox.Checked = true;
-                if (this.watch.Status.Lock.ImageIndexOn >= 0) AddImageONLock.Text = "Edit image ON";
-                if (this.watch.Status.Lock.ImageIndexOff >= 0) AddImageOFFLock.Text = "Edit image OFF";
+                if (this.watch.Status.Lock.ImageIndexOn >= 0) AddImageONLock.Text = res.GetString("EditImageOn");
+                if (this.watch.Status.Lock.ImageIndexOff >= 0) AddImageOFFLock.Text = res.GetString("EditImageOff");
                 posXLock.Value = this.watch.Status.Lock.Coordinates.X;
                 posYLock.Value = this.watch.Status.Lock.Coordinates.Y;
                 if (this.watch.Status.Lock.ImageIndexOn >= 0 || this.watch.Status.Lock.ImageIndexOff >= 0)
@@ -98,8 +99,8 @@ namespace MiBand5WatchFaces.Forms
             if (this.watch.Status.DoNotDisturb != null)
             {
                 dndCheclbox.Checked = true;
-                if (this.watch.Status.DoNotDisturb.ImageIndexOn >= 0) AddImageONDND.Text = "Edit image ON";
-                if (this.watch.Status.DoNotDisturb.ImageIndexOff >= 0) AddImageOFFDND.Text = "Edit image OFF";
+                if (this.watch.Status.DoNotDisturb.ImageIndexOn >= 0) AddImageONDND.Text = res.GetString("EditImageOn");
+                if (this.watch.Status.DoNotDisturb.ImageIndexOff >= 0) AddImageOFFDND.Text = res.GetString("EditImageOff");
                 posXDND.Value = this.watch.Status.DoNotDisturb.Coordinates.X;
                 posYDND.Value = this.watch.Status.DoNotDisturb.Coordinates.Y;
                 if (this.watch.Status.DoNotDisturb.ImageIndexOn >= 0 || this.watch.Status.DoNotDisturb.ImageIndexOff >= 0)
@@ -131,7 +132,7 @@ namespace MiBand5WatchFaces.Forms
                         watch.Status.Bluetooth = watch.Status.Bluetooth == null ? new Switch() : watch.Status.Bluetooth;
                         watch.Status.Bluetooth.Coordinates = watch.Status.Bluetooth.Coordinates == null ? new Coordinates() : watch.Status.Bluetooth.Coordinates;
                         watch.Status.Bluetooth.ImageIndexOn = imgForm.selectedImages[0];
-                        AddImageONBluetooth.Text = "Edit image ON";
+                        AddImageONBluetooth.Text = res.GetString("EditImageOn");
                         posXBluetooth.Enabled = true;
                         posYBluetooth.Enabled = true;
                     }
@@ -139,7 +140,7 @@ namespace MiBand5WatchFaces.Forms
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.Bluetooth.ImageIndexOn = -10000;
-                        AddImageONBluetooth.Text = "Add image ON";
+                        AddImageONBluetooth.Text = res.GetString("AddImageOn");
                     }
                 }
                 else if (btn.Name == AddImageOFFBluetooth.Name)
@@ -155,7 +156,7 @@ namespace MiBand5WatchFaces.Forms
                         watch.Status.Bluetooth = watch.Status.Bluetooth == null ? new Switch() : watch.Status.Bluetooth;
                         watch.Status.Bluetooth.Coordinates = watch.Status.Bluetooth.Coordinates == null ? new Coordinates() : watch.Status.Bluetooth.Coordinates;
                         watch.Status.Bluetooth.ImageIndexOff = imgForm.selectedImages[0];
-                        AddImageOFFBluetooth.Text = "Edit image OFF";
+                        AddImageOFFBluetooth.Text = res.GetString("EditImageOff");
                         posXBluetooth.Enabled = true;
                         posYBluetooth.Enabled = true;
                     }
@@ -163,14 +164,14 @@ namespace MiBand5WatchFaces.Forms
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.Bluetooth.ImageIndexOff = -10000;
-                        AddImageOFFBluetooth.Text = "Add image OFF";
+                        AddImageOFFBluetooth.Text = res.GetString("AddImageOff");
                     }
                 }
 
                 if (watch.Status.Bluetooth != null && watch.Status.Bluetooth.ImageIndexOn == -10000 && watch.Status.Bluetooth.ImageIndexOff == -10000)
                 {
-                    AddImageOFFBluetooth.Text = "Add image OFF";
-                    AddImageONBluetooth.Text = "Add image ON";
+                    AddImageOFFBluetooth.Text = res.GetString("AddImageOff");
+                    AddImageONBluetooth.Text = res.GetString("AddImageOn");
                     posXBluetooth.Enabled = false;
                     posYBluetooth.Enabled = false;
                     watch.Status.Bluetooth = null;
@@ -191,7 +192,7 @@ namespace MiBand5WatchFaces.Forms
                         watch.Status.Lock = watch.Status.Lock == null ? new Switch() : watch.Status.Lock;
                         watch.Status.Lock.Coordinates = watch.Status.Lock.Coordinates == null ? new Coordinates() : watch.Status.Lock.Coordinates;
                         watch.Status.Lock.ImageIndexOn = imgForm.selectedImages[0];
-                        AddImageONLock.Text = "Edit image ON";
+                        AddImageONLock.Text = res.GetString("EditImageOn");
                         posXLock.Enabled = true;
                         posYLock.Enabled = true;
                     }
@@ -199,7 +200,7 @@ namespace MiBand5WatchFaces.Forms
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.Lock.ImageIndexOn = -10000;
-                        AddImageONLock.Text = "Add image ON";
+                        AddImageONLock.Text = res.GetString("AddImageOn");
                     }
                 }
                 else if (btn.Name == AddImageOFFLock.Name)
@@ -215,7 +216,7 @@ namespace MiBand5WatchFaces.Forms
                         watch.Status.Lock = watch.Status.Lock == null ? new Switch() : watch.Status.Lock;
                         watch.Status.Lock.Coordinates = watch.Status.Lock.Coordinates == null ? new Coordinates() : watch.Status.Lock.Coordinates;
                         watch.Status.Lock.ImageIndexOff = imgForm.selectedImages[0];
-                        AddImageOFFLock.Text = "Edit image OFF";
+                        AddImageOFFLock.Text = res.GetString("EditImageOff");
                         posXLock.Enabled = true;
                         posYLock.Enabled = true;
                     }
@@ -223,14 +224,14 @@ namespace MiBand5WatchFaces.Forms
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.Lock.ImageIndexOff = -10000;
-                        AddImageOFFLock.Text = "Add image OFF";
+                        AddImageOFFLock.Text = res.GetString("AddImageOff");
                     }
                 }
 
                 if (watch.Status.Lock != null && watch.Status.Lock.ImageIndexOn == -10000 && watch.Status.Lock.ImageIndexOff == -10000)
                 {
-                    AddImageOFFLock.Text = "Add image OFF";
-                    AddImageONLock.Text = "Add image ON";
+                    AddImageOFFLock.Text = res.GetString("AddImageOff");
+                    AddImageONLock.Text = res.GetString("AddImageOn");
                     posXLock.Enabled = false;
                     posYLock.Enabled = false;
                     watch.Status.Lock = null;
@@ -251,7 +252,7 @@ namespace MiBand5WatchFaces.Forms
                         watch.Status.DoNotDisturb = watch.Status.DoNotDisturb == null ? new Switch() : watch.Status.DoNotDisturb;
                         watch.Status.DoNotDisturb.Coordinates = watch.Status.DoNotDisturb.Coordinates == null ? new Coordinates() : watch.Status.DoNotDisturb.Coordinates;
                         watch.Status.DoNotDisturb.ImageIndexOn = imgForm.selectedImages[0];
-                        AddImageONDND.Text = "Edit image ON";
+                        AddImageONDND.Text = res.GetString("EditImageOn");
                         posXDND.Enabled = true;
                         posYDND.Enabled = true;
                     }
@@ -259,7 +260,7 @@ namespace MiBand5WatchFaces.Forms
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.DoNotDisturb.ImageIndexOn = -10000;
-                        AddImageONDND.Text = "Add image ON";
+                        AddImageONDND.Text = res.GetString("AddImageOn");
                     }
                 }
                 else if (btn.Name == AddImageOFFDND.Name)
@@ -275,7 +276,7 @@ namespace MiBand5WatchFaces.Forms
                         watch.Status.DoNotDisturb = watch.Status.DoNotDisturb == null ? new Switch() : watch.Status.DoNotDisturb;
                         watch.Status.DoNotDisturb.Coordinates = watch.Status.DoNotDisturb.Coordinates == null ? new Coordinates() : watch.Status.DoNotDisturb.Coordinates;
                         watch.Status.DoNotDisturb.ImageIndexOff = imgForm.selectedImages[0];
-                        AddImageOFFDND.Text = "Edit image OFF";
+                        AddImageOFFDND.Text = res.GetString("EditImageOff");
                         posXDND.Enabled = true;
                         posYDND.Enabled = true;
                     }
@@ -283,14 +284,14 @@ namespace MiBand5WatchFaces.Forms
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.DoNotDisturb.ImageIndexOff = -10000;
-                        AddImageOFFDND.Text = "Add image OFF";
+                        AddImageOFFDND.Text = res.GetString("AddImageOff");
                     }
                 }
 
                 if (watch.Status.DoNotDisturb != null && watch.Status.DoNotDisturb.ImageIndexOn == -10000 && watch.Status.DoNotDisturb.ImageIndexOff == -10000)
                 {
-                    AddImageOFFDND.Text = "Add image OFF";
-                    AddImageONDND.Text = "Add image ON";
+                    AddImageOFFDND.Text = res.GetString("AddImageOff");
+                    AddImageONDND.Text = res.GetString("AddImageOn");
                     posXDND.Enabled = false;
                     posYDND.Enabled = false;
                     watch.Status.DoNotDisturb = null;
@@ -318,7 +319,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (watch.Status.Bluetooth != null)

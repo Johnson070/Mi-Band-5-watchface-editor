@@ -14,6 +14,7 @@ namespace MiBand5WatchFaces.Forms
     public partial class ActivityForm : Form
     {
         public WatchFaceLibrary watch;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         StateWatchface state;
         VisualRender render;
@@ -51,47 +52,47 @@ namespace MiBand5WatchFaces.Forms
 
             if (watch.Activity?.Steps?.Number != null)
             {
-                addStepsButton.Text = "Edit steps";
+                addStepsButton.Text = res.GetString("EditSteps");
                 addPreffixStepsButton.Enabled = true;
                 addSuffixStepsButton.Enabled = true;
-                if (watch.Activity.Steps.PrefixImageIndex >= 0) addPreffixStepsButton.Text = "Edit preffix";
-                if (watch.Activity.Steps.SuffixImageIndex >= 0) addSuffixStepsButton.Text = "Edit suffix";
+                if (watch.Activity.Steps.PrefixImageIndex >= 0) addPreffixStepsButton.Text = res.GetString("EditPrefix");
+                if (watch.Activity.Steps.SuffixImageIndex >= 0) addSuffixStepsButton.Text = res.GetString("EditSuffix");
             }
             if (watch.Activity?.Calories?.Text != null)
             {
-                addCaloriesButton.Text = "Edit calories";
+                addCaloriesButton.Text = res.GetString("EditCalories");
                 addPreffixCaloriesButton.Enabled = true;
                 addSuffixCaloriesButton.Enabled = true;
-                if (watch.Activity.Calories.PrefixImageIndex >= 0) addPreffixCaloriesButton.Text = "Edit preffix";
-                if (watch.Activity.Calories.SuffixImageIndex >= 0) addSuffixCaloriesButton.Text = "Edit suffix";
+                if (watch.Activity.Calories.PrefixImageIndex >= 0) addPreffixCaloriesButton.Text = res.GetString("EditPrefix");
+                if (watch.Activity.Calories.SuffixImageIndex >= 0) addSuffixCaloriesButton.Text = res.GetString("EditSuffix");
             }
             if (watch.Activity?.Pulse?.Number != null)
             {
-                addPulseButton.Text = "Edit pulse";
+                addPulseButton.Text = res.GetString("EditPulse");
                 addPreffixPulseButton.Enabled = true;
                 addSuffixPulseButton.Enabled = true;
                 addNoDataPulseButton.Enabled = true;
-                if (watch.Activity.Pulse.PrefixImageIndex >= 0) addPreffixPulseButton.Text = "Edit preffix";
-                if (watch.Activity.Pulse.SuffixImageIndex >= 0) addSuffixPulseButton.Text = "Edit suffix";
-                if (watch.Activity.Pulse.NoDataImageIndex >= 0) addNoDataPulseButton.Text = "Edit no data";
+                if (watch.Activity.Pulse.PrefixImageIndex >= 0) addPreffixPulseButton.Text = res.GetString("EditPrefix");
+                if (watch.Activity.Pulse.SuffixImageIndex >= 0) addSuffixPulseButton.Text = res.GetString("EditSuffix");
+                if (watch.Activity.Pulse.NoDataImageIndex >= 0) addNoDataPulseButton.Text = res.GetString("EditNoData");
             }
             if (watch.Activity?.Distance?.Number != null)
             {
-                addDistanceButton.Text = "Edit distance";
+                addDistanceButton.Text = res.GetString("EditDistance");
                 addKmDistanceSuffixButton.Enabled = true;
                 addDecimalDistanceButton.Enabled = true;
                 addMiDistanceSuffixButton.Enabled = true;
                 addKmImageButton.Enabled = true;
                 addMiImageButton.Enabled = true;
-                if (watch.Activity.Distance.KmSuffixImageIndex >= 0) addKmDistanceSuffixButton.Text = "Edit KM suffix";
-                if (watch.Activity.Distance.DecimalPointImageIndex>= 0) addDecimalDistanceButton.Text = "Edit decimal point";
-                if (watch.Activity.Distance.MilesSuffixImageIndex >= 0) addMiDistanceSuffixButton.Text = "Edit MI suffix";
-                if (watch.Activity.Distance.MilesImageIndex != null) addMiImageButton.Text = "Edit MI image";
-                if (watch.Activity.Distance.KmImageIndex != null) addKmImageButton.Text = "Edit KM image";
+                if (watch.Activity.Distance.KmSuffixImageIndex >= 0) addKmDistanceSuffixButton.Text = res.GetString("EditKMSuffix");
+                if (watch.Activity.Distance.DecimalPointImageIndex>= 0) addDecimalDistanceButton.Text = res.GetString("EditDecimalPoint");
+                if (watch.Activity.Distance.MilesSuffixImageIndex >= 0) addMiDistanceSuffixButton.Text = res.GetString("EditMISuffix");
+                if (watch.Activity.Distance.MilesImageIndex != null) addMiImageButton.Text = res.GetString("EditMIImage");
+                if (watch.Activity.Distance.KmImageIndex != null) addKmImageButton.Text = res.GetString("EditKMImage");
             }
             if (watch.Activity?.PAI?.Number != null)
             {
-                addPAIButton.Text = "Edit PAI";
+                addPAIButton.Text = res.GetString("EditPAI");
             }
         }
 
@@ -121,7 +122,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Activity.Steps = numForm.watch.Activity.Steps;
                     watch.Activity.Steps.Number = numForm.number;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addStepsButton.Text = "Edit steps";
+                    addStepsButton.Text = res.GetString("EditSteps");
                     addPreffixStepsButton.Enabled = true;
                     addSuffixStepsButton.Enabled = true;
                 }
@@ -129,9 +130,9 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.Activity.Steps = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addStepsButton.Text = "Add steps";
-                    addPreffixStepsButton.Text = "Add preffix";
-                    addSuffixStepsButton.Text = "Add suffix";
+                    addStepsButton.Text = res.GetString("AddSteps");
+                    addPreffixStepsButton.Text = res.GetString("AddPrefix");
+                    addSuffixStepsButton.Text = res.GetString("AddSuffix");
                     addPreffixStepsButton.Enabled = false;
                     addSuffixStepsButton.Enabled = false;
                 }
@@ -148,7 +149,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Activity.Calories = numForm.watch.Activity.Calories;
                     watch.Activity.Calories.Text = numForm.number;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addCaloriesButton.Text = "Edit calories";
+                    addCaloriesButton.Text = res.GetString("EditCalories");
                     addPreffixCaloriesButton.Enabled = true;
                     addSuffixCaloriesButton.Enabled = true;
                 }
@@ -156,9 +157,9 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.Activity.Calories = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addCaloriesButton.Text = "Add calories";
-                    addPreffixCaloriesButton.Text = "Add preffix";
-                    addSuffixCaloriesButton.Text = "Add suffix";
+                    addCaloriesButton.Text = res.GetString("AddCalories");
+                    addPreffixCaloriesButton.Text = res.GetString("AddPrefix");
+                    addSuffixCaloriesButton.Text = res.GetString("AddSuffix");
                     addPreffixCaloriesButton.Enabled = false;
                     addSuffixCaloriesButton.Enabled = false;
                 }
@@ -175,7 +176,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Activity.Pulse = numForm.watch.Activity.Pulse;
                     watch.Activity.Pulse.Number = numForm.number;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addPulseButton.Text = "Edit pulse";
+                    addPulseButton.Text = res.GetString("EditPulse");
                     addPreffixPulseButton.Enabled = true;
                     addSuffixPulseButton.Enabled = true;
                     addNoDataPulseButton.Enabled = true;
@@ -184,9 +185,9 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.Activity.Pulse = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addPulseButton.Text = "Add pulse";
-                    addPreffixPulseButton.Text = "Add preffix";
-                    addSuffixPulseButton.Text = "Add suffix";
+                    addPulseButton.Text = res.GetString("AddPulse");
+                    addPreffixPulseButton.Text = res.GetString("AddPrefix");
+                    addSuffixPulseButton.Text = res.GetString("AddSuffix");
                     addPreffixPulseButton.Enabled = false;
                     addSuffixPulseButton.Enabled = false;
                     addNoDataPulseButton.Enabled = false;
@@ -204,13 +205,13 @@ namespace MiBand5WatchFaces.Forms
                     watch.Activity.PAI = numForm.watch.Activity.PAI;
                     watch.Activity.PAI.Number = numForm.number;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addPAIButton.Text = "Edit PAI";
+                    addPAIButton.Text = res.GetString("EditPAI");
                 }
                 else if (numForm.delete)
                 {
                     watch.Activity.PAI = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addPAIButton.Text = "Add PAI";
+                    addPAIButton.Text = res.GetString("AddPAI");
                 }
             }
             else if (btn.Name == addDistanceButton.Name)
@@ -225,7 +226,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Activity.Distance = numForm.watch.Activity.Distance;
                     watch.Activity.Distance.Number = numForm.number;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addDistanceButton.Text = "Edit distance";
+                    addDistanceButton.Text = res.GetString("EditDistance");
                     addKmDistanceSuffixButton.Enabled = true;
                     addDecimalDistanceButton.Enabled = true;
                     addMiDistanceSuffixButton.Enabled = true;
@@ -236,12 +237,12 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.Activity.Distance = null;
                     watch.imagesBuff = numForm.watch.imagesBuff;
-                    addDistanceButton.Text = "Add distance";
-                    addKmDistanceSuffixButton.Text = "Add KM suffix";
-                    addDecimalDistanceButton.Text = "Add decimal point";
-                    addMiDistanceSuffixButton.Text = "Add MI suffix";
-                    addKmImageButton.Text = "Add KM image";
-                    addMiImageButton.Text = "Add MI image";
+                    addDistanceButton.Text = res.GetString("AddDistance");
+                    addKmDistanceSuffixButton.Text = res.GetString("AddKMSuffix");
+                    addDecimalDistanceButton.Text = res.GetString("AddDecimalPoint");
+                    addMiDistanceSuffixButton.Text = res.GetString("AddMISuffix");
+                    addKmImageButton.Text = res.GetString("AddKMImage");
+                    addMiImageButton.Text = res.GetString("AddMIImage");
                     addKmDistanceSuffixButton.Enabled = false;
                     addDecimalDistanceButton.Enabled = false;
                     addMiDistanceSuffixButton.Enabled = false;
@@ -270,13 +271,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Steps.PrefixImageIndex = imgForm.selectedImages[0];
-                    addPreffixStepsButton.Text = "Edit preffix";
+                    addPreffixStepsButton.Text = res.GetString("EditPrefix");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Steps.PrefixImageIndex = -10000;
-                    addPreffixStepsButton.Text = "Add preffix";
+                    addPreffixStepsButton.Text = res.GetString("AddPrefix");
                 }
             }
             else if (btn.Name == addPreffixCaloriesButton.Name)
@@ -290,13 +291,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Calories.PrefixImageIndex = imgForm.selectedImages[0];
-                    addPreffixCaloriesButton.Text = "Edit preffix";
+                    addPreffixCaloriesButton.Text = res.GetString("EditPrefix");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Calories.PrefixImageIndex = -10000;
-                    addPreffixCaloriesButton.Text = "Add preffix";
+                    addPreffixCaloriesButton.Text = res.GetString("AddPrefix");
                 }
             }
             else if (btn.Name == addPreffixPulseButton.Name)
@@ -310,13 +311,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Pulse.PrefixImageIndex = imgForm.selectedImages[0];
-                    addPreffixPulseButton.Text = "Edit preffix";
+                    addPreffixPulseButton.Text = res.GetString("EditPrefix");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Pulse.PrefixImageIndex = -10000;
-                    addPreffixPulseButton.Text = "Add preffix";
+                    addPreffixPulseButton.Text = res.GetString("AddPrefix");
                 }
             }
 
@@ -340,13 +341,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Steps.SuffixImageIndex = imgForm.selectedImages[0];
-                    addSuffixCaloriesButton.Text = "Edit suffix";
+                    addSuffixCaloriesButton.Text = res.GetString("EditSuffix");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Steps.SuffixImageIndex = -10000;
-                    addSuffixCaloriesButton.Text = "Add suffix";
+                    addSuffixCaloriesButton.Text = res.GetString("AddSuffix");
                 }
             }
             else if (btn.Name == addSuffixCaloriesButton.Name)
@@ -360,13 +361,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Calories.SuffixImageIndex = imgForm.selectedImages[0];
-                    addSuffixCaloriesButton.Text = "Edit suffix";
+                    addSuffixCaloriesButton.Text = res.GetString("EditSuffix");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Calories.SuffixImageIndex = -10000;
-                    addSuffixCaloriesButton.Text = "Add suffix";
+                    addSuffixCaloriesButton.Text = res.GetString("AddSuffix");
                 }
             }
             else if (btn.Name == addSuffixPulseButton.Name)
@@ -380,13 +381,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Pulse.SuffixImageIndex = imgForm.selectedImages[0];
-                    addSuffixPulseButton.Text = "Edit suffix";
+                    addSuffixPulseButton.Text = res.GetString("EditSuffix");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Pulse.SuffixImageIndex = -10000;
-                    addSuffixPulseButton.Text = "Add suffix";
+                    addSuffixPulseButton.Text = res.GetString("AddSuffix");
                 }
             }
             else if (btn.Name == addNoDataPulseButton.Name)
@@ -400,13 +401,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Pulse.NoDataImageIndex = imgForm.selectedImages[0];
-                    addNoDataPulseButton.Text = "Edit no data";
+                    addNoDataPulseButton.Text = res.GetString("EditNoData");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Pulse.NoDataImageIndex = -10000;
-                    addNoDataPulseButton.Text = "Add no data";
+                    addNoDataPulseButton.Text = res.GetString("AddNoData");
                 }
             }
             else if (btn.Name == addKmDistanceSuffixButton.Name)
@@ -420,13 +421,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Distance.KmSuffixImageIndex = imgForm.selectedImages[0];
-                    addKmDistanceSuffixButton.Text = "Edit KM Suffix";
+                    addKmDistanceSuffixButton.Text = res.GetString("EditKMSuffix");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Distance.KmSuffixImageIndex = -10000;
-                    addKmDistanceSuffixButton.Text = "Add KM Suffix";
+                    addKmDistanceSuffixButton.Text = res.GetString("AddKMSuffix");
                 }
             }
             else if (btn.Name == addMiDistanceSuffixButton.Name)
@@ -440,13 +441,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Distance.MilesSuffixImageIndex = imgForm.selectedImages[0];
-                    addMiDistanceSuffixButton.Text = "Edit MI Suffix";
+                    addMiDistanceSuffixButton.Text = res.GetString("EditMISuffix");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Distance.MilesSuffixImageIndex = -10000;
-                    addMiDistanceSuffixButton.Text = "Add MI Suffix";
+                    addMiDistanceSuffixButton.Text = res.GetString("AddMISuffix");
                 }
             }
             else if (btn.Name == addDecimalDistanceButton.Name)
@@ -460,13 +461,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Distance.DecimalPointImageIndex = imgForm.selectedImages[0];
-                    addDecimalDistanceButton.Text = "Edit decimal point";
+                    addDecimalDistanceButton.Text = res.GetString("EditDecimalPoint");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Distance.DecimalPointImageIndex = -10000;
-                    addDecimalDistanceButton.Text = "Add decimal point";
+                    addDecimalDistanceButton.Text = res.GetString("AddDecimalPoint");
                 }
             }
 
@@ -487,13 +488,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    addKmImageButton.Text = "Edit KM image";
+                    addKmImageButton.Text = res.GetString("EditKMImage");
                     watch.Activity.Distance.KmImageIndex = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    addKmImageButton.Text = "Add KM image";
+                    addKmImageButton.Text = res.GetString("AddKMImage");
                     watch.Activity.Distance.KmImageIndex = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -508,13 +509,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    addMiImageButton.Text = "Edit MI image";
+                    addMiImageButton.Text = res.GetString("EditMIImage");
                     watch.Activity.Distance.MilesImageIndex = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    addMiImageButton.Text = "Add MI image";
+                    addMiImageButton.Text = res.GetString("AddMIImage");
                     watch.Activity.Distance.MilesImageIndex = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -538,7 +539,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void ActivityForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (stepsCheckBox.Checked == false) watch.Activity.Steps = null;

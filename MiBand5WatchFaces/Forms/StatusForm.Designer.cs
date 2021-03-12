@@ -77,69 +77,46 @@ namespace MiBand5WatchFaces.Forms
             this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Controls.Add(this.tabPage2);
             this.tabs.Controls.Add(this.tabPage3);
-            this.tabs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabs.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.tabs, "tabs");
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
-            this.tabs.Size = new System.Drawing.Size(450, 294);
-            this.tabs.TabIndex = 0;
             // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.bluetoothCheckbox);
             this.tabPage1.Controls.Add(this.groupBox3);
-            this.tabPage1.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(442, 263);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Bluetooth";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // bluetoothCheckbox
             // 
-            this.bluetoothCheckbox.AutoSize = true;
-            this.bluetoothCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.bluetoothCheckbox, "bluetoothCheckbox");
             this.bluetoothCheckbox.Name = "bluetoothCheckbox";
-            this.bluetoothCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.bluetoothCheckbox.TabIndex = 9;
             this.bluetoothCheckbox.UseVisualStyleBackColor = true;
             this.bluetoothCheckbox.CheckedChanged += new System.EventHandler(this.CheckChangedCheckBox);
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.AddImageOFFBluetooth);
             this.groupBox3.Controls.Add(this.posYBluetooth);
             this.groupBox3.Controls.Add(this.posXBluetooth);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.AddImageONBluetooth);
-            this.groupBox3.Enabled = false;
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(430, 251);
-            this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "     ";
             // 
             // AddImageOFFBluetooth
             // 
-            this.AddImageOFFBluetooth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddImageOFFBluetooth.Location = new System.Drawing.Point(6, 73);
+            resources.ApplyResources(this.AddImageOFFBluetooth, "AddImageOFFBluetooth");
             this.AddImageOFFBluetooth.Name = "AddImageOFFBluetooth";
-            this.AddImageOFFBluetooth.Size = new System.Drawing.Size(414, 44);
-            this.AddImageOFFBluetooth.TabIndex = 21;
-            this.AddImageOFFBluetooth.Text = "Add image OFF";
             this.AddImageOFFBluetooth.UseVisualStyleBackColor = true;
             this.AddImageOFFBluetooth.Click += new System.EventHandler(this.AddImageClick);
             // 
             // posYBluetooth
             // 
-            this.posYBluetooth.Enabled = false;
-            this.posYBluetooth.Location = new System.Drawing.Point(143, 123);
+            resources.ApplyResources(this.posYBluetooth, "posYBluetooth");
             this.posYBluetooth.Maximum = new decimal(new int[] {
             500,
             0,
@@ -151,14 +128,11 @@ namespace MiBand5WatchFaces.Forms
             0,
             -2147483648});
             this.posYBluetooth.Name = "posYBluetooth";
-            this.posYBluetooth.Size = new System.Drawing.Size(49, 24);
-            this.posYBluetooth.TabIndex = 20;
             this.posYBluetooth.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // posXBluetooth
             // 
-            this.posXBluetooth.Enabled = false;
-            this.posXBluetooth.Location = new System.Drawing.Point(86, 123);
+            resources.ApplyResources(this.posXBluetooth, "posXBluetooth");
             this.posXBluetooth.Maximum = new decimal(new int[] {
             500,
             0,
@@ -170,28 +144,17 @@ namespace MiBand5WatchFaces.Forms
             0,
             -2147483648});
             this.posXBluetooth.Name = "posXBluetooth";
-            this.posXBluetooth.Size = new System.Drawing.Size(49, 24);
-            this.posXBluetooth.TabIndex = 19;
             this.posXBluetooth.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 125);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 18);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Position:";
             // 
             // AddImageONBluetooth
             // 
-            this.AddImageONBluetooth.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddImageONBluetooth.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddImageONBluetooth, "AddImageONBluetooth");
             this.AddImageONBluetooth.Name = "AddImageONBluetooth";
-            this.AddImageONBluetooth.Size = new System.Drawing.Size(414, 44);
-            this.AddImageONBluetooth.TabIndex = 0;
-            this.AddImageONBluetooth.Text = "Add image ON";
             this.AddImageONBluetooth.UseVisualStyleBackColor = true;
             this.AddImageONBluetooth.Click += new System.EventHandler(this.AddImageClick);
             // 
@@ -199,58 +162,38 @@ namespace MiBand5WatchFaces.Forms
             // 
             this.tabPage2.Controls.Add(this.lockCheckbox);
             this.tabPage2.Controls.Add(this.groupBox1);
-            this.tabPage2.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(442, 263);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Lock";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // lockCheckbox
             // 
-            this.lockCheckbox.AutoSize = true;
-            this.lockCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.lockCheckbox, "lockCheckbox");
             this.lockCheckbox.Name = "lockCheckbox";
-            this.lockCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.lockCheckbox.TabIndex = 11;
             this.lockCheckbox.UseVisualStyleBackColor = true;
             this.lockCheckbox.CheckedChanged += new System.EventHandler(this.CheckChangedCheckBox);
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.AddImageOFFLock);
             this.groupBox1.Controls.Add(this.posYLock);
             this.groupBox1.Controls.Add(this.posXLock);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.AddImageONLock);
-            this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(430, 251);
-            this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "     ";
             // 
             // AddImageOFFLock
             // 
-            this.AddImageOFFLock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddImageOFFLock.Location = new System.Drawing.Point(6, 73);
+            resources.ApplyResources(this.AddImageOFFLock, "AddImageOFFLock");
             this.AddImageOFFLock.Name = "AddImageOFFLock";
-            this.AddImageOFFLock.Size = new System.Drawing.Size(414, 44);
-            this.AddImageOFFLock.TabIndex = 21;
-            this.AddImageOFFLock.Text = "Add image OFF";
             this.AddImageOFFLock.UseVisualStyleBackColor = true;
             this.AddImageOFFLock.Click += new System.EventHandler(this.AddImageClick);
             // 
             // posYLock
             // 
-            this.posYLock.Enabled = false;
-            this.posYLock.Location = new System.Drawing.Point(143, 123);
+            resources.ApplyResources(this.posYLock, "posYLock");
             this.posYLock.Maximum = new decimal(new int[] {
             500,
             0,
@@ -262,14 +205,11 @@ namespace MiBand5WatchFaces.Forms
             0,
             -2147483648});
             this.posYLock.Name = "posYLock";
-            this.posYLock.Size = new System.Drawing.Size(49, 24);
-            this.posYLock.TabIndex = 20;
             this.posYLock.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // posXLock
             // 
-            this.posXLock.Enabled = false;
-            this.posXLock.Location = new System.Drawing.Point(86, 123);
+            resources.ApplyResources(this.posXLock, "posXLock");
             this.posXLock.Maximum = new decimal(new int[] {
             500,
             0,
@@ -281,28 +221,17 @@ namespace MiBand5WatchFaces.Forms
             0,
             -2147483648});
             this.posXLock.Name = "posXLock";
-            this.posXLock.Size = new System.Drawing.Size(49, 24);
-            this.posXLock.TabIndex = 19;
             this.posXLock.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(4, 125);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(66, 18);
-            this.label1.TabIndex = 18;
-            this.label1.Text = "Position:";
             // 
             // AddImageONLock
             // 
-            this.AddImageONLock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddImageONLock.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddImageONLock, "AddImageONLock");
             this.AddImageONLock.Name = "AddImageONLock";
-            this.AddImageONLock.Size = new System.Drawing.Size(414, 44);
-            this.AddImageONLock.TabIndex = 0;
-            this.AddImageONLock.Text = "Add image ON";
             this.AddImageONLock.UseVisualStyleBackColor = true;
             this.AddImageONLock.Click += new System.EventHandler(this.AddImageClick);
             // 
@@ -310,57 +239,38 @@ namespace MiBand5WatchFaces.Forms
             // 
             this.tabPage3.Controls.Add(this.dndCheclbox);
             this.tabPage3.Controls.Add(this.groupBox2);
-            this.tabPage3.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(442, 263);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Do not disturb";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // dndCheclbox
             // 
-            this.dndCheclbox.AutoSize = true;
-            this.dndCheclbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.dndCheclbox, "dndCheclbox");
             this.dndCheclbox.Name = "dndCheclbox";
-            this.dndCheclbox.Size = new System.Drawing.Size(15, 14);
-            this.dndCheclbox.TabIndex = 11;
             this.dndCheclbox.UseVisualStyleBackColor = true;
             this.dndCheclbox.CheckedChanged += new System.EventHandler(this.CheckChangedCheckBox);
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.AddImageOFFDND);
             this.groupBox2.Controls.Add(this.posYDND);
             this.groupBox2.Controls.Add(this.posXDND);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.AddImageONDND);
-            this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(430, 251);
-            this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "     ";
             // 
             // AddImageOFFDND
             // 
-            this.AddImageOFFDND.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddImageOFFDND.Location = new System.Drawing.Point(6, 73);
+            resources.ApplyResources(this.AddImageOFFDND, "AddImageOFFDND");
             this.AddImageOFFDND.Name = "AddImageOFFDND";
-            this.AddImageOFFDND.Size = new System.Drawing.Size(414, 44);
-            this.AddImageOFFDND.TabIndex = 21;
-            this.AddImageOFFDND.Text = "Add image OFF";
             this.AddImageOFFDND.UseVisualStyleBackColor = true;
             this.AddImageOFFDND.Click += new System.EventHandler(this.AddImageClick);
             // 
             // posYDND
             // 
-            this.posYDND.Enabled = false;
-            this.posYDND.Location = new System.Drawing.Point(143, 123);
+            resources.ApplyResources(this.posYDND, "posYDND");
             this.posYDND.Maximum = new decimal(new int[] {
             500,
             0,
@@ -372,14 +282,11 @@ namespace MiBand5WatchFaces.Forms
             0,
             -2147483648});
             this.posYDND.Name = "posYDND";
-            this.posYDND.Size = new System.Drawing.Size(49, 24);
-            this.posYDND.TabIndex = 20;
             this.posYDND.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // posXDND
             // 
-            this.posXDND.Enabled = false;
-            this.posXDND.Location = new System.Drawing.Point(86, 123);
+            resources.ApplyResources(this.posXDND, "posXDND");
             this.posXDND.Maximum = new decimal(new int[] {
             500,
             0,
@@ -391,63 +298,42 @@ namespace MiBand5WatchFaces.Forms
             0,
             -2147483648});
             this.posXDND.Name = "posXDND";
-            this.posXDND.Size = new System.Drawing.Size(49, 24);
-            this.posXDND.TabIndex = 19;
             this.posXDND.ValueChanged += new System.EventHandler(this.ChangePosValue);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(4, 125);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 18);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Position:";
             // 
             // AddImageONDND
             // 
-            this.AddImageONDND.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.AddImageONDND.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddImageONDND, "AddImageONDND");
             this.AddImageONDND.Name = "AddImageONDND";
-            this.AddImageONDND.Size = new System.Drawing.Size(414, 44);
-            this.AddImageONDND.TabIndex = 0;
-            this.AddImageONDND.Text = "Add image ON";
             this.AddImageONDND.UseVisualStyleBackColor = true;
             this.AddImageONDND.Click += new System.EventHandler(this.AddImageClick);
             // 
             // ImagePic
             // 
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ImagePic.Location = new System.Drawing.Point(468, 12);
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
-            this.ImagePic.Size = new System.Drawing.Size(126, 294);
-            this.ImagePic.TabIndex = 14;
             // 
             // saveButton
             // 
-            this.saveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.saveButton.Location = new System.Drawing.Point(16, 312);
+            resources.ApplyResources(this.saveButton, "saveButton");
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(577, 37);
-            this.saveButton.TabIndex = 15;
-            this.saveButton.Text = "Save";
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveBtn_Click);
             // 
             // StatusForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(605, 360);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StatusForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Status";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NumberFormEdit_FormClosing);
             this.tabs.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

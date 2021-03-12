@@ -14,6 +14,7 @@ namespace MiBand5WatchFaces.Forms
     public partial class WeekDaysIconsForm : Form
     {
         public WatchFaceLibrary watch;
+        ComponentResourceManager resources = new ComponentResourceManager(typeof(Resources.Resource1));
 
         StateWatchface state;
         VisualRender render;
@@ -43,13 +44,13 @@ namespace MiBand5WatchFaces.Forms
             this.watch.WeekDaysIcons = this.watch.WeekDaysIcons == null ? new WeekDaysIcons() : this.watch.WeekDaysIcons;
             Render(state);
 
-            if (watch.WeekDaysIcons.Monday != null) mondayButton.Text = "Edit monday image";
-            if (watch.WeekDaysIcons.Tuesday != null) tuesdayButton.Text = "Edit tuesday image";
-            if (watch.WeekDaysIcons.Wednesday != null) wednesdayButton.Text = "Edit wednesday image";
-            if (watch.WeekDaysIcons.Thursday != null) thursdayButton.Text = "Edit thursday image";
-            if (watch.WeekDaysIcons.Friday != null) fridayButton.Text = "Edit friday image";
-            if (watch.WeekDaysIcons.Saturday != null) saturdayButton.Text = "Edit saturday image";
-            if (watch.WeekDaysIcons.Sunday != null) sundayButton.Text = "Edit sunday image";
+            if (watch.WeekDaysIcons.Monday != null) mondayButton.Text = resources.GetString("EditMondayImage");
+            if (watch.WeekDaysIcons.Tuesday != null) tuesdayButton.Text = resources.GetString("EditTuesdayImage");
+            if (watch.WeekDaysIcons.Wednesday != null) wednesdayButton.Text = resources.GetString("EditWednesdayImage");
+            if (watch.WeekDaysIcons.Thursday != null) thursdayButton.Text = resources.GetString("EditThursdayImage");
+            if (watch.WeekDaysIcons.Friday != null) fridayButton.Text = resources.GetString("EditFridayImage");
+            if (watch.WeekDaysIcons.Saturday != null) saturdayButton.Text = resources.GetString("EditSaturdayImage");
+            if (watch.WeekDaysIcons.Sunday != null) sundayButton.Text = resources.GetString("EditSundayImage");
         }
 
         private void weekDayClick(object sender, EventArgs e)
@@ -66,13 +67,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    mondayButton.Text = "Edit monday image";
+                    mondayButton.Text = resources.GetString("EditMondayImage");
                     watch.WeekDaysIcons.Monday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    mondayButton.Text = "Add monday image";
+                    mondayButton.Text = resources.GetString("AddMondayImage");
                     watch.WeekDaysIcons.Monday = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -87,13 +88,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    tuesdayButton.Text = "Edit tuesday image";
+                    tuesdayButton.Text = resources.GetString("EditTuesdayImage");
                     watch.WeekDaysIcons.Tuesday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    tuesdayButton.Text = "Add tuesday image";
+                    tuesdayButton.Text = resources.GetString("AddTuesdayImage");
                     watch.WeekDaysIcons.Tuesday = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -108,13 +109,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    wednesdayButton.Text = "Edit wednesday image";
+                    wednesdayButton.Text = resources.GetString("EditWednesdayImage");
                     watch.WeekDaysIcons.Wednesday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    wednesdayButton.Text = "Add wednesday image";
+                    wednesdayButton.Text = resources.GetString("AddWednesdayImage");
                     watch.WeekDaysIcons.Wednesday = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -129,13 +130,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    thursdayButton.Text = "Edit thursday image";
+                    thursdayButton.Text = resources.GetString("EditThursdayImage");
                     watch.WeekDaysIcons.Thursday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    thursdayButton.Text = "Add thursday image";
+                    thursdayButton.Text = resources.GetString("AddThursdayImage");
                     watch.WeekDaysIcons.Thursday = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -150,13 +151,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    fridayButton.Text = "Edit friday image";
+                    fridayButton.Text = resources.GetString("EditFridayImage");
                     watch.WeekDaysIcons.Friday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    fridayButton.Text = "Add friday image";
+                    fridayButton.Text = resources.GetString("AddFridayImage");
                     watch.WeekDaysIcons.Friday = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -171,13 +172,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    saturdayButton.Text = "Edit saturday image";
+                    saturdayButton.Text = resources.GetString("EditSaturdayImage");
                     watch.WeekDaysIcons.Saturday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    saturdayButton.Text = "Add saturday image";
+                    saturdayButton.Text = resources.GetString("AddSaturdayImage");
                     watch.WeekDaysIcons.Saturday = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -192,13 +193,13 @@ namespace MiBand5WatchFaces.Forms
 
                 if (ibForm.saved)
                 {
-                    sundayButton.Text = "Edit sunday image";
+                    sundayButton.Text = resources.GetString("EditSundayImage");
                     watch.WeekDaysIcons.Sunday = ibForm.imageBasic;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
                 else if (ibForm.delete)
                 {
-                    sundayButton.Text = "Add sunday image";
+                    sundayButton.Text = resources.GetString("AddSundayImage");
                     watch.WeekDaysIcons.Sunday = null;
                     watch.imagesBuff = ibForm.watch.imagesBuff;
                 }
@@ -224,7 +225,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void WeekDaysIconsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Do you want to get out without saving?", "Don't Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
 

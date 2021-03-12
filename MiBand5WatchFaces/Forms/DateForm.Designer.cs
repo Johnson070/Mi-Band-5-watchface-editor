@@ -87,132 +87,88 @@
             this.tabControl1.Controls.Add(this.MonthDayYearTab);
             this.tabControl1.Controls.Add(this.AmPmTab);
             this.tabControl1.Controls.Add(this.WeekDaysTab);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(387, 300);
-            this.tabControl1.TabIndex = 0;
             // 
             // MonthDayYearTab
             // 
             this.MonthDayYearTab.Controls.Add(this.TwoDigitsDayCheckbox);
             this.MonthDayYearTab.Controls.Add(this.TwoDigitsMonthCheckbox);
             this.MonthDayYearTab.Controls.Add(this.tabControl2);
-            this.MonthDayYearTab.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.MonthDayYearTab, "MonthDayYearTab");
             this.MonthDayYearTab.Name = "MonthDayYearTab";
-            this.MonthDayYearTab.Padding = new System.Windows.Forms.Padding(3);
-            this.MonthDayYearTab.Size = new System.Drawing.Size(379, 269);
-            this.MonthDayYearTab.TabIndex = 0;
-            this.MonthDayYearTab.Text = "Month Day Year";
             this.MonthDayYearTab.UseVisualStyleBackColor = true;
             // 
             // TwoDigitsDayCheckbox
             // 
-            this.TwoDigitsDayCheckbox.AutoSize = true;
+            resources.ApplyResources(this.TwoDigitsDayCheckbox, "TwoDigitsDayCheckbox");
             this.TwoDigitsDayCheckbox.Checked = true;
             this.TwoDigitsDayCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.TwoDigitsDayCheckbox.Enabled = false;
-            this.TwoDigitsDayCheckbox.Location = new System.Drawing.Point(233, 241);
             this.TwoDigitsDayCheckbox.Name = "TwoDigitsDayCheckbox";
-            this.TwoDigitsDayCheckbox.Size = new System.Drawing.Size(121, 22);
-            this.TwoDigitsDayCheckbox.TabIndex = 2;
-            this.TwoDigitsDayCheckbox.Text = "Two digits day";
             this.TwoDigitsDayCheckbox.UseVisualStyleBackColor = true;
             this.TwoDigitsDayCheckbox.CheckedChanged += new System.EventHandler(this.TwoDigitsChanged);
             // 
             // TwoDigitsMonthCheckbox
             // 
-            this.TwoDigitsMonthCheckbox.AutoSize = true;
+            resources.ApplyResources(this.TwoDigitsMonthCheckbox, "TwoDigitsMonthCheckbox");
             this.TwoDigitsMonthCheckbox.Checked = true;
             this.TwoDigitsMonthCheckbox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.TwoDigitsMonthCheckbox.Enabled = false;
-            this.TwoDigitsMonthCheckbox.Location = new System.Drawing.Point(10, 241);
             this.TwoDigitsMonthCheckbox.Name = "TwoDigitsMonthCheckbox";
-            this.TwoDigitsMonthCheckbox.Size = new System.Drawing.Size(140, 22);
-            this.TwoDigitsMonthCheckbox.TabIndex = 1;
-            this.TwoDigitsMonthCheckbox.Text = "Two digits month";
             this.TwoDigitsMonthCheckbox.UseVisualStyleBackColor = true;
             this.TwoDigitsMonthCheckbox.CheckedChanged += new System.EventHandler(this.TwoDigitsChanged);
             // 
             // tabControl2
             // 
-            this.tabControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.tabControl2, "tabControl2");
             this.tabControl2.Controls.Add(this.separateTab);
             this.tabControl2.Controls.Add(this.onelineTab);
             this.tabControl2.Controls.Add(this.onelinewithyearTab);
-            this.tabControl2.Location = new System.Drawing.Point(6, 6);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(370, 229);
-            this.tabControl2.TabIndex = 0;
             // 
             // separateTab
             // 
             this.separateTab.Controls.Add(this.SeparateMonthDayCheckbox);
             this.separateTab.Controls.Add(this.groupBox1);
-            this.separateTab.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.separateTab, "separateTab");
             this.separateTab.Name = "separateTab";
-            this.separateTab.Padding = new System.Windows.Forms.Padding(3);
-            this.separateTab.Size = new System.Drawing.Size(362, 198);
-            this.separateTab.TabIndex = 0;
-            this.separateTab.Text = "Separate";
             this.separateTab.UseVisualStyleBackColor = true;
             // 
             // SeparateMonthDayCheckbox
             // 
-            this.SeparateMonthDayCheckbox.AutoSize = true;
-            this.SeparateMonthDayCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.SeparateMonthDayCheckbox, "SeparateMonthDayCheckbox");
             this.SeparateMonthDayCheckbox.Name = "SeparateMonthDayCheckbox";
-            this.SeparateMonthDayCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.SeparateMonthDayCheckbox.TabIndex = 1;
             this.SeparateMonthDayCheckbox.UseVisualStyleBackColor = true;
             this.SeparateMonthDayCheckbox.CheckedChanged += new System.EventHandler(this.checkStateChanged);
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.AddDaySeparateButton);
             this.groupBox1.Controls.Add(this.AddMonthSeparateButton);
             this.groupBox1.Controls.Add(this.AddMonthImagesSeparateButton);
-            this.groupBox1.Location = new System.Drawing.Point(3, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(353, 186);
-            this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "     ";
             // 
             // AddDaySeparateButton
             // 
-            this.AddDaySeparateButton.Location = new System.Drawing.Point(6, 129);
+            resources.ApplyResources(this.AddDaySeparateButton, "AddDaySeparateButton");
             this.AddDaySeparateButton.Name = "AddDaySeparateButton";
-            this.AddDaySeparateButton.Size = new System.Drawing.Size(341, 47);
-            this.AddDaySeparateButton.TabIndex = 12;
-            this.AddDaySeparateButton.Text = "Add day";
             this.AddDaySeparateButton.UseVisualStyleBackColor = true;
             this.AddDaySeparateButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
             // AddMonthSeparateButton
             // 
-            this.AddMonthSeparateButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddMonthSeparateButton, "AddMonthSeparateButton");
             this.AddMonthSeparateButton.Name = "AddMonthSeparateButton";
-            this.AddMonthSeparateButton.Size = new System.Drawing.Size(341, 47);
-            this.AddMonthSeparateButton.TabIndex = 10;
-            this.AddMonthSeparateButton.Text = "Add month";
             this.AddMonthSeparateButton.UseVisualStyleBackColor = true;
             this.AddMonthSeparateButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
             // AddMonthImagesSeparateButton
             // 
-            this.AddMonthImagesSeparateButton.Location = new System.Drawing.Point(6, 76);
+            resources.ApplyResources(this.AddMonthImagesSeparateButton, "AddMonthImagesSeparateButton");
             this.AddMonthImagesSeparateButton.Name = "AddMonthImagesSeparateButton";
-            this.AddMonthImagesSeparateButton.Size = new System.Drawing.Size(341, 47);
-            this.AddMonthImagesSeparateButton.TabIndex = 11;
-            this.AddMonthImagesSeparateButton.Text = "Add month images";
             this.AddMonthImagesSeparateButton.UseVisualStyleBackColor = true;
             this.AddMonthImagesSeparateButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
@@ -220,56 +176,36 @@
             // 
             this.onelineTab.Controls.Add(this.OnelineMonthDayCheckbox);
             this.onelineTab.Controls.Add(this.groupBox2);
-            this.onelineTab.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.onelineTab, "onelineTab");
             this.onelineTab.Name = "onelineTab";
-            this.onelineTab.Padding = new System.Windows.Forms.Padding(3);
-            this.onelineTab.Size = new System.Drawing.Size(362, 198);
-            this.onelineTab.TabIndex = 1;
-            this.onelineTab.Text = "One line";
             this.onelineTab.UseVisualStyleBackColor = true;
             // 
             // OnelineMonthDayCheckbox
             // 
-            this.OnelineMonthDayCheckbox.AutoSize = true;
-            this.OnelineMonthDayCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.OnelineMonthDayCheckbox, "OnelineMonthDayCheckbox");
             this.OnelineMonthDayCheckbox.Name = "OnelineMonthDayCheckbox";
-            this.OnelineMonthDayCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.OnelineMonthDayCheckbox.TabIndex = 4;
             this.OnelineMonthDayCheckbox.UseVisualStyleBackColor = true;
             this.OnelineMonthDayCheckbox.CheckedChanged += new System.EventHandler(this.checkStateChanged);
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.AddOnelineDelimeterImageButton);
             this.groupBox2.Controls.Add(this.AddMonthAndDayOnelineButton);
-            this.groupBox2.Location = new System.Drawing.Point(3, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(353, 206);
-            this.groupBox2.TabIndex = 3;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "     ";
             // 
             // AddOnelineDelimeterImageButton
             // 
-            this.AddOnelineDelimeterImageButton.Enabled = false;
-            this.AddOnelineDelimeterImageButton.Location = new System.Drawing.Point(6, 76);
+            resources.ApplyResources(this.AddOnelineDelimeterImageButton, "AddOnelineDelimeterImageButton");
             this.AddOnelineDelimeterImageButton.Name = "AddOnelineDelimeterImageButton";
-            this.AddOnelineDelimeterImageButton.Size = new System.Drawing.Size(341, 47);
-            this.AddOnelineDelimeterImageButton.TabIndex = 4;
-            this.AddOnelineDelimeterImageButton.Text = "Add delimeter image";
             this.AddOnelineDelimeterImageButton.UseVisualStyleBackColor = true;
             this.AddOnelineDelimeterImageButton.Click += new System.EventHandler(this.AddImagesClick);
             // 
             // AddMonthAndDayOnelineButton
             // 
-            this.AddMonthAndDayOnelineButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddMonthAndDayOnelineButton, "AddMonthAndDayOnelineButton");
             this.AddMonthAndDayOnelineButton.Name = "AddMonthAndDayOnelineButton";
-            this.AddMonthAndDayOnelineButton.Size = new System.Drawing.Size(341, 47);
-            this.AddMonthAndDayOnelineButton.TabIndex = 3;
-            this.AddMonthAndDayOnelineButton.Text = "Add month and day";
             this.AddMonthAndDayOnelineButton.UseVisualStyleBackColor = true;
             this.AddMonthAndDayOnelineButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
@@ -277,54 +213,36 @@
             // 
             this.onelinewithyearTab.Controls.Add(this.OnelineWithYearCheckbox);
             this.onelinewithyearTab.Controls.Add(this.groupBox3);
-            this.onelinewithyearTab.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.onelinewithyearTab, "onelinewithyearTab");
             this.onelinewithyearTab.Name = "onelinewithyearTab";
-            this.onelinewithyearTab.Size = new System.Drawing.Size(362, 198);
-            this.onelinewithyearTab.TabIndex = 2;
-            this.onelinewithyearTab.Text = "One line with year";
             this.onelinewithyearTab.UseVisualStyleBackColor = true;
             // 
             // OnelineWithYearCheckbox
             // 
-            this.OnelineWithYearCheckbox.AutoSize = true;
-            this.OnelineWithYearCheckbox.Location = new System.Drawing.Point(15, 6);
+            resources.ApplyResources(this.OnelineWithYearCheckbox, "OnelineWithYearCheckbox");
             this.OnelineWithYearCheckbox.Name = "OnelineWithYearCheckbox";
-            this.OnelineWithYearCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.OnelineWithYearCheckbox.TabIndex = 6;
             this.OnelineWithYearCheckbox.UseVisualStyleBackColor = true;
             this.OnelineWithYearCheckbox.CheckedChanged += new System.EventHandler(this.checkStateChanged);
             // 
             // groupBox3
             // 
-            this.groupBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.addOnelineWithYearDelimeterImageButton);
             this.groupBox3.Controls.Add(this.addOnelineWithYearMonthDayYearButton);
-            this.groupBox3.Location = new System.Drawing.Point(3, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(353, 206);
-            this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "     ";
             // 
             // addOnelineWithYearDelimeterImageButton
             // 
-            this.addOnelineWithYearDelimeterImageButton.Location = new System.Drawing.Point(6, 76);
+            resources.ApplyResources(this.addOnelineWithYearDelimeterImageButton, "addOnelineWithYearDelimeterImageButton");
             this.addOnelineWithYearDelimeterImageButton.Name = "addOnelineWithYearDelimeterImageButton";
-            this.addOnelineWithYearDelimeterImageButton.Size = new System.Drawing.Size(341, 47);
-            this.addOnelineWithYearDelimeterImageButton.TabIndex = 4;
-            this.addOnelineWithYearDelimeterImageButton.Text = "Add delimeter image";
             this.addOnelineWithYearDelimeterImageButton.UseVisualStyleBackColor = true;
             this.addOnelineWithYearDelimeterImageButton.Click += new System.EventHandler(this.AddImagesClick);
             // 
             // addOnelineWithYearMonthDayYearButton
             // 
-            this.addOnelineWithYearMonthDayYearButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.addOnelineWithYearMonthDayYearButton, "addOnelineWithYearMonthDayYearButton");
             this.addOnelineWithYearMonthDayYearButton.Name = "addOnelineWithYearMonthDayYearButton";
-            this.addOnelineWithYearMonthDayYearButton.Size = new System.Drawing.Size(341, 47);
-            this.addOnelineWithYearMonthDayYearButton.TabIndex = 3;
-            this.addOnelineWithYearMonthDayYearButton.Text = "Add month and day and year";
             this.addOnelineWithYearMonthDayYearButton.UseVisualStyleBackColor = true;
             this.addOnelineWithYearMonthDayYearButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
@@ -332,45 +250,31 @@
             // 
             this.AmPmTab.Controls.Add(this.AmPmCheckbox);
             this.AmPmTab.Controls.Add(this.groupBox4);
-            this.AmPmTab.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.AmPmTab, "AmPmTab");
             this.AmPmTab.Name = "AmPmTab";
-            this.AmPmTab.Padding = new System.Windows.Forms.Padding(3);
-            this.AmPmTab.Size = new System.Drawing.Size(379, 269);
-            this.AmPmTab.TabIndex = 1;
-            this.AmPmTab.Text = "Am Pm";
             this.AmPmTab.UseVisualStyleBackColor = true;
             // 
             // AmPmCheckbox
             // 
-            this.AmPmCheckbox.AutoSize = true;
-            this.AmPmCheckbox.Location = new System.Drawing.Point(16, 6);
+            resources.ApplyResources(this.AmPmCheckbox, "AmPmCheckbox");
             this.AmPmCheckbox.Name = "AmPmCheckbox";
-            this.AmPmCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.AmPmCheckbox.TabIndex = 6;
             this.AmPmCheckbox.UseVisualStyleBackColor = true;
             this.AmPmCheckbox.CheckedChanged += new System.EventHandler(this.checkStateChanged);
             // 
             // groupBox4
             // 
-            this.groupBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox4, "groupBox4");
             this.groupBox4.Controls.Add(this.posYNumAMPM);
             this.groupBox4.Controls.Add(this.posXNumAMPM);
             this.groupBox4.Controls.Add(this.label6);
             this.groupBox4.Controls.Add(this.AddPMImageButton);
             this.groupBox4.Controls.Add(this.AddAMImageButton);
-            this.groupBox4.Location = new System.Drawing.Point(4, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(369, 260);
-            this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "     ";
             // 
             // posYNumAMPM
             // 
-            this.posYNumAMPM.Enabled = false;
-            this.posYNumAMPM.Location = new System.Drawing.Point(143, 129);
+            resources.ApplyResources(this.posYNumAMPM, "posYNumAMPM");
             this.posYNumAMPM.Maximum = new decimal(new int[] {
             500,
             0,
@@ -382,14 +286,11 @@
             0,
             -2147483648});
             this.posYNumAMPM.Name = "posYNumAMPM";
-            this.posYNumAMPM.Size = new System.Drawing.Size(49, 24);
-            this.posYNumAMPM.TabIndex = 17;
             this.posYNumAMPM.ValueChanged += new System.EventHandler(this.AMPMPosChanged);
             // 
             // posXNumAMPM
             // 
-            this.posXNumAMPM.Enabled = false;
-            this.posXNumAMPM.Location = new System.Drawing.Point(86, 129);
+            resources.ApplyResources(this.posXNumAMPM, "posXNumAMPM");
             this.posXNumAMPM.Maximum = new decimal(new int[] {
             500,
             0,
@@ -401,36 +302,24 @@
             0,
             -2147483648});
             this.posXNumAMPM.Name = "posXNumAMPM";
-            this.posXNumAMPM.Size = new System.Drawing.Size(49, 24);
-            this.posXNumAMPM.TabIndex = 16;
             this.posXNumAMPM.ValueChanged += new System.EventHandler(this.AMPMPosChanged);
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(4, 131);
+            resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 18);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Position:";
             // 
             // AddPMImageButton
             // 
-            this.AddPMImageButton.Location = new System.Drawing.Point(6, 76);
+            resources.ApplyResources(this.AddPMImageButton, "AddPMImageButton");
             this.AddPMImageButton.Name = "AddPMImageButton";
-            this.AddPMImageButton.Size = new System.Drawing.Size(357, 47);
-            this.AddPMImageButton.TabIndex = 5;
-            this.AddPMImageButton.Text = "Add PM image";
             this.AddPMImageButton.UseVisualStyleBackColor = true;
             this.AddPMImageButton.Click += new System.EventHandler(this.AddImagesClick);
             // 
             // AddAMImageButton
             // 
-            this.AddAMImageButton.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.AddAMImageButton, "AddAMImageButton");
             this.AddAMImageButton.Name = "AddAMImageButton";
-            this.AddAMImageButton.Size = new System.Drawing.Size(357, 47);
-            this.AddAMImageButton.TabIndex = 4;
-            this.AddAMImageButton.Text = "Add AM image";
             this.AddAMImageButton.UseVisualStyleBackColor = true;
             this.AddAMImageButton.Click += new System.EventHandler(this.AddImagesClick);
             // 
@@ -438,78 +327,53 @@
             // 
             this.WeekDaysTab.Controls.Add(this.weekdaysCheckbox);
             this.WeekDaysTab.Controls.Add(this.groupBox5);
-            this.WeekDaysTab.Location = new System.Drawing.Point(4, 27);
+            resources.ApplyResources(this.WeekDaysTab, "WeekDaysTab");
             this.WeekDaysTab.Name = "WeekDaysTab";
-            this.WeekDaysTab.Size = new System.Drawing.Size(379, 269);
-            this.WeekDaysTab.TabIndex = 2;
-            this.WeekDaysTab.Text = "Week Days EN";
             this.WeekDaysTab.UseVisualStyleBackColor = true;
             // 
             // weekdaysCheckbox
             // 
-            this.weekdaysCheckbox.AutoSize = true;
-            this.weekdaysCheckbox.Location = new System.Drawing.Point(16, 6);
+            resources.ApplyResources(this.weekdaysCheckbox, "weekdaysCheckbox");
             this.weekdaysCheckbox.Name = "weekdaysCheckbox";
-            this.weekdaysCheckbox.Size = new System.Drawing.Size(15, 14);
-            this.weekdaysCheckbox.TabIndex = 8;
             this.weekdaysCheckbox.UseVisualStyleBackColor = true;
             this.weekdaysCheckbox.CheckedChanged += new System.EventHandler(this.checkStateChanged);
             // 
             // groupBox5
             // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.addWeekDays);
-            this.groupBox5.Location = new System.Drawing.Point(4, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(369, 260);
-            this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "     ";
             // 
             // addWeekDays
             // 
-            this.addWeekDays.Location = new System.Drawing.Point(6, 23);
+            resources.ApplyResources(this.addWeekDays, "addWeekDays");
             this.addWeekDays.Name = "addWeekDays";
-            this.addWeekDays.Size = new System.Drawing.Size(357, 33);
-            this.addWeekDays.TabIndex = 4;
-            this.addWeekDays.Text = "Add week days images";
             this.addWeekDays.UseVisualStyleBackColor = true;
             this.addWeekDays.Click += new System.EventHandler(this.addWeekdayClick);
             // 
             // ImagePic
             // 
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ImagePic.Location = new System.Drawing.Point(405, 18);
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
-            this.ImagePic.Size = new System.Drawing.Size(126, 294);
-            this.ImagePic.TabIndex = 9;
             // 
             // SaveButton
             // 
-            this.SaveButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.SaveButton.Location = new System.Drawing.Point(12, 318);
+            resources.ApplyResources(this.SaveButton, "SaveButton");
             this.SaveButton.Name = "SaveButton";
-            this.SaveButton.Size = new System.Drawing.Size(519, 44);
-            this.SaveButton.TabIndex = 10;
-            this.SaveButton.Text = "Save";
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // DateForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 370);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DateForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Date";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DateForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.MonthDayYearTab.ResumeLayout(false);
