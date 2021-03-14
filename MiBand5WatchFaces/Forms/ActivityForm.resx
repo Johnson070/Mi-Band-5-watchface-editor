@@ -340,7 +340,7 @@
     <value>1</value>
   </data>
   <data name="addPreffixCaloriesButton.Text" xml:space="preserve">
-    <value>Add preffix</value>
+    <value>Add prefix</value>
   </data>
   <data name="&gt;&gt;addPreffixCaloriesButton.Name" xml:space="preserve">
     <value>addPreffixCaloriesButton</value>
@@ -523,7 +523,7 @@
     <value>1</value>
   </data>
   <data name="addPreffixPulseButton.Text" xml:space="preserve">
-    <value>Add preffix</value>
+    <value>Add prefix</value>
   </data>
   <data name="&gt;&gt;addPreffixPulseButton.Name" xml:space="preserve">
     <value>addPreffixPulseButton</value>
@@ -1017,6 +1017,9 @@
   <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>ru</value>
+  </metadata>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>

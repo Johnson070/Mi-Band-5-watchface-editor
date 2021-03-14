@@ -14,12 +14,12 @@ namespace MiBand5WatchFaces.Forms
     public partial class JSONEditorForm : Form
     {
         public WatchFaceLibrary watch;
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         DefaultDictionary<int, Image> Images;
         StateWatchface state;
         VisualRender render;
         public bool Save;
-        ComponentResourceManager resources = new ComponentResourceManager(typeof(Resources.Resource1));
 
         public void Render(StateWatchface state = null)
         {
@@ -30,7 +30,7 @@ namespace MiBand5WatchFaces.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error!");
+                MessageBox.Show(ex.ToString(), res.GetString("Error"));
             }
         }
 
@@ -74,13 +74,13 @@ namespace MiBand5WatchFaces.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error!");
+                MessageBox.Show(ex.ToString(), res.GetString("Error"));
             }
         }
 
         private void JSONEditorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 try
                 {
@@ -91,7 +91,7 @@ namespace MiBand5WatchFaces.Forms
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.ToString(), "Error!");
+                    MessageBox.Show(ex.ToString(), res.GetString("Error"));
                     e.Cancel = true;
                     return;
                 }
@@ -109,7 +109,7 @@ namespace MiBand5WatchFaces.Forms
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error!");
+                MessageBox.Show(ex.ToString(), res.GetString("Error"));
                 return;
             }
             this.Close();

@@ -117,91 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="addSuffixStepsButton.Text" xml:space="preserve">
-    <value>Add suffix</value>
-  </data>
-  <data name="addPreffixStepsButton.Text" xml:space="preserve">
-    <value>Add preffix</value>
-  </data>
-  <data name="addStepsButton.Text" xml:space="preserve">
-    <value>Add steps</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>     Steps</value>
-  </data>
-  <data name="stepsTab.Text" xml:space="preserve">
-    <value>Steps</value>
-  </data>
-  <data name="addSuffixCaloriesButton.Text" xml:space="preserve">
-    <value>Add suffix</value>
-  </data>
-  <data name="addPreffixCaloriesButton.Text" xml:space="preserve">
-    <value>Add prefix</value>
-  </data>
-  <data name="addCaloriesButton.Text" xml:space="preserve">
-    <value>Add calories</value>
-  </data>
-  <data name="groupBox2.Text" xml:space="preserve">
-    <value>     Calories</value>
-  </data>
-  <data name="caloriesTab.Text" xml:space="preserve">
-    <value>Calories</value>
-  </data>
-  <data name="addNoDataPulseButton.Text" xml:space="preserve">
-    <value>Add no data</value>
-  </data>
-  <data name="addSuffixPulseButton.Text" xml:space="preserve">
-    <value>Add suffix</value>
-  </data>
-  <data name="addPreffixPulseButton.Text" xml:space="preserve">
-    <value>Add prefix</value>
-  </data>
-  <data name="addPulseButton.Text" xml:space="preserve">
-    <value>Add pulse</value>
-  </data>
-  <data name="groupBox3.Text" xml:space="preserve">
-    <value>     Pulse</value>
-  </data>
-  <data name="pulseTab.Text" xml:space="preserve">
-    <value>Pulse</value>
-  </data>
-  <data name="addMiImageButton.Text" xml:space="preserve">
-    <value>Add MI image</value>
-  </data>
-  <data name="addKmImageButton.Text" xml:space="preserve">
-    <value>Add KM image</value>
-  </data>
-  <data name="addMiDistanceSuffixButton.Text" xml:space="preserve">
-    <value>Add MI suffix</value>
-  </data>
-  <data name="addDecimalDistanceButton.Text" xml:space="preserve">
-    <value>Add decimal point</value>
-  </data>
-  <data name="addKmDistanceSuffixButton.Text" xml:space="preserve">
-    <value>Add KM suffix</value>
-  </data>
-  <data name="addDistanceButton.Text" xml:space="preserve">
-    <value>Add distance</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>     Distance</value>
-  </data>
-  <data name="distanceTab.Text" xml:space="preserve">
-    <value>Distance</value>
-  </data>
-  <data name="addPAIButton.Text" xml:space="preserve">
-    <value>Add PAI</value>
-  </data>
-  <data name="groupBox4.Text" xml:space="preserve">
-    <value>     PAI</value>
-  </data>
-  <data name="paiTab.Text" xml:space="preserve">
-    <value>PAI</value>
-  </data>
-  <data name="saveButton.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="cancelButton.Text" xml:space="preserve">
+    <value>Отмена</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Activity</value>
+    <value>Обновление</value>
   </data>
 </root>

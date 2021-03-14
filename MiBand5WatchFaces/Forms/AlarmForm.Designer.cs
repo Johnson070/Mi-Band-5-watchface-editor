@@ -50,8 +50,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagePic
             // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
             // 
             // AddNumberButton
@@ -63,11 +63,11 @@ namespace MiBand5WatchFaces.Forms
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.AddImageNoAlarmButton);
             this.groupBox1.Controls.Add(this.AddImageOFFButton);
             this.groupBox1.Controls.Add(this.AddImageOnButton);
             this.groupBox1.Controls.Add(this.AddDelimeterButton);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 

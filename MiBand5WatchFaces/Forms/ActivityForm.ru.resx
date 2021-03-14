@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,4 +117,91 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="addSuffixStepsButton.Text" xml:space="preserve">
+    <value>Добавить суффикс</value>
+  </data>
+  <data name="addPreffixStepsButton.Text" xml:space="preserve">
+    <value>Добавить префикс</value>
+  </data>
+  <data name="addStepsButton.Text" xml:space="preserve">
+    <value>Добавить шаги</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>     Шаги</value>
+  </data>
+  <data name="stepsTab.Text" xml:space="preserve">
+    <value>Шаги</value>
+  </data>
+  <data name="addSuffixCaloriesButton.Text" xml:space="preserve">
+    <value>Добавить суффикс</value>
+  </data>
+  <data name="addPreffixCaloriesButton.Text" xml:space="preserve">
+    <value>Добавить префикс</value>
+  </data>
+  <data name="addCaloriesButton.Text" xml:space="preserve">
+    <value>Добавить калории</value>
+  </data>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>     Калории</value>
+  </data>
+  <data name="caloriesTab.Text" xml:space="preserve">
+    <value>Калории</value>
+  </data>
+  <data name="addNoDataPulseButton.Text" xml:space="preserve">
+    <value>Добавить no data</value>
+  </data>
+  <data name="addSuffixPulseButton.Text" xml:space="preserve">
+    <value>Добавить суффикс</value>
+  </data>
+  <data name="addPreffixPulseButton.Text" xml:space="preserve">
+    <value>Добавить префикс</value>
+  </data>
+  <data name="addPulseButton.Text" xml:space="preserve">
+    <value>Добавить пульс</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>     Пульс</value>
+  </data>
+  <data name="pulseTab.Text" xml:space="preserve">
+    <value>Пульс</value>
+  </data>
+  <data name="addMiImageButton.Text" xml:space="preserve">
+    <value>Добавить MI картинку</value>
+  </data>
+  <data name="addKmImageButton.Text" xml:space="preserve">
+    <value>Добавить KM картинку</value>
+  </data>
+  <data name="addMiDistanceSuffixButton.Text" xml:space="preserve">
+    <value>Добавить MI суффикс</value>
+  </data>
+  <data name="addDecimalDistanceButton.Text" xml:space="preserve">
+    <value>Добавить дес. точку</value>
+  </data>
+  <data name="addKmDistanceSuffixButton.Text" xml:space="preserve">
+    <value>Добавить KM суффикс</value>
+  </data>
+  <data name="addDistanceButton.Text" xml:space="preserve">
+    <value>Добавить дистанцию</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>     Дистанция</value>
+  </data>
+  <data name="distanceTab.Text" xml:space="preserve">
+    <value>Дистанция</value>
+  </data>
+  <data name="addPAIButton.Text" xml:space="preserve">
+    <value>Добавить PAI</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>     PAI</value>
+  </data>
+  <data name="paiTab.Text" xml:space="preserve">
+    <value>PAI</value>
+  </data>
+  <data name="saveButton.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Активность</value>
+  </data>
 </root>

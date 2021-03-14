@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>486, 450</value>
+  </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAAAAAAAEAIAABZQEAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgGAAAAXHKoZgAAgABJ
@@ -1711,7 +1714,13 @@
   <data name="ChangeImageButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
-  <data name="saveImagesButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="&gt;&gt;uncheckAllToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="AddImagesButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
@@ -1726,9 +1735,6 @@
         AElFTkSuQmCC
 </value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
   <data name="&gt;&gt;ChangeImageButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -1741,11 +1747,11 @@
   <data name="ImagesListBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 28</value>
   </data>
-  <data name="&gt;&gt;saveImagesButton.Name" xml:space="preserve">
-    <value>saveImagesButton</value>
-  </data>
   <data name="&gt;&gt;ImagesListBox.Name" xml:space="preserve">
     <value>ImagesListBox</value>
+  </data>
+  <data name="ChangeImageButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="&gt;&gt;ChangeImageButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1753,8 +1759,8 @@
   <data name="&gt;&gt;imageBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;ChangeImageButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="saveImagesButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>35, 22</value>
   </data>
   <data name="&gt;&gt;deleteImageToolButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1765,14 +1771,14 @@
   <data name="&gt;&gt;toolStrip.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="imageBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>295, 350</value>
-  </data>
   <data name="&gt;&gt;AddImagesButton.Name" xml:space="preserve">
     <value>AddImagesButton</value>
   </data>
   <data name="deleteImageToolButton.Text" xml:space="preserve">
     <value>Delete image</value>
+  </data>
+  <data name="&gt;&gt;ImagesListBox.ZOrder" xml:space="preserve">
+    <value>5</value>
   </data>
   <data name="AddImagesButton.Text" xml:space="preserve">
     <value>Add images</value>
@@ -1782,9 +1788,6 @@
   </data>
   <data name="ChangeImageButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 384</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
-    <value>toolStripSeparator1</value>
   </data>
   <data name="ChangeImageButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>295, 23</value>
@@ -1798,17 +1801,14 @@
   <data name="&gt;&gt;ImagesListBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="ChangeImageButton.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="imageBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 350</value>
   </data>
   <data name="&gt;&gt;DeleteImagesButton.Name" xml:space="preserve">
     <value>DeleteImagesButton</value>
   </data>
   <data name="toolStripSeparator1.Size" type="System.Drawing.Size, System.Drawing">
     <value>6, 25</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;toolStrip.Name" xml:space="preserve">
     <value>toolStrip</value>
@@ -1843,11 +1843,11 @@
   <data name="imageBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>184, 28</value>
   </data>
-  <data name="&gt;&gt;ImagesListBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+  <data name="&gt;&gt;saveImagesButton.Name" xml:space="preserve">
+    <value>saveImagesButton</value>
   </data>
-  <data name="saveImagesButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>35, 22</value>
+  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;ChangeImageButton.Name" xml:space="preserve">
     <value>ChangeImageButton</value>
@@ -1855,28 +1855,7 @@
   <data name="DeleteImagesButton.Text" xml:space="preserve">
     <value>Delete images</value>
   </data>
-  <data name="toolStrip.Text" xml:space="preserve">
-    <value>toolStrip1</value>
-  </data>
-  <data name="listImagesMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 76</value>
-  </data>
-  <data name="&gt;&gt;imageBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Images</value>
-  </data>
-  <data name="&gt;&gt;uncheckAllToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;DeleteImagesButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="AddImagesButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="saveImagesButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAgNJREFUOE+lkutLk2EYxvePhJaHShFBUTEPiCieQOmDiEZgrEbpYGiCQxkqA80I
@@ -1891,6 +1870,27 @@
         AElFTkSuQmCC
 </value>
   </data>
+  <data name="uncheckAllToolStripMenuItem.Text" xml:space="preserve">
+    <value>Uncheck all</value>
+  </data>
+  <data name="listImagesMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 76</value>
+  </data>
+  <data name="&gt;&gt;imageBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Images</value>
+  </data>
+  <data name="&gt;&gt;DeleteImagesButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="toolStrip.Text" xml:space="preserve">
+    <value>toolStrip1</value>
+  </data>
   <data name="toolStripSeparator2.Size" type="System.Drawing.Size, System.Drawing">
     <value>200, 6</value>
   </data>
@@ -1903,8 +1903,8 @@
   <data name="&gt;&gt;addImageWithNumberToolButton.Name" xml:space="preserve">
     <value>addImageWithNumberToolButton</value>
   </data>
-  <data name="toolStrip.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;toolStripSeparator1.Name" xml:space="preserve">
+    <value>toolStripSeparator1</value>
   </data>
   <data name="deleteImageToolButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>203, 22</value>
@@ -1912,8 +1912,8 @@
   <data name="saveImagesButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="&gt;&gt;toolStripSeparator1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;ChangeImageButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;addImageWithNumberToolButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -1921,11 +1921,11 @@
   <data name="&gt;&gt;toolStripSeparator2.Name" xml:space="preserve">
     <value>toolStripSeparator2</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>486, 450</value>
+  <data name="&gt;&gt;toolStripSeparator2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="uncheckAllToolStripMenuItem.Text" xml:space="preserve">
-    <value>Uncheck all</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;AddImagesToElement.Name" xml:space="preserve">
     <value>AddImagesToElement</value>

@@ -101,5 +101,10 @@ namespace MiBand5WatchFaces.Forms
             }
         }
         #endregion
+
+        private void textBoxDescription_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.LinkText);
+        }
     }
 }

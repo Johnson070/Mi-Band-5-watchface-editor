@@ -10730,7 +10730,7 @@
     <value>Russian</value>
   </data>
   <data name="toolStripDropDownButton3.Text" xml:space="preserve">
-    <value>Language(in progress)</value>
+    <value>Language</value>
   </data>
   <data name="OpenJsonButton.Text" xml:space="preserve">
     <value>Open JSON Editor</value>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AddScaleButton.Text" xml:space="preserve">
+    <value>Добавить изобр.</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>Scale</value>
+  </data>
+  <data name="AddLineScaleButton.Text" xml:space="preserve">
+    <value>Добавить изобр.</value>
+  </data>
+  <data name="tabPage3.Text" xml:space="preserve">
+    <value>Line scale</value>
+  </data>
+  <data name="AddLinearImages.Text" xml:space="preserve">
+    <value>Добавить изобр.</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>Linear</value>
+  </data>
+  <data name="saveButton.Text" xml:space="preserve">
+    <value>Сохранить</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Heart Progress</value>
+  </data>
 </root>

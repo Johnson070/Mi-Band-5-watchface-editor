@@ -262,7 +262,8 @@
     <value>Add circle scale</value>
   </data>
   <data name="TimeFormError" xml:space="preserve">
-    <value>Hours tens and hour ones and minute tens and minutes ones should be added!\nExit without save?</value>
+    <value>Hours tens and hour ones and minute tens and minutes ones should be added!
+Exit without save?</value>
   </data>
   <data name="EditTens" xml:space="preserve">
     <value>Edit Tens</value>
@@ -407,5 +408,55 @@
   </data>
   <data name="EditWeekDaysImages" xml:space="preserve">
     <value>Edit week days images</value>
+  </data>
+  <data name="DeleteItem" xml:space="preserve">
+    <value>The selected item will be deleted irretrievably.
+Are you sure?</value>
+  </data>
+  <data name="SureQ" xml:space="preserve">
+    <value>Are you sure?</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="ErrorGenPreview" xml:space="preserve">
+    <value>Error generate preview!</value>
+  </data>
+  <data name="SaveOpenJson" xml:space="preserve">
+    <value>Save an open watchface before opening another watchface?</value>
+  </data>
+  <data name="SaveQ" xml:space="preserve">
+    <value>Save?</value>
+  </data>
+  <data name="OpenDownloadUpdate" xml:space="preserve">
+    <value>Download zip file with update?</value>
+  </data>
+  <data name="SaveFileClose" xml:space="preserve">
+    <value>Save the file before closing the program?</value>
+  </data>
+  <data name="ErrorSave" xml:space="preserve">
+    <value>Error save!</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="ChangeLog" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
+  <data name="NotGenerated" xml:space="preserve">
+    <value>Not generated!</value>
+  </data>
+  <data name="Succeful" xml:space="preserve">
+    <value>Succeful!</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>Complete</value>
+  </data>
+  <data name="ShowUpdateInfo" xml:space="preserve">
+    <value>Program version: {0}.
+Program version on server: {1}</value>
+  </data>
+  <data name="UpdateDownloadExit" xml:space="preserve">
+    <value>Downloading the update is complete!</value>
   </data>
 </root>

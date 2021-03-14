@@ -216,6 +216,12 @@
     <Compile Include="Forms\ImagesForm.Designer.cs">
       <DependentUpon>ImagesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UpdateForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateForm.Designer.cs">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\WeatherForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -434,6 +440,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimeForm.ru.resx">
       <DependentUpon>TimeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateForm.resx">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateForm.ru.resx">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchfaceState.en.resx">
       <DependentUpon>WatchfaceState.cs</DependentUpon>

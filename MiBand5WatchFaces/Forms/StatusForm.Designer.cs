@@ -74,18 +74,18 @@ namespace MiBand5WatchFaces.Forms
             // 
             // tabs
             // 
+            resources.ApplyResources(this.tabs, "tabs");
             this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Controls.Add(this.tabPage2);
             this.tabs.Controls.Add(this.tabPage3);
-            resources.ApplyResources(this.tabs, "tabs");
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             // 
             // tabPage1
             // 
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.bluetoothCheckbox);
             this.tabPage1.Controls.Add(this.groupBox3);
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -160,9 +160,9 @@ namespace MiBand5WatchFaces.Forms
             // 
             // tabPage2
             // 
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.lockCheckbox);
             this.tabPage2.Controls.Add(this.groupBox1);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -237,9 +237,9 @@ namespace MiBand5WatchFaces.Forms
             // 
             // tabPage3
             // 
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.dndCheclbox);
             this.tabPage3.Controls.Add(this.groupBox2);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -314,8 +314,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagePic
             // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
             // 
             // saveButton

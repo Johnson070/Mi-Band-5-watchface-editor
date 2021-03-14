@@ -129,4 +129,334 @@
   <data name="EditImageNoAlarm" xml:space="preserve">
     <value>Изменить изобр. no alarm</value>
   </data>
+  <data name="UpdateDownloadExit" xml:space="preserve">
+    <value>Загрузка обновления завершена!</value>
+  </data>
+  <data name="AddImageOff" xml:space="preserve">
+    <value>Добавить изобр. выкл</value>
+  </data>
+  <data name="EditImageOff" xml:space="preserve">
+    <value>Изменить изобр. выкл</value>
+  </data>
+  <data name="EditImageOn" xml:space="preserve">
+    <value>Изменить изобр. вкл</value>
+  </data>
+  <data name="AddImageOn" xml:space="preserve">
+    <value>Добавить изобр. вкл</value>
+  </data>
+  <data name="AddDelimeter" xml:space="preserve">
+    <value>Добавить разделитель</value>
+  </data>
+  <data name="EditDelimeter" xml:space="preserve">
+    <value>Изменить разделитель</value>
+  </data>
+  <data name="AddNumber" xml:space="preserve">
+    <value>Добавить Number</value>
+  </data>
+  <data name="EditNumber" xml:space="preserve">
+    <value>Изменить Number</value>
+  </data>
+  <data name="EditMondayImage" xml:space="preserve">
+    <value>Изменить изобр. понедельника</value>
+  </data>
+  <data name="EditTuesdayImage" xml:space="preserve">
+    <value>Изменить изобр. вторника</value>
+  </data>
+  <data name="EditWednesdayImage" xml:space="preserve">
+    <value>Изменить изобр. среды</value>
+  </data>
+  <data name="EditThursdayImage" xml:space="preserve">
+    <value>Изменить изобр. четверга</value>
+  </data>
+  <data name="EditFridayImage" xml:space="preserve">
+    <value>Изменить изобр. пятницы</value>
+  </data>
+  <data name="EditSaturdayImage" xml:space="preserve">
+    <value>Изменить изобр. субботы</value>
+  </data>
+  <data name="EditSundayImage" xml:space="preserve">
+    <value>Изменить изобр. воскресенья</value>
+  </data>
+  <data name="AddMondayImage" xml:space="preserve">
+    <value>Добавить изобр. понедельника</value>
+  </data>
+  <data name="AddTuesdayImage" xml:space="preserve">
+    <value>Добавить изобр. вторника</value>
+  </data>
+  <data name="AddThursdayImage" xml:space="preserve">
+    <value>Добавить изобр. среды</value>
+  </data>
+  <data name="AddWednesdayImage" xml:space="preserve">
+    <value>Добавить изобр. четверга</value>
+  </data>
+  <data name="AddFridayImage" xml:space="preserve">
+    <value>Добавить изобр. пятницы</value>
+  </data>
+  <data name="AddSaturdayImage" xml:space="preserve">
+    <value>Добавить изобр. субботы</value>
+  </data>
+  <data name="AddSundayImage" xml:space="preserve">
+    <value>Добавить изобр. воскресенья</value>
+  </data>
+  <data name="EditImages" xml:space="preserve">
+    <value>Изменить изобр.</value>
+  </data>
+  <data name="AddImages" xml:space="preserve">
+    <value>Добавить изобр.</value>
+  </data>
+  <data name="EditArrow" xml:space="preserve">
+    <value>Изменить стрелку</value>
+  </data>
+  <data name="AddArrow" xml:space="preserve">
+    <value>Добавить стрелку</value>
+  </data>
+  <data name="EditCenterImage" xml:space="preserve">
+    <value>Изменить центральное изобр.</value>
+  </data>
+  <data name="AddCenterImage" xml:space="preserve">
+    <value>Добавить центральное изобр.</value>
+  </data>
+  <data name="EditPrefix" xml:space="preserve">
+    <value>Изменить префикс</value>
+  </data>
+  <data name="AddPrefix" xml:space="preserve">
+    <value>Добавить префикс</value>
+  </data>
+  <data name="AddSuffix" xml:space="preserve">
+    <value>Добавить суффикс</value>
+  </data>
+  <data name="EditSuffix" xml:space="preserve">
+    <value>Изменить суффикс</value>
+  </data>
+  <data name="EditDegreeImage" xml:space="preserve">
+    <value>Изменить изобр. градусов</value>
+  </data>
+  <data name="AddDegreeImage" xml:space="preserve">
+    <value>Добавить изобр. градусов</value>
+  </data>
+  <data name="EditMinusImage" xml:space="preserve">
+    <value>Изменить изобр. минуса</value>
+  </data>
+  <data name="AddMinusImage" xml:space="preserve">
+    <value>Добавить изобр. минуса</value>
+  </data>
+  <data name="EditSuffixImage" xml:space="preserve">
+    <value>Изменить изобр. суффикса</value>
+  </data>
+  <data name="AddSuffixImage" xml:space="preserve">
+    <value>Добавить изобр. суффикса</value>
+  </data>
+  <data name="EditDelimeterImage" xml:space="preserve">
+    <value>Изменить изобр. разделителя</value>
+  </data>
+  <data name="AddDelimeterImage" xml:space="preserve">
+    <value>Добавить изобр. разделителя</value>
+  </data>
+  <data name="EditImage" xml:space="preserve">
+    <value>Изменить изобр.</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Добавить изобр.</value>
+  </data>
+  <data name="EditCircleScale" xml:space="preserve">
+    <value>Изменить круговую диаг.</value>
+  </data>
+  <data name="AddCircleScale" xml:space="preserve">
+    <value>Добавить круговую диаг.</value>
+  </data>
+  <data name="EditOnes" xml:space="preserve">
+    <value>Изменить единицы</value>
+  </data>
+  <data name="AddOnes" xml:space="preserve">
+    <value>Добавить единицы</value>
+  </data>
+  <data name="EditTens" xml:space="preserve">
+    <value>Изменить десятки</value>
+  </data>
+  <data name="AddTens" xml:space="preserve">
+    <value>Добавить десятки</value>
+  </data>
+  <data name="AddNoTime" xml:space="preserve">
+    <value>Добавить no time</value>
+  </data>
+  <data name="EditNoTime" xml:space="preserve">
+    <value>Изменить no time</value>
+  </data>
+  <data name="TimeFormError" xml:space="preserve">
+    <value>Единицы минут и часов, а также десятки минут и часов должны быть добавлены!
+Выход без сохранения?</value>
+  </data>
+  <data name="ImageDPI" xml:space="preserve">
+    <value>DPI изображения не 96!</value>
+  </data>
+  <data name="EditImagesToElement" xml:space="preserve">
+    <value>Изменить изобр. в элементе</value>
+  </data>
+  <data name="DeleteImages" xml:space="preserve">
+    <value>Удалить изобр.</value>
+  </data>
+  <data name="AddImagesToElement" xml:space="preserve">
+    <value>Добавить изобр. в элементе</value>
+  </data>
+  <data name="AddSteps" xml:space="preserve">
+    <value>Добавить шаги</value>
+  </data>
+  <data name="EditSteps" xml:space="preserve">
+    <value>Изменить шаги</value>
+  </data>
+  <data name="AddCalories" xml:space="preserve">
+    <value>Добавить калории</value>
+  </data>
+  <data name="EditCalories" xml:space="preserve">
+    <value>Изменить калории</value>
+  </data>
+  <data name="AddPulse" xml:space="preserve">
+    <value>Добавить пульс</value>
+  </data>
+  <data name="EditPulse" xml:space="preserve">
+    <value>Изменить пульс</value>
+  </data>
+  <data name="AddNoData" xml:space="preserve">
+    <value>Добавить no data</value>
+  </data>
+  <data name="EditNoData" xml:space="preserve">
+    <value>Изменить no data</value>
+  </data>
+  <data name="AddDistance" xml:space="preserve">
+    <value>Добавить дистанцию</value>
+  </data>
+  <data name="EditDistance" xml:space="preserve">
+    <value>Изменить дистанцию</value>
+  </data>
+  <data name="AddKMSuffix" xml:space="preserve">
+    <value>Добавить KM суффикс</value>
+  </data>
+  <data name="EditKMSuffix" xml:space="preserve">
+    <value>Изменить KM суффикс</value>
+  </data>
+  <data name="AddDecimalPoint" xml:space="preserve">
+    <value>Добавить дес. точку</value>
+  </data>
+  <data name="EditDecimalPoint" xml:space="preserve">
+    <value>Изменить дес. точку</value>
+  </data>
+  <data name="AddMISuffix" xml:space="preserve">
+    <value>Добавить MI суффикс</value>
+  </data>
+  <data name="EditMISuffix" xml:space="preserve">
+    <value>Изменить MI суффикс</value>
+  </data>
+  <data name="AddKMImage" xml:space="preserve">
+    <value>Добавить изобр. KM</value>
+  </data>
+  <data name="EditKMImage" xml:space="preserve">
+    <value>Изменить изобр. KM</value>
+  </data>
+  <data name="AddMIImage" xml:space="preserve">
+    <value>Добавить изобр. MI</value>
+  </data>
+  <data name="EditMIImage" xml:space="preserve">
+    <value>Изменить изобр. MI</value>
+  </data>
+  <data name="AddPAI" xml:space="preserve">
+    <value>Добавить PAI</value>
+  </data>
+  <data name="EditPAI" xml:space="preserve">
+    <value>Изменить PAI</value>
+  </data>
+  <data name="AddMonth" xml:space="preserve">
+    <value>Добавить месяц</value>
+  </data>
+  <data name="EditMonth" xml:space="preserve">
+    <value>Изменить месяц</value>
+  </data>
+  <data name="AddMonthImages" xml:space="preserve">
+    <value>Добавить изобр. месяца</value>
+  </data>
+  <data name="EditMonthImages" xml:space="preserve">
+    <value>Изменить изобр. месяца</value>
+  </data>
+  <data name="AddDay" xml:space="preserve">
+    <value>Добавить день</value>
+  </data>
+  <data name="EditDay" xml:space="preserve">
+    <value>Изменить день</value>
+  </data>
+  <data name="AddMonthAndDay" xml:space="preserve">
+    <value>Добавить месяц и день</value>
+  </data>
+  <data name="EditMonthAndDay" xml:space="preserve">
+    <value>Изменить месяц и день</value>
+  </data>
+  <data name="AddMonthAndDayAndYear" xml:space="preserve">
+    <value>Добавить месяц, день, год</value>
+  </data>
+  <data name="EditMonthAndDayAndYear" xml:space="preserve">
+    <value>Изменить месяц, день, год</value>
+  </data>
+  <data name="AddAMImage" xml:space="preserve">
+    <value>Добавить изобр. AM</value>
+  </data>
+  <data name="EditAMImage" xml:space="preserve">
+    <value>Изменить изобр. AM</value>
+  </data>
+  <data name="AddPMImage" xml:space="preserve">
+    <value>Добавить изобр. PM</value>
+  </data>
+  <data name="EditPMImage" xml:space="preserve">
+    <value>Изменить изобр. PM</value>
+  </data>
+  <data name="AddWeekDaysImages" xml:space="preserve">
+    <value>Добавить изобр. дней недели</value>
+  </data>
+  <data name="EditWeekDaysImages" xml:space="preserve">
+    <value>Изменить изобр. дней недели</value>
+  </data>
+  <data name="DeleteItem" xml:space="preserve">
+    <value>Выбранный элемент будет удалён безвозвратно.
+Вы уверены?</value>
+  </data>
+  <data name="SureQ" xml:space="preserve">
+    <value>Вы уверены?</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Ошибка!</value>
+  </data>
+  <data name="ErrorGenPreview" xml:space="preserve">
+    <value>Ошибка генерации preview!</value>
+  </data>
+  <data name="SaveOpenJson" xml:space="preserve">
+    <value>Сохранить проект перед открытием другого?</value>
+  </data>
+  <data name="SaveQ" xml:space="preserve">
+    <value>Сохранить?</value>
+  </data>
+  <data name="SaveFileClose" xml:space="preserve">
+    <value>Сохранить проект в файл перед закрытием программы?</value>
+  </data>
+  <data name="OpenDownloadUpdate" xml:space="preserve">
+    <value>Скачать ZIP файл с обновлением?</value>
+  </data>
+  <data name="ErrorSave" xml:space="preserve">
+    <value>Ошибка сохранения!</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Обновление</value>
+  </data>
+  <data name="ChangeLog" xml:space="preserve">
+    <value>Изменения</value>
+  </data>
+  <data name="NotGenerated" xml:space="preserve">
+    <value>Не сгенерировано!</value>
+  </data>
+  <data name="Succeful" xml:space="preserve">
+    <value>Успех!</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>Завершено</value>
+  </data>
+  <data name="ShowUpdateInfo" xml:space="preserve">
+    <value>Версия программы: {0}.
+Версия программы на сервере: {1}</value>
+  </data>
 </root>

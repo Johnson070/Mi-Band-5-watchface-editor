@@ -50,15 +50,17 @@ namespace MiBand5WatchFaces.Forms
             // 
             // AnimationsListBox
             // 
-            this.AnimationsListBox.FormattingEnabled = true;
             resources.ApplyResources(this.AnimationsListBox, "AnimationsListBox");
+            this.AnimationsListBox.FormattingEnabled = true;
             this.AnimationsListBox.Name = "AnimationsListBox";
+            this.toolTip1.SetToolTip(this.AnimationsListBox, resources.GetString("AnimationsListBox.ToolTip"));
             this.AnimationsListBox.SelectedIndexChanged += new System.EventHandler(this.AnimationsListBox_SelectedIndexChanged);
             // 
             // AddAnimationButton
             // 
             resources.ApplyResources(this.AddAnimationButton, "AddAnimationButton");
             this.AddAnimationButton.Name = "AddAnimationButton";
+            this.toolTip1.SetToolTip(this.AddAnimationButton, resources.GetString("AddAnimationButton.ToolTip"));
             this.AddAnimationButton.UseVisualStyleBackColor = true;
             this.AddAnimationButton.Click += new System.EventHandler(this.AddAnimationButton_Click);
             // 
@@ -66,19 +68,21 @@ namespace MiBand5WatchFaces.Forms
             // 
             resources.ApplyResources(this.RemoveAnimationButton, "RemoveAnimationButton");
             this.RemoveAnimationButton.Name = "RemoveAnimationButton";
+            this.toolTip1.SetToolTip(this.RemoveAnimationButton, resources.GetString("RemoveAnimationButton.ToolTip"));
             this.RemoveAnimationButton.UseVisualStyleBackColor = true;
             this.RemoveAnimationButton.Click += new System.EventHandler(this.RemoveAnimationButton_Click);
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.RepeatCountUpDown);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.SpeedUpDown);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.AddImagesAnimationButton);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // RepeatCountUpDown
             // 
@@ -89,12 +93,14 @@ namespace MiBand5WatchFaces.Forms
             0,
             0});
             this.RepeatCountUpDown.Name = "RepeatCountUpDown";
+            this.toolTip1.SetToolTip(this.RepeatCountUpDown, resources.GetString("RepeatCountUpDown.ToolTip"));
             this.RepeatCountUpDown.ValueChanged += new System.EventHandler(this.RepeatCountUpDown_ValueChanged);
             // 
             // label2
             // 
             resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
+            this.toolTip1.SetToolTip(this.label2, resources.GetString("label2.ToolTip"));
             // 
             // SpeedUpDown
             // 
@@ -105,17 +111,20 @@ namespace MiBand5WatchFaces.Forms
             0,
             0});
             this.SpeedUpDown.Name = "SpeedUpDown";
+            this.toolTip1.SetToolTip(this.SpeedUpDown, resources.GetString("SpeedUpDown.ToolTip"));
             this.SpeedUpDown.ValueChanged += new System.EventHandler(this.SpeedUpDown_ValueChanged);
             // 
             // label1
             // 
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
+            this.toolTip1.SetToolTip(this.label1, resources.GetString("label1.ToolTip"));
             // 
             // AddImagesAnimationButton
             // 
             resources.ApplyResources(this.AddImagesAnimationButton, "AddImagesAnimationButton");
             this.AddImagesAnimationButton.Name = "AddImagesAnimationButton";
+            this.toolTip1.SetToolTip(this.AddImagesAnimationButton, resources.GetString("AddImagesAnimationButton.ToolTip"));
             this.AddImagesAnimationButton.UseVisualStyleBackColor = true;
             this.AddImagesAnimationButton.Click += new System.EventHandler(this.AddImagesAnimationButton_Click);
             // 
@@ -123,14 +132,16 @@ namespace MiBand5WatchFaces.Forms
             // 
             resources.ApplyResources(this.SaveButton, "SaveButton");
             this.SaveButton.Name = "SaveButton";
+            this.toolTip1.SetToolTip(this.SaveButton, resources.GetString("SaveButton.ToolTip"));
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // ImagePic
             // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
+            this.toolTip1.SetToolTip(this.ImagePic, resources.GetString("ImagePic.ToolTip"));
             // 
             // AnimationForm
             // 
@@ -144,6 +155,7 @@ namespace MiBand5WatchFaces.Forms
             this.Controls.Add(this.AnimationsListBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AnimationForm";
+            this.toolTip1.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnimationForm_FormClosing);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

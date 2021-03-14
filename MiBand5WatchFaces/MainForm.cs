@@ -1,19 +1,13 @@
 ﻿using MiBand5WatchFaces.Forms;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.IO;
-using System.Linq;
 using System.Net;
 using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Forms;
 
 namespace MiBand5WatchFaces
@@ -22,6 +16,8 @@ namespace MiBand5WatchFaces
     {
         WatchFaceLibrary watchFace = new WatchFaceLibrary();
         StateWatchface state = new StateWatchface();
+        ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+
         bool Save = true;
         string file = "";
 
@@ -71,14 +67,14 @@ namespace MiBand5WatchFaces
                 VisualRender render = new VisualRender(watchFace, state);
                 watchfacePreviewImage.Image = render.GenWatchface();
             }
-            catch { MessageBox.Show("Error!", "Error generate preview!"); }
+            catch { MessageBox.Show(res.GetString("Error"), res.GetString("ErrorGenPreview")); }
         }
 
         private void OpenFileJson(object sender, EventArgs e)
         {
             try
             {
-                if (Save == false && MessageBox.Show("Save an open watchface before opening another watchface?", "Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (Save == false && MessageBox.Show(res.GetString("SaveOpenJson"), res.GetString("SaveQ"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     saveToolStripMenuItem.PerformClick();
 
                 OpenFileDialog file = new OpenFileDialog();
@@ -130,7 +126,7 @@ namespace MiBand5WatchFaces
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Error parse file!\n\n{ex}", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Error parse file!\n\n{ex}", res.GetString("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -461,7 +457,7 @@ namespace MiBand5WatchFaces
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.ToString(), "Error save!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.ToString(), res.GetString("ErrorSave"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
             }
@@ -658,7 +654,7 @@ namespace MiBand5WatchFaces
             {
                 Type type = listViewElements.SelectedItems[0].Tag.GetType();
 
-                if (MessageBox.Show("The selected item will be deleted irretrievably.\nAre you sure?", "Are you sure?", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
+                if (MessageBox.Show(res.GetString("DeleteItem"), res.GetString("SureQ"), MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation) == DialogResult.No)
                     return;
 
                 if (type == typeof(Background)) watchFace.Background = null;
@@ -694,21 +690,21 @@ namespace MiBand5WatchFaces
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
                 //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
-                MessageBox.Show("Error!", "Not generated!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(res.GetString("Error"), res.GetString("NotGenerated"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (e.Data != null && e.Data.ToString() == "Writing resources")
             {
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
                 //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
-                MessageBox.Show("Succeful!", "Complete!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(res.GetString("Succeful"), res.GetString("Complete"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (e.Data != null && e.Data.ToString().IndexOf("Exporting config...") != -1)
             {
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
                 //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
-                MessageBox.Show("Succeful!", "Complete!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(res.GetString("Succeful"), res.GetString("Complete"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 timerWatchFaceEXE.Stop();
 
                 Save = true;
@@ -746,7 +742,7 @@ namespace MiBand5WatchFaces
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show("Save the file before closing the program?", "Save?", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (Save == false && MessageBox.Show(res.GetString("SaveFileClose"), res.GetString("SaveQ"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 saveToolStripMenuItem_Click(null, null);
         }
 
@@ -758,21 +754,23 @@ namespace MiBand5WatchFaces
             {
                 Properties.Settings.Default.ShowChangeLog = false;
                 Properties.Settings.Default.Save();
-                MessageBox.Show(GetChangeLog(), "Changelog", MessageBoxButtons.OK);
+                MessageBox.Show(GetProgramInfo().changelog, res.GetString("ChangeLog"), MessageBoxButtons.OK);
             }
 
             if (state)
             {
-                if (GetVersion() != Application.ProductVersion && MessageBox.Show("Open a link to download the new version of the program?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (GetProgramInfo().version != Application.ProductVersion && MessageBox.Show(res.GetString("OpenDownloadUpdate"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Process myProcess = new Process();
-
                     try
                     {
-                        // true is the default, but it is important not to set it to false
-                        myProcess.StartInfo.UseShellExecute = true;
-                        myProcess.StartInfo.FileName = "https://github.com/Johnson070/MiBand-5-watchface-editor/releases";
-                        myProcess.Start();
+                        SaveFileDialog saveFileDialog = new SaveFileDialog() { RestoreDirectory = true, Filter = "zip file (.zip)|*.zip", FileName = "MiBand5WatchFaceEditor.zip" };
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            UpdateForm updateForm = new UpdateForm(String.Format(GetProgramInfo().link, GetProgramInfo().version), saveFileDialog.FileName);
+                            updateForm.ShowDialog();
+                        }
+                        else return;
                     }
                     catch (Exception ex)
                     {
@@ -782,43 +780,17 @@ namespace MiBand5WatchFaces
             }
         }
 
-        private string GetVersion()
+        private ProgramInfo GetProgramInfo()
         {
-            string version = "";
+            ProgramInfo programInfo = new ProgramInfo();
 
             using (WebClient Client = new WebClient())
             {
                 Client.Encoding = Encoding.UTF8;
-                version = Client.DownloadString("https://raw.githubusercontent.com/Johnson070/MiBand-5-watchface-editor/main/version.txt");
+                programInfo = JsonConvert.DeserializeObject<ProgramInfo>(Client.DownloadString("https://raw.githubusercontent.com/Johnson070/MiBand-5-watchface-editor/main/infoProgram.txt"));
             }
 
-            return version.Replace("\n", string.Empty);
-        }
-
-        private string CheckProgramUpdate()
-        {
-            string version = "";
-
-            using (WebClient Client = new WebClient())
-            {
-                Client.Encoding = Encoding.UTF8;
-                version = Client.DownloadString("https://raw.githubusercontent.com/Johnson070/MiBand-5-watchface-editor/main/version.txt");
-            }
-
-            return "Program version: " + Application.ProductVersion + ".\n\rProgram version on server: " + version;
-        }
-
-        public string GetChangeLog()
-        {
-            string change_log = "";
-
-            using (WebClient Client = new WebClient())
-            {
-                Client.Encoding = Encoding.UTF8;
-                change_log = Client.DownloadString("https://raw.githubusercontent.com/Johnson070/MiBand-5-watchface-editor/main/changelog.txt");
-            }
-
-            return change_log;
+            return programInfo;
         }
 
         private void checkUpdateToolStripMenuItem_Click(object sender, EventArgs e)
@@ -827,17 +799,19 @@ namespace MiBand5WatchFaces
 
             if (state)
             {
-                if (GetVersion() == Application.ProductVersion) MessageBox.Show(CheckProgramUpdate(), "Update", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else if (MessageBox.Show("Open a link to download the new version of the program?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if (GetProgramInfo().version == Application.ProductVersion) MessageBox.Show(String.Format(res.GetString("ShowUpdateInfo"),Application.ProductVersion, GetProgramInfo().version), res.GetString("Update"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else if (MessageBox.Show(res.GetString("OpenDownloadUpdate"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    Process myProcess = new Process();
-
                     try
                     {
-                        // true is the default, but it is important not to set it to false
-                        myProcess.StartInfo.UseShellExecute = true;
-                        myProcess.StartInfo.FileName = "https://github.com/Johnson070/MiBand-5-watchface-editor/releases";
-                        myProcess.Start();
+                        SaveFileDialog saveFileDialog = new SaveFileDialog() { RestoreDirectory = true, Filter = "zip file (.zip)|*.zip", FileName = "MiBand5WatchFaceEditor.zip" };
+
+                        if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            UpdateForm updateForm = new UpdateForm(String.Format(GetProgramInfo().link, GetProgramInfo().version), saveFileDialog.FileName);
+                            updateForm.ShowDialog();
+                        }
+                        else return;
                     }
                     catch (Exception ex)
                     {
@@ -851,14 +825,14 @@ namespace MiBand5WatchFaces
         {
             bool state = InternetGetConnectedState(out _, 0);
 
-            if (state) MessageBox.Show(GetChangeLog(), "Changelog", MessageBoxButtons.OK);
+            if (state) MessageBox.Show(GetProgramInfo().changelog, res.GetString("ChangeLog"), MessageBoxButtons.OK);
         }
 
         private void timerWatchFaceEXE_Tick(object sender, EventArgs e)
         {
             WatchFaceEXE.Close();
             this.Enabled = true;
-            MessageBox.Show("Error!", "Not generated!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(res.GetString("Error"), res.GetString("NotGenerated"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             watchFace = new WatchFaceLibrary();
             timerWatchFaceEXE.Stop();
         }
@@ -916,20 +890,6 @@ namespace MiBand5WatchFaces
             }
         }
 
-        private void russianToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.lang = "ru-RU";
-            Properties.Settings.Default.Save();
-            Application.Restart();
-        }
-
-        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.lang = "en-US";
-            Properties.Settings.Default.Save();
-            Application.Restart();
-        }
-
         private void OpenJsonButton_Click(object sender, EventArgs e)
         {
             JSONEditorForm jsonForm = new JSONEditorForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
@@ -942,6 +902,25 @@ namespace MiBand5WatchFaces
             }
 
             jsonForm.Dispose();
+        }
+
+        private void ChangeLang(object sender, EventArgs e)
+        {
+            string tag = ((ToolStripMenuItem)sender).Name;
+
+            Properties.Settings.Default.lang = tag == "English" ? "en-US" : "ru-RU";
+            Properties.Settings.Default.Save();
+            Application.Restart();
+        }
+
+        private class ProgramInfo
+        {
+            [JsonProperty("changelog")]
+            public string changelog;
+            [JsonProperty("version")]
+            public string version;
+            [JsonProperty("link")]
+            public string link;
         }
     }
 }

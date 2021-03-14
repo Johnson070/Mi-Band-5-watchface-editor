@@ -46,8 +46,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagePic
             // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
             this.ImagePic.TabStop = false;
             // 

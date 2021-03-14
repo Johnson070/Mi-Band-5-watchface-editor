@@ -170,21 +170,21 @@
             // 
             // ImagePic
             // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
             // 
             // contextMenuStrip
             // 
+            resources.ApplyResources(this.contextMenuStrip, "contextMenuStrip");
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
-            resources.ApplyResources(this.contextMenuStrip, "contextMenuStrip");
             // 
             // deleteToolStripMenuItem
             // 
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
             // 
             // timeZone2Check
             // 

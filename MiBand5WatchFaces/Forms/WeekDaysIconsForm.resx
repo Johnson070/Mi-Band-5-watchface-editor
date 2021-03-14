@@ -117,26 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="saveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+  <data name="fridayButton.Text" xml:space="preserve">
+    <value>Add friday image</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="tuesdayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;thursdayButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="saveButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>474, 358</value>
+  </data>
+  <data name="&gt;&gt;wednesdayButton.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;wednesdayButton.Name" xml:space="preserve">
+    <value>wednesdayButton</value>
+  </data>
+  <data name="&gt;&gt;saturdayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="mondayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 12</value>
+  </data>
+  <data name="thursdayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 35</value>
+  </data>
+  <data name="&gt;&gt;wednesdayButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 312</value>
-  </data>
-  <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>450, 37</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="saveButton.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
-  </data>
-  <data name="saveButton.Text" xml:space="preserve">
-    <value>Save</value>
   </data>
   <data name="&gt;&gt;saveButton.Name" xml:space="preserve">
     <value>saveButton</value>
@@ -144,233 +158,63 @@
   <data name="&gt;&gt;saveButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;saveButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="ImagePic.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="ImagePic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>336, 12</value>
-  </data>
-  <data name="ImagePic.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 294</value>
-  </data>
-  <data name="ImagePic.TabIndex" type="System.Int32, mscorlib">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;ImagePic.Name" xml:space="preserve">
-    <value>ImagePic</value>
-  </data>
-  <data name="&gt;&gt;ImagePic.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ImagePic.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;ImagePic.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="mondayButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="mondayButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 12</value>
-  </data>
-  <data name="mondayButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 35</value>
-  </data>
-  <data name="mondayButton.TabIndex" type="System.Int32, mscorlib">
-    <value>17</value>
-  </data>
-  <data name="mondayButton.Text" xml:space="preserve">
-    <value>Add monday image</value>
-  </data>
-  <data name="&gt;&gt;mondayButton.Name" xml:space="preserve">
-    <value>mondayButton</value>
-  </data>
   <data name="&gt;&gt;mondayButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;mondayButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;mondayButton.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="tuesdayButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="tuesdayButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 53</value>
-  </data>
-  <data name="tuesdayButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 35</value>
-  </data>
-  <data name="tuesdayButton.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
-  </data>
-  <data name="tuesdayButton.Text" xml:space="preserve">
-    <value>Add tuesday image</value>
-  </data>
-  <data name="&gt;&gt;tuesdayButton.Name" xml:space="preserve">
-    <value>tuesdayButton</value>
-  </data>
-  <data name="&gt;&gt;tuesdayButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tuesdayButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;tuesdayButton.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="wednesdayButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="wednesdayButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 94</value>
-  </data>
-  <data name="wednesdayButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 35</value>
-  </data>
-  <data name="wednesdayButton.TabIndex" type="System.Int32, mscorlib">
-    <value>19</value>
-  </data>
-  <data name="wednesdayButton.Text" xml:space="preserve">
-    <value>Add wednesday image</value>
-  </data>
-  <data name="&gt;&gt;wednesdayButton.Name" xml:space="preserve">
-    <value>wednesdayButton</value>
-  </data>
-  <data name="&gt;&gt;wednesdayButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;wednesdayButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;wednesdayButton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="thursdayButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="thursdayButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 135</value>
-  </data>
-  <data name="thursdayButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 35</value>
-  </data>
-  <data name="thursdayButton.TabIndex" type="System.Int32, mscorlib">
-    <value>20</value>
-  </data>
-  <data name="thursdayButton.Text" xml:space="preserve">
-    <value>Add thursday image</value>
-  </data>
-  <data name="&gt;&gt;thursdayButton.Name" xml:space="preserve">
-    <value>thursdayButton</value>
-  </data>
-  <data name="&gt;&gt;thursdayButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;thursdayButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;thursdayButton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="fridayButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="fridayButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 176</value>
-  </data>
-  <data name="fridayButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 35</value>
-  </data>
-  <data name="fridayButton.TabIndex" type="System.Int32, mscorlib">
-    <value>21</value>
-  </data>
-  <data name="fridayButton.Text" xml:space="preserve">
-    <value>Add friday image</value>
-  </data>
-  <data name="&gt;&gt;fridayButton.Name" xml:space="preserve">
-    <value>fridayButton</value>
-  </data>
-  <data name="&gt;&gt;fridayButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;fridayButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;fridayButton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="saturdayButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="saturdayButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 217</value>
-  </data>
-  <data name="saturdayButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 35</value>
-  </data>
-  <data name="saturdayButton.TabIndex" type="System.Int32, mscorlib">
-    <value>22</value>
-  </data>
-  <data name="saturdayButton.Text" xml:space="preserve">
-    <value>Add saturday image</value>
-  </data>
-  <data name="&gt;&gt;saturdayButton.Name" xml:space="preserve">
-    <value>saturdayButton</value>
-  </data>
-  <data name="&gt;&gt;saturdayButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saturdayButton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;saturdayButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="sundayButton.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="sundayButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 258</value>
-  </data>
-  <data name="sundayButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>318, 35</value>
-  </data>
-  <data name="sundayButton.TabIndex" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="sundayButton.Text" xml:space="preserve">
-    <value>Add sunday image</value>
-  </data>
-  <data name="&gt;&gt;sundayButton.Name" xml:space="preserve">
-    <value>sundayButton</value>
   </data>
   <data name="&gt;&gt;sundayButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;sundayButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="wednesdayButton.Text" xml:space="preserve">
+    <value>Add wednesday image</value>
   </data>
-  <data name="&gt;&gt;sundayButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="fridayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="ImagePic.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="thursdayButton.Text" xml:space="preserve">
+    <value>Add thursday image</value>
+  </data>
+  <data name="&gt;&gt;thursdayButton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="saveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="sundayButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>474, 358</value>
+  <data name="tuesdayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 35</value>
+  </data>
+  <data name="sundayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 258</value>
+  </data>
+  <data name="&gt;&gt;fridayButton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="wednesdayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 94</value>
+  </data>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
+  </data>
+  <data name="&gt;&gt;sundayButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="saveButton.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="sundayButton.Text" xml:space="preserve">
+    <value>Add sunday image</value>
+  </data>
+  <data name="&gt;&gt;saturdayButton.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1900,16 +1744,172 @@
         qUSLBGBu5bt7pv9c1v8LVfIA1nE0ZGEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
+  <data name="mondayButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Week days icons</value>
+  <data name="saturdayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 217</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>WeekDaysIconsForm</value>
+  <data name="&gt;&gt;tuesdayButton.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="ImagePic.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 294</value>
+  </data>
+  <data name="&gt;&gt;sundayButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="ImagePic.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="mondayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="fridayButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="&gt;&gt;tuesdayButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="saturdayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="tuesdayButton.Text" xml:space="preserve">
+    <value>Add tuesday image</value>
+  </data>
+  <data name="sundayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 35</value>
+  </data>
+  <data name="&gt;&gt;mondayButton.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="ImagePic.Location" type="System.Drawing.Point, System.Drawing">
+    <value>336, 12</value>
+  </data>
+  <data name="&gt;&gt;ImagePic.Name" xml:space="preserve">
+    <value>ImagePic</value>
+  </data>
+  <data name="&gt;&gt;fridayButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="tuesdayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 53</value>
+  </data>
+  <data name="sundayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;fridayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>450, 37</value>
+  </data>
+  <data name="&gt;&gt;saturdayButton.Name" xml:space="preserve">
+    <value>saturdayButton</value>
+  </data>
+  <data name="saturdayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 35</value>
+  </data>
+  <data name="saveButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="mondayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 35</value>
+  </data>
+  <data name="&gt;&gt;ImagePic.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="saveButton.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="mondayButton.Text" xml:space="preserve">
+    <value>Add monday image</value>
+  </data>
+  <data name="&gt;&gt;sundayButton.Name" xml:space="preserve">
+    <value>sundayButton</value>
+  </data>
+  <data name="&gt;&gt;saturdayButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;tuesdayButton.Name" xml:space="preserve">
+    <value>tuesdayButton</value>
+  </data>
+  <data name="&gt;&gt;mondayButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="thursdayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 135</value>
+  </data>
+  <data name="&gt;&gt;wednesdayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;ImagePic.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="fridayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 35</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Week days icons</value>
+  </data>
+  <data name="&gt;&gt;thursdayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="wednesdayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="fridayButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 176</value>
+  </data>
+  <data name="&gt;&gt;ImagePic.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="saturdayButton.Text" xml:space="preserve">
+    <value>Add saturday image</value>
+  </data>
+  <data name="&gt;&gt;tuesdayButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;saveButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="thursdayButton.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="wednesdayButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="thursdayButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="&gt;&gt;thursdayButton.Name" xml:space="preserve">
+    <value>thursdayButton</value>
+  </data>
+  <data name="&gt;&gt;mondayButton.Name" xml:space="preserve">
+    <value>mondayButton</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>WeekDaysIconsForm</value>
+  </data>
+  <data name="tuesdayButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="saturdayButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="&gt;&gt;fridayButton.Name" xml:space="preserve">
+    <value>fridayButton</value>
+  </data>
+  <data name="wednesdayButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>318, 35</value>
+  </data>
+  <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

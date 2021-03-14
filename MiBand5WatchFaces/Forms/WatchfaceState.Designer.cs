@@ -344,6 +344,7 @@
             // 
             // WeatherState
             // 
+            resources.ApplyResources(this.WeatherState, "WeatherState");
             this.WeatherState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.WeatherState.FormattingEnabled = true;
             this.WeatherState.Items.AddRange(new object[] {
@@ -373,7 +374,6 @@
             resources.GetString("WeatherState.Items23"),
             resources.GetString("WeatherState.Items24"),
             resources.GetString("WeatherState.Items25")});
-            resources.ApplyResources(this.WeatherState, "WeatherState");
             this.WeatherState.Name = "WeatherState";
             this.WeatherState.SelectedIndexChanged += new System.EventHandler(this.ChangeValue);
             // 
@@ -501,8 +501,8 @@
             // 
             // ImagePic
             // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
             // 
             // SaveButton

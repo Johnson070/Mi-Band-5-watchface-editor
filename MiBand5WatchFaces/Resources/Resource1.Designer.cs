@@ -475,11 +475,39 @@ namespace MiBand5WatchFaces.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Changelog.
+        /// </summary>
+        internal static string ChangeLog {
+            get {
+                return ResourceManager.GetString("ChangeLog", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Complete.
+        /// </summary>
+        internal static string Complete {
+            get {
+                return ResourceManager.GetString("Complete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Delete images.
         /// </summary>
         internal static string DeleteImages {
             get {
                 return ResourceManager.GetString("DeleteImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на The selected item will be deleted irretrievably.
+        ///Are you sure?.
+        /// </summary>
+        internal static string DeleteItem {
+            get {
+                return ResourceManager.GetString("DeleteItem", resourceCulture);
             }
         }
         
@@ -898,6 +926,33 @@ namespace MiBand5WatchFaces.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Error!.
+        /// </summary>
+        internal static string Error {
+            get {
+                return ResourceManager.GetString("Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Error generate preview!.
+        /// </summary>
+        internal static string ErrorGenPreview {
+            get {
+                return ResourceManager.GetString("ErrorGenPreview", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Error save!.
+        /// </summary>
+        internal static string ErrorSave {
+            get {
+                return ResourceManager.GetString("ErrorSave", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Do you want to get out without saving?.
         /// </summary>
         internal static string ExitMessage {
@@ -925,11 +980,103 @@ namespace MiBand5WatchFaces.Resources {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Hours tens and hour ones and minute tens and minutes ones should be added!\nExit without save?.
+        ///   Ищет локализованную строку, похожую на Not generated!.
+        /// </summary>
+        internal static string NotGenerated {
+            get {
+                return ResourceManager.GetString("NotGenerated", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Download zip file with update?.
+        /// </summary>
+        internal static string OpenDownloadUpdate {
+            get {
+                return ResourceManager.GetString("OpenDownloadUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Save the file before closing the program?.
+        /// </summary>
+        internal static string SaveFileClose {
+            get {
+                return ResourceManager.GetString("SaveFileClose", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Save an open watchface before opening another watchface?.
+        /// </summary>
+        internal static string SaveOpenJson {
+            get {
+                return ResourceManager.GetString("SaveOpenJson", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Save?.
+        /// </summary>
+        internal static string SaveQ {
+            get {
+                return ResourceManager.GetString("SaveQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Program version: {0}.
+        ///Program version on server: {1}.
+        /// </summary>
+        internal static string ShowUpdateInfo {
+            get {
+                return ResourceManager.GetString("ShowUpdateInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Succeful!.
+        /// </summary>
+        internal static string Succeful {
+            get {
+                return ResourceManager.GetString("Succeful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Are you sure?.
+        /// </summary>
+        internal static string SureQ {
+            get {
+                return ResourceManager.GetString("SureQ", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Hours tens and hour ones and minute tens and minutes ones should be added!
+        ///Exit without save?.
         /// </summary>
         internal static string TimeFormError {
             get {
                 return ResourceManager.GetString("TimeFormError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Update.
+        /// </summary>
+        internal static string Update {
+            get {
+                return ResourceManager.GetString("Update", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Downloading the update is complete!.
+        /// </summary>
+        internal static string UpdateDownloadExit {
+            get {
+                return ResourceManager.GetString("UpdateDownloadExit", resourceCulture);
             }
         }
     }

@@ -65,6 +65,7 @@
             // 
             // PropertiesGroupBox
             // 
+            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Controls.Add(this.posYNum);
             this.PropertiesGroupBox.Controls.Add(this.posXNum);
             this.PropertiesGroupBox.Controls.Add(this.label6);
@@ -80,7 +81,6 @@
             this.PropertiesGroupBox.Controls.Add(this.spacingXNum);
             this.PropertiesGroupBox.Controls.Add(this.label1);
             this.PropertiesGroupBox.Controls.Add(this.AligmentComboBox);
-            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
             this.PropertiesGroupBox.TabStop = false;
             // 
@@ -218,6 +218,7 @@
             // 
             // AligmentComboBox
             // 
+            resources.ApplyResources(this.AligmentComboBox, "AligmentComboBox");
             this.AligmentComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AligmentComboBox.FormattingEnabled = true;
             this.AligmentComboBox.Items.AddRange(new object[] {
@@ -230,7 +231,6 @@
             resources.GetString("AligmentComboBox.Items6"),
             resources.GetString("AligmentComboBox.Items7"),
             resources.GetString("AligmentComboBox.Items8")});
-            resources.ApplyResources(this.AligmentComboBox, "AligmentComboBox");
             this.AligmentComboBox.Name = "AligmentComboBox";
             this.AligmentComboBox.TextChanged += new System.EventHandler(this.alignChanged);
             // 

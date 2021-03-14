@@ -121,7 +121,7 @@ namespace MiBand5WatchFaces.Forms
             else if (btn.Name == AddTensMinuteBtn.Name)
             {
                 watchface.Time.Minutes = watchface.Time.Minutes == null ? new TwoDigits() : watchface.Time.Minutes;
-                watchface.Time.Minutes.Tens = watchface.Time.Minutes.Ones == null ? new ImageSet() : watchface.Time.Minutes.Tens;
+                watchface.Time.Minutes.Tens = watchface.Time.Minutes.Tens == null ? new ImageSet() : watchface.Time.Minutes.Tens;
                 ImageSetForm setForm = new ImageSetForm(watchface, watchface.Time.Minutes.Tens, watch.imagesBuff.DeepCopy(), state, 10);
                 setForm.ShowDialog();
 
