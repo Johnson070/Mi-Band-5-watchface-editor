@@ -72,7 +72,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <ApplicationIcon>proj-_1_.ico</ApplicationIcon>
+    <ApplicationIcon>proj_%281%29.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
@@ -560,6 +560,7 @@
     <Content Include="proj-_1_.ico" />
     <None Include="Resources\21305435.png" />
     <None Include="Resources\pngtree-black-coin-icon-image_1130356.png" />
+    <Content Include="proj_%281%29.ico" />
     <Content Include="WatchFace\BumpKit.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

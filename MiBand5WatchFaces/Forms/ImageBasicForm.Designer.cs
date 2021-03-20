@@ -52,13 +52,13 @@
             // 
             // PropertiesGroupBox
             // 
-            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Controls.Add(this.posYNum);
             this.PropertiesGroupBox.Controls.Add(this.posXNum);
             this.PropertiesGroupBox.Controls.Add(this.label6);
             this.PropertiesGroupBox.Controls.Add(this.saveBtn);
             this.PropertiesGroupBox.Controls.Add(this.label4);
             this.PropertiesGroupBox.Controls.Add(this.previewImage);
+            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
             this.PropertiesGroupBox.TabStop = false;
             // 
@@ -129,8 +129,8 @@
             // 
             // ImageBasicForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.PropertiesGroupBox);
             this.Controls.Add(this.selectImage);

@@ -55,8 +55,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // UpdateForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.infoTextBox);
             this.Controls.Add(this.bar);

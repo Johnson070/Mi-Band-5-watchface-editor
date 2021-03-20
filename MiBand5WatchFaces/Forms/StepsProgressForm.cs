@@ -244,7 +244,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.formEdit = null;
 
                 if (stateForm == StateForm.Calories)
-                    watch.CaloriesProgress = watch.formEdit.ConvertToSP();
+                    watch.CaloriesProgress = watch.formEdit == null ? null : watch.formEdit.ConvertToSP();
                 else
                     watch.StepsProgress = watch.formEdit;
             }
@@ -264,7 +264,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.formEdit = null;
 
             if (stateForm == StateForm.Calories)
-                watch.CaloriesProgress = watch.formEdit.ConvertToSP();
+                watch.CaloriesProgress = watch.formEdit == null ? null : watch.formEdit.ConvertToSP();
             else
                 watch.StepsProgress = watch.formEdit;
 

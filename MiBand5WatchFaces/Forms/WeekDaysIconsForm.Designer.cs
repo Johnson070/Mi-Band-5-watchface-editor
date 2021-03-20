@@ -105,8 +105,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // WeekDaysIconsForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.sundayButton);
             this.Controls.Add(this.saturdayButton);
             this.Controls.Add(this.fridayButton);
@@ -117,6 +117,7 @@ namespace MiBand5WatchFaces.Forms
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.ImagePic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "WeekDaysIconsForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WeekDaysIconsForm_FormClosing);
             this.ResumeLayout(false);

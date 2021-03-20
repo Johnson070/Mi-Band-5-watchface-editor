@@ -48,12 +48,16 @@ namespace MiBand5WatchFaces.Forms
                     timeZone1ButtonEdit.Text = res.GetString("EditNumber");
                     TZ1groupBox.Enabled = true;
                     timeZone1Check.Checked = true;
+                    TZ1NoTime.Enabled = true;
+                    TZ1DelimeterBtn.Enabled = true;
                 }
                 if (watch.Time.TimeZone2 != null)
                 {
                     timeZone2ButtonEdit.Text = res.GetString("EditNumber");
                     TZ2groupBox.Enabled = true;
                     timeZone2Check.Checked = true;
+                    TZ2NoTime.Enabled = true;
+                    TZ2DelimeterBtn.Enabled = true;
                 }
                 if (watch.Time?.TimeZone1NoTime != null)
                 {

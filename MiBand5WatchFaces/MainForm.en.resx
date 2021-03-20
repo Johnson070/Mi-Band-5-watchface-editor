@@ -10735,4 +10735,19 @@
   <data name="OpenJsonButton.Text" xml:space="preserve">
     <value>Open JSON Editor</value>
   </data>
+  <data name="AnimateCheckBox.Text" xml:space="preserve">
+    <value>Animate</value>
+  </data>
+  <data name="convertGIFToPNGToolStripMenuItem.Text" xml:space="preserve">
+    <value>Convert GIF to PNG</value>
+  </data>
+  <data name="convertGIFToPNGButton.Text" xml:space="preserve">
+    <value>Convert GIF to PNG</value>
+  </data>
+  <data name="SupportAuthorButton.Text" xml:space="preserve">
+    <value>Convert GIF to PNG</value>
+  </data>
+  <data name="CloseProjectButton.Text" xml:space="preserve">
+    <value>Close watchface</value>
+  </data>
 </root>

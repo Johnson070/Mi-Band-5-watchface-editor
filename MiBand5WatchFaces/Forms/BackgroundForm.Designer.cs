@@ -64,16 +64,16 @@
             // 
             // BackgroundColorGroup
             // 
-            resources.ApplyResources(this.BackgroundColorGroup, "BackgroundColorGroup");
             this.BackgroundColorGroup.Controls.Add(this.panel1);
             this.BackgroundColorGroup.Controls.Add(this.SelectBackgroundColor);
+            resources.ApplyResources(this.BackgroundColorGroup, "BackgroundColorGroup");
             this.BackgroundColorGroup.Name = "BackgroundColorGroup";
             this.BackgroundColorGroup.TabStop = false;
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.Black;
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
             // SelectBackgroundColor
@@ -85,7 +85,6 @@
             // 
             // BackgroundImages
             // 
-            resources.ApplyResources(this.BackgroundImages, "BackgroundImages");
             this.BackgroundImages.Controls.Add(this.ImagePic);
             this.BackgroundImages.Controls.Add(this.backgroundYPos);
             this.BackgroundImages.Controls.Add(this.backgroundXPos);
@@ -93,14 +92,15 @@
             this.BackgroundImages.Controls.Add(this.label5);
             this.BackgroundImages.Controls.Add(this.panel2);
             this.BackgroundImages.Controls.Add(this.label1);
+            resources.ApplyResources(this.BackgroundImages, "BackgroundImages");
             this.BackgroundImages.Name = "BackgroundImages";
             this.BackgroundImages.TabStop = false;
             // 
             // ImagePic
             // 
-            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.AllowDrop = true;
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
             this.ImagePic.Click += new System.EventHandler(this.clickPic);
             this.ImagePic.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDropPic);
@@ -140,8 +140,8 @@
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.BackColor = System.Drawing.SystemColors.ControlDark;
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
             // label1
@@ -158,8 +158,8 @@
             // 
             // Preview3Pic
             // 
-            resources.ApplyResources(this.Preview3Pic, "Preview3Pic");
             this.Preview3Pic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.Preview3Pic, "Preview3Pic");
             this.Preview3Pic.Name = "Preview3Pic";
             this.Preview3Pic.Click += new System.EventHandler(this.clickPic);
             this.Preview3Pic.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDropPic);
@@ -167,8 +167,8 @@
             // 
             // Preview2Pic
             // 
-            resources.ApplyResources(this.Preview2Pic, "Preview2Pic");
             this.Preview2Pic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.Preview2Pic, "Preview2Pic");
             this.Preview2Pic.Name = "Preview2Pic";
             this.Preview2Pic.Click += new System.EventHandler(this.clickPic);
             this.Preview2Pic.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDropPic);
@@ -176,8 +176,8 @@
             // 
             // Preview1Pic
             // 
-            resources.ApplyResources(this.Preview1Pic, "Preview1Pic");
             this.Preview1Pic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.Preview1Pic, "Preview1Pic");
             this.Preview1Pic.Name = "Preview1Pic";
             this.Preview1Pic.Click += new System.EventHandler(this.clickPic);
             this.Preview1Pic.DragDrop += new System.Windows.Forms.DragEventHandler(this.dragDropPic);
@@ -207,8 +207,8 @@
             // 
             // BackgroundForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.genPreviews);
             this.Controls.Add(this.Preview3Pic);
             this.Controls.Add(this.Preview2Pic);
@@ -221,6 +221,7 @@
             this.Controls.Add(this.BackgroundColorGroup);
             this.Controls.Add(this.UseBackgroundColor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "BackgroundForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.BackgroundForm_FormClosing);
             this.BackgroundColorGroup.ResumeLayout(false);

@@ -62,19 +62,19 @@ namespace MiBand5WatchFaces.Forms
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage4);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.GoalImageCheckbox);
             this.tabPage1.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -101,9 +101,9 @@ namespace MiBand5WatchFaces.Forms
             // 
             // tabPage3
             // 
-            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Controls.Add(this.LineScaleCheckbox);
             this.tabPage3.Controls.Add(this.groupBox3);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
@@ -130,9 +130,9 @@ namespace MiBand5WatchFaces.Forms
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.LinearCheckBox);
             this.tabPage2.Controls.Add(this.groupBox2);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -159,9 +159,9 @@ namespace MiBand5WatchFaces.Forms
             // 
             // tabPage4
             // 
-            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Controls.Add(this.CircleScaleCheckbox);
             this.tabPage4.Controls.Add(this.groupBox4);
+            resources.ApplyResources(this.tabPage4, "tabPage4");
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
@@ -188,8 +188,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagePic
             // 
-            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
             // 
             // saveButton
@@ -201,12 +201,13 @@ namespace MiBand5WatchFaces.Forms
             // 
             // StepsProgressForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "StepsProgressForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NumberFormEdit_FormClosing);
             this.tabControl1.ResumeLayout(false);

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Globalization;
+using System.Drawing.Imaging;
+using System.IO;
+using System.Linq;
 
 namespace MiBand5WatchFaces
 {
@@ -42,7 +45,6 @@ namespace MiBand5WatchFaces
         public DateTime TimeZone = DateTime.Now;
         public bool NoTimeZone = false;
         public int animation = 0;
-        public List<AnimationState> animationStates;
         public DayOfWeek DayOfWeek = DateTime.Now.DayOfWeek;
 
         public bool notGen = false;
@@ -54,11 +56,6 @@ namespace MiBand5WatchFaces
             TimeZone = DateTime.Now;
         }
 
-        public class AnimationState
-        {
-            public int animationShot = 0;
-            public int count;
-        }
     }
 
     public class VisualRender
@@ -81,6 +78,67 @@ namespace MiBand5WatchFaces
             watchfacePreview = Graphics.FromImage(Preview);
             watchFaceState = state == null ? new StateWatchface() : state;
             watchface.imagesBuff = Images;
+        }
+
+        public List<Image> GenAnimated()
+        {
+            //if (watchface.Other != null)
+            //{
+            //    int shots = 1;
+            //    foreach (Animation animation in watchface.Other.Animation)
+            //        shots *= animation.AnimationImages.ImagesCount == 0 ? 1 : animation.AnimationImages.ImagesCount;
+
+            //    List<Image> GifPreview = new List<Image>();
+
+            //    for (int i = 0; i < shots; i++)
+            //    {
+            //        Preview = (Image)new Bitmap(126, 294);
+            //        watchfacePreview = Graphics.FromImage(Preview);
+            //        GifPreview.Add(GenWatchface());
+
+            //        foreach (Animation animation in watchface.Other.Animation)
+            //            animation.Step = (animation.Step + 1 >= (animation.AnimationImages.ImagesCount == 0 ? -1 : animation.AnimationImages.ImagesCount)) ? 0 : animation.Step + 1;
+            //    }
+            //    watchFaceState.animation = 0;
+
+            //    foreach (Animation animation in watchface.Other.Animation)
+            //        animation.Step = 0;
+
+            //    return GifPreview;
+            //}
+            //else 
+            return null;
+        }
+
+        public Image GenAnimationStep(bool state)
+        {
+            if (state)
+            {
+                if (watchface.Other != null && watchface.Other.Animation != null)
+                {
+                    Preview = (Image)new Bitmap(126, 294);
+                    watchfacePreview = Graphics.FromImage(Preview);
+
+                    foreach (Animation animation in watchface.Other.Animation)
+                        animation.Step = (animation.Step + 1 >= (animation.AnimationImages.ImagesCount == 0 ? -1 : animation.AnimationImages.ImagesCount)) ? 0 : animation.Step + 1;
+
+                    return GenWatchface();
+                }
+                else return null;
+            }
+            else
+            {
+                if (watchface.Other != null && watchface.Other.Animation != null)
+                {
+                    foreach (Animation animation in watchface.Other.Animation)
+                        animation.Step = 0;
+                }
+
+                Preview = (Image)new Bitmap(126, 294);
+                watchfacePreview = Graphics.FromImage(Preview);
+
+                return GenWatchface();
+            }
         }
 
         public Image genPreview() => (Image)ResizeImage(GenWatchface(), 90, 210);
@@ -135,7 +193,12 @@ namespace MiBand5WatchFaces
             if (element.GetType() == typeof(CaloriesProgress)) drawCaloriesProgress((CaloriesProgress)element);
             if (element.GetType() == typeof(Alarm)) drawAlarm((Alarm)element);
             if (element.GetType() == typeof(StatusSimple)) drawStatusSimplified((StatusSimple)element);
+
             watchfacePreview.Dispose();
+            long totalMemory = GC.GetTotalMemory(false);
+
+            GC.Collect();
+            GC.WaitForPendingFinalizers();
             return Preview;
         }
 
@@ -345,7 +408,7 @@ namespace MiBand5WatchFaces
                     else images.Add(watchface.imagesBuff[dateNumber.ImageIndex + watchFaceState.Time.Day]);
                     drawNumber(date.MonthAndDayAndYear.OneLine == null ? date.MonthAndDayAndYear.OneLineWithYear.Number : date.MonthAndDayAndYear.OneLine.Number, images);
                 }
-                
+
                 if (date.MonthAndDayAndYear.Separate != null)
                 {
                     if (date.MonthAndDayAndYear.Separate.MonthsEN != null)
@@ -415,7 +478,7 @@ namespace MiBand5WatchFaces
                         dayofweek = 0;
                         break;
                     case DayOfWeek.Tuesday:
-                        dayofweek = 1; 
+                        dayofweek = 1;
                         break;
                     case DayOfWeek.Wednesday:
                         dayofweek = 2;
@@ -475,7 +538,7 @@ namespace MiBand5WatchFaces
                         if (weather.Temperature.Today.OneLine.AppendDegreesForBoth) images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.DegreesImageIndex]);
                         images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.DelimiterImageIndex]);
                         if (watchFaceState.DayTemperature < 0) images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.MinusSignImageIndex]);
-                        for (int i = 0; i < Math.Abs(watchFaceState.DayTemperature).ToString().Length.Constrain(0,weather.Temperature.Today.OneLine.Number.ImagesCount); i++)
+                        for (int i = 0; i < Math.Abs(watchFaceState.DayTemperature).ToString().Length.Constrain(0, weather.Temperature.Today.OneLine.Number.ImagesCount); i++)
                             images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.Number.ImageIndex + Convert.ToInt16(Math.Abs(watchFaceState.DayTemperature).ToString()[i].ToString())]);
                         images.Add(watchface.imagesBuff[weather.Temperature.Today.OneLine.DegreesImageIndex]);
 
@@ -489,8 +552,8 @@ namespace MiBand5WatchFaces
                             List<Image> images = new List<Image>();
 
                             if (watchFaceState.DayTemperature < 0) images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Day.MinusImageIndex]);
-                            for (int i = 0; i < Math.Abs(watchFaceState.DayTemperature).ToString().Length.Constrain(0,weather.Temperature.Today.Separate.Day.Number.ImagesCount); i++)
-                                images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Night.Number.ImageIndex + Convert.ToInt16(Math.Abs(watchFaceState.DayTemperature).ToString()[i].ToString())]);
+                            for (int i = 0; i < Math.Abs(watchFaceState.DayTemperature).ToString().Length.Constrain(0, weather.Temperature.Today.Separate.Day.Number.ImagesCount); i++)
+                                images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Day.Number.ImageIndex + Convert.ToInt16(Math.Abs(watchFaceState.DayTemperature).ToString()[i].ToString())]);
                             images.Add(watchface.imagesBuff[weather.Temperature.Today.Separate.Day.DegreesImageIndex]);
 
                             drawNumber(weather.Temperature.Today.Separate.Day.Number, images);
@@ -598,15 +661,15 @@ namespace MiBand5WatchFaces
 
             if (progress.CircleScale != null)
             {
-                    Color circleColor = convertColorFromString(progress.CircleScale.Color);
-                    watchfacePreview.DrawArc(
-                        new Pen(circleColor, progress.CircleScale.Width + 1),
-                        progress.CircleScale.CenterX - progress.CircleScale.RadiusX,
-                        progress.CircleScale.CenterY - progress.CircleScale.RadiusY,
-                        progress.CircleScale.RadiusX * 2,
-                        progress.CircleScale.RadiusY * 2,
-                        progress.CircleScale.StartAngle - 90,
-                        map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.CircleScale.EndAngle));
+                Color circleColor = convertColorFromString(progress.CircleScale.Color);
+                watchfacePreview.DrawArc(
+                    new Pen(circleColor, progress.CircleScale.Width + 1),
+                    progress.CircleScale.CenterX - progress.CircleScale.RadiusX,
+                    progress.CircleScale.CenterY - progress.CircleScale.RadiusY,
+                    progress.CircleScale.RadiusX * 2,
+                    progress.CircleScale.RadiusY * 2,
+                    progress.CircleScale.StartAngle - 90,
+                    map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.CircleScale.EndAngle));
             }
         }
 
@@ -695,7 +758,7 @@ namespace MiBand5WatchFaces
             if (other.Animation != null)
             {
                 foreach (Animation animation in other.Animation)
-                    drawImage(watchface.imagesBuff[animation.AnimationImages.ImageIndex + watchFaceState.animation], animation.AnimationImages.getPoint());
+                    drawImage(watchface.imagesBuff[animation.AnimationImages.ImageIndex + (animation.Step != 0 ? animation.Step : watchFaceState.animation)], animation.AnimationImages.getPoint());//(watchFaceState.animation % (animation.AnimationImages.ImagesCount == 0 ? 10000 : animation.AnimationImages.ImagesCount))
             }
         }
 
@@ -872,7 +935,7 @@ namespace MiBand5WatchFaces
             }
 
             if (number.drawBorder)
-                watchfacePreview.DrawPolygon(new Pen(Color.Red), new Point[] { new Point(rectX-1, rectY-1), new Point(rectX + size.X+1, rectY-1), new Point(rectX + size.X+1, rectY + size.Y+1), new Point(rectX-1, rectY + size.Y+1) });
+                watchfacePreview.DrawPolygon(new Pen(Color.Red), new Point[] { new Point(rectX - 1, rectY - 1), new Point(rectX + size.X + 1, rectY - 1), new Point(rectX + size.X + 1, rectY + size.Y + 1), new Point(rectX - 1, rectY + size.Y + 1) });
         }
 
         private void drawImage(Image image, Point point)
@@ -919,4 +982,146 @@ namespace MiBand5WatchFaces
     {
         public static int Constrain(this int inNum, int outMin, int outMax) => inNum >= outMin && inNum <= outMax ? inNum : (inNum > outMax ? outMax : outMin);
     }
+
+    //public class GifEncoder : IDisposable
+    //{
+    //    private const string FileType = "GIF";
+    //    private const string FileVersion = "89a";
+    //    private const byte FileTrailer = 59;
+    //    private const int ApplicationExtensionBlockIdentifier = 65313;
+    //    private const byte ApplicationBlockSize = 11;
+    //    private const string ApplicationIdentification = "NETSCAPE2.0";
+    //    private const int GraphicControlExtensionBlockIdentifier = 63777;
+    //    private const byte GraphicControlExtensionBlockSize = 4;
+    //    private const long SourceGlobalColorInfoPosition = 10;
+    //    private const long SourceGraphicControlExtensionPosition = 781;
+    //    private const long SourceGraphicControlExtensionLength = 8;
+    //    private const long SourceImageBlockPosition = 789;
+    //    private const long SourceImageBlockHeaderLength = 11;
+    //    private const long SourceColorBlockPosition = 13;
+    //    private const long SourceColorBlockLength = 768;
+    //    private bool _isFirstImage = true;
+    //    private int? _width;
+    //    private int? _height;
+    //    private int? _repeatCount;
+    //    private readonly Stream _stream;
+
+    //    public TimeSpan FrameDelay { get; set; }
+
+    //    public GifEncoder(Stream stream, int? width = null, int? height = null, int? repeatCount = null)
+    //    {
+    //        this._stream = stream;
+    //        this._width = width;
+    //        this._height = height;
+    //        this._repeatCount = repeatCount;
+    //    }
+
+    //    public void AddFrame(Image img, int x = 0, int y = 0, TimeSpan? frameDelay = null)
+    //    {
+    //        using (MemoryStream memoryStream = new MemoryStream())
+    //        {
+    //            img.Save((Stream)memoryStream, ImageFormat.Gif);
+    //            if (this._isFirstImage)
+    //                this.InitHeader((Stream)memoryStream, img.Width, img.Height);
+    //            this.WriteGraphicControlBlock((Stream)memoryStream, frameDelay.GetValueOrDefault(this.FrameDelay));
+    //            this.WriteImageBlock((Stream)memoryStream, !this._isFirstImage, x, y, img.Width, img.Height);
+    //        }
+    //        this._isFirstImage = false;
+    //    }
+
+    //    private void InitHeader(Stream sourceGif, int w, int h)
+    //    {
+    //        this.WriteString("GIF");
+    //        this.WriteString("89a");
+    //        this.WriteShort(this._width.GetValueOrDefault(w));
+    //        this.WriteShort(this._height.GetValueOrDefault(h));
+    //        sourceGif.Position = 10L;
+    //        this.WriteByte(sourceGif.ReadByte());
+    //        this.WriteByte(0);
+    //        this.WriteByte(0);
+    //        this.WriteColorTable(sourceGif);
+    //        this.WriteShort(65313);
+    //        this.WriteByte(11);
+    //        this.WriteString("NETSCAPE2.0");
+    //        this.WriteByte(3);
+    //        this.WriteByte(1);
+    //        this.WriteShort(this._repeatCount.GetValueOrDefault(0));
+    //        this.WriteByte(0);
+    //    }
+
+    //    private void WriteColorTable(Stream sourceGif)
+    //    {
+    //        sourceGif.Position = 13L;
+    //        IntPtr intPtr = new IntPtr(768);
+    //        byte[] buffer = new byte[(int)intPtr];
+    //        sourceGif.Read(buffer, 0, buffer.Length);
+    //        this._stream.Write(buffer, 0, buffer.Length);
+    //    }
+
+    //    private void WriteGraphicControlBlock(Stream sourceGif, TimeSpan frameDelay)
+    //    {
+    //        sourceGif.Position = 781L;
+    //        byte[] buffer = new byte[(int)new IntPtr(8)];
+    //        sourceGif.Read(buffer, 0, buffer.Length);
+    //        this.WriteShort(63777);
+    //        this.WriteByte(4);
+    //        this.WriteByte((int)buffer[3] & 247 | 8);
+    //        this.WriteShort(Convert.ToInt32(frameDelay.TotalMilliseconds / 10.0));
+    //        this.WriteByte((int)buffer[6]);
+    //        this.WriteByte(0);
+    //    }
+
+    //    private void WriteImageBlock(
+    //      Stream sourceGif,
+    //      bool includeColorTable,
+    //      int x,
+    //      int y,
+    //      int h,
+    //      int w)
+    //    {
+    //        sourceGif.Position = 789L;
+    //        byte[] buffer1 = new byte[(int)new IntPtr(11)];
+    //        sourceGif.Read(buffer1, 0, buffer1.Length);
+    //        this.WriteByte((int)buffer1[0]);
+    //        this.WriteShort(x);
+    //        this.WriteShort(y);
+    //        this.WriteShort(h);
+    //        this.WriteShort(w);
+    //        if (includeColorTable)
+    //        {
+    //            sourceGif.Position = 10L;
+    //            this.WriteByte(sourceGif.ReadByte() & 63 | 128);
+    //            this.WriteColorTable(sourceGif);
+    //        }
+    //        else
+    //            this.WriteByte((int)buffer1[9] & 7 | 7);
+    //        this.WriteByte((int)buffer1[10]);
+    //        sourceGif.Position = 800L;
+    //        for (int count = sourceGif.ReadByte(); count > 0; count = sourceGif.ReadByte())
+    //        {
+    //            byte[] buffer2 = new byte[count];
+    //            sourceGif.Read(buffer2, 0, count);
+    //            this._stream.WriteByte(Convert.ToByte(count));
+    //            this._stream.Write(buffer2, 0, count);
+    //        }
+    //        this._stream.WriteByte((byte)0);
+    //    }
+
+    //    private void WriteByte(int value) => this._stream.WriteByte(Convert.ToByte(value));
+
+    //    private void WriteShort(int value)
+    //    {
+    //        this._stream.WriteByte(Convert.ToByte(value & (int)byte.MaxValue));
+    //        this._stream.WriteByte(Convert.ToByte(value >> 8 & (int)byte.MaxValue));
+    //    }
+
+    //    private void WriteString(string value) => this._stream.Write(((IEnumerable<char>)value.ToArray<char>()).Select<char, byte>((Func<char, byte>)(c => (byte)c)).ToArray<byte>(), 0, value.Length);
+
+    //    public void Dispose()
+    //    {
+    //        this.WriteByte(0);
+    //        this.WriteByte(59);
+    //        this._stream.Flush();
+    //    }
+    //}
 }

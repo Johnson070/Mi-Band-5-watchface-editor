@@ -52,22 +52,20 @@ namespace MiBand5WatchFaces.Forms
             // 
             // statusStrip1
             // 
-            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.posPanel});
+            resources.ApplyResources(this.statusStrip1, "statusStrip1");
             this.statusStrip1.Name = "statusStrip1";
-            this.HelpTip.SetToolTip(this.statusStrip1, resources.GetString("statusStrip1.ToolTip"));
             // 
             // posPanel
             // 
-            resources.ApplyResources(this.posPanel, "posPanel");
             this.posPanel.Name = "posPanel";
+            resources.ApplyResources(this.posPanel, "posPanel");
             // 
             // saveButton
             // 
             resources.ApplyResources(this.saveButton, "saveButton");
             this.saveButton.Name = "saveButton";
-            this.HelpTip.SetToolTip(this.saveButton, resources.GetString("saveButton.ToolTip"));
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
@@ -81,28 +79,26 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox1.Controls.Add(this.dotRadioButton);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
-            this.HelpTip.SetToolTip(this.groupBox1, resources.GetString("groupBox1.ToolTip"));
             // 
             // shapeListBox
             // 
-            resources.ApplyResources(this.shapeListBox, "shapeListBox");
             this.shapeListBox.ContextMenuStrip = this.contextMenuStrip1;
             this.shapeListBox.FormattingEnabled = true;
+            resources.ApplyResources(this.shapeListBox, "shapeListBox");
             this.shapeListBox.Name = "shapeListBox";
             this.HelpTip.SetToolTip(this.shapeListBox, resources.GetString("shapeListBox.ToolTip"));
             // 
             // contextMenuStrip1
             // 
-            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteDotToolStrip});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.HelpTip.SetToolTip(this.contextMenuStrip1, resources.GetString("contextMenuStrip1.ToolTip"));
+            resources.ApplyResources(this.contextMenuStrip1, "contextMenuStrip1");
             // 
             // deleteDotToolStrip
             // 
-            resources.ApplyResources(this.deleteDotToolStrip, "deleteDotToolStrip");
             this.deleteDotToolStrip.Name = "deleteDotToolStrip";
+            resources.ApplyResources(this.deleteDotToolStrip, "deleteDotToolStrip");
             this.deleteDotToolStrip.Click += new System.EventHandler(this.deleteDotToolStrip_Click);
             // 
             // panelArrow
@@ -110,7 +106,6 @@ namespace MiBand5WatchFaces.Forms
             resources.ApplyResources(this.panelArrow, "panelArrow");
             this.panelArrow.Name = "panelArrow";
             this.panelArrow.TabStop = false;
-            this.HelpTip.SetToolTip(this.panelArrow, resources.GetString("panelArrow.ToolTip"));
             this.panelArrow.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArrow_Paint);
             this.panelArrow.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelArrow_MouseClick);
             this.panelArrow.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
@@ -121,7 +116,6 @@ namespace MiBand5WatchFaces.Forms
             // 
             resources.ApplyResources(this.clearAllButton, "clearAllButton");
             this.clearAllButton.Name = "clearAllButton";
-            this.HelpTip.SetToolTip(this.clearAllButton, resources.GetString("clearAllButton.ToolTip"));
             this.clearAllButton.UseVisualStyleBackColor = true;
             this.clearAllButton.Click += new System.EventHandler(this.clearAllButton_Click);
             // 
@@ -145,21 +139,19 @@ namespace MiBand5WatchFaces.Forms
             // 
             resources.ApplyResources(this.deleteButton, "deleteButton");
             this.deleteButton.Name = "deleteButton";
-            this.HelpTip.SetToolTip(this.deleteButton, resources.GetString("deleteButton.ToolTip"));
             this.deleteButton.UseVisualStyleBackColor = true;
             this.deleteButton.Click += new System.EventHandler(this.deleteButton_Click);
             // 
             // ArrowPaintForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.statusStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "ArrowPaintForm";
-            this.HelpTip.SetToolTip(this, resources.GetString("$this.ToolTip"));
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ArrowPaintForm_FormClosing);
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();

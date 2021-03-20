@@ -48,7 +48,6 @@ namespace MiBand5WatchFaces.Forms
             // 
             // PropertiesGroupBox
             // 
-            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Controls.Add(this.posYNum);
             this.PropertiesGroupBox.Controls.Add(this.posXNum);
             this.PropertiesGroupBox.Controls.Add(this.label6);
@@ -57,6 +56,7 @@ namespace MiBand5WatchFaces.Forms
             this.PropertiesGroupBox.Controls.Add(this.previewImage);
             this.PropertiesGroupBox.Controls.Add(this.label1);
             this.PropertiesGroupBox.Controls.Add(this.ImagesComboBox);
+            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
             this.PropertiesGroupBox.TabStop = false;
             // 
@@ -111,8 +111,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // previewImage
             // 
-            resources.ApplyResources(this.previewImage, "previewImage");
             this.previewImage.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.previewImage, "previewImage");
             this.previewImage.Name = "previewImage";
             this.previewImage.MouseDown += new System.Windows.Forms.MouseEventHandler(this.previewImage_MouseDown);
             this.previewImage.MouseMove += new System.Windows.Forms.MouseEventHandler(this.previewImage_MouseMove);
@@ -125,9 +125,9 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagesComboBox
             // 
-            resources.ApplyResources(this.ImagesComboBox, "ImagesComboBox");
             this.ImagesComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.ImagesComboBox.FormattingEnabled = true;
+            resources.ApplyResources(this.ImagesComboBox, "ImagesComboBox");
             this.ImagesComboBox.Name = "ImagesComboBox";
             this.ImagesComboBox.TextChanged += new System.EventHandler(this.ImagesComboBox_TextChanged);
             // 
@@ -147,8 +147,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ScaleForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.PropertiesGroupBox);
             this.Controls.Add(this.selectImages);

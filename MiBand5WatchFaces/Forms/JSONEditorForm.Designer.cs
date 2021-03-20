@@ -46,8 +46,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagePic
             // 
-            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
             this.ImagePic.TabStop = false;
             // 
@@ -66,8 +66,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // JSONEditorForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.jsonTextBox);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.RenderButton);

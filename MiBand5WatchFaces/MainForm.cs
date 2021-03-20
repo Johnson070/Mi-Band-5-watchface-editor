@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Windows.Forms;
@@ -61,11 +63,16 @@ namespace MiBand5WatchFaces
 
         private void RenderButton_Click(object sender, EventArgs e)
         {
+            Render(state);
+        }
+
+        private void Render(StateWatchface stateWatch, bool Animation = false)
+        {
             try
             {
-                state = state.notGen == false ? state : new StateWatchface() { notGen = true };
-                VisualRender render = new VisualRender(watchFace, state);
-                watchfacePreviewImage.Image = render.GenWatchface();
+                stateWatch = stateWatch.notGen == false ? stateWatch : new StateWatchface() { notGen = true };
+                VisualRender render = new VisualRender(watchFace, stateWatch);
+                watchfacePreviewImage.Image = Animation ? render.GenAnimationStep(true) : render.GenAnimationStep(false);
             }
             catch { MessageBox.Show(res.GetString("Error"), res.GetString("ErrorGenPreview")); }
         }
@@ -356,6 +363,11 @@ namespace MiBand5WatchFaces
                 updateListElements();
                 //}
                 //catch { }
+
+                long totalMemory = GC.GetTotalMemory(false);
+
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
             }
         }
 
@@ -423,7 +435,7 @@ namespace MiBand5WatchFaces
                     Save = true;
                     string path = Path.GetDirectoryName(saveFile.FileName);
                     foreach (KeyValuePair<int, Image> img in watchFace.imagesBuff)
-                        img.Value.Save(Path.Combine(path, $"{img.Key:0000}.png"));
+                        img.Value.Save(Path.Combine(path, $"{img.Key:0000}.png"), ImageFormat.Png);
 
                     File.WriteAllText(Path.Combine(path, $"{Path.GetFileNameWithoutExtension(saveFile.FileName)}.json"), JsonConvert.SerializeObject(watchFace, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
 
@@ -685,12 +697,12 @@ namespace MiBand5WatchFaces
             if (e.Data != null)
                 SaveFileStatus.Text = e.Data.ToString();
 
-            if (e.Data != null && e.Data.ToString().IndexOf("[ERROR]") != -1)
+            if (e.Data != null && e.Data.ToString().IndexOf("ERROR") != -1)
             {
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
                 //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
-                MessageBox.Show(res.GetString("Error"), res.GetString("NotGenerated"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(res.GetString("Error") + "\n" + e.Data.ToString(), res.GetString("NotGenerated"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if (e.Data != null && e.Data.ToString() == "Writing resources")
             {
@@ -759,7 +771,7 @@ namespace MiBand5WatchFaces
 
             if (state)
             {
-                if (GetProgramInfo().version != Application.ProductVersion && MessageBox.Show(res.GetString("OpenDownloadUpdate"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                if ((GetProgramInfo().version != Application.ProductVersion || GetProgramInfo().versionUpdateForce == Application.ProductVersion) && MessageBox.Show(res.GetString("OpenDownloadUpdate"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
@@ -799,7 +811,7 @@ namespace MiBand5WatchFaces
 
             if (state)
             {
-                if (GetProgramInfo().version == Application.ProductVersion) MessageBox.Show(String.Format(res.GetString("ShowUpdateInfo"),Application.ProductVersion, GetProgramInfo().version), res.GetString("Update"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (GetProgramInfo().version == Application.ProductVersion) MessageBox.Show(String.Format(res.GetString("ShowUpdateInfo"), Application.ProductVersion, GetProgramInfo().version), res.GetString("Update"), MessageBoxButtons.OK, MessageBoxIcon.Information);
                 else if (MessageBox.Show(res.GetString("OpenDownloadUpdate"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
@@ -906,9 +918,9 @@ namespace MiBand5WatchFaces
 
         private void ChangeLang(object sender, EventArgs e)
         {
-            string tag = ((ToolStripMenuItem)sender).Name;
+            string tag = ((ToolStripMenuItem)sender).Tag.ToString();
 
-            Properties.Settings.Default.lang = tag == "English" ? "en-US" : "ru-RU";
+            Properties.Settings.Default.lang = tag;
             Properties.Settings.Default.Save();
             Application.Restart();
         }
@@ -921,6 +933,100 @@ namespace MiBand5WatchFaces
             public string version;
             [JsonProperty("link")]
             public string link;
+            [JsonProperty("versionUpdateForce")]
+            public string versionUpdateForce;
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AnimateTimer_Tick(object sender, EventArgs e)
+        {
+            if (watchFace != null && watchFace.Other != null)
+            {
+                if (this.ContainsFocus) Render(state, true);
+            }
+        }
+
+        private void AnimateCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            if (AnimateCheckBox.Checked) AnimateTimer.Start();
+            else
+            {
+                AnimateTimer.Stop();
+                watchfacePreviewImage.Tag = 0;
+                RenderButton.PerformClick();
+            }
+        }
+
+        private void DeleteTrash_Tick(object sender, EventArgs e)
+        {
+            long trash = (GC.GetTotalMemory(false) / 1024);
+            if (trash > 4000)
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
+        }
+
+        private void convertGIFToPNGToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFile = new OpenFileDialog() { RestoreDirectory = true, Filter = "GIF (*.gif)|*.gif" };
+            if (openFile.ShowDialog() == DialogResult.OK)
+            {
+                List<Image> images = Gif.LoadAnimatedGif(openFile.FileName);
+                string path = Path.GetDirectoryName(openFile.FileName);
+                string newPath = Path.Combine(path, Path.GetFileNameWithoutExtension(openFile.FileName));
+
+                if (Directory.Exists(newPath) == false)
+                    Directory.CreateDirectory(newPath);
+
+                int count = 0;
+                foreach (Image img in images)
+                    img.Save(Path.Combine(newPath, $"{count++}.png"), ImageFormat.Png);
+
+                MessageBox.Show($"Path: {newPath}", "Convert", MessageBoxButtons.OK);
+            }
+        }
+
+        private void CloseProjectButton_Click(object sender, EventArgs e)
+        {
+            if (Save == false && MessageBox.Show(res.GetString("SaveOpenJson"), res.GetString("SaveQ"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                saveToolStripMenuItem.PerformClick();
+
+            Save = true;
+            watchFace = new WatchFaceLibrary();
+            RenderButton_Click(null, null);
+            updateListElements();
+        }
+    }
+
+    public class Gif
+    {
+        public static List<Image> LoadAnimatedGif(string path)
+        {
+            if (!File.Exists(path))
+                throw new IOException("File does not exist");
+            //Load the image
+            var img = Image.FromFile(path);
+
+            var dimension = new FrameDimension(img.FrameDimensionsList.First());
+            var frameCount = img.GetFrameCount(dimension);
+
+            if (frameCount <= 1)
+                throw new ArgumentException("Image is not animated");
+
+            List<Image> imgs = new List<Image>();
+
+            foreach (var i in Enumerable.Range(0, frameCount))
+            {
+                img.SelectActiveFrame(dimension, i);
+                imgs.Add((Image)img.Clone());
+            }
+            img.Dispose();
+            return imgs;
         }
     }
 }

@@ -61,7 +61,6 @@ namespace MiBand5WatchFaces
             // 
             // PropertiesGroupBox
             // 
-            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Controls.Add(this.colorButton);
             this.PropertiesGroupBox.Controls.Add(this.label7);
             this.PropertiesGroupBox.Controls.Add(this.widthNum);
@@ -79,13 +78,14 @@ namespace MiBand5WatchFaces
             this.PropertiesGroupBox.Controls.Add(this.endAngleNum);
             this.PropertiesGroupBox.Controls.Add(this.startAngleNum);
             this.PropertiesGroupBox.Controls.Add(this.label1);
+            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
             this.PropertiesGroupBox.TabStop = false;
             // 
             // colorButton
             // 
-            resources.ApplyResources(this.colorButton, "colorButton");
             this.colorButton.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            resources.ApplyResources(this.colorButton, "colorButton");
             this.colorButton.Name = "colorButton";
             this.colorButton.UseVisualStyleBackColor = false;
             this.colorButton.Click += new System.EventHandler(this.colorButton_Click);
@@ -244,8 +244,8 @@ namespace MiBand5WatchFaces
             // 
             // CircleScaleForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.deleteButton);
             this.Controls.Add(this.PropertiesGroupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

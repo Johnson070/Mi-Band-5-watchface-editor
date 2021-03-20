@@ -117,104 +117,40 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="PropertiesGroupBox.Text" xml:space="preserve">
-    <value>Properties</value>
-  </data>
-  <data name="&gt;&gt;selectImage.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="deleteButton.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="selectImage.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="&gt;&gt;saveBtn.Name" xml:space="preserve">
-    <value>saveBtn</value>
-  </data>
-  <data name="saveBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 368</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="&gt;&gt;previewImage.Name" xml:space="preserve">
-    <value>previewImage</value>
-  </data>
-  <data name="PropertiesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 407</value>
-  </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>Properties</value>
-  </data>
-  <data name="selectImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 32</value>
-  </data>
-  <data name="&gt;&gt;previewImage.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="posYNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>145, 18</value>
-  </data>
-  <data name="&gt;&gt;posXNum.Name" xml:space="preserve">
-    <value>posXNum</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label4.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="previewImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 66</value>
-  </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 20</value>
-  </data>
-  <data name="&gt;&gt;selectImage.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
-  </data>
-  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="label6.Text" xml:space="preserve">
-    <value>Position:</value>
-  </data>
-  <data name="PropertiesGroupBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="deleteButton.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="posXNum.Location" type="System.Drawing.Point, System.Drawing">
-    <value>88, 18</value>
-  </data>
-  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
-    <value>CenterScreen</value>
-  </data>
-  <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 468</value>
-  </data>
-  <data name="&gt;&gt;PropertiesGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="posYNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 24</value>
-  </data>
-  <data name="selectImage.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;posXNum.ZOrder" xml:space="preserve">
-    <value>1</value>
   </data>
   <data name="selectImage.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 12</value>
   </data>
-  <data name="previewImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 294</value>
+  <data name="selectImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 32</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="selectImage.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="selectImage.Text" xml:space="preserve">
+    <value>Select image</value>
+  </data>
+  <data name="&gt;&gt;selectImage.Name" xml:space="preserve">
+    <value>selectImage</value>
+  </data>
+  <data name="&gt;&gt;selectImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;selectImage.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;selectImage.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="posYNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>145, 18</value>
+  </data>
+  <data name="posYNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 24</value>
   </data>
   <data name="posYNum.TabIndex" type="System.Int32, mscorlib">
     <value>14</value>
@@ -222,38 +158,81 @@
   <data name="&gt;&gt;posYNum.Name" xml:space="preserve">
     <value>posYNum</value>
   </data>
-  <data name="&gt;&gt;PropertiesGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;posYNum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;posYNum.Parent" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;posYNum.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="posXNum.Location" type="System.Drawing.Point, System.Drawing">
+    <value>88, 18</value>
+  </data>
+  <data name="posXNum.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 24</value>
+  </data>
+  <data name="posXNum.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;posXNum.Name" xml:space="preserve">
+    <value>posXNum</value>
+  </data>
+  <data name="&gt;&gt;posXNum.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;posXNum.Parent" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;posXNum.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="label6.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 20</value>
+  </data>
+  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>66, 18</value>
   </data>
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;PropertiesGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="label6.Text" xml:space="preserve">
+    <value>Position:</value>
   </data>
-  <data name="&gt;&gt;deleteButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;label6.Name" xml:space="preserve">
+    <value>label6</value>
   </data>
-  <data name="&gt;&gt;deleteButton.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;label6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 32</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="selectImage.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Preview</value>
-  </data>
-  <data name="&gt;&gt;previewImage.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="saveBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
+  </data>
+  <data name="saveBtn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 368</value>
+  </data>
+  <data name="saveBtn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>195, 33</value>
+  </data>
+  <data name="saveBtn.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="saveBtn.Text" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="&gt;&gt;saveBtn.Name" xml:space="preserve">
+    <value>saveBtn</value>
   </data>
   <data name="&gt;&gt;saveBtn.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -261,14 +240,32 @@
   <data name="&gt;&gt;saveBtn.Parent" xml:space="preserve">
     <value>PropertiesGroupBox</value>
   </data>
-  <data name="saveBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 33</value>
+  <data name="&gt;&gt;saveBtn.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="previewImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="label4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Right</value>
   </data>
-  <data name="posXNum.TabIndex" type="System.Int32, mscorlib">
-    <value>13</value>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>72, 45</value>
+  </data>
+  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 18</value>
+  </data>
+  <data name="label4.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Preview</value>
+  </data>
+  <data name="&gt;&gt;label4.Name" xml:space="preserve">
+    <value>label4</value>
+  </data>
+  <data name="&gt;&gt;label4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>PropertiesGroupBox</value>
@@ -276,26 +273,92 @@
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="previewImage.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Right</value>
   </data>
-  <data name="&gt;&gt;saveBtn.ZOrder" xml:space="preserve">
-    <value>3</value>
+  <data name="previewImage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>39, 66</value>
   </data>
-  <data name="&gt;&gt;PropertiesGroupBox.Name" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="PropertiesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 50</value>
-  </data>
-  <data name="&gt;&gt;posYNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="previewImage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>126, 294</value>
   </data>
   <data name="previewImage.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
+  <data name="&gt;&gt;previewImage.Name" xml:space="preserve">
+    <value>previewImage</value>
+  </data>
+  <data name="&gt;&gt;previewImage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;previewImage.Parent" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;previewImage.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="PropertiesGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="PropertiesGroupBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="PropertiesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="PropertiesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 407</value>
+  </data>
   <data name="PropertiesGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
+  </data>
+  <data name="PropertiesGroupBox.Text" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.Name" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="deleteButton.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 468</value>
+  </data>
+  <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 32</value>
+  </data>
+  <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="deleteButton.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;deleteButton.Name" xml:space="preserve">
+    <value>deleteButton</value>
+  </data>
+  <data name="&gt;&gt;deleteButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;deleteButton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;deleteButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>230, 466</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1825,82 +1888,16 @@
         qUSLBGBu5bt7pv9c1v8LVfIA1nE0ZGEAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="&gt;&gt;selectImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
+    <value>CenterScreen</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;posYNum.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="saveBtn.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="posXNum.Size" type="System.Drawing.Size, System.Drawing">
-    <value>49, 24</value>
-  </data>
-  <data name="&gt;&gt;posXNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;selectImage.Name" xml:space="preserve">
-    <value>selectImage</value>
-  </data>
-  <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 45</value>
-  </data>
-  <data name="selectImage.Text" xml:space="preserve">
-    <value>Select image</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.Name" xml:space="preserve">
-    <value>deleteButton</value>
-  </data>
-  <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 18</value>
-  </data>
-  <data name="saveBtn.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
-  </data>
-  <data name="&gt;&gt;posXNum.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;posYNum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>66, 18</value>
-  </data>
-  <data name="PropertiesGroupBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="&gt;&gt;deleteButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;previewImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>230, 466</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Properties</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ImageBasicForm</value>
   </data>
-  <data name="saveBtn.Text" xml:space="preserve">
-    <value>Save</value>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

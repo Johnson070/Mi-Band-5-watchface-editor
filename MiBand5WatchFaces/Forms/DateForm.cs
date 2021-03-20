@@ -137,6 +137,7 @@ namespace MiBand5WatchFaces.Forms
 
                 if (imageSetForm.saved && imageSetForm.imageSet.ImageIndex >= 0)
                 {
+                    watch.Date.MonthAndDayAndYear = watch.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watch.Date.MonthAndDayAndYear;
                     watch.Date.MonthAndDayAndYear.Separate = watch.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watchface.Date.MonthAndDayAndYear.Separate;
                     watch.Date.MonthAndDayAndYear.Separate.MonthsEN = imageSetForm.imageSet;
                     watch.imagesBuff = imageSetForm.watch.imagesBuff;
@@ -288,14 +289,14 @@ namespace MiBand5WatchFaces.Forms
                 imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
-                if (imgForm.saveImages  && imgForm.selectedImages != null)
+                if (imgForm.saveImages && imgForm.selectedImages != null)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Date.DayAmPm = watch.Date.DayAmPm == null ? new DayAmPm() : watch.Date.DayAmPm;
                     watch.Date.DayAmPm.ImageIndexAMEN = imgForm.selectedImages[0];
                     AddAMImageButton.Text = res.GetString("EditAMImage");
                 }
-                else if (imgForm.saveImages)
+                else if (imgForm.saveImages && watch.Date.DayAmPm != null)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Date.DayAmPm.ImageIndexAMEN = -10000;
@@ -316,7 +317,7 @@ namespace MiBand5WatchFaces.Forms
                     watch.Date.DayAmPm.ImageIndexPMEN = imgForm.selectedImages[0];
                     AddPMImageButton.Text = res.GetString("EditPMImage");
                 }
-                else if (imgForm.saveImages)
+                else if (imgForm.saveImages && watch.Date.DayAmPm != null)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Date.DayAmPm.ImageIndexPMEN = -10000;

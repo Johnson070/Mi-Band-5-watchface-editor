@@ -73,7 +73,7 @@ namespace MiBand5WatchFaces.Forms
 
                 PropertiesGroupBox.Enabled = false;
                 saveBtn.Text = "Delete";
-                saved = true;
+                delete = true;
                 this.Close();
             }
         }

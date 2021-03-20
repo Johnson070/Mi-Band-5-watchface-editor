@@ -94,7 +94,9 @@ namespace MiBand5WatchFaces
                 foreach (string fileName in ImageFiles.FileNames)
                 {
                     FileStream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read);
-                    Image openpng = Image.FromStream(stream);
+                    Bitmap temp = new Bitmap(stream);
+                    temp.SetResolution(96f, 96f);
+                    Image openpng = temp;
                     stream.Close();
                     float dpi = openpng.HorizontalResolution;
 
@@ -161,7 +163,9 @@ namespace MiBand5WatchFaces
                     if (ImageFiles.ShowDialog() == DialogResult.OK)
                     {
                         FileStream stream = new FileStream(ImageFiles.FileName, FileMode.Open, FileAccess.Read);
-                        Image openpng = Image.FromStream(stream);
+                        Bitmap temp = new Bitmap(stream);
+                        temp.SetResolution(96f, 96f);
+                        Image openpng = temp;
                         stream.Close();
                         float dpi = openpng.HorizontalResolution;
 
@@ -260,8 +264,11 @@ namespace MiBand5WatchFaces
                 if (ImagesListBox.GetItemChecked(i))
                     selectedImages.Add(Convert.ToInt32(ImagesListBox.Items[i].ToString().Replace(".png", string.Empty)));
 
-            saveImages = true;
-            editImages = false;
+            if (selectedImages != null)
+            {
+                saveImages = true;
+                editImages = false;
+            }
             this.Close();
         }
 
@@ -274,7 +281,12 @@ namespace MiBand5WatchFaces
                 if (!(selectImages) || selectAndAdd)
                     if (imageBox.Tag != null && Path.GetExtension(files[0]) == ".png")
                     {
-                        Image openpng = Image.FromFile(files[0]);
+                        //FileStream stream = new FileStream(image.FileName, FileMode.Open, FileAccess.Read);Image openpng = Image.FromFile(files[0]);
+                        FileStream stream = new FileStream(files[0], FileMode.Open, FileAccess.Read);
+                        Bitmap temp = new Bitmap(stream);
+                        temp.SetResolution(96f, 96f);
+                        Image openpng = temp;
+                        stream.Close();
                         float dpi = openpng.HorizontalResolution;
 
                         if (Math.Round(dpi) == 96)
@@ -375,7 +387,7 @@ namespace MiBand5WatchFaces
                 for (int i = 0; i < ImagesListBox.Items.Count; i++)
                     count += ImagesListBox.GetItemChecked(i) ? 1 : 0;
 
-                if (ImagesListBox.Items.Count > 1)
+                if (ImagesListBox.Items.Count > 1 && count > 0)
                     if (e.Index == 0 && ImagesListBox.GetItemChecked(e.Index + 1) == false) e.NewValue = CheckState.Unchecked;
                     else if (e.Index == ImagesListBox.Items.Count - 1 && ImagesListBox.GetItemChecked(e.Index - 1) == false) e.NewValue = CheckState.Unchecked;
                     else if (ImagesListBox.Items.Count > e.Index + 1 && (ImagesListBox.GetItemChecked(e.Index + 1) == false && ImagesListBox.GetItemChecked(e.Index - 1) == false) && count > 0) e.NewValue = CheckState.Unchecked;

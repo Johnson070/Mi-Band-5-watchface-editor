@@ -170,21 +170,21 @@
             // 
             // ImagePic
             // 
-            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
             // 
             // contextMenuStrip
             // 
-            resources.ApplyResources(this.contextMenuStrip, "contextMenuStrip");
             this.contextMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.deleteToolStripMenuItem});
             this.contextMenuStrip.Name = "contextMenuStrip";
+            resources.ApplyResources(this.contextMenuStrip, "contextMenuStrip");
             // 
             // deleteToolStripMenuItem
             // 
-            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
             // 
             // timeZone2Check
             // 
@@ -202,8 +202,8 @@
             // 
             // TimeForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.timeZone1Check);
             this.Controls.Add(this.timeZone2Check);
             this.Controls.Add(this.ImagePic);
@@ -213,6 +213,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.TZ2groupBox);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "TimeForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TimeForm_FormClosing);
             this.groupBox1.ResumeLayout(false);

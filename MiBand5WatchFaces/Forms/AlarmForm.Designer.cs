@@ -50,8 +50,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagePic
             // 
-            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
             // 
             // AddNumberButton
@@ -63,11 +63,11 @@ namespace MiBand5WatchFaces.Forms
             // 
             // groupBox1
             // 
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.AddImageNoAlarmButton);
             this.groupBox1.Controls.Add(this.AddImageOFFButton);
             this.groupBox1.Controls.Add(this.AddImageOnButton);
             this.groupBox1.Controls.Add(this.AddDelimeterButton);
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -102,12 +102,13 @@ namespace MiBand5WatchFaces.Forms
             // AlarmForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.AddNumberButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.ImagePic);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AlarmForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AlarmForm_FormClosing);
             this.groupBox1.ResumeLayout(false);

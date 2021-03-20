@@ -29,7 +29,10 @@ namespace MiBand5WatchFaces
             if (image.ShowDialog() == DialogResult.OK)
             {
                 FileStream stream = new FileStream(image.FileName, FileMode.Open, FileAccess.Read);
-                Image openpng = Image.FromStream(stream);
+                Bitmap temp = new Bitmap(stream);
+                temp.SetResolution(96f, 96f);
+                Image openpng = temp;
+
                 stream.Close();
                 float dpi = openpng.HorizontalResolution;
 
@@ -46,8 +49,12 @@ namespace MiBand5WatchFaces
         {
             if (Path.GetExtension(file) == ".png")
             {
-                Image openpng = Image.FromFile(file);
+                FileStream stream = new FileStream(file, FileMode.Open, FileAccess.Read);
+                Bitmap temp = new Bitmap(stream);
+                temp.SetResolution(96f, 96f);
+                Image openpng = temp;
                 float dpi = openpng.HorizontalResolution;
+                stream.Close();
 
                 if (Math.Round(dpi) == 96)
                     images.Add(images.Keys.Count == 0 ? images.Count : images.Keys.Max() + 1, openpng);

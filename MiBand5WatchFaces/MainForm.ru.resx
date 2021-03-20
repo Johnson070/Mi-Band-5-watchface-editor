@@ -254,10 +254,10 @@
     <value>Основные</value>
   </data>
   <data name="englishToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>113, 22</value>
   </data>
   <data name="russianToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>113, 22</value>
   </data>
   <data name="russianToolStripMenuItem.Text" xml:space="preserve">
     <value>Руский</value>
@@ -304,21 +304,6 @@
   <data name="OpenJsonButton.Text" xml:space="preserve">
     <value>Открыть JSON редактор</value>
   </data>
-  <data name="SetWatchfaceState.Text" xml:space="preserve">
-    <value>Установить значения watchface</value>
-  </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Дополнительно</value>
-  </data>
-  <data name="RenderButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>354, 452</value>
-  </data>
-  <data name="RenderButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>91, 23</value>
-  </data>
-  <data name="RenderButton.Text" xml:space="preserve">
-    <value>Перерисовать</value>
-  </data>
   <data name="editToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>128, 22</value>
   </data>
@@ -334,9 +319,35 @@
   <data name="listMenuStrip.Size" type="System.Drawing.Size, System.Drawing">
     <value>129, 48</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="watchfacePreviewImage.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
+  <data name="AnimateCheckBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>368, 481</value>
+  </data>
+  <data name="AnimateCheckBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>62, 31</value>
+  </data>
+  <data name="AnimateCheckBox.Text" xml:space="preserve">
+    <value>Анимация</value>
+  </data>
+  <data name="RenderButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 452</value>
+  </data>
+  <data name="RenderButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>91, 23</value>
+  </data>
+  <data name="RenderButton.Text" xml:space="preserve">
+    <value>Перерисовать</value>
+  </data>
+  <data name="SupportAuthorButton.Text" xml:space="preserve">
+    <value>Поддержать автора</value>
+  </data>
+  <data name="convertGIFToPNGButton.Text" xml:space="preserve">
+    <value>Конвертировать GIF в PNG</value>
+  </data>
+  <data name="SetWatchfaceState.Text" xml:space="preserve">
+    <value>Установить значения watchface</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>Дополнительно</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -10427,5 +10438,8 @@
         p5HVwDQUpqD1FKCmoNQkYj0JT01A6/HIS42P6nXj172uset+242WMBi7DWevbz9w1rRocJtDwCHgEHAI
         OAQcAsuGwP8Pb3MSCxhf2YIAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="CloseProjectButton.Text" xml:space="preserve">
+    <value>Закрыть watchface</value>
   </data>
 </root>

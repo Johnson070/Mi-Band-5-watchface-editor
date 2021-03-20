@@ -111,37 +111,38 @@ namespace MiBand5WatchFaces.Forms
                     if (watch.Weather.Temperature.Current.DegreesImageIndex >= 0)
                         AddDegreeImageTemperatureCurrentButton.Text = res.GetString("EditDegreeImage");
                 }
-                if (watch.Weather?.Humidity != null)
-                {
-                    HumidityCheckbox.Checked = watch.Weather?.Humidity != null;
-                    AddSuffixHumidityButton.Enabled = true;
-                    AddSuffixImageHumidityButton.Enabled = true;
-
-                    AddNumberHumidityButton.Text = res.GetString("EditNumber");
-                    if (watch.Weather.Humidity.SuffixImageIndex >= 0)
-                        AddSuffixHumidityButton.Text = res.GetString("EditSuffix");
-                    if (watch.Weather.Humidity.ImageSuffix != null)
-                        AddSuffixImageHumidityButton.Text = res.GetString("EditSuffixImage");
-                }
-                if (watch.Weather?.Wind != null)
-                {
-                    WindCheckbox.Checked = watch.Weather?.Wind != null;
-                    AddSuffixWindButton.Enabled = true;
-
-                    AddNumberWindButton.Text = res.GetString("EditNumber");
-                    if (watch.Weather.Wind.ImageSuffixEN >= 0)
-                        AddSuffixWindButton.Text = res.GetString("EditSuffix");
-                }
-                if (watch.Weather?.UVIndex?.UV != null)
-                {
-                    UVIndexCheckbox.Checked = watch.Weather?.UVIndex?.UV != null;
-                    AddSuffixUVButton.Enabled = true;
-
-                    AddNumberUVButton.Text = res.GetString("EditNumber");
-                    if (watch.Weather.UVIndex.UV.SuffixImageIndex >= 0)
-                        AddSuffixUVButton.Text = res.GetString("EditSuffix");
-                }
             }
+            if (watch.Weather?.Humidity != null)
+            {
+                HumidityCheckbox.Checked = watch.Weather?.Humidity != null;
+                AddSuffixHumidityButton.Enabled = true;
+                AddSuffixImageHumidityButton.Enabled = true;
+
+                AddNumberHumidityButton.Text = res.GetString("EditNumber");
+                if (watch.Weather.Humidity.SuffixImageIndex >= 0)
+                    AddSuffixHumidityButton.Text = res.GetString("EditSuffix");
+                if (watch.Weather.Humidity.ImageSuffix != null)
+                    AddSuffixImageHumidityButton.Text = res.GetString("EditSuffixImage");
+            }
+            if (watch.Weather?.Wind != null)
+            {
+                WindCheckbox.Checked = watch.Weather?.Wind != null;
+                AddSuffixWindButton.Enabled = true;
+
+                AddNumberWindButton.Text = res.GetString("EditNumber");
+                if (watch.Weather.Wind.ImageSuffixEN >= 0)
+                    AddSuffixWindButton.Text = res.GetString("EditSuffix");
+            }
+            if (watch.Weather?.UVIndex?.UV != null)
+            {
+                UVIndexCheckbox.Checked = watch.Weather?.UVIndex?.UV != null;
+                AddSuffixUVButton.Enabled = true;
+
+                AddNumberUVButton.Text = res.GetString("EditNumber");
+                if (watch.Weather.UVIndex.UV.SuffixImageIndex >= 0)
+                    AddSuffixUVButton.Text = res.GetString("EditSuffix");
+            }
+
         }
 
         private void AddWeatherCustomIconButton_Click(object sender, EventArgs e)
@@ -682,20 +683,24 @@ namespace MiBand5WatchFaces.Forms
             Save = true;
             if (watch.Weather.Icon == null || WeatherIconCheckbox.Checked == false)
                 watch.Weather.Icon = null;
-            if ((watch.Weather?.Temperature?.Today?.Separate?.Day == null && watch.Weather?.Temperature?.Today?.Separate?.Night == null) || (TemperatureTodaySeparateDayCheckbox.Checked == false && TemperatureTodaySeparateNightCheckbox.Checked == false))
-                if (watch.Weather?.Temperature?.Today != null)
-                    watch.Weather.Temperature.Today.Separate = null;
-            if (watch.Weather?.Temperature?.Today?.OneLine == null || AddForBothTemperatureTodayOnelineCheckBox.Checked == false)
-                if (watch.Weather.Temperature.Today != null)
-                    watch.Weather.Temperature.Today.OneLine = null;
-            if ((watch.Weather?.Temperature?.Today?.OneLine == null && watch.Weather?.Temperature?.Today?.Separate == null))
-                watch.Weather.Temperature.Today = null;
 
-            if (watch.Weather?.Temperature?.Current == null || TemperatureCurrentCheckbox.Checked == false)
-                watch.Weather.Temperature.Current = null;
+            if (watch.Weather.Temperature != null)
+            {
+                if ((watch.Weather?.Temperature?.Today?.Separate?.Day == null && watch.Weather?.Temperature?.Today?.Separate?.Night == null) || (TemperatureTodaySeparateDayCheckbox.Checked == false && TemperatureTodaySeparateNightCheckbox.Checked == false))
+                    if (watch.Weather?.Temperature?.Today != null)
+                        watch.Weather.Temperature.Today.Separate = null;
+                if (watch.Weather?.Temperature?.Today?.OneLine == null || AddForBothTemperatureTodayOnelineCheckBox.Checked == false)
+                    if (watch.Weather?.Temperature?.Today != null)
+                        watch.Weather.Temperature.Today.OneLine = null;
+                if ((watch.Weather?.Temperature?.Today?.OneLine == null && watch.Weather?.Temperature?.Today?.Separate == null))
+                    watch.Weather.Temperature.Today = null;
 
-            if (watch.Weather?.Temperature?.Current == null && watch.Weather?.Temperature?.Today == null)
-                watch.Weather.Temperature = null;
+                if (watch.Weather?.Temperature?.Current == null || TemperatureCurrentCheckbox.Checked == false)
+                    watch.Weather.Temperature.Current = null;
+
+                if (watch.Weather?.Temperature?.Current == null && watch.Weather?.Temperature?.Today == null)
+                    watch.Weather.Temperature = null;
+            }
 
             if (HumidityCheckbox.Checked == false)
                 watch.Weather.Humidity = null;
@@ -705,6 +710,9 @@ namespace MiBand5WatchFaces.Forms
 
             if (UVIndexCheckbox.Checked == false)
                 watch.Weather.UVIndex = null;
+
+            if (watch.Weather.UVIndex == null && watch.Weather.Wind == null && watch.Weather.Temperature == null && watch.Weather.Icon == null && watch.Weather.Humidity == null)
+                watch.Weather = null;
             this.Close();
         }
 
@@ -715,19 +723,24 @@ namespace MiBand5WatchFaces.Forms
                 Save = true;
                 if (watch.Weather.Icon == null || WeatherIconCheckbox.Checked == false)
                     watch.Weather.Icon = null;
-                if ((watch.Weather?.Temperature?.Today?.Separate?.Day == null && watch.Weather?.Temperature?.Today?.Separate?.Night == null) || (TemperatureTodaySeparateDayCheckbox.Checked == false && TemperatureTodaySeparateNightCheckbox.Checked == false))
-                    if (watch.Weather?.Temperature?.Today != null)
-                        watch.Weather.Temperature.Today.Separate = null;
-                if (watch.Weather?.Temperature?.Today?.OneLine == null || AddForBothTemperatureTodayOnelineCheckBox.Checked == false)
-                    watch.Weather.Temperature.Today.OneLine = null;
-                if ((watch.Weather?.Temperature?.Today?.OneLine == null && watch.Weather?.Temperature?.Today?.Separate == null))
-                    watch.Weather.Temperature.Today = null;
 
-                if (watch.Weather?.Temperature?.Current == null || TemperatureCurrentCheckbox.Checked == false)
-                    watch.Weather.Temperature.Current = null;
+                if (watch.Weather.Temperature != null)
+                {
+                    if ((watch.Weather?.Temperature?.Today?.Separate?.Day == null && watch.Weather?.Temperature?.Today?.Separate?.Night == null) || (TemperatureTodaySeparateDayCheckbox.Checked == false && TemperatureTodaySeparateNightCheckbox.Checked == false))
+                        if (watch.Weather?.Temperature?.Today != null)
+                            watch.Weather.Temperature.Today.Separate = null;
+                    if (watch.Weather?.Temperature?.Today?.OneLine == null || AddForBothTemperatureTodayOnelineCheckBox.Checked == false)
+                        if (watch.Weather?.Temperature?.Today != null)
+                            watch.Weather.Temperature.Today.OneLine = null;
+                    if ((watch.Weather?.Temperature?.Today?.OneLine == null && watch.Weather?.Temperature?.Today?.Separate == null))
+                        watch.Weather.Temperature.Today = null;
 
-                if (watch.Weather?.Temperature?.Current == null && watch.Weather?.Temperature?.Today == null)
-                    watch.Weather.Temperature = null;
+                    if (watch.Weather?.Temperature?.Current == null || TemperatureCurrentCheckbox.Checked == false)
+                        watch.Weather.Temperature.Current = null;
+
+                    if (watch.Weather?.Temperature?.Current == null && watch.Weather?.Temperature?.Today == null)
+                        watch.Weather.Temperature = null;
+                }
 
                 if (HumidityCheckbox.Checked == false)
                     watch.Weather.Humidity = null;
@@ -737,6 +750,9 @@ namespace MiBand5WatchFaces.Forms
 
                 if (UVIndexCheckbox.Checked == false)
                     watch.Weather.UVIndex = null;
+
+                if (watch.Weather.UVIndex == null && watch.Weather.Wind == null && watch.Weather.Temperature == null && watch.Weather.Icon == null && watch.Weather.Humidity == null)
+                    watch.Weather = null;
             }
         }
     }

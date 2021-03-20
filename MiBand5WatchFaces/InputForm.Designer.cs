@@ -53,8 +53,8 @@
             // 
             // InputForm
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.buttonConfirm);
             this.Controls.Add(this.maskedTextBox);
             this.Controls.Add(this.labelText);

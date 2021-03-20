@@ -15,19 +15,12 @@ namespace MiBand5WatchFaces
         [STAThread]
         static void Main()
         {
-            var culture = CultureInfo.GetCultureInfo(Properties.Settings.Default.lang);
-
-            // this may fail sometimes: (see Drachenkatze's comment below)
-            // var culture = new CultureInfo("en-US");
-
-            //Culture for any thread
-            CultureInfo.DefaultThreadCurrentCulture = culture;
-
-            //Culture for UI in any thread
-            CultureInfo.DefaultThreadCurrentUICulture = culture;
+            CultureInfo ci = new CultureInfo(Properties.Settings.Default.lang);
+            CultureInfo.DefaultThreadCurrentCulture = ci;
+            CultureInfo.DefaultThreadCurrentUICulture = ci;
 
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            Application.SetCompatibleTextRenderingDefault(true);
             Application.Run(new MainForm());
         }
     }

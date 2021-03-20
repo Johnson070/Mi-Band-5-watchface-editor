@@ -20,10 +20,16 @@ namespace MiBand5WatchFaces.Forms
         VisualRender render;
         public bool Save;
 
-        public void Render(StateWatchface state = null)
+        public void Render(StateWatchface state = null, bool Animation = false)
         {
             render = new VisualRender(watch, state);
-            ImagePic.BackgroundImage = render.GenWatchface();
+            ImagePic.BackgroundImage = Animation ? render.GenAnimationStep(true) : render.GenAnimationStep(false);
+
+            if (GC.GetTotalMemory(false) / 1024 / 1024 > 10)
+            {
+                GC.Collect();
+                GC.WaitForPendingFinalizers();
+            }
         }
 
         public static T DeepCopy<T>(T other)
@@ -137,6 +143,7 @@ namespace MiBand5WatchFaces.Forms
             watch.Other.Animation.Add(new Animation() { AnimationImages = new ImageSet() });
             int select = AnimationsListBox.SelectedIndex;
             FillListBox();
+            Render(state);
             AnimationsListBox.SelectedIndex = select;
         }
 
@@ -149,6 +156,8 @@ namespace MiBand5WatchFaces.Forms
                 groupBox1.Enabled = false;
                 SpeedUpDown.Enabled = false;
                 RepeatCountUpDown.Enabled = false;
+
+                Render(state);
             }
         }
 
@@ -163,7 +172,10 @@ namespace MiBand5WatchFaces.Forms
                         i -= 2;
                     }
 
-            if (watch.Other.Animation != null && watch.Other.Animation.Count == 0)
+            if (watch.Other.Animation == null)
+                watch.Other = null;
+
+            if (watch.Other != null && watch.Other.Animation != null && watch.Other.Animation.Count == 0)
                 watch.Other = null;
 
             this.Close();
@@ -182,8 +194,19 @@ namespace MiBand5WatchFaces.Forms
                             i -= 2;
                         }
 
-                if (watch.Other.Animation != null && watch.Other.Animation.Count == 0)
+                if (watch.Other.Animation == null)
                     watch.Other = null;
+
+                if (watch.Other != null && watch.Other.Animation != null && watch.Other.Animation.Count == 0)
+                    watch.Other = null;
+            }
+        }
+
+        private void AnimateTimer_Tick(object sender, EventArgs e)
+        {
+            if (watch.Other != null)
+            {
+                Render(state, true);
             }
         }
     }

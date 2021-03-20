@@ -82,7 +82,7 @@ namespace MiBand5WatchFaces
         [JsonIgnore]
         public string FilePath;
         [JsonIgnore]
-        public List<Image> images = new List<Image>();
+        public List<Image> AnimationImages = new List<Image>();
         [JsonIgnore]
         public DefaultDictionary<int, Image> imagesBuff = new DefaultDictionary<int, Image>(() => new Bitmap(1, 1));
 
@@ -92,20 +92,23 @@ namespace MiBand5WatchFaces
                 if (File.Exists(Path.Combine(FilePath, $"{pos:0000}.png")))
                 {
                     FileStream stream = new FileStream(Path.Combine(FilePath, $"{pos:0000}.png"), FileMode.Open, FileAccess.Read);
-                    imagesBuff.Add(pos, Image.FromStream(stream));
+                    Bitmap temp = new Bitmap(stream);
+                    temp.SetResolution(96f, 96f);
+                    imagesBuff.Add(pos, temp);
                     stream.Close();
                 }
                 else if (File.Exists(Path.Combine(FilePath, $"{pos}.png")))
                 {
                     FileStream stream = new FileStream(Path.Combine(FilePath, $"{pos}.png"), FileMode.Open, FileAccess.Read);
-                    imagesBuff.Add(pos, Image.FromStream(stream));
+                    Bitmap temp = new Bitmap(stream);
+                    temp.SetResolution(96f, 96f);
+                    imagesBuff.Add(pos, temp);
                     stream.Close();
                 }
         }
 
         [Obfuscation(Exclude = false, Feature = "-rename")]
         public List<object> getElements() => new List<object>() { Background, Time, Activity, Date, Weather, StepsProgress, Status, Battery, AnalogDialFace, Other, HeartProgress, WeekDaysIcons, CaloriesProgress, Alarm, StatusSimplified };
-
     }
 
     public class DefaultDictionary<TKey, TValue> : Dictionary<TKey, TValue>
@@ -365,6 +368,9 @@ namespace MiBand5WatchFaces
 
         [JsonProperty("UnknownTF4")]
         public int UnknownTF4 = 1;
+
+        [JsonIgnore]
+        public int Step = 0;
     }
 
     //===========================ANIMATION=============================
@@ -1259,12 +1265,12 @@ namespace MiBand5WatchFaces
         {
             string fixedAligment = "";
 
-            if (Alignment.IndexOf("Left") != -1) fixedAligment += "Left";
-            else if (Alignment.IndexOf("Right") != -1) fixedAligment += "Right";
-            else if (Alignment.IndexOf("Center") != -1) fixedAligment += "Center";
-
             if (Alignment.IndexOf("Top") != -1) fixedAligment += "Top";
             else if (Alignment.IndexOf("Bottom") != -1) fixedAligment += "Bottom";
+            else if (Alignment.IndexOf("Center") != -1) fixedAligment += "Center";
+
+            if (Alignment.IndexOf("Left") != -1) fixedAligment += "Left";
+            else if (Alignment.IndexOf("Right") != -1) fixedAligment += "Right";
             else if (Alignment.IndexOf("Center") != -1 && fixedAligment.IndexOf("Center") == -1) fixedAligment += "Center";
 
             Alignment = fixedAligment;

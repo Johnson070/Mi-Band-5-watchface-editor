@@ -136,7 +136,7 @@ namespace MiBand5WatchFaces.Forms
                         posXBluetooth.Enabled = true;
                         posYBluetooth.Enabled = true;
                     }
-                    else if (imgForm.saveImages == true)
+                    else if (imgForm.saveImages == true && watch.Status.Bluetooth != null)
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.Bluetooth.ImageIndexOn = -10000;
@@ -160,7 +160,7 @@ namespace MiBand5WatchFaces.Forms
                         posXBluetooth.Enabled = true;
                         posYBluetooth.Enabled = true;
                     }
-                    else if (imgForm.saveImages == true)
+                    else if (imgForm.saveImages == true && watch.Status.Bluetooth != null)
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.Bluetooth.ImageIndexOff = -10000;
@@ -196,7 +196,7 @@ namespace MiBand5WatchFaces.Forms
                         posXLock.Enabled = true;
                         posYLock.Enabled = true;
                     }
-                    else if (imgForm.saveImages == true)
+                    else if (imgForm.saveImages == true && watch.Status.Lock != null)
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.Lock.ImageIndexOn = -10000;
@@ -220,7 +220,7 @@ namespace MiBand5WatchFaces.Forms
                         posXLock.Enabled = true;
                         posYLock.Enabled = true;
                     }
-                    else if (imgForm.saveImages == true)
+                    else if (imgForm.saveImages == true && watch.Status.Lock != null)
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.Lock.ImageIndexOff = -10000;
@@ -256,7 +256,7 @@ namespace MiBand5WatchFaces.Forms
                         posXDND.Enabled = true;
                         posYDND.Enabled = true;
                     }
-                    else if (imgForm.saveImages == true)
+                    else if (imgForm.saveImages == true && watch.Status.DoNotDisturb != null)
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.DoNotDisturb.ImageIndexOn = -10000;
@@ -280,7 +280,7 @@ namespace MiBand5WatchFaces.Forms
                         posXDND.Enabled = true;
                         posYDND.Enabled = true;
                     }
-                    else if (imgForm.saveImages == true)
+                    else if (imgForm.saveImages == true && watch.Status.DoNotDisturb != null)
                     {
                         watch.imagesBuff = imgForm.Images;
                         watch.Status.DoNotDisturb.ImageIndexOff = -10000;
@@ -337,7 +337,7 @@ namespace MiBand5WatchFaces.Forms
 
                 if (status == statusForm.StatusSpecial)
                 {
-                    watch.StatusSimplified = DeepCopy(watch.Status.ConvertToStatusSimple());
+                    watch.StatusSimplified = watch.Status == null ? null : DeepCopy(watch.Status.ConvertToStatusSimple());
                     watch.Status = buffer;
                 }
             }
@@ -361,7 +361,7 @@ namespace MiBand5WatchFaces.Forms
 
             if (status == statusForm.StatusSpecial)
             {
-                watch.StatusSimplified = DeepCopy(watch.Status.ConvertToStatusSimple());
+                watch.StatusSimplified = watch.Status == null ? null : DeepCopy(watch.Status.ConvertToStatusSimple());
                 watch.Status = buffer;
             }
             this.Close();

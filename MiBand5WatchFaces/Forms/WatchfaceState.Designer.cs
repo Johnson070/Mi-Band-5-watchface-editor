@@ -344,7 +344,6 @@
             // 
             // WeatherState
             // 
-            resources.ApplyResources(this.WeatherState, "WeatherState");
             this.WeatherState.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.WeatherState.FormattingEnabled = true;
             this.WeatherState.Items.AddRange(new object[] {
@@ -374,6 +373,7 @@
             resources.GetString("WeatherState.Items23"),
             resources.GetString("WeatherState.Items24"),
             resources.GetString("WeatherState.Items25")});
+            resources.ApplyResources(this.WeatherState, "WeatherState");
             this.WeatherState.Name = "WeatherState";
             this.WeatherState.SelectedIndexChanged += new System.EventHandler(this.ChangeValue);
             // 
@@ -501,8 +501,8 @@
             // 
             // ImagePic
             // 
-            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
             // 
             // SaveButton
@@ -514,13 +514,14 @@
             // 
             // WatchfaceStateEditor
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.notGenState);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "WatchfaceStateEditor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WatchfaceStateEditor_FormClosing);
             this.groupBox1.ResumeLayout(false);

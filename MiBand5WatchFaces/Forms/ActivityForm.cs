@@ -341,13 +341,13 @@ namespace MiBand5WatchFaces.Forms
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Steps.SuffixImageIndex = imgForm.selectedImages[0];
-                    addSuffixCaloriesButton.Text = res.GetString("EditSuffix");
+                    addSuffixStepsButton.Text = res.GetString("EditSuffix");
                 }
                 else if (imgForm.saveImages == true)
                 {
                     watch.imagesBuff = imgForm.Images;
                     watch.Activity.Steps.SuffixImageIndex = -10000;
-                    addSuffixCaloriesButton.Text = res.GetString("AddSuffix");
+                    addSuffixStepsButton.Text = res.GetString("AddSuffix");
                 }
             }
             else if (btn.Name == addSuffixCaloriesButton.Name)

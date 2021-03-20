@@ -79,23 +79,23 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagePic
             // 
-            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
             // 
             // tabs
             // 
-            resources.ApplyResources(this.tabs, "tabs");
             this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Controls.Add(this.tabPage2);
+            resources.ApplyResources(this.tabs, "tabs");
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             // 
             // tabPage1
             // 
-            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Controls.Add(this.hoursCheckbox);
             this.tabPage1.Controls.Add(this.groupBox3);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
@@ -123,7 +123,6 @@ namespace MiBand5WatchFaces.Forms
             // 
             // propertiesHoursGroup
             // 
-            resources.ApplyResources(this.propertiesHoursGroup, "propertiesHoursGroup");
             this.propertiesHoursGroup.Controls.Add(this.AddColorButtonHours);
             this.propertiesHoursGroup.Controls.Add(this.label1);
             this.propertiesHoursGroup.Controls.Add(this.OnlyborderHours);
@@ -131,14 +130,15 @@ namespace MiBand5WatchFaces.Forms
             this.propertiesHoursGroup.Controls.Add(this.posYHours);
             this.propertiesHoursGroup.Controls.Add(this.label6);
             this.propertiesHoursGroup.Controls.Add(this.posXHours);
+            resources.ApplyResources(this.propertiesHoursGroup, "propertiesHoursGroup");
             this.propertiesHoursGroup.Name = "propertiesHoursGroup";
             this.propertiesHoursGroup.TabStop = false;
             // 
             // AddColorButtonHours
             // 
-            resources.ApplyResources(this.AddColorButtonHours, "AddColorButtonHours");
             this.AddColorButtonHours.BackColor = System.Drawing.Color.Black;
             this.AddColorButtonHours.ForeColor = System.Drawing.SystemColors.ControlText;
+            resources.ApplyResources(this.AddColorButtonHours, "AddColorButtonHours");
             this.AddColorButtonHours.Name = "AddColorButtonHours";
             this.AddColorButtonHours.UseVisualStyleBackColor = false;
             this.AddColorButtonHours.Click += new System.EventHandler(this.AddColorButtonHours_Click);
@@ -201,9 +201,9 @@ namespace MiBand5WatchFaces.Forms
             // 
             // tabPage2
             // 
-            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Controls.Add(this.minutesCheckbox);
             this.tabPage2.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
@@ -231,7 +231,6 @@ namespace MiBand5WatchFaces.Forms
             // 
             // PropertiesMinutesGroupBox
             // 
-            resources.ApplyResources(this.PropertiesMinutesGroupBox, "PropertiesMinutesGroupBox");
             this.PropertiesMinutesGroupBox.Controls.Add(this.AddColorMinutesButton);
             this.PropertiesMinutesGroupBox.Controls.Add(this.label2);
             this.PropertiesMinutesGroupBox.Controls.Add(this.OnlyborderMinutes);
@@ -239,14 +238,15 @@ namespace MiBand5WatchFaces.Forms
             this.PropertiesMinutesGroupBox.Controls.Add(this.posYMinutes);
             this.PropertiesMinutesGroupBox.Controls.Add(this.label3);
             this.PropertiesMinutesGroupBox.Controls.Add(this.posXMinutes);
+            resources.ApplyResources(this.PropertiesMinutesGroupBox, "PropertiesMinutesGroupBox");
             this.PropertiesMinutesGroupBox.Name = "PropertiesMinutesGroupBox";
             this.PropertiesMinutesGroupBox.TabStop = false;
             // 
             // AddColorMinutesButton
             // 
-            resources.ApplyResources(this.AddColorMinutesButton, "AddColorMinutesButton");
             this.AddColorMinutesButton.BackColor = System.Drawing.Color.Black;
             this.AddColorMinutesButton.ForeColor = System.Drawing.SystemColors.ControlText;
+            resources.ApplyResources(this.AddColorMinutesButton, "AddColorMinutesButton");
             this.AddColorMinutesButton.Name = "AddColorMinutesButton";
             this.AddColorMinutesButton.UseVisualStyleBackColor = false;
             this.AddColorMinutesButton.Click += new System.EventHandler(this.AddColorMinutesButton_Click);
@@ -310,11 +310,12 @@ namespace MiBand5WatchFaces.Forms
             // AnalogDialFaceForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabs);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "AnalogDialFaceForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AnalogDialFaceForm_FormClosing);
             this.tabs.ResumeLayout(false);

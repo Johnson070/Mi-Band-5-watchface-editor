@@ -84,19 +84,19 @@
             // 
             // tabControl1
             // 
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.MonthDayYearTab);
             this.tabControl1.Controls.Add(this.AmPmTab);
             this.tabControl1.Controls.Add(this.WeekDaysTab);
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
             // MonthDayYearTab
             // 
-            resources.ApplyResources(this.MonthDayYearTab, "MonthDayYearTab");
             this.MonthDayYearTab.Controls.Add(this.TwoDigitsDayCheckbox);
             this.MonthDayYearTab.Controls.Add(this.TwoDigitsMonthCheckbox);
             this.MonthDayYearTab.Controls.Add(this.tabControl2);
+            resources.ApplyResources(this.MonthDayYearTab, "MonthDayYearTab");
             this.MonthDayYearTab.Name = "MonthDayYearTab";
             this.MonthDayYearTab.UseVisualStyleBackColor = true;
             // 
@@ -129,9 +129,9 @@
             // 
             // separateTab
             // 
-            resources.ApplyResources(this.separateTab, "separateTab");
             this.separateTab.Controls.Add(this.SeparateMonthDayCheckbox);
             this.separateTab.Controls.Add(this.groupBox1);
+            resources.ApplyResources(this.separateTab, "separateTab");
             this.separateTab.Name = "separateTab";
             this.separateTab.UseVisualStyleBackColor = true;
             // 
@@ -174,9 +174,9 @@
             // 
             // onelineTab
             // 
-            resources.ApplyResources(this.onelineTab, "onelineTab");
             this.onelineTab.Controls.Add(this.OnelineMonthDayCheckbox);
             this.onelineTab.Controls.Add(this.groupBox2);
+            resources.ApplyResources(this.onelineTab, "onelineTab");
             this.onelineTab.Name = "onelineTab";
             this.onelineTab.UseVisualStyleBackColor = true;
             // 
@@ -211,9 +211,9 @@
             // 
             // onelinewithyearTab
             // 
-            resources.ApplyResources(this.onelinewithyearTab, "onelinewithyearTab");
             this.onelinewithyearTab.Controls.Add(this.OnelineWithYearCheckbox);
             this.onelinewithyearTab.Controls.Add(this.groupBox3);
+            resources.ApplyResources(this.onelinewithyearTab, "onelinewithyearTab");
             this.onelinewithyearTab.Name = "onelinewithyearTab";
             this.onelinewithyearTab.UseVisualStyleBackColor = true;
             // 
@@ -248,9 +248,9 @@
             // 
             // AmPmTab
             // 
-            resources.ApplyResources(this.AmPmTab, "AmPmTab");
             this.AmPmTab.Controls.Add(this.AmPmCheckbox);
             this.AmPmTab.Controls.Add(this.groupBox4);
+            resources.ApplyResources(this.AmPmTab, "AmPmTab");
             this.AmPmTab.Name = "AmPmTab";
             this.AmPmTab.UseVisualStyleBackColor = true;
             // 
@@ -325,9 +325,9 @@
             // 
             // WeekDaysTab
             // 
-            resources.ApplyResources(this.WeekDaysTab, "WeekDaysTab");
             this.WeekDaysTab.Controls.Add(this.weekdaysCheckbox);
             this.WeekDaysTab.Controls.Add(this.groupBox5);
+            resources.ApplyResources(this.WeekDaysTab, "WeekDaysTab");
             this.WeekDaysTab.Name = "WeekDaysTab";
             this.WeekDaysTab.UseVisualStyleBackColor = true;
             // 
@@ -354,8 +354,8 @@
             // 
             // ImagePic
             // 
-            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.Name = "ImagePic";
             // 
             // SaveButton
@@ -368,11 +368,12 @@
             // DateForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.ImagePic);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
             this.Name = "DateForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DateForm_FormClosing);
             this.tabControl1.ResumeLayout(false);
