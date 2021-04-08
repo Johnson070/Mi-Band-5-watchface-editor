@@ -48,16 +48,14 @@ namespace MiBand5WatchFaces.Forms
             {
                 textBatteryCheckbox.Checked = true;
                 AddNumberBatteryTextButton.Text = res.GetString("EditNumber");
+                AddPreffixButton.Enabled = true;
+                AddSuffixButton.Enabled = true;
+
                 if (watch.Battery.BatteryText.PrefixImageIndex >= 0)
-                {
-                    AddPreffixButton.Enabled = true;
                     AddPreffixButton.Text = res.GetString("EditPrefix");
-                }
+                
                 if (watch.Battery.BatteryText.SuffixImageIndex >= 0)
-                {
-                    AddSuffixButton.Enabled = true;
                     AddSuffixButton.Text = res.GetString("EditSuffix");
-                }
             }
             if (watch.Battery.BatteryIcon != null)
             {

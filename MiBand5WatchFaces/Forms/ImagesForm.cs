@@ -27,6 +27,10 @@ namespace MiBand5WatchFaces
         bool countImages = false;
         int countImagesSelect = -1;
 
+        bool CTRLSelectImages = false;
+        bool CTRLSHIFTUnselect = false;
+        bool MouseDown = false;
+
         public ImagesForm(DefaultDictionary<int, Image> Images, bool selectImages = false, bool selectAndAdd = false, bool multiSelect = true, int indexSelect = -1, int countImagesSelect = -1)
         {
             InitializeComponent();
@@ -323,6 +327,27 @@ namespace MiBand5WatchFaces
                 imageBox.BackgroundImage = Images[Convert.ToInt32(ImagesListBox.Items[toolTipIndex].ToString().Replace(".png", string.Empty))];
             }
             catch { }
+
+            if (MouseDown && ImagesListBox.Items.Count > 0)
+            { 
+                if (!CTRLSelectImages)
+                {
+                    Point pt = new Point((Size)e.Location);
+                    //Retrieve the index of the ListBox item at the current location. 
+                    int Index = ImagesListBox.IndexFromPoint(pt);
+                    if (Index > 0)
+                        ImagesListBox.SetItemChecked(Index, true);
+                }
+                else
+                {
+                    Point pt = new Point((Size)e.Location);
+                    //Retrieve the index of the ListBox item at the current location. 
+                    int Index = ImagesListBox.IndexFromPoint(pt);
+                    if (Index > 0)
+                        ImagesListBox.SetItemChecked(Index, false);
+                }
+            }
+
         }
 
         private void ImagesListBox_MouseLeave(object sender, EventArgs e)
@@ -444,6 +469,27 @@ namespace MiBand5WatchFaces
         private void ImagesListBox_SelectedValueChanged(object sender, EventArgs e)
         {
             setTextToElement();
+        }
+
+        private void ImagesListBox_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.ShiftKey) CTRLSelectImages = true;
+            else CTRLSelectImages = false;
+        }
+
+        private void ImagesListBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            MouseDown = e.Button == MouseButtons.Left ? true : false;
+        }
+
+        private void ImagesListBox_MouseUp(object sender, MouseEventArgs e)
+        {
+            MouseDown = false;
+        }
+
+        private void ImagesListBox_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ShiftKey) CTRLSelectImages = false;
         }
     }
 }

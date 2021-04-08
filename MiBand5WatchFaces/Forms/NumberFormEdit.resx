@@ -146,216 +146,6 @@
   <data name="&gt;&gt;selectImages.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;posYNum.Name" xml:space="preserve">
-    <value>posYNum</value>
-  </data>
-  <data name="&gt;&gt;posYNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;posYNum.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;posYNum.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;posXNum.Name" xml:space="preserve">
-    <value>posXNum</value>
-  </data>
-  <data name="&gt;&gt;posXNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;posXNum.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;posXNum.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;label6.Name" xml:space="preserve">
-    <value>label6</value>
-  </data>
-  <data name="&gt;&gt;label6.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label6.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;sizeYNum.Name" xml:space="preserve">
-    <value>sizeYNum</value>
-  </data>
-  <data name="&gt;&gt;sizeYNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sizeYNum.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;sizeYNum.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;sizeXNum.Name" xml:space="preserve">
-    <value>sizeXNum</value>
-  </data>
-  <data name="&gt;&gt;sizeXNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;sizeXNum.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;sizeXNum.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;label5.Name" xml:space="preserve">
-    <value>label5</value>
-  </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label5.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;saveBtn.Name" xml:space="preserve">
-    <value>saveBtn</value>
-  </data>
-  <data name="&gt;&gt;saveBtn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;saveBtn.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;saveBtn.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="&gt;&gt;label4.Name" xml:space="preserve">
-    <value>label4</value>
-  </data>
-  <data name="&gt;&gt;label4.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="&gt;&gt;previewImage.Name" xml:space="preserve">
-    <value>previewImage</value>
-  </data>
-  <data name="&gt;&gt;previewImage.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;previewImage.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;previewImage.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;label3.Name" xml:space="preserve">
-    <value>label3</value>
-  </data>
-  <data name="&gt;&gt;label3.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label3.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="&gt;&gt;label2.Name" xml:space="preserve">
-    <value>label2</value>
-  </data>
-  <data name="&gt;&gt;label2.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label2.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;spaсingYNum.Name" xml:space="preserve">
-    <value>spaсingYNum</value>
-  </data>
-  <data name="&gt;&gt;spaсingYNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spaсingYNum.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;spaсingYNum.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="&gt;&gt;spacingXNum.Name" xml:space="preserve">
-    <value>spacingXNum</value>
-  </data>
-  <data name="&gt;&gt;spacingXNum.Type" xml:space="preserve">
-    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;spacingXNum.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;spacingXNum.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;label1.Name" xml:space="preserve">
-    <value>label1</value>
-  </data>
-  <data name="&gt;&gt;label1.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;label1.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;AligmentComboBox.Name" xml:space="preserve">
-    <value>AligmentComboBox</value>
-  </data>
-  <data name="&gt;&gt;AligmentComboBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AligmentComboBox.Parent" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;AligmentComboBox.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="PropertiesGroupBox.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="PropertiesGroupBox.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
-  <data name="PropertiesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 50</value>
-  </data>
-  <data name="PropertiesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 535</value>
-  </data>
-  <data name="PropertiesGroupBox.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="PropertiesGroupBox.Text" xml:space="preserve">
-    <value>Properties</value>
-  </data>
-  <data name="&gt;&gt;PropertiesGroupBox.Name" xml:space="preserve">
-    <value>PropertiesGroupBox</value>
-  </data>
-  <data name="&gt;&gt;PropertiesGroupBox.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PropertiesGroupBox.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PropertiesGroupBox.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="posYNum.Location" type="System.Drawing.Point, System.Drawing">
     <value>145, 145</value>
   </data>
@@ -746,6 +536,36 @@
   </data>
   <data name="&gt;&gt;AligmentComboBox.ZOrder" xml:space="preserve">
     <value>14</value>
+  </data>
+  <data name="PropertiesGroupBox.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="PropertiesGroupBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="PropertiesGroupBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 50</value>
+  </data>
+  <data name="PropertiesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>204, 535</value>
+  </data>
+  <data name="PropertiesGroupBox.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="PropertiesGroupBox.Text" xml:space="preserve">
+    <value>Properties</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.Name" xml:space="preserve">
+    <value>PropertiesGroupBox</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PropertiesGroupBox.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="deleteButton.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
@@ -2307,6 +2127,9 @@
         G0ZY7CrVjXWdeZFbYTsHJYGleJGRZvbJVdKimFQpiohLGSdlR44Mtaispt40XFjggXNz9pMPPcNvbhvn
         qUSLBGBu5bt7pv9c1v8LVfIA1nE0ZGEAAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

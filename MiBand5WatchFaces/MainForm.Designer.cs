@@ -65,6 +65,7 @@
             this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.OpenJsonButton = new System.Windows.Forms.ToolStripButton();
+            this.CloseProjectButton = new System.Windows.Forms.ToolStripButton();
             this.listMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -82,7 +83,6 @@
             this.RenderButton = new System.Windows.Forms.Button();
             this.listViewElements = new System.Windows.Forms.ListView();
             this.AnimateCheckBox = new System.Windows.Forms.CheckBox();
-            this.CloseProjectButton = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.listMenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -342,6 +342,14 @@
             this.OpenJsonButton.Name = "OpenJsonButton";
             this.OpenJsonButton.Click += new System.EventHandler(this.OpenJsonButton_Click);
             // 
+            // CloseProjectButton
+            // 
+            this.CloseProjectButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.CloseProjectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            resources.ApplyResources(this.CloseProjectButton, "CloseProjectButton");
+            this.CloseProjectButton.Name = "CloseProjectButton";
+            this.CloseProjectButton.Click += new System.EventHandler(this.CloseProjectButton_Click);
+            // 
             // listMenuStrip
             // 
             this.listMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -464,14 +472,6 @@
             this.AnimateCheckBox.Name = "AnimateCheckBox";
             this.AnimateCheckBox.UseVisualStyleBackColor = true;
             this.AnimateCheckBox.CheckedChanged += new System.EventHandler(this.AnimateCheckBox_CheckedChanged);
-            // 
-            // CloseProjectButton
-            // 
-            this.CloseProjectButton.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.CloseProjectButton.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            resources.ApplyResources(this.CloseProjectButton, "CloseProjectButton");
-            this.CloseProjectButton.Name = "CloseProjectButton";
-            this.CloseProjectButton.Click += new System.EventHandler(this.CloseProjectButton_Click);
             // 
             // MainForm
             // 

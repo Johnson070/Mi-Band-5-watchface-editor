@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -78,6 +77,15 @@ namespace MiBand5WatchFaces
         [Obfuscation(Exclude = false, Feature = "-rename")]
         [JsonProperty("formEdit")]
         public StepsProgress formEdit;
+
+        public typeWatch TypeWatch = typeWatch.MiBand5;
+
+
+        public enum typeWatch
+        {
+            MiBand5,
+            MiBand6
+        };
 
         [JsonIgnore]
         public string FilePath;
@@ -610,6 +618,9 @@ namespace MiBand5WatchFaces
 
         [JsonProperty("Linear")]
         public Scale Linear;
+
+        [JsonProperty("CircleScale")]
+        public CircleScale CircleScale;
     }
 
     //===========================HEARTPROGRESS=========================
@@ -1242,7 +1253,7 @@ namespace MiBand5WatchFaces
         public int BottomRightY;
 
         [JsonProperty("Alignment")]
-        public string Alignment = "LeftTop";
+        public string Alignment = "TopLeft";
 
         [JsonProperty("SpacingX")]
         public int SpacingX;
@@ -1260,6 +1271,8 @@ namespace MiBand5WatchFaces
         public bool drawBorder;
         [JsonIgnore]
         public bool notDraw = false;
+
+        public Number() { Alignment = parseAligment(); }
 
         public string parseAligment()
         {

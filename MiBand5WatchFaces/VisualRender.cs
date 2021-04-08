@@ -63,10 +63,11 @@ namespace MiBand5WatchFaces
         public WatchFaceLibrary watchface;
         Graphics watchfacePreview;
         StateWatchface watchFaceState;
-        Image Preview = (Image)new Bitmap(126, 294);
+        Image Preview;
 
         public VisualRender(WatchFaceLibrary watchface, StateWatchface state = null)
         {
+            Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
             this.watchface = watchface;
             watchfacePreview = Graphics.FromImage(Preview);
             watchFaceState = state == null ? new StateWatchface() : state;
@@ -74,6 +75,7 @@ namespace MiBand5WatchFaces
 
         public VisualRender(DefaultDictionary<int, Image> Images, StateWatchface state = null)
         {
+            Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
             this.watchface = new WatchFaceLibrary();
             watchfacePreview = Graphics.FromImage(Preview);
             watchFaceState = state == null ? new StateWatchface() : state;
@@ -116,7 +118,8 @@ namespace MiBand5WatchFaces
             {
                 if (watchface.Other != null && watchface.Other.Animation != null)
                 {
-                    Preview = (Image)new Bitmap(126, 294);
+                    Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
+
                     watchfacePreview = Graphics.FromImage(Preview);
 
                     foreach (Animation animation in watchface.Other.Animation)
@@ -134,14 +137,14 @@ namespace MiBand5WatchFaces
                         animation.Step = 0;
                 }
 
-                Preview = (Image)new Bitmap(126, 294);
+                Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
                 watchfacePreview = Graphics.FromImage(Preview);
 
                 return GenWatchface();
             }
         }
 
-        public Image genPreview() => (Image)ResizeImage(GenWatchface(), 90, 210);
+        public Image genPreview() => (Image)ResizeImage(GenWatchface(), watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 90 : 110, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 210 : 352);
 
         public Image GenWatchface()
         {
@@ -168,13 +171,13 @@ namespace MiBand5WatchFaces
         {
             if (element == null) return null;
 
-            Preview = (Image)new Bitmap(126, 294);
+            Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
             watchfacePreview = Graphics.FromImage(Preview);
             watchFaceState = new StateWatchface();
 
             if (element.GetType() == typeof(ImageBasic))
             {
-                Preview = (Image)new Bitmap(90, 210);
+                Preview = (Image)ResizeImage(GenWatchface(), watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 90 : 110, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 210 : 352);
                 watchfacePreview = Graphics.FromImage(Preview);
                 drawPreview((ImageBasic)element);
             }
@@ -215,12 +218,12 @@ namespace MiBand5WatchFaces
             if (background.BackgroundColor != null || background.Image != null)
             {
                 if (background.BackgroundColor != null)
-                    watchfacePreview.FillRectangle(new SolidBrush(convertColorFromString(background.BackgroundColor)), new Rectangle(0, 0, 126, 294));
+                    watchfacePreview.FillRectangle(new SolidBrush(convertColorFromString(background.BackgroundColor)), new Rectangle(0, 0, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486));
 
                 if (background.Image != null)
                     drawImage(watchface.imagesBuff[background.Image.ImageIndex], background.Image.getPoint());
             }
-            else watchfacePreview.FillRectangle(new SolidBrush(Color.Black), new Rectangle(0, 0, 126, 294));
+            else watchfacePreview.FillRectangle(new SolidBrush(Color.Black), new Rectangle(0, 0, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486));
         }
 
         private void drawTime(Time _time = null)
@@ -239,6 +242,12 @@ namespace MiBand5WatchFaces
             {
                 if (time.Minutes.Tens != null) drawImage(watchface.imagesBuff[time.Minutes.Tens.ImageIndex + (int)watchFaceState.Time.Minute / 10], time.Minutes.Tens.getPoint());
                 if (time.Minutes.Ones != null) drawImage(watchface.imagesBuff[time.Minutes.Ones.ImageIndex + (int)watchFaceState.Time.Minute % 10], time.Minutes.Ones.getPoint());
+            }
+
+            if (time.Seconds != null)
+            {
+                if (time.Seconds.Tens != null) drawImage(watchface.imagesBuff[time.Seconds.Tens.ImageIndex + (int)watchFaceState.Time.Second / 10], time.Seconds.Tens.getPoint());
+                if (time.Seconds.Ones != null) drawImage(watchface.imagesBuff[time.Seconds.Ones.ImageIndex + (int)watchFaceState.Time.Second % 10], time.Seconds.Ones.getPoint());
             }
 
             //DelimeterImage
@@ -775,6 +784,19 @@ namespace MiBand5WatchFaces
             if (heartProgress.Linear != null)
                 for (int i = 0; i < map(watchFaceState.Pulse, 0, watchFaceState.PulseGoal, 0, heartProgress.Linear.Segments.Count); i++)
                     drawImage(watchface.imagesBuff[heartProgress.Linear.StartImageIndex + i], heartProgress.Linear.Segments[i].getPoint());
+
+            if (heartProgress.CircleScale != null)
+            {
+                Color circleColor = convertColorFromString(heartProgress.CircleScale.Color);
+                watchfacePreview.DrawArc(
+                    new Pen(circleColor, heartProgress.CircleScale.Width + 1),
+                    heartProgress.CircleScale.CenterX - heartProgress.CircleScale.RadiusX,
+                    heartProgress.CircleScale.CenterY - heartProgress.CircleScale.RadiusY,
+                    heartProgress.CircleScale.RadiusX * 2,
+                    heartProgress.CircleScale.RadiusY * 2,
+                    heartProgress.CircleScale.StartAngle - 90,
+                    map(watchFaceState.Pulse, 0, watchFaceState.PulseGoal, 0, heartProgress.CircleScale.EndAngle));
+            }
         }
 
         private void drawWeekDaysIcons(WeekDaysIcons _weekicons = null)

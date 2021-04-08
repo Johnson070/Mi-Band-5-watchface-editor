@@ -10745,7 +10745,7 @@
     <value>Convert GIF to PNG</value>
   </data>
   <data name="SupportAuthorButton.Text" xml:space="preserve">
-    <value>Convert GIF to PNG</value>
+    <value>Support author</value>
   </data>
   <data name="CloseProjectButton.Text" xml:space="preserve">
     <value>Close watchface</value>

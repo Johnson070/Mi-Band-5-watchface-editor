@@ -59,10 +59,13 @@ namespace MiBand5WatchFaces.Forms
                     AddMinusImageTemperatureTodaySeparateDayButton.Enabled = true;
 
                     AddNumberTemperatureTodaySeparateDayButton.Text = res.GetString("EditNumber");
+
                     if (watch.Weather.Temperature.Today.Separate.Day.DegreesImageIndex >= 0)
                         AddDegreeImageTemperatureTodaySeparateDayButton.Text = res.GetString("EditDegreeImage");
+
                     if (watch.Weather.Temperature.Today.Separate.Day.MinusImageIndex >= 0)
                         AddMinusImageTemperatureTodaySeparateDayButton.Text = res.GetString("EditMinusImage");
+
                     TemperatureTodaySeparateDayCheckbox.Checked = watch.Weather.Temperature?.Today?.Separate?.Day != null;
                 }
                 if (watch.Weather.Temperature?.Today?.Separate?.Night != null)

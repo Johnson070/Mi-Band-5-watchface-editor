@@ -361,10 +361,6 @@ namespace MiBand5WatchFaces
                 }
 
                 updateListElements();
-                //}
-                //catch { }
-
-                long totalMemory = GC.GetTotalMemory(false);
 
                 GC.Collect();
                 GC.WaitForPendingFinalizers();

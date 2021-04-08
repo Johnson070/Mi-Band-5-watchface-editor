@@ -180,6 +180,11 @@
     <Compile Include="Forms\JSONEditorForm.Designer.cs">
       <DependentUpon>JSONEditorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NumberFormEdit1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NumberFormEdit.resx</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ScaleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +257,11 @@
     </Compile>
     <Compile Include="Forms\NumberFormEdit.Designer.cs">
       <DependentUpon>NumberFormEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>MainForm.resx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
