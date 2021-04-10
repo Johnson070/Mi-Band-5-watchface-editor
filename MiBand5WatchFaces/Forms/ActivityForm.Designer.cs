@@ -79,12 +79,12 @@
             // 
             // tabControl1
             // 
+            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.stepsTab);
             this.tabControl1.Controls.Add(this.caloriesTab);
             this.tabControl1.Controls.Add(this.pulseTab);
             this.tabControl1.Controls.Add(this.distanceTab);
             this.tabControl1.Controls.Add(this.paiTab);
-            resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
@@ -105,10 +105,10 @@
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.addSuffixStepsButton);
             this.groupBox1.Controls.Add(this.addPreffixStepsButton);
             this.groupBox1.Controls.Add(this.addStepsButton);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -150,10 +150,10 @@
             // 
             // groupBox2
             // 
+            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Controls.Add(this.addSuffixCaloriesButton);
             this.groupBox2.Controls.Add(this.addPreffixCaloriesButton);
             this.groupBox2.Controls.Add(this.addCaloriesButton);
-            resources.ApplyResources(this.groupBox2, "groupBox2");
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
@@ -195,11 +195,11 @@
             // 
             // groupBox3
             // 
+            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Controls.Add(this.addNoDataPulseButton);
             this.groupBox3.Controls.Add(this.addSuffixPulseButton);
             this.groupBox3.Controls.Add(this.addPreffixPulseButton);
             this.groupBox3.Controls.Add(this.addPulseButton);
-            resources.ApplyResources(this.groupBox3, "groupBox3");
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
@@ -248,13 +248,13 @@
             // 
             // groupBox5
             // 
+            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Controls.Add(this.addMiImageButton);
             this.groupBox5.Controls.Add(this.addKmImageButton);
             this.groupBox5.Controls.Add(this.addMiDistanceSuffixButton);
             this.groupBox5.Controls.Add(this.addDecimalDistanceButton);
             this.groupBox5.Controls.Add(this.addKmDistanceSuffixButton);
             this.groupBox5.Controls.Add(this.addDistanceButton);
-            resources.ApplyResources(this.groupBox5, "groupBox5");
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.TabStop = false;
             // 
@@ -317,8 +317,8 @@
             // 
             // groupBox4
             // 
-            this.groupBox4.Controls.Add(this.addPAIButton);
             resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Controls.Add(this.addPAIButton);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
             // 
@@ -331,8 +331,8 @@
             // 
             // ImagePic
             // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
             // 
             // saveButton

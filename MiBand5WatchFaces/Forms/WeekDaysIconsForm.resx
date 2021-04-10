@@ -119,7 +119,7 @@
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="saveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="saveButton.Font" type="System.Drawing.Font, System.Drawing">
@@ -151,7 +151,7 @@
     <value>7</value>
   </data>
   <data name="ImagePic.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Right</value>
+    <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="ImagePic.Location" type="System.Drawing.Point, System.Drawing">
     <value>336, 12</value>
@@ -3554,6 +3554,9 @@
         1a3zlXlRWGF7ByWBo3yFlmb+zZVuUdZLlEXC1YyT8i1HjlpUzlBvWsZmefTStPvA82f4d4e28/yf30/6
         07/c/HtV3b/W+P8BlSopj6SGjh0AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

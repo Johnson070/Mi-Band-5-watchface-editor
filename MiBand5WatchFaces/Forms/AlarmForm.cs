@@ -42,6 +42,12 @@ namespace MiBand5WatchFaces.Forms
             this.watch.imagesBuff = Images;
             this.state = state;
             this.watch.Alarm = this.watch.Alarm == null ? new Alarm() : this.watch.Alarm;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
 
             if (watch.Alarm.Text != null)
@@ -154,7 +160,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (name == AddImageNoAlarmButton.Name)
             {
-                watch.Alarm.ImageOff = watch.Alarm.ImageOff == null ? new ImageBasic() : watch.Alarm.ImageOff;
+                watch.Alarm.ImageNoAlarm = watch.Alarm.ImageNoAlarm == null ? new ImageBasic() : watch.Alarm.ImageNoAlarm;
                 StateWatchface newState = DeepCopy(state);
                 newState.AlarmNoTime = true;
                 ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Alarm.ImageNoAlarm, watch.imagesBuff.DeepCopy(), newState);

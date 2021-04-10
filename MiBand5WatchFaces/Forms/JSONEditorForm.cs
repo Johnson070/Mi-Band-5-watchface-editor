@@ -52,9 +52,21 @@ namespace MiBand5WatchFaces.Forms
 
             try
             {
-                jsonTextBox.Text = JsonConvert.SerializeObject(watch, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
+                WatchFaceLibrary saveWatch = DeepCopy(watch);
+                saveWatch.TypeWatch = WatchFaceLibrary.typeWatch.None;
+                jsonTextBox.Text = JsonConvert.SerializeObject(saveWatch, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
             }
             catch { }
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                ImagePic.Size += watch.SizeMiBand6Rasn;
+                //Size += watch.SizeMiBand6Rasn;
+
+                jsonTextBox.Location += new Size(watch.SizeMiBand6Rasn.Width,0);
+                jsonTextBox.Size -= new Size(watch.SizeMiBand6Rasn.Width, 0);
+                RenderButton.Location += new Size(watch.SizeMiBand6Rasn.Width / 2, watch.SizeMiBand6Rasn.Height);
+            }
 
             Render(state);
         }

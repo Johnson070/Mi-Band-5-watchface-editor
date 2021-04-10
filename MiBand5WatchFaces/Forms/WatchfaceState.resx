@@ -1320,6 +1320,9 @@
   <data name="&gt;&gt;groupBox1.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="ImagePic.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
   <data name="ImagePic.Location" type="System.Drawing.Point, System.Drawing">
     <value>398, 40</value>
   </data>
@@ -1342,7 +1345,7 @@
     <value>1</value>
   </data>
   <data name="SaveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Bottom, Left</value>
+    <value>Bottom, Left, Right</value>
   </data>
   <data name="SaveButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>12, 547</value>
@@ -4562,6 +4565,9 @@
         1a3zlXlRWGF7ByWBo3yFlmb+zZVuUdZLlEXC1YyT8i1HjlpUzlBvWsZmefTStPvA82f4d4e28/yf30/6
         07/c/HtV3b/W+P8BlSopj6SGjh0AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>

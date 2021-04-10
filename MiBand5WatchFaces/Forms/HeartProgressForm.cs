@@ -42,6 +42,12 @@ namespace MiBand5WatchFaces.Forms
             this.watch.imagesBuff = Images;
             this.state = state;
             this.watch.HeartProgress = this.watch.HeartProgress == null ? new HeartProgress() : this.watch.HeartProgress;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
 
 

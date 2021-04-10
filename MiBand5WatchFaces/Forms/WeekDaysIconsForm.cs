@@ -42,6 +42,12 @@ namespace MiBand5WatchFaces.Forms
             this.watch.imagesBuff = Images;
             this.state = state;
             this.watch.WeekDaysIcons = this.watch.WeekDaysIcons == null ? new WeekDaysIcons() : this.watch.WeekDaysIcons;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
 
             if (watch.WeekDaysIcons.Monday != null) mondayButton.Text = resources.GetString("EditMondayImage");

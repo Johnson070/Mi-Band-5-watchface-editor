@@ -224,6 +224,10 @@
   <data name="&gt;&gt;BackgroundColorGroup.ZOrder" xml:space="preserve">
     <value>9</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="ImagePic.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="ImagePic.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 41</value>
   </data>
@@ -416,7 +420,6 @@
   <data name="&gt;&gt;BackgroundImages.ZOrder" xml:space="preserve">
     <value>8</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="saveButton.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Left, Right</value>
   </data>
@@ -447,6 +450,9 @@
   <data name="&gt;&gt;saveButton.ZOrder" xml:space="preserve">
     <value>7</value>
   </data>
+  <data name="Preview3Pic.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="Preview3Pic.Location" type="System.Drawing.Point, System.Drawing">
     <value>353, 144</value>
   </data>
@@ -468,6 +474,9 @@
   <data name="&gt;&gt;Preview3Pic.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
+  <data name="Preview2Pic.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="Preview2Pic.Location" type="System.Drawing.Point, System.Drawing">
     <value>257, 144</value>
   </data>
@@ -488,6 +497,9 @@
   </data>
   <data name="&gt;&gt;Preview2Pic.ZOrder" xml:space="preserve">
     <value>2</value>
+  </data>
+  <data name="Preview1Pic.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
   </data>
   <data name="Preview1Pic.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 144</value>
@@ -600,11 +612,14 @@
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
     <value>6</value>
   </data>
+  <data name="genPreviews.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Left, Right</value>
+  </data>
   <data name="genPreviews.Location" type="System.Drawing.Point, System.Drawing">
     <value>161, 360</value>
   </data>
   <data name="genPreviews.Size" type="System.Drawing.Size, System.Drawing">
-    <value>282, 23</value>
+    <value>286, 23</value>
   </data>
   <data name="genPreviews.TabIndex" type="System.Int32, mscorlib">
     <value>44</value>
@@ -3815,6 +3830,9 @@
         1a3zlXlRWGF7ByWBo3yFlmb+zZVuUdZLlEXC1YyT8i1HjlpUzlBvWsZmefTStPvA82f4d4e28/yf30/6
         07/c/HtV3b/W+P8BlSopj6SGjh0AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

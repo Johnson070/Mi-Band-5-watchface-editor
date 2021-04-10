@@ -34,7 +34,7 @@ namespace MiBand5WatchFaces
         private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VisualRender render = new VisualRender(watchFace, state);
-            BackgroundForm bgr = new BackgroundForm(DeepCopy<Background>(watchFace.Background), watchFace.imagesBuff.DeepCopy(), render.genPreview());
+            BackgroundForm bgr = new BackgroundForm(DeepCopy<Background>(watchFace.Background), watchFace.imagesBuff.DeepCopy(), render.genPreview(), watchFace.TypeWatch);
             bgr.ShowDialog();
             if (bgr.Save)
             {
@@ -92,9 +92,9 @@ namespace MiBand5WatchFaces
                     {
                         WatchFaceEXE.Close();
                         this.Enabled = false;
-                        WatchFaceEXE.StartInfo.FileName = @"WatchFace/WatchFace.exe";
+                        WatchFaceEXE.StartInfo.FileName = $"WatchFace{(watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 ? "6" : "")}/WatchFace.exe";
                         //avrdude.StartInfo.Arguments = "-v";
-                        WatchFaceEXE.StartInfo.Arguments = $"WatchFace/WatchFace.exe \"{file.FileName}\"";
+                        WatchFaceEXE.StartInfo.Arguments = $"WatchFace{(watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 ? "6" : "")}/WatchFace.exe \"{file.FileName}\"";
                         WatchFaceEXE.StartInfo.UseShellExecute = false;
                         WatchFaceEXE.StartInfo.RedirectStandardOutput = true;
                         WatchFaceEXE.StartInfo.RedirectStandardInput = true;
@@ -123,7 +123,16 @@ namespace MiBand5WatchFaces
 
                         watchFace = JsonConvert.DeserializeObject<WatchFaceLibrary>(json);//,new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All,MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead ,PreserveReferencesHandling = PreserveReferencesHandling.Objects });
                         watchFace.FilePath = Path.GetDirectoryName(file.FileName);
-                        watchFace.LoadImages();
+                        if (watchFace.LoadImages() == WatchFaceLibrary.typeWatch.MiBand6)
+                        {
+                            watchFace.TypeWatch = WatchFaceLibrary.typeWatch.MiBand6;
+                            miBand6ToolStripMenuItem.PerformClick();
+                        }
+                        else
+                        {
+                            watchFace.TypeWatch = WatchFaceLibrary.typeWatch.MiBand5;
+                            miBand5ToolStripMenuItem.PerformClick();
+                        }
 
                         RenderButton_Click(null, null);
 
@@ -134,6 +143,7 @@ namespace MiBand5WatchFaces
             catch (Exception ex)
             {
                 MessageBox.Show($"Error parse file!\n\n{ex}", res.GetString("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Enabled = true;
             }
         }
 
@@ -162,8 +172,8 @@ namespace MiBand5WatchFaces
 
                 if (type == typeof(Background))
                 {
-                    VisualRender render = new VisualRender(watchFace);
-                    BackgroundForm backgroundForm = new BackgroundForm(DeepCopy<Background>((Background)item.SelectedItems[0].Tag), watchFace.imagesBuff.DeepCopy(), render.genPreview());
+                    VisualRender render = new VisualRender(watchFace,state);
+                    BackgroundForm backgroundForm = new BackgroundForm(DeepCopy<Background>((Background)item.SelectedItems[0].Tag), watchFace.imagesBuff.DeepCopy(), render.genPreview(), watchFace.TypeWatch);
                     backgroundForm.ShowDialog();
                     if (backgroundForm.Save)
                     {
@@ -433,15 +443,18 @@ namespace MiBand5WatchFaces
                     foreach (KeyValuePair<int, Image> img in watchFace.imagesBuff)
                         img.Value.Save(Path.Combine(path, $"{img.Key:0000}.png"), ImageFormat.Png);
 
-                    File.WriteAllText(Path.Combine(path, $"{Path.GetFileNameWithoutExtension(saveFile.FileName)}.json"), JsonConvert.SerializeObject(watchFace, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+
+                    WatchFaceLibrary saveWatch = DeepCopy(watchFace);
+                    saveWatch.TypeWatch = WatchFaceLibrary.typeWatch.None;
+                    File.WriteAllText(Path.Combine(path, $"{Path.GetFileNameWithoutExtension(saveFile.FileName)}.json"), JsonConvert.SerializeObject(saveWatch, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
 
                     if (Path.GetExtension(saveFile.FileName) == ".bin")
                     {
                         WatchFaceEXE.Close();
                         this.Enabled = false;
-                        WatchFaceEXE.StartInfo.FileName = @"WatchFace/WatchFace.exe";
+                        WatchFaceEXE.StartInfo.FileName = $"WatchFace{(watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 ? "6" : "")}/WatchFace.exe";
                         //avrdude.StartInfo.Arguments = "-v";
-                        WatchFaceEXE.StartInfo.Arguments = $"WatchFace/WatchFace.exe \"{Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName))}.json\"";
+                        WatchFaceEXE.StartInfo.Arguments = $"WatchFace{(watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 ? "6" : "")}/WatchFace.exe \"{Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName))}.json\"";
                         WatchFaceEXE.StartInfo.UseShellExecute = false;
                         WatchFaceEXE.StartInfo.RedirectStandardOutput = true;
                         WatchFaceEXE.StartInfo.RedirectStandardInput = true;
@@ -900,12 +913,14 @@ namespace MiBand5WatchFaces
 
         private void OpenJsonButton_Click(object sender, EventArgs e)
         {
+            WatchFaceLibrary.typeWatch type = watchFace.TypeWatch;
             JSONEditorForm jsonForm = new JSONEditorForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
             jsonForm.ShowDialog();
 
             if (jsonForm.Save)
             {
                 watchFace = jsonForm.watch;
+                watchFace.TypeWatch = type;
                 RenderButton.PerformClick();
             }
 
@@ -996,6 +1011,26 @@ namespace MiBand5WatchFaces
             watchFace = new WatchFaceLibrary();
             RenderButton_Click(null, null);
             updateListElements();
+        }
+
+        private void miBand5ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            watchfacePreviewImage.Location = new Point(336, 152);
+            watchfacePreviewImage.Size = new Size(126, 294);
+            RenderButton.Location = new Point(362, 452);
+            AnimateCheckBox.Location = new Point(375, 481);
+            watchFace.TypeWatch = WatchFaceLibrary.typeWatch.MiBand5;
+            RenderButton.PerformClick();
+        }
+
+        private void miBand6ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            watchfacePreviewImage.Location = new Point(323, 56);
+            watchfacePreviewImage.Size = new Size(152, 486);
+            RenderButton.Location = new Point(323, 548);
+            AnimateCheckBox.Location = new Point(425, 545);
+            watchFace.TypeWatch = WatchFaceLibrary.typeWatch.MiBand6;
+            RenderButton.PerformClick();
         }
     }
 

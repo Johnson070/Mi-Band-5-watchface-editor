@@ -79,15 +79,15 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagePic
             // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
             // 
             // tabs
             // 
+            resources.ApplyResources(this.tabs, "tabs");
             this.tabs.Controls.Add(this.tabPage1);
             this.tabs.Controls.Add(this.tabPage2);
-            resources.ApplyResources(this.tabs, "tabs");
             this.tabs.Name = "tabs";
             this.tabs.SelectedIndex = 0;
             // 
@@ -123,6 +123,7 @@ namespace MiBand5WatchFaces.Forms
             // 
             // propertiesHoursGroup
             // 
+            resources.ApplyResources(this.propertiesHoursGroup, "propertiesHoursGroup");
             this.propertiesHoursGroup.Controls.Add(this.AddColorButtonHours);
             this.propertiesHoursGroup.Controls.Add(this.label1);
             this.propertiesHoursGroup.Controls.Add(this.OnlyborderHours);
@@ -130,7 +131,6 @@ namespace MiBand5WatchFaces.Forms
             this.propertiesHoursGroup.Controls.Add(this.posYHours);
             this.propertiesHoursGroup.Controls.Add(this.label6);
             this.propertiesHoursGroup.Controls.Add(this.posXHours);
-            resources.ApplyResources(this.propertiesHoursGroup, "propertiesHoursGroup");
             this.propertiesHoursGroup.Name = "propertiesHoursGroup";
             this.propertiesHoursGroup.TabStop = false;
             // 
@@ -231,6 +231,7 @@ namespace MiBand5WatchFaces.Forms
             // 
             // PropertiesMinutesGroupBox
             // 
+            resources.ApplyResources(this.PropertiesMinutesGroupBox, "PropertiesMinutesGroupBox");
             this.PropertiesMinutesGroupBox.Controls.Add(this.AddColorMinutesButton);
             this.PropertiesMinutesGroupBox.Controls.Add(this.label2);
             this.PropertiesMinutesGroupBox.Controls.Add(this.OnlyborderMinutes);
@@ -238,7 +239,6 @@ namespace MiBand5WatchFaces.Forms
             this.PropertiesMinutesGroupBox.Controls.Add(this.posYMinutes);
             this.PropertiesMinutesGroupBox.Controls.Add(this.label3);
             this.PropertiesMinutesGroupBox.Controls.Add(this.posXMinutes);
-            resources.ApplyResources(this.PropertiesMinutesGroupBox, "PropertiesMinutesGroupBox");
             this.PropertiesMinutesGroupBox.Name = "PropertiesMinutesGroupBox";
             this.PropertiesMinutesGroupBox.TabStop = false;
             // 

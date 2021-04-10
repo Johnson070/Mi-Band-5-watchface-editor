@@ -60,6 +60,12 @@ namespace MiBand5WatchFaces.Forms
             this.watch.imagesBuff = Images;
 
             this.watch.Other = this.watch.Other == null ? new Other() : this.watch.Other;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
             FillListBox();
         }

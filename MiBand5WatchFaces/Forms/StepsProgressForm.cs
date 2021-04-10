@@ -23,7 +23,7 @@ namespace MiBand5WatchFaces.Forms
 
         public enum StateForm
         {
-            Steps = 0,Calories=1
+            Steps = 0, Calories = 1
         }
 
         public void Render(StateWatchface state = null)
@@ -60,6 +60,11 @@ namespace MiBand5WatchFaces.Forms
 
             this.watch.formEdit = this.watch.formEdit == null ? new StepsProgress() : this.watch.formEdit;
 
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
 
 
@@ -88,11 +93,22 @@ namespace MiBand5WatchFaces.Forms
         private void AddLineScaleImages_Click(object sender, EventArgs e)
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
-            if (stateForm == StateForm.Steps) watchface.StepsProgress.Linear = watchface.formEdit.Linear == null ? new Scale() : watchface.formEdit.Linear;
-            else watchface.CaloriesProgress.Linear = watchface.formEdit.Linear == null ? new Scale() : watchface.formEdit.Linear; 
+            if (stateForm == StateForm.Steps)
+            {
+                watchface.StepsProgress = watchface.formEdit == null ? new StepsProgress() : watchface.StepsProgress;
+                watchface.StepsProgress.Linear = watchface.formEdit.Linear == null ? new Scale() : watchface.formEdit.Linear;
+                watchface.formEdit.Linear = watchface.StepsProgress.Linear;
+            }
+            else
+            {
+                watchface.CaloriesProgress = watchface.formEdit == null ? new CaloriesProgress() : watchface.CaloriesProgress;
+                watchface.CaloriesProgress.Linear = watchface.formEdit.Linear == null ? new Scale() : watchface.formEdit.Linear;
+                watchface.formEdit.Linear = watchface.CaloriesProgress.Linear;
+            }
 
             StateWatchface stepsState = DeepCopy(state);
             stepsState.Steps = 10000;
+
             ScaleForm scaleForm = new ScaleForm(watchface, watchface.formEdit.Linear, watch.imagesBuff.DeepCopy(), stepsState);
             scaleForm.ShowDialog();
 
@@ -126,7 +142,7 @@ namespace MiBand5WatchFaces.Forms
                 watch.formEdit.GoalImage = ibForm.imageBasic;
                 watch.imagesBuff = ibForm.watch.imagesBuff;
             }
-            else if(ibForm.delete)
+            else if (ibForm.delete)
             {
                 AddGoalImageButton.Text = res.GetString("AddImage");
                 watch.formEdit.GoalImage = null;

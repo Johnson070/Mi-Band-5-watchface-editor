@@ -28,7 +28,6 @@ namespace MiBand5WatchFaces
         int countImagesSelect = -1;
 
         bool CTRLSelectImages = false;
-        bool CTRLSHIFTUnselect = false;
         bool MouseDown = false;
 
         public ImagesForm(DefaultDictionary<int, Image> Images, bool selectImages = false, bool selectAndAdd = false, bool multiSelect = true, int indexSelect = -1, int countImagesSelect = -1)

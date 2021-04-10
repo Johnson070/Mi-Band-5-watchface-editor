@@ -42,6 +42,12 @@ namespace MiBand5WatchFaces.Forms
             this.state = state;
 
             this.watch.Weather = watch.Weather == null ? new Weather() : watch.Weather;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
 
             //form fill data

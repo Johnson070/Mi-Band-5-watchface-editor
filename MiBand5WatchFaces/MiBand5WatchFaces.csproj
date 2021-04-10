@@ -180,11 +180,6 @@
     <Compile Include="Forms\JSONEditorForm.Designer.cs">
       <DependentUpon>JSONEditorForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NumberFormEdit1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>NumberFormEdit.resx</DependentUpon>
-    </Compile>
     <Compile Include="Forms\ScaleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,11 +252,6 @@
     </Compile>
     <Compile Include="Forms\NumberFormEdit.Designer.cs">
       <DependentUpon>NumberFormEdit.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm1.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MainForm.resx</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -540,6 +530,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="WatchFace6\WatchFace.exe.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="WatchFace\PreviewStatesV2.1.8a.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -571,6 +564,24 @@
     <None Include="Resources\21305435.png" />
     <None Include="Resources\pngtree-black-coin-icon-image_1130356.png" />
     <Content Include="proj_%281%29.ico" />
+    <Content Include="WatchFace6\lib\BumpKit.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WatchFace6\lib\Magick.NET-Q8-AnyCPU.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WatchFace6\lib\Magick.NET.Core.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WatchFace6\lib\Newtonsoft.Json.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WatchFace6\lib\NLog.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="WatchFace6\WatchFace.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="WatchFace\BumpKit.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

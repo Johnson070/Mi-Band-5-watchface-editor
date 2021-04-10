@@ -42,6 +42,12 @@ namespace MiBand5WatchFaces.Forms
             this.watch.imagesBuff = Images;
 
             this.watch.Battery = this.watch.Battery == null ? new Battery() : this.watch.Battery;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
 
             if (watch.Battery.BatteryText != null)

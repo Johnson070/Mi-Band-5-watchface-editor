@@ -66,7 +66,11 @@ namespace MiBand5WatchFaces.Forms
             }
             else
                 this.watch.Status = this.watch.Status == null ? new Status() : this.watch.Status;
-            
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
 
             Render(state);
 

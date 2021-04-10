@@ -47,6 +47,12 @@ namespace MiBand5WatchFaces
             colorButton.BackColor = convertColorFromString(circleScale.Color);
 
             startForm = true;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render();
         }
 

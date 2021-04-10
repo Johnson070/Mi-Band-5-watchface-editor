@@ -29,6 +29,12 @@ namespace MiBand5WatchFaces
             groupBox1.Enabled = !state.notGen;
             notGenState.Checked = state.notGen;
             FillValues(state);
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
         }
 

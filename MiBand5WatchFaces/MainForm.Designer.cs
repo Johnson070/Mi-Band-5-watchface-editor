@@ -52,6 +52,9 @@
             this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.OpenFormImages = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton4 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.miBand5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miBand6ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripDropDownButton2 = new System.Windows.Forms.ToolStripDropDownButton();
             this.findBugToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changeLogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -97,6 +100,7 @@
             this.toolStripDropDownButton1,
             this.OpenFormImages,
             this.toolStripSeparator1,
+            this.toolStripDropDownButton4,
             this.toolStripDropDownButton2,
             this.toolStripDropDownButton3,
             this.toolStripSeparator3,
@@ -250,6 +254,27 @@
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             resources.ApplyResources(this.toolStripSeparator1, "toolStripSeparator1");
+            // 
+            // toolStripDropDownButton4
+            // 
+            this.toolStripDropDownButton4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miBand5ToolStripMenuItem,
+            this.miBand6ToolStripMenuItem});
+            resources.ApplyResources(this.toolStripDropDownButton4, "toolStripDropDownButton4");
+            this.toolStripDropDownButton4.Name = "toolStripDropDownButton4";
+            // 
+            // miBand5ToolStripMenuItem
+            // 
+            this.miBand5ToolStripMenuItem.Name = "miBand5ToolStripMenuItem";
+            resources.ApplyResources(this.miBand5ToolStripMenuItem, "miBand5ToolStripMenuItem");
+            this.miBand5ToolStripMenuItem.Click += new System.EventHandler(this.miBand5ToolStripMenuItem_Click);
+            // 
+            // miBand6ToolStripMenuItem
+            // 
+            this.miBand6ToolStripMenuItem.Name = "miBand6ToolStripMenuItem";
+            resources.ApplyResources(this.miBand6ToolStripMenuItem, "miBand6ToolStripMenuItem");
+            this.miBand6ToolStripMenuItem.Click += new System.EventHandler(this.miBand6ToolStripMenuItem_Click);
             // 
             // toolStripDropDownButton2
             // 
@@ -556,6 +581,9 @@
         private System.Windows.Forms.Button SupportAuthorButton;
         private System.Windows.Forms.Button convertGIFToPNGButton;
         private System.Windows.Forms.ToolStripButton CloseProjectButton;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
+        private System.Windows.Forms.ToolStripMenuItem miBand5ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miBand6ToolStripMenuItem;
     }
 }
 

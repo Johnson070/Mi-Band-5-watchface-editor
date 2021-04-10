@@ -50,9 +50,9 @@
             // 
             // ImagesListBox
             // 
+            resources.ApplyResources(this.ImagesListBox, "ImagesListBox");
             this.ImagesListBox.ContextMenuStrip = this.listImagesMenuStrip;
             this.ImagesListBox.FormattingEnabled = true;
-            resources.ApplyResources(this.ImagesListBox, "ImagesListBox");
             this.ImagesListBox.Name = "ImagesListBox";
             this.ImagesListBox.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.ImagesListBox_ItemCheck);
             this.ImagesListBox.SelectedIndexChanged += new System.EventHandler(this.ImagesListBox_SelectedIndexChanged);
@@ -151,8 +151,8 @@
             // imageBox
             // 
             this.imageBox.AllowDrop = true;
-            this.imageBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.imageBox, "imageBox");
+            this.imageBox.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.imageBox.Name = "imageBox";
             this.imageBox.DragDrop += new System.Windows.Forms.DragEventHandler(this.imageBox_DragDrop);
             this.imageBox.DragEnter += new System.Windows.Forms.DragEventHandler(this.imageBox_DragEnter);
@@ -166,7 +166,7 @@
             this.Controls.Add(this.AddImagesToElement);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.ImagesListBox);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.KeyPreview = true;
             this.Name = "ImagesForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ImagesForm_FormClosing);

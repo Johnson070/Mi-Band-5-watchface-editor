@@ -42,6 +42,12 @@ namespace MiBand5WatchFaces.Forms
             this.state = state;
 
             this.watch.Date = watch.Date == null ? new Date() : watch.Date;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
 
             if (watch.Date?.MonthAndDayAndYear?.Separate != null)
@@ -184,7 +190,7 @@ namespace MiBand5WatchFaces.Forms
 
                 if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
-                    watch.Date.MonthAndDayAndYear.OneLine = watch.Date.MonthAndDayAndYear.OneLine == null ? watchface.Date.MonthAndDayAndYear.OneLine : new OneLineMonthAndDay();
+                    watch.Date.MonthAndDayAndYear.OneLine = watch.Date.MonthAndDayAndYear.OneLine == null ? new OneLineMonthAndDay() : watchface.Date.MonthAndDayAndYear.OneLine;
                     watch.Date.MonthAndDayAndYear.OneLine.Number = numForm.number;
                     watch.imagesBuff = numForm.watch.imagesBuff;
                     AddMonthAndDayOnelineButton.Text = res.GetString("EditMonthAndDay");

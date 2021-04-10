@@ -42,6 +42,12 @@ namespace MiBand5WatchFaces.Forms
             this.state = state;
 
             this.watch.Activity = watch.Activity == null ? new Activity() : watch.Activity;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
 
             stepsCheckBox.Checked = watch.Activity?.Steps != null ? true : false;

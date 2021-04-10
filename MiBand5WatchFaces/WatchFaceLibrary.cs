@@ -78,13 +78,25 @@ namespace MiBand5WatchFaces
         [JsonProperty("formEdit")]
         public StepsProgress formEdit;
 
+        [JsonIgnore]
+        public readonly Size SizeMiBand5 = new Size(126, 294);
+        [JsonIgnore]
+        public readonly Size SizeMiBand6 = new Size(152, 486);
+        [JsonIgnore]
+        public readonly Size SizeMiBand6Rasn = new Size(26, 192);
+        [JsonIgnore]
+        public readonly Size SizePreviewMiBand6 = new Size(110, 352);
+
+        [JsonProperty("TypeWatch", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [DefaultValue(typeWatch.None)]
         public typeWatch TypeWatch = typeWatch.MiBand5;
 
 
         public enum typeWatch
         {
             MiBand5,
-            MiBand6
+            MiBand6,
+            None
         };
 
         [JsonIgnore]
@@ -94,13 +106,17 @@ namespace MiBand5WatchFaces
         [JsonIgnore]
         public DefaultDictionary<int, Image> imagesBuff = new DefaultDictionary<int, Image>(() => new Bitmap(1, 1));
 
-        public void LoadImages()
+        public typeWatch LoadImages()
         {
             for (int pos = 0; pos < 10000; pos++)
                 if (File.Exists(Path.Combine(FilePath, $"{pos:0000}.png")))
                 {
                     FileStream stream = new FileStream(Path.Combine(FilePath, $"{pos:0000}.png"), FileMode.Open, FileAccess.Read);
                     Bitmap temp = new Bitmap(stream);
+
+                    if (temp.Height > SizeMiBand5.Height)
+                        TypeWatch = typeWatch.MiBand6;
+
                     temp.SetResolution(96f, 96f);
                     imagesBuff.Add(pos, temp);
                     stream.Close();
@@ -109,10 +125,16 @@ namespace MiBand5WatchFaces
                 {
                     FileStream stream = new FileStream(Path.Combine(FilePath, $"{pos}.png"), FileMode.Open, FileAccess.Read);
                     Bitmap temp = new Bitmap(stream);
+
+                    if (temp.Height > SizeMiBand5.Height)
+                        TypeWatch = typeWatch.MiBand6;
+
                     temp.SetResolution(96f, 96f);
                     imagesBuff.Add(pos, temp);
                     stream.Close();
                 }
+
+            return TypeWatch;
         }
 
         [Obfuscation(Exclude = false, Feature = "-rename")]
@@ -564,9 +586,21 @@ namespace MiBand5WatchFaces
         [JsonProperty("Number")]
         public Number Number;
 
+        [JsonProperty("NumberCN")]
+        public Number NumberCN;
+
+        [JsonProperty("NumberEN")]
+        public Number NumberEN;
+
         [JsonProperty("DelimiterImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
+
+        public OneLineMonthAndDay()
+        {
+            if (NumberCN != null)
+                Number = NumberCN;
+        }
     }
 
     public class OneLineWithYear
@@ -574,9 +608,21 @@ namespace MiBand5WatchFaces
         [JsonProperty("Number")]
         public Number Number;
 
+        [JsonProperty("NumberCN")]
+        public Number NumberCN;
+
+        [JsonProperty("NumberEN")]
+        public Number NumberEN;
+
         [JsonProperty("DelimiterImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
+
+        public OneLineWithYear()
+        {
+            if (NumberCN != null)
+                Number = NumberCN;
+        }
     }
 
     [Obfuscation(Exclude = false, Feature = "-rename")]

@@ -51,8 +51,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // AnimationsListBox
             // 
-            this.AnimationsListBox.FormattingEnabled = true;
             resources.ApplyResources(this.AnimationsListBox, "AnimationsListBox");
+            this.AnimationsListBox.FormattingEnabled = true;
             this.AnimationsListBox.Name = "AnimationsListBox";
             this.AnimationsListBox.SelectedIndexChanged += new System.EventHandler(this.AnimationsListBox_SelectedIndexChanged);
             // 
@@ -72,12 +72,12 @@ namespace MiBand5WatchFaces.Forms
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.RepeatCountUpDown);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.SpeedUpDown);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.AddImagesAnimationButton);
-            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
             // 
@@ -129,8 +129,8 @@ namespace MiBand5WatchFaces.Forms
             // 
             // ImagePic
             // 
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
             this.ImagePic.Tag = "0";
             // 

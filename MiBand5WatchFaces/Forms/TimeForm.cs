@@ -33,8 +33,13 @@ namespace MiBand5WatchFaces.Forms
 
             this.watch.Time = watch.Time == null ? new Time() : watch.Time;
             this.watch.Time.UnknownV11 = 0;
+            
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+            
             Render(state);
-
 
             if (watch.Time != null)
             {

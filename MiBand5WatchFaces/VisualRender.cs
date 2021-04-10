@@ -64,18 +64,26 @@ namespace MiBand5WatchFaces
         Graphics watchfacePreview;
         StateWatchface watchFaceState;
         Image Preview;
+        WatchFaceLibrary.typeWatch type = WatchFaceLibrary.typeWatch.MiBand5;
+
 
         public VisualRender(WatchFaceLibrary watchface, StateWatchface state = null)
         {
-            Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
+            type = watchface.TypeWatch;
+            Bitmap previewSet = new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            previewSet.MakeTransparent();
+            Preview = previewSet;
             this.watchface = watchface;
             watchfacePreview = Graphics.FromImage(Preview);
             watchFaceState = state == null ? new StateWatchface() : state;
         }
 
-        public VisualRender(DefaultDictionary<int, Image> Images, StateWatchface state = null)
+        public VisualRender(DefaultDictionary<int, Image> Images, WatchFaceLibrary.typeWatch typeWatch, StateWatchface state = null)
         {
-            Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
+            type = typeWatch;
+            Bitmap previewSet = new Bitmap(typeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, typeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
+            previewSet.MakeTransparent();
+            Preview = previewSet;
             this.watchface = new WatchFaceLibrary();
             watchfacePreview = Graphics.FromImage(Preview);
             watchFaceState = state == null ? new StateWatchface() : state;
@@ -118,7 +126,7 @@ namespace MiBand5WatchFaces
             {
                 if (watchface.Other != null && watchface.Other.Animation != null)
                 {
-                    Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
+                    Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
 
                     watchfacePreview = Graphics.FromImage(Preview);
 
@@ -137,7 +145,7 @@ namespace MiBand5WatchFaces
                         animation.Step = 0;
                 }
 
-                Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
+                Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486, System.Drawing.Imaging.PixelFormat.Format32bppArgb);
                 watchfacePreview = Graphics.FromImage(Preview);
 
                 return GenWatchface();
@@ -163,21 +171,37 @@ namespace MiBand5WatchFaces
             if (watchface.CaloriesProgress != null) drawCaloriesProgress();
             if (watchface.Alarm != null) drawAlarm();
             if (watchface.StatusSimplified != null) drawStatusSimplified();
+
+            if (watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+                setMiBand6Corners();
+
             watchfacePreview.Dispose();
             return Preview;
         }
 
-        public Image GetLayout(object element)
+        private void setMiBand6Corners()
+        {
+            GraphicsPath pth = new GraphicsPath();
+            pth.AddArc(0, -1, 152, 152, -180, 180);
+            pth.AddArc(0, 334, 152, 152, 0, 180);
+            pth.CloseAllFigures();
+            watchfacePreview.SetClip(pth, CombineMode.Exclude);
+            watchfacePreview.Clear(Color.Transparent);
+        }
+
+        public Image GetLayout(object element,WatchFaceLibrary.typeWatch TypeWatch)
         {
             if (element == null) return null;
 
-            Preview = (Image)new Bitmap(watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
+            type = TypeWatch;
+
+            Preview = (Image)new Bitmap(TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 126 : 152, TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 294 : 486);
             watchfacePreview = Graphics.FromImage(Preview);
             watchFaceState = new StateWatchface();
 
             if (element.GetType() == typeof(ImageBasic))
             {
-                Preview = (Image)ResizeImage(GenWatchface(), watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 90 : 110, watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 210 : 352);
+                Preview = (Image)ResizeImage(GenWatchface(), TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 90 : 110,TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 210 : 352);
                 watchfacePreview = Graphics.FromImage(Preview);
                 drawPreview((ImageBasic)element);
             }
@@ -196,6 +220,9 @@ namespace MiBand5WatchFaces
             if (element.GetType() == typeof(CaloriesProgress)) drawCaloriesProgress((CaloriesProgress)element);
             if (element.GetType() == typeof(Alarm)) drawAlarm((Alarm)element);
             if (element.GetType() == typeof(StatusSimple)) drawStatusSimplified((StatusSimple)element);
+
+            if (TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 && element.GetType() != typeof(ImageBasic))
+                setMiBand6Corners();
 
             watchfacePreview.Dispose();
             long totalMemory = GC.GetTotalMemory(false);
@@ -391,7 +418,7 @@ namespace MiBand5WatchFaces
                 if (date.MonthAndDayAndYear.OneLine != null || date.MonthAndDayAndYear.OneLineWithYear != null)
                 {
                     List<Image> images = new List<Image>();
-                    Number dateNumber = date.MonthAndDayAndYear.OneLine == null ? date.MonthAndDayAndYear.OneLineWithYear.Number : date.MonthAndDayAndYear.OneLine.Number;
+                    Number dateNumber = date.MonthAndDayAndYear.OneLine == null ? (date.MonthAndDayAndYear.OneLineWithYear.Number == null ? date.MonthAndDayAndYear.OneLineWithYear.NumberCN : date.MonthAndDayAndYear.OneLineWithYear.Number) : (date.MonthAndDayAndYear.OneLine.Number == null ? date.MonthAndDayAndYear.OneLine.NumberCN : date.MonthAndDayAndYear.OneLine.Number);
 
                     if (date.MonthAndDayAndYear.OneLineWithYear != null)
                     {
@@ -415,7 +442,7 @@ namespace MiBand5WatchFaces
                         images.Add(watchface.imagesBuff[dateNumber.ImageIndex + watchFaceState.Time.Day % 10]);
                     }
                     else images.Add(watchface.imagesBuff[dateNumber.ImageIndex + watchFaceState.Time.Day]);
-                    drawNumber(date.MonthAndDayAndYear.OneLine == null ? date.MonthAndDayAndYear.OneLineWithYear.Number : date.MonthAndDayAndYear.OneLine.Number, images);
+                    drawNumber(dateNumber, images);
                 }
 
                 if (date.MonthAndDayAndYear.Separate != null)
@@ -916,13 +943,17 @@ namespace MiBand5WatchFaces
 
             int fullWidth = 0;
             int fullHeight = 0;
+            int fullHeightInc = 0;
 
             foreach (Image image in images)
                 fullWidth += image.Width + number.SpacingX;
             fullWidth -= number.SpacingX;
 
             foreach (Image image in images)
+            {
                 fullHeight = fullHeight > image.Height ? fullHeight : image.Height;
+                fullHeightInc += number.SpacingY;
+            };
 
 
             int incX = number.SpacingX;
@@ -945,15 +976,47 @@ namespace MiBand5WatchFaces
                 y = box.Bottom - fullHeight + 1;
             else y = (box.Top + box.Bottom - fullHeight) >> 1;
 
-            if (x < box.Left) x = box.Left;
-            if (y < box.Top) y = box.Top;
-            //if (x + fullWidth > 126) x = x + (126 - x - fullWidth);
 
-            foreach (Image image in images)
+            if (type == WatchFaceLibrary.typeWatch.MiBand6)
             {
-                watchfacePreview.DrawImage((Bitmap)image, x, y);
-                x += image.Width + incX;
-                y += incY;
+                if (x < box.Left && number.Alignment.IndexOf("Right") == -1) x = box.Left;
+                else if (x > box.Right && number.Alignment.IndexOf("Right") != -1) x = box.Right;
+
+                if (y - fullHeightInc < box.Top && number.Alignment.IndexOf("Top") == -1) y = box.Top + fullHeightInc - number.SpacingY;
+                else if (y - fullHeightInc < box.Top && number.Alignment.IndexOf("Top") != -1 && number.Alignment.IndexOf("Left") == -1) y = box.Top + fullHeightInc - number.SpacingY;
+                //else if (y+fullHeightInc + number.SpacingY < box.Top && number.SpacingY < 0 && number.Alignment.IndexOf("Top") != -1 && number.Alignment.IndexOf("Right") == -1) y = box.Top - number.SpacingY;
+                //if (x + fullWidth > 126) x = x + (126 - x - fullWidth);
+
+                foreach (Image image in images)
+                {
+                    //watchfacePreview.DrawRectangle(new Pen(Color.Green), x, y, 2, 2);
+
+                    if (number.Alignment.IndexOf("Left") == -1)
+                    {
+                        watchfacePreview.DrawImage((Bitmap)image, x, y);
+                        x += image.Width + incX;
+                        y -= incY;
+                    }
+                    else
+                    {
+                        watchfacePreview.DrawImage((Bitmap)image, x, y);
+                        x += image.Width + incX;
+                        y += incY;
+                    }
+
+                }
+            }
+            else
+            {
+                if (x < box.Left) x = box.Left;
+                if (y < box.Top) y = box.Top;
+
+                foreach (Image image in images)
+                {
+                    watchfacePreview.DrawImage((Bitmap)image, x, y);
+                    x += image.Width + incX;
+                    y += incY;
+                }
             }
 
             if (number.drawBorder)

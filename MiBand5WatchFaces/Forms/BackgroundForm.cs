@@ -15,18 +15,46 @@ namespace MiBand5WatchFaces.Forms
         public Background background;
         public DefaultDictionary<int, Image> images;
         public bool Save;
+        WatchFaceLibrary.typeWatch typeWatch;
         ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         VisualRender visual;
         Image prev;
 
-        public BackgroundForm(Background background, DefaultDictionary<int, Image> images, Image prev)
+        public BackgroundForm(Background background, DefaultDictionary<int, Image> images, Image prev, WatchFaceLibrary.typeWatch typeWatch)
         {
             InitializeComponent();
             this.images = images;
+            this.typeWatch = typeWatch;
             this.background = background == null ? new Background() : background;
             this.prev = prev;
-            visual = new VisualRender(images);
+            visual = new VisualRender(images, typeWatch);
+
+            if (typeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size MiBand6 = (new WatchFaceLibrary()).SizeMiBand6;
+                Size MiBand6Rasn = (new WatchFaceLibrary()).SizeMiBand6Rasn;
+                Size MiBand6Preview = (new WatchFaceLibrary()).SizePreviewMiBand6;
+                Size += new Size(MiBand6Rasn.Width + ((MiBand6Preview.Width - Preview1Pic.Width) * 3), MiBand6Rasn.Height);
+                genPreviews.Location += new Size(MiBand6Rasn.Width, 45);
+                genPreviews.Size -= new Size(MiBand6Rasn.Width,0);
+                saveButton.Location += new Size(0, MiBand6Rasn.Height);
+                BackgroundImages.Size += MiBand6Rasn;
+                ImagePic.Size = MiBand6;
+                label2.Location += new Size(MiBand6Rasn.Width, 0);
+                label3.Location += new Size(MiBand6Rasn.Width + (MiBand6Preview.Width - Preview1Pic.Width), 0);
+                label4.Location += new Size(MiBand6Rasn.Width + (MiBand6Preview.Width - Preview2Pic.Width)*2, 0);
+                Preview1Pic.Location += new Size(MiBand6Rasn.Width, 0);
+                Preview2Pic.Location += new Size(MiBand6Rasn.Width+(MiBand6Preview.Width - Preview2Pic.Width), 0);
+                Preview3Pic.Location += new Size(MiBand6Rasn.Width+(MiBand6Preview.Width - Preview3Pic.Width)*2, 0);
+                Preview1Pic.Size = MiBand6Preview;
+                Preview2Pic.Size = MiBand6Preview;
+                Preview3Pic.Size = MiBand6Preview;
+                label5.Location += new Size(0, MiBand6Rasn.Height);
+                label6.Location += new Size(0, MiBand6Rasn.Height);
+                backgroundXPos.Location += new Size(0, MiBand6Rasn.Height);
+                backgroundYPos.Location += new Size(0, MiBand6Rasn.Height);
+            }
 
             if (background != null && background.Image != null)
             {
@@ -48,17 +76,17 @@ namespace MiBand5WatchFaces.Forms
 
         private void updateForm()
         {
-            visual = new VisualRender(images);
+            visual = new VisualRender(images, typeWatch);
 
             try
             {
                 if (background != null)
                 {
                     if (background.BackgroundColor != null) panel1.BackColor = convertColorFromString(background.BackgroundColor);
-                    if (background.Image != null) ImagePic.BackgroundImage = visual.GetLayout(background);
-                    if (background.Preview1 != null) Preview1Pic.BackgroundImage = visual.GetLayout(background.Preview1);
-                    if (background.Preview2 != null) Preview2Pic.BackgroundImage = visual.GetLayout(background.Preview2);
-                    if (background.Preview3 != null) Preview3Pic.BackgroundImage = visual.GetLayout(background.Preview3);
+                    if (background.Image != null) ImagePic.BackgroundImage = visual.GetLayout(background,typeWatch);
+                    if (background.Preview1 != null) Preview1Pic.BackgroundImage = visual.GetLayout(background.Preview1, typeWatch);
+                    if (background.Preview2 != null) Preview2Pic.BackgroundImage = visual.GetLayout(background.Preview2, typeWatch);
+                    if (background.Preview3 != null) Preview3Pic.BackgroundImage = visual.GetLayout(background.Preview3, typeWatch);
                 }
             }
             catch
@@ -150,7 +178,7 @@ namespace MiBand5WatchFaces.Forms
 
             if (imgForm.selectedImages != null)
             {
-                visual = new VisualRender(images);
+                visual = new VisualRender(images, typeWatch);
 
                 ImageBasic pic = new ImageBasic();
                 pic.ImageIndex = imgForm.selectedImages[0];

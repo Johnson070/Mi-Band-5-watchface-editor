@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="RenderButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>38, 369</value>
+    <value>41, 369</value>
   </data>
   <data name="RenderButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>75, 23</value>
@@ -151,7 +151,7 @@
     <value>NoControl</value>
   </data>
   <data name="ImagePic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 69</value>
+    <value>15, 69</value>
   </data>
   <data name="ImagePic.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 294</value>
@@ -175,7 +175,7 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="saveButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 514</value>
+    <value>12, 714</value>
   </data>
   <data name="saveButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>360, 35</value>
@@ -211,7 +211,7 @@
     <value>Both</value>
   </data>
   <data name="jsonTextBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>225, 496</value>
+    <value>225, 696</value>
   </data>
   <data name="jsonTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -232,7 +232,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>384, 561</value>
+    <value>384, 761</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3421,7 +3421,7 @@
 </value>
   </data>
   <data name="$this.MinimumSize" type="System.Drawing.Size, System.Drawing">
-    <value>400, 600</value>
+    <value>400, 800</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

@@ -61,6 +61,7 @@ namespace MiBand5WatchFaces
             // 
             // PropertiesGroupBox
             // 
+            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Controls.Add(this.colorButton);
             this.PropertiesGroupBox.Controls.Add(this.label7);
             this.PropertiesGroupBox.Controls.Add(this.widthNum);
@@ -78,7 +79,6 @@ namespace MiBand5WatchFaces
             this.PropertiesGroupBox.Controls.Add(this.endAngleNum);
             this.PropertiesGroupBox.Controls.Add(this.startAngleNum);
             this.PropertiesGroupBox.Controls.Add(this.label1);
-            resources.ApplyResources(this.PropertiesGroupBox, "PropertiesGroupBox");
             this.PropertiesGroupBox.Name = "PropertiesGroupBox";
             this.PropertiesGroupBox.TabStop = false;
             // 

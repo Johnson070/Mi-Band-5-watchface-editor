@@ -34,6 +34,13 @@ namespace MiBand5WatchFaces
             this.state = state;
             this.countImages = countImages;
 
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+                PropertiesGroupBox.Size += new Size(0, watch.SizeMiBand6Rasn.Height);
+                deleteButton.Location += new Size(0, watch.SizeMiBand6Rasn.Height);
+            }
+
             if (number != null && number.notDraw == false)
             {
                 PropertiesGroupBox.Enabled = true;
@@ -48,7 +55,7 @@ namespace MiBand5WatchFaces
                 //number.BottomRightX = number.BottomRightX;
                 //number.BottomRightY = number.BottomRightY;
                 this.number.drawBorder = true;
-                this.Size = new Size(this.Size.Width, 675);
+                this.Size += new Size(0, 40);
 
 
                 Render();

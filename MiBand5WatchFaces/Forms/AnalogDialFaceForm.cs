@@ -42,6 +42,12 @@ namespace MiBand5WatchFaces.Forms
             this.watch.imagesBuff = Images;
 
             this.watch.AnalogDialFace = this.watch.AnalogDialFace == null ? new AnalogDialFace() : this.watch.AnalogDialFace;
+
+            if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                Size += watch.SizeMiBand6Rasn;
+            }
+
             Render(state);
 
             if (watch.AnalogDialFace.Hours != null)
