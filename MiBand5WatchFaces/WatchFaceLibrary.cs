@@ -586,8 +586,14 @@ namespace MiBand5WatchFaces
         [JsonProperty("Number")]
         public Number Number;
 
+        [JsonIgnore]
+        private Number numberCN;
         [JsonProperty("NumberCN")]
-        public Number NumberCN;
+        public Number NumberCN
+        {
+            get { return numberCN; }
+            set { NumberEN = value; numberCN = value; }
+        }
 
         [JsonProperty("NumberEN")]
         public Number NumberEN;
@@ -596,11 +602,13 @@ namespace MiBand5WatchFaces
         [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
 
-        public OneLineMonthAndDay()
-        {
-            if (NumberCN != null)
-                Number = NumberCN;
-        }
+        //public OneLineMonthAndDay()
+        //{
+        //    if (NumberCN != null && NumberEN == null)
+        //    {
+        //        NumberEN = NumberCN;
+        //    }
+        //}
     }
 
     public class OneLineWithYear
@@ -608,8 +616,14 @@ namespace MiBand5WatchFaces
         [JsonProperty("Number")]
         public Number Number;
 
+        [JsonIgnore]
+        private Number numberCN;
         [JsonProperty("NumberCN")]
-        public Number NumberCN;
+        public Number NumberCN
+        {
+            get { return numberCN;  }
+            set { NumberEN = value; numberCN = value; }
+        }
 
         [JsonProperty("NumberEN")]
         public Number NumberEN;
@@ -618,11 +632,13 @@ namespace MiBand5WatchFaces
         [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
 
-        public OneLineWithYear()
-        {
-            if (NumberCN != null)
-                Number = NumberCN;
-        }
+        //public OneLineWithYear()
+        //{
+        //    if (NumberCN != null && NumberEN == null)
+        //    {
+        //        NumberEN = NumberCN;
+        //    }
+        //}
     }
 
     [Obfuscation(Exclude = false, Feature = "-rename")]

@@ -418,7 +418,9 @@ namespace MiBand5WatchFaces
                 if (date.MonthAndDayAndYear.OneLine != null || date.MonthAndDayAndYear.OneLineWithYear != null)
                 {
                     List<Image> images = new List<Image>();
-                    Number dateNumber = date.MonthAndDayAndYear.OneLine == null ? (date.MonthAndDayAndYear.OneLineWithYear.Number == null ? date.MonthAndDayAndYear.OneLineWithYear.NumberCN : date.MonthAndDayAndYear.OneLineWithYear.Number) : (date.MonthAndDayAndYear.OneLine.Number == null ? date.MonthAndDayAndYear.OneLine.NumberCN : date.MonthAndDayAndYear.OneLine.Number);
+                    Number dateNumber = date.MonthAndDayAndYear.OneLine == null ? 
+                        (date.MonthAndDayAndYear.OneLineWithYear.Number == null ? date.MonthAndDayAndYear.OneLineWithYear.NumberEN : date.MonthAndDayAndYear.OneLineWithYear.Number) : 
+                        (date.MonthAndDayAndYear.OneLine.Number == null ? date.MonthAndDayAndYear.OneLine.NumberEN : date.MonthAndDayAndYear.OneLine.Number);
 
                     if (date.MonthAndDayAndYear.OneLineWithYear != null)
                     {

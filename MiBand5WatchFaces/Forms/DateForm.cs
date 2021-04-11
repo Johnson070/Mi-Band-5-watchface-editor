@@ -60,7 +60,7 @@ namespace MiBand5WatchFaces.Forms
             if (watch.Date?.MonthAndDayAndYear?.OneLine != null)
             {
                 OnelineMonthDayCheckbox.Checked = true;
-                if (watch.Date.MonthAndDayAndYear.OneLine.Number != null)
+                if ((watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 && watch.Date.MonthAndDayAndYear.OneLine.Number != null) || (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 && watch.Date.MonthAndDayAndYear.OneLine.NumberEN != null))
                 {
                     AddMonthAndDayOnelineButton.Text = res.GetString("EditMonthAndDay");
                     AddOnelineDelimeterImageButton.Enabled = true;
@@ -184,14 +184,16 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Date.MonthAndDayAndYear = watchface.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watchface.Date.MonthAndDayAndYear;
                 watchface.Date.MonthAndDayAndYear.OneLine = watchface.Date.MonthAndDayAndYear.OneLine == null ? new OneLineMonthAndDay() : watchface.Date.MonthAndDayAndYear.OneLine;
-                watchface.Date.MonthAndDayAndYear.OneLine.Number = watchface.Date.MonthAndDayAndYear.OneLine.Number == null ? new Number() { notDraw = true } : watchface.Date.MonthAndDayAndYear.OneLine.Number;
+                watchface.Date.MonthAndDayAndYear.OneLine.Number = watchface.Date.MonthAndDayAndYear.OneLine.Number == null ? new Number() { notDraw = true } : (watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 ? watchface.Date.MonthAndDayAndYear.OneLine.NumberEN : watchface.Date.MonthAndDayAndYear.OneLine.Number);
                 NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Date.MonthAndDayAndYear.OneLine.Number, watch.imagesBuff.DeepCopy(), state, 10);
                 numForm.ShowDialog();
 
                 if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
                     watch.Date.MonthAndDayAndYear.OneLine = watch.Date.MonthAndDayAndYear.OneLine == null ? new OneLineMonthAndDay() : watchface.Date.MonthAndDayAndYear.OneLine;
-                    watch.Date.MonthAndDayAndYear.OneLine.Number = numForm.number;
+
+                    if (watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6) watch.Date.MonthAndDayAndYear.OneLine.NumberEN = numForm.number;
+                    else watch.Date.MonthAndDayAndYear.OneLine.Number = numForm.number;
                     watch.imagesBuff = numForm.watch.imagesBuff;
                     AddMonthAndDayOnelineButton.Text = res.GetString("EditMonthAndDay");
                     AddOnelineDelimeterImageButton.Enabled = true;

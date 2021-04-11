@@ -446,7 +446,7 @@ namespace MiBand5WatchFaces
 
                     WatchFaceLibrary saveWatch = DeepCopy(watchFace);
                     saveWatch.TypeWatch = WatchFaceLibrary.typeWatch.None;
-                    File.WriteAllText(Path.Combine(path, $"{Path.GetFileNameWithoutExtension(saveFile.FileName)}.json"), JsonConvert.SerializeObject(saveWatch, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+                    File.WriteAllText(Path.Combine(path, $"{Path.GetFileNameWithoutExtension(saveFile.FileName)}.json"), JsonConvert.SerializeObject(saveWatch, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
 
                     if (Path.GetExtension(saveFile.FileName) == ".bin")
                     {
@@ -922,6 +922,7 @@ namespace MiBand5WatchFaces
                 watchFace = jsonForm.watch;
                 watchFace.TypeWatch = type;
                 RenderButton.PerformClick();
+                updateListElements();
             }
 
             jsonForm.Dispose();
