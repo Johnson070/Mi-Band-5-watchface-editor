@@ -47,6 +47,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 Size += watch.SizeMiBand6Rasn;
             }
+            else tabControl1.TabPages.Remove(tabControl1.TabPages["CircleScale"]);
 
             Render(state);
 
@@ -174,10 +175,37 @@ namespace MiBand5WatchFaces.Forms
             if (LinearCheckBox.Checked == false) watch.HeartProgress.Linear = null;
             if (LineScaleCheckbox.Checked == false) watch.HeartProgress.LineScale = null;
             if (ScaleImageCheckbox.Checked == false) watch.HeartProgress.Scale = null;
+            if (CircleScaleCheckbox.Checked == false) watch.HeartProgress.CircleScale = null;
 
-            if (watch.HeartProgress.Linear == null && watch.HeartProgress.LineScale == null && watch.HeartProgress.Scale == null)
+            if (watch.HeartProgress.Linear == null && watch.HeartProgress.LineScale == null && watch.HeartProgress.Scale == null && watch.HeartProgress.CircleScale == null)
                 watch.HeartProgress = null;
             this.Close();
+        }
+
+        private void AddCircleScale_Click(object sender, EventArgs e)
+        {
+            WatchFaceLibrary watchface = DeepCopy(watch);
+            watchface.HeartProgress.CircleScale = watchface.HeartProgress.CircleScale == null ? new CircleScale() : watchface.HeartProgress.CircleScale;
+
+            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.HeartProgress.CircleScale, watch.imagesBuff.DeepCopy(), state);
+            scaleForm.ShowDialog();
+
+            if (scaleForm.saved)
+            {
+                watch.HeartProgress.CircleScale = scaleForm.circleScale;
+                watch.imagesBuff = scaleForm.watch.imagesBuff;
+
+                AddCircleScale.Text = resources.GetString("EditCircleScale");
+            }
+            else if (scaleForm.delete)
+            {
+                watch.HeartProgress.CircleScale = null;
+                watch.imagesBuff = scaleForm.watch.imagesBuff;
+
+                AddCircleScale.Text = resources.GetString("AddCircleScale");
+            }
+
+            Render(state);
         }
     }
 }

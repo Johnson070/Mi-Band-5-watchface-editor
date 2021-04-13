@@ -45,6 +45,10 @@ namespace MiBand5WatchFaces.Forms
             this.AddLinearImages = new System.Windows.Forms.Button();
             this.ImagePic = new System.Windows.Forms.Panel();
             this.saveButton = new System.Windows.Forms.Button();
+            this.CircleScale = new System.Windows.Forms.TabPage();
+            this.CircleScaleCheckbox = new System.Windows.Forms.CheckBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.AddCircleScale = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -52,6 +56,8 @@ namespace MiBand5WatchFaces.Forms
             this.groupBox3.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.CircleScale.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -60,6 +66,7 @@ namespace MiBand5WatchFaces.Forms
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.CircleScale);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
@@ -163,6 +170,34 @@ namespace MiBand5WatchFaces.Forms
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveBtn_Click);
             // 
+            // CircleScale
+            // 
+            this.CircleScale.Controls.Add(this.CircleScaleCheckbox);
+            this.CircleScale.Controls.Add(this.groupBox4);
+            resources.ApplyResources(this.CircleScale, "CircleScale");
+            this.CircleScale.Name = "CircleScale";
+            this.CircleScale.UseVisualStyleBackColor = true;
+            // 
+            // CircleScaleCheckbox
+            // 
+            resources.ApplyResources(this.CircleScaleCheckbox, "CircleScaleCheckbox");
+            this.CircleScaleCheckbox.Name = "CircleScaleCheckbox";
+            this.CircleScaleCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // groupBox4
+            // 
+            resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Controls.Add(this.AddCircleScale);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.TabStop = false;
+            // 
+            // AddCircleScale
+            // 
+            resources.ApplyResources(this.AddCircleScale, "AddCircleScale");
+            this.AddCircleScale.Name = "AddCircleScale";
+            this.AddCircleScale.UseVisualStyleBackColor = true;
+            this.AddCircleScale.Click += new System.EventHandler(this.AddCircleScale_Click);
+            // 
             // HeartProgressForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -184,6 +219,9 @@ namespace MiBand5WatchFaces.Forms
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.CircleScale.ResumeLayout(false);
+            this.CircleScale.PerformLayout();
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -205,5 +243,9 @@ namespace MiBand5WatchFaces.Forms
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button AddLineScaleButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.TabPage CircleScale;
+        private System.Windows.Forms.CheckBox CircleScaleCheckbox;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Button AddCircleScale;
     }
 }

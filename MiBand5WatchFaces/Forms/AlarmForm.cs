@@ -98,7 +98,7 @@ namespace MiBand5WatchFaces.Forms
                 ImagesForm imgForm;
                 if (watch.Alarm.DelimiterImageIndex >= 0) selImg = new List<int>() { watch.Alarm.DelimiterImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)

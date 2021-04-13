@@ -220,7 +220,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Time.TimeZone1DelimiterImage >= 0) selImg = new List<int>() { watch.Time.TimeZone1DelimiterImage };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -240,7 +240,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Time.TimeZone2DelimiterImage >= 0) selImg = new List<int>() { watch.Time.TimeZone2DelimiterImage };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)

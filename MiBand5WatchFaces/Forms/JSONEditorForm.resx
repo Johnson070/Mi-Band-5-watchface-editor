@@ -147,6 +147,9 @@
   <data name="&gt;&gt;RenderButton.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="ImagePic.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
   <data name="ImagePic.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>

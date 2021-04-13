@@ -189,7 +189,7 @@ namespace MiBand5WatchFaces
             watchfacePreview.Clear(Color.Transparent);
         }
 
-        public Image GetLayout(object element,WatchFaceLibrary.typeWatch TypeWatch)
+        public Image GetLayout(object element, WatchFaceLibrary.typeWatch TypeWatch)
         {
             if (element == null) return null;
 
@@ -201,7 +201,7 @@ namespace MiBand5WatchFaces
 
             if (element.GetType() == typeof(ImageBasic))
             {
-                Preview = (Image)ResizeImage(GenWatchface(), TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 90 : 110,TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 210 : 352);
+                Preview = (Image)ResizeImage(GenWatchface(), TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 90 : 110, TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? 210 : 352);
                 watchfacePreview = Graphics.FromImage(Preview);
                 drawPreview((ImageBasic)element);
             }
@@ -418,8 +418,8 @@ namespace MiBand5WatchFaces
                 if (date.MonthAndDayAndYear.OneLine != null || date.MonthAndDayAndYear.OneLineWithYear != null)
                 {
                     List<Image> images = new List<Image>();
-                    Number dateNumber = date.MonthAndDayAndYear.OneLine == null ? 
-                        (date.MonthAndDayAndYear.OneLineWithYear.Number == null ? date.MonthAndDayAndYear.OneLineWithYear.NumberEN : date.MonthAndDayAndYear.OneLineWithYear.Number) : 
+                    Number dateNumber = date.MonthAndDayAndYear.OneLine == null ?
+                        (date.MonthAndDayAndYear.OneLineWithYear.Number == null ? date.MonthAndDayAndYear.OneLineWithYear.NumberEN : date.MonthAndDayAndYear.OneLineWithYear.Number) :
                         (date.MonthAndDayAndYear.OneLine.Number == null ? date.MonthAndDayAndYear.OneLine.NumberEN : date.MonthAndDayAndYear.OneLine.Number);
 
                     if (date.MonthAndDayAndYear.OneLineWithYear != null)
@@ -956,6 +956,7 @@ namespace MiBand5WatchFaces
                 fullHeight = fullHeight > image.Height ? fullHeight : image.Height;
                 fullHeightInc += number.SpacingY;
             };
+            fullHeightInc -= number.SpacingY;
 
 
             int incX = number.SpacingX;
@@ -984,28 +985,44 @@ namespace MiBand5WatchFaces
                 if (x < box.Left && number.Alignment.IndexOf("Right") == -1) x = box.Left;
                 else if (x > box.Right && number.Alignment.IndexOf("Right") != -1) x = box.Right;
 
-                if (y - fullHeightInc < box.Top && number.Alignment.IndexOf("Top") == -1) y = box.Top + fullHeightInc - number.SpacingY;
-                else if (y - fullHeightInc < box.Top && number.Alignment.IndexOf("Top") != -1 && number.Alignment.IndexOf("Left") == -1) y = box.Top + fullHeightInc - number.SpacingY;
-                //else if (y+fullHeightInc + number.SpacingY < box.Top && number.SpacingY < 0 && number.Alignment.IndexOf("Top") != -1 && number.Alignment.IndexOf("Right") == -1) y = box.Top - number.SpacingY;
-                //if (x + fullWidth > 126) x = x + (126 - x - fullWidth);
+                if (number.Alignment.IndexOf("Top") != -1)
+                {
+                    if (number.SpacingY < 0 && y + fullHeightInc < box.Top && number.Alignment.IndexOf("Right") == -1) y = box.Top - fullHeightInc;
+                    else if (number.SpacingY >= 0 && y - fullHeightInc < box.Top && number.Alignment.IndexOf("Left") == -1) y = box.Top + fullHeightInc;
+                    
+                    if (y + fullHeight >= box.Bottom && number.Alignment.IndexOf("Left") != -1) y -= y + fullHeight - box.Bottom;
+
+                    if (y < box.Top) y = box.Top;
+                }
+                else if (number.Alignment.IndexOf("Bottom") != -1)
+                {
+                    if (number.Alignment.IndexOf("Left") != -1 && number.SpacingY < 0 && y + fullHeightInc < box.Top) y = box.Bottom - fullHeight;
+                    if (number.Alignment.IndexOf("Left") != -1 && number.SpacingY >= 0 && y + fullHeightInc + fullHeight > box.Bottom) y = box.Bottom - fullHeight - fullHeightInc;
+
+                    if (number.Alignment.IndexOf("Right") != -1 && number.SpacingY < 0 && y - fullHeightInc + fullHeight > box.Bottom) y += fullHeightInc;
+                    if ((number.Alignment == "Bottom" || number.Alignment.IndexOf("Center") != -1) && number.SpacingY < 0 && y - fullHeightInc + fullHeight > box.Bottom) y += fullHeightInc;
+                }
+                else
+                {
+                    if (number.Alignment.IndexOf("Right") != -1 && y + fullHeightInc >= box.Top && number.SpacingY > 0) y += fullHeightInc;
+                }
+
+                if (number.Alignment.IndexOf("TopCenter") != -1 || number.Alignment == "Top")
+                {
+                    if (number.SpacingY >= 0) y = box.Top;
+                    incY = -incY;
+                }
+
 
                 foreach (Image image in images)
                 {
+                    watchfacePreview.DrawImage((Bitmap)image, x, y);
                     //watchfacePreview.DrawRectangle(new Pen(Color.Green), x, y, 2, 2);
 
-                    if (number.Alignment.IndexOf("Left") == -1)
-                    {
-                        watchfacePreview.DrawImage((Bitmap)image, x, y);
-                        x += image.Width + incX;
-                        y -= incY;
-                    }
-                    else
-                    {
-                        watchfacePreview.DrawImage((Bitmap)image, x, y);
-                        x += image.Width + incX;
-                        y += incY;
-                    }
+                    if (number.Alignment.IndexOf("Left") == -1) y -= incY;
+                    else y += incY;
 
+                    x += image.Width + incX;
                 }
             }
             else

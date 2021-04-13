@@ -14,6 +14,7 @@ namespace MiBand5WatchFaces
     public partial class ImagesForm : Form
     {
         public DefaultDictionary<int, Image> Images;
+        WatchFaceLibrary watch;
         ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
         
         
@@ -51,9 +52,10 @@ namespace MiBand5WatchFaces
             setTextToElement();
         }
 
-        public ImagesForm(DefaultDictionary<int, Image> Images, List<int> selectedImages, bool selectAndAdd = false, bool multiSelect = true, bool countImages = false, int countImagesSelect = -1)
+        public ImagesForm(WatchFaceLibrary watch, DefaultDictionary<int, Image> Images, List<int> selectedImages, bool selectAndAdd = false, bool multiSelect = true, bool countImages = false, int countImagesSelect = -1)
         {
             InitializeComponent();
+            this.watch = watch;
             this.Images = Images;
             this.countImages = countImages;
             //this.selectImages = selectImages || selectAndAdd;
@@ -200,20 +202,27 @@ namespace MiBand5WatchFaces
                         deleteImg.Add(Convert.ToInt32(ImagesListBox.Items[i].ToString().Replace(".png", string.Empty)));
                 deleteImg.Reverse();
 
+
                 int count = Images.Count;
                 foreach (int delImg in deleteImg)
-                    Images.Remove(delImg);
+                {
+                    string indx = watch.FindUsage(delImg);
 
-                List<Image> buffImg = new List<Image>();
-                for (int i = 0; i < count; i++)
-                    if (Images.ContainsKey(i))
-                        buffImg.Add(Images[i]);
+                    if (indx == "") Images.Remove(delImg);
+                    else MessageBox.Show($"{indx}");
 
-                Images = new DefaultDictionary<int, Image>((() => new Bitmap(1, 1)));
-                for (int i = 0; i < buffImg.Count; i++)
-                    Images.Add(i, buffImg[i]);
+                    List<Image> buffImg = new List<Image>();
+                    for (int i = 0; i < Images.Count; i++)
+                        if (Images.ContainsKey(i))
+                            buffImg.Add(Images[i]);
 
-                fillListBox();
+                    Images = new DefaultDictionary<int, Image>((() => new Bitmap(1, 1)));
+                    for (int i = 0; i < buffImg.Count; i++)
+                        Images.Add(i, buffImg[i]);
+
+                    fillListBox();
+                    ImagesListBox_SelectedIndexChanged(null, null);
+                }
             }
             catch { }
 
@@ -366,6 +375,16 @@ namespace MiBand5WatchFaces
                         return;
 
                 Images.Add(inputForm.value, (Image)new Bitmap(40, 40));
+
+                List<Image> buffImg = new List<Image>();
+                for (int i = 0; i < Images.Count; i++)
+                    if (Images.ContainsKey(i))
+                        buffImg.Add(Images[i]);
+
+                Images = new DefaultDictionary<int, Image>((() => new Bitmap(1, 1)));
+                for (int i = 0; i < buffImg.Count; i++)
+                    Images.Add(i, buffImg[i]);
+
                 fillListBox();
                 ImagesListBox_SelectedIndexChanged(null, null);
             }
@@ -376,21 +395,36 @@ namespace MiBand5WatchFaces
             editImages = true;
             if (ImagesListBox.SelectedIndex != -1)
             {
-                int start = Convert.ToInt32(ImagesListBox.SelectedItem.ToString().Replace(".png", string.Empty));
+                List<int> deleteImg = new List<int>();
+                for (int i = ImagesListBox.Items.Count - 1; i >= 0; i--)
+                    if (ImagesListBox.GetItemChecked(i))
+                        deleteImg.Add(Convert.ToInt32(ImagesListBox.Items[i].ToString().Replace(".png", string.Empty)));
+                deleteImg.Reverse();
 
-                Images.Remove(start);
-                ImagesListBox.Items.RemoveAt(ImagesListBox.SelectedIndex);
 
                 int count = Images.Count;
-                for (int i = start; i <= count; i++)
-                    if (Images.ContainsKey(i))
-                    {
-                        Images.Add(i - 1, Images[i]);
-                        Images.Remove(i);
-                    }
-                fillListBox();
+                foreach (int delImg in deleteImg)
+                {
+                    string indx = watch.FindUsage(delImg);
 
-                ImagesListBox_SelectedIndexChanged(null, null);
+                    if (indx == "") Images.Remove(delImg);
+                    else MessageBox.Show($"{indx}");
+
+                    fillListBox();
+                    ImagesListBox_SelectedIndexChanged(null, null);
+                }
+
+                if (deleteImg.Count == 0)
+                {
+                    int index = Convert.ToInt32(ImagesListBox.SelectedItem.ToString().Replace(".png", string.Empty));
+                    string indx = watch.FindUsage(index);
+
+                    if (indx == "") Images.Remove(index);
+                    else MessageBox.Show($"{indx}");
+
+                    fillListBox();
+                    ImagesListBox_SelectedIndexChanged(null, null);
+                }
             }
 
             setTextToElement();

@@ -444,6 +444,117 @@
   <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="CircleScaleCheckbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CircleScaleCheckbox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CircleScaleCheckbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 6</value>
+  </data>
+  <data name="CircleScaleCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="CircleScaleCheckbox.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;CircleScaleCheckbox.Name" xml:space="preserve">
+    <value>CircleScaleCheckbox</value>
+  </data>
+  <data name="&gt;&gt;CircleScaleCheckbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CircleScaleCheckbox.Parent" xml:space="preserve">
+    <value>CircleScale</value>
+  </data>
+  <data name="&gt;&gt;CircleScaleCheckbox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="AddCircleScale.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Left, Right</value>
+  </data>
+  <data name="AddCircleScale.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddCircleScale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="AddCircleScale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>436, 54</value>
+  </data>
+  <data name="AddCircleScale.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="AddCircleScale.Text" xml:space="preserve">
+    <value>Add circle scale</value>
+  </data>
+  <data name="&gt;&gt;AddCircleScale.Name" xml:space="preserve">
+    <value>AddCircleScale</value>
+  </data>
+  <data name="&gt;&gt;AddCircleScale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddCircleScale.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;AddCircleScale.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox4.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>452, 251</value>
+  </data>
+  <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>     </value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Name" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.Parent" xml:space="preserve">
+    <value>CircleScale</value>
+  </data>
+  <data name="&gt;&gt;groupBox4.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="CircleScale.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="CircleScale.Size" type="System.Drawing.Size, System.Drawing">
+    <value>458, 263</value>
+  </data>
+  <data name="CircleScale.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="CircleScale.Text" xml:space="preserve">
+    <value>Circle scale</value>
+  </data>
+  <data name="&gt;&gt;CircleScale.Name" xml:space="preserve">
+    <value>CircleScale</value>
+  </data>
+  <data name="&gt;&gt;CircleScale.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CircleScale.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;CircleScale.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
   <data name="tabControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>

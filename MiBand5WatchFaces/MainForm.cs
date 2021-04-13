@@ -1,5 +1,6 @@
 ﻿using MiBand5WatchFaces.Forms;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -147,6 +148,8 @@ namespace MiBand5WatchFaces
             }
         }
 
+
+
         private void updateListElements()
         {
             listViewElements.Clear();
@@ -172,7 +175,7 @@ namespace MiBand5WatchFaces
 
                 if (type == typeof(Background))
                 {
-                    VisualRender render = new VisualRender(watchFace,state);
+                    VisualRender render = new VisualRender(watchFace, state);
                     BackgroundForm backgroundForm = new BackgroundForm(DeepCopy<Background>((Background)item.SelectedItems[0].Tag), watchFace.imagesBuff.DeepCopy(), render.genPreview(), watchFace.TypeWatch);
                     backgroundForm.ShowDialog();
                     if (backgroundForm.Save)
@@ -379,7 +382,7 @@ namespace MiBand5WatchFaces
 
         private void OpenFormImages_Click(object sender, EventArgs e)
         {
-            ImagesForm imagesForm = new ImagesForm(watchFace.imagesBuff.DeepCopy());
+            ImagesForm imagesForm = new ImagesForm(watchFace,watchFace.imagesBuff.DeepCopy(),new List<int>());
             imagesForm.ShowDialog();
 
             if (imagesForm.saveImages)
@@ -951,7 +954,7 @@ namespace MiBand5WatchFaces
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void AnimateTimer_Tick(object sender, EventArgs e)

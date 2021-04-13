@@ -80,7 +80,9 @@ namespace MiBand5WatchFaces.Forms
         {
             try
             {
+                WatchFaceLibrary.typeWatch type = watch.TypeWatch;
                 watch = JsonConvert.DeserializeObject<WatchFaceLibrary>(jsonTextBox.Text);
+                watch.TypeWatch = type;
                 watch.imagesBuff = Images.DeepCopy();
                 Render(state);
             }

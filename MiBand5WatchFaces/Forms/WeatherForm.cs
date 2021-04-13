@@ -407,7 +407,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Temperature.Today.Separate.Day.MinusImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.Separate.Day.MinusImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -427,7 +427,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Temperature.Today.Separate.Night.MinusImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.Separate.Night.MinusImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -447,7 +447,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Temperature.Today.Separate.Day.DegreesImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.Separate.Day.DegreesImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -467,7 +467,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Temperature.Today.Separate.Night.DegreesImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.Separate.Night.DegreesImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -487,7 +487,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Temperature.Today.OneLine.MinusSignImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.OneLine.MinusSignImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -507,7 +507,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Temperature.Today.OneLine.DelimiterImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.OneLine.DelimiterImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -527,7 +527,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Temperature.Today.OneLine.DegreesImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Today.OneLine.DegreesImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -547,7 +547,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Temperature.Current.MinusImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Current.MinusImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -567,7 +567,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Temperature.Current.MinusImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Current.MinusImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -587,7 +587,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Humidity.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Weather.Humidity.SuffixImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -607,7 +607,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.Wind.ImageSuffixEN >= 0) selImg = new List<int>() { watch.Weather.Wind.ImageSuffixEN };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -627,7 +627,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Weather.UVIndex.UV.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Weather.UVIndex.UV.SuffixImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)

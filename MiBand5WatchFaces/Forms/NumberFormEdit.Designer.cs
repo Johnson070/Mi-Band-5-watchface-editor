@@ -230,7 +230,13 @@
             resources.GetString("AligmentComboBox.Items5"),
             resources.GetString("AligmentComboBox.Items6"),
             resources.GetString("AligmentComboBox.Items7"),
-            resources.GetString("AligmentComboBox.Items8")});
+            resources.GetString("AligmentComboBox.Items8"),
+            resources.GetString("AligmentComboBox.Items9"),
+            resources.GetString("AligmentComboBox.Items10"),
+            resources.GetString("AligmentComboBox.Items11"),
+            resources.GetString("AligmentComboBox.Items12"),
+            resources.GetString("AligmentComboBox.Items13"),
+            resources.GetString("AligmentComboBox.Items14")});
             this.AligmentComboBox.Name = "AligmentComboBox";
             this.AligmentComboBox.TextChanged += new System.EventHandler(this.alignChanged);
             // 

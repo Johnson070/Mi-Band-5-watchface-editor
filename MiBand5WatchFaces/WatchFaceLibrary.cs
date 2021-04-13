@@ -1,9 +1,11 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 
 namespace MiBand5WatchFaces
@@ -137,6 +139,26 @@ namespace MiBand5WatchFaces
             return TypeWatch;
         }
 
+        public List<int> UsedImages()
+        {
+            List<int> usedImg = new List<int>();
+
+            if (Background != null)
+            {
+                if (Background.Image != null) usedImg.Add(Background.Image.ImageIndex);
+                if (Background.Preview1 != null) usedImg.Add(Background.Preview1.ImageIndex);
+                if (Background.Preview2 != null) usedImg.Add(Background.Preview2.ImageIndex);
+                if (Background.Preview3 != null) usedImg.Add(Background.Preview3.ImageIndex);
+            }
+            if (Time != null)
+            {
+                if (Time.DelimiterImage != null) usedImg.Add(Time.DelimiterImage.ImageIndex);
+                if (Time.Hours?.Ones != null) for (int i = Time.Hours.Ones.ImageIndex; i < Time.Hours.Ones.ImagesCount + Time.Hours.Ones.ImageIndex; i++) usedImg.Add(Time.Hours.Ones.ImageIndex + i);
+            }
+
+            return usedImg;
+        }
+
         [Obfuscation(Exclude = false, Feature = "-rename")]
         public List<object> getElements() => new List<object>() { Background, Time, Activity, Date, Weather, StepsProgress, Status, Battery, AnalogDialFace, Other, HeartProgress, WeekDaysIcons, CaloriesProgress, Alarm, StatusSimplified };
     }
@@ -176,7 +198,10 @@ namespace MiBand5WatchFaces
     {
         [JsonProperty("Steps")]
         public Steps Steps;
-        //public StepsGoal StepsGoal;
+
+        [JsonProperty("StepsGoal")]
+        public StepsGoal StepsGoal;
+
         [JsonProperty("Calories")]
         public Calories Calories;
 
@@ -621,7 +646,7 @@ namespace MiBand5WatchFaces
         [JsonProperty("NumberCN")]
         public Number NumberCN
         {
-            get { return numberCN;  }
+            get { return numberCN; }
             set { NumberEN = value; numberCN = value; }
         }
 
@@ -1376,4 +1401,75 @@ namespace MiBand5WatchFaces
             return size;
         }
     }
+
+    public static class FindUsageImage
+    {
+        public class IndexImage
+        {
+            public string node = "";
+            public List<int> indexes = new List<int>();
+        }
+
+        static List<IndexImage> AddNode(JToken token, List<IndexImage> indexImages, string node = "Watchface")
+        {
+            if (token == null)
+                return indexImages;
+
+            if (token is JObject)
+            {
+                int imgCount = -1;
+                int startIndex = -1;
+                var obj = (JObject)token;
+                foreach (var property in obj.Properties())
+                {
+                    var childNode = property.Name;
+                    //Console.Write(childNode.ToString()+".");
+                    if (childNode.IndexOf("ImagesCount") != -1)
+                        imgCount = property.Value.Value<int>();
+
+                    if (childNode.ToLower().IndexOf("index") != -1 && childNode.ToLower().IndexOf("uv") == -1)
+                        startIndex = property.Value.Value<int>();
+
+                    if (childNode.ToLower().IndexOf("segments") != -1)
+                        imgCount = property.Value.Value<JArray>().Count();
+
+                    indexImages = AddNode(property.Value, indexImages, $"{node}.{childNode.ToString()}");
+                }
+
+                if (imgCount != -1 || startIndex != -1)
+                {
+                    //Console.WriteLine($"IMGCount: {imgCount} StartIndex: {startIndex} \nNode: {node} \n");
+                    List<int> indexes = new List<int>();
+                    for (int i = startIndex; i < startIndex + imgCount; i++) indexes.Add(i);
+                    indexImages.Add(new IndexImage() { indexes = indexes, node = node });
+                }
+            }
+            else if (token is JArray)
+            {
+                var array = (JArray)token;
+                for (int i = 0; i < array.Count; i++)
+                {
+                    var childNode = i.ToString();
+                    //Console.Write(array[i]);
+                    indexImages = AddNode(array[i], indexImages);
+                }
+            }
+
+            return indexImages;
+        }
+
+        public static List<IndexImage> FindUsage(this WatchFaceLibrary watch) => AddNode(JToken.Parse(JsonConvert.SerializeObject(watch, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore })), new List<IndexImage>());
+
+        public static string FindUsage(this WatchFaceLibrary watch,int numImg)
+        {
+            string match = "";
+
+            foreach (IndexImage indexImage in AddNode(JToken.Parse(JsonConvert.SerializeObject(watch, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore })), new List<IndexImage>()))
+                foreach (int index in indexImage.indexes)
+                    if (index == numImg)
+                        match += $"Node: {indexImage.node}\n";
+
+            return match;
+        }
+}
 }

@@ -127,7 +127,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     if (watch.Status?.Bluetooth?.ImageIndexOn >= 0) selImg = new List<int>() { watch.Status.Bluetooth.ImageIndexOn };
 
-                    imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                    imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();
 
                     if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -151,7 +151,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     if (watch.Status?.Bluetooth?.ImageIndexOff >= 0) selImg = new List<int>() { watch.Status.Bluetooth.ImageIndexOff };
 
-                    imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                    imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();
 
                     if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -187,7 +187,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     if (watch.Status?.Lock?.ImageIndexOn >= 0) selImg = new List<int>() { watch.Status.Lock.ImageIndexOn };
 
-                    imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                    imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();
 
                     if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -211,7 +211,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     if (watch.Status?.Lock?.ImageIndexOff >= 0) selImg = new List<int>() { watch.Status.Lock.ImageIndexOff };
 
-                    imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                    imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();
 
                     if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -247,7 +247,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     if (watch.Status?.DoNotDisturb?.ImageIndexOn >= 0) selImg = new List<int>() { watch.Status.DoNotDisturb.ImageIndexOn };
 
-                    imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                    imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();
 
                     if (imgForm.saveImages == true && imgForm.selectedImages != null)
@@ -271,7 +271,7 @@ namespace MiBand5WatchFaces.Forms
                 {
                     if (watch.Status?.DoNotDisturb?.ImageIndexOff >= 0) selImg = new List<int>() { watch.Status.DoNotDisturb.ImageIndexOff };
 
-                    imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                    imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
                     imgForm.ShowDialog();
 
                     if (imgForm.saveImages == true && imgForm.selectedImages != null)

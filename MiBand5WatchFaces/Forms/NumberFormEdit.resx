@@ -505,24 +505,42 @@
     <value>Top</value>
   </data>
   <data name="AligmentComboBox.Items2" xml:space="preserve">
-    <value>TopRight</value>
+    <value>TopCenter</value>
   </data>
   <data name="AligmentComboBox.Items3" xml:space="preserve">
-    <value>Left</value>
+    <value>TopRight</value>
   </data>
   <data name="AligmentComboBox.Items4" xml:space="preserve">
-    <value>Center</value>
+    <value>Left</value>
   </data>
   <data name="AligmentComboBox.Items5" xml:space="preserve">
-    <value>Right</value>
+    <value>CenterLeft</value>
   </data>
   <data name="AligmentComboBox.Items6" xml:space="preserve">
-    <value>BottomLeft</value>
+    <value>Center</value>
   </data>
   <data name="AligmentComboBox.Items7" xml:space="preserve">
-    <value>Bottom</value>
+    <value>HCenter</value>
   </data>
   <data name="AligmentComboBox.Items8" xml:space="preserve">
+    <value>VCenter</value>
+  </data>
+  <data name="AligmentComboBox.Items9" xml:space="preserve">
+    <value>CenterRight</value>
+  </data>
+  <data name="AligmentComboBox.Items10" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="AligmentComboBox.Items11" xml:space="preserve">
+    <value>BottomLeft</value>
+  </data>
+  <data name="AligmentComboBox.Items12" xml:space="preserve">
+    <value>Bottom</value>
+  </data>
+  <data name="AligmentComboBox.Items13" xml:space="preserve">
+    <value>BottomCenter</value>
+  </data>
+  <data name="AligmentComboBox.Items14" xml:space="preserve">
     <value>BottomRight</value>
   </data>
   <data name="AligmentComboBox.Location" type="System.Drawing.Point, System.Drawing">

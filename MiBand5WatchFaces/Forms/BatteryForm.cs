@@ -144,7 +144,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Battery.BatteryText.PrefixImageIndex >= 0) selImg = new List<int>() { watch.Battery.BatteryText.PrefixImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch,watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages && imgForm.selectedImages != null)
@@ -164,7 +164,7 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Battery.BatteryText.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Battery.BatteryText.SuffixImageIndex };
 
-                imgForm = new ImagesForm(watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch,watch.imagesBuff.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages && imgForm.selectedImages != null)
