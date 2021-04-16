@@ -209,7 +209,7 @@ namespace MiBand5WatchFaces
                     string indx = watch.FindUsage(delImg);
 
                     if (indx == "") Images.Remove(delImg);
-                    else MessageBox.Show($"{indx}");
+                    else MessageBox.Show($"Dependencies:\n{indx}");
 
                     List<Image> buffImg = new List<Image>();
                     for (int i = 0; i < Images.Count; i++)
@@ -408,7 +408,7 @@ namespace MiBand5WatchFaces
                     string indx = watch.FindUsage(delImg);
 
                     if (indx == "") Images.Remove(delImg);
-                    else MessageBox.Show($"{indx}");
+                    else MessageBox.Show($"Dependencies:\n{indx}");
 
                     fillListBox();
                     ImagesListBox_SelectedIndexChanged(null, null);
@@ -420,7 +420,7 @@ namespace MiBand5WatchFaces
                     string indx = watch.FindUsage(index);
 
                     if (indx == "") Images.Remove(index);
-                    else MessageBox.Show($"{indx}");
+                    else MessageBox.Show($"Dependencies:\n{indx}");
 
                     fillListBox();
                     ImagesListBox_SelectedIndexChanged(null, null);

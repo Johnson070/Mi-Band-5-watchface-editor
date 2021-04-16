@@ -86,6 +86,7 @@
             this.RenderButton = new System.Windows.Forms.Button();
             this.listViewElements = new System.Windows.Forms.ListView();
             this.AnimateCheckBox = new System.Windows.Forms.CheckBox();
+            this.openDirectoryWatchface = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.listMenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -446,6 +447,7 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.openDirectoryWatchface);
             this.groupBox1.Controls.Add(this.SupportAuthorButton);
             this.groupBox1.Controls.Add(this.convertGIFToPNGButton);
             this.groupBox1.Controls.Add(this.SetWatchfaceState);
@@ -497,6 +499,13 @@
             this.AnimateCheckBox.Name = "AnimateCheckBox";
             this.AnimateCheckBox.UseVisualStyleBackColor = true;
             this.AnimateCheckBox.CheckedChanged += new System.EventHandler(this.AnimateCheckBox_CheckedChanged);
+            // 
+            // openDirectoryWatchface
+            // 
+            resources.ApplyResources(this.openDirectoryWatchface, "openDirectoryWatchface");
+            this.openDirectoryWatchface.Name = "openDirectoryWatchface";
+            this.openDirectoryWatchface.UseVisualStyleBackColor = true;
+            this.openDirectoryWatchface.Click += new System.EventHandler(this.openDirectoryWatchface_Click);
             // 
             // MainForm
             // 
@@ -584,6 +593,7 @@
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton4;
         private System.Windows.Forms.ToolStripMenuItem miBand5ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miBand6ToolStripMenuItem;
+        private System.Windows.Forms.Button openDirectoryWatchface;
     }
 }
 

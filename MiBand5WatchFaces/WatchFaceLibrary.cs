@@ -1467,7 +1467,7 @@ namespace MiBand5WatchFaces
             foreach (IndexImage indexImage in AddNode(JToken.Parse(JsonConvert.SerializeObject(watch, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore })), new List<IndexImage>()))
                 foreach (int index in indexImage.indexes)
                     if (index == numImg)
-                        match += $"Node: {indexImage.node}\n";
+                        match += $"{indexImage.node}\n";
 
             return match;
         }

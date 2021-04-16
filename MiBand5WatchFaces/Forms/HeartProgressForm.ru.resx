@@ -141,4 +141,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Heart Progress</value>
   </data>
+  <data name="CircleScale.Text" xml:space="preserve">
+    <value>Добавить изобр.</value>
+  </data>
 </root>

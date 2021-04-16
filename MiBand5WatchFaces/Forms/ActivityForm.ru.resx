@@ -1727,4 +1727,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Активность</value>
   </data>
+  <data name="groupBox4.Text" xml:space="preserve">
+    <value>     PAI</value>
+  </data>
+  <data name="paiTab.Text" xml:space="preserve">
+    <value>PAI</value>
+  </data>
 </root>

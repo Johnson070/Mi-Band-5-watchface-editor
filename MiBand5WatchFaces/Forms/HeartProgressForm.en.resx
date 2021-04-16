@@ -150,4 +150,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Heart Progress</value>
   </data>
+  <data name="CircleScale.Text" xml:space="preserve">
+    <value>Add images</value>
+  </data>
 </root>

@@ -10750,4 +10750,19 @@
   <data name="CloseProjectButton.Text" xml:space="preserve">
     <value>Close watchface</value>
   </data>
+  <data name="miBand5ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mi Band 5</value>
+  </data>
+  <data name="miBand6ToolStripMenuItem.Text" xml:space="preserve">
+    <value>Mi Band 6</value>
+    <comment>Mi Band 7</comment>
+  </data>
+  <data name="toolStripDropDownButton4.Text" xml:space="preserve">
+    <value>Model watch</value>
+    <comment>Model watch</comment>
+  </data>
+  <data name="openDirectoryWatchface.Text" xml:space="preserve">
+    <value>Open directory</value>
+    <comment>Open directory</comment>
+  </data>
 </root>

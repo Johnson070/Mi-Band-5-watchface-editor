@@ -22,6 +22,7 @@ namespace MiBand5WatchFaces
         ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
 
         bool Save = true;
+        string PathFile;
         string file = "";
 
         [System.Runtime.InteropServices.DllImport("wininet.dll")]
@@ -112,7 +113,7 @@ namespace MiBand5WatchFaces
                         timerWatchFaceEXE.Start();
                         SaveFileStatus.Text = "";
 
-                        this.file = file.FileName;
+                        PathFile = file.FileName;
                     }
                     else
                     {
@@ -124,6 +125,7 @@ namespace MiBand5WatchFaces
 
                         watchFace = JsonConvert.DeserializeObject<WatchFaceLibrary>(json);//,new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All,MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead ,PreserveReferencesHandling = PreserveReferencesHandling.Objects });
                         watchFace.FilePath = Path.GetDirectoryName(file.FileName);
+                        PathFile = Path.GetDirectoryName(file.FileName);
                         if (watchFace.LoadImages() == WatchFaceLibrary.typeWatch.MiBand6)
                         {
                             watchFace.TypeWatch = WatchFaceLibrary.typeWatch.MiBand6;
@@ -471,7 +473,7 @@ namespace MiBand5WatchFaces
                         //WatchFaceEXE.WaitForExit();
                         SaveFileStatus.Text = "";
                     }
-                    //if (File.Exists(Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.bin")) {
+                    //if (File.Exists(Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.bin")) {//Path.GetExtension(saveFile.FileName) == ".bin"
                     //    File.Move(Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.bin"), Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName) + ".bin"));
                     //    File.Delete(Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.log"); 
                     //}
@@ -739,6 +741,7 @@ namespace MiBand5WatchFaces
 
                 watchFace = JsonConvert.DeserializeObject<WatchFaceLibrary>(json);//,new JsonSerializerSettings {TypeNameHandling = TypeNameHandling.All,MetadataPropertyHandling = MetadataPropertyHandling.ReadAhead ,PreserveReferencesHandling = PreserveReferencesHandling.Objects });
                 watchFace.FilePath = Path.Combine(Path.GetDirectoryName(file), Path.GetFileNameWithoutExtension(file));
+                file = Path.GetDirectoryName(file);
                 watchFace.LoadImages();
 
                 RenderButton_Click(null, null);
@@ -756,6 +759,12 @@ namespace MiBand5WatchFaces
             WatchFaceEXE.Close();
             timerWatchFaceEXE.Stop();
             //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
+
+            //if (File.Exists(Path.GetFileNameWithoutExtension(SaveBinPath) + "_packed.bin"))
+            //{//Path.GetExtension(saveFile.FileName) == ".bin"
+            //    File.Move(Path.Combine(Path.GetDirectoryName(SaveBinPath), Path.GetFileNameWithoutExtension(SaveBinPath) + "_packed.bin"), Path.Combine(Path.GetDirectoryName(SaveBinPath), Path.GetFileNameWithoutExtension(SaveBinPath) + ".bin"));
+            //    //File.Delete(Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.log");
+            //}
         }
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1013,6 +1022,7 @@ namespace MiBand5WatchFaces
 
             Save = true;
             watchFace = new WatchFaceLibrary();
+            PathFile = null;
             RenderButton_Click(null, null);
             updateListElements();
         }
@@ -1035,6 +1045,12 @@ namespace MiBand5WatchFaces
             AnimateCheckBox.Location = new Point(425, 545);
             watchFace.TypeWatch = WatchFaceLibrary.typeWatch.MiBand6;
             RenderButton.PerformClick();
+        }
+
+        private void openDirectoryWatchface_Click(object sender, EventArgs e)
+        {
+            if (PathFile != null)
+                Process.Start(watchFace.FilePath);
         }
     }
 
