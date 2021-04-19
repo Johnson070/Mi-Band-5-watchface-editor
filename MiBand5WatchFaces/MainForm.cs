@@ -87,7 +87,7 @@ namespace MiBand5WatchFaces
                     saveToolStripMenuItem.PerformClick();
 
                 OpenFileDialog file = new OpenFileDialog();
-                file.Filter = "json watchface (*.json)|*.json|bin file (*.bin)|*.bin";
+                file.Filter = "json watchface (*.json)|*.json"+((Directory.Exists("WatchFace6") && File.Exists("WatchFace6\\WatchFace.exe") || watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5) ? "|packed bin file (*.bin)|*.bin" : "");
                 if (file.ShowDialog() == DialogResult.OK)
                 {
                     if (Path.GetExtension(file.FileName) == ".bin")
@@ -114,6 +114,7 @@ namespace MiBand5WatchFaces
                         SaveFileStatus.Text = "";
 
                         PathFile = file.FileName;
+                        this.file = file.FileName;
                     }
                     else
                     {
@@ -155,14 +156,37 @@ namespace MiBand5WatchFaces
         private void updateListElements()
         {
             listViewElements.Clear();
-            foreach (object element in watchFace.getElements())
-                if (element != null)
-                {
-                    ListViewItem item = new ListViewItem();
-                    item.Tag = element;
-                    item.Text = element.GetType().ToString().Replace("MiBand5WatchFaces.", string.Empty);
-                    listViewElements.Items.Add(item);
-                }
+            WatchFaceLibrary watch = DeepCopy(watchFace);
+            watch.TypeWatch = WatchFaceLibrary.typeWatch.None;
+            foreach (var obj in (JObject.Parse(JsonConvert.SerializeObject(watch, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }))).Properties())
+            {
+                ListViewItem item = new ListViewItem();
+                object tag = item.Tag;
+                getTypeWatchfaceElement(obj.Name, out tag, obj.Value.ToString());
+                item.Tag = tag;
+                item.Text = obj.Name;
+                listViewElements.Items.Add(item);
+            }
+        }
+
+        private void getTypeWatchfaceElement(string obj,out object item,string value)
+        {
+            if (obj == "Background") item = JsonConvert.DeserializeObject<Background>(value);
+            else if (obj == "Time") item = JsonConvert.DeserializeObject<Time>(value);
+            else if (obj == "Activity") item = JsonConvert.DeserializeObject<Activity>(value);
+            else if (obj == "Date") item = JsonConvert.DeserializeObject<Date>(value);
+            else if (obj == "Weather") item = JsonConvert.DeserializeObject<Weather>(value);
+            else if (obj == "StepsProgress") item = JsonConvert.DeserializeObject<StepsProgress>(value);
+            else if (obj == "Status") item = JsonConvert.DeserializeObject<Status>(value);
+            else if (obj == "Battery") item = JsonConvert.DeserializeObject<Battery>(value);
+            else if (obj == "AnalogDialFace") item = JsonConvert.DeserializeObject<AnalogDialFace>(value);
+            else if (obj == "Other") item = JsonConvert.DeserializeObject<Other>(value);
+            else if (obj == "HeartProgress") item = JsonConvert.DeserializeObject<HeartProgress>(value);
+            else if (obj == "WeekDaysIcons") item = JsonConvert.DeserializeObject<WeekDaysIcons>(value);
+            else if (obj == "CaloriesProgress") item = JsonConvert.DeserializeObject<CaloriesProgress>(value);
+            else if (obj == "Alarm") item = JsonConvert.DeserializeObject<Alarm>(value);
+            else if (obj == "StatusSimplified") item = JsonConvert.DeserializeObject<StatusSimple>(value);
+            else item = null;
         }
 
         private void listViewElements_DoubleClick(object sender, EventArgs e)
@@ -384,7 +408,7 @@ namespace MiBand5WatchFaces
 
         private void OpenFormImages_Click(object sender, EventArgs e)
         {
-            ImagesForm imagesForm = new ImagesForm(watchFace,watchFace.imagesBuff.DeepCopy(),new List<int>());
+            ImagesForm imagesForm = new ImagesForm(watchFace, watchFace.imagesBuff.DeepCopy(), new List<int>());
             imagesForm.ShowDialog();
 
             if (imagesForm.saveImages)
@@ -440,7 +464,7 @@ namespace MiBand5WatchFaces
 
             try
             {
-                SaveFileDialog saveFile = new SaveFileDialog() { Filter = "json file (*.json)|*.json|packed bin file (*.bin)|*.bin", RestoreDirectory = true };
+                SaveFileDialog saveFile = new SaveFileDialog() { Filter = "json file (*.json)|*.json" + ((Directory.Exists("WatchFace6") && File.Exists("WatchFace6\\WatchFace.exe") || watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5) ? "|packed bin file (*.bin)|*.bin" : ""), RestoreDirectory = true };
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     Save = true;
@@ -790,7 +814,7 @@ namespace MiBand5WatchFaces
                 MessageBox.Show(GetProgramInfo().changelog, res.GetString("ChangeLog"), MessageBoxButtons.OK);
             }
 
-            if (state)
+            if (state && !Properties.Settings.Default.beta)
             {
                 if ((GetProgramInfo().version != Application.ProductVersion || GetProgramInfo().versionUpdateForce == Application.ProductVersion) && MessageBox.Show(res.GetString("OpenDownloadUpdate"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
@@ -833,7 +857,7 @@ namespace MiBand5WatchFaces
             if (state)
             {
                 if (GetProgramInfo().version == Application.ProductVersion) MessageBox.Show(String.Format(res.GetString("ShowUpdateInfo"), Application.ProductVersion, GetProgramInfo().version), res.GetString("Update"), MessageBoxButtons.OK, MessageBoxIcon.Information);
-                else if (MessageBox.Show(res.GetString("OpenDownloadUpdate"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                else if (!Properties.Settings.Default.beta && MessageBox.Show(res.GetString("OpenDownloadUpdate"), "", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     try
                     {
@@ -1051,6 +1075,12 @@ namespace MiBand5WatchFaces
         {
             if (PathFile != null)
                 Process.Start(watchFace.FilePath);
+        }
+
+        private void SettingsEXE_Click(object sender, EventArgs e)
+        {
+            SettingsForm settingsForm = new SettingsForm();
+            settingsForm.ShowDialog();
         }
     }
 

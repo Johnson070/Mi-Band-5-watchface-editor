@@ -439,4 +439,8 @@ Program version on server: {1}</value>
   <data name="UpdateDownloadExit" xml:space="preserve">
     <value>Downloading the update is complete!</value>
   </data>
+  <data name="ConfigNotFound" xml:space="preserve">
+    <value>File WatchFace.exe.config not found!
+Please fix file!</value>
+  </data>
 </root>

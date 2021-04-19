@@ -90,36 +90,6 @@ namespace MiBand5WatchFaces
             watchface.imagesBuff = Images;
         }
 
-        public List<Image> GenAnimated()
-        {
-            //if (watchface.Other != null)
-            //{
-            //    int shots = 1;
-            //    foreach (Animation animation in watchface.Other.Animation)
-            //        shots *= animation.AnimationImages.ImagesCount == 0 ? 1 : animation.AnimationImages.ImagesCount;
-
-            //    List<Image> GifPreview = new List<Image>();
-
-            //    for (int i = 0; i < shots; i++)
-            //    {
-            //        Preview = (Image)new Bitmap(126, 294);
-            //        watchfacePreview = Graphics.FromImage(Preview);
-            //        GifPreview.Add(GenWatchface());
-
-            //        foreach (Animation animation in watchface.Other.Animation)
-            //            animation.Step = (animation.Step + 1 >= (animation.AnimationImages.ImagesCount == 0 ? -1 : animation.AnimationImages.ImagesCount)) ? 0 : animation.Step + 1;
-            //    }
-            //    watchFaceState.animation = 0;
-
-            //    foreach (Animation animation in watchface.Other.Animation)
-            //        animation.Step = 0;
-
-            //    return GifPreview;
-            //}
-            //else 
-            return null;
-        }
-
         public Image GenAnimationStep(bool state)
         {
             if (state)
@@ -176,7 +146,9 @@ namespace MiBand5WatchFaces
                 setMiBand6Corners();
 
             watchfacePreview.Dispose();
-            return Preview;
+            Bitmap PreviewFix = new Bitmap(Preview);
+            PreviewFix.SetResolution(96f, 96f);
+            return (Image)PreviewFix;
         }
 
         private void setMiBand6Corners()
@@ -229,7 +201,9 @@ namespace MiBand5WatchFaces
 
             GC.Collect();
             GC.WaitForPendingFinalizers();
-            return Preview;
+            Bitmap PreviewFix = new Bitmap(Preview);
+            PreviewFix.SetResolution(96f, 96f);
+            return (Image)PreviewFix;
         }
 
         private void drawPreview(ImageBasic preview)

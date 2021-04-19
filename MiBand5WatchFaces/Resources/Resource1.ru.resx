@@ -459,4 +459,8 @@
     <value>Версия программы: {0}.
 Версия программы на сервере: {1}</value>
   </data>
+  <data name="ConfigNotFound" xml:space="preserve">
+    <value>Файл WatchFace.exe.config не найден!
+Восстановите файл!</value>
+  </data>
 </root>

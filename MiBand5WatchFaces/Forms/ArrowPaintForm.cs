@@ -25,12 +25,15 @@ namespace MiBand5WatchFaces.Forms
         public List<XY> shape = new List<XY>();
         public bool Save;
         public bool delete; // 690
+        int PreviewWidth = 4001;
+        int PreviewHeight = 4001;
+        int incXYPreview = (4000 / 10) / 2;
 
         public ArrowPaintForm(List<XY> shape)
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-            Preview = new Bitmap(2001, 2001);
+            Preview = new Bitmap(PreviewWidth, PreviewHeight);
             arrow = Graphics.FromImage(Preview);
             for (int i = 0; i < Preview.Size.Width; i += 10)
                 arrow.DrawLine(new Pen(Color.Black, 1), i, 0, i, Preview.Size.Width - 1);
@@ -48,7 +51,7 @@ namespace MiBand5WatchFaces.Forms
             this.shape = shape == null ? new List<XY>() : shape;
 
             foreach (XY dot in this.shape)
-                arrow.FillRectangle(new SolidBrush(Color.DarkGray), (dot.X + 100) * 10 + 1, ((-dot.Y) + 100) * 10 + 1, 10 - 1, 10 - 1);
+                arrow.FillRectangle(new SolidBrush(Color.DarkGray), (dot.X + incXYPreview) * 10 + 1, ((-dot.Y) + incXYPreview) * 10 + 1, 10 - 1, 10 - 1);
 
             fillListBox();
             panelArrow.Refresh();
@@ -92,22 +95,28 @@ namespace MiBand5WatchFaces.Forms
                 panelArrow.Refresh();
             }
 
-            posPanel.Text = $"X: {(e.X - xInc) / 10 - 100} Y: {-((e.Y - yInc) / 10 - 100)}";
+            posPanel.Text = $"X: {(e.X - xInc) / 10 - incXYPreview} Y: {-((e.Y - yInc) / 10 - incXYPreview)}";
         }
 
         private void panelArrow_MouseClick(object sender, MouseEventArgs e)
         {
-            int clickX = (e.X - xInc) / 10 - 100;
-            int clickY = -((e.Y - yInc) / 10 - 100);
+            int clickX = (e.X - xInc) / 10 - 200;
+            int clickY = -((e.Y - yInc) / 10 - 200);
 
             if (dotRadioButton.Checked)
             {
-                arrow.FillRectangle(new SolidBrush(Color.DarkGray), (clickX + 100) * 10 + 1, ((-clickY) + 100) * 10 + 1, 10 - 1, 10 - 1);
-                shape.Add(new XY() { X = clickX, Y = clickY });
+                arrow.FillRectangle(new SolidBrush(Color.DarkGray), (clickX + incXYPreview) * 10 + 1, ((-clickY) + 100) * 10 + 1, 10 - 1, 10 - 1);
+                bool match = false;
+                foreach (XY dot in shape)
+                    if (dot.X == clickX && dot.Y == clickY)
+                        match = true;
+
+                if (!match)
+                    shape.Add(new XY() { X = clickX, Y = clickY });
             }
             else if (eraseRadioButton.Checked)
             {
-                arrow.FillRectangle(new SolidBrush(Color.White), (clickX + 100) * 10 + 1, ((-clickY) + 100) * 10 + 1, 10 - 1, 10 - 1);
+                arrow.FillRectangle(new SolidBrush(Color.White), (clickX + incXYPreview) * 10 + 1, ((-clickY) + incXYPreview) * 10 + 1, 10 - 1, 10 - 1);
                 for (int i = 0; i < shape.Count; i++)
                     if (shape[i].X == clickX && shape[i].Y == clickY)
                     {
@@ -118,6 +127,7 @@ namespace MiBand5WatchFaces.Forms
             arrow.DrawLine(new Pen(Color.Red, 1), Preview.Size.Width / 2 + 5, 0, Preview.Size.Width / 2 + 5, Preview.Size.Width - 1);
             arrow.DrawLine(new Pen(Color.Red, 1), 0, Preview.Size.Height / 2 + 5, Preview.Size.Width - 1, Preview.Size.Height / 2 + 5);
             fillListBox();
+            panelArrow.Refresh();
             panelArrow.Refresh();
         }
 
@@ -159,7 +169,7 @@ namespace MiBand5WatchFaces.Forms
         {
             if (shapeListBox.SelectedIndex != -1)//
             {
-                arrow.FillRectangle(new SolidBrush(Color.White), (shape[shapeListBox.SelectedIndex].X + 100) * 10 + 1, ((-shape[shapeListBox.SelectedIndex].Y) + 100) * 10 + 1, 10 - 1, 10 - 1);
+                arrow.FillRectangle(new SolidBrush(Color.White), (shape[shapeListBox.SelectedIndex].X + incXYPreview) * 10 + 1, ((-shape[shapeListBox.SelectedIndex].Y) + incXYPreview) * 10 + 1, 10 - 1, 10 - 1);
                 shape.RemoveAt(shapeListBox.SelectedIndex);
                 arrow.DrawLine(new Pen(Color.Red, 1), Preview.Size.Width / 2 + 5, 0, Preview.Size.Width / 2 + 5, Preview.Size.Width - 1);
                 arrow.DrawLine(new Pen(Color.Red, 1), 0, Preview.Size.Height / 2 + 5, Preview.Size.Width - 1, Preview.Size.Height / 2 + 5);
@@ -177,9 +187,9 @@ namespace MiBand5WatchFaces.Forms
 
         private void panelArrow_Paint(object sender, PaintEventArgs e)
         {
-            e.Graphics.DrawImage(Preview, xInc, yInc, 2000, 2000);
+            e.Graphics.DrawImage(Preview, xInc, yInc, PreviewWidth, PreviewHeight);
             foreach (XY dot in this.shape)
-                arrow.FillRectangle(new SolidBrush(Color.DarkGray), (dot.X + 100) * 10 + 1, ((-dot.Y) + 100) * 10 + 1, 10 - 1, 10 - 1);
+                arrow.FillRectangle(new SolidBrush(Color.DarkGray), (dot.X + incXYPreview) * 10 + 1, ((-dot.Y) + incXYPreview) * 10 + 1, 10 - 1, 10 - 1);
         }
 
         private void fillListBox()

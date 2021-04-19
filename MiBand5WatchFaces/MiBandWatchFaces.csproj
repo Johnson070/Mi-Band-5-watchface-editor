@@ -7,7 +7,7 @@
     <ProjectGuid>{EFE5FD9A-4407-46D7-BB79-F7080668B5E8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>MiBand5WatchFaces</RootNamespace>
-    <AssemblyName>MiBand5WatchFaces</AssemblyName>
+    <AssemblyName>MiBandWatchFaces</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -82,6 +82,7 @@
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Net" />
@@ -102,10 +103,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CircleScaleForm.cs">
+    <Compile Include="Forms\CircleScaleForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CircleScaleForm.Designer.cs">
+    <Compile Include="Forms\CircleScaleForm.Designer.cs">
       <DependentUpon>CircleScaleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\AboutBox.cs">
@@ -186,6 +187,12 @@
     <Compile Include="Forms\ScaleForm.Designer.cs">
       <DependentUpon>ScaleForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\SettingsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsForm.Designer.cs">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StatusForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -235,10 +242,10 @@
       <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ImageWorker.cs" />
-    <Compile Include="InputForm.cs">
+    <Compile Include="Forms\InputForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="InputForm.Designer.cs">
+    <Compile Include="Forms\InputForm.Designer.cs">
       <DependentUpon>InputForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -268,13 +275,13 @@
     <Compile Include="Forms\WatchfaceState.Designer.cs">
       <DependentUpon>WatchfaceState.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CircleScaleForm.en.resx">
+    <EmbeddedResource Include="Forms\CircleScaleForm.en.resx">
       <DependentUpon>CircleScaleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CircleScaleForm.resx">
+    <EmbeddedResource Include="Forms\CircleScaleForm.resx">
       <DependentUpon>CircleScaleForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CircleScaleForm.ru.resx">
+    <EmbeddedResource Include="Forms\CircleScaleForm.ru.resx">
       <DependentUpon>CircleScaleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AboutBox.resx">
@@ -406,6 +413,17 @@
     <EmbeddedResource Include="Forms\ScaleForm.ru.resx">
       <DependentUpon>ScaleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.en.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>SettingsForm1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.ru.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StatusForm.en.resx">
       <DependentUpon>StatusForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -471,15 +489,15 @@
     <EmbeddedResource Include="Forms\WeekDaysIconsForm.ru.resx">
       <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InputForm.en.resx">
+    <EmbeddedResource Include="Forms\InputForm.en.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="InputForm.resx">
+    <EmbeddedResource Include="Forms\InputForm.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>InputForm1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="InputForm.ru.resx">
+    <EmbeddedResource Include="Forms\InputForm.ru.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.en.resx">

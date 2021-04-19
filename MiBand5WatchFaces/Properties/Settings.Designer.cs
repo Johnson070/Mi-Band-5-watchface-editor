@@ -46,5 +46,17 @@ namespace MiBand5WatchFaces.Properties {
                 this["lang"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool beta {
+            get {
+                return ((bool)(this["beta"]));
+            }
+            set {
+                this["beta"] = value;
+            }
+        }
     }
 }

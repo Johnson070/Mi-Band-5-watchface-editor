@@ -80,13 +80,14 @@
             this.DeleteTrash = new System.Windows.Forms.Timer(this.components);
             this.SetWatchfaceState = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.SettingsEXE = new System.Windows.Forms.Button();
+            this.openDirectoryWatchface = new System.Windows.Forms.Button();
             this.SupportAuthorButton = new System.Windows.Forms.Button();
             this.convertGIFToPNGButton = new System.Windows.Forms.Button();
             this.watchfacePreviewImage = new System.Windows.Forms.PictureBox();
             this.RenderButton = new System.Windows.Forms.Button();
             this.listViewElements = new System.Windows.Forms.ListView();
             this.AnimateCheckBox = new System.Windows.Forms.CheckBox();
-            this.openDirectoryWatchface = new System.Windows.Forms.Button();
             this.toolStrip1.SuspendLayout();
             this.listMenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -447,12 +448,27 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.SettingsEXE);
             this.groupBox1.Controls.Add(this.openDirectoryWatchface);
             this.groupBox1.Controls.Add(this.SupportAuthorButton);
             this.groupBox1.Controls.Add(this.convertGIFToPNGButton);
             this.groupBox1.Controls.Add(this.SetWatchfaceState);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // SettingsEXE
+            // 
+            resources.ApplyResources(this.SettingsEXE, "SettingsEXE");
+            this.SettingsEXE.Name = "SettingsEXE";
+            this.SettingsEXE.UseVisualStyleBackColor = true;
+            this.SettingsEXE.Click += new System.EventHandler(this.SettingsEXE_Click);
+            // 
+            // openDirectoryWatchface
+            // 
+            resources.ApplyResources(this.openDirectoryWatchface, "openDirectoryWatchface");
+            this.openDirectoryWatchface.Name = "openDirectoryWatchface";
+            this.openDirectoryWatchface.UseVisualStyleBackColor = true;
+            this.openDirectoryWatchface.Click += new System.EventHandler(this.openDirectoryWatchface_Click);
             // 
             // SupportAuthorButton
             // 
@@ -499,13 +515,6 @@
             this.AnimateCheckBox.Name = "AnimateCheckBox";
             this.AnimateCheckBox.UseVisualStyleBackColor = true;
             this.AnimateCheckBox.CheckedChanged += new System.EventHandler(this.AnimateCheckBox_CheckedChanged);
-            // 
-            // openDirectoryWatchface
-            // 
-            resources.ApplyResources(this.openDirectoryWatchface, "openDirectoryWatchface");
-            this.openDirectoryWatchface.Name = "openDirectoryWatchface";
-            this.openDirectoryWatchface.UseVisualStyleBackColor = true;
-            this.openDirectoryWatchface.Click += new System.EventHandler(this.openDirectoryWatchface_Click);
             // 
             // MainForm
             // 
@@ -594,6 +603,7 @@
         private System.Windows.Forms.ToolStripMenuItem miBand5ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miBand6ToolStripMenuItem;
         private System.Windows.Forms.Button openDirectoryWatchface;
+        private System.Windows.Forms.Button SettingsEXE;
     }
 }
 

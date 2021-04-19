@@ -493,6 +493,16 @@ namespace MiBand5WatchFaces.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на File WatchFace.exe.config not found!
+        ///Please fix file!.
+        /// </summary>
+        internal static string ConfigNotFound {
+            get {
+                return ResourceManager.GetString("ConfigNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Delete images.
         /// </summary>
         internal static string DeleteImages {

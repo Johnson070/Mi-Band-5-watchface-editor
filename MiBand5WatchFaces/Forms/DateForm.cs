@@ -120,6 +120,7 @@ namespace MiBand5WatchFaces.Forms
 
                 if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
+                    watch.Date.MonthAndDayAndYear = watch.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watch.Date.MonthAndDayAndYear;
                     watch.Date.MonthAndDayAndYear.Separate = watch.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watch.Date.MonthAndDayAndYear.Separate;
                     watch.Date.MonthAndDayAndYear.Separate.Month = numForm.number;
                     watch.imagesBuff = numForm.watch.imagesBuff;
@@ -167,6 +168,7 @@ namespace MiBand5WatchFaces.Forms
 
                 if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
+                    watch.Date.MonthAndDayAndYear = watch.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watch.Date.MonthAndDayAndYear;
                     watch.Date.MonthAndDayAndYear.Separate = watch.Date.MonthAndDayAndYear.Separate == null ? new SeparateMonthAndDay() : watchface.Date.MonthAndDayAndYear.Separate;
                     watch.Date.MonthAndDayAndYear.Separate.Day = numForm.number;
                     watch.imagesBuff = numForm.watch.imagesBuff;
@@ -199,6 +201,7 @@ namespace MiBand5WatchFaces.Forms
 
                 if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
+                    watch.Date.MonthAndDayAndYear = watch.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watch.Date.MonthAndDayAndYear;
                     watch.Date.MonthAndDayAndYear.OneLine = watch.Date.MonthAndDayAndYear.OneLine == null ? new OneLineMonthAndDay() : watchface.Date.MonthAndDayAndYear.OneLine;
 
                     if (watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6) watch.Date.MonthAndDayAndYear.OneLine.NumberEN = numForm.number;
@@ -236,6 +239,7 @@ namespace MiBand5WatchFaces.Forms
 
                 if (numForm.saved && numForm.number.ImageIndex >= 0)
                 {
+                    watch.Date.MonthAndDayAndYear = watch.Date.MonthAndDayAndYear == null ? new MonthAndDayAndYear() : watch.Date.MonthAndDayAndYear;
                     watch.Date.MonthAndDayAndYear.OneLineWithYear = watch.Date.MonthAndDayAndYear.OneLineWithYear == null ? new OneLineWithYear() : watchface.Date.MonthAndDayAndYear.OneLineWithYear;
                     if (watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6) watch.Date.MonthAndDayAndYear.OneLineWithYear.NumberEN = numForm.number;
                     else watch.Date.MonthAndDayAndYear.OneLineWithYear.Number = numForm.number;

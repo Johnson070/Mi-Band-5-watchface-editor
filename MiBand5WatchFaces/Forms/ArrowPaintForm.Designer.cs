@@ -104,6 +104,7 @@ namespace MiBand5WatchFaces.Forms
             // panelArrow
             // 
             resources.ApplyResources(this.panelArrow, "panelArrow");
+            this.panelArrow.BackColor = System.Drawing.Color.White;
             this.panelArrow.Name = "panelArrow";
             this.panelArrow.TabStop = false;
             this.panelArrow.Paint += new System.Windows.Forms.PaintEventHandler(this.panelArrow_Paint);
