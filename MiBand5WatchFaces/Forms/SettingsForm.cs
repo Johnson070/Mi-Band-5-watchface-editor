@@ -78,7 +78,7 @@ namespace MiBand5WatchFaces.Forms
                 if (ChineseRadioButton.Checked) config.AppSettings.Settings["WeekDaysLanguage"].Value = "2";
                 config.AppSettings.Settings["PreviewSpeed"].Value = $"{PreviewSpeedTrack.Value}";
                 config.AppSettings.Settings["ForceImageCompressor"].Value = ForceImageCompressorCheck.Checked == true ? "1" : "0";
-                config.AppSettings.Settings["serialKey"].Value = "5B54509BAD-3641238950-C922C0BC46-355BDA67CD";
+                //config.AppSettings.Settings["serialKey"].Value = "5B54509BAD-3641238950-C922C0BC46-355BDA67CD";
 
                 config.Save();
 

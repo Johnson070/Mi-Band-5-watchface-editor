@@ -28,7 +28,7 @@ namespace MiBand5WatchFaces.Forms
         {
             InitializeComponent();
             this.watch = watch;
-            watch.imagesBuff = Images;
+            watch.images = Images;
             this.state = state;
 
             this.watch.Time = watch.Time == null ? new Time() : watch.Time;
@@ -86,12 +86,12 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Time.Hours = watchface.Time.Hours == null ? new TwoDigits() : watchface.Time.Hours;
                 watchface.Time.Hours.Ones = watchface.Time.Hours.Ones == null ? new ImageSet() : watchface.Time.Hours.Ones;
-                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Time.Hours.Ones, watch.imagesBuff.DeepCopy(), state, 10);
+                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Time.Hours.Ones, watch.images.DeepCopy(), state, 10);
                 setForm.ShowDialog();
 
                 if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
                 {
-                    watch.imagesBuff = setForm.watch.imagesBuff;
+                    watch.images = setForm.watch.images;
                     watch.Time.Hours = watch.Time.Hours == null ? new TwoDigits() : watch.Time.Hours;
                     watch.Time.Hours.Ones = setForm.imageSet;
                     AddOnesHourBtn.Text = res.GetString("EditOnes");
@@ -101,12 +101,12 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Time.Hours = watchface.Time.Hours == null ? new TwoDigits() : watchface.Time.Hours;
                 watchface.Time.Hours.Tens = watchface.Time.Hours.Tens == null ? new ImageSet() : watchface.Time.Hours.Tens;
-                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Time.Hours.Tens, watch.imagesBuff.DeepCopy(), state, 10);
+                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Time.Hours.Tens, watch.images.DeepCopy(), state, 10);
                 setForm.ShowDialog();
 
                 if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
                 {
-                    watch.imagesBuff = setForm.watch.imagesBuff;
+                    watch.images = setForm.watch.images;
                     watch.Time.Hours = watch.Time.Hours == null ? new TwoDigits() : watch.Time.Hours;
                     watch.Time.Hours.Tens = setForm.imageSet;
                     AddTensHourBtn.Text = res.GetString("EditTens");
@@ -116,12 +116,12 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Time.Minutes = watchface.Time.Minutes == null ? new TwoDigits() : watchface.Time.Minutes;
                 watchface.Time.Minutes.Ones = watchface.Time.Minutes.Ones == null ? new ImageSet() : watchface.Time.Minutes.Ones;
-                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Time.Minutes.Ones, watch.imagesBuff.DeepCopy(), state, 10);
+                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Time.Minutes.Ones, watch.images.DeepCopy(), state, 10);
                 setForm.ShowDialog();
 
                 if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
                 {
-                    watch.imagesBuff = setForm.watch.imagesBuff;
+                    watch.images = setForm.watch.images;
                     watch.Time.Minutes = watch.Time.Minutes == null ? new TwoDigits() : watch.Time.Minutes;
                     watch.Time.Minutes.Ones = setForm.imageSet;
                     AddOnesMinuteBtn.Text = res.GetString("EditOnes");
@@ -131,12 +131,12 @@ namespace MiBand5WatchFaces.Forms
             {
                 watchface.Time.Minutes = watchface.Time.Minutes == null ? new TwoDigits() : watchface.Time.Minutes;
                 watchface.Time.Minutes.Tens = watchface.Time.Minutes.Tens == null ? new ImageSet() : watchface.Time.Minutes.Tens;
-                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Time.Minutes.Tens, watch.imagesBuff.DeepCopy(), state, 10);
+                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Time.Minutes.Tens, watch.images.DeepCopy(), state, 10);
                 setForm.ShowDialog();
 
                 if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
                 {
-                    watch.imagesBuff = setForm.watch.imagesBuff;
+                    watch.images = setForm.watch.images;
                     watch.Time.Minutes = watch.Time.Minutes == null ? new TwoDigits() : watch.Time.Minutes;
                     watch.Time.Minutes.Tens = setForm.imageSet;
                     AddTensMinuteBtn.Text = res.GetString("EditTens");
@@ -157,12 +157,12 @@ namespace MiBand5WatchFaces.Forms
             WatchFaceLibrary watchface = DeepCopy(watch);
 
             watchface.Time.TimeZone1 = watchface.Time.TimeZone1 == null ? new Number() { notDraw = true } : watchface.Time.TimeZone1;
-            NumberFormEdit numberForm = new NumberFormEdit(watchface, watchface.Time.TimeZone1, watch.imagesBuff.DeepCopy(), state, 10);
+            NumberFormEdit numberForm = new NumberFormEdit(watchface, watchface.Time.TimeZone1, watch.images.DeepCopy(), state, 10);
             numberForm.ShowDialog();
 
             if (numberForm.saved && numberForm.number.ImageIndex >= 0)
             {
-                watch.imagesBuff = numberForm.watch.imagesBuff;
+                watch.images = numberForm.watch.images;
                 watch.Time.TimeZone1 = numberForm.number;
                 timeZone1ButtonEdit.Text = res.GetString("EditNumber");
                 TZ1DelimeterBtn.Enabled = true;
@@ -170,7 +170,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (numberForm.delete)
             {
-                watch.imagesBuff = numberForm.watch.imagesBuff;
+                watch.images = numberForm.watch.images;
                 watch.Time.TimeZone1 = null;
                 timeZone1ButtonEdit.Text = res.GetString("AddNumber");
                 TZ1DelimeterBtn.Enabled = false;
@@ -186,12 +186,12 @@ namespace MiBand5WatchFaces.Forms
             WatchFaceLibrary watchface = DeepCopy(watch);
 
             watchface.Time.TimeZone2 = watchface.Time.TimeZone2 == null ? new Number() { notDraw = true } : watchface.Time.TimeZone2;
-            NumberFormEdit numberForm = new NumberFormEdit(watchface, watchface.Time.TimeZone2, watch.imagesBuff.DeepCopy(), state, 10);
+            NumberFormEdit numberForm = new NumberFormEdit(watchface, watchface.Time.TimeZone2, watch.images.DeepCopy(), state, 10);
             numberForm.ShowDialog();
 
             if (numberForm.saved && numberForm.number.ImageIndex >= 0)
             {
-                watch.imagesBuff = numberForm.watch.imagesBuff;
+                watch.images = numberForm.watch.images;
                 watch.Time.TimeZone2 = numberForm.number;
                 timeZone2ButtonEdit.Text = res.GetString("EditNumber");
                 TZ2DelimeterBtn.Enabled = true;
@@ -199,7 +199,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (numberForm.delete)
             {
-                watch.imagesBuff = numberForm.watch.imagesBuff;
+                watch.images = numberForm.watch.images;
                 watch.Time.TimeZone2 = null;
                 timeZone2ButtonEdit.Text = res.GetString("AddNumber");
                 TZ2DelimeterBtn.Enabled = false;
@@ -220,18 +220,18 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Time.TimeZone1DelimiterImage >= 0) selImg = new List<int>() { watch.Time.TimeZone1DelimiterImage };
 
-                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Time.TimeZone1DelimiterImage = imgForm.selectedImages[0];
                     TZ1DelimeterBtn.Text = res.GetString("EditDelimeter");
                 }
                 else if (imgForm.saveImages == true)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Time.TimeZone1DelimiterImage = -10000;
                     TZ1DelimeterBtn.Text = res.GetString("AddDelimeter");
                 }
@@ -240,18 +240,18 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Time.TimeZone2DelimiterImage >= 0) selImg = new List<int>() { watch.Time.TimeZone2DelimiterImage };
 
-                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Time.TimeZone2DelimiterImage = imgForm.selectedImages[0];
                     TZ2DelimeterBtn.Text = res.GetString("EditDelimeter");
                 }
                 else if (imgForm.saveImages == true)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Time.TimeZone2DelimiterImage = -10000;
                     TZ2DelimeterBtn.Text = res.GetString("AddDelimeter");
                 }
@@ -269,20 +269,20 @@ namespace MiBand5WatchFaces.Forms
                 watch.Time.TimeZone1NoTime = watch.Time.TimeZone1NoTime == null ? new ImageBasic() : watch.Time.TimeZone1NoTime;
                 StateWatchface newState = DeepCopy(state);
                 newState.NoTimeZone = true;
-                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Time.TimeZone1NoTime, watch.imagesBuff.DeepCopy(), newState);
+                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Time.TimeZone1NoTime, watch.images.DeepCopy(), newState);
                 ibForm.ShowDialog();
 
                 if (ibForm.saved)
                 {
                     TZ1NoTime.Text = res.GetString("EditNoTime");
                     watch.Time.TimeZone1NoTime = ibForm.imageBasic;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
                 else if (ibForm.delete)
                 {
                     TZ1NoTime.Text = res.GetString("AddNoTime");
                     watch.Time.TimeZone1NoTime = null;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
             }
             else if (name == TZ2NoTime.Name)
@@ -290,20 +290,20 @@ namespace MiBand5WatchFaces.Forms
                 watch.Time.TimeZone2NoTime = watch.Time.TimeZone2NoTime == null ? new ImageBasic() : watch.Time.TimeZone2NoTime;
                 StateWatchface newState = DeepCopy(state);
                 newState.NoTimeZone = true;
-                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Time.TimeZone2NoTime, watch.imagesBuff.DeepCopy(), newState);
+                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Time.TimeZone2NoTime, watch.images.DeepCopy(), newState);
                 ibForm.ShowDialog();
 
                 if (ibForm.saved)
                 {
                     TZ2NoTime.Text = res.GetString("EditNoTime");
                     watch.Time.TimeZone1NoTime = ibForm.imageBasic;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
                 else if (ibForm.delete)
                 {
                     TZ2NoTime.Text = res.GetString("AddNoTime");
                     watch.Time.TimeZone1NoTime = null;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
             }
 

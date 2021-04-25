@@ -36,13 +36,13 @@ namespace MiBand5WatchFaces
         private void backgroundToolStripMenuItem_Click(object sender, EventArgs e)
         {
             VisualRender render = new VisualRender(watchFace, state);
-            BackgroundForm bgr = new BackgroundForm(DeepCopy<Background>(watchFace.Background), watchFace.imagesBuff.DeepCopy(), render.genPreview(), watchFace.TypeWatch);
+            BackgroundForm bgr = new BackgroundForm(DeepCopy<Background>(watchFace.Background), watchFace.images.DeepCopy(), render.genPreview(), watchFace.TypeWatch);
             bgr.ShowDialog();
             if (bgr.Save)
             {
                 Save = false;
                 watchFace.Background = bgr.background;
-                watchFace.imagesBuff = bgr.images;
+                watchFace.images = bgr.images;
                 RenderButton_Click(null, null);
             }
             updateListElements();
@@ -51,7 +51,7 @@ namespace MiBand5WatchFaces
 
         private void timeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.images.DeepCopy(), state);
             timeForm.ShowDialog();
 
             if (timeForm.Save)
@@ -202,20 +202,20 @@ namespace MiBand5WatchFaces
                 if (type == typeof(Background))
                 {
                     VisualRender render = new VisualRender(watchFace, state);
-                    BackgroundForm backgroundForm = new BackgroundForm(DeepCopy<Background>((Background)item.SelectedItems[0].Tag), watchFace.imagesBuff.DeepCopy(), render.genPreview(), watchFace.TypeWatch);
+                    BackgroundForm backgroundForm = new BackgroundForm(DeepCopy<Background>((Background)item.SelectedItems[0].Tag), watchFace.images.DeepCopy(), render.genPreview(), watchFace.TypeWatch);
                     backgroundForm.ShowDialog();
                     if (backgroundForm.Save)
                     {
                         Save = false;
                         watchFace.Background = backgroundForm.background;
-                        watchFace.imagesBuff = backgroundForm.images;
+                        watchFace.images = backgroundForm.images;
                         RenderButton_Click(null, null);
                     }
                     backgroundForm.Dispose();
                 }
                 else if (type == typeof(Time))
                 {
-                    TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    TimeForm timeForm = new TimeForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.images.DeepCopy(), state);
                     timeForm.ShowDialog();
 
                     if (timeForm.Save)
@@ -228,7 +228,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(Activity))
                 {
-                    ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.images.DeepCopy(), state);
                     activityForm.ShowDialog();
 
                     if (activityForm.Save)
@@ -241,7 +241,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(Date))
                 {
-                    DateForm dateForm = new DateForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    DateForm dateForm = new DateForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.images.DeepCopy(), state);
                     dateForm.ShowDialog();
 
                     if (dateForm.Save)
@@ -254,7 +254,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(Weather))
                 {
-                    WeatherForm weatherForm = new WeatherForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    WeatherForm weatherForm = new WeatherForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.images.DeepCopy(), state);
                     weatherForm.ShowDialog();
 
                     if (weatherForm.Save)
@@ -267,7 +267,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(StepsProgress))
                 {
-                    StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StepsProgressForm.StateForm.Steps);
+                    StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state, StepsProgressForm.StateForm.Steps);
                     progressForm.ShowDialog();
 
                     if (progressForm.Save)
@@ -280,7 +280,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(Status))
                 {
-                    StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StatusForm.statusForm.Status);
+                    StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state, StatusForm.statusForm.Status);
                     statusForm.ShowDialog();
 
                     if (statusForm.Save)
@@ -294,7 +294,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(Battery))
                 {
-                    BatteryForm batteryForm = new BatteryForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    BatteryForm batteryForm = new BatteryForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
                     batteryForm.ShowDialog();
 
                     if (batteryForm.Save)
@@ -307,7 +307,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(AnalogDialFace))
                 {
-                    AnalogDialFaceForm analogDial = new AnalogDialFaceForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    AnalogDialFaceForm analogDial = new AnalogDialFaceForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
                     analogDial.ShowDialog();
 
                     if (analogDial.Save)
@@ -321,7 +321,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(Other))
                 {
-                    AnimationForm animationForm = new AnimationForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    AnimationForm animationForm = new AnimationForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
                     animationForm.ShowDialog();
 
                     if (animationForm.Save)
@@ -334,7 +334,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(CaloriesProgress))
                 {
-                    StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StepsProgressForm.StateForm.Calories);
+                    StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state, StepsProgressForm.StateForm.Calories);
                     progressForm.ShowDialog();
 
                     if (progressForm.Save)
@@ -347,7 +347,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(HeartProgress))
                 {
-                    HeartProgressForm heartProgress = new HeartProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    HeartProgressForm heartProgress = new HeartProgressForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
                     heartProgress.ShowDialog();
 
                     if (heartProgress.Save)
@@ -360,7 +360,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(WeekDaysIcons))
                 {
-                    WeekDaysIconsForm weekDays = new WeekDaysIconsForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    WeekDaysIconsForm weekDays = new WeekDaysIconsForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
                     weekDays.ShowDialog();
 
                     if (weekDays.Save)
@@ -373,7 +373,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(Alarm))
                 {
-                    AlarmForm alarmForm = new AlarmForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+                    AlarmForm alarmForm = new AlarmForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
                     alarmForm.ShowDialog();
 
                     if (alarmForm.Save)
@@ -386,7 +386,7 @@ namespace MiBand5WatchFaces
                 }
                 else if (type == typeof(StatusSimple))
                 {
-                    StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StatusForm.statusForm.StatusSpecial);
+                    StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state, StatusForm.statusForm.StatusSpecial);
                     statusForm.ShowDialog();
 
                     if (statusForm.Save)
@@ -408,13 +408,13 @@ namespace MiBand5WatchFaces
 
         private void OpenFormImages_Click(object sender, EventArgs e)
         {
-            ImagesForm imagesForm = new ImagesForm(watchFace, watchFace.imagesBuff.DeepCopy(), new List<int>());
+            ImagesForm imagesForm = new ImagesForm(watchFace, watchFace.images.DeepCopy(), new List<int>());
             imagesForm.ShowDialog();
 
             if (imagesForm.saveImages)
             {
                 Save = false;
-                watchFace.imagesBuff = imagesForm.Images;
+                watchFace.images = imagesForm.Images;
                 RenderButton_Click(null, null);
             }
         }
@@ -429,7 +429,7 @@ namespace MiBand5WatchFaces
 
         private void activityToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            ActivityForm activityForm = new ActivityForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.images.DeepCopy(), state);
             activityForm.ShowDialog();
 
             if (activityForm.Save)
@@ -444,7 +444,7 @@ namespace MiBand5WatchFaces
 
         private void dateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DateForm dateForm = new DateForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            DateForm dateForm = new DateForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.images.DeepCopy(), state);
             dateForm.ShowDialog();
 
             if (dateForm.Save)
@@ -469,7 +469,7 @@ namespace MiBand5WatchFaces
                 {
                     Save = true;
                     string path = Path.GetDirectoryName(saveFile.FileName);
-                    foreach (KeyValuePair<int, Image> img in watchFace.imagesBuff)
+                    foreach (KeyValuePair<int, Image> img in watchFace.images)
                         img.Value.Save(Path.Combine(path, $"{img.Key:0000}.png"), ImageFormat.Png);
 
 
@@ -527,7 +527,7 @@ namespace MiBand5WatchFaces
 
         private void weatherToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WeatherForm weatherForm = new WeatherForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            WeatherForm weatherForm = new WeatherForm(DeepCopy<WatchFaceLibrary>(watchFace), watchFace.images.DeepCopy(), state);
             weatherForm.ShowDialog();
 
             if (weatherForm.Save)
@@ -542,7 +542,7 @@ namespace MiBand5WatchFaces
 
         private void stepsProgressToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StepsProgressForm.StateForm.Steps);
+            StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state, StepsProgressForm.StateForm.Steps);
             progressForm.ShowDialog();
 
             if (progressForm.Save)
@@ -557,7 +557,7 @@ namespace MiBand5WatchFaces
 
         private void statusToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StatusForm.statusForm.Status);
+            StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state, StatusForm.statusForm.Status);
             statusForm.ShowDialog();
 
             if (statusForm.Save)
@@ -573,7 +573,7 @@ namespace MiBand5WatchFaces
 
         private void batteryToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            BatteryForm batteryForm = new BatteryForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            BatteryForm batteryForm = new BatteryForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
             batteryForm.ShowDialog();
 
             if (batteryForm.Save)
@@ -588,7 +588,7 @@ namespace MiBand5WatchFaces
 
         private void analogDialFaceToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AnalogDialFaceForm analogDial = new AnalogDialFaceForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            AnalogDialFaceForm analogDial = new AnalogDialFaceForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
             analogDial.ShowDialog();
 
             if (analogDial.Save)
@@ -604,7 +604,7 @@ namespace MiBand5WatchFaces
 
         private void animationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AnimationForm animationForm = new AnimationForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            AnimationForm animationForm = new AnimationForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
             animationForm.ShowDialog();
 
             if (animationForm.Save)
@@ -619,7 +619,7 @@ namespace MiBand5WatchFaces
 
         private void heartProgressToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            HeartProgressForm heartProgress = new HeartProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            HeartProgressForm heartProgress = new HeartProgressForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
             heartProgress.ShowDialog();
 
             if (heartProgress.Save)
@@ -634,7 +634,7 @@ namespace MiBand5WatchFaces
 
         private void caloriesProgressToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StepsProgressForm.StateForm.Calories);
+            StepsProgressForm progressForm = new StepsProgressForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state, StepsProgressForm.StateForm.Calories);
             progressForm.ShowDialog();
 
             if (progressForm.Save)
@@ -649,7 +649,7 @@ namespace MiBand5WatchFaces
 
         private void weekDaysIconsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            WeekDaysIconsForm weekDays = new WeekDaysIconsForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            WeekDaysIconsForm weekDays = new WeekDaysIconsForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
             weekDays.ShowDialog();
 
             if (weekDays.Save)
@@ -664,7 +664,7 @@ namespace MiBand5WatchFaces
 
         private void alarmToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AlarmForm alarmForm = new AlarmForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            AlarmForm alarmForm = new AlarmForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
             alarmForm.ShowDialog();
 
             if (alarmForm.Save)
@@ -679,7 +679,7 @@ namespace MiBand5WatchFaces
 
         private void statusSimplifiedToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state, StatusForm.statusForm.StatusSpecial);
+            StatusForm statusForm = new StatusForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state, StatusForm.statusForm.StatusSpecial);
             statusForm.ShowDialog();
 
             if (statusForm.Save)
@@ -950,7 +950,7 @@ namespace MiBand5WatchFaces
         private void OpenJsonButton_Click(object sender, EventArgs e)
         {
             WatchFaceLibrary.typeWatch type = watchFace.TypeWatch;
-            JSONEditorForm jsonForm = new JSONEditorForm(DeepCopy(watchFace), watchFace.imagesBuff.DeepCopy(), state);
+            JSONEditorForm jsonForm = new JSONEditorForm(DeepCopy(watchFace), watchFace.images.DeepCopy(), state);
             jsonForm.ShowDialog();
 
             if (jsonForm.Save)
@@ -1074,7 +1074,7 @@ namespace MiBand5WatchFaces
         private void openDirectoryWatchface_Click(object sender, EventArgs e)
         {
             if (PathFile != null)
-                Process.Start(watchFace.FilePath);
+                Process.Start(PathFile);
         }
 
         private void SettingsEXE_Click(object sender, EventArgs e)

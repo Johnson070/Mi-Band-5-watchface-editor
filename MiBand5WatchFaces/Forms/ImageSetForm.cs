@@ -35,7 +35,7 @@ namespace MiBand5WatchFaces.Forms
             InitializeComponent();
             this.watch = watch;
             this.imageSet = imageSet;
-            this.watch.imagesBuff = images;
+            this.watch.images = images;
             this.state = state;
             this.countImages = countImages;
 
@@ -71,12 +71,12 @@ namespace MiBand5WatchFaces.Forms
                     selImg.Add(i);
             }
 
-            ImagesForm imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, true, true, countImages);
+            ImagesForm imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, true, true, countImages);
             imgForm.ShowDialog();
 
             if (imgForm.saveImages == true && imgForm.selectedImages != null)
             {
-                watch.imagesBuff = imgForm.Images;
+                watch.images = imgForm.Images;
                 imageSet.ImageIndex = imgForm.selectedImages[0];
                 imageSet.ImagesCount = imgForm.selectedImages.Count();
 
@@ -86,7 +86,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (imgForm.saveImages == true)
             {
-                watch.imagesBuff = imgForm.Images;
+                watch.images = imgForm.Images;
                 imageSet.ImageIndex = -10000;
                 imageSet.ImagesCount = 0;
 

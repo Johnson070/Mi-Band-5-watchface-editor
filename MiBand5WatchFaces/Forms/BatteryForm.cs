@@ -39,7 +39,7 @@ namespace MiBand5WatchFaces.Forms
             InitializeComponent();
             this.watch = watch;
             this.state = state;
-            this.watch.imagesBuff = Images;
+            this.watch.images = Images;
 
             this.watch.Battery = this.watch.Battery == null ? new Battery() : this.watch.Battery;
 
@@ -86,18 +86,18 @@ namespace MiBand5WatchFaces.Forms
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
             watchface.Battery.BatteryIcon = watchface.Battery.BatteryIcon == null ? new ImageSet() : watchface.Battery.BatteryIcon;
-            ImageSetForm setForm = new ImageSetForm(watchface, watchface.Battery.BatteryIcon, watch.imagesBuff.DeepCopy(), state);
+            ImageSetForm setForm = new ImageSetForm(watchface, watchface.Battery.BatteryIcon, watch.images.DeepCopy(), state);
             setForm.ShowDialog();
 
             if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
             {
-                watch.imagesBuff = setForm.watch.imagesBuff;
+                watch.images = setForm.watch.images;
                 watch.Battery.BatteryIcon = setForm.imageSet;
                 AddImagesBatteryIconButton.Text = res.GetString("EditImages");
             }
             else if (setForm.delete)
             {
-                watch.imagesBuff = setForm.watch.imagesBuff;
+                watch.images = setForm.watch.images;
                 watch.Battery.BatteryIcon = null;
                 AddImagesBatteryIconButton.Text = res.GetString("AddImages");
             }
@@ -110,21 +110,21 @@ namespace MiBand5WatchFaces.Forms
             WatchFaceLibrary watchface = DeepCopy(watch);
             watchface.Battery.BatteryText = watchface.Battery.BatteryText == null ? new BatteryText() : watchface.Battery.BatteryText;
             watchface.Battery.BatteryText.Coordinates = watchface.Battery.BatteryText.Coordinates == null ? new Number() { notDraw = true } : watchface.Battery.BatteryText.Coordinates;
-            NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Battery.BatteryText.Coordinates, watch.imagesBuff.DeepCopy(), state);
+            NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Battery.BatteryText.Coordinates, watch.images.DeepCopy(), state);
             numForm.ShowDialog();
 
             if (numForm.saved && numForm.number.ImageIndex >= 0)
             {
                 watch.Battery.BatteryText = watch.Battery.BatteryText == null ? new BatteryText() : watch.Battery.BatteryText;
                 watch.Battery.BatteryText.Coordinates = numForm.number;
-                watch.imagesBuff = numForm.watch.imagesBuff;
+                watch.images = numForm.watch.images;
                 AddPreffixButton.Enabled = true;
                 AddSuffixButton.Enabled = true;
                 AddNumberBatteryTextButton.Text = res.GetString("EditNumber");
             }
             else if (numForm.delete)
             {
-                watch.imagesBuff = numForm.watch.imagesBuff;
+                watch.images = numForm.watch.images;
                 watch.Battery.BatteryText.Coordinates = null;
                 AddPreffixButton.Enabled = false;
                 AddSuffixButton.Enabled = false;
@@ -144,18 +144,18 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Battery.BatteryText.PrefixImageIndex >= 0) selImg = new List<int>() { watch.Battery.BatteryText.PrefixImageIndex };
 
-                imgForm = new ImagesForm(watch,watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch,watch.images.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages && imgForm.selectedImages != null)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Battery.BatteryText.PrefixImageIndex = imgForm.selectedImages[0];
                     AddPreffixButton.Text = res.GetString("EditPrefix");
                 }
                 else if (imgForm.saveImages)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Battery.BatteryText.PrefixImageIndex = -10000;
                     AddPreffixButton.Text = res.GetString("AddPrefix");
                 }
@@ -164,18 +164,18 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (watch.Battery.BatteryText.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Battery.BatteryText.SuffixImageIndex };
 
-                imgForm = new ImagesForm(watch,watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch,watch.images.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages && imgForm.selectedImages != null)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Battery.BatteryText.SuffixImageIndex = imgForm.selectedImages[0];
                     AddSuffixButton.Text = res.GetString("EditSuffix");
                 }
                 else if (imgForm.saveImages)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Battery.BatteryText.SuffixImageIndex = -10000;
                     AddSuffixButton.Text = res.GetString("AddSuffix");
                 }
@@ -190,20 +190,20 @@ namespace MiBand5WatchFaces.Forms
             watchface.Battery.Linear = watchface.Battery.Linear == null ? new Scale() : watchface.Battery.Linear;
             StateWatchface stateNew = DeepCopy(state);
             stateNew.BatteryLevel = 100;
-            ScaleForm scaleForm = new ScaleForm(watchface, watchface.Battery.Linear, watch.imagesBuff.DeepCopy(), stateNew);
+            ScaleForm scaleForm = new ScaleForm(watchface, watchface.Battery.Linear, watch.images.DeepCopy(), stateNew);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved && scaleForm.scale.StartImageIndex >= 0)
             {
                 watch.Battery.Linear = scaleForm.scale;
-                watch.imagesBuff = scaleForm.watch.imagesBuff;
+                watch.images = scaleForm.watch.images;
 
                 AddImagesLinearButton.Text = res.GetString("EditImages");
             }
             else if (scaleForm.delete)
             {
                 watch.Battery.Linear = null;
-                watch.imagesBuff = scaleForm.watch.imagesBuff;
+                watch.images = scaleForm.watch.images;
 
                 AddImagesLinearButton.Text = res.GetString("AddImages");
             }

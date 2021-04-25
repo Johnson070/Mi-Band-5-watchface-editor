@@ -47,7 +47,7 @@ namespace MiBand5WatchFaces.Forms
             InitializeComponent();
             this.watch = watch;
             this.state = state;
-            this.watch.imagesBuff = Images;
+            this.watch.images = Images;
             this.Images = Images;
 
             try
@@ -83,7 +83,7 @@ namespace MiBand5WatchFaces.Forms
                 WatchFaceLibrary.typeWatch type = watch.TypeWatch;
                 watch = JsonConvert.DeserializeObject<WatchFaceLibrary>(jsonTextBox.Text);
                 watch.TypeWatch = type;
-                watch.imagesBuff = Images.DeepCopy();
+                watch.images = Images.DeepCopy();
                 Render(state);
             }
             catch (Exception ex)
@@ -99,7 +99,7 @@ namespace MiBand5WatchFaces.Forms
                 try
                 {
                     watch = JsonConvert.DeserializeObject<WatchFaceLibrary>(jsonTextBox.Text);
-                    watch.imagesBuff = Images.DeepCopy();
+                    watch.images = Images.DeepCopy();
                     Render(state);
                     Save = true;
                 }
@@ -117,7 +117,7 @@ namespace MiBand5WatchFaces.Forms
             try
             {
                 watch = JsonConvert.DeserializeObject<WatchFaceLibrary>(jsonTextBox.Text);
-                watch.imagesBuff = Images.DeepCopy();
+                watch.images = Images.DeepCopy();
                 Render(state);
                 Save = true;
             }

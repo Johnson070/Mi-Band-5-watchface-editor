@@ -10457,4 +10457,7 @@
     <value>Открыть директорию</value>
     <comment>Open directory</comment>
   </data>
+  <data name="SettingsEXE.Text" xml:space="preserve">
+    <value>Открыть настройки</value>
+  </data>
 </root>

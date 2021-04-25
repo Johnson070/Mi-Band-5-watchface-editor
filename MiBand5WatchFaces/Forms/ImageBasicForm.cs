@@ -27,7 +27,7 @@ namespace MiBand5WatchFaces.Forms
             InitializeComponent();
             this.watch = watch;
             this.imageBasic = imageBasic;
-            this.watch.imagesBuff = images;
+            this.watch.images = images;
             this.state = state;
 
             if (watch.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
@@ -61,12 +61,12 @@ namespace MiBand5WatchFaces.Forms
                 selImg.Add(imageBasic.ImageIndex);
             }
 
-            ImagesForm imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
+            ImagesForm imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
             imgForm.ShowDialog();
 
             if (imgForm.saveImages == true && imgForm.selectedImages != null)
             {
-                watch.imagesBuff = imgForm.Images;
+                watch.images = imgForm.Images;
                 imageBasic.ImageIndex = imgForm.selectedImages[0];
 
                 PropertiesGroupBox.Enabled = true;
@@ -75,7 +75,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (imgForm.saveImages == true)
             {
-                watch.imagesBuff = imgForm.Images;
+                watch.images = imgForm.Images;
                 imageBasic.ImageIndex = -10000;
 
                 PropertiesGroupBox.Enabled = false;

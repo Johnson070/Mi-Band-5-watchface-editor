@@ -57,7 +57,7 @@ namespace MiBand5WatchFaces.Forms
 
             this.watch = watch;
             this.state = state;
-            this.watch.imagesBuff = Images;
+            this.watch.images = Images;
 
             this.watch.Other = this.watch.Other == null ? new Other() : this.watch.Other;
 
@@ -74,19 +74,19 @@ namespace MiBand5WatchFaces.Forms
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
             watchface.Other.Animation = watchface.Other.Animation == null ? new List<Animation>() { new Animation() { AnimationImages = new ImageSet() } } : watchface.Other.Animation;
-            ImageSetForm setForm = new ImageSetForm(watchface, watchface.Other.Animation[AnimationsListBox.SelectedIndex].AnimationImages, watch.imagesBuff.DeepCopy(), state);
+            ImageSetForm setForm = new ImageSetForm(watchface, watchface.Other.Animation[AnimationsListBox.SelectedIndex].AnimationImages, watch.images.DeepCopy(), state);
             setForm.ShowDialog();
 
             if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
             {
                 watch.Other.Animation = watch.Other.Animation == null ? new List<Animation>() { new Animation() } : watch.Other.Animation;
-                watch.imagesBuff = setForm.watch.imagesBuff;
+                watch.images = setForm.watch.images;
                 watch.Other.Animation[AnimationsListBox.SelectedIndex].AnimationImages = setForm.imageSet;
                 AddImagesAnimationButton.Text = resources.GetString("EditImages");
             }
             else if (setForm.delete)
             {
-                watch.imagesBuff = setForm.watch.imagesBuff;
+                watch.images = setForm.watch.images;
                 watch.Other.Animation.RemoveAt(AnimationsListBox.SelectedIndex);
                 AddImagesAnimationButton.Text = resources.GetString("AddImages");
                 FillListBox();

@@ -106,7 +106,7 @@ namespace MiBand5WatchFaces
         [JsonIgnore]
         public List<Image> AnimationImages = new List<Image>();
         [JsonIgnore]
-        public DefaultDictionary<int, Image> imagesBuff = new DefaultDictionary<int, Image>(() => new Bitmap(1, 1));
+        public DefaultDictionary<int, Image> images = new DefaultDictionary<int, Image>(() => new Bitmap(1, 1));
 
         public typeWatch LoadImages()
         {
@@ -120,7 +120,7 @@ namespace MiBand5WatchFaces
                         TypeWatch = typeWatch.MiBand6;
 
                     temp.SetResolution(96f, 96f);
-                    imagesBuff.Add(pos, temp);
+                    images.Add(pos, temp);
                     stream.Close();
                 }
                 else if (File.Exists(Path.Combine(FilePath, $"{pos}.png")))
@@ -132,7 +132,7 @@ namespace MiBand5WatchFaces
                         TypeWatch = typeWatch.MiBand6;
 
                     temp.SetResolution(96f, 96f);
-                    imagesBuff.Add(pos, temp);
+                    images.Add(pos, temp);
                     stream.Close();
                 }
 

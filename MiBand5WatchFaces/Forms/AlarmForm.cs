@@ -39,7 +39,7 @@ namespace MiBand5WatchFaces.Forms
         {
             InitializeComponent();
             this.watch = watch;
-            this.watch.imagesBuff = Images;
+            this.watch.images = Images;
             this.state = state;
             this.watch.Alarm = this.watch.Alarm == null ? new Alarm() : this.watch.Alarm;
 
@@ -68,19 +68,19 @@ namespace MiBand5WatchFaces.Forms
             StateWatchface newState = DeepCopy(state);
             newState.AlarmIsSet = true;
             newState.AlarmNoTime = false;
-            NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Alarm.Text, watch.imagesBuff.DeepCopy(), newState);
+            NumberFormEdit numForm = new NumberFormEdit(watchface, watchface.Alarm.Text, watch.images.DeepCopy(), newState);
             numForm.ShowDialog();
 
             if (numForm.saved && numForm.number.ImageIndex >= 0)
             {
                 watch.Alarm.Text = numForm.number;
-                watch.imagesBuff = numForm.watch.imagesBuff;
+                watch.images = numForm.watch.images;
                 AddNumberButton.Text = resources.GetString("EditNumber");
                 groupBox1.Enabled = true;
             }
             else if (numForm.delete)
             {
-                watch.imagesBuff = numForm.watch.imagesBuff;
+                watch.images = numForm.watch.images;
                 watch.Alarm.Text = null;
                 AddNumberButton.Text = resources.GetString("AddNumber");
             }
@@ -98,18 +98,18 @@ namespace MiBand5WatchFaces.Forms
                 ImagesForm imgForm;
                 if (watch.Alarm.DelimiterImageIndex >= 0) selImg = new List<int>() { watch.Alarm.DelimiterImageIndex };
 
-                imgForm = new ImagesForm(watch, watch.imagesBuff.DeepCopy(), selImg, true, false);
+                imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
 
                 if (imgForm.saveImages == true && imgForm.selectedImages != null)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Alarm.DelimiterImageIndex = imgForm.selectedImages[0];
                     AddDelimeterButton.Text = resources.GetString("EditDelimeter");
                 }
                 else if (imgForm.saveImages == true)
                 {
-                    watch.imagesBuff = imgForm.Images;
+                    watch.images = imgForm.Images;
                     watch.Alarm.DelimiterImageIndex = -10000;
                     AddDelimeterButton.Text = resources.GetString("AddDelimeter");
                 }
@@ -120,20 +120,20 @@ namespace MiBand5WatchFaces.Forms
                 StateWatchface newState = DeepCopy(state);
                 newState.AlarmIsSet = true;
                 newState.AlarmNoTime = false;
-                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Alarm.ImageOn, watch.imagesBuff.DeepCopy(), newState);
+                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Alarm.ImageOn, watch.images.DeepCopy(), newState);
                 ibForm.ShowDialog();
 
                 if (ibForm.saved)
                 {
                     AddImageOnButton.Text = resources.GetString("EditImageOn");
                     watch.Alarm.ImageOn = ibForm.imageBasic;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
                 else if (ibForm.delete)
                 {
                     AddImageOnButton.Text = resources.GetString("AddImageOn");
                     watch.Alarm.ImageOn = null;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
             }
             else if (name == AddImageOFFButton.Name)
@@ -142,20 +142,20 @@ namespace MiBand5WatchFaces.Forms
                 StateWatchface newState = DeepCopy(state);
                 newState.AlarmIsSet = false;
                 newState.AlarmNoTime = false;
-                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Alarm.ImageOff, watch.imagesBuff.DeepCopy(), newState);
+                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Alarm.ImageOff, watch.images.DeepCopy(), newState);
                 ibForm.ShowDialog();
 
                 if (ibForm.saved)
                 {
                     AddImageOFFButton.Text = resources.GetString("EditImageOff");
                     watch.Alarm.ImageOn = ibForm.imageBasic;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
                 else if (ibForm.delete)
                 {
                     AddImageOFFButton.Text = resources.GetString("AddImageOff");
                     watch.Alarm.ImageOn = null;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
             }
             else if (name == AddImageNoAlarmButton.Name)
@@ -163,20 +163,20 @@ namespace MiBand5WatchFaces.Forms
                 watch.Alarm.ImageNoAlarm = watch.Alarm.ImageNoAlarm == null ? new ImageBasic() : watch.Alarm.ImageNoAlarm;
                 StateWatchface newState = DeepCopy(state);
                 newState.AlarmNoTime = true;
-                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Alarm.ImageNoAlarm, watch.imagesBuff.DeepCopy(), newState);
+                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Alarm.ImageNoAlarm, watch.images.DeepCopy(), newState);
                 ibForm.ShowDialog();
 
                 if (ibForm.saved)
                 {
                     AddImageNoAlarmButton.Text = resources.GetString("EditImageNoAlarm");
                     watch.Alarm.ImageNoAlarm = ibForm.imageBasic;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
                 else if (ibForm.delete)
                 {
                     AddImageNoAlarmButton.Text = resources.GetString("AddImageNoAlarm");
                     watch.Alarm.ImageNoAlarm = null;
-                    watch.imagesBuff = ibForm.watch.imagesBuff;
+                    watch.images = ibForm.watch.images;
                 }
             }
 

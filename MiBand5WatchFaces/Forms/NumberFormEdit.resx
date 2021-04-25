@@ -129,7 +129,7 @@
     <value>12, 12</value>
   </data>
   <data name="selectImages.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 32</value>
+    <value>343, 32</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="selectImages.TabIndex" type="System.Int32, mscorlib">
@@ -295,10 +295,10 @@
     <value>Bottom, Left, Right</value>
   </data>
   <data name="saveBtn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 494</value>
+    <value>3, 346</value>
   </data>
   <data name="saveBtn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>195, 33</value>
+    <value>334, 33</value>
   </data>
   <data name="saveBtn.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
@@ -325,7 +325,7 @@
     <value>True</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>72, 173</value>
+    <value>236, 20</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>60, 18</value>
@@ -352,10 +352,10 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="previewImage.Location" type="System.Drawing.Point, System.Drawing">
-    <value>39, 194</value>
+    <value>202, 41</value>
   </data>
   <data name="previewImage.Size" type="System.Drawing.Size, System.Drawing">
-    <value>126, 294</value>
+    <value>128, 294</value>
   </data>
   <data name="previewImage.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
@@ -495,9 +495,6 @@
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
     <value>13</value>
   </data>
-  <data name="AligmentComboBox.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Left, Right</value>
-  </data>
   <data name="AligmentComboBox.Items" xml:space="preserve">
     <value>TopLeft</value>
   </data>
@@ -520,34 +517,28 @@
     <value>Center</value>
   </data>
   <data name="AligmentComboBox.Items7" xml:space="preserve">
-    <value>HCenter</value>
-  </data>
-  <data name="AligmentComboBox.Items8" xml:space="preserve">
-    <value>VCenter</value>
-  </data>
-  <data name="AligmentComboBox.Items9" xml:space="preserve">
     <value>CenterRight</value>
   </data>
-  <data name="AligmentComboBox.Items10" xml:space="preserve">
+  <data name="AligmentComboBox.Items8" xml:space="preserve">
     <value>Right</value>
   </data>
-  <data name="AligmentComboBox.Items11" xml:space="preserve">
+  <data name="AligmentComboBox.Items9" xml:space="preserve">
     <value>BottomLeft</value>
   </data>
-  <data name="AligmentComboBox.Items12" xml:space="preserve">
+  <data name="AligmentComboBox.Items10" xml:space="preserve">
     <value>Bottom</value>
   </data>
-  <data name="AligmentComboBox.Items13" xml:space="preserve">
+  <data name="AligmentComboBox.Items11" xml:space="preserve">
     <value>BottomCenter</value>
   </data>
-  <data name="AligmentComboBox.Items14" xml:space="preserve">
+  <data name="AligmentComboBox.Items12" xml:space="preserve">
     <value>BottomRight</value>
   </data>
   <data name="AligmentComboBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>88, 23</value>
   </data>
   <data name="AligmentComboBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>106, 26</value>
+    <value>108, 26</value>
   </data>
   <data name="AligmentComboBox.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -574,7 +565,7 @@
     <value>12, 50</value>
   </data>
   <data name="PropertiesGroupBox.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 535</value>
+    <value>343, 387</value>
   </data>
   <data name="PropertiesGroupBox.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -601,10 +592,10 @@
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="deleteButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>12, 595</value>
+    <value>12, 447</value>
   </data>
   <data name="deleteButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 32</value>
+    <value>341, 32</value>
   </data>
   <data name="deleteButton.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -628,7 +619,7 @@
     <value>True</value>
   </metadata>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>230, 596</value>
+    <value>367, 443</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

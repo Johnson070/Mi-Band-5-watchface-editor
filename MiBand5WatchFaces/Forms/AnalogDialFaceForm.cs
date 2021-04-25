@@ -39,7 +39,7 @@ namespace MiBand5WatchFaces.Forms
             InitializeComponent();
             this.watch = watch;
             this.state = state;
-            this.watch.imagesBuff = Images;
+            this.watch.images = Images;
 
             this.watch.AnalogDialFace = this.watch.AnalogDialFace == null ? new AnalogDialFace() : this.watch.AnalogDialFace;
 
@@ -105,20 +105,20 @@ namespace MiBand5WatchFaces.Forms
         private void AddCenterImageMinutesButton_Click(object sender, EventArgs e)
         {
             watch.AnalogDialFace.Minutes.CenterImage = watch.AnalogDialFace.Minutes.CenterImage == null ? new ImageBasic() : watch.AnalogDialFace.Minutes.CenterImage;
-            ImageBasicForm ibForm = new ImageBasicForm(watch, watch.AnalogDialFace.Minutes.CenterImage, watch.imagesBuff.DeepCopy(), state);
+            ImageBasicForm ibForm = new ImageBasicForm(watch, watch.AnalogDialFace.Minutes.CenterImage, watch.images.DeepCopy(), state);
             ibForm.ShowDialog();
 
             if (ibForm.saved)
             {
                 AddCenterImageMinutesButton.Text = res.GetString("EditCenterImage");
                 watch.AnalogDialFace.Minutes.CenterImage = ibForm.imageBasic;
-                watch.imagesBuff = ibForm.watch.imagesBuff;
+                watch.images = ibForm.watch.images;
             }
             else if (ibForm.delete)
             {
                 AddCenterImageMinutesButton.Text = res.GetString("AddCenterImage");
                 watch.AnalogDialFace.Minutes.CenterImage = null;
-                watch.imagesBuff = ibForm.watch.imagesBuff;
+                watch.images = ibForm.watch.images;
             }
             Render(state);
         }
@@ -161,20 +161,20 @@ namespace MiBand5WatchFaces.Forms
         private void AddCenterImageHoursButton_Click(object sender, EventArgs e)
         {
             watch.AnalogDialFace.Hours.CenterImage = watch.AnalogDialFace.Hours.CenterImage == null ? new ImageBasic() : watch.AnalogDialFace.Hours.CenterImage;
-            ImageBasicForm ibForm = new ImageBasicForm(watch, watch.AnalogDialFace.Hours.CenterImage, watch.imagesBuff.DeepCopy(), state);
+            ImageBasicForm ibForm = new ImageBasicForm(watch, watch.AnalogDialFace.Hours.CenterImage, watch.images.DeepCopy(), state);
             ibForm.ShowDialog();
 
             if (ibForm.saved)
             {
                 AddCenterImageHoursButton.Text = res.GetString("EditCenterImage");
                 watch.AnalogDialFace.Hours.CenterImage = ibForm.imageBasic;
-                watch.imagesBuff = ibForm.watch.imagesBuff;
+                watch.images = ibForm.watch.images;
             }
             else if (ibForm.delete)
             {
                 AddCenterImageHoursButton.Text = res.GetString("AddCenterImage");
                 watch.AnalogDialFace.Hours.CenterImage = null;
-                watch.imagesBuff = ibForm.watch.imagesBuff;
+                watch.images = ibForm.watch.images;
             }
             Render(state);
         }

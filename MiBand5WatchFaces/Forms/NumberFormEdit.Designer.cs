@@ -218,7 +218,6 @@
             // 
             // AligmentComboBox
             // 
-            resources.ApplyResources(this.AligmentComboBox, "AligmentComboBox");
             this.AligmentComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AligmentComboBox.FormattingEnabled = true;
             this.AligmentComboBox.Items.AddRange(new object[] {
@@ -234,9 +233,8 @@
             resources.GetString("AligmentComboBox.Items9"),
             resources.GetString("AligmentComboBox.Items10"),
             resources.GetString("AligmentComboBox.Items11"),
-            resources.GetString("AligmentComboBox.Items12"),
-            resources.GetString("AligmentComboBox.Items13"),
-            resources.GetString("AligmentComboBox.Items14")});
+            resources.GetString("AligmentComboBox.Items12")});
+            resources.ApplyResources(this.AligmentComboBox, "AligmentComboBox");
             this.AligmentComboBox.Name = "AligmentComboBox";
             this.AligmentComboBox.TextChanged += new System.EventHandler(this.alignChanged);
             // 

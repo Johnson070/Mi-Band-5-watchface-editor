@@ -102,7 +102,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void SelectBackgroundColor_Click(object sender, EventArgs e)
         {
-            ColorDialog color = new ColorDialog();
+            ColorDialog color = new ColorDialog() { Color = convertColorFromString(background.BackgroundColor)};
 
             if (color.ShowDialog() == DialogResult.OK)
             {
@@ -142,8 +142,17 @@ namespace MiBand5WatchFaces.Forms
             images = img.addImage(files[0]);
             ImageBasic pic = new ImageBasic();
             pic.ImageIndex = images.Keys.Count == 0 ? images.Count : images.Keys.Max() + 1;
-            pic.X = picPanel.Name == ImagePic.Name ? 0 : 18;
-            pic.Y = picPanel.Name == ImagePic.Name ? 0 : 17;
+
+            if (typeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                pic.X = picPanel.Name == ImagePic.Name ? 0 : 21;
+                pic.Y = picPanel.Name == ImagePic.Name ? 0 : 30;
+            }
+            else
+            {
+                pic.X = picPanel.Name == ImagePic.Name ? 0 : 18;
+                pic.Y = picPanel.Name == ImagePic.Name ? 0 : 17;
+            }
 
             if (images.ContainsKey(pic.ImageIndex))
             {
@@ -182,8 +191,17 @@ namespace MiBand5WatchFaces.Forms
 
                 ImageBasic pic = new ImageBasic();
                 pic.ImageIndex = imgForm.selectedImages[0];
-                pic.X = picPanel.Name == ImagePic.Name ? 0 : 18;
-                pic.Y = picPanel.Name == ImagePic.Name ? 0 : 17;
+                
+                if (typeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+                {
+                    pic.X = picPanel.Name == ImagePic.Name ? 0 : 21;
+                    pic.Y = picPanel.Name == ImagePic.Name ? 0 : 30;
+                }
+                else
+                {
+                    pic.X = picPanel.Name == ImagePic.Name ? 0 : 18;
+                    pic.Y = picPanel.Name == ImagePic.Name ? 0 : 17;
+                }
 
                 if (images.ContainsKey(pic.ImageIndex))
                 {
@@ -209,9 +227,18 @@ namespace MiBand5WatchFaces.Forms
             images.Add(images.Keys.Count == 0 ? images.Count : images.Keys.Max() + 1, prev);
             ImageBasic pic = new ImageBasic();
             pic.ImageIndex = images.Keys.Count == 0 ? images.Count : images.Keys.Max();
-            pic.X = 18;
-            pic.Y = 17;
 
+            if (typeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+            {
+                pic.X = 21;
+                pic.Y = 30;
+            }
+            else
+            {
+                pic.X = 18;
+                pic.Y = 17;
+            }
+            
             background.Preview1 = pic;
             background.Preview2 = pic;
             background.Preview3 = pic;

@@ -190,7 +190,7 @@
     <value>1</value>
   </data>
   <data name="addPreffixStepsButton.Text" xml:space="preserve">
-    <value>Add preffix</value>
+    <value>Add prefix</value>
   </data>
   <data name="&gt;&gt;addPreffixStepsButton.Name" xml:space="preserve">
     <value>addPreffixStepsButton</value>

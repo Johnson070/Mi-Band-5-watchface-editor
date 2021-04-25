@@ -34,7 +34,7 @@ namespace MiBand5WatchFaces
             InitializeComponent();
             this.watch = watch;
             this.circleScale = circleScale;
-            this.watch.imagesBuff = images;
+            this.watch.images = images;
             this.state = state;
 
             startAngleNum.Value = circleScale.StartAngle;

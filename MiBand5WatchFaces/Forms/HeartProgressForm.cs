@@ -39,7 +39,7 @@ namespace MiBand5WatchFaces.Forms
         {
             InitializeComponent();
             this.watch = watch;
-            this.watch.imagesBuff = Images;
+            this.watch.images = Images;
             this.state = state;
             this.watch.HeartProgress = this.watch.HeartProgress == null ? new HeartProgress() : this.watch.HeartProgress;
 
@@ -75,20 +75,20 @@ namespace MiBand5WatchFaces.Forms
             watchface.HeartProgress.Linear = watchface.HeartProgress.Linear == null ? new Scale() : watchface.HeartProgress.Linear;
             StateWatchface heartState= DeepCopy(state);
             heartState.Pulse = 150;
-            ScaleForm scaleForm = new ScaleForm(watchface, watchface.HeartProgress.Linear, watch.imagesBuff.DeepCopy(), heartState);
+            ScaleForm scaleForm = new ScaleForm(watchface, watchface.HeartProgress.Linear, watch.images.DeepCopy(), heartState);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
             {
                 watch.HeartProgress.Linear = scaleForm.scale;
-                watch.imagesBuff = scaleForm.watch.imagesBuff;
+                watch.images = scaleForm.watch.images;
 
                 AddLinearImages.Text = resources.GetString("EditImages");
             }
             else if (scaleForm.delete)
             {
                 watch.HeartProgress.Linear = null;
-                watch.imagesBuff = scaleForm.watch.imagesBuff;
+                watch.images = scaleForm.watch.images;
 
                 AddLinearImages.Text = resources.GetString("AddImages");
             }
@@ -102,20 +102,20 @@ namespace MiBand5WatchFaces.Forms
             watchface.HeartProgress.Scale = watchface.HeartProgress.Scale == null ? new Scale() : watchface.HeartProgress.Scale;
             StateWatchface heartState = DeepCopy(state);
             heartState.Pulse = 150;
-            ScaleForm scaleForm = new ScaleForm(watchface, watchface.HeartProgress.Scale, watch.imagesBuff.DeepCopy(), heartState);
+            ScaleForm scaleForm = new ScaleForm(watchface, watchface.HeartProgress.Scale, watch.images.DeepCopy(), heartState);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved == true && scaleForm.scale.StartImageIndex >= 0)
             {
                 watch.HeartProgress.Scale = scaleForm.scale;
-                watch.imagesBuff = scaleForm.watch.imagesBuff;
+                watch.images = scaleForm.watch.images;
 
                 AddScaleButton.Text = resources.GetString("EditImages");
             }
             else if (scaleForm.delete)
             {
                 watch.HeartProgress.Scale = null;
-                watch.imagesBuff = scaleForm.watch.imagesBuff;
+                watch.images = scaleForm.watch.images;
 
                 AddScaleButton.Text = resources.GetString("AddImages");
             }
@@ -127,19 +127,19 @@ namespace MiBand5WatchFaces.Forms
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
             watchface.HeartProgress.LineScale = watchface.HeartProgress.LineScale == null ? new ImageSet() : watchface.HeartProgress.LineScale;
-            ImageSetForm setForm = new ImageSetForm(watchface, watchface.HeartProgress.LineScale, watch.imagesBuff.DeepCopy(), state);
+            ImageSetForm setForm = new ImageSetForm(watchface, watchface.HeartProgress.LineScale, watch.images.DeepCopy(), state);
             setForm.ShowDialog();
 
             if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
             {
-                watch.imagesBuff = setForm.watch.imagesBuff;
+                watch.images = setForm.watch.images;
                 watch.HeartProgress.LineScale = watch.HeartProgress.LineScale == null ? new ImageSet() : watch.HeartProgress.LineScale;
                 watch.HeartProgress.LineScale = setForm.imageSet;
                 AddLineScaleButton.Text = resources.GetString("EditImages");
             }
             else if (setForm.delete)
             {
-                watch.imagesBuff = setForm.watch.imagesBuff;
+                watch.images = setForm.watch.images;
                 watch.HeartProgress.LineScale = null;
                 AddLineScaleButton.Text = resources.GetString("AddImages");
             }
@@ -187,20 +187,20 @@ namespace MiBand5WatchFaces.Forms
             WatchFaceLibrary watchface = DeepCopy(watch);
             watchface.HeartProgress.CircleScale = watchface.HeartProgress.CircleScale == null ? new CircleScale() : watchface.HeartProgress.CircleScale;
 
-            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.HeartProgress.CircleScale, watch.imagesBuff.DeepCopy(), state);
+            CircleScaleForm scaleForm = new CircleScaleForm(watchface, watchface.HeartProgress.CircleScale, watch.images.DeepCopy(), state);
             scaleForm.ShowDialog();
 
             if (scaleForm.saved)
             {
                 watch.HeartProgress.CircleScale = scaleForm.circleScale;
-                watch.imagesBuff = scaleForm.watch.imagesBuff;
+                watch.images = scaleForm.watch.images;
 
                 AddCircleScale.Text = resources.GetString("EditCircleScale");
             }
             else if (scaleForm.delete)
             {
                 watch.HeartProgress.CircleScale = null;
-                watch.imagesBuff = scaleForm.watch.imagesBuff;
+                watch.images = scaleForm.watch.images;
 
                 AddCircleScale.Text = resources.GetString("AddCircleScale");
             }
