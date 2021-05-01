@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace MiBand5WatchFaces.Forms
         public WatchFaceLibrary watch;
         public ImageBasic imageBasic;
         ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+        string oldImageBasic;
 
         StateWatchface state;
         bool startForm = true;
@@ -48,6 +50,8 @@ namespace MiBand5WatchFaces.Forms
 
                 Render();
             }
+
+            oldImageBasic = JsonConvert.SerializeObject(imageBasic, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
 
             startForm = false;
         }

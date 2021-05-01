@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -16,6 +17,7 @@ namespace MiBand5WatchFaces.Forms
         public Scale scale;
         StateWatchface state;
         ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+        string oldScale;
 
         bool startForm = true;
         bool moving;
@@ -58,6 +60,8 @@ namespace MiBand5WatchFaces.Forms
 
                 this.Size += new Size(0, 40);
             }
+
+            oldScale = JsonConvert.SerializeObject(scale, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
 
             Render();
             startForm = false;
@@ -142,7 +146,7 @@ namespace MiBand5WatchFaces.Forms
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (PropertiesGroupBox.Enabled)
-                if (saved == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (saved == false && oldScale != JsonConvert.SerializeObject(scale, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore })&& MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     saved = true;
                     delete = false;

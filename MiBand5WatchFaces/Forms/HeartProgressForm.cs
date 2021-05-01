@@ -19,7 +19,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
-
+        string oldHeart;
 
         public void Render(StateWatchface state = null)
         {
@@ -48,6 +48,8 @@ namespace MiBand5WatchFaces.Forms
                 Size += watch.SizeMiBand6Rasn;
             }
             else tabControl1.TabPages.Remove(tabControl1.TabPages["CircleScale"]);
+
+            oldHeart = JsonConvert.SerializeObject(this.watch.HeartProgress, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Render(state);
 
@@ -156,7 +158,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldHeart != JsonConvert.SerializeObject(this.watch.HeartProgress, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
 

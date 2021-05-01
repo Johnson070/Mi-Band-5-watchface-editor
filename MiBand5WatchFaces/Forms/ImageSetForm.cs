@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,7 @@ namespace MiBand5WatchFaces.Forms
         public WatchFaceLibrary watch;
         public ImageSet imageSet;
         ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+        string oldImageSet;
 
         StateWatchface state;
         bool startForm = true;
@@ -57,6 +59,8 @@ namespace MiBand5WatchFaces.Forms
 
                 Render();
             }
+
+            oldImageSet = JsonConvert.SerializeObject(imageSet, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
 
             startForm = false;
         }
@@ -107,7 +111,7 @@ namespace MiBand5WatchFaces.Forms
         private void ImageSetForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (PropertiesGroupBox.Enabled)
-                if (saved == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (saved == false && oldImageSet != JsonConvert.SerializeObject(imageSet, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     saved = true;
                     delete = false;

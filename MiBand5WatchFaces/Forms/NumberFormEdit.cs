@@ -17,6 +17,7 @@ namespace MiBand5WatchFaces
         public Number number;
         StateWatchface state;
         ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+        string oldNumber;
 
         int countImages = -1;
         bool startForm = true;
@@ -60,6 +61,8 @@ namespace MiBand5WatchFaces
 
                 Render();
             }
+
+            oldNumber = JsonConvert.SerializeObject(number, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
 
             startForm = false;
         }
@@ -191,7 +194,7 @@ namespace MiBand5WatchFaces
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (PropertiesGroupBox.Enabled)
-                if (saved == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                if (saved == false && oldNumber != JsonConvert.SerializeObject(number, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
                     saved = true;
                     delete = false;

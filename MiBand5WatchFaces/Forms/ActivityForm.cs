@@ -19,6 +19,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        string oldActivity = "";
 
         public static T DeepCopy<T>(T other)
         {
@@ -49,6 +50,8 @@ namespace MiBand5WatchFaces.Forms
             }
 
             Render(state);
+
+            oldActivity = JsonConvert.SerializeObject(this.watch.Activity, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             stepsCheckBox.Checked = watch.Activity?.Steps != null ? true : false;
             caloriesCheckBox.Checked = watch.Activity.Calories != null ? true : false;
@@ -545,7 +548,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void ActivityForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldActivity != JsonConvert.SerializeObject(watch.Activity, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (stepsCheckBox.Checked == false) watch.Activity.Steps = null;

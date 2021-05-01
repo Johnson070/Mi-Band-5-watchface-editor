@@ -611,14 +611,12 @@ namespace MiBand5WatchFaces
         [JsonProperty("Number")]
         public Number Number;
 
-        [JsonIgnore]
-        private Number numberCN;
         [JsonProperty("NumberCN")]
-        public Number NumberCN
-        {
-            get { return numberCN; }
-            set { NumberEN = value; numberCN = value; }
-        }
+        public Number NumberCN;
+        //{
+        //    get { return numberCN; }
+        //    set { NumberEN = numberCN != null ? value : NumberEN; numberCN = value; }
+        //}
 
         [JsonProperty("NumberEN")]
         public Number NumberEN;
@@ -641,14 +639,12 @@ namespace MiBand5WatchFaces
         [JsonProperty("Number")]
         public Number Number;
 
-        [JsonIgnore]
-        private Number numberCN;
         [JsonProperty("NumberCN")]
-        public Number NumberCN
-        {
-            get { return numberCN; }
-            set { NumberEN = value; numberCN = value; }
-        }
+        public Number NumberCN;
+        //{
+        //    get { return numberCN; }
+        //    set { NumberEN = numberCN != null ? value : NumberEN; numberCN = value; }
+        //}
 
         [JsonProperty("NumberEN")]
         public Number NumberEN;

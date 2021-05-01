@@ -21,6 +21,7 @@ namespace MiBand5WatchFaces.Forms
         public bool Save;
         statusForm status;
         Status buffer;
+        string oldJson;
 
         public enum statusForm
         {
@@ -71,6 +72,8 @@ namespace MiBand5WatchFaces.Forms
             {
                 Size += watch.SizeMiBand6Rasn;
             }
+
+            oldJson = JsonConvert.SerializeObject(this.watch.Status, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Render(state);
 
@@ -323,7 +326,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldJson != JsonConvert.SerializeObject(this.watch.Status, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (watch.Status.Bluetooth != null)

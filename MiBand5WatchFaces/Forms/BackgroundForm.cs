@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,6 +18,7 @@ namespace MiBand5WatchFaces.Forms
         public bool Save;
         WatchFaceLibrary.typeWatch typeWatch;
         ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+        string oldBackground = "";
 
         VisualRender visual;
         Image prev;
@@ -28,6 +30,7 @@ namespace MiBand5WatchFaces.Forms
             this.typeWatch = typeWatch;
             this.background = background == null ? new Background() : background;
             this.prev = prev;
+            oldBackground = JsonConvert.SerializeObject(background, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore});
             visual = new VisualRender(images, typeWatch);
 
             if (typeWatch == WatchFaceLibrary.typeWatch.MiBand6)
@@ -260,7 +263,8 @@ namespace MiBand5WatchFaces.Forms
 
         private void BackgroundForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            string newJson = JsonConvert.SerializeObject(background, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+            if (Save == false && oldBackground != newJson && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (UseBackgroundColor.Checked) background.Image = null;

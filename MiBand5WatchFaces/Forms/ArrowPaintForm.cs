@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,6 +14,7 @@ namespace MiBand5WatchFaces.Forms
     public partial class ArrowPaintForm : Form
     {
         ComponentResourceManager res = new ComponentResourceManager(typeof(Resources.Resource1));
+        string oldShape;
 
         Graphics arrow;
         Bitmap Preview;
@@ -55,6 +57,8 @@ namespace MiBand5WatchFaces.Forms
 
             fillListBox();
             panelArrow.Refresh();
+
+            oldShape = JsonConvert.SerializeObject(shape, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
@@ -159,7 +163,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void ArrowPaintForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldShape != JsonConvert.SerializeObject(shape, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
             }

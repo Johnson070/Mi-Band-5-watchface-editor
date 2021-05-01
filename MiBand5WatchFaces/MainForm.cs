@@ -87,7 +87,7 @@ namespace MiBand5WatchFaces
                     saveToolStripMenuItem.PerformClick();
 
                 OpenFileDialog file = new OpenFileDialog();
-                file.Filter = "json watchface (*.json)|*.json"+((Directory.Exists("WatchFace6") && File.Exists("WatchFace6\\WatchFace.exe") || watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5) ? "|packed bin file (*.bin)|*.bin" : "");
+                file.Filter = "json watchface (*.json)|*.json" + ((Directory.Exists("WatchFace6") && File.Exists("WatchFace6\\WatchFace.exe") || watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5) ? "|packed bin file (*.bin)|*.bin" : "");
                 if (file.ShowDialog() == DialogResult.OK)
                 {
                     if (Path.GetExtension(file.FileName) == ".bin")
@@ -169,7 +169,7 @@ namespace MiBand5WatchFaces
             }
         }
 
-        private void getTypeWatchfaceElement(string obj,out object item,string value)
+        private void getTypeWatchfaceElement(string obj, out object item, string value)
         {
             if (obj == "Background") item = JsonConvert.DeserializeObject<Background>(value);
             else if (obj == "Time") item = JsonConvert.DeserializeObject<Time>(value);
@@ -457,7 +457,7 @@ namespace MiBand5WatchFaces
             updateListElements();
         }
 
-        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        private void saveAsToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Clipboard.SetText();
             //MessageBox.Show("Json saved to clipboard!", "Succeful!");
@@ -469,6 +469,7 @@ namespace MiBand5WatchFaces
                 {
                     Save = true;
                     string path = Path.GetDirectoryName(saveFile.FileName);
+                    PathFile = path;
                     foreach (KeyValuePair<int, Image> img in watchFace.images)
                         img.Value.Save(Path.Combine(path, $"{img.Key:0000}.png"), ImageFormat.Png);
 
@@ -504,6 +505,37 @@ namespace MiBand5WatchFaces
                 }
                 else return;
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), res.GetString("ErrorSave"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Enabled = true;
+                SaveFileStatus.Text = "";
+            }
+        }
+
+        private void saveToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (PathFile == "" || PathFile == null)
+            {
+                saveAsToolStripMenuItem.PerformClick();
+                return;
+            }
+
+            try
+            {
+                Save = true;
+                foreach (KeyValuePair<int, Image> img in watchFace.images)
+                    img.Value.Save(Path.Combine(PathFile, $"{img.Key:0000}.png"), ImageFormat.Png);
+
+
+                WatchFaceLibrary saveWatch = DeepCopy(watchFace);
+                saveWatch.TypeWatch = WatchFaceLibrary.typeWatch.None;
+                var pathName = PathFile.Split(new string[] { "\\" }, StringSplitOptions.RemoveEmptyEntries);
+
+                File.WriteAllText(Path.Combine(PathFile, $"{pathName[pathName.Length - 1]}.json"), JsonConvert.SerializeObject(saveWatch, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+
+                MessageBox.Show($"Saved: \n{PathFile}\\{pathName[pathName.Length - 1]}.json", res.GetString("Succeful"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -896,21 +928,8 @@ namespace MiBand5WatchFaces
 
         private void supportMeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-            Process myProcess = new Process();
-
-            try
-            {
-                // true is the default, but it is important not to set it to false
-                myProcess.StartInfo.UseShellExecute = true;
-                myProcess.StartInfo.FileName = "https://www.donationalerts.com/r/johnson070";
-                myProcess.Start();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine(ex.Message);
-            }
-
+            SupportAuthorForm supportAuthorForm = new SupportAuthorForm();
+            supportAuthorForm.ShowDialog();
         }
 
         private void wkiProgramToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1081,6 +1100,61 @@ namespace MiBand5WatchFaces
         {
             SettingsForm settingsForm = new SettingsForm();
             settingsForm.ShowDialog();
+        }
+
+        private void saveBinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (PathFile == "" || PathFile == null)
+            {
+                saveAsToolStripMenuItem.PerformClick();
+                return;
+            }
+
+            try
+            {
+                Save = true;
+                foreach (KeyValuePair<int, Image> img in watchFace.images)
+                    img.Value.Save(Path.Combine(PathFile, $"{img.Key:0000}.png"), ImageFormat.Png);
+
+
+                WatchFaceLibrary saveWatch = DeepCopy(watchFace);
+                saveWatch.TypeWatch = WatchFaceLibrary.typeWatch.None;
+                var pathName = PathFile.Split(new string[] { "\\" }, StringSplitOptions.RemoveEmptyEntries);
+
+                File.WriteAllText(Path.Combine(PathFile, $"{pathName[pathName.Length - 1]}.json"), JsonConvert.SerializeObject(saveWatch, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }));
+
+                WatchFaceEXE.Close();
+                this.Enabled = false;
+                WatchFaceEXE.StartInfo.FileName = $"WatchFace{(watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 ? "6" : "")}/WatchFace.exe";
+                //avrdude.StartInfo.Arguments = "-v";
+                WatchFaceEXE.StartInfo.Arguments = $"WatchFace{(watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 ? "6" : "")}/WatchFace.exe \"{Path.Combine(PathFile, pathName[pathName.Length - 1])}.json\"";
+                WatchFaceEXE.StartInfo.UseShellExecute = false;
+                WatchFaceEXE.StartInfo.RedirectStandardOutput = true;
+                WatchFaceEXE.StartInfo.RedirectStandardInput = true;
+                WatchFaceEXE.StartInfo.RedirectStandardError = true;
+                WatchFaceEXE.StartInfo.CreateNoWindow = true;
+                WatchFaceEXE.StartInfo.StandardOutputEncoding = Encoding.UTF8;
+                WatchFaceEXE.StartInfo.ErrorDialog = false;
+
+                WatchFaceEXE.Start();
+                WatchFaceEXE.BeginOutputReadLine();
+                //WatchFaceEXE.WaitForExit();
+                SaveFileStatus.Text = "";
+
+                MessageBox.Show($"Saved: \n{PathFile}\\{pathName[pathName.Length - 1]}.json\n{PathFile}\\{pathName[pathName.Length - 1]}.bin", res.GetString("Succeful"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                //if (File.Exists(Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.bin")) {//Path.GetExtension(saveFile.FileName) == ".bin"
+                //    File.Move(Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.bin"), Path.Combine(path, Path.GetFileNameWithoutExtension(saveFile.FileName) + ".bin"));
+                //    File.Delete(Path.GetFileNameWithoutExtension(saveFile.FileName) + "_packed.log"); 
+                //}
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), res.GetString("ErrorSave"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.Enabled = true;
+                SaveFileStatus.Text = "";
+            }
         }
     }
 

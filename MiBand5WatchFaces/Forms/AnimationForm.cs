@@ -19,6 +19,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        string oldAnimation;
 
         public void Render(StateWatchface state = null, bool Animation = false)
         {
@@ -65,6 +66,8 @@ namespace MiBand5WatchFaces.Forms
             {
                 Size += watch.SizeMiBand6Rasn;
             }
+
+            oldAnimation = JsonConvert.SerializeObject(this.watch.Other, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Render(state);
             FillListBox();
@@ -189,7 +192,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void AnimationForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldAnimation != JsonConvert.SerializeObject(this.watch.Other, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (watch.Other.Animation != null)

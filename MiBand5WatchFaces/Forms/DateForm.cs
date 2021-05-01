@@ -19,6 +19,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        string oldDate;
 
         public void Render(StateWatchface state = null)
         {
@@ -47,6 +48,8 @@ namespace MiBand5WatchFaces.Forms
             {
                 Size += watch.SizeMiBand6Rasn;
             }
+
+            oldDate = JsonConvert.SerializeObject(this.watch.Date, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Render(state);
 
@@ -206,6 +209,7 @@ namespace MiBand5WatchFaces.Forms
 
                     if (watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6) watch.Date.MonthAndDayAndYear.OneLine.NumberEN = numForm.number;
                     else watch.Date.MonthAndDayAndYear.OneLine.Number = numForm.number;
+
                     watch.images = numForm.watch.images;
                     AddMonthAndDayOnelineButton.Text = res.GetString("EditMonthAndDay");
                     AddOnelineDelimeterImageButton.Enabled = true;
@@ -431,7 +435,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void DateForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldDate != JsonConvert.SerializeObject(this.watch.Date, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (watch.Date.MonthAndDayAndYear != null)

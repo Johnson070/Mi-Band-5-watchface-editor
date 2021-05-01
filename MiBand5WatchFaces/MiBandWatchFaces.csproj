@@ -270,6 +270,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="SupportAuthorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SupportAuthorForm.Designer.cs">
+      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="VisualRender.cs" />
     <Compile Include="WatchFaceLibrary.cs" />
     <Compile Include="Forms\WatchfaceState.cs">
@@ -540,6 +546,15 @@
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource1.ru.resx" />
+    <EmbeddedResource Include="SupportAuthorForm.en.resx">
+      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportAuthorForm.resx">
+      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportAuthorForm.ru.resx">
+      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">

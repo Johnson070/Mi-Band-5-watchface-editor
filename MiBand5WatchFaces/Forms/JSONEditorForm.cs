@@ -20,6 +20,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        string oldJson;
 
         public void Render(StateWatchface state = null)
         {
@@ -55,6 +56,7 @@ namespace MiBand5WatchFaces.Forms
                 WatchFaceLibrary saveWatch = DeepCopy(watch);
                 saveWatch.TypeWatch = WatchFaceLibrary.typeWatch.None;
                 jsonTextBox.Text = JsonConvert.SerializeObject(saveWatch, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore });
+                oldJson = jsonTextBox.Text;
             }
             catch { }
 
@@ -94,21 +96,33 @@ namespace MiBand5WatchFaces.Forms
 
         private void JSONEditorForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            try
             {
-                try
+                WatchFaceLibrary saveWatch = DeepCopy(watch);
+                saveWatch.TypeWatch = WatchFaceLibrary.typeWatch.None;
+
+                if (Save == false && oldJson != JsonConvert.SerializeObject(saveWatch, Formatting.Indented, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
-                    watch = JsonConvert.DeserializeObject<WatchFaceLibrary>(jsonTextBox.Text);
-                    watch.images = Images.DeepCopy();
-                    Render(state);
-                    Save = true;
+                    try
+                    {
+                        watch = JsonConvert.DeserializeObject<WatchFaceLibrary>(jsonTextBox.Text);
+                        watch.images = Images.DeepCopy();
+                        Render(state);
+                        Save = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.ToString(), res.GetString("Error"));
+                        e.Cancel = true;
+                        return;
+                    }
                 }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.ToString(), res.GetString("Error"));
-                    e.Cancel = true;
-                    return;
-                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), res.GetString("Error"));
+                e.Cancel = true;
+                return;
             }
         }
 

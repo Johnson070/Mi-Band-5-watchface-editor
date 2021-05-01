@@ -19,6 +19,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        string oldDial;
 
         public void Render(StateWatchface state = null)
         {
@@ -47,6 +48,8 @@ namespace MiBand5WatchFaces.Forms
             {
                 Size += watch.SizeMiBand6Rasn;
             }
+
+            oldDial = JsonConvert.SerializeObject(this.watch.AnalogDialFace, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Render(state);
 
@@ -248,7 +251,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void AnalogDialFaceForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldDial != JsonConvert.SerializeObject(this.watch.AnalogDialFace, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (hoursCheckbox.Checked == false || watch.AnalogDialFace?.Hours?.Shape == null)

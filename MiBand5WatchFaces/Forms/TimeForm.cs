@@ -15,6 +15,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        string oldTime = "";
 
         public static T DeepCopy<T>(T other)
         {
@@ -38,7 +39,9 @@ namespace MiBand5WatchFaces.Forms
             {
                 Size += watch.SizeMiBand6Rasn;
             }
-            
+
+            oldTime = JsonConvert.SerializeObject(this.watch.Time, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
+
             Render(state);
 
             if (watch.Time != null)
@@ -312,7 +315,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void TimeForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldTime != JsonConvert.SerializeObject(watch.Time, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 if (watch.Time?.Hours?.Ones == null || watch.Time?.Hours?.Tens == null || watch.Time?.Minutes?.Tens == null || watch.Time?.Minutes?.Ones == null)
                 {

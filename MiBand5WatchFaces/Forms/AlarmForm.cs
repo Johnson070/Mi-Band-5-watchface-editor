@@ -19,7 +19,7 @@ namespace MiBand5WatchFaces.Forms
         VisualRender render;
         public bool Save;
         ComponentResourceManager resources = new ComponentResourceManager(typeof(Resources.Resource1));
-
+        string oldAlarm;
 
         public void Render(StateWatchface state = null)
         {
@@ -47,6 +47,8 @@ namespace MiBand5WatchFaces.Forms
             {
                 Size += watch.SizeMiBand6Rasn;
             }
+
+            oldAlarm = JsonConvert.SerializeObject(this.watch.Alarm, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Render(state);
 
@@ -193,7 +195,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void AlarmForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldAlarm != JsonConvert.SerializeObject(this.watch.Alarm, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(resources.GetString("ExitMessage"), resources.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (watch.Alarm.Text == null)

@@ -19,6 +19,7 @@ namespace MiBand5WatchFaces.Forms
         StateWatchface state;
         VisualRender render;
         public bool Save;
+        string oldWeather;
 
         public void Render(StateWatchface state = null)
         {
@@ -47,6 +48,8 @@ namespace MiBand5WatchFaces.Forms
             {
                 Size += watch.SizeMiBand6Rasn;
             }
+
+            oldWeather = JsonConvert.SerializeObject(this.watch.Weather, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore });
 
             Render(state);
 
@@ -566,7 +569,7 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (btn.Name == AddDegreeImageTemperatureCurrentButton.Name)
             {
-                if (watch.Weather.Temperature.Current.MinusImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Current.MinusImageIndex };
+                if (watch.Weather.Temperature.Current.DegreesImageIndex >= 0) selImg = new List<int>() { watch.Weather.Temperature.Current.DegreesImageIndex };
 
                 imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
                 imgForm.ShowDialog();
@@ -728,7 +731,7 @@ namespace MiBand5WatchFaces.Forms
 
         private void WeatherForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (Save == false && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (Save == false && oldWeather != JsonConvert.SerializeObject(this.watch.Weather, Formatting.None, new JsonSerializerSettings { NullValueHandling = NullValueHandling.Ignore })  && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
             {
                 Save = true;
                 if (watch.Weather.Icon == null || WeatherIconCheckbox.Checked == false)
