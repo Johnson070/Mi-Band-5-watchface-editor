@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +26,6 @@
     <MinimumRequiredVersion>1.0.0.0</MinimumRequiredVersion>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
@@ -55,7 +55,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -77,6 +77,9 @@
   <PropertyGroup>
     <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -91,19 +94,13 @@
       <Private>False</Private>
     </Reference>
     <Reference Include="System.Runtime.Serialization" />
-    <Reference Include="System.Text.Encoding.CodePages, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Text.Encoding.CodePages.5.0.0\lib\net46\System.Text.Encoding.CodePages.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
-    <Reference Include="System.Xaml" />
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Forms\CircleScaleForm.cs">
@@ -177,6 +174,11 @@
     </Compile>
     <Compile Include="Forms\ImageSetForm.Designer.cs">
       <DependentUpon>ImageSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InputForm1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InputForm.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\JSONEditorForm.cs">
       <SubType>Form</SubType>
@@ -284,6 +286,27 @@
     <Compile Include="Forms\WatchfaceState.Designer.cs">
       <DependentUpon>WatchfaceState.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Forms\ActivityForm.zh-CN.resx">
+      <DependentUpon>ActivityForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AlarmForm.zh-CN.resx">
+      <DependentUpon>AlarmForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnalogDialFaceForm.zh-CN.resx">
+      <DependentUpon>AnalogDialFaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AnimationForm.zh-CN.resx">
+      <DependentUpon>AnimationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ArrowPaintForm.zh-CN.resx">
+      <DependentUpon>ArrowPaintForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BackgroundForm.zh-CN.resx">
+      <DependentUpon>BackgroundForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BatteryForm.zh-CN.resx">
+      <DependentUpon>BatteryForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CircleScaleForm.en.resx">
       <DependentUpon>CircleScaleForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -359,6 +382,9 @@
     <EmbeddedResource Include="Forms\BatteryForm.ru.resx">
       <DependentUpon>BatteryForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CircleScaleForm.zh-CN.resx">
+      <DependentUpon>CircleScaleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\DateForm.en.resx">
       <DependentUpon>DateForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -368,10 +394,16 @@
     <EmbeddedResource Include="Forms\DateForm.ru.resx">
       <DependentUpon>DateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DateForm.zh-CN.resx">
+      <DependentUpon>DateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeartProgressForm.en.resx">
       <DependentUpon>HeartProgressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeartProgressForm.ru.resx">
+      <DependentUpon>HeartProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeartProgressForm.zh-CN.resx">
       <DependentUpon>HeartProgressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageBasicForm.en.resx">
@@ -383,6 +415,9 @@
     <EmbeddedResource Include="Forms\ImageBasicForm.ru.resx">
       <DependentUpon>ImageBasicForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageBasicForm.zh-CN.resx">
+      <DependentUpon>ImageBasicForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImageSetForm.en.resx">
       <DependentUpon>ImageSetForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -392,11 +427,20 @@
     <EmbeddedResource Include="Forms\ImageSetForm.ru.resx">
       <DependentUpon>ImageSetForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImageSetForm.zh-CN.resx">
+      <DependentUpon>ImageSetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImagesForm.en.resx">
       <DependentUpon>ImagesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ImagesForm.ru.resx">
       <DependentUpon>ImagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ImagesForm.zh-CN.resx">
+      <DependentUpon>ImagesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputForm.zh-CN.resx">
+      <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\JSONEditorForm.en.resx">
       <DependentUpon>JSONEditorForm.cs</DependentUpon>
@@ -407,10 +451,16 @@
     <EmbeddedResource Include="Forms\JSONEditorForm.ru.resx">
       <DependentUpon>JSONEditorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\JSONEditorForm.zh-CN.resx">
+      <DependentUpon>JSONEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\NumberFormEdit.en.resx">
       <DependentUpon>NumberFormEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\NumberFormEdit.ru.resx">
+      <DependentUpon>NumberFormEdit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\NumberFormEdit.zh-CN.resx">
       <DependentUpon>NumberFormEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ScaleForm.en.resx">
@@ -422,6 +472,9 @@
     <EmbeddedResource Include="Forms\ScaleForm.ru.resx">
       <DependentUpon>ScaleForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ScaleForm.zh-CN.resx">
+      <DependentUpon>ScaleForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.en.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -431,6 +484,9 @@
       <LastGenOutput>SettingsForm1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SettingsForm.ru.resx">
+      <DependentUpon>SettingsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsForm.zh-CN.resx">
       <DependentUpon>SettingsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StatusForm.en.resx">
@@ -445,6 +501,9 @@
     <EmbeddedResource Include="Forms\StatusForm.ru.resx">
       <DependentUpon>StatusForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StatusForm.zh-CN.resx">
+      <DependentUpon>StatusForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\StepsProgressForm.en.resx">
       <DependentUpon>StepsProgressForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -452,6 +511,9 @@
       <DependentUpon>StepsProgressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StepsProgressForm.ru.resx">
+      <DependentUpon>StepsProgressForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StepsProgressForm.zh-CN.resx">
       <DependentUpon>StepsProgressForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TimeForm.en.resx">
@@ -468,16 +530,25 @@
     <EmbeddedResource Include="Forms\TimeForm.ru.resx">
       <DependentUpon>TimeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TimeForm.zh-CN.resx">
+      <DependentUpon>TimeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateForm.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\UpdateForm.ru.resx">
       <DependentUpon>UpdateForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateForm.zh-CN.resx">
+      <DependentUpon>UpdateForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchfaceState.en.resx">
       <DependentUpon>WatchfaceState.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WatchfaceState.ru.resx">
+      <DependentUpon>WatchfaceState.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WatchfaceState.zh-CN.resx">
       <DependentUpon>WatchfaceState.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WeatherForm.en.resx">
@@ -487,6 +558,9 @@
       <DependentUpon>WeatherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WeatherForm.ru.resx">
+      <DependentUpon>WeatherForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeatherForm.zh-CN.resx">
       <DependentUpon>WeatherForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\WeekDaysIconsForm.en.resx">
@@ -509,6 +583,9 @@
     <EmbeddedResource Include="Forms\InputForm.ru.resx">
       <DependentUpon>InputForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WeekDaysIconsForm.zh-CN.resx">
+      <DependentUpon>WeekDaysIconsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.en.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -523,6 +600,9 @@
       <LastGenOutput>NumberFormEdit1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.ru.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.zh-CN.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.en.resx" />
@@ -546,6 +626,7 @@
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\Resource1.ru.resx" />
+    <EmbeddedResource Include="Resources\Resource1.zh-CN.resx" />
     <EmbeddedResource Include="SupportAuthorForm.en.resx">
       <DependentUpon>SupportAuthorForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -553,6 +634,9 @@
       <DependentUpon>SupportAuthorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupportAuthorForm.ru.resx">
+      <DependentUpon>SupportAuthorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SupportAuthorForm.zh-CN.resx">
       <DependentUpon>SupportAuthorForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />

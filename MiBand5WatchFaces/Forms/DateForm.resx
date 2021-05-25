@@ -217,7 +217,7 @@
     <value>6, 129</value>
   </data>
   <data name="AddDaySeparateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 47</value>
+    <value>445, 47</value>
   </data>
   <data name="AddDaySeparateButton.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
@@ -241,7 +241,7 @@
     <value>6, 23</value>
   </data>
   <data name="AddMonthSeparateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 47</value>
+    <value>445, 47</value>
   </data>
   <data name="AddMonthSeparateButton.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -265,7 +265,7 @@
     <value>6, 76</value>
   </data>
   <data name="AddMonthImagesSeparateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 47</value>
+    <value>445, 47</value>
   </data>
   <data name="AddMonthImagesSeparateButton.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
@@ -289,7 +289,7 @@
     <value>3, 3</value>
   </data>
   <data name="groupBox1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 186</value>
+    <value>457, 186</value>
   </data>
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -316,7 +316,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="separateTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 198</value>
+    <value>466, 198</value>
   </data>
   <data name="separateTab.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -370,7 +370,7 @@
     <value>6, 76</value>
   </data>
   <data name="AddOnelineDelimeterImageButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 47</value>
+    <value>445, 47</value>
   </data>
   <data name="AddOnelineDelimeterImageButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -394,7 +394,7 @@
     <value>6, 23</value>
   </data>
   <data name="AddMonthAndDayOnelineButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 47</value>
+    <value>445, 47</value>
   </data>
   <data name="AddMonthAndDayOnelineButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -418,7 +418,7 @@
     <value>3, 3</value>
   </data>
   <data name="groupBox2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 231</value>
+    <value>457, 231</value>
   </data>
   <data name="groupBox2.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -445,7 +445,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="onelineTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 198</value>
+    <value>466, 198</value>
   </data>
   <data name="onelineTab.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -496,7 +496,7 @@
     <value>6, 76</value>
   </data>
   <data name="addOnelineWithYearDelimeterImageButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 47</value>
+    <value>445, 47</value>
   </data>
   <data name="addOnelineWithYearDelimeterImageButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -520,7 +520,7 @@
     <value>6, 23</value>
   </data>
   <data name="addOnelineWithYearMonthDayYearButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>341, 47</value>
+    <value>445, 47</value>
   </data>
   <data name="addOnelineWithYearMonthDayYearButton.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
@@ -544,7 +544,7 @@
     <value>3, 3</value>
   </data>
   <data name="groupBox3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>353, 231</value>
+    <value>457, 231</value>
   </data>
   <data name="groupBox3.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -568,7 +568,7 @@
     <value>4, 27</value>
   </data>
   <data name="onelinewithyearTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>362, 198</value>
+    <value>466, 198</value>
   </data>
   <data name="onelinewithyearTab.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -592,7 +592,7 @@
     <value>6, 6</value>
   </data>
   <data name="tabControl2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>370, 229</value>
+    <value>474, 229</value>
   </data>
   <data name="tabControl2.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -616,7 +616,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="MonthDayYearTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 269</value>
+    <value>483, 269</value>
   </data>
   <data name="MonthDayYearTab.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -742,7 +742,7 @@
     <value>6, 76</value>
   </data>
   <data name="AddPMImageButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 47</value>
+    <value>461, 47</value>
   </data>
   <data name="AddPMImageButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -766,7 +766,7 @@
     <value>6, 23</value>
   </data>
   <data name="AddAMImageButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 47</value>
+    <value>461, 47</value>
   </data>
   <data name="AddAMImageButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -790,7 +790,7 @@
     <value>4, 3</value>
   </data>
   <data name="groupBox4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 260</value>
+    <value>473, 260</value>
   </data>
   <data name="groupBox4.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -817,7 +817,7 @@
     <value>3, 3, 3, 3</value>
   </data>
   <data name="AmPmTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 269</value>
+    <value>483, 269</value>
   </data>
   <data name="AmPmTab.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -868,7 +868,7 @@
     <value>6, 23</value>
   </data>
   <data name="addWeekDays.Size" type="System.Drawing.Size, System.Drawing">
-    <value>357, 33</value>
+    <value>461, 33</value>
   </data>
   <data name="addWeekDays.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -888,11 +888,14 @@
   <data name="&gt;&gt;addWeekDays.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="groupBox5.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 3</value>
   </data>
   <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>369, 260</value>
+    <value>473, 260</value>
   </data>
   <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -916,7 +919,7 @@
     <value>4, 27</value>
   </data>
   <data name="WeekDaysTab.Size" type="System.Drawing.Size, System.Drawing">
-    <value>379, 269</value>
+    <value>483, 269</value>
   </data>
   <data name="WeekDaysTab.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -936,6 +939,222 @@
   <data name="&gt;&gt;WeekDaysTab.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
+  <data name="cnWeekDaysCheckbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="cnWeekDaysCheckbox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="cnWeekDaysCheckbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 6</value>
+  </data>
+  <data name="cnWeekDaysCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="cnWeekDaysCheckbox.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;cnWeekDaysCheckbox.Name" xml:space="preserve">
+    <value>cnWeekDaysCheckbox</value>
+  </data>
+  <data name="&gt;&gt;cnWeekDaysCheckbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;cnWeekDaysCheckbox.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;cnWeekDaysCheckbox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox6.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="AddCNWeekDaysButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddCNWeekDaysButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="AddCNWeekDaysButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>461, 33</value>
+  </data>
+  <data name="AddCNWeekDaysButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="AddCNWeekDaysButton.Text" xml:space="preserve">
+    <value>Add week days images</value>
+  </data>
+  <data name="&gt;&gt;AddCNWeekDaysButton.Name" xml:space="preserve">
+    <value>AddCNWeekDaysButton</value>
+  </data>
+  <data name="&gt;&gt;AddCNWeekDaysButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddCNWeekDaysButton.Parent" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;AddCNWeekDaysButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox6.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBox6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 260</value>
+  </data>
+  <data name="groupBox6.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="groupBox6.Text" xml:space="preserve">
+    <value>     </value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Name" xml:space="preserve">
+    <value>groupBox6</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.Parent" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;groupBox6.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPage1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="tabPage1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>483, 269</value>
+  </data>
+  <data name="tabPage1.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="tabPage1.Text" xml:space="preserve">
+    <value>CN Week Days</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Name" xml:space="preserve">
+    <value>tabPage1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage1.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="CN2WeekDaysCheckbox.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="CN2WeekDaysCheckbox.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="CN2WeekDaysCheckbox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>15, 6</value>
+  </data>
+  <data name="CN2WeekDaysCheckbox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>15, 14</value>
+  </data>
+  <data name="CN2WeekDaysCheckbox.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;CN2WeekDaysCheckbox.Name" xml:space="preserve">
+    <value>CN2WeekDaysCheckbox</value>
+  </data>
+  <data name="&gt;&gt;CN2WeekDaysCheckbox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;CN2WeekDaysCheckbox.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;CN2WeekDaysCheckbox.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="AddCN2WeekDaysButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddCN2WeekDaysButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="AddCN2WeekDaysButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>461, 33</value>
+  </data>
+  <data name="AddCN2WeekDaysButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="AddCN2WeekDaysButton.Text" xml:space="preserve">
+    <value>Add week days images</value>
+  </data>
+  <data name="&gt;&gt;AddCN2WeekDaysButton.Name" xml:space="preserve">
+    <value>AddCN2WeekDaysButton</value>
+  </data>
+  <data name="&gt;&gt;AddCN2WeekDaysButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddCN2WeekDaysButton.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;AddCN2WeekDaysButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="groupBox7.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="groupBox7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="groupBox7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>473, 260</value>
+  </data>
+  <data name="groupBox7.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="groupBox7.Text" xml:space="preserve">
+    <value>     </value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Name" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.Parent" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;groupBox7.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="tabPage2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 27</value>
+  </data>
+  <data name="tabPage2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>483, 269</value>
+  </data>
+  <data name="tabPage2.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="tabPage2.Text" xml:space="preserve">
+    <value>CN2 Week Days</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Name" xml:space="preserve">
+    <value>tabPage2</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.Parent" xml:space="preserve">
+    <value>tabControl1</value>
+  </data>
+  <data name="&gt;&gt;tabPage2.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
   <data name="tabControl1.Font" type="System.Drawing.Font, System.Drawing">
     <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
@@ -943,7 +1162,7 @@
     <value>12, 12</value>
   </data>
   <data name="tabControl1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>387, 300</value>
+    <value>491, 300</value>
   </data>
   <data name="tabControl1.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -964,7 +1183,7 @@
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="ImagePic.Location" type="System.Drawing.Point, System.Drawing">
-    <value>405, 18</value>
+    <value>509, 18</value>
   </data>
   <data name="ImagePic.Size" type="System.Drawing.Size, System.Drawing">
     <value>126, 294</value>
@@ -994,7 +1213,7 @@
     <value>12, 318</value>
   </data>
   <data name="SaveButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>519, 44</value>
+    <value>625, 44</value>
   </data>
   <data name="SaveButton.TabIndex" type="System.Int32, mscorlib">
     <value>10</value>
@@ -1024,7 +1243,7 @@
     <value>96, 96</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>541, 370</value>
+    <value>647, 370</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

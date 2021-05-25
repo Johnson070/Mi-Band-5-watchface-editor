@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="ExitMessage" xml:space="preserve">
+    <value>Do you want to get out without saving?</value>
+  </data>
+  <data name="ExitMessageCaption" xml:space="preserve">
+    <value>Don't Save?</value>
+  </data>
+  <data name="AddImageNoAlarm" xml:space="preserve">
+    <value>Add image no alarm</value>
+  </data>
+  <data name="EditImageNoAlarm" xml:space="preserve">
+    <value>Edit image no alarm</value>
+  </data>
+  <data name="AddImageOff" xml:space="preserve">
+    <value>Add image OFF</value>
+  </data>
+  <data name="EditImageOff" xml:space="preserve">
+    <value>Edit image OFF</value>
+  </data>
+  <data name="EditImageOn" xml:space="preserve">
+    <value>Edit Image ON</value>
+  </data>
+  <data name="AddImageOn" xml:space="preserve">
+    <value>Add image ON</value>
+  </data>
+  <data name="AddDelimeter" xml:space="preserve">
+    <value>Add delimeter</value>
+  </data>
+  <data name="EditDelimeter" xml:space="preserve">
+    <value>Edit delimeter</value>
+  </data>
+  <data name="AddNumber" xml:space="preserve">
+    <value>Add number</value>
+  </data>
+  <data name="EditNumber" xml:space="preserve">
+    <value>Edit number</value>
+  </data>
+  <data name="EditMondayImage" xml:space="preserve">
+    <value>Edit monday image</value>
+  </data>
+  <data name="EditTuesdayImage" xml:space="preserve">
+    <value>Edit tuesday image</value>
+  </data>
+  <data name="EditWednesdayImage" xml:space="preserve">
+    <value>Edit wednesday image</value>
+  </data>
+  <data name="EditThursdayImage" xml:space="preserve">
+    <value>Edit thursday image</value>
+  </data>
+  <data name="EditFridayImage" xml:space="preserve">
+    <value>Edit friday image</value>
+  </data>
+  <data name="EditSaturdayImage" xml:space="preserve">
+    <value>Edit saturday image</value>
+  </data>
+  <data name="EditSundayImage" xml:space="preserve">
+    <value>Edit sunday image</value>
+  </data>
+  <data name="AddMondayImage" xml:space="preserve">
+    <value>Add monday image</value>
+  </data>
+  <data name="AddTuesdayImage" xml:space="preserve">
+    <value>Add tuesday image</value>
+  </data>
+  <data name="AddThursdayImage" xml:space="preserve">
+    <value>Add thursday image</value>
+  </data>
+  <data name="AddWednesdayImage" xml:space="preserve">
+    <value>Add wednesday image</value>
+  </data>
+  <data name="AddFridayImage" xml:space="preserve">
+    <value>Add friday image</value>
+  </data>
+  <data name="AddSaturdayImage" xml:space="preserve">
+    <value>Add saturday image</value>
+  </data>
+  <data name="AddSundayImage" xml:space="preserve">
+    <value>Add sunday image</value>
+  </data>
+  <data name="EditImages" xml:space="preserve">
+    <value>Edit images</value>
+  </data>
+  <data name="AddImages" xml:space="preserve">
+    <value>Add images</value>
+  </data>
+  <data name="EditArrow" xml:space="preserve">
+    <value>Edit arrow</value>
+  </data>
+  <data name="AddArrow" xml:space="preserve">
+    <value>Add arrow</value>
+  </data>
+  <data name="EditCenterImage" xml:space="preserve">
+    <value>Edit center image</value>
+  </data>
+  <data name="AddCenterImage" xml:space="preserve">
+    <value>Add center image</value>
+  </data>
+  <data name="EditPrefix" xml:space="preserve">
+    <value>Edit prefix</value>
+  </data>
+  <data name="AddPrefix" xml:space="preserve">
+    <value>Add prefix</value>
+  </data>
+  <data name="AddSuffix" xml:space="preserve">
+    <value>Add suffix</value>
+  </data>
+  <data name="EditSuffix" xml:space="preserve">
+    <value>Edit suffix</value>
+  </data>
+  <data name="EditDegreeImage" xml:space="preserve">
+    <value>Edit degree image</value>
+  </data>
+  <data name="AddDegreeImage" xml:space="preserve">
+    <value>Add degree image</value>
+  </data>
+  <data name="EditMinusImage" xml:space="preserve">
+    <value>Edit minus image</value>
+  </data>
+  <data name="AddMinusImage" xml:space="preserve">
+    <value>Add minus image</value>
+  </data>
+  <data name="EditSuffixImage" xml:space="preserve">
+    <value>Edit suffix image</value>
+  </data>
+  <data name="AddSuffixImage" xml:space="preserve">
+    <value>Add suffix image</value>
+  </data>
+  <data name="EditDelimeterImage" xml:space="preserve">
+    <value>Edit delimeter image</value>
+  </data>
+  <data name="AddDelimeterImage" xml:space="preserve">
+    <value>Add delimeter image</value>
+  </data>
+  <data name="EditImage" xml:space="preserve">
+    <value>Edit image</value>
+  </data>
+  <data name="AddImage" xml:space="preserve">
+    <value>Add image</value>
+  </data>
+  <data name="EditCircleScale" xml:space="preserve">
+    <value>Edit circle scale</value>
+  </data>
+  <data name="AddCircleScale" xml:space="preserve">
+    <value>Add circle scale</value>
+  </data>
+  <data name="EditOnes" xml:space="preserve">
+    <value>Edit Ones</value>
+  </data>
+  <data name="AddOnes" xml:space="preserve">
+    <value>Add Ones</value>
+  </data>
+  <data name="EditTens" xml:space="preserve">
+    <value>Edit Tens</value>
+  </data>
+  <data name="AddTens" xml:space="preserve">
+    <value>Add Tens</value>
+  </data>
+  <data name="AddNoTime" xml:space="preserve">
+    <value>Add no time</value>
+  </data>
+  <data name="EditNoTime" xml:space="preserve">
+    <value>Edit no time</value>
+  </data>
+  <data name="TimeFormError" xml:space="preserve">
+    <value>Hours tens and hour ones and minute tens and minutes ones should be added!
+Exit without save?</value>
+  </data>
+  <data name="ImageDPI" xml:space="preserve">
+    <value>Image DPI is not 96!</value>
+  </data>
+  <data name="EditImagesToElement" xml:space="preserve">
+    <value>Edit images to element</value>
+  </data>
+  <data name="DeleteImages" xml:space="preserve">
+    <value>Delete images</value>
+  </data>
+  <data name="AddImagesToElement" xml:space="preserve">
+    <value>Add images to element</value>
+  </data>
+  <data name="AddSteps" xml:space="preserve">
+    <value>Add steps</value>
+  </data>
+  <data name="EditSteps" xml:space="preserve">
+    <value>Edit steps</value>
+  </data>
+  <data name="AddCalories" xml:space="preserve">
+    <value>Add calories</value>
+  </data>
+  <data name="EditCalories" xml:space="preserve">
+    <value>Edit calories</value>
+  </data>
+  <data name="AddPulse" xml:space="preserve">
+    <value>Add pulse</value>
+  </data>
+  <data name="EditPulse" xml:space="preserve">
+    <value>Edit pulse</value>
+  </data>
+  <data name="AddNoData" xml:space="preserve">
+    <value>Add no data</value>
+  </data>
+  <data name="EditNoData" xml:space="preserve">
+    <value>Edit no data</value>
+  </data>
+  <data name="AddDistance" xml:space="preserve">
+    <value>Add distance</value>
+  </data>
+  <data name="EditDistance" xml:space="preserve">
+    <value>Edit distance</value>
+  </data>
+  <data name="AddKMSuffix" xml:space="preserve">
+    <value>Add KM suffix</value>
+  </data>
+  <data name="EditKMSuffix" xml:space="preserve">
+    <value>Edit KM suffix</value>
+  </data>
+  <data name="AddDecimalPoint" xml:space="preserve">
+    <value>Add decimal point</value>
+  </data>
+  <data name="EditDecimalPoint" xml:space="preserve">
+    <value>Edit decimal point</value>
+  </data>
+  <data name="AddMISuffix" xml:space="preserve">
+    <value>Add MI suffix</value>
+  </data>
+  <data name="EditMISuffix" xml:space="preserve">
+    <value>Edit MI suffix</value>
+  </data>
+  <data name="AddKMImage" xml:space="preserve">
+    <value>Add KM image</value>
+  </data>
+  <data name="EditKMImage" xml:space="preserve">
+    <value>Edit KM image</value>
+  </data>
+  <data name="AddMIImage" xml:space="preserve">
+    <value>Add MI image</value>
+  </data>
+  <data name="EditMIImage" xml:space="preserve">
+    <value>Edit MI image</value>
+  </data>
+  <data name="AddPAI" xml:space="preserve">
+    <value>Add PAI</value>
+  </data>
+  <data name="EditPAI" xml:space="preserve">
+    <value>Edit PAI</value>
+  </data>
+  <data name="AddMonth" xml:space="preserve">
+    <value>Add month</value>
+  </data>
+  <data name="EditMonth" xml:space="preserve">
+    <value>Edit month</value>
+  </data>
+  <data name="AddMonthImages" xml:space="preserve">
+    <value>Add month images</value>
+  </data>
+  <data name="EditMonthImages" xml:space="preserve">
+    <value>Edit month images</value>
+  </data>
+  <data name="AddDay" xml:space="preserve">
+    <value>Add day</value>
+  </data>
+  <data name="EditDay" xml:space="preserve">
+    <value>Edit day</value>
+  </data>
+  <data name="AddMonthAndDay" xml:space="preserve">
+    <value>添加 月 日</value>
+  </data>
+  <data name="EditMonthAndDay" xml:space="preserve">
+    <value>编辑 月 日</value>
+  </data>
+  <data name="AddMonthAndDayAndYear" xml:space="preserve">
+    <value>添加 月 日 年</value>
+  </data>
+  <data name="EditMonthAndDayAndYear" xml:space="preserve">
+    <value>编辑 月 日 年</value>
+  </data>
+  <data name="AddAMImage" xml:space="preserve">
+    <value>添加 AM 图像</value>
+  </data>
+  <data name="EditAMImage" xml:space="preserve">
+    <value>编辑 AM 图像</value>
+  </data>
+  <data name="AddPMImage" xml:space="preserve">
+    <value>添加 PM 图像</value>
+  </data>
+  <data name="EditPMImage" xml:space="preserve">
+    <value>编辑 PM 图像</value>
+  </data>
+  <data name="AddWeekDaysImages" xml:space="preserve">
+    <value>添加 周 日 图像</value>
+  </data>
+  <data name="EditWeekDaysImages" xml:space="preserve">
+    <value>编辑 周 日 图像</value>
+  </data>
+  <data name="DeleteItem" xml:space="preserve">
+    <value>选定的项目将会彻底删除，是否确认？</value>
+  </data>
+  <data name="SureQ" xml:space="preserve">
+    <value>是否确定？</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="ErrorGenPreview" xml:space="preserve">
+    <value>生成预览图失败</value>
+  </data>
+  <data name="SaveOpenJson" xml:space="preserve">
+    <value>在打开另一个表盘之前保存一个打开的表盘？</value>
+  </data>
+  <data name="SaveQ" xml:space="preserve">
+    <value>保存？</value>
+  </data>
+  <data name="SaveFileClose" xml:space="preserve">
+    <value>在关闭程序之前保存文件？</value>
+  </data>
+  <data name="OpenDownloadUpdate" xml:space="preserve">
+    <value>下载含有更新程序的zip压缩包？</value>
+  </data>
+  <data name="ErrorSave" xml:space="preserve">
+    <value>保存失败</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="ChangeLog" xml:space="preserve">
+    <value>更新日志</value>
+  </data>
+  <data name="NotGenerated" xml:space="preserve">
+    <value>未生成</value>
+  </data>
+  <data name="Succeful" xml:space="preserve">
+    <value>成功</value>
+  </data>
+  <data name="Complete" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="ShowUpdateInfo" xml:space="preserve">
+    <value>当前版本：{0}。
+更新服务器上的最新版本：{1}</value>
+  </data>
+  <data name="UpdateDownloadExit" xml:space="preserve">
+    <value>下载更新已经完成</value>
+  </data>
+  <data name="ConfigNotFound" xml:space="preserve">
+    <value>WatchFace.exe.配置丢失， 请修复文件！</value>
+  </data>
+</root>

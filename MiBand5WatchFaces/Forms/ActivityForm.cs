@@ -486,13 +486,14 @@ namespace MiBand5WatchFaces.Forms
         private void addImageDistance(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
+            WatchFaceLibrary watchface = DeepCopy(watch);
 
             if (btn.Name == addKmImageButton.Name)
             {
-                watch.Activity.Distance.KmImageIndex = watch.Activity.Distance.KmImageIndex == null ? new ImageBasic() : watch.Activity.Distance.KmImageIndex;
+                watchface.Activity.Distance.KmImageIndex = watchface.Activity.Distance.KmImageIndex == null ? new ImageBasic() : watchface.Activity.Distance.KmImageIndex;
                 StateWatchface stateDist = state;
                 stateDist.MiKm = true;
-                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Activity.Distance.KmImageIndex, watch.images.DeepCopy(), stateDist);
+                ImageBasicForm ibForm = new ImageBasicForm(watch, watchface.Activity.Distance.KmImageIndex, watch.images.DeepCopy(), stateDist);
                 ibForm.ShowDialog();
 
                 if (ibForm.saved)
@@ -510,10 +511,10 @@ namespace MiBand5WatchFaces.Forms
             }
             else if (btn.Name == addMiImageButton.Name)
             {
-                watch.Activity.Distance.MilesImageIndex = watch.Activity.Distance.MilesImageIndex == null ? new ImageBasic() : watch.Activity.Distance.MilesImageIndex;
+                watchface.Activity.Distance.MilesImageIndex = watchface.Activity.Distance.MilesImageIndex == null ? new ImageBasic() : watchface.Activity.Distance.MilesImageIndex;
                 StateWatchface stateDist = state;
                 stateDist.MiKm = false;
-                ImageBasicForm ibForm = new ImageBasicForm(watch, watch.Activity.Distance.MilesImageIndex, watch.images.DeepCopy(), stateDist);
+                ImageBasicForm ibForm = new ImageBasicForm(watch, watchface.Activity.Distance.MilesImageIndex, watch.images.DeepCopy(), stateDist);
                 ibForm.ShowDialog();
 
                 if (ibForm.saved)

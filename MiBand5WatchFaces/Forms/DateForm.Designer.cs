@@ -65,6 +65,14 @@
             this.ImagePic = new System.Windows.Forms.Panel();
             this.SaveButton = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.cnWeekDaysCheckbox = new System.Windows.Forms.CheckBox();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.AddCNWeekDaysButton = new System.Windows.Forms.Button();
+            this.CN2WeekDaysCheckbox = new System.Windows.Forms.CheckBox();
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.AddCN2WeekDaysButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.MonthDayYearTab.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -80,6 +88,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.posXNumAMPM)).BeginInit();
             this.WeekDaysTab.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.groupBox6.SuspendLayout();
+            this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -88,6 +100,8 @@
             this.tabControl1.Controls.Add(this.MonthDayYearTab);
             this.tabControl1.Controls.Add(this.AmPmTab);
             this.tabControl1.Controls.Add(this.WeekDaysTab);
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             // 
@@ -365,6 +379,62 @@
             this.SaveButton.UseVisualStyleBackColor = true;
             this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.cnWeekDaysCheckbox);
+            this.tabPage1.Controls.Add(this.groupBox6);
+            resources.ApplyResources(this.tabPage1, "tabPage1");
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.CN2WeekDaysCheckbox);
+            this.tabPage2.Controls.Add(this.groupBox7);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // cnWeekDaysCheckbox
+            // 
+            resources.ApplyResources(this.cnWeekDaysCheckbox, "cnWeekDaysCheckbox");
+            this.cnWeekDaysCheckbox.Name = "cnWeekDaysCheckbox";
+            this.cnWeekDaysCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // groupBox6
+            // 
+            resources.ApplyResources(this.groupBox6, "groupBox6");
+            this.groupBox6.Controls.Add(this.AddCNWeekDaysButton);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.TabStop = false;
+            // 
+            // AddCNWeekDaysButton
+            // 
+            resources.ApplyResources(this.AddCNWeekDaysButton, "AddCNWeekDaysButton");
+            this.AddCNWeekDaysButton.Name = "AddCNWeekDaysButton";
+            this.AddCNWeekDaysButton.UseVisualStyleBackColor = true;
+            this.AddCNWeekDaysButton.Click += new System.EventHandler(this.addWeekdayClick);
+            // 
+            // CN2WeekDaysCheckbox
+            // 
+            resources.ApplyResources(this.CN2WeekDaysCheckbox, "CN2WeekDaysCheckbox");
+            this.CN2WeekDaysCheckbox.Name = "CN2WeekDaysCheckbox";
+            this.CN2WeekDaysCheckbox.UseVisualStyleBackColor = true;
+            // 
+            // groupBox7
+            // 
+            resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Controls.Add(this.AddCN2WeekDaysButton);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.TabStop = false;
+            // 
+            // AddCN2WeekDaysButton
+            // 
+            resources.ApplyResources(this.AddCN2WeekDaysButton, "AddCN2WeekDaysButton");
+            this.AddCN2WeekDaysButton.Name = "AddCN2WeekDaysButton";
+            this.AddCN2WeekDaysButton.UseVisualStyleBackColor = true;
+            this.AddCN2WeekDaysButton.Click += new System.EventHandler(this.addWeekdayClick);
+            // 
             // DateForm
             // 
             resources.ApplyResources(this, "$this");
@@ -398,6 +468,12 @@
             this.WeekDaysTab.ResumeLayout(false);
             this.WeekDaysTab.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -440,5 +516,13 @@
         private System.Windows.Forms.CheckBox TwoDigitsDayCheckbox;
         private System.Windows.Forms.CheckBox TwoDigitsMonthCheckbox;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.CheckBox cnWeekDaysCheckbox;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Button AddCNWeekDaysButton;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.CheckBox CN2WeekDaysCheckbox;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.Button AddCN2WeekDaysButton;
     }
 }

@@ -34,7 +34,6 @@ namespace MiBand5WatchFaces
             this.ETHbutton = new System.Windows.Forms.Button();
             this.USDTbutton = new System.Windows.Forms.Button();
             this.PayPalbutton = new System.Windows.Forms.Button();
-            this.Alertbutton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // BTCbutton
@@ -65,18 +64,10 @@ namespace MiBand5WatchFaces
             this.PayPalbutton.UseVisualStyleBackColor = true;
             this.PayPalbutton.Click += new System.EventHandler(this.PayPalbutton_Click);
             // 
-            // Alertbutton
-            // 
-            resources.ApplyResources(this.Alertbutton, "Alertbutton");
-            this.Alertbutton.Name = "Alertbutton";
-            this.Alertbutton.UseVisualStyleBackColor = true;
-            this.Alertbutton.Click += new System.EventHandler(this.Alertbutton_Click);
-            // 
             // SupportAuthorForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.Alertbutton);
             this.Controls.Add(this.PayPalbutton);
             this.Controls.Add(this.USDTbutton);
             this.Controls.Add(this.ETHbutton);
@@ -93,6 +84,5 @@ namespace MiBand5WatchFaces
         private System.Windows.Forms.Button ETHbutton;
         private System.Windows.Forms.Button USDTbutton;
         private System.Windows.Forms.Button PayPalbutton;
-        private System.Windows.Forms.Button Alertbutton;
     }
 }

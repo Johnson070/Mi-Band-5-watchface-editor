@@ -81,6 +81,11 @@
             this.AddNumberUVButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ImagePic = new System.Windows.Forms.Panel();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.AirCheckbox = new System.Windows.Forms.CheckBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.AddAirIcons = new System.Windows.Forms.Button();
+            this.AddAirNumber = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -101,6 +106,8 @@
             this.groupBox7.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.groupBox8.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -108,6 +115,7 @@
             resources.ApplyResources(this.tabControl1, "tabControl1");
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
@@ -495,6 +503,43 @@
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.AirCheckbox);
+            this.tabPage3.Controls.Add(this.groupBox9);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // AirCheckbox
+            // 
+            resources.ApplyResources(this.AirCheckbox, "AirCheckbox");
+            this.AirCheckbox.Name = "AirCheckbox";
+            this.AirCheckbox.UseVisualStyleBackColor = true;
+            this.AirCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
+            // 
+            // groupBox9
+            // 
+            resources.ApplyResources(this.groupBox9, "groupBox9");
+            this.groupBox9.Controls.Add(this.AddAirNumber);
+            this.groupBox9.Controls.Add(this.AddAirIcons);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.TabStop = false;
+            // 
+            // AddAirIcons
+            // 
+            resources.ApplyResources(this.AddAirIcons, "AddAirIcons");
+            this.AddAirIcons.Name = "AddAirIcons";
+            this.AddAirIcons.UseVisualStyleBackColor = true;
+            this.AddAirIcons.Click += new System.EventHandler(this.AddImageSet);
+            // 
+            // AddAirNumber
+            // 
+            resources.ApplyResources(this.AddAirNumber, "AddAirNumber");
+            this.AddAirNumber.Name = "AddAirNumber";
+            this.AddAirNumber.UseVisualStyleBackColor = true;
+            this.AddAirNumber.Click += new System.EventHandler(this.AddNumberClick);
+            // 
             // WeatherForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -534,6 +579,9 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.groupBox8.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -592,5 +640,10 @@
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.Panel ImagePic;
         private System.Windows.Forms.Button AddSuffixWindButton;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.CheckBox AirCheckbox;
+        private System.Windows.Forms.GroupBox groupBox9;
+        private System.Windows.Forms.Button AddAirIcons;
+        private System.Windows.Forms.Button AddAirNumber;
     }
 }

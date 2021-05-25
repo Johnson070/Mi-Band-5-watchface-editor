@@ -10,6 +10,7 @@ using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Windows.Forms;
 
@@ -25,8 +26,24 @@ namespace MiBand5WatchFaces
         string PathFile;
         string file = "";
 
-        [System.Runtime.InteropServices.DllImport("wininet.dll")]
-        private extern static bool InternetGetConnectedState(out int description, int reservedValue);
+        //[System.Runtime.InteropServices.DllImport("wininet.dll")]
+        private bool InternetGetConnectedState(int description, int reservedValue)
+        {
+            try
+            {
+                Ping myPing = new Ping();
+                String host = "google.com";
+                byte[] buffer = new byte[32];
+                int timeout = 1000;
+                PingOptions pingOptions = new PingOptions();
+                PingReply reply = myPing.Send(host, timeout, buffer, pingOptions);
+                return reply.Status == IPStatus.Success;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
 
         public MainForm()
         {
@@ -464,7 +481,7 @@ namespace MiBand5WatchFaces
 
             try
             {
-                SaveFileDialog saveFile = new SaveFileDialog() { Filter = "json file (*.json)|*.json" + ((Directory.Exists("WatchFace6") && File.Exists("WatchFace6\\WatchFace.exe") || watchFace.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5) ? "|packed bin file (*.bin)|*.bin" : ""), RestoreDirectory = true };
+                SaveFileDialog saveFile = new SaveFileDialog() { Filter = sender.ToString() == "bin" ? "packed bin file (*.bin)|*.bin|json file (*.json)|*.json" : "json file (*.json)|*.json|packed bin file (*.bin)|*.bin", RestoreDirectory = true };
                 if (saveFile.ShowDialog() == DialogResult.OK)
                 {
                     Save = true;
@@ -518,7 +535,7 @@ namespace MiBand5WatchFaces
         {
             if (PathFile == "" || PathFile == null)
             {
-                saveAsToolStripMenuItem.PerformClick();
+                saveAsToolStripMenuItem_Click("", null);
                 return;
             }
 
@@ -542,6 +559,7 @@ namespace MiBand5WatchFaces
                 MessageBox.Show(ex.ToString(), res.GetString("ErrorSave"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
+                saveAsToolStripMenuItem_Click(null, null);
             }
         }
 
@@ -774,13 +792,27 @@ namespace MiBand5WatchFaces
                 //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
                 MessageBox.Show(res.GetString("Error") + "\n" + e.Data.ToString(), res.GetString("NotGenerated"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (e.Data != null && e.Data.ToString() == "Writing resources")
+            else if (e.Data != null && e.Data.ToString().IndexOf("[ERROR] Watchface is greater than") != -1)
             {
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
                 //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
-                MessageBox.Show(res.GetString("Succeful"), res.GetString("Complete"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(res.GetString("Error") + "\n\nTry to use palette mode in settings!", res.GetString("NotGenerated"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else if (e.Data != null && e.Data.ToString().IndexOf("Fatal") != -1)
+            {
+                this.Enabled = true;
+                SaveFileStatus.Text = "";
+                //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
+                MessageBox.Show(res.GetString("Error") + "\n" + e.Data.ToString(), res.GetString("NotGenerated"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            //else if (e.Data != null && e.Data.ToString().IndexOf("Writing resources")!=-1)
+            //{
+            //    this.Enabled = true;
+            //    SaveFileStatus.Text = "";
+            //    //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
+            //    MessageBox.Show(res.GetString("Succeful"), res.GetString("Complete"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
             else if (e.Data != null && e.Data.ToString().IndexOf("Exporting config...") != -1)
             {
                 this.Enabled = true;
@@ -837,7 +869,7 @@ namespace MiBand5WatchFaces
 
         private void MainForm_Shown(object sender, EventArgs e)
         {
-            bool state = InternetGetConnectedState(out _, 0);
+            bool state = InternetGetConnectedState(0, 0);
 
             if (state && Properties.Settings.Default.ShowChangeLog)
             {
@@ -884,7 +916,7 @@ namespace MiBand5WatchFaces
 
         private void checkUpdateToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool state = InternetGetConnectedState(out _, 0);
+            bool state = InternetGetConnectedState(0, 0);
 
             if (state)
             {
@@ -912,7 +944,7 @@ namespace MiBand5WatchFaces
 
         private void changeLogToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            bool state = InternetGetConnectedState(out _, 0);
+            bool state = InternetGetConnectedState(0, 0);
 
             if (state) MessageBox.Show(GetProgramInfo().changelog, res.GetString("ChangeLog"), MessageBoxButtons.OK);
         }
@@ -1106,7 +1138,7 @@ namespace MiBand5WatchFaces
         {
             if (PathFile == "" || PathFile == null)
             {
-                saveAsToolStripMenuItem.PerformClick();
+                saveAsToolStripMenuItem_Click("bin",null);
                 return;
             }
 
@@ -1154,6 +1186,7 @@ namespace MiBand5WatchFaces
                 MessageBox.Show(ex.ToString(), res.GetString("ErrorSave"), MessageBoxButtons.OK, MessageBoxIcon.Error);
                 this.Enabled = true;
                 SaveFileStatus.Text = "";
+                saveAsToolStripMenuItem_Click("bin", null);
             }
         }
     }

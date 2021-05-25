@@ -93,8 +93,8 @@ namespace MiBand5WatchFaces.Forms
             if (this.watch.Status.Lock != null)
             {
                 lockCheckbox.Checked = true;
-                if (this.watch.Status.Lock.ImageIndexOn >= 0) AddImageONLock.Text = res.GetString("EditImageOn");
-                if (this.watch.Status.Lock.ImageIndexOff >= 0) AddImageOFFLock.Text = res.GetString("EditImageOff");
+                if (this.watch.Status.Lock.ImageIndexOn >= 0) AddImageOFFLock.Text = res.GetString("EditImageOff");
+                if (this.watch.Status.Lock.ImageIndexOff >= 0) AddImageONLock.Text = res.GetString("EditImageOn");
                 posXLock.Value = this.watch.Status.Lock.Coordinates.X;
                 posYLock.Value = this.watch.Status.Lock.Coordinates.Y;
                 if (this.watch.Status.Lock.ImageIndexOn >= 0 || this.watch.Status.Lock.ImageIndexOff >= 0)
@@ -188,30 +188,6 @@ namespace MiBand5WatchFaces.Forms
             {
                 if (btn.Name == AddImageONLock.Name)
                 {
-                    if (watch.Status?.Lock?.ImageIndexOn >= 0) selImg = new List<int>() { watch.Status.Lock.ImageIndexOn };
-
-                    imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
-                    imgForm.ShowDialog();
-
-                    if (imgForm.saveImages == true && imgForm.selectedImages != null)
-                    {
-                        watch.images = imgForm.Images;
-                        watch.Status.Lock = watch.Status.Lock == null ? new Switch() : watch.Status.Lock;
-                        watch.Status.Lock.Coordinates = watch.Status.Lock.Coordinates == null ? new Coordinates() : watch.Status.Lock.Coordinates;
-                        watch.Status.Lock.ImageIndexOn = imgForm.selectedImages[0];
-                        AddImageONLock.Text = res.GetString("EditImageOn");
-                        posXLock.Enabled = true;
-                        posYLock.Enabled = true;
-                    }
-                    else if (imgForm.saveImages == true && watch.Status.Lock != null)
-                    {
-                        watch.images = imgForm.Images;
-                        watch.Status.Lock.ImageIndexOn = -10000;
-                        AddImageONLock.Text = res.GetString("AddImageOn");
-                    }
-                }
-                else if (btn.Name == AddImageOFFLock.Name)
-                {
                     if (watch.Status?.Lock?.ImageIndexOff >= 0) selImg = new List<int>() { watch.Status.Lock.ImageIndexOff };
 
                     imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
@@ -223,7 +199,7 @@ namespace MiBand5WatchFaces.Forms
                         watch.Status.Lock = watch.Status.Lock == null ? new Switch() : watch.Status.Lock;
                         watch.Status.Lock.Coordinates = watch.Status.Lock.Coordinates == null ? new Coordinates() : watch.Status.Lock.Coordinates;
                         watch.Status.Lock.ImageIndexOff = imgForm.selectedImages[0];
-                        AddImageOFFLock.Text = res.GetString("EditImageOff");
+                        AddImageONLock.Text = res.GetString("EditImageOn");
                         posXLock.Enabled = true;
                         posYLock.Enabled = true;
                     }
@@ -231,14 +207,38 @@ namespace MiBand5WatchFaces.Forms
                     {
                         watch.images = imgForm.Images;
                         watch.Status.Lock.ImageIndexOff = -10000;
+                        AddImageONLock.Text = res.GetString("AddImageOn");
+                    }
+                }
+                else if (btn.Name == AddImageOFFLock.Name)
+                {
+                    if (watch.Status?.Lock?.ImageIndexOn >= 0) selImg = new List<int>() { watch.Status.Lock.ImageIndexOn };
+
+                    imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
+                    imgForm.ShowDialog();
+
+                    if (imgForm.saveImages == true && imgForm.selectedImages != null)
+                    {
+                        watch.images = imgForm.Images;
+                        watch.Status.Lock = watch.Status.Lock == null ? new Switch() : watch.Status.Lock;
+                        watch.Status.Lock.Coordinates = watch.Status.Lock.Coordinates == null ? new Coordinates() : watch.Status.Lock.Coordinates;
+                        watch.Status.Lock.ImageIndexOn = imgForm.selectedImages[0];
+                        AddImageOFFLock.Text = res.GetString("EditImageOff");
+                        posXLock.Enabled = true;
+                        posYLock.Enabled = true;
+                    }
+                    else if (imgForm.saveImages == true && watch.Status.Lock != null)
+                    {
+                        watch.images = imgForm.Images;
+                        watch.Status.Lock.ImageIndexOn = -10000;
                         AddImageOFFLock.Text = res.GetString("AddImageOff");
                     }
                 }
 
                 if (watch.Status.Lock != null && watch.Status.Lock.ImageIndexOn == -10000 && watch.Status.Lock.ImageIndexOff == -10000)
                 {
-                    AddImageOFFLock.Text = res.GetString("AddImageOff");
                     AddImageONLock.Text = res.GetString("AddImageOn");
+                    AddImageOFFLock.Text = res.GetString("AddImageOff");
                     posXLock.Enabled = false;
                     posYLock.Enabled = false;
                     watch.Status.Lock = null;

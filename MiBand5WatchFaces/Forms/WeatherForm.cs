@@ -397,6 +397,28 @@ namespace MiBand5WatchFaces.Forms
                     AddSuffixUVButton.Enabled = false;
                 }
             }
+            else if (btn.Name == AddAirNumber.Name)
+            {
+                watchface.Weather.AirPollution = watchface.Weather.AirPollution == null ? new AirPollution() : watchface.Weather.AirPollution;
+                watchface.Weather.AirPollution.Index = watchface.Weather.AirPollution.Index == null ? new Number() { notDraw = true } : watchface.Weather.AirPollution.Index;
+
+                NumberFormEdit numberForm = new NumberFormEdit(watchface, watchface.Weather.AirPollution.Index, watch.images.DeepCopy(), state);
+                numberForm.ShowDialog();
+
+                if (numberForm.saved && numberForm.number.ImageIndex >= 0)
+                {
+                    watch.Weather.AirPollution = watch.Weather.AirPollution == null ? new AirPollution() : watch.Weather.AirPollution;
+                    watch.Weather.AirPollution.Index = numberForm.number;
+                    watch.images = numberForm.watch.images;
+                    AddAirNumber.Text = res.GetString("EditNumber");
+                }
+                else if (numberForm.delete)
+                {
+                    if (watch.Weather.AirPollution != null) watch.Weather.AirPollution.Index = null;
+                    watch.images = numberForm.watch.images;
+                    AddAirNumber.Text = res.GetString("AddNumber");
+                }
+            }
 
             Render(state);
         }
@@ -679,6 +701,31 @@ namespace MiBand5WatchFaces.Forms
             Render(state);
         }
 
+        private void AddImageSet(object sender, EventArgs e)
+        {
+            WatchFaceLibrary watchface = DeepCopy(watch);
+            watchface.Weather.AirPollution = watchface.Weather.AirPollution == null ? new AirPollution() : watchface.Weather.AirPollution;
+            watchface.Weather.AirPollution.Icon = watchface.Weather.AirPollution.Icon == null ? new ImageSet() : watchface.Weather.AirPollution.Icon;
+            ImageSetForm setForm = new ImageSetForm(watchface, watchface.Weather.AirPollution.Icon, watch.images.DeepCopy(), state,10);
+            setForm.ShowDialog();
+
+            if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
+            {
+                watch.images = setForm.watch.images;
+                watch.Weather.AirPollution = watch.Weather.AirPollution == null ? new AirPollution() : watch.Weather.AirPollution;
+                watch.Weather.AirPollution.Icon = setForm.imageSet;
+                AddAirIcons.Text = res.GetString("EditImages");
+            }
+            else if (setForm.delete)
+            {
+                watch.images = setForm.watch.images;
+                if (watch.Weather.AirPollution != null) watch.Weather.AirPollution.Icon = null;
+                AddAirIcons.Text = res.GetString("AddImages");
+            }
+
+            Render(state);
+        }
+
         private void GroupBoxChangeCheck(object sender, EventArgs e)
         {
             groupBox1.Enabled = WeatherIconCheckbox.Checked;
@@ -689,6 +736,7 @@ namespace MiBand5WatchFaces.Forms
             groupBox6.Enabled = HumidityCheckbox.Checked;
             groupBox7.Enabled = WindCheckbox.Checked;
             groupBox8.Enabled = UVIndexCheckbox.Checked;
+            groupBox9.Enabled = AirCheckbox.Checked;
         }
 
         private void SaveButton_Click(object sender, EventArgs e)
@@ -723,6 +771,9 @@ namespace MiBand5WatchFaces.Forms
 
             if (UVIndexCheckbox.Checked == false)
                 watch.Weather.UVIndex = null;
+
+            if (AirCheckbox.Checked == false || (watch.Weather?.AirPollution?.Icon == null && watch.Weather?.AirPollution?.Index == null))
+                watch.Weather.AirPollution = null;
 
             if (watch.Weather.UVIndex == null && watch.Weather.Wind == null && watch.Weather.Temperature == null && watch.Weather.Icon == null && watch.Weather.Humidity == null)
                 watch.Weather = null;
@@ -763,6 +814,9 @@ namespace MiBand5WatchFaces.Forms
 
                 if (UVIndexCheckbox.Checked == false)
                     watch.Weather.UVIndex = null;
+
+                if (AirCheckbox.Checked == false || (watch.Weather?.AirPollution?.Icon == null && watch.Weather?.AirPollution?.Index == null))
+                    watch.Weather.AirPollution = null;
 
                 if (watch.Weather.UVIndex == null && watch.Weather.Wind == null && watch.Weather.Temperature == null && watch.Weather.Icon == null && watch.Weather.Humidity == null)
                     watch.Weather = null;

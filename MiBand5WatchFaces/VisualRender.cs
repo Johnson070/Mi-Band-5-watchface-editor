@@ -693,8 +693,8 @@ namespace MiBand5WatchFaces
                     List<Image> images = new List<Image>();
                     Number air = weather.AirPollution.Index;
 
-                    for (int i = 0; i < watchFaceState.AirQualityIndex.ToString().Length; i++)
-                        images.Add(watchface.images[air.ImageIndex + Convert.ToInt16(watchFaceState.AirQualityIndex.ToString()[i].ToString())]);
+                    for (int i = 0; i < watchFaceState.AirQuality.ToString().Length; i++)
+                        images.Add(watchface.images[air.ImageIndex + Convert.ToInt16(watchFaceState.AirQuality.ToString()[i].ToString())]);
 
                     drawNumber(air, images);
                 }

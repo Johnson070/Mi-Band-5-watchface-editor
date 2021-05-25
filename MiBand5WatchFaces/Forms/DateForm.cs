@@ -105,6 +105,18 @@ namespace MiBand5WatchFaces.Forms
                 if (watch.Date.ENWeekDays.ImageIndex >= 0) addWeekDays.Text = res.GetString("EditWeekDaysImages");
             }
 
+            if (watch.Date?.CNWeekDays != null)
+            {
+                cnWeekDaysCheckbox.Checked = true;
+                if (watch.Date.CNWeekDays.ImageIndex >= 0) AddCNWeekDaysButton.Text = res.GetString("EditWeekDaysImages");
+            }
+
+            if (watch.Date?.CN2WeekDays != null)
+            {
+                CN2WeekDaysCheckbox.Checked = true;
+                if (watch.Date.CN2WeekDays.ImageIndex >= 0) AddCN2WeekDaysButton.Text = res.GetString("EditWeekDaysImages");
+            }
+
             checkStateChanged(null, null);
         }
 
@@ -393,21 +405,65 @@ namespace MiBand5WatchFaces.Forms
         private void addWeekdayClick(object sender, EventArgs e)
         {
             WatchFaceLibrary watchface = DeepCopy(watch);
-            watchface.Date.ENWeekDays = watchface.Date.ENWeekDays == null ? new ImageSet() : watchface.Date.ENWeekDays;
-            ImageSetForm setForm = new ImageSetForm(watchface, watchface.Date.ENWeekDays, watch.images.DeepCopy(), state, 7);
-            setForm.ShowDialog();
+            string name = ((Button)sender).Name;
 
-            if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
+
+            if (name == addWeekDays.Name)
             {
-                watch.images = setForm.watch.images;
-                watch.Date.ENWeekDays = setForm.imageSet;
-                addWeekDays.Text = res.GetString("EditWeekDaysImages");
+                watchface.Date.ENWeekDays = watchface.Date.ENWeekDays == null ? new ImageSet() : watchface.Date.ENWeekDays;
+                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Date.ENWeekDays, watch.images.DeepCopy(), state, 7);
+                setForm.ShowDialog();
+
+                if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
+                {
+                    watch.images = setForm.watch.images;
+                    watch.Date.ENWeekDays = setForm.imageSet;
+                    addWeekDays.Text = res.GetString("EditWeekDaysImages");
+                }
+                else if (setForm.delete)
+                {
+                    watch.images = setForm.watch.images;
+                    watch.Date.ENWeekDays = null;
+                    addWeekDays.Text = res.GetString("AddWeekDaysImages");
+                }
             }
-            else if (setForm.delete)
+            else if (name == AddCNWeekDaysButton.Name)
             {
-                watch.images = setForm.watch.images;
-                watch.Date.ENWeekDays = null;
-                addWeekDays.Text = res.GetString("AddWeekDaysImages");
+                watchface.Date.CNWeekDays = watchface.Date.CNWeekDays == null ? new ImageSet() : watchface.Date.CNWeekDays;
+                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Date.CNWeekDays, watch.images.DeepCopy(), state, 7);
+                setForm.ShowDialog();
+
+                if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
+                {
+                    watch.images = setForm.watch.images;
+                    watch.Date.CNWeekDays = setForm.imageSet;
+                    addWeekDays.Text = res.GetString("EditWeekDaysImages");
+                }
+                else if (setForm.delete)
+                {
+                    watch.images = setForm.watch.images;
+                    watch.Date.CNWeekDays = null;
+                    addWeekDays.Text = res.GetString("AddWeekDaysImages");
+                }
+            }
+            else if (name == AddCN2WeekDaysButton.Name)
+            {
+                watchface.Date.CN2WeekDays = watchface.Date.CN2WeekDays == null ? new ImageSet() : watchface.Date.CN2WeekDays;
+                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Date.CN2WeekDays, watch.images.DeepCopy(), state, 7);
+                setForm.ShowDialog();
+
+                if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
+                {
+                    watch.images = setForm.watch.images;
+                    watch.Date.CN2WeekDays = setForm.imageSet;
+                    addWeekDays.Text = res.GetString("EditWeekDaysImages");
+                }
+                else if (setForm.delete)
+                {
+                    watch.images = setForm.watch.images;
+                    watch.Date.CN2WeekDays = null;
+                    addWeekDays.Text = res.GetString("AddWeekDaysImages");
+                }
             }
 
             Render(state);
@@ -420,6 +476,8 @@ namespace MiBand5WatchFaces.Forms
             groupBox3.Enabled = OnelineWithYearCheckbox.Checked;
             groupBox4.Enabled = AmPmCheckbox.Checked;
             groupBox5.Enabled = weekdaysCheckbox.Checked;
+            groupBox6.Enabled = cnWeekDaysCheckbox.Checked;
+            groupBox7.Enabled = CN2WeekDaysCheckbox.Checked;
         }
 
         private void TwoDigitsChanged(object sender, EventArgs e)
@@ -448,6 +506,8 @@ namespace MiBand5WatchFaces.Forms
                 }
                 if (AmPmCheckbox.Checked == false) watch.Date.DayAmPm = null;
                 if (weekdaysCheckbox.Checked == false) watch.Date.ENWeekDays = null;
+                if (cnWeekDaysCheckbox.Checked == false) watch.Date.CNWeekDays = null;
+                if (CN2WeekDaysCheckbox.Checked == false) watch.Date.CN2WeekDays = null;
                 if (watch.Date.DayAmPm == null && watch.Date.ENWeekDays == null && watch.Date.MonthAndDayAndYear == null)
                     watch.Date = null;
             }
@@ -472,6 +532,8 @@ namespace MiBand5WatchFaces.Forms
                     watch.Date.DayAmPm = null;
             if (AmPmCheckbox.Checked == false) watch.Date.DayAmPm = null;
             if (weekdaysCheckbox.Checked == false) watch.Date.ENWeekDays = null;
+            if (cnWeekDaysCheckbox.Checked == false) watch.Date.CNWeekDays = null;
+            if (CN2WeekDaysCheckbox.Checked == false) watch.Date.CN2WeekDays = null;
             if (watch.Date.DayAmPm == null && watch.Date.ENWeekDays == null && watch.Date.MonthAndDayAndYear == null)
                 watch.Date = null;
             this.Close();

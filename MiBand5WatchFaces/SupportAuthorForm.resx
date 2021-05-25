@@ -117,25 +117,128 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="PayPalbutton.Text" xml:space="preserve">
-    <value>Paypal</value>
-  </data>
-  <data name="&gt;&gt;Alertbutton.Name" xml:space="preserve">
-    <value>Alertbutton</value>
-  </data>
-  <data name="&gt;&gt;PayPalbutton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>9, 18</value>
+  <data name="BTCbutton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 13</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="BTCbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
+  </data>
+  <data name="BTCbutton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 50</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BTCbutton.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="BTCbutton.Text" xml:space="preserve">
+    <value>BTC copy address</value>
+  </data>
+  <data name="&gt;&gt;BTCbutton.Name" xml:space="preserve">
+    <value>BTCbutton</value>
+  </data>
+  <data name="&gt;&gt;BTCbutton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;BTCbutton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;BTCbutton.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="ETHbutton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 71</value>
+  </data>
+  <data name="ETHbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="ETHbutton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 50</value>
+  </data>
+  <data name="ETHbutton.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="ETHbutton.Text" xml:space="preserve">
+    <value>ETH copy address</value>
+  </data>
+  <data name="&gt;&gt;ETHbutton.Name" xml:space="preserve">
+    <value>ETHbutton</value>
+  </data>
+  <data name="&gt;&gt;ETHbutton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ETHbutton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;ETHbutton.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="USDTbutton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 129</value>
+  </data>
+  <data name="USDTbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="USDTbutton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 50</value>
+  </data>
+  <data name="USDTbutton.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="USDTbutton.Text" xml:space="preserve">
+    <value>USDT copy address</value>
+  </data>
+  <data name="&gt;&gt;USDTbutton.Name" xml:space="preserve">
+    <value>USDTbutton</value>
+  </data>
+  <data name="&gt;&gt;USDTbutton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;USDTbutton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;USDTbutton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="PayPalbutton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>13, 187</value>
+  </data>
+  <data name="PayPalbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="PayPalbutton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>316, 50</value>
+  </data>
+  <data name="PayPalbutton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="PayPalbutton.Text" xml:space="preserve">
+    <value>Paypal</value>
+  </data>
+  <data name="&gt;&gt;PayPalbutton.Name" xml:space="preserve">
+    <value>PayPalbutton</value>
+  </data>
+  <data name="&gt;&gt;PayPalbutton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;PayPalbutton.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;PayPalbutton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>9, 18</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>343, 251</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -3323,149 +3426,19 @@
         07/c/HtV3b/W+P8BlSopj6SGjh0AAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="Alertbutton.Text" xml:space="preserve">
-    <value>Donation alerts</value>
-  </data>
-  <data name="&gt;&gt;USDTbutton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="USDTbutton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 129</value>
-  </data>
-  <data name="&gt;&gt;ETHbutton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ETHbutton.Name" xml:space="preserve">
-    <value>ETHbutton</value>
-  </data>
-  <data name="USDTbutton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 50</value>
-  </data>
-  <data name="ETHbutton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 71</value>
-  </data>
-  <data name="ETHbutton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 50</value>
-  </data>
-  <data name="&gt;&gt;USDTbutton.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;Alertbutton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;PayPalbutton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Alertbutton.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="USDTbutton.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="BTCbutton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;BTCbutton.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;Alertbutton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;PayPalbutton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>343, 307</value>
-  </data>
-  <data name="PayPalbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
   <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>4, 4, 4, 4</value>
-  </data>
-  <data name="ETHbutton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="Alertbutton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 50</value>
-  </data>
-  <data name="&gt;&gt;ETHbutton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="ETHbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="&gt;&gt;BTCbutton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>SupportAuthorForm</value>
-  </data>
-  <data name="PayPalbutton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 187</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>
   </data>
-  <data name="ETHbutton.Text" xml:space="preserve">
-    <value>ETH copy address</value>
-  </data>
-  <data name="&gt;&gt;Alertbutton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="BTCbutton.Text" xml:space="preserve">
-    <value>BTC copy address</value>
-  </data>
-  <data name="BTCbutton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 50</value>
-  </data>
-  <data name="&gt;&gt;USDTbutton.Name" xml:space="preserve">
-    <value>USDTbutton</value>
-  </data>
-  <data name="&gt;&gt;BTCbutton.Name" xml:space="preserve">
-    <value>BTCbutton</value>
-  </data>
-  <data name="Alertbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="&gt;&gt;PayPalbutton.Name" xml:space="preserve">
-    <value>PayPalbutton</value>
-  </data>
-  <data name="USDTbutton.Text" xml:space="preserve">
-    <value>USDT copy address</value>
-  </data>
-  <data name="PayPalbutton.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;ETHbutton.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;USDTbutton.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="PayPalbutton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>316, 50</value>
-  </data>
-  <data name="&gt;&gt;BTCbutton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="BTCbutton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 13</value>
-  </data>
-  <data name="Alertbutton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>13, 245</value>
-  </data>
-  <data name="USDTbutton.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt</value>
-  </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Support author</value>
   </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SupportAuthorForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

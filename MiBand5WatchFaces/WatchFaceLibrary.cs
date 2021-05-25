@@ -73,7 +73,10 @@ namespace MiBand5WatchFaces
         [Obfuscation(Exclude = false, Feature = "-rename")]
         [JsonProperty("StatusSimplified")]
         public StatusSimple StatusSimplified;
-        //public LunarDate LunarDateCN;
+
+        [Obfuscation(Exclude = false, Feature = "-rename")]
+        [JsonProperty("LunarDateCN")]
+        public LunarDate LunarDateCN;
 
         //[JsonIgnore]
         [Obfuscation(Exclude = false, Feature = "-rename")]
@@ -1423,8 +1426,12 @@ namespace MiBand5WatchFaces
                     if (childNode.IndexOf("ImagesCount") != -1)
                         imgCount = property.Value.Value<int>();
 
-                    if (childNode.ToLower().IndexOf("index") != -1 && childNode.ToLower().IndexOf("uv") == -1)
-                        startIndex = property.Value.Value<int>();
+                    try
+                    {
+                        if (childNode.ToLower().IndexOf("index") != -1 && childNode.ToLower().IndexOf("uv") == -1)
+                            startIndex = property.Value.Value<int>();
+                    }
+                    catch { }
 
                     if (childNode.ToLower().IndexOf("segments") != -1)
                         imgCount = property.Value.Value<JArray>().Count();
