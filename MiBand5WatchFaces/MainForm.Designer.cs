@@ -68,6 +68,7 @@
             this.toolStripDropDownButton3 = new System.Windows.Forms.ToolStripDropDownButton();
             this.englishToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.russianToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.simpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.OpenJsonButton = new System.Windows.Forms.ToolStripButton();
             this.CloseProjectButton = new System.Windows.Forms.ToolStripButton();
@@ -82,6 +83,10 @@
             this.DeleteTrash = new System.Windows.Forms.Timer(this.components);
             this.SetWatchfaceState = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.SettingsEXE = new System.Windows.Forms.Button();
             this.openDirectoryWatchface = new System.Windows.Forms.Button();
             this.SupportAuthorButton = new System.Windows.Forms.Button();
@@ -90,7 +95,6 @@
             this.RenderButton = new System.Windows.Forms.Button();
             this.listViewElements = new System.Windows.Forms.ListView();
             this.AnimateCheckBox = new System.Windows.Forms.CheckBox();
-            this.simpleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.listMenuStrip.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -375,6 +379,13 @@
             this.russianToolStripMenuItem.Tag = "ru-RU";
             this.russianToolStripMenuItem.Click += new System.EventHandler(this.ChangeLang);
             // 
+            // simpleToolStripMenuItem
+            // 
+            this.simpleToolStripMenuItem.Name = "simpleToolStripMenuItem";
+            resources.ApplyResources(this.simpleToolStripMenuItem, "simpleToolStripMenuItem");
+            this.simpleToolStripMenuItem.Tag = "zh-CN";
+            this.simpleToolStripMenuItem.Click += new System.EventHandler(this.ChangeLang);
+            // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
@@ -466,6 +477,10 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.radioButton1);
             this.groupBox1.Controls.Add(this.SettingsEXE);
             this.groupBox1.Controls.Add(this.openDirectoryWatchface);
             this.groupBox1.Controls.Add(this.SupportAuthorButton);
@@ -473,6 +488,34 @@
             this.groupBox1.Controls.Add(this.SetWatchfaceState);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // radioButton3
+            // 
+            resources.ApplyResources(this.radioButton3, "radioButton3");
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.ChangeLangCheck);
+            // 
+            // radioButton2
+            // 
+            resources.ApplyResources(this.radioButton2, "radioButton2");
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.ChangeLangCheck);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
+            // radioButton1
+            // 
+            resources.ApplyResources(this.radioButton1, "radioButton1");
+            this.radioButton1.Checked = true;
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.TabStop = true;
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.ChangeLangCheck);
             // 
             // SettingsEXE
             // 
@@ -534,13 +577,6 @@
             this.AnimateCheckBox.UseVisualStyleBackColor = true;
             this.AnimateCheckBox.CheckedChanged += new System.EventHandler(this.AnimateCheckBox_CheckedChanged);
             // 
-            // simpleToolStripMenuItem
-            // 
-            resources.ApplyResources(this.simpleToolStripMenuItem, "simpleToolStripMenuItem");
-            this.simpleToolStripMenuItem.Name = "simpleToolStripMenuItem";
-            this.simpleToolStripMenuItem.Tag = "zh-CN";
-            this.simpleToolStripMenuItem.Click += new System.EventHandler(this.ChangeLang);
-            // 
             // MainForm
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -564,6 +600,7 @@
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.watchfacePreviewImage)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -632,6 +669,10 @@
         private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem saveBinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem simpleToolStripMenuItem;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.RadioButton radioButton1;
     }
 }
 

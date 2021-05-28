@@ -1314,6 +1314,66 @@
   <data name="groupBox7.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="AddSuffixCN2WindButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="AddSuffixCN2WindButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddSuffixCN2WindButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 203</value>
+  </data>
+  <data name="AddSuffixCN2WindButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 54</value>
+  </data>
+  <data name="AddSuffixCN2WindButton.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="AddSuffixCN2WindButton.Text" xml:space="preserve">
+    <value>Add suffix CN 2</value>
+  </data>
+  <data name="&gt;&gt;AddSuffixCN2WindButton.Name" xml:space="preserve">
+    <value>AddSuffixCN2WindButton</value>
+  </data>
+  <data name="&gt;&gt;AddSuffixCN2WindButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddSuffixCN2WindButton.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;AddSuffixCN2WindButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AddSuffixCN1WindButton.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="AddSuffixCN1WindButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddSuffixCN1WindButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 143</value>
+  </data>
+  <data name="AddSuffixCN1WindButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 54</value>
+  </data>
+  <data name="AddSuffixCN1WindButton.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="AddSuffixCN1WindButton.Text" xml:space="preserve">
+    <value>Add suffix CN 1</value>
+  </data>
+  <data name="&gt;&gt;AddSuffixCN1WindButton.Name" xml:space="preserve">
+    <value>AddSuffixCN1WindButton</value>
+  </data>
+  <data name="&gt;&gt;AddSuffixCN1WindButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddSuffixCN1WindButton.Parent" xml:space="preserve">
+    <value>groupBox7</value>
+  </data>
+  <data name="&gt;&gt;AddSuffixCN1WindButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="AddSuffixWindButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1339,7 +1399,7 @@
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;AddSuffixWindButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="AddNumberWindButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 23</value>
@@ -1363,7 +1423,7 @@
     <value>groupBox7</value>
   </data>
   <data name="&gt;&gt;AddNumberWindButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="groupBox7.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
@@ -1443,6 +1503,60 @@
   <data name="groupBox8.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="AddUVCN2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddUVCN2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 203</value>
+  </data>
+  <data name="AddUVCN2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 54</value>
+  </data>
+  <data name="AddUVCN2.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="AddUVCN2.Text" xml:space="preserve">
+    <value>Add UVCN 2</value>
+  </data>
+  <data name="&gt;&gt;AddUVCN2.Name" xml:space="preserve">
+    <value>AddUVCN2</value>
+  </data>
+  <data name="&gt;&gt;AddUVCN2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddUVCN2.Parent" xml:space="preserve">
+    <value>groupBox8</value>
+  </data>
+  <data name="&gt;&gt;AddUVCN2.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AddUVCN.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddUVCN.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 143</value>
+  </data>
+  <data name="AddUVCN.Size" type="System.Drawing.Size, System.Drawing">
+    <value>488, 54</value>
+  </data>
+  <data name="AddUVCN.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="AddUVCN.Text" xml:space="preserve">
+    <value>Add UVCN</value>
+  </data>
+  <data name="&gt;&gt;AddUVCN.Name" xml:space="preserve">
+    <value>AddUVCN</value>
+  </data>
+  <data name="&gt;&gt;AddUVCN.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddUVCN.Parent" xml:space="preserve">
+    <value>groupBox8</value>
+  </data>
+  <data name="&gt;&gt;AddUVCN.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="AddSuffixUVButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -1468,7 +1582,7 @@
     <value>groupBox8</value>
   </data>
   <data name="&gt;&gt;AddSuffixUVButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="AddNumberUVButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 23</value>
@@ -1492,7 +1606,7 @@
     <value>groupBox8</value>
   </data>
   <data name="&gt;&gt;AddNumberUVButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="groupBox8.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>

@@ -106,6 +106,24 @@ namespace MiBand5WatchFaces.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Add CN AM image.
+        /// </summary>
+        internal static string AddCNAMImage {
+            get {
+                return ResourceManager.GetString("AddCNAMImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add CN PM image.
+        /// </summary>
+        internal static string AddCNPMImage {
+            get {
+                return ResourceManager.GetString("AddCNPMImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Add day.
         /// </summary>
         internal static string AddDay {
@@ -304,11 +322,47 @@ namespace MiBand5WatchFaces.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Add month and day CN.
+        /// </summary>
+        internal static string AddMonthAndDayCN {
+            get {
+                return ResourceManager.GetString("AddMonthAndDayCN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add month and day EN.
+        /// </summary>
+        internal static string AddMonthAndDayEN {
+            get {
+                return ResourceManager.GetString("AddMonthAndDayEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Add month images.
         /// </summary>
         internal static string AddMonthImages {
             get {
                 return ResourceManager.GetString("AddMonthImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add month images CN.
+        /// </summary>
+        internal static string AddMonthImagesCN {
+            get {
+                return ResourceManager.GetString("AddMonthImagesCN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Add month images EN.
+        /// </summary>
+        internal static string AddMonthImagesEN {
+            get {
+                return ResourceManager.GetString("AddMonthImagesEN", resourceCulture);
             }
         }
         
@@ -457,6 +511,15 @@ namespace MiBand5WatchFaces.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Add UVCN.
+        /// </summary>
+        internal static string AddUVCN {
+            get {
+                return ResourceManager.GetString("AddUVCN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Add wednesday image.
         /// </summary>
         internal static string AddWednesdayImage {
@@ -563,6 +626,24 @@ namespace MiBand5WatchFaces.Resources {
         internal static string EditCircleScale {
             get {
                 return ResourceManager.GetString("EditCircleScale", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit CN AM image.
+        /// </summary>
+        internal static string EditCNAMImage {
+            get {
+                return ResourceManager.GetString("EditCNAMImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit CN PM image.
+        /// </summary>
+        internal static string EditCNPMImage {
+            get {
+                return ResourceManager.GetString("EditCNPMImage", resourceCulture);
             }
         }
         
@@ -765,11 +846,47 @@ namespace MiBand5WatchFaces.Resources {
         }
         
         /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit month and day CN.
+        /// </summary>
+        internal static string EditMonthAndDayCN {
+            get {
+                return ResourceManager.GetString("EditMonthAndDayCN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit month and day EN.
+        /// </summary>
+        internal static string EditMonthAndDayEN {
+            get {
+                return ResourceManager.GetString("EditMonthAndDayEN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Ищет локализованную строку, похожую на Edit month images.
         /// </summary>
         internal static string EditMonthImages {
             get {
                 return ResourceManager.GetString("EditMonthImages", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit month images CN.
+        /// </summary>
+        internal static string EditMonthImagesCN {
+            get {
+                return ResourceManager.GetString("EditMonthImagesCN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit month images EN.
+        /// </summary>
+        internal static string EditMonthImagesEN {
+            get {
+                return ResourceManager.GetString("EditMonthImagesEN", resourceCulture);
             }
         }
         
@@ -914,6 +1031,15 @@ namespace MiBand5WatchFaces.Resources {
         internal static string EditTuesdayImage {
             get {
                 return ResourceManager.GetString("EditTuesdayImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Ищет локализованную строку, похожую на Edit UVCN.
+        /// </summary>
+        internal static string EditUVCN {
+            get {
+                return ResourceManager.GetString("EditUVCN", resourceCulture);
             }
         }
         

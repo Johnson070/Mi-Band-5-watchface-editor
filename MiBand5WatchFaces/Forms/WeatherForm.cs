@@ -140,21 +140,46 @@ namespace MiBand5WatchFaces.Forms
             {
                 WindCheckbox.Checked = watch.Weather?.Wind != null;
                 AddSuffixWindButton.Enabled = true;
+                AddSuffixCN1WindButton.Enabled = true;
+                AddSuffixCN2WindButton.Enabled = true;
 
                 AddNumberWindButton.Text = res.GetString("EditNumber");
                 if (watch.Weather.Wind.ImageSuffixEN >= 0)
                     AddSuffixWindButton.Text = res.GetString("EditSuffix");
+                if (watch.Weather.Wind.ImageSuffixCN1 >= 0)
+                    AddSuffixCN1WindButton.Text = res.GetString("EditSuffix") + " CN 1";
+                if (watch.Weather.Wind.ImageSuffixCN2 >= 0)
+                    AddSuffixCN2WindButton.Text = res.GetString("EditSuffix") + " CN 2";
             }
-            if (watch.Weather?.UVIndex?.UV != null)
+            if (watch.Weather?.AirPollution != null)
+            {
+                AirCheckbox.Checked = watch.Weather?.AirPollution != null;
+                AddAirIcons.Enabled = true;
+
+                AddAirNumber.Text = res.GetString("EditNumber");
+                if (watch.Weather.AirPollution.Icon != null)
+                    AddAirIcons.Text = res.GetString("EditImages");
+            }
+            if (watch.Weather?.UVIndex != null)
             {
                 UVIndexCheckbox.Checked = watch.Weather?.UVIndex?.UV != null;
-                AddSuffixUVButton.Enabled = true;
+                if (watch.Weather.UVIndex.UV != null)
+                {
+                    AddSuffixUVButton.Enabled = true;
 
-                AddNumberUVButton.Text = res.GetString("EditNumber");
-                if (watch.Weather.UVIndex.UV.SuffixImageIndex >= 0)
-                    AddSuffixUVButton.Text = res.GetString("EditSuffix");
+                    AddNumberUVButton.Text = res.GetString("EditNumber");
+                    if (watch.Weather.UVIndex.UV.SuffixImageIndex >= 0)
+                        AddSuffixUVButton.Text = res.GetString("EditSuffix");
+                }
+                if (watch.Weather.UVIndex.UVCN != null)
+                {
+                    AddUVCN.Text = res.GetString("EditUVCN");
+                }
+                if (watch.Weather.UVIndex.UVCN2 != null)
+                {
+                    AddUVCN2.Text = res.GetString("EditUVCN")+" 2";
+                }
             }
-
         }
 
         private void AddWeatherCustomIconButton_Click(object sender, EventArgs e)
@@ -362,6 +387,8 @@ namespace MiBand5WatchFaces.Forms
                     watch.images = numberForm.watch.images;
                     AddNumberWindButton.Text = res.GetString("EditNumber");
                     AddSuffixWindButton.Enabled = true;
+                    AddSuffixCN1WindButton.Enabled = true;
+                    AddSuffixCN2WindButton.Enabled = true;
                 }
                 else if (numberForm.delete)
                 {
@@ -369,6 +396,8 @@ namespace MiBand5WatchFaces.Forms
                     watch.images = numberForm.watch.images;
                     AddNumberWindButton.Text = res.GetString("AddNumber");
                     AddSuffixWindButton.Enabled = false;
+                    AddSuffixCN1WindButton.Enabled = false;
+                    AddSuffixCN2WindButton.Enabled = false;
                 }
             }
             else if (btn.Name == AddNumberUVButton.Name)
@@ -448,6 +477,52 @@ namespace MiBand5WatchFaces.Forms
                     watch.Weather.Temperature.Today.Separate.Day.MinusImageIndex = -10000;
                     AddMinusImageTemperatureTodaySeparateDayButton.Text = res.GetString("AddMinusImage");
                 }
+            }
+            else if (btn.Name == AddUVCN.Name)
+            {
+                WatchFaceLibrary watchface = DeepCopy(watch);
+                watchface.Weather.UVIndex = watchface.Weather.UVIndex == null ? new UVWrapper() : watchface.Weather.UVIndex;
+                watchface.Weather.UVIndex.UVCN = watchface.Weather.UVIndex.UVCN == null ? new ImageSet() : watchface.Weather.UVIndex.UVCN;
+                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Weather.UVIndex.UVCN, watch.images.DeepCopy(), state);
+                setForm.ShowDialog();
+
+                if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
+                {
+                    watch.images = setForm.watch.images;
+                    watchface.Weather.UVIndex.UVCN = setForm.imageSet;
+                    AddUVCN.Text = res.GetString("EditUVCN");
+                }
+                else if (setForm.delete)
+                {
+                    watch.images = setForm.watch.images;
+                    watchface.Weather.UVIndex.UVCN = null;
+                    AddUVCN.Text = res.GetString("AddUVCN");
+                }
+
+                Render(state);
+            }
+            else if (btn.Name == AddUVCN2.Name)
+            {
+                WatchFaceLibrary watchface = DeepCopy(watch);
+                watchface.Weather.UVIndex = watchface.Weather.UVIndex == null ? new UVWrapper() : watchface.Weather.UVIndex;
+                watchface.Weather.UVIndex.UVCN2 = watchface.Weather.UVIndex.UVCN2 == null ? new ImageSet() : watchface.Weather.UVIndex.UVCN2;
+                ImageSetForm setForm = new ImageSetForm(watchface, watchface.Weather.UVIndex.UVCN2, watch.images.DeepCopy(), state);
+                setForm.ShowDialog();
+
+                if (setForm.saved && setForm.imageSet.ImageIndex >= 0)
+                {
+                    watch.images = setForm.watch.images;
+                    watchface.Weather.UVIndex.UVCN2 = setForm.imageSet;
+                    AddUVCN2.Text = res.GetString("EditUVCN")+" 2";
+                }
+                else if (setForm.delete)
+                {
+                    watch.images = setForm.watch.images;
+                    watchface.Weather.UVIndex.UVCN2 = null;
+                    AddUVCN2.Text = res.GetString("AddUVCN") + " 2";
+                }
+
+                Render(state);
             }
             else if (btn.Name == AddMinusImageTemperatureTodaySeparateNightButton.Name)
             {
@@ -649,6 +724,46 @@ namespace MiBand5WatchFaces.Forms
                     AddSuffixWindButton.Text = res.GetString("AddSuffix");
                 }
             }
+            else if (btn.Name == AddSuffixCN1WindButton.Name)
+            {
+                if (watch.Weather.Wind.ImageSuffixEN >= 0) selImg = new List<int>() { watch.Weather.Wind.ImageSuffixCN1 };
+
+                imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
+                imgForm.ShowDialog();
+
+                if (imgForm.saveImages == true && imgForm.selectedImages != null)
+                {
+                    watch.images = imgForm.Images;
+                    watch.Weather.Wind.ImageSuffixCN1 = imgForm.selectedImages[0];
+                    AddSuffixCN1WindButton.Text = res.GetString("EditSuffix") + " CN 1";
+                }
+                else if (imgForm.saveImages == true)
+                {
+                    watch.images = imgForm.Images;
+                    watch.Weather.Wind.ImageSuffixCN1 = -10000;
+                    AddSuffixCN1WindButton.Text = res.GetString("AddSuffix") + " CN 2";
+                }
+            }
+            else if (btn.Name == AddSuffixCN2WindButton.Name)
+            {
+                if (watch.Weather.Wind.ImageSuffixEN >= 0) selImg = new List<int>() { watch.Weather.Wind.ImageSuffixCN2 };
+
+                imgForm = new ImagesForm(watch, watch.images.DeepCopy(), selImg, true, false);
+                imgForm.ShowDialog();
+
+                if (imgForm.saveImages == true && imgForm.selectedImages != null)
+                {
+                    watch.images = imgForm.Images;
+                    watch.Weather.Wind.ImageSuffixCN2 = imgForm.selectedImages[0];
+                    AddSuffixCN2WindButton.Text = res.GetString("EditSuffix") + " CN 2";
+                }
+                else if (imgForm.saveImages == true)
+                {
+                    watch.images = imgForm.Images;
+                    watch.Weather.Wind.ImageSuffixCN2 = -10000;
+                    AddSuffixCN2WindButton.Text = res.GetString("AddSuffix") + " CN 2";
+                }
+            }
             else if (btn.Name == AddSuffixUVButton.Name)
             {
                 if (watch.Weather.UVIndex.UV.SuffixImageIndex >= 0) selImg = new List<int>() { watch.Weather.UVIndex.UV.SuffixImageIndex };
@@ -812,7 +927,7 @@ namespace MiBand5WatchFaces.Forms
                 if (WindCheckbox.Checked == false)
                     watch.Weather.Wind = null;
 
-                if (UVIndexCheckbox.Checked == false)
+                if (UVIndexCheckbox.Checked == false || (watch.Weather?.UVIndex?.UV == null && watch.Weather?.UVIndex?.UVCN == null && watch.Weather?.UVIndex?.UVCN2 == null))
                     watch.Weather.UVIndex = null;
 
                 if (AirCheckbox.Checked == false || (watch.Weather?.AirPollution?.Icon == null && watch.Weather?.AirPollution?.Index == null))

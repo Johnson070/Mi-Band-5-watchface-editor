@@ -63,6 +63,11 @@
             this.AddDegreeImageTemperatureCurrentButton = new System.Windows.Forms.Button();
             this.AddMinusImageTemperatureCurrentButton = new System.Windows.Forms.Button();
             this.AddNumberTemperatureCurrentButton = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.AirCheckbox = new System.Windows.Forms.CheckBox();
+            this.groupBox9 = new System.Windows.Forms.GroupBox();
+            this.AddAirNumber = new System.Windows.Forms.Button();
+            this.AddAirIcons = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.HumidityCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
@@ -72,20 +77,19 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.WindCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.AddSuffixCN2WindButton = new System.Windows.Forms.Button();
+            this.AddSuffixCN1WindButton = new System.Windows.Forms.Button();
             this.AddSuffixWindButton = new System.Windows.Forms.Button();
             this.AddNumberWindButton = new System.Windows.Forms.Button();
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.UVIndexCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox8 = new System.Windows.Forms.GroupBox();
+            this.AddUVCN2 = new System.Windows.Forms.Button();
+            this.AddUVCN = new System.Windows.Forms.Button();
             this.AddSuffixUVButton = new System.Windows.Forms.Button();
             this.AddNumberUVButton = new System.Windows.Forms.Button();
             this.SaveButton = new System.Windows.Forms.Button();
             this.ImagePic = new System.Windows.Forms.Panel();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.AirCheckbox = new System.Windows.Forms.CheckBox();
-            this.groupBox9 = new System.Windows.Forms.GroupBox();
-            this.AddAirIcons = new System.Windows.Forms.Button();
-            this.AddAirNumber = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -100,14 +104,14 @@
             this.groupBox5.SuspendLayout();
             this.tabPage8.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.groupBox9.SuspendLayout();
             this.tabPage4.SuspendLayout();
             this.groupBox6.SuspendLayout();
             this.tabPage5.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.groupBox8.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.groupBox9.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -371,6 +375,43 @@
             this.AddNumberTemperatureCurrentButton.UseVisualStyleBackColor = true;
             this.AddNumberTemperatureCurrentButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.AirCheckbox);
+            this.tabPage3.Controls.Add(this.groupBox9);
+            resources.ApplyResources(this.tabPage3, "tabPage3");
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // AirCheckbox
+            // 
+            resources.ApplyResources(this.AirCheckbox, "AirCheckbox");
+            this.AirCheckbox.Name = "AirCheckbox";
+            this.AirCheckbox.UseVisualStyleBackColor = true;
+            this.AirCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
+            // 
+            // groupBox9
+            // 
+            resources.ApplyResources(this.groupBox9, "groupBox9");
+            this.groupBox9.Controls.Add(this.AddAirNumber);
+            this.groupBox9.Controls.Add(this.AddAirIcons);
+            this.groupBox9.Name = "groupBox9";
+            this.groupBox9.TabStop = false;
+            // 
+            // AddAirNumber
+            // 
+            resources.ApplyResources(this.AddAirNumber, "AddAirNumber");
+            this.AddAirNumber.Name = "AddAirNumber";
+            this.AddAirNumber.UseVisualStyleBackColor = true;
+            this.AddAirNumber.Click += new System.EventHandler(this.AddNumberClick);
+            // 
+            // AddAirIcons
+            // 
+            resources.ApplyResources(this.AddAirIcons, "AddAirIcons");
+            this.AddAirIcons.Name = "AddAirIcons";
+            this.AddAirIcons.UseVisualStyleBackColor = true;
+            this.AddAirIcons.Click += new System.EventHandler(this.AddImageSet);
+            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.HumidityCheckbox);
@@ -434,10 +475,26 @@
             // groupBox7
             // 
             resources.ApplyResources(this.groupBox7, "groupBox7");
+            this.groupBox7.Controls.Add(this.AddSuffixCN2WindButton);
+            this.groupBox7.Controls.Add(this.AddSuffixCN1WindButton);
             this.groupBox7.Controls.Add(this.AddSuffixWindButton);
             this.groupBox7.Controls.Add(this.AddNumberWindButton);
             this.groupBox7.Name = "groupBox7";
             this.groupBox7.TabStop = false;
+            // 
+            // AddSuffixCN2WindButton
+            // 
+            resources.ApplyResources(this.AddSuffixCN2WindButton, "AddSuffixCN2WindButton");
+            this.AddSuffixCN2WindButton.Name = "AddSuffixCN2WindButton";
+            this.AddSuffixCN2WindButton.UseVisualStyleBackColor = true;
+            this.AddSuffixCN2WindButton.Click += new System.EventHandler(this.AddImageClick);
+            // 
+            // AddSuffixCN1WindButton
+            // 
+            resources.ApplyResources(this.AddSuffixCN1WindButton, "AddSuffixCN1WindButton");
+            this.AddSuffixCN1WindButton.Name = "AddSuffixCN1WindButton";
+            this.AddSuffixCN1WindButton.UseVisualStyleBackColor = true;
+            this.AddSuffixCN1WindButton.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddSuffixWindButton
             // 
@@ -471,10 +528,26 @@
             // groupBox8
             // 
             resources.ApplyResources(this.groupBox8, "groupBox8");
+            this.groupBox8.Controls.Add(this.AddUVCN2);
+            this.groupBox8.Controls.Add(this.AddUVCN);
             this.groupBox8.Controls.Add(this.AddSuffixUVButton);
             this.groupBox8.Controls.Add(this.AddNumberUVButton);
             this.groupBox8.Name = "groupBox8";
             this.groupBox8.TabStop = false;
+            // 
+            // AddUVCN2
+            // 
+            resources.ApplyResources(this.AddUVCN2, "AddUVCN2");
+            this.AddUVCN2.Name = "AddUVCN2";
+            this.AddUVCN2.UseVisualStyleBackColor = true;
+            this.AddUVCN2.Click += new System.EventHandler(this.AddImageClick);
+            // 
+            // AddUVCN
+            // 
+            resources.ApplyResources(this.AddUVCN, "AddUVCN");
+            this.AddUVCN.Name = "AddUVCN";
+            this.AddUVCN.UseVisualStyleBackColor = true;
+            this.AddUVCN.Click += new System.EventHandler(this.AddImageClick);
             // 
             // AddSuffixUVButton
             // 
@@ -502,43 +575,6 @@
             resources.ApplyResources(this.ImagePic, "ImagePic");
             this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ImagePic.Name = "ImagePic";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.AirCheckbox);
-            this.tabPage3.Controls.Add(this.groupBox9);
-            resources.ApplyResources(this.tabPage3, "tabPage3");
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // AirCheckbox
-            // 
-            resources.ApplyResources(this.AirCheckbox, "AirCheckbox");
-            this.AirCheckbox.Name = "AirCheckbox";
-            this.AirCheckbox.UseVisualStyleBackColor = true;
-            this.AirCheckbox.CheckedChanged += new System.EventHandler(this.GroupBoxChangeCheck);
-            // 
-            // groupBox9
-            // 
-            resources.ApplyResources(this.groupBox9, "groupBox9");
-            this.groupBox9.Controls.Add(this.AddAirNumber);
-            this.groupBox9.Controls.Add(this.AddAirIcons);
-            this.groupBox9.Name = "groupBox9";
-            this.groupBox9.TabStop = false;
-            // 
-            // AddAirIcons
-            // 
-            resources.ApplyResources(this.AddAirIcons, "AddAirIcons");
-            this.AddAirIcons.Name = "AddAirIcons";
-            this.AddAirIcons.UseVisualStyleBackColor = true;
-            this.AddAirIcons.Click += new System.EventHandler(this.AddImageSet);
-            // 
-            // AddAirNumber
-            // 
-            resources.ApplyResources(this.AddAirNumber, "AddAirNumber");
-            this.AddAirNumber.Name = "AddAirNumber";
-            this.AddAirNumber.UseVisualStyleBackColor = true;
-            this.AddAirNumber.Click += new System.EventHandler(this.AddNumberClick);
             // 
             // WeatherForm
             // 
@@ -570,6 +606,9 @@
             this.tabPage8.ResumeLayout(false);
             this.tabPage8.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.groupBox9.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             this.groupBox6.ResumeLayout(false);
@@ -579,9 +618,6 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.groupBox8.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
-            this.groupBox9.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -645,5 +681,9 @@
         private System.Windows.Forms.GroupBox groupBox9;
         private System.Windows.Forms.Button AddAirIcons;
         private System.Windows.Forms.Button AddAirNumber;
+        private System.Windows.Forms.Button AddSuffixCN2WindButton;
+        private System.Windows.Forms.Button AddSuffixCN1WindButton;
+        private System.Windows.Forms.Button AddUVCN2;
+        private System.Windows.Forms.Button AddUVCN;
     }
 }

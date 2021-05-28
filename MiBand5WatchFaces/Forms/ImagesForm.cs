@@ -256,6 +256,9 @@ namespace MiBand5WatchFaces
             if (selectedImages != null && selectedImages.Count == 0)
                 selectedImages = null;
 
+            if (selectedImages != null && selectedImages.Count > 0 && selectedImages[0] == -10000)
+                selectedImages = null;
+
             //if (ImagesListBox.SelectedIndex != -1) selectedImages.Add(ImagesListBox.SelectedIndex);
             //else selectedImages = null;
         }

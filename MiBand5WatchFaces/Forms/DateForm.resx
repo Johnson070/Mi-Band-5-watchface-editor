@@ -213,6 +213,33 @@
   <data name="groupBox1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="AddMonthCNImagesSeparateButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddMonthCNImagesSeparateButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 76</value>
+  </data>
+  <data name="AddMonthCNImagesSeparateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 47</value>
+  </data>
+  <data name="AddMonthCNImagesSeparateButton.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="AddMonthCNImagesSeparateButton.Text" xml:space="preserve">
+    <value>Add month images CN</value>
+  </data>
+  <data name="&gt;&gt;AddMonthCNImagesSeparateButton.Name" xml:space="preserve">
+    <value>AddMonthCNImagesSeparateButton</value>
+  </data>
+  <data name="&gt;&gt;AddMonthCNImagesSeparateButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddMonthCNImagesSeparateButton.Parent" xml:space="preserve">
+    <value>groupBox1</value>
+  </data>
+  <data name="&gt;&gt;AddMonthCNImagesSeparateButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="AddDaySeparateButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 129</value>
   </data>
@@ -235,7 +262,7 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;AddDaySeparateButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>1</value>
   </data>
   <data name="AddMonthSeparateButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 23</value>
@@ -259,31 +286,31 @@
     <value>groupBox1</value>
   </data>
   <data name="&gt;&gt;AddMonthSeparateButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>2</value>
   </data>
-  <data name="AddMonthImagesSeparateButton.Location" type="System.Drawing.Point, System.Drawing">
+  <data name="AddMonthENImagesSeparateButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 76</value>
   </data>
-  <data name="AddMonthImagesSeparateButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>445, 47</value>
+  <data name="AddMonthENImagesSeparateButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 47</value>
   </data>
-  <data name="AddMonthImagesSeparateButton.TabIndex" type="System.Int32, mscorlib">
+  <data name="AddMonthENImagesSeparateButton.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
-  <data name="AddMonthImagesSeparateButton.Text" xml:space="preserve">
-    <value>Add month images</value>
+  <data name="AddMonthENImagesSeparateButton.Text" xml:space="preserve">
+    <value>Add month images EN</value>
   </data>
-  <data name="&gt;&gt;AddMonthImagesSeparateButton.Name" xml:space="preserve">
-    <value>AddMonthImagesSeparateButton</value>
+  <data name="&gt;&gt;AddMonthENImagesSeparateButton.Name" xml:space="preserve">
+    <value>AddMonthENImagesSeparateButton</value>
   </data>
-  <data name="&gt;&gt;AddMonthImagesSeparateButton.Type" xml:space="preserve">
+  <data name="&gt;&gt;AddMonthENImagesSeparateButton.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;AddMonthImagesSeparateButton.Parent" xml:space="preserve">
+  <data name="&gt;&gt;AddMonthENImagesSeparateButton.Parent" xml:space="preserve">
     <value>groupBox1</value>
   </data>
-  <data name="&gt;&gt;AddMonthImagesSeparateButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+  <data name="&gt;&gt;AddMonthENImagesSeparateButton.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
@@ -363,6 +390,60 @@
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="AddMonthAndDayCNOnelineButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddMonthAndDayCNOnelineButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>230, 23</value>
+  </data>
+  <data name="AddMonthAndDayCNOnelineButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 47</value>
+  </data>
+  <data name="AddMonthAndDayCNOnelineButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="AddMonthAndDayCNOnelineButton.Text" xml:space="preserve">
+    <value>Add month and day CN</value>
+  </data>
+  <data name="&gt;&gt;AddMonthAndDayCNOnelineButton.Name" xml:space="preserve">
+    <value>AddMonthAndDayCNOnelineButton</value>
+  </data>
+  <data name="&gt;&gt;AddMonthAndDayCNOnelineButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddMonthAndDayCNOnelineButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;AddMonthAndDayCNOnelineButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AddMonthAndDayENOnelineButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddMonthAndDayENOnelineButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 23</value>
+  </data>
+  <data name="AddMonthAndDayENOnelineButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>221, 47</value>
+  </data>
+  <data name="AddMonthAndDayENOnelineButton.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="AddMonthAndDayENOnelineButton.Text" xml:space="preserve">
+    <value>Add month and day EN</value>
+  </data>
+  <data name="&gt;&gt;AddMonthAndDayENOnelineButton.Name" xml:space="preserve">
+    <value>AddMonthAndDayENOnelineButton</value>
+  </data>
+  <data name="&gt;&gt;AddMonthAndDayENOnelineButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddMonthAndDayENOnelineButton.Parent" xml:space="preserve">
+    <value>groupBox2</value>
+  </data>
+  <data name="&gt;&gt;AddMonthAndDayENOnelineButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="AddOnelineDelimeterImageButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -388,7 +469,10 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;AddOnelineDelimeterImageButton.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
+  </data>
+  <data name="AddMonthAndDayOnelineButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
   </data>
   <data name="AddMonthAndDayOnelineButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 23</value>
@@ -412,7 +496,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;AddMonthAndDayOnelineButton.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
@@ -663,11 +747,65 @@
   <data name="groupBox4.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
+  <data name="AddCNPMImageButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddCNPMImageButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 146</value>
+  </data>
+  <data name="AddCNPMImageButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>461, 35</value>
+  </data>
+  <data name="AddCNPMImageButton.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="AddCNPMImageButton.Text" xml:space="preserve">
+    <value>Add CN PM image</value>
+  </data>
+  <data name="&gt;&gt;AddCNPMImageButton.Name" xml:space="preserve">
+    <value>AddCNPMImageButton</value>
+  </data>
+  <data name="&gt;&gt;AddCNPMImageButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddCNPMImageButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;AddCNPMImageButton.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="AddCNAMImageButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="AddCNAMImageButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 105</value>
+  </data>
+  <data name="AddCNAMImageButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>461, 35</value>
+  </data>
+  <data name="AddCNAMImageButton.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="AddCNAMImageButton.Text" xml:space="preserve">
+    <value>Add CN AM image</value>
+  </data>
+  <data name="&gt;&gt;AddCNAMImageButton.Name" xml:space="preserve">
+    <value>AddCNAMImageButton</value>
+  </data>
+  <data name="&gt;&gt;AddCNAMImageButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;AddCNAMImageButton.Parent" xml:space="preserve">
+    <value>groupBox4</value>
+  </data>
+  <data name="&gt;&gt;AddCNAMImageButton.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
   <data name="posYNumAMPM.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="posYNumAMPM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>143, 129</value>
+    <value>145, 187</value>
   </data>
   <data name="posYNumAMPM.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 24</value>
@@ -685,13 +823,13 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;posYNumAMPM.ZOrder" xml:space="preserve">
-    <value>0</value>
+    <value>2</value>
   </data>
   <data name="posXNumAMPM.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
   <data name="posXNumAMPM.Location" type="System.Drawing.Point, System.Drawing">
-    <value>86, 129</value>
+    <value>88, 187</value>
   </data>
   <data name="posXNumAMPM.Size" type="System.Drawing.Size, System.Drawing">
     <value>49, 24</value>
@@ -709,13 +847,13 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;posXNumAMPM.ZOrder" xml:space="preserve">
-    <value>1</value>
+    <value>3</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 131</value>
+    <value>6, 189</value>
   </data>
   <data name="label6.Size" type="System.Drawing.Size, System.Drawing">
     <value>66, 18</value>
@@ -736,13 +874,13 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>4</value>
   </data>
   <data name="AddPMImageButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 76</value>
+    <value>6, 64</value>
   </data>
   <data name="AddPMImageButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 47</value>
+    <value>461, 35</value>
   </data>
   <data name="AddPMImageButton.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
@@ -760,13 +898,13 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;AddPMImageButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="AddAMImageButton.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 23</value>
   </data>
   <data name="AddAMImageButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>461, 47</value>
+    <value>461, 35</value>
   </data>
   <data name="AddAMImageButton.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
@@ -784,7 +922,7 @@
     <value>groupBox4</value>
   </data>
   <data name="&gt;&gt;AddAMImageButton.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="groupBox4.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 3</value>
@@ -4430,9 +4568,6 @@
         1a3zlXlRWGF7ByWBo3yFlmb+zZVuUdZLlEXC1YyT8i1HjlpUzlBvWsZmefTStPvA82f4d4e28/yf30/6
         07/c/HtV3b/W+P8BlSopj6SGjh0AAAAASUVORK5CYII=
 </value>
-  </data>
-  <data name="$this.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
   </data>
   <data name="$this.StartPosition" type="System.Windows.Forms.FormStartPosition, System.Windows.Forms">
     <value>CenterScreen</value>

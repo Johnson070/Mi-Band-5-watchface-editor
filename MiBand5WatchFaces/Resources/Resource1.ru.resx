@@ -463,4 +463,46 @@
     <value>Файл WatchFace.exe.config не найден!
 Восстановите файл!</value>
   </data>
+  <data name="AddMonthAndDayCN" xml:space="preserve">
+    <value>Добавить месяц и день CN</value>
+  </data>
+  <data name="AddMonthAndDayEN" xml:space="preserve">
+    <value>Добавить месяц и день EN</value>
+  </data>
+  <data name="EditMonthAndDayCN" xml:space="preserve">
+    <value>Изменить месяц и день CN</value>
+  </data>
+  <data name="EditMonthAndDayEN" xml:space="preserve">
+    <value>Изменить месяц и день EN</value>
+  </data>
+  <data name="EditMonthImagesEN" xml:space="preserve">
+    <value>Изменить изобр. месяца EN</value>
+  </data>
+  <data name="EditMonthImagesCN" xml:space="preserve">
+    <value>Изменить изобр. месяца CN</value>
+  </data>
+  <data name="AddMonthImagesEN" xml:space="preserve">
+    <value>Добавить изобр. месяца EN</value>
+  </data>
+  <data name="AddMonthImagesCN" xml:space="preserve">
+    <value>Добавить изобр. месяца CN</value>
+  </data>
+  <data name="AddUVCN" xml:space="preserve">
+    <value>Добавить UVCN</value>
+  </data>
+  <data name="EditUVCN" xml:space="preserve">
+    <value>Изменить UVCN</value>
+  </data>
+  <data name="EditCNAMImage" xml:space="preserve">
+    <value>Изменить изобр. AM CN</value>
+  </data>
+  <data name="EditCNPMImage" xml:space="preserve">
+    <value>Изменить изобр. PM CN</value>
+  </data>
+  <data name="AddCNAMImage" xml:space="preserve">
+    <value>Добавить изобр. AM CN</value>
+  </data>
+  <data name="AddCNPMImage" xml:space="preserve">
+    <value>Добавить изобр. PM CN</value>
+  </data>
 </root>

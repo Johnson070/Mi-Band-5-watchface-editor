@@ -642,16 +642,6 @@ namespace MiBand5WatchFaces
         [JsonProperty("Number")]
         public Number Number;
 
-        [JsonProperty("NumberCN")]
-        public Number NumberCN;
-        //{
-        //    get { return numberCN; }
-        //    set { NumberEN = numberCN != null ? value : NumberEN; numberCN = value; }
-        //}
-
-        [JsonProperty("NumberEN")]
-        public Number NumberEN;
-
         [JsonProperty("DelimiterImageIndex", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int DelimiterImageIndex = -10000;
@@ -1012,7 +1002,7 @@ namespace MiBand5WatchFaces
 
         [JsonProperty("ImageSufficCN2", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
-        public int ImageSufficCN2 = -10000;
+        public int ImageSuffixCN2 = -10000;
 
         [JsonProperty("ImagePosSuffixEN")]
         public ImageBasic ImagePosSuffixEN;

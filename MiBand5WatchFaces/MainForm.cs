@@ -32,7 +32,7 @@ namespace MiBand5WatchFaces
             try
             {
                 Ping myPing = new Ping();
-                String host = "google.com";
+                String host = Properties.Settings.Default.cn ? "bandbbs.cn" : "google.com";
                 byte[] buffer = new byte[32];
                 int timeout = 1000;
                 PingOptions pingOptions = new PingOptions();
@@ -89,7 +89,7 @@ namespace MiBand5WatchFaces
         {
             try
             {
-                stateWatch = stateWatch.notGen == false ? stateWatch : new StateWatchface() { notGen = true };
+                stateWatch = stateWatch.notGen == false ? stateWatch : new StateWatchface() { notGen = true, lang = state.lang};
                 VisualRender render = new VisualRender(watchFace, stateWatch);
                 watchfacePreviewImage.Image = Animation ? render.GenAnimationStep(true) : render.GenAnimationStep(false);
             }
@@ -813,6 +813,13 @@ namespace MiBand5WatchFaces
             //    //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
             //    MessageBox.Show(res.GetString("Succeful"), res.GetString("Complete"), MessageBoxButtons.OK, MessageBoxIcon.Information);
             //}
+            else if (e.Data != null && e.Data.ToString().IndexOf("Writing resources") != -1)
+            {
+                this.Enabled = true;
+                SaveFileStatus.Text = "";
+                //this.BeginInvoke(new Action(() => WatchFaceEXE.Kill()));
+                MessageBox.Show(res.GetString("Succeful"), res.GetString("Complete"), MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else if (e.Data != null && e.Data.ToString().IndexOf("Exporting config...") != -1)
             {
                 this.Enabled = true;
@@ -908,7 +915,8 @@ namespace MiBand5WatchFaces
             using (WebClient Client = new WebClient())
             {
                 Client.Encoding = Encoding.UTF8;
-                programInfo = JsonConvert.DeserializeObject<ProgramInfo>(Client.DownloadString("https://raw.githubusercontent.com/Johnson070/MiBand-5-watchface-editor/main/infoProgram.txt"));
+                string json = Client.DownloadString("https://raw.githubusercontent.com/Johnson070/MiBand-5-watchface-editor/main/infoProgram.txt");
+                programInfo = JsonConvert.DeserializeObject<ProgramInfo>(json);
             }
 
             return programInfo;
@@ -1188,6 +1196,16 @@ namespace MiBand5WatchFaces
                 SaveFileStatus.Text = "";
                 saveAsToolStripMenuItem_Click("bin", null);
             }
+        }
+
+        private void ChangeLangCheck(object sender, EventArgs e)
+        {
+            string btn = ((RadioButton)sender).Name;
+            if (btn == radioButton1.Name) state.lang = StateWatchface.Lang.English;
+            if (btn == radioButton2.Name) state.lang = StateWatchface.Lang.SimpleChineese;
+            if (btn == radioButton3.Name) state.lang = StateWatchface.Lang.Chineese;
+
+            Render(state);
         }
     }
 

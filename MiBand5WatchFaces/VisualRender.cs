@@ -46,6 +46,7 @@ namespace MiBand5WatchFaces
         public bool NoTimeZone = false;
         public int animation = 0;
         public DayOfWeek DayOfWeek = DateTime.Now.DayOfWeek;
+        public Lang lang = Lang.English;
 
         public bool notGen = false;
 
@@ -54,6 +55,13 @@ namespace MiBand5WatchFaces
             Time = DateTime.Now;
             alarm = DateTime.Now;
             TimeZone = DateTime.Now;
+        }
+
+        public enum Lang
+        {
+            English,
+            Chineese,
+            SimpleChineese
         }
 
     }
@@ -389,10 +397,19 @@ namespace MiBand5WatchFaces
 
             if (date.MonthAndDayAndYear != null)
             {
-                if (date.MonthAndDayAndYear.OneLine != null && date.MonthAndDayAndYear.OneLine.NumberCN != null)
+                if (date.MonthAndDayAndYear.OneLine != null && (date.MonthAndDayAndYear.OneLine.Number != null || (date.MonthAndDayAndYear.OneLine.NumberCN != null || date.MonthAndDayAndYear.OneLine.NumberEN != null)))
                 {
                     List<Image> images = new List<Image>();
-                    Number dateNumber = date.MonthAndDayAndYear.OneLine.NumberCN;
+                    Number dateNumber = watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand5 ? date.MonthAndDayAndYear.OneLine.Number : (watchFaceState.lang == StateWatchface.Lang.English ? date.MonthAndDayAndYear.OneLine.NumberEN : date.MonthAndDayAndYear.OneLine.NumberCN);
+
+                    if (dateNumber == null && watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
+                        if (watchFaceState.lang != StateWatchface.Lang.English && date.MonthAndDayAndYear.OneLine.NumberEN != null)
+                            dateNumber = date.MonthAndDayAndYear.OneLine.NumberEN;
+                        else if (date.MonthAndDayAndYear.OneLine.NumberCN != null) dateNumber = date.MonthAndDayAndYear.OneLine.NumberCN;
+                        else dateNumber = date.MonthAndDayAndYear.OneLine.Number;
+
+                    if (dateNumber == null)
+                        goto skip;
 
                     if (date.MonthAndDayAndYear.TwoDigitsMonth || watchFaceState.Time.Month > 9)
                     {
@@ -410,31 +427,12 @@ namespace MiBand5WatchFaces
                     drawNumber(dateNumber, images);
                 }
 
-                if (date.MonthAndDayAndYear.OneLine != null && (date.MonthAndDayAndYear.OneLine.Number != null || date.MonthAndDayAndYear.OneLine.NumberEN != null))
+                skip:
+
+                if (date.MonthAndDayAndYear.OneLineWithYear != null && date.MonthAndDayAndYear.OneLineWithYear.Number != null)
                 {
                     List<Image> images = new List<Image>();
-                    Number dateNumber = date.MonthAndDayAndYear.OneLine.Number != null ? date.MonthAndDayAndYear.OneLine.Number : date.MonthAndDayAndYear.OneLine.NumberEN;
-
-                    if (date.MonthAndDayAndYear.TwoDigitsMonth || watchFaceState.Time.Month > 9)
-                    {
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month / 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month % 10]);
-                    }
-                    else images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month]);
-                    images.Add(watchface.images[date.MonthAndDayAndYear.OneLine == null ? date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex : date.MonthAndDayAndYear.OneLine.DelimiterImageIndex]);
-                    if (date.MonthAndDayAndYear.TwoDigitsDay || watchFaceState.Time.Day > 9)
-                    {
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day / 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day % 10]);
-                    }
-                    else images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day]);
-                    drawNumber(dateNumber, images);
-                }
-
-                if (date.MonthAndDayAndYear.OneLineWithYear != null && date.MonthAndDayAndYear.OneLineWithYear.NumberCN != null)
-                {
-                    List<Image> images = new List<Image>();
-                    Number dateNumber = date.MonthAndDayAndYear.OneLineWithYear.NumberCN;
+                    Number dateNumber = date.MonthAndDayAndYear.OneLineWithYear.Number;
 
                     if (date.MonthAndDayAndYear.OneLineWithYear != null)
                     {
@@ -451,80 +449,24 @@ namespace MiBand5WatchFaces
                         images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month % 10]);
                     }
                     else images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month]);
-                    images.Add(watchface.images[date.MonthAndDayAndYear.OneLine.DelimiterImageIndex]);
+                    images.Add(watchface.images[date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex]);
                     if (date.MonthAndDayAndYear.TwoDigitsDay || watchFaceState.Time.Day > 9)
                     {
                         images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day / 10]);
                         images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day % 10]);
                     }
                     else images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day]);
-                    drawNumber(dateNumber, images);
-                }
 
-                if (date.MonthAndDayAndYear.OneLineWithYear != null && (date.MonthAndDayAndYear.OneLineWithYear.Number != null || date.MonthAndDayAndYear.OneLineWithYear.NumberEN != null))
-                {
-                    List<Image> images = new List<Image>();
-                    Number dateNumber = date.MonthAndDayAndYear.OneLineWithYear.Number != null ? date.MonthAndDayAndYear.OneLineWithYear.Number : date.MonthAndDayAndYear.OneLineWithYear.NumberEN;
-
-                    if (date.MonthAndDayAndYear.OneLineWithYear != null)
-                    {
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Year / 1000]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Year / 100 % 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Year / 10 % 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Year % 10]);
-                        images.Add(watchface.images[date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex]);
-                    }
-
-                    if (date.MonthAndDayAndYear.TwoDigitsMonth || watchFaceState.Time.Month > 9)
-                    {
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month / 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month % 10]);
-                    }
-                    else images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month]);
-                    images.Add(watchface.images[date.MonthAndDayAndYear.OneLine.DelimiterImageIndex]);
-                    if (date.MonthAndDayAndYear.TwoDigitsDay || watchFaceState.Time.Day > 9)
-                    {
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day / 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day % 10]);
-                    }
-                    else images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day]);
-                    drawNumber(dateNumber, images);
-                }
-
-                if (date.MonthAndDayAndYear.OneLineWithYear != null && date.MonthAndDayAndYear.OneLineWithYear.NumberCN != null)
-                {
-                    List<Image> images = new List<Image>();
-                    Number dateNumber = date.MonthAndDayAndYear.OneLineWithYear.NumberCN;
-
-                    if (date.MonthAndDayAndYear.OneLineWithYear != null)
-                    {
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Year / 1000]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Year / 100 % 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Year / 10 % 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Year % 10]);
-                        images.Add(watchface.images[date.MonthAndDayAndYear.OneLineWithYear.DelimiterImageIndex]);
-                    }
-
-                    if (date.MonthAndDayAndYear.TwoDigitsMonth || watchFaceState.Time.Month > 9)
-                    {
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month / 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month % 10]);
-                    }
-                    else images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Month]);
-                    images.Add(watchface.images[date.MonthAndDayAndYear.OneLine.DelimiterImageIndex]);
-                    if (date.MonthAndDayAndYear.TwoDigitsDay || watchFaceState.Time.Day > 9)
-                    {
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day / 10]);
-                        images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day % 10]);
-                    }
-                    else images.Add(watchface.images[dateNumber.ImageIndex + watchFaceState.Time.Day]);
+                    
                     drawNumber(dateNumber, images);
                 }
 
                 if (date.MonthAndDayAndYear.Separate != null)
                 {
-                    if (date.MonthAndDayAndYear.Separate.MonthsEN != null)
+                    if (date.MonthAndDayAndYear.Separate.MonthsEN != null && watchFaceState.lang == StateWatchface.Lang.English)
                         drawImage(watchface.images[date.MonthAndDayAndYear.Separate.MonthsEN.ImageIndex + watchFaceState.Time.Month - 1], date.MonthAndDayAndYear.Separate.MonthsEN.getPoint());
+                    if (date.MonthAndDayAndYear.Separate.MonthsCN != null && watchFaceState.lang != StateWatchface.Lang.English)
+                        drawImage(watchface.images[date.MonthAndDayAndYear.Separate.MonthsCN.ImageIndex + watchFaceState.Time.Month - 1], date.MonthAndDayAndYear.Separate.MonthsCN.getPoint());
 
                     if (date.MonthAndDayAndYear.Separate.Day != null)
                     {
@@ -563,17 +505,23 @@ namespace MiBand5WatchFaces
 
             if (date.DayAmPm != null)
             {
-                if (date.DayAmPm.ImageIndexAMEN != -10000 && watchFaceState.Time.Hour < 12)
+                if (date.DayAmPm.ImageIndexAMEN != -10000 && watchFaceState.Time.Hour < 12 && watchFaceState.lang == StateWatchface.Lang.English)
                     drawImage(watchface.images[date.DayAmPm.ImageIndexAMEN], date.DayAmPm.X, date.DayAmPm.Y);
 
-                if (date.DayAmPm.ImageIndexPMEN != -10000 && !(watchFaceState.Time.Hour < 12))
+                if (date.DayAmPm.ImageIndexPMEN != -10000 && !(watchFaceState.Time.Hour < 12) && watchFaceState.lang == StateWatchface.Lang.English)
                     drawImage(watchface.images[date.DayAmPm.ImageIndexPMEN], date.DayAmPm.X, date.DayAmPm.Y);
+
+                if (date.DayAmPm.ImageIndexAMEN != -10000 && watchFaceState.Time.Hour < 12 && watchFaceState.lang != StateWatchface.Lang.English)
+                    drawImage(watchface.images[date.DayAmPm.ImageIndexAMCN], date.DayAmPm.X, date.DayAmPm.Y);
+
+                if (date.DayAmPm.ImageIndexPMEN != -10000 && !(watchFaceState.Time.Hour < 12) && watchFaceState.lang != StateWatchface.Lang.English)
+                    drawImage(watchface.images[date.DayAmPm.ImageIndexPMCN], date.DayAmPm.X, date.DayAmPm.Y);
             }
 
-            if (date.ENWeekDays != null)
-            {
-                drawImage(watchface.images[date.ENWeekDays.ImageIndex + (int)watchFaceState.Time.DayOfWeek], date.ENWeekDays.getPoint());
-            }
+            if (watchFaceState.lang == StateWatchface.Lang.English && date.ENWeekDays != null) drawImage(watchface.images[date.ENWeekDays.ImageIndex + (int)watchFaceState.Time.DayOfWeek], date.ENWeekDays.getPoint());
+            if (watchFaceState.lang == StateWatchface.Lang.SimpleChineese && date.CNWeekDays != null) drawImage(watchface.images[date.CNWeekDays.ImageIndex + (int)watchFaceState.Time.DayOfWeek], date.CNWeekDays.getPoint());
+            if (watchFaceState.lang == StateWatchface.Lang.Chineese && date.CN2WeekDays != null) drawImage(watchface.images[date.CN2WeekDays.ImageIndex + (int)watchFaceState.Time.DayOfWeek], date.CN2WeekDays.getPoint());
+
         }
 
         //private static int getTrueDayOfWeek(DateTime time)
@@ -731,8 +679,14 @@ namespace MiBand5WatchFaces
                     for (int i = 0; i < watchFaceState.Wind.ToString().Length; i++)
                         images.Add(watchface.images[weather.Wind.Text.ImageIndex + Convert.ToInt16(watchFaceState.Wind.ToString()[i].ToString())]);
 
-                    if (weather.Wind.ImageSuffixEN != -10000)
+                    if (weather.Wind.ImageSuffixEN != -10000 && watchFaceState.lang == StateWatchface.Lang.English)
                         images.Add(watchface.images[weather.Wind.ImageSuffixEN]);
+
+                    if (weather.Wind.ImageSuffixCN1 != -10000 && watchFaceState.lang == StateWatchface.Lang.SimpleChineese)
+                        images.Add(watchface.images[weather.Wind.ImageSuffixCN1]);
+
+                    if (weather.Wind.ImageSuffixCN2 != -10000 && watchFaceState.lang == StateWatchface.Lang.Chineese)
+                        images.Add(watchface.images[weather.Wind.ImageSuffixCN2]);
 
                     drawNumber(weather.Wind.Text, images);
                 }
@@ -740,17 +694,29 @@ namespace MiBand5WatchFaces
 
             if (weather.UVIndex != null)
             {
-                if (weather.UVIndex.UV != null)
+                if (weather.UVIndex.UV != null && watchFaceState.lang == StateWatchface.Lang.English)
                 {
                     List<Image> images = new List<Image>();
 
                     for (int i = 0; i < watchFaceState.UVIndex.ToString().Length; i++)
                         images.Add(watchface.images[weather.UVIndex.UV.Text.ImageIndex + Convert.ToInt16(watchFaceState.UVIndex.ToString()[i].ToString())]);
 
-                    if (weather.UVIndex.UV.SuffixImageIndex != -10000)
+                    if (weather.UVIndex.UV.SuffixImageIndex != -10000 )
                         images.Add(watchface.images[weather.UVIndex.UV.SuffixImageIndex]);
 
                     drawNumber(weather.UVIndex.UV.Text, images);
+                }
+                if (weather.UVIndex.UVCN != null && watchFaceState.lang == StateWatchface.Lang.SimpleChineese)
+                {
+                    List<Image> images = new List<Image>();
+
+                    drawImage(watchface.images[weather.UVIndex.UVCN.ImageIndex + map(watchFaceState.UVIndex, 0, 10, 0, weather.UVIndex.UVCN.ImagesCount)], weather.UVIndex.UVCN.getPoint());
+                }
+                if (weather.UVIndex.UVCN2 != null && watchFaceState.lang == StateWatchface.Lang.Chineese)
+                {
+                    List<Image> images = new List<Image>();
+
+                    drawImage(watchface.images[weather.UVIndex.UVCN2.ImageIndex + map(watchFaceState.UVIndex, 0, 10, 0, weather.UVIndex.UVCN2.ImagesCount)], weather.UVIndex.UVCN2.getPoint());
                 }
             }
         }

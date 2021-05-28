@@ -37,12 +37,15 @@
             this.separateTab = new System.Windows.Forms.TabPage();
             this.SeparateMonthDayCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.AddMonthCNImagesSeparateButton = new System.Windows.Forms.Button();
             this.AddDaySeparateButton = new System.Windows.Forms.Button();
             this.AddMonthSeparateButton = new System.Windows.Forms.Button();
-            this.AddMonthImagesSeparateButton = new System.Windows.Forms.Button();
+            this.AddMonthENImagesSeparateButton = new System.Windows.Forms.Button();
             this.onelineTab = new System.Windows.Forms.TabPage();
             this.OnelineMonthDayCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.AddMonthAndDayCNOnelineButton = new System.Windows.Forms.Button();
+            this.AddMonthAndDayENOnelineButton = new System.Windows.Forms.Button();
             this.AddOnelineDelimeterImageButton = new System.Windows.Forms.Button();
             this.AddMonthAndDayOnelineButton = new System.Windows.Forms.Button();
             this.onelinewithyearTab = new System.Windows.Forms.TabPage();
@@ -53,6 +56,8 @@
             this.AmPmTab = new System.Windows.Forms.TabPage();
             this.AmPmCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.AddCNPMImageButton = new System.Windows.Forms.Button();
+            this.AddCNAMImageButton = new System.Windows.Forms.Button();
             this.posYNumAMPM = new System.Windows.Forms.NumericUpDown();
             this.posXNumAMPM = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
@@ -62,17 +67,17 @@
             this.weekdaysCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.addWeekDays = new System.Windows.Forms.Button();
-            this.ImagePic = new System.Windows.Forms.Panel();
-            this.SaveButton = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.cnWeekDaysCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.AddCNWeekDaysButton = new System.Windows.Forms.Button();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.CN2WeekDaysCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.AddCN2WeekDaysButton = new System.Windows.Forms.Button();
+            this.ImagePic = new System.Windows.Forms.Panel();
+            this.SaveButton = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.tabControl1.SuspendLayout();
             this.MonthDayYearTab.SuspendLayout();
             this.tabControl2.SuspendLayout();
@@ -89,8 +94,8 @@
             this.WeekDaysTab.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox6.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -159,11 +164,19 @@
             // groupBox1
             // 
             resources.ApplyResources(this.groupBox1, "groupBox1");
+            this.groupBox1.Controls.Add(this.AddMonthCNImagesSeparateButton);
             this.groupBox1.Controls.Add(this.AddDaySeparateButton);
             this.groupBox1.Controls.Add(this.AddMonthSeparateButton);
-            this.groupBox1.Controls.Add(this.AddMonthImagesSeparateButton);
+            this.groupBox1.Controls.Add(this.AddMonthENImagesSeparateButton);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.TabStop = false;
+            // 
+            // AddMonthCNImagesSeparateButton
+            // 
+            resources.ApplyResources(this.AddMonthCNImagesSeparateButton, "AddMonthCNImagesSeparateButton");
+            this.AddMonthCNImagesSeparateButton.Name = "AddMonthCNImagesSeparateButton";
+            this.AddMonthCNImagesSeparateButton.UseVisualStyleBackColor = true;
+            this.AddMonthCNImagesSeparateButton.Click += new System.EventHandler(this.AddImagesClick);
             // 
             // AddDaySeparateButton
             // 
@@ -179,12 +192,12 @@
             this.AddMonthSeparateButton.UseVisualStyleBackColor = true;
             this.AddMonthSeparateButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
-            // AddMonthImagesSeparateButton
+            // AddMonthENImagesSeparateButton
             // 
-            resources.ApplyResources(this.AddMonthImagesSeparateButton, "AddMonthImagesSeparateButton");
-            this.AddMonthImagesSeparateButton.Name = "AddMonthImagesSeparateButton";
-            this.AddMonthImagesSeparateButton.UseVisualStyleBackColor = true;
-            this.AddMonthImagesSeparateButton.Click += new System.EventHandler(this.AddNumberClick);
+            resources.ApplyResources(this.AddMonthENImagesSeparateButton, "AddMonthENImagesSeparateButton");
+            this.AddMonthENImagesSeparateButton.Name = "AddMonthENImagesSeparateButton";
+            this.AddMonthENImagesSeparateButton.UseVisualStyleBackColor = true;
+            this.AddMonthENImagesSeparateButton.Click += new System.EventHandler(this.AddImagesClick);
             // 
             // onelineTab
             // 
@@ -204,10 +217,26 @@
             // groupBox2
             // 
             resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Controls.Add(this.AddMonthAndDayCNOnelineButton);
+            this.groupBox2.Controls.Add(this.AddMonthAndDayENOnelineButton);
             this.groupBox2.Controls.Add(this.AddOnelineDelimeterImageButton);
             this.groupBox2.Controls.Add(this.AddMonthAndDayOnelineButton);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
+            // 
+            // AddMonthAndDayCNOnelineButton
+            // 
+            resources.ApplyResources(this.AddMonthAndDayCNOnelineButton, "AddMonthAndDayCNOnelineButton");
+            this.AddMonthAndDayCNOnelineButton.Name = "AddMonthAndDayCNOnelineButton";
+            this.AddMonthAndDayCNOnelineButton.UseVisualStyleBackColor = true;
+            this.AddMonthAndDayCNOnelineButton.Click += new System.EventHandler(this.AddNumberClick);
+            // 
+            // AddMonthAndDayENOnelineButton
+            // 
+            resources.ApplyResources(this.AddMonthAndDayENOnelineButton, "AddMonthAndDayENOnelineButton");
+            this.AddMonthAndDayENOnelineButton.Name = "AddMonthAndDayENOnelineButton";
+            this.AddMonthAndDayENOnelineButton.UseVisualStyleBackColor = true;
+            this.AddMonthAndDayENOnelineButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
             // AddOnelineDelimeterImageButton
             // 
@@ -278,6 +307,8 @@
             // groupBox4
             // 
             resources.ApplyResources(this.groupBox4, "groupBox4");
+            this.groupBox4.Controls.Add(this.AddCNPMImageButton);
+            this.groupBox4.Controls.Add(this.AddCNAMImageButton);
             this.groupBox4.Controls.Add(this.posYNumAMPM);
             this.groupBox4.Controls.Add(this.posXNumAMPM);
             this.groupBox4.Controls.Add(this.label6);
@@ -285,6 +316,20 @@
             this.groupBox4.Controls.Add(this.AddAMImageButton);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.TabStop = false;
+            // 
+            // AddCNPMImageButton
+            // 
+            resources.ApplyResources(this.AddCNPMImageButton, "AddCNPMImageButton");
+            this.AddCNPMImageButton.Name = "AddCNPMImageButton";
+            this.AddCNPMImageButton.UseVisualStyleBackColor = true;
+            this.AddCNPMImageButton.Click += new System.EventHandler(this.AddImagesClick);
+            // 
+            // AddCNAMImageButton
+            // 
+            resources.ApplyResources(this.AddCNAMImageButton, "AddCNAMImageButton");
+            this.AddCNAMImageButton.Name = "AddCNAMImageButton";
+            this.AddCNAMImageButton.UseVisualStyleBackColor = true;
+            this.AddCNAMImageButton.Click += new System.EventHandler(this.AddImagesClick);
             // 
             // posYNumAMPM
             // 
@@ -322,6 +367,7 @@
             // 
             resources.ApplyResources(this.label6, "label6");
             this.label6.Name = "label6";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // AddPMImageButton
             // 
@@ -366,19 +412,6 @@
             this.addWeekDays.UseVisualStyleBackColor = true;
             this.addWeekDays.Click += new System.EventHandler(this.addWeekdayClick);
             // 
-            // ImagePic
-            // 
-            resources.ApplyResources(this.ImagePic, "ImagePic");
-            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ImagePic.Name = "ImagePic";
-            // 
-            // SaveButton
-            // 
-            resources.ApplyResources(this.SaveButton, "SaveButton");
-            this.SaveButton.Name = "SaveButton";
-            this.SaveButton.UseVisualStyleBackColor = true;
-            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
-            // 
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.cnWeekDaysCheckbox);
@@ -387,19 +420,12 @@
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.CN2WeekDaysCheckbox);
-            this.tabPage2.Controls.Add(this.groupBox7);
-            resources.ApplyResources(this.tabPage2, "tabPage2");
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
             // cnWeekDaysCheckbox
             // 
             resources.ApplyResources(this.cnWeekDaysCheckbox, "cnWeekDaysCheckbox");
             this.cnWeekDaysCheckbox.Name = "cnWeekDaysCheckbox";
             this.cnWeekDaysCheckbox.UseVisualStyleBackColor = true;
+            this.cnWeekDaysCheckbox.CheckedChanged += new System.EventHandler(this.checkStateChanged);
             // 
             // groupBox6
             // 
@@ -415,11 +441,20 @@
             this.AddCNWeekDaysButton.UseVisualStyleBackColor = true;
             this.AddCNWeekDaysButton.Click += new System.EventHandler(this.addWeekdayClick);
             // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.CN2WeekDaysCheckbox);
+            this.tabPage2.Controls.Add(this.groupBox7);
+            resources.ApplyResources(this.tabPage2, "tabPage2");
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
             // CN2WeekDaysCheckbox
             // 
             resources.ApplyResources(this.CN2WeekDaysCheckbox, "CN2WeekDaysCheckbox");
             this.CN2WeekDaysCheckbox.Name = "CN2WeekDaysCheckbox";
             this.CN2WeekDaysCheckbox.UseVisualStyleBackColor = true;
+            this.CN2WeekDaysCheckbox.CheckedChanged += new System.EventHandler(this.checkStateChanged);
             // 
             // groupBox7
             // 
@@ -434,6 +469,19 @@
             this.AddCN2WeekDaysButton.Name = "AddCN2WeekDaysButton";
             this.AddCN2WeekDaysButton.UseVisualStyleBackColor = true;
             this.AddCN2WeekDaysButton.Click += new System.EventHandler(this.addWeekdayClick);
+            // 
+            // ImagePic
+            // 
+            resources.ApplyResources(this.ImagePic, "ImagePic");
+            this.ImagePic.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.ImagePic.Name = "ImagePic";
+            // 
+            // SaveButton
+            // 
+            resources.ApplyResources(this.SaveButton, "SaveButton");
+            this.SaveButton.Name = "SaveButton";
+            this.SaveButton.UseVisualStyleBackColor = true;
+            this.SaveButton.Click += new System.EventHandler(this.SaveButton_Click);
             // 
             // DateForm
             // 
@@ -470,9 +518,9 @@
             this.groupBox5.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.groupBox6.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -493,11 +541,10 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button AddDaySeparateButton;
         private System.Windows.Forms.Button AddMonthSeparateButton;
-        private System.Windows.Forms.Button AddMonthImagesSeparateButton;
+        private System.Windows.Forms.Button AddMonthENImagesSeparateButton;
         private System.Windows.Forms.CheckBox OnelineMonthDayCheckbox;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button AddOnelineDelimeterImageButton;
-        private System.Windows.Forms.Button AddMonthAndDayOnelineButton;
         private System.Windows.Forms.CheckBox OnelineWithYearCheckbox;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button addOnelineWithYearDelimeterImageButton;
@@ -524,5 +571,11 @@
         private System.Windows.Forms.CheckBox CN2WeekDaysCheckbox;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.Button AddCN2WeekDaysButton;
+        private System.Windows.Forms.Button AddCNPMImageButton;
+        private System.Windows.Forms.Button AddCNAMImageButton;
+        private System.Windows.Forms.Button AddMonthCNImagesSeparateButton;
+        private System.Windows.Forms.Button AddMonthAndDayCNOnelineButton;
+        private System.Windows.Forms.Button AddMonthAndDayENOnelineButton;
+        private System.Windows.Forms.Button AddMonthAndDayOnelineButton;
     }
 }

@@ -463,4 +463,46 @@ Program version on server: {1}</value>
     <value>File WatchFace.exe.config not found!
 Please fix file!</value>
   </data>
+  <data name="AddMonthAndDayCN" xml:space="preserve">
+    <value>Add month and day CN</value>
+  </data>
+  <data name="AddMonthAndDayEN" xml:space="preserve">
+    <value>Add month and day EN</value>
+  </data>
+  <data name="EditMonthAndDayCN" xml:space="preserve">
+    <value>Edit month and day CN</value>
+  </data>
+  <data name="EditMonthAndDayEN" xml:space="preserve">
+    <value>Edit month and day EN</value>
+  </data>
+  <data name="EditMonthImagesEN" xml:space="preserve">
+    <value>Edit month images EN</value>
+  </data>
+  <data name="EditMonthImagesCN" xml:space="preserve">
+    <value>Edit month images CN</value>
+  </data>
+  <data name="AddMonthImagesEN" xml:space="preserve">
+    <value>Add month images EN</value>
+  </data>
+  <data name="AddMonthImagesCN" xml:space="preserve">
+    <value>Add month images CN</value>
+  </data>
+  <data name="AddUVCN" xml:space="preserve">
+    <value>Add UVCN</value>
+  </data>
+  <data name="EditUVCN" xml:space="preserve">
+    <value>Edit UVCN</value>
+  </data>
+  <data name="EditCNAMImage" xml:space="preserve">
+    <value>Edit CN AM image</value>
+  </data>
+  <data name="EditCNPMImage" xml:space="preserve">
+    <value>Edit CN PM image</value>
+  </data>
+  <data name="AddCNAMImage" xml:space="preserve">
+    <value>Add CN AM image</value>
+  </data>
+  <data name="AddCNPMImage" xml:space="preserve">
+    <value>Add CN PM image</value>
+  </data>
 </root>
