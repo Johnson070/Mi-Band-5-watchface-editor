@@ -44,8 +44,6 @@
             this.onelineTab = new System.Windows.Forms.TabPage();
             this.OnelineMonthDayCheckbox = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.AddMonthAndDayCNOnelineButton = new System.Windows.Forms.Button();
-            this.AddMonthAndDayENOnelineButton = new System.Windows.Forms.Button();
             this.AddOnelineDelimeterImageButton = new System.Windows.Forms.Button();
             this.AddMonthAndDayOnelineButton = new System.Windows.Forms.Button();
             this.onelinewithyearTab = new System.Windows.Forms.TabPage();
@@ -217,26 +215,10 @@
             // groupBox2
             // 
             resources.ApplyResources(this.groupBox2, "groupBox2");
-            this.groupBox2.Controls.Add(this.AddMonthAndDayCNOnelineButton);
-            this.groupBox2.Controls.Add(this.AddMonthAndDayENOnelineButton);
             this.groupBox2.Controls.Add(this.AddOnelineDelimeterImageButton);
             this.groupBox2.Controls.Add(this.AddMonthAndDayOnelineButton);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
-            // 
-            // AddMonthAndDayCNOnelineButton
-            // 
-            resources.ApplyResources(this.AddMonthAndDayCNOnelineButton, "AddMonthAndDayCNOnelineButton");
-            this.AddMonthAndDayCNOnelineButton.Name = "AddMonthAndDayCNOnelineButton";
-            this.AddMonthAndDayCNOnelineButton.UseVisualStyleBackColor = true;
-            this.AddMonthAndDayCNOnelineButton.Click += new System.EventHandler(this.AddNumberClick);
-            // 
-            // AddMonthAndDayENOnelineButton
-            // 
-            resources.ApplyResources(this.AddMonthAndDayENOnelineButton, "AddMonthAndDayENOnelineButton");
-            this.AddMonthAndDayENOnelineButton.Name = "AddMonthAndDayENOnelineButton";
-            this.AddMonthAndDayENOnelineButton.UseVisualStyleBackColor = true;
-            this.AddMonthAndDayENOnelineButton.Click += new System.EventHandler(this.AddNumberClick);
             // 
             // AddOnelineDelimeterImageButton
             // 
@@ -574,8 +556,6 @@
         private System.Windows.Forms.Button AddCNPMImageButton;
         private System.Windows.Forms.Button AddCNAMImageButton;
         private System.Windows.Forms.Button AddMonthCNImagesSeparateButton;
-        private System.Windows.Forms.Button AddMonthAndDayCNOnelineButton;
-        private System.Windows.Forms.Button AddMonthAndDayENOnelineButton;
         private System.Windows.Forms.Button AddMonthAndDayOnelineButton;
     }
 }

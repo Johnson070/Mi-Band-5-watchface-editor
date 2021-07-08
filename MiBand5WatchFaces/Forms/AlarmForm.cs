@@ -150,13 +150,13 @@ namespace MiBand5WatchFaces.Forms
                 if (ibForm.saved)
                 {
                     AddImageOFFButton.Text = resources.GetString("EditImageOff");
-                    watch.Alarm.ImageOn = ibForm.imageBasic;
+                    watch.Alarm.ImageOff = ibForm.imageBasic;
                     watch.images = ibForm.watch.images;
                 }
                 else if (ibForm.delete)
                 {
                     AddImageOFFButton.Text = resources.GetString("AddImageOff");
-                    watch.Alarm.ImageOn = null;
+                    watch.Alarm.ImageOff = null;
                     watch.images = ibForm.watch.images;
                 }
             }

@@ -193,6 +193,9 @@ namespace MiBand5WatchFaces
 
         private void NumberFormEdit_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (number.BottomRightX == number.TopLeftX) number.BottomRightX++;
+            if (number.BottomRightY == number.TopLeftY) number.BottomRightY++;
+
             if (PropertiesGroupBox.Enabled)
                 if (saved == false && oldNumber != JsonConvert.SerializeObject(number, Formatting.None, new JsonSerializerSettings() { NullValueHandling = NullValueHandling.Ignore }) && MessageBox.Show(res.GetString("ExitMessage"), res.GetString("ExitMessageCaption"), MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 {
@@ -203,6 +206,9 @@ namespace MiBand5WatchFaces
 
         private void saveBtn_Click(object sender, EventArgs e)
         {
+            if (number.BottomRightX == number.TopLeftX) number.BottomRightX++;
+            if (number.BottomRightY == number.TopLeftY) number.BottomRightY++;
+
             saved = true;
             number.drawBorder = false;
             this.Close();

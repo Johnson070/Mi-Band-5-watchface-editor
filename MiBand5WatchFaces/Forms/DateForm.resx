@@ -390,60 +390,6 @@
   <data name="groupBox2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
-  <data name="AddMonthAndDayCNOnelineButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="AddMonthAndDayCNOnelineButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>230, 23</value>
-  </data>
-  <data name="AddMonthAndDayCNOnelineButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 47</value>
-  </data>
-  <data name="AddMonthAndDayCNOnelineButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="AddMonthAndDayCNOnelineButton.Text" xml:space="preserve">
-    <value>Add month and day CN</value>
-  </data>
-  <data name="&gt;&gt;AddMonthAndDayCNOnelineButton.Name" xml:space="preserve">
-    <value>AddMonthAndDayCNOnelineButton</value>
-  </data>
-  <data name="&gt;&gt;AddMonthAndDayCNOnelineButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AddMonthAndDayCNOnelineButton.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;AddMonthAndDayCNOnelineButton.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="AddMonthAndDayENOnelineButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="AddMonthAndDayENOnelineButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 23</value>
-  </data>
-  <data name="AddMonthAndDayENOnelineButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>221, 47</value>
-  </data>
-  <data name="AddMonthAndDayENOnelineButton.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
-  </data>
-  <data name="AddMonthAndDayENOnelineButton.Text" xml:space="preserve">
-    <value>Add month and day EN</value>
-  </data>
-  <data name="&gt;&gt;AddMonthAndDayENOnelineButton.Name" xml:space="preserve">
-    <value>AddMonthAndDayENOnelineButton</value>
-  </data>
-  <data name="&gt;&gt;AddMonthAndDayENOnelineButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;AddMonthAndDayENOnelineButton.Parent" xml:space="preserve">
-    <value>groupBox2</value>
-  </data>
-  <data name="&gt;&gt;AddMonthAndDayENOnelineButton.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="AddOnelineDelimeterImageButton.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
@@ -469,7 +415,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;AddOnelineDelimeterImageButton.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>0</value>
   </data>
   <data name="AddMonthAndDayOnelineButton.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
@@ -496,7 +442,7 @@
     <value>groupBox2</value>
   </data>
   <data name="&gt;&gt;AddMonthAndDayOnelineButton.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>1</value>
   </data>
   <data name="groupBox2.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>

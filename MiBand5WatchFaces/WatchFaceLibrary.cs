@@ -1000,7 +1000,7 @@ namespace MiBand5WatchFaces
         [DefaultValue(-10000)]
         public int ImageSuffixCN1 = -10000;
 
-        [JsonProperty("ImageSufficCN2", DefaultValueHandling = DefaultValueHandling.Ignore)]
+        [JsonProperty("ImageSuffixCN2", DefaultValueHandling = DefaultValueHandling.Ignore)]
         [DefaultValue(-10000)]
         public int ImageSuffixCN2 = -10000;
 

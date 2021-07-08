@@ -747,7 +747,7 @@ namespace MiBand5WatchFaces
                     progress.CircleScale.RadiusX * 2,
                     progress.CircleScale.RadiusY * 2,
                     progress.CircleScale.StartAngle - 90,
-                    map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.CircleScale.EndAngle));
+                    map(watchFaceState.Steps, 0, watchFaceState.Goal, 0, progress.CircleScale.EndAngle - progress.CircleScale.StartAngle));
             }
         }
 
@@ -864,7 +864,7 @@ namespace MiBand5WatchFaces
                     heartProgress.CircleScale.RadiusX * 2,
                     heartProgress.CircleScale.RadiusY * 2,
                     heartProgress.CircleScale.StartAngle - 90,
-                    map(watchFaceState.Pulse, 0, watchFaceState.PulseGoal, 0, heartProgress.CircleScale.EndAngle));
+                    map(watchFaceState.Pulse, 0, watchFaceState.PulseGoal, 0, heartProgress.CircleScale.EndAngle - heartProgress.CircleScale.StartAngle));
             }
         }
 
@@ -907,7 +907,7 @@ namespace MiBand5WatchFaces
                     calories.CircleScale.RadiusX * 2,
                     calories.CircleScale.RadiusY * 2,
                     calories.CircleScale.StartAngle - 90,
-                    map(watchFaceState.Calories, 0, 9000, 0, calories.CircleScale.EndAngle));
+                    map(watchFaceState.Calories, 0, 9000, 0, calories.CircleScale.EndAngle - calories.CircleScale.StartAngle));
             }
         }
 

@@ -32,6 +32,7 @@ namespace MiBand5WatchFaces
                 Bitmap temp = new Bitmap(stream);
                 temp.SetResolution(96f, 96f);
                 Image openpng = temp;
+                stream.Close();
 
                 stream.Close();
                 float dpi = openpng.HorizontalResolution;
@@ -53,8 +54,9 @@ namespace MiBand5WatchFaces
                 Bitmap temp = new Bitmap(stream);
                 temp.SetResolution(96f, 96f);
                 Image openpng = temp;
-                float dpi = openpng.HorizontalResolution;
                 stream.Close();
+
+                float dpi = openpng.HorizontalResolution;
 
                 if (Math.Round(dpi) == 96)
                     images.Add(images.Keys.Count == 0 ? images.Count : images.Keys.Max() + 1, openpng);
