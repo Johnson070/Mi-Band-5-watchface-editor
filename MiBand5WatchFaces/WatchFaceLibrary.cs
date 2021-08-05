@@ -75,8 +75,8 @@ namespace MiBand5WatchFaces
         public StatusSimple StatusSimplified;
 
         [Obfuscation(Exclude = false, Feature = "-rename")]
-        [JsonProperty("LunarDateCN")]
-        public LunarDate LunarDateCN;
+        [JsonProperty("LunarDateCN1")]
+        public LunarDateCN LunarDateCN;
 
         //[JsonIgnore]
         [Obfuscation(Exclude = false, Feature = "-rename")]
@@ -719,13 +719,19 @@ namespace MiBand5WatchFaces
     //===========================LUNARDATE=============================
 
     [Obfuscation(Exclude = false, Feature = "-rename")]
-    public class LunarDate
+    public class LunarDateCN
     {
         [JsonProperty("LunarMonth")]
-        public Number LunarMonth;
+        public ImageSet LunarMonth;
 
-        [JsonProperty("LunarDay")]
+        [JsonProperty("LunarDay")] //for 5
         public Number LunarDay;
+
+        [JsonProperty("LunarDay1")] //for 6
+        public Number LunarDay1;
+
+        [JsonProperty("LunarDay2")] //for 6
+        public Number LunarDay2;
 
         [JsonProperty("LunarDayOf0X")]
         public int LunarDayOf0X;

@@ -117,4 +117,82 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="alarmNoTimeCheck.Text" xml:space="preserve">
+    <value>未设置闹钟</value>
+  </data>
+  <data name="AlarmSetState.Text" xml:space="preserve">
+    <value>闹钟开</value>
+  </data>
+  <data name="DoNotSState.Text" xml:space="preserve">
+    <value>勿扰模式</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>值</value>
+  </data>
+  <data name="KilometersState.Text" xml:space="preserve">
+    <value>公里</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>时间：</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>天气：</value>
+  </data>
+  <data name="label11.Text" xml:space="preserve">
+    <value>温度</value>
+  </data>
+  <data name="label12.Text" xml:space="preserve">
+    <value>日间温度</value>
+  </data>
+  <data name="label13.Text" xml:space="preserve">
+    <value>夜间温度</value>
+  </data>
+  <data name="label14.Text" xml:space="preserve">
+    <value>空气质量</value>
+  </data>
+  <data name="label15.Text" xml:space="preserve">
+    <value>紫外线指数：</value>
+  </data>
+  <data name="label16.Text" xml:space="preserve">
+    <value>风力：</value>
+  </data>
+  <data name="label17.Text" xml:space="preserve">
+    <value>卡路里：</value>
+  </data>
+  <data name="label2.Text" xml:space="preserve">
+    <value>闹钟：</value>
+  </data>
+  <data name="label3.Text" xml:space="preserve">
+    <value>步数：</value>
+  </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>距离：</value>
+  </data>
+  <data name="label5.Text" xml:space="preserve">
+    <value>心率：</value>
+  </data>
+  <data name="label7.Text" xml:space="preserve">
+    <value>电池：</value>
+  </data>
+  <data name="label8.Text" xml:space="preserve">
+    <value>湿度：</value>
+  </data>
+  <data name="label9.Text" xml:space="preserve">
+    <value>时区</value>
+  </data>
+  <data name="LockState.Text" xml:space="preserve">
+    <value>锁定</value>
+  </data>
+  <data name="MilesState.Text" xml:space="preserve">
+    <value>英里</value>
+  </data>
+  <data name="notGenState.Text" xml:space="preserve">
+    <value>随机生成表盘值</value>
+  </data>
+  <data name="NoTimeZoneState.Text" xml:space="preserve">
+    <value>未设置时区</value>
+  </data>
+  <data name="RandomFillButton.Text" xml:space="preserve">
+    <value>随机生成</value>
+  </data>
 </root>

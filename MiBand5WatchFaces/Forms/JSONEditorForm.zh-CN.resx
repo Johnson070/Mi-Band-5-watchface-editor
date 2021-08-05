@@ -118,12 +118,12 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="RenderButton.Text" xml:space="preserve">
-    <value>Rerender</value>
+    <value>重新渲染</value>
   </data>
   <data name="saveButton.Text" xml:space="preserve">
     <value>保存</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Json编辑</value>
+    <value>Json 编辑器</value>
   </data>
 </root>

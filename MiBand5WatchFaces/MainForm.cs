@@ -203,6 +203,7 @@ namespace MiBand5WatchFaces
             else if (obj == "CaloriesProgress") item = JsonConvert.DeserializeObject<CaloriesProgress>(value);
             else if (obj == "Alarm") item = JsonConvert.DeserializeObject<Alarm>(value);
             else if (obj == "StatusSimplified") item = JsonConvert.DeserializeObject<StatusSimple>(value);
+            else if (obj == "LunarDateCN1") item = JsonConvert.DeserializeObject<LunarDateCN>(value);
             else item = null;
         }
 

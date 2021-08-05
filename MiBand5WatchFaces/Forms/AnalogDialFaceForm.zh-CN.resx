@@ -121,7 +121,7 @@
     <value>保存</value>
   </data>
   <data name="AddArrowHoursButton.Text" xml:space="preserve">
-    <value>添加箭头</value>
+    <value>添加指针</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>颜色：</value>
@@ -145,7 +145,7 @@
     <value>小时</value>
   </data>
   <data name="AddArrowMinutesButton.Text" xml:space="preserve">
-    <value>添加箭头</value>
+    <value>添加指针</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
     <value>颜色：</value>
