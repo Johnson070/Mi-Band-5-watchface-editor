@@ -117,4 +117,16 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ForceImageCompressorCheck.Text" xml:space="preserve">
+    <value>强制图像压缩</value>
+  </data>
+  <data name="groupBox1.Text" xml:space="preserve">
+    <value>星期语言</value>
+  </data>
+  <data name="label1.Text" xml:space="preserve">
+    <value>预览速度</value>
+  </data>
+  <data name="PaletteModeCheckBox.Text" xml:space="preserve">
+    <value>使用调色板模式（占低空间）</value>
+  </data>
 </root>

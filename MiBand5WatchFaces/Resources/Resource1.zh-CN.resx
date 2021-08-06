@@ -118,275 +118,275 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ExitMessage" xml:space="preserve">
-    <value>Do you want to get out without saving?</value>
+    <value>不保存即退出？</value>
   </data>
   <data name="ExitMessageCaption" xml:space="preserve">
-    <value>Don't Save?</value>
+    <value>不保存？</value>
   </data>
   <data name="AddImageNoAlarm" xml:space="preserve">
-    <value>Add image no alarm</value>
+    <value>添加图像-无闹钟</value>
   </data>
   <data name="EditImageNoAlarm" xml:space="preserve">
-    <value>Edit image no alarm</value>
+    <value>编辑图像 无闹钟</value>
   </data>
   <data name="AddImageOff" xml:space="preserve">
-    <value>Add image OFF</value>
+    <value>添加图像-关</value>
   </data>
   <data name="EditImageOff" xml:space="preserve">
-    <value>Edit image OFF</value>
+    <value>编辑图像 关</value>
   </data>
   <data name="EditImageOn" xml:space="preserve">
-    <value>Edit Image ON</value>
+    <value>编辑图像 开</value>
   </data>
   <data name="AddImageOn" xml:space="preserve">
-    <value>Add image ON</value>
+    <value>添加图像-开</value>
   </data>
   <data name="AddDelimeter" xml:space="preserve">
-    <value>Add delimeter</value>
+    <value>添加分隔符</value>
   </data>
   <data name="EditDelimeter" xml:space="preserve">
-    <value>Edit delimeter</value>
+    <value>编辑分隔符</value>
   </data>
   <data name="AddNumber" xml:space="preserve">
-    <value>Add number</value>
+    <value>添加数字</value>
   </data>
   <data name="EditNumber" xml:space="preserve">
-    <value>Edit number</value>
+    <value>编辑数字</value>
   </data>
   <data name="EditMondayImage" xml:space="preserve">
-    <value>Edit monday image</value>
+    <value>编辑 周一 图片</value>
   </data>
   <data name="EditTuesdayImage" xml:space="preserve">
-    <value>Edit tuesday image</value>
+    <value>编辑 周二 图片</value>
   </data>
   <data name="EditWednesdayImage" xml:space="preserve">
-    <value>Edit wednesday image</value>
+    <value>编辑 周三 图片</value>
   </data>
   <data name="EditThursdayImage" xml:space="preserve">
-    <value>Edit thursday image</value>
+    <value>编辑 周四 图片</value>
   </data>
   <data name="EditFridayImage" xml:space="preserve">
-    <value>Edit friday image</value>
+    <value>编辑 周五 图像</value>
   </data>
   <data name="EditSaturdayImage" xml:space="preserve">
-    <value>Edit saturday image</value>
+    <value>编辑 周六 图片</value>
   </data>
   <data name="EditSundayImage" xml:space="preserve">
-    <value>Edit sunday image</value>
+    <value>编辑 周日 图片</value>
   </data>
   <data name="AddMondayImage" xml:space="preserve">
-    <value>Add monday image</value>
+    <value>添加 周一 图像</value>
   </data>
   <data name="AddTuesdayImage" xml:space="preserve">
-    <value>Add tuesday image</value>
+    <value>添加 周二 图像</value>
   </data>
   <data name="AddThursdayImage" xml:space="preserve">
-    <value>Add thursday image</value>
+    <value>添加 周四 图像</value>
   </data>
   <data name="AddWednesdayImage" xml:space="preserve">
-    <value>Add wednesday image</value>
+    <value>添加 周三 图像</value>
   </data>
   <data name="AddFridayImage" xml:space="preserve">
-    <value>Add friday image</value>
+    <value>添加 周五 图像</value>
   </data>
   <data name="AddSaturdayImage" xml:space="preserve">
-    <value>Add saturday image</value>
+    <value>添加 周六 图像</value>
   </data>
   <data name="AddSundayImage" xml:space="preserve">
-    <value>Add sunday image</value>
+    <value>添加 周日 图片</value>
   </data>
   <data name="EditImages" xml:space="preserve">
-    <value>Edit images</value>
+    <value>编辑图像</value>
   </data>
   <data name="AddImages" xml:space="preserve">
-    <value>Add images</value>
+    <value>添加图像</value>
   </data>
   <data name="EditArrow" xml:space="preserve">
-    <value>Edit arrow</value>
+    <value>编辑箭头</value>
   </data>
   <data name="AddArrow" xml:space="preserve">
-    <value>Add arrow</value>
+    <value>添加箭头</value>
   </data>
   <data name="EditCenterImage" xml:space="preserve">
-    <value>Edit center image</value>
+    <value>编辑中心图像</value>
   </data>
   <data name="AddCenterImage" xml:space="preserve">
-    <value>Add center image</value>
+    <value>添加中心图像</value>
   </data>
   <data name="EditPrefix" xml:space="preserve">
-    <value>Edit prefix</value>
+    <value>编辑前缀</value>
   </data>
   <data name="AddPrefix" xml:space="preserve">
-    <value>Add prefix</value>
+    <value>添加前缀</value>
   </data>
   <data name="AddSuffix" xml:space="preserve">
-    <value>Add suffix</value>
+    <value>添加后缀</value>
   </data>
   <data name="EditSuffix" xml:space="preserve">
-    <value>Edit suffix</value>
+    <value>编辑后缀</value>
   </data>
   <data name="EditDegreeImage" xml:space="preserve">
-    <value>Edit degree image</value>
+    <value>编辑单位图像</value>
   </data>
   <data name="AddDegreeImage" xml:space="preserve">
-    <value>Add degree image</value>
+    <value>添加单位图像</value>
   </data>
   <data name="EditMinusImage" xml:space="preserve">
-    <value>Edit minus image</value>
+    <value>编辑负号图像</value>
   </data>
   <data name="AddMinusImage" xml:space="preserve">
-    <value>Add minus image</value>
+    <value>添加 负号 图像</value>
   </data>
   <data name="EditSuffixImage" xml:space="preserve">
-    <value>Edit suffix image</value>
+    <value>编辑后缀图像</value>
   </data>
   <data name="AddSuffixImage" xml:space="preserve">
-    <value>Add suffix image</value>
+    <value>添加后缀图像</value>
   </data>
   <data name="EditDelimeterImage" xml:space="preserve">
-    <value>Edit delimeter image</value>
+    <value>编辑分隔符图像</value>
   </data>
   <data name="AddDelimeterImage" xml:space="preserve">
-    <value>Add delimeter image</value>
+    <value>添加分隔符图像</value>
   </data>
   <data name="EditImage" xml:space="preserve">
-    <value>Edit image</value>
+    <value>编辑图像</value>
   </data>
   <data name="AddImage" xml:space="preserve">
-    <value>Add image</value>
+    <value>添加图像</value>
   </data>
   <data name="EditCircleScale" xml:space="preserve">
-    <value>Edit circle scale</value>
+    <value>编辑圆圈比例</value>
   </data>
   <data name="AddCircleScale" xml:space="preserve">
-    <value>Add circle scale</value>
+    <value>添加圆形比例</value>
   </data>
   <data name="EditOnes" xml:space="preserve">
-    <value>Edit Ones</value>
+    <value>编辑个位</value>
   </data>
   <data name="AddOnes" xml:space="preserve">
-    <value>Add Ones</value>
+    <value>添加个位</value>
   </data>
   <data name="EditTens" xml:space="preserve">
-    <value>Edit Tens</value>
+    <value>编辑十位</value>
   </data>
   <data name="AddTens" xml:space="preserve">
-    <value>Add Tens</value>
+    <value>添加十位</value>
   </data>
   <data name="AddNoTime" xml:space="preserve">
-    <value>Add no time</value>
+    <value>添加无时间</value>
   </data>
   <data name="EditNoTime" xml:space="preserve">
-    <value>Edit no time</value>
+    <value>编辑无时间</value>
   </data>
   <data name="TimeFormError" xml:space="preserve">
-    <value>Hours tens and hour ones and minute tens and minutes ones should be added!
-Exit without save?</value>
+    <value>应添加“个十位”小时和“个十位”分钟！
+未保存就退出？</value>
   </data>
   <data name="ImageDPI" xml:space="preserve">
-    <value>Image DPI is not 96!</value>
+    <value>图像 DPI 非 96！</value>
   </data>
   <data name="EditImagesToElement" xml:space="preserve">
-    <value>Edit images to element</value>
+    <value>编辑图像到元素</value>
   </data>
   <data name="DeleteImages" xml:space="preserve">
-    <value>Delete images</value>
+    <value>删除图像</value>
   </data>
   <data name="AddImagesToElement" xml:space="preserve">
-    <value>Add images to element</value>
+    <value>添加图像到素材</value>
   </data>
   <data name="AddSteps" xml:space="preserve">
-    <value>Add steps</value>
+    <value>添加步数</value>
   </data>
   <data name="EditSteps" xml:space="preserve">
-    <value>Edit steps</value>
+    <value>编辑步数</value>
   </data>
   <data name="AddCalories" xml:space="preserve">
-    <value>Add calories</value>
+    <value>添加卡路里</value>
   </data>
   <data name="EditCalories" xml:space="preserve">
-    <value>Edit calories</value>
+    <value>编辑卡路里</value>
   </data>
   <data name="AddPulse" xml:space="preserve">
-    <value>Add pulse</value>
+    <value>添加 心率</value>
   </data>
   <data name="EditPulse" xml:space="preserve">
-    <value>Edit pulse</value>
+    <value>编辑心率</value>
   </data>
   <data name="AddNoData" xml:space="preserve">
-    <value>Add no data</value>
+    <value>添加无数据</value>
   </data>
   <data name="EditNoData" xml:space="preserve">
-    <value>Edit no data</value>
+    <value>编辑无数据</value>
   </data>
   <data name="AddDistance" xml:space="preserve">
-    <value>Add distance</value>
+    <value>添加距离</value>
   </data>
   <data name="EditDistance" xml:space="preserve">
-    <value>Edit distance</value>
+    <value>编辑距离</value>
   </data>
   <data name="AddKMSuffix" xml:space="preserve">
-    <value>Add KM suffix</value>
+    <value>添加公里后缀</value>
   </data>
   <data name="EditKMSuffix" xml:space="preserve">
-    <value>Edit KM suffix</value>
+    <value>编辑 KM 后缀</value>
   </data>
   <data name="AddDecimalPoint" xml:space="preserve">
-    <value>Add decimal point</value>
+    <value>添加小数点</value>
   </data>
   <data name="EditDecimalPoint" xml:space="preserve">
-    <value>Edit decimal point</value>
+    <value>编辑小数点</value>
   </data>
   <data name="AddMISuffix" xml:space="preserve">
-    <value>Add MI suffix</value>
+    <value>添加英里后缀</value>
   </data>
   <data name="EditMISuffix" xml:space="preserve">
-    <value>Edit MI suffix</value>
+    <value>编辑 MI 后缀</value>
   </data>
   <data name="AddKMImage" xml:space="preserve">
-    <value>Add KM image</value>
+    <value>添加公里图像</value>
   </data>
   <data name="EditKMImage" xml:space="preserve">
-    <value>Edit KM image</value>
+    <value>编辑 KM 图像</value>
   </data>
   <data name="AddMIImage" xml:space="preserve">
-    <value>Add MI image</value>
+    <value>添加英里图像</value>
   </data>
   <data name="EditMIImage" xml:space="preserve">
-    <value>Edit MI image</value>
+    <value>编辑 MI 图像</value>
   </data>
   <data name="AddPAI" xml:space="preserve">
-    <value>Add PAI</value>
+    <value>添加 PAI</value>
   </data>
   <data name="EditPAI" xml:space="preserve">
-    <value>Edit PAI</value>
+    <value>编辑 PAI</value>
   </data>
   <data name="AddMonth" xml:space="preserve">
-    <value>Add month</value>
+    <value>添加月份</value>
   </data>
   <data name="EditMonth" xml:space="preserve">
-    <value>Edit month</value>
+    <value>编辑月份</value>
   </data>
   <data name="AddMonthImages" xml:space="preserve">
-    <value>Add month images</value>
+    <value>添加月份图片</value>
   </data>
   <data name="EditMonthImages" xml:space="preserve">
-    <value>Edit month images</value>
+    <value>编辑月份图像</value>
   </data>
   <data name="AddDay" xml:space="preserve">
-    <value>Add day</value>
+    <value>添加日期</value>
   </data>
   <data name="EditDay" xml:space="preserve">
-    <value>Edit day</value>
+    <value>编辑日</value>
   </data>
   <data name="AddMonthAndDay" xml:space="preserve">
-    <value>添加 月 日</value>
+    <value>添加 月日</value>
   </data>
   <data name="EditMonthAndDay" xml:space="preserve">
     <value>编辑 月 日</value>
   </data>
   <data name="AddMonthAndDayAndYear" xml:space="preserve">
-    <value>添加 月 日 年</value>
+    <value>添加 年月日</value>
   </data>
   <data name="EditMonthAndDayAndYear" xml:space="preserve">
     <value>编辑 月 日 年</value>
@@ -395,7 +395,7 @@ Exit without save?</value>
     <value>添加 AM 图像</value>
   </data>
   <data name="EditAMImage" xml:space="preserve">
-    <value>编辑 AM 图像</value>
+    <value>编辑上午图像</value>
   </data>
   <data name="AddPMImage" xml:space="preserve">
     <value>添加 PM 图像</value>
@@ -404,7 +404,7 @@ Exit without save?</value>
     <value>编辑 PM 图像</value>
   </data>
   <data name="AddWeekDaysImages" xml:space="preserve">
-    <value>添加 周 日 图像</value>
+    <value>添加 星期 图像</value>
   </data>
   <data name="EditWeekDaysImages" xml:space="preserve">
     <value>编辑 周 日 图像</value>
@@ -422,7 +422,7 @@ Exit without save?</value>
     <value>生成预览图失败</value>
   </data>
   <data name="SaveOpenJson" xml:space="preserve">
-    <value>在打开另一个表盘之前保存一个打开的表盘？</value>
+    <value>在打开另一个表盘之前保存当前打开的表盘？</value>
   </data>
   <data name="SaveQ" xml:space="preserve">
     <value>保存？</value>
@@ -431,7 +431,7 @@ Exit without save?</value>
     <value>在关闭程序之前保存文件？</value>
   </data>
   <data name="OpenDownloadUpdate" xml:space="preserve">
-    <value>下载含有更新程序的zip压缩包？</value>
+    <value>下载含有更新程序的 zip 压缩包？</value>
   </data>
   <data name="ErrorSave" xml:space="preserve">
     <value>保存失败</value>
@@ -459,13 +459,13 @@ Exit without save?</value>
     <value>下载更新已经完成</value>
   </data>
   <data name="ConfigNotFound" xml:space="preserve">
-    <value>WatchFace.exe.配置丢失， 请修复文件！</value>
+    <value>WatchFace.exe 配置丢失， 请修复文件！</value>
   </data>
   <data name="AddMonthAndDayCN" xml:space="preserve">
-    <value>添加 月 日 CN</value>
+    <value>添加 月日 CN</value>
   </data>
   <data name="AddMonthAndDayEN" xml:space="preserve">
-    <value>添加 月 日 EN</value>
+    <value>添加 月日 EN</value>
   </data>
   <data name="EditMonthAndDayCN" xml:space="preserve">
     <value>编辑 月 日 CN</value>
@@ -474,33 +474,33 @@ Exit without save?</value>
     <value>编辑 月 日 EN</value>
   </data>
   <data name="EditMonthImagesEN" xml:space="preserve">
-    <value>Edit month images EN</value>
+    <value>编辑月份图像 EN</value>
   </data>
   <data name="EditMonthImagesCN" xml:space="preserve">
-    <value>Edit month images CN</value>
+    <value>编辑月份图像 CN</value>
   </data>
   <data name="AddMonthImagesEN" xml:space="preserve">
-    <value>Add month images EN</value>
+    <value>添加月份图像 EN</value>
   </data>
   <data name="AddMonthImagesCN" xml:space="preserve">
-    <value>Add month images CN</value>
+    <value>添加月份图片 CN</value>
   </data>
   <data name="AddUVCN" xml:space="preserve">
-    <value>Add UVCN</value>
+    <value>添加紫外线强度 CN</value>
   </data>
   <data name="EditUVCN" xml:space="preserve">
-    <value>Edit UVCN</value>
+    <value>编辑 UV CN</value>
   </data>
   <data name="EditCNAMImage" xml:space="preserve">
-    <value>编辑 CN AM 图像</value>
+    <value>编辑上午图像 CN</value>
   </data>
   <data name="EditCNPMImage" xml:space="preserve">
-    <value>编辑 CN PM 图像</value>
+    <value>编辑下午图像 CN</value>
   </data>
   <data name="AddCNAMImage" xml:space="preserve">
-    <value>添加 CN AM 图像</value>
+    <value>添加上午图像 CN</value>
   </data>
   <data name="AddCNPMImage" xml:space="preserve">
-    <value>添加 CN PM 图像</value>
+    <value>添加下午图像 CN</value>
   </data>
 </root>

@@ -142,13 +142,13 @@
     <value>保存</value>
   </data>
   <data name="label4.Text" xml:space="preserve">
-    <value>预览３：</value>
+    <value>预览3：</value>
   </data>
   <data name="label3.Text" xml:space="preserve">
-    <value>预览２：</value>
+    <value>预览2：</value>
   </data>
   <data name="label2.Text" xml:space="preserve">
-    <value>预览１：</value>
+    <value>预览1：</value>
   </data>
   <data name="genPreviews.Text" xml:space="preserve">
     <value>生成预览</value>

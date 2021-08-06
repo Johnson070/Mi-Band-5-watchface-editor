@@ -118,10 +118,10 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="TwoDigitsDayCheckbox.Text" xml:space="preserve">
-    <value>两位数 日</value>
+    <value>日：个位补零</value>
   </data>
   <data name="TwoDigitsMonthCheckbox.Text" xml:space="preserve">
-    <value>两位数 月</value>
+    <value>月：个位补零</value>
   </data>
   <data name="AddDaySeparateButton.Text" xml:space="preserve">
     <value>添加 日</value>
@@ -142,7 +142,7 @@
     <value>添加分割线图像</value>
   </data>
   <data name="AddMonthAndDayOnelineButton.Text" xml:space="preserve">
-    <value>添加 月 日</value>
+    <value>添加 月日</value>
   </data>
   <data name="groupBox2.Text" xml:space="preserve">
     <value>     </value>
@@ -154,7 +154,7 @@
     <value>添加分割线图像</value>
   </data>
   <data name="addOnelineWithYearMonthDayYearButton.Text" xml:space="preserve">
-    <value>添加 月 日 年</value>
+    <value>添加 年月日</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>     </value>
@@ -163,36 +163,48 @@
     <value>一行与 年</value>
   </data>
   <data name="MonthDayYearTab.Text" xml:space="preserve">
-    <value>月 日 年</value>
+    <value>年月日</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>坐标：</value>
   </data>
   <data name="AddPMImageButton.Text" xml:space="preserve">
-    <value>添加 PM 图像</value>
+    <value>添加 下午 图像</value>
   </data>
   <data name="AddAMImageButton.Text" xml:space="preserve">
-    <value>添加 AM 图像</value>
+    <value>添加 上午 图像</value>
   </data>
   <data name="groupBox4.Text" xml:space="preserve">
     <value>     </value>
   </data>
   <data name="AmPmTab.Text" xml:space="preserve">
-    <value>AM PM</value>
+    <value>上下午</value>
   </data>
   <data name="addWeekDays.Text" xml:space="preserve">
-    <value>添加 周 日 图像</value>
+    <value>添加 星期 图像</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>     </value>
   </data>
   <data name="WeekDaysTab.Text" xml:space="preserve">
-    <value>周 日 EN</value>
+    <value>星期 EN</value>
   </data>
   <data name="SaveButton.Text" xml:space="preserve">
     <value>保存</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>日期</value>
+  </data>
+  <data name="AddCN2WeekDaysButton.Text" xml:space="preserve">
+    <value>添加星期图像</value>
+  </data>
+  <data name="AddCNWeekDaysButton.Text" xml:space="preserve">
+    <value>添加星期图像</value>
+  </data>
+  <data name="AddMonthCNImagesSeparateButton.Text" xml:space="preserve">
+    <value>添加月图像 CN</value>
+  </data>
+  <data name="AddMonthENImagesSeparateButton.Text" xml:space="preserve">
+    <value>添加月图像 EN</value>
   </data>
 </root>

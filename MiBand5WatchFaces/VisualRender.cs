@@ -149,6 +149,7 @@ namespace MiBand5WatchFaces
             if (watchface.CaloriesProgress != null) drawCaloriesProgress();
             if (watchface.Alarm != null) drawAlarm();
             if (watchface.StatusSimplified != null) drawStatusSimplified();
+            if (watchface.LunarDateCN != null) drawLunarDateCN();
 
             if (watchface.TypeWatch == WatchFaceLibrary.typeWatch.MiBand6)
                 setMiBand6Corners();
@@ -200,6 +201,7 @@ namespace MiBand5WatchFaces
             if (element.GetType() == typeof(CaloriesProgress)) drawCaloriesProgress((CaloriesProgress)element);
             if (element.GetType() == typeof(Alarm)) drawAlarm((Alarm)element);
             if (element.GetType() == typeof(StatusSimple)) drawStatusSimplified((StatusSimple)element);
+            if (element.GetType() == typeof(LunarDateCN)) drawLunarDateCN((LunarDateCN)element);
 
             if (TypeWatch == WatchFaceLibrary.typeWatch.MiBand6 && element.GetType() != typeof(ImageBasic))
                 setMiBand6Corners();
@@ -976,6 +978,23 @@ namespace MiBand5WatchFaces
                         drawImage(watchface.images[simple.Lock.ImageIndexOn], simple.Lock.StatusImage.getPoint());
                     else if (simple.Lock.ImageIndexOff != -10000)
                         drawImage(watchface.images[simple.Lock.ImageIndexOff], simple.Lock.StatusImage.getPoint());
+        }
+
+        private void drawLunarDateCN(LunarDateCN _LunarDateCN = null) 
+        {
+            LunarDateCN LunarDateCN = _LunarDateCN != null ? _LunarDateCN : watchface.LunarDateCN;
+            List<Image> images = new List<Image>();
+            if(type == WatchFaceLibrary.typeWatch.MiBand6) {
+                drawImage(watchface.images[LunarDateCN.LunarMonth.ImageIndex], LunarDateCN.LunarMonth.getPoint());
+                images.Add(watchface.images[LunarDateCN.LunarDayOf0X]);
+                images.Add(watchface.images[LunarDateCN.LunarDay1.ImageIndex]);
+                drawNumber(LunarDateCN.LunarDay1, images);
+            } else if (LunarDateCN.LunarDay != null ) {
+                drawImage(watchface.images[LunarDateCN.LunarMonth.ImageIndex], LunarDateCN.LunarMonth.X, LunarDateCN.LunarMonth.Y ); //bug
+                images.Add(watchface.images[LunarDateCN.LunarDayOf0X]);
+                images.Add(watchface.images[LunarDateCN.LunarDay.ImageIndex]);
+                drawNumber(LunarDateCN.LunarDay, images);
+            }
         }
 
         private void drawNumber(Number number, List<Image> images)

@@ -124,7 +124,7 @@
     <value>添加 数字</value>
   </data>
   <data name="AddImageNoAlarmButton.Text" xml:space="preserve">
-    <value>添加无闹铃图像</value>
+    <value>添加无闹钟图像</value>
   </data>
   <data name="AddImageOFFButton.Text" xml:space="preserve">
     <value>添加OFF图像</value>
@@ -139,6 +139,6 @@
     <value>性能</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>脑子</value>
+    <value>闹钟</value>
   </data>
 </root>

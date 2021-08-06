@@ -130,7 +130,7 @@
     <value>添加 加号 图像</value>
   </data>
   <data name="AddMinusImageTemperatureTodaySeparateNightButton.Text" xml:space="preserve">
-    <value>添加 减号 图像</value>
+    <value>添加 负号 图像</value>
   </data>
   <data name="AddNumberTemperatureTodaySeparateNightButton.Text" xml:space="preserve">
     <value>添加数字</value>
@@ -142,7 +142,7 @@
     <value>添加 加号 图像</value>
   </data>
   <data name="AddMinusImageTemperatureTodaySeparateDayButton.Text" xml:space="preserve">
-    <value>添加 减号 图像</value>
+    <value>添加 负号 图像</value>
   </data>
   <data name="AddNumberTemperatureTodaySeparateDayButton.Text" xml:space="preserve">
     <value>添加数字</value>
@@ -154,90 +154,90 @@
     <value>分隔符</value>
   </data>
   <data name="AddForBothTemperatureTodayOnelineCheckBox.Text" xml:space="preserve">
-    <value>Add degrees for both</value>
+    <value>同时添加单位</value>
   </data>
   <data name="AddDegreeImageTemperatureTodayOnelineButton.Text" xml:space="preserve">
-    <value>Add degree image</value>
+    <value>添加 单位 图像</value>
   </data>
   <data name="AddNumberTemperatureTodayOnelineButton.Text" xml:space="preserve">
-    <value>Add number</value>
+    <value>添加数字</value>
   </data>
   <data name="AddMinusImageTemperatureTodayOnelineButton.Text" xml:space="preserve">
-    <value>Add minus image</value>
+    <value>添加 负号 图像</value>
   </data>
   <data name="AddDelimeterImageTemperatureTodayOnelineButton.Text" xml:space="preserve">
-    <value>Add delimeter image</value>
+    <value>添加 分隔符 图像</value>
   </data>
   <data name="groupBox5.Text" xml:space="preserve">
     <value>    </value>
   </data>
   <data name="tabPage10.Text" xml:space="preserve">
-    <value>One line</value>
+    <value>单行</value>
   </data>
   <data name="tabPage7.Text" xml:space="preserve">
-    <value>Today</value>
+    <value>今日</value>
   </data>
   <data name="AddDegreeImageTemperatureCurrentButton.Text" xml:space="preserve">
-    <value>Add degree image</value>
+    <value>添加 单位 图像</value>
   </data>
   <data name="AddMinusImageTemperatureCurrentButton.Text" xml:space="preserve">
-    <value>Add minus image</value>
+    <value>添加 负号 图像</value>
   </data>
   <data name="AddNumberTemperatureCurrentButton.Text" xml:space="preserve">
-    <value>Add number</value>
+    <value>添加数字</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
     <value>     </value>
   </data>
   <data name="tabPage8.Text" xml:space="preserve">
-    <value>Current</value>
+    <value>当前</value>
   </data>
   <data name="tabPage2.Text" xml:space="preserve">
-    <value>Temperature</value>
+    <value>温度</value>
   </data>
   <data name="AddSuffixImageHumidityButton.Text" xml:space="preserve">
-    <value>Add suffix image</value>
+    <value>添加后缀图像</value>
   </data>
   <data name="AddSuffixHumidityButton.Text" xml:space="preserve">
-    <value>Add suffix </value>
+    <value>添加后缀</value>
   </data>
   <data name="AddNumberHumidityButton.Text" xml:space="preserve">
-    <value>Add number</value>
+    <value>添加数字</value>
   </data>
   <data name="groupBox6.Text" xml:space="preserve">
     <value>     </value>
   </data>
   <data name="tabPage4.Text" xml:space="preserve">
-    <value>Humidity</value>
+    <value>湿度</value>
   </data>
   <data name="AddSuffixWindButton.Text" xml:space="preserve">
-    <value>Add suffix </value>
+    <value>添加后缀</value>
   </data>
   <data name="AddNumberWindButton.Text" xml:space="preserve">
-    <value>Add number</value>
+    <value>添加数字</value>
   </data>
   <data name="groupBox7.Text" xml:space="preserve">
     <value>     </value>
   </data>
   <data name="tabPage5.Text" xml:space="preserve">
-    <value>Wind</value>
+    <value>风力</value>
   </data>
   <data name="AddSuffixUVButton.Text" xml:space="preserve">
-    <value>Add suffix</value>
+    <value>添加后缀</value>
   </data>
   <data name="AddNumberUVButton.Text" xml:space="preserve">
-    <value>Add number</value>
+    <value>添加数字</value>
   </data>
   <data name="groupBox8.Text" xml:space="preserve">
     <value>     </value>
   </data>
   <data name="tabPage6.Text" xml:space="preserve">
-    <value>UV Index</value>
+    <value>紫外线指数</value>
   </data>
   <data name="SaveButton.Text" xml:space="preserve">
-    <value>Save</value>
+    <value>保存</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Weather</value>
+    <value>天气</value>
   </data>
 </root>

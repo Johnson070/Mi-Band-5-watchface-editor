@@ -157,28 +157,28 @@
     <value>添加前缀</value>
   </data>
   <data name="addPulseButton.Text" xml:space="preserve">
-    <value>添加心跳</value>
+    <value>添加心率</value>
   </data>
   <data name="groupBox3.Text" xml:space="preserve">
-    <value>     心跳</value>
+    <value>     心率</value>
   </data>
   <data name="pulseTab.Text" xml:space="preserve">
-    <value>心跳</value>
+    <value>心率</value>
   </data>
   <data name="addMiImageButton.Text" xml:space="preserve">
-    <value>添加MI图像</value>
+    <value>添加英里图像</value>
   </data>
   <data name="addKmImageButton.Text" xml:space="preserve">
-    <value>添加KM图像</value>
+    <value>添加公里图像</value>
   </data>
   <data name="addMiDistanceSuffixButton.Text" xml:space="preserve">
-    <value>添加MI前缀</value>
+    <value>添加英里前缀</value>
   </data>
   <data name="addDecimalDistanceButton.Text" xml:space="preserve">
     <value>添加小数点</value>
   </data>
   <data name="addKmDistanceSuffixButton.Text" xml:space="preserve">
-    <value>添加KM后缀</value>
+    <value>添加公里后缀</value>
   </data>
   <data name="addDistanceButton.Text" xml:space="preserve">
     <value>添加距离</value>
